@@ -1,0 +1,45 @@
+{
+  "config": {
+    "warm_iterations": 30,
+    "outer_iterations": 12,
+    "cg_max_iterations": 120,
+    "cg_relative_tolerance": 0.0001,
+    "LM_initial": 0.001,
+    "LM_minimum": 1e-08,
+    "LM_maximum": 100000000.0,
+    "LM_trials": 6,
+    "acceptance_ratio_minimum": 0.05,
+    "line_search": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "regularization": [
+      1e-05,
+      1e-05,
+      0.0,
+      0.0,
+      0.001
+    ],
+    "warm_regularization": [
+      1e-06,
+      1e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "per_frame_wall_s": 180.0,
+    "max_GPU_allocated_MiB": 2500.0,
+    "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+    "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+    "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+  },
+  "sources": {
+    "repair_v3\\probe.py": "36ca67c00cb930a18fa8318c2208f620f386dff3ebd8e3d1c489cdfcb7cb0fa9",
+    "repair_v3\\solver.py": "ce55bcad8489d3749ecb9fe55473c0d2e88aff4ad2e469b9fb2d07a617f557cc",
+    "repair_v3\\__init__.py": "2bec3f3d689e9e6e436099ebac4da7af7f7baafdefd5de13a7354a236716931e"
+  },
+  "fixture_sha256": "cdb5ede723330956c509f3c2e2a7e55215ab4996e91bada312b70c297267ffa5"
+}

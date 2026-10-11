@@ -1,0 +1,43 @@
+{
+  "schema": "physical-repair-v3-cohort-compatibility-001",
+  "utc": "2026-10-11T19:42:17.646755+00:00",
+  "reason": "The old journal contains two extra unregistered known-calibration resume probes; reuse only the exact eight audit_v2 registered methods.",
+  "registration_sha256": "035be6c1d68f5558b5ff78702c3b0fca1a02d3ae46c7263e6cfd86e1d3853eb5",
+  "gate_receipt_sha256_at_correction": "a12495246f352d5c2ddfbf92d6a7cb26b747dbdac5d952d5d1f353627116edfc",
+  "original_source_snapshot": "source_initial/run.py",
+  "original_source_sha256": "481f4eeaf2d9e177dad37f13766b2059a442daacf80bd2fe3f2e676604cfde22",
+  "current_sources": {
+    "repair_next.py": "308830460d222393f7a34a5d08e1e3b45ef7ef2311c351f3de143360d97badf1",
+    "repair_v3/__init__.py": "2bec3f3d689e9e6e436099ebac4da7af7f7baafdefd5de13a7354a236716931e",
+    "repair_v3/infer.py": "96d74be868c760c19775c77a923baf9477fa65b13aec27ed68a622841554ddbe",
+    "repair_v3/probe.py": "36ca67c00cb930a18fa8318c2208f620f386dff3ebd8e3d1c489cdfcb7cb0fa9",
+    "repair_v3/protocol.py": "1d0e4a41849e2c37f9fcfa72a7123732b82978749fc4aace1d0187955deb4f4b",
+    "repair_v3/report.py": "b7c50d6651ae4f1dd198b14e671a6fabd67558dd25669917e71b0bb9622e5654",
+    "repair_v3/run.py": "336657aea10f931a1411a2ba97b922f4fcdbfdea55d77bd4f126ac421ff593a2",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "tests/test_repair_v3.py": "3c0b1d5bb74cb0c3e30806c7c086debf6220e3b5546e830bb37a4d1bfb830bbb"
+  },
+  "changed_function_names": [
+    "guard",
+    "old_rows"
+  ],
+  "unchanged_function_names_ast_verified": [
+    "configure",
+    "evaluate",
+    "gates",
+    "original_preservation",
+    "prepare",
+    "read",
+    "score_work",
+    "scored_snapshot",
+    "smoke",
+    "sources"
+  ],
+  "non_function_module_ast_unchanged": true,
+  "additional_regression_test_sha256": "335b93e189d38da67df20c1521b3b5ec3fab72a158e07706befd61b9ce98e3d4",
+  "additional_tests_xml_sha256": "7bcafae19ce5fe4e8fcea5a7dd71f19e4d597f0046045802bbf1a3fc6574a803",
+  "original_registration_rewritten": false,
+  "physical_inference_changed": false,
+  "gate_input_or_result_recomputed": false,
+  "original_audit_journal_modified": false
+}

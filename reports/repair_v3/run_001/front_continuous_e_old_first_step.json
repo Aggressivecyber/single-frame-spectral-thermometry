@@ -1,0 +1,270 @@
+{
+  "case_id": "front_continuous_e",
+  "input_hash": "df5176bbe9b8c3f6c0f8a6fb0388d14314f0924e751399bb457419db92e0aacc",
+  "old_full_final_reused": true,
+  "subblocks": [
+    {
+      "label": "initialization",
+      "solver": null,
+      "metrics": {
+        "domain_pixels": 65536,
+        "coverage": 1.0,
+        "accepted_pixels": 65536,
+        "template_truth_energy": 0.0,
+        "template_truth_sum": 0.0,
+        "template_SSE": 334872.3677112326,
+        "template_RMSE_e": 2.2604749106693562,
+        "template_signed_mean_e": -1.819633246172998,
+        "template_error_sum": -119251.4844211936,
+        "template_integral_bias_fraction": null,
+        "template_relative_L2": null,
+        "temperature_SSE_K2": 99731218.94843626,
+        "temperature_observed_RMSE_K": 39.009968378354166,
+        "conditional_temperature_RMSE_K": 39.009968378354166,
+        "conditional_template_RMSE_e": 2.2604749106693562,
+        "null_FP_fixed_domain": 0.0,
+        "null_FP_accepted": 0.0,
+        "historical60_null_FP_fixed_domain": 0.0,
+        "historical60_null_FP_accepted": 0.0,
+        "amplitude_projection": null,
+        "orthogonal_RMSE_e": null,
+        "orthogonal_relative_L2": null,
+        "support10_pixels": 0,
+        "support10_recall": null,
+        "support10_precision": null,
+        "support20_pixels": 0,
+        "support20_recall": null,
+        "support20_precision": null,
+        "support30_pixels": 0,
+        "support30_recall": null,
+        "support30_precision": null,
+        "historical60_recall_on_truth_support20": null,
+        "historical60_target_region_pixels": 0,
+        "risk_coverage": [
+          {
+            "rule": "model_valid",
+            "coverage": 1.0,
+            "temperature_RMSE_K": 39.009968378354166,
+            "template_RMSE_e": 2.2604749106693562
+          },
+          {
+            "rule": "accept_all_finite_outputs",
+            "coverage": 1.0,
+            "temperature_RMSE_K": 39.009968378354166,
+            "template_RMSE_e": 2.2604749106693562
+          }
+        ],
+        "nonfinite_pixels": 0,
+        "temperature_out_of_bounds_pixels": 0,
+        "prediction_missing_pixels": 0,
+        "frame_detection_score_e": -0.6388540655374527,
+        "frame_detected": false,
+        "blank_frame_false_positive": false,
+        "temperature_reference_RMSE_K": 39.00996891239333,
+        "observed_reference_spectral_shift_RMSE_K": 0.0002617240970157885,
+        "latent_uniform_pixels": 0,
+        "temperature_latent_uniform_RMSE_K": null,
+        "temperature_latent_uniform_signed_bias_K": null,
+        "temperature_applicable": true
+      },
+      "raw_objective": 1609013.5,
+      "regularization": 0.00045760622015222907
+    },
+    {
+      "label": "old_spectral_subblock",
+      "solver": {
+        "CG_iterations": 4,
+        "CG_relative_residual": 0.033162672072649,
+        "damping": 0.001,
+        "accepted_alpha": 1.0,
+        "T_increment_K": {
+          "rms": 0.0,
+          "maximum_abs": 0.0,
+          "signed_mean": 0.0
+        },
+        "loga_increment": {
+          "rms": 0.04246142879128456,
+          "maximum_abs": 0.15206271409988403,
+          "signed_mean": -0.016240786761045456
+        },
+        "template_increment_e": {
+          "rms": 266.4518737792969,
+          "maximum_abs": 812.3428344726562,
+          "signed_mean": 5.45448112487793
+        },
+        "beta_increment": {
+          "rms": 1.1847572326660156,
+          "maximum_abs": 2.0513992309570312,
+          "signed_mean": 0.6649377346038818
+        },
+        "constraint_boundary_fraction": {
+          "T": 0.0,
+          "loga": 0.0,
+          "active_template": 0.0,
+          "beta": 0.0
+        }
+      },
+      "metrics": {
+        "domain_pixels": 65536,
+        "coverage": 0.9612274169921875,
+        "accepted_pixels": 62995,
+        "template_truth_energy": 0.0,
+        "template_truth_sum": 0.0,
+        "template_SSE": 2256883781.5701294,
+        "template_RMSE_e": 185.57293326763988,
+        "template_signed_mean_e": 3.634849711012066,
+        "template_error_sum": 238213.51066088676,
+        "template_integral_bias_fraction": null,
+        "template_relative_L2": null,
+        "temperature_SSE_K2": 110639366.17029458,
+        "temperature_observed_RMSE_K": 41.08798790889161,
+        "conditional_temperature_RMSE_K": 36.48482524753382,
+        "conditional_template_RMSE_e": 173.81107677799505,
+        "null_FP_fixed_domain": 0.3320770263671875,
+        "null_FP_accepted": 0.34547186284625764,
+        "historical60_null_FP_fixed_domain": 0.3320770263671875,
+        "historical60_null_FP_accepted": 0.34547186284625764,
+        "amplitude_projection": null,
+        "orthogonal_RMSE_e": null,
+        "orthogonal_relative_L2": null,
+        "support10_pixels": 0,
+        "support10_recall": null,
+        "support10_precision": 0.0,
+        "support20_pixels": 0,
+        "support20_recall": null,
+        "support20_precision": 0.0,
+        "support30_pixels": 0,
+        "support30_recall": null,
+        "support30_precision": 0.0,
+        "historical60_recall_on_truth_support20": null,
+        "historical60_target_region_pixels": 0,
+        "risk_coverage": [
+          {
+            "rule": "model_valid",
+            "coverage": 0.9612274169921875,
+            "temperature_RMSE_K": 36.48482524753382,
+            "template_RMSE_e": 173.81107677799505
+          },
+          {
+            "rule": "accept_all_finite_outputs",
+            "coverage": 1.0,
+            "temperature_RMSE_K": 41.08798790889161,
+            "template_RMSE_e": 185.57293326763988
+          }
+        ],
+        "nonfinite_pixels": 0,
+        "temperature_out_of_bounds_pixels": 0,
+        "prediction_missing_pixels": 0,
+        "frame_detection_score_e": 368.63027038574216,
+        "frame_detected": true,
+        "blank_frame_false_positive": true,
+        "temperature_reference_RMSE_K": 41.087988603992194,
+        "observed_reference_spectral_shift_RMSE_K": 0.0002617240970157885,
+        "latent_uniform_pixels": 0,
+        "temperature_latent_uniform_RMSE_K": null,
+        "temperature_latent_uniform_signed_bias_K": null,
+        "temperature_applicable": true
+      },
+      "raw_objective": 56352.09375,
+      "regularization": 12.912982940673828
+    },
+    {
+      "label": "old_temperature_subblock",
+      "solver": {
+        "CG_iterations": 1,
+        "CG_relative_residual": 0.6563201546669006,
+        "damping": 0.001,
+        "accepted_alpha": 1.0,
+        "T_increment_K": {
+          "rms": 3.405064582824707,
+          "maximum_abs": 11.378020286560059,
+          "signed_mean": -1.1524237394332886
+        },
+        "loga_increment": {
+          "rms": 0.0,
+          "maximum_abs": 0.0,
+          "signed_mean": 0.0
+        },
+        "template_increment_e": {
+          "rms": 0.0,
+          "maximum_abs": 0.0,
+          "signed_mean": 0.0
+        },
+        "beta_increment": {
+          "rms": 0.0,
+          "maximum_abs": 0.0,
+          "signed_mean": 0.0
+        },
+        "constraint_boundary_fraction": {
+          "T": 0.0,
+          "loga": 0.0,
+          "active_template": 0.0,
+          "beta": 0.0
+        }
+      },
+      "metrics": {
+        "domain_pixels": 65536,
+        "coverage": 0.9597320556640625,
+        "accepted_pixels": 62897,
+        "template_truth_energy": 0.0,
+        "template_truth_sum": 0.0,
+        "template_SSE": 2256883781.5701294,
+        "template_RMSE_e": 185.57293326763988,
+        "template_signed_mean_e": 3.634849711012066,
+        "template_error_sum": 238213.51066088676,
+        "template_integral_bias_fraction": null,
+        "template_relative_L2": null,
+        "temperature_SSE_K2": 104540447.19079065,
+        "temperature_observed_RMSE_K": 39.9394620918171,
+        "conditional_temperature_RMSE_K": 35.25717095159421,
+        "conditional_template_RMSE_e": 173.18913681067716,
+        "null_FP_fixed_domain": 0.3320770263671875,
+        "null_FP_accepted": 0.3460101435680557,
+        "historical60_null_FP_fixed_domain": 0.3320770263671875,
+        "historical60_null_FP_accepted": 0.3460101435680557,
+        "amplitude_projection": null,
+        "orthogonal_RMSE_e": null,
+        "orthogonal_relative_L2": null,
+        "support10_pixels": 0,
+        "support10_recall": null,
+        "support10_precision": 0.0,
+        "support20_pixels": 0,
+        "support20_recall": null,
+        "support20_precision": 0.0,
+        "support30_pixels": 0,
+        "support30_recall": null,
+        "support30_precision": 0.0,
+        "historical60_recall_on_truth_support20": null,
+        "historical60_target_region_pixels": 0,
+        "risk_coverage": [
+          {
+            "rule": "model_valid",
+            "coverage": 0.9597320556640625,
+            "temperature_RMSE_K": 35.25717095159421,
+            "template_RMSE_e": 173.18913681067716
+          },
+          {
+            "rule": "accept_all_finite_outputs",
+            "coverage": 1.0,
+            "temperature_RMSE_K": 39.9394620918171,
+            "template_RMSE_e": 185.57293326763988
+          }
+        ],
+        "nonfinite_pixels": 0,
+        "temperature_out_of_bounds_pixels": 0,
+        "prediction_missing_pixels": 0,
+        "frame_detection_score_e": 368.63027038574216,
+        "frame_detected": true,
+        "blank_frame_false_positive": true,
+        "temperature_reference_RMSE_K": 39.9394629119848,
+        "observed_reference_spectral_shift_RMSE_K": 0.0002617240970157885,
+        "latent_uniform_pixels": 0,
+        "temperature_latent_uniform_RMSE_K": null,
+        "temperature_latent_uniform_signed_bias_K": null,
+        "temperature_applicable": true
+      },
+      "raw_objective": 48102.796875,
+      "regularization": 12.912983894348145
+    }
+  ]
+}

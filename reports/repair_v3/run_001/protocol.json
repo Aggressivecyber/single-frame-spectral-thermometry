@@ -1,0 +1,93 @@
+{
+  "schema": "physical-repair-v3-first-round",
+  "baseline_commit": "5f2ae6307a644dbfbbab426b9c239397981d24b7",
+  "checkpoint_sha256": "d777888c53b086118128a824da007e1cba471f185ad9f8a973eb68c5edb434f1",
+  "config": {
+    "warm_iterations": 30,
+    "outer_iterations": 12,
+    "cg_max_iterations": 120,
+    "cg_relative_tolerance": 0.0001,
+    "LM_initial": 0.001,
+    "LM_minimum": 1e-08,
+    "LM_maximum": 100000000.0,
+    "LM_trials": 6,
+    "acceptance_ratio_minimum": 0.05,
+    "line_search": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "regularization": [
+      1e-05,
+      1e-05,
+      0.0,
+      0.0,
+      0.001
+    ],
+    "warm_regularization": [
+      1e-06,
+      1e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "per_frame_wall_s": 180.0,
+    "max_GPU_allocated_MiB": 2500.0,
+    "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+    "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+    "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+  },
+  "ablation_new_methods": [
+    "old_init__joint_update_v3",
+    "consistent_init__old_update_v3",
+    "consistent_init__joint_update_v3"
+  ],
+  "smoke_method": "consistent_init__joint_update_v3",
+  "old_baseline": "B2_six_stage_no_CNN; 12 old data updates, exact audit_v2 input/prediction hashes",
+  "old_CNN_reference": "B4_published reused, no removal or weight changes",
+  "gate": {
+    "continuous": {
+      "temperature_RMSE_K_max": 1.0,
+      "template_RMSE_e_max": 5.0,
+      "historical60_FP_max": 0.0
+    },
+    "quantization_only": {
+      "temperature_RMSE_K_max": 3.0,
+      "template_RMSE_e_max": 6.0,
+      "historical60_FP_max": 0.0
+    },
+    "nonzero_template_relative_L2_max": 0.25,
+    "scope": "proposed development gates, not hardware standards"
+  },
+  "gate_regressions": [
+    "same old front +210e, +45e, -120e templates",
+    "front 70 degrees null, front 25 degrees +210e",
+    "flat 3000K null and +210e; continuous and quantized for each"
+  ],
+  "gate_required_frames": 16,
+  "noisy_old_front_diagnostic_frames": 1,
+  "smoke_new_inferences": 48,
+  "smoke_known_calibration_oracles": 8,
+  "validation_null_new_inferences": 24,
+  "smoke_allowed_only_after": "all 16 selected-method development gates and production tests passed",
+  "smoke_reporting": [
+    "nominal",
+    "known_calibration_oracle",
+    "unknown_channel_gain_3pct",
+    "non_gray_continuum"
+  ],
+  "measurement_likelihood": "raw observed electrons only; fixed measurement-derived weights",
+  "warm_start_likelihood": "decoded 700/905 bands only for warm start; never combined with raw as independent data",
+  "joint_first_step_decomposition": "spectral components are a scoring-only preview; joint acceptance is atomic",
+  "optimizer_updates": 0,
+  "CNN_weight_updates": 0,
+  "network_modules_added": 0,
+  "device": "local CUDA RTX4060",
+  "TF32": false,
+  "phase_wall_s": 2400.0,
+  "host_RSS_MiB_max": 4096.0,
+  "GPU_allocated_MiB_max": 2500.0,
+  "stop_after": "physical gates, existing 48 smoke, report and GitHub publication; no training"
+}

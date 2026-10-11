@@ -1,0 +1,487 @@
+{
+  "cases": [
+    {
+      "case_id": "front_continuous_e",
+      "suite": "gate",
+      "path": "fixtures/front_continuous_e.npz",
+      "file_sha256": "cdb5ede723330956c509f3c2e2a7e55215ab4996e91bada312b70c297267ffa5",
+      "raw_array_sha256": "43587894dcc0ed6baae94509ccb2afb149e0ab10be6fcdd921f090bb1ab07ecf",
+      "array_sha256": {
+        "raw_dn": "43587894dcc0ed6baae94509ccb2afb149e0ab10be6fcdd921f090bb1ab07ecf",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_reference_color_K": "5c5af3db6364913ad9039c50d0792786771e4fe700ab1bad1998000d931d75e9",
+        "temperature_observed_color_K": "42a566b4c88dc506fe68b8f9c8d4e2822c794e32f2a46535bd96f92026cfc8a6",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "expected_e": "df5176bbe9b8c3f6c0f8a6fb0388d14314f0924e751399bb457419db92e0aacc"
+      },
+      "metadata": {
+        "family": "temperature_front",
+        "condition": "null_clean",
+        "parent_scene_id": "old_front_fixed_null",
+        "origin_original_frozen_sha256": "245206f6e58a8242a29a33aabd2dcc6bce263b8812193ecbd281a9f4954e0a95",
+        "scope": "same old-front fields and S=0; continuous electrons are an oracle numerical diagnostic",
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "source_audit_v2_case": "front_continuous_e"
+      }
+    },
+    {
+      "case_id": "front_quantization_only",
+      "suite": "gate",
+      "path": "fixtures/front_quantization_only.npz",
+      "file_sha256": "cdb5ede723330956c509f3c2e2a7e55215ab4996e91bada312b70c297267ffa5",
+      "raw_array_sha256": "43587894dcc0ed6baae94509ccb2afb149e0ab10be6fcdd921f090bb1ab07ecf",
+      "array_sha256": {
+        "raw_dn": "43587894dcc0ed6baae94509ccb2afb149e0ab10be6fcdd921f090bb1ab07ecf",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_reference_color_K": "5c5af3db6364913ad9039c50d0792786771e4fe700ab1bad1998000d931d75e9",
+        "temperature_observed_color_K": "42a566b4c88dc506fe68b8f9c8d4e2822c794e32f2a46535bd96f92026cfc8a6",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "expected_e": "df5176bbe9b8c3f6c0f8a6fb0388d14314f0924e751399bb457419db92e0aacc"
+      },
+      "metadata": {
+        "family": "temperature_front",
+        "condition": "null_clean",
+        "parent_scene_id": "old_front_fixed_null",
+        "origin_original_frozen_sha256": "245206f6e58a8242a29a33aabd2dcc6bce263b8812193ecbd281a9f4954e0a95",
+        "scope": "same old-front fields and S=0; continuous electrons are an oracle numerical diagnostic",
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "source_audit_v2_case": "front_quantization_only"
+      }
+    },
+    {
+      "case_id": "front_old_noisy_quantized",
+      "suite": "diagnostic",
+      "path": "fixtures/front_old_noisy_quantized.npz",
+      "file_sha256": "6483d250144793cf6544bc42ffb0015808745f89994a0755f691c1d59cabf4a9",
+      "raw_array_sha256": "24d33c24b8f94613a144b328d511a69c6eadb5dc7b8a3b5b9ec1de02c30c4e04",
+      "array_sha256": {
+        "raw_dn": "24d33c24b8f94613a144b328d511a69c6eadb5dc7b8a3b5b9ec1de02c30c4e04",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_reference_color_K": "5c5af3db6364913ad9039c50d0792786771e4fe700ab1bad1998000d931d75e9",
+        "temperature_observed_color_K": "42a566b4c88dc506fe68b8f9c8d4e2822c794e32f2a46535bd96f92026cfc8a6",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "expected_e": "df5176bbe9b8c3f6c0f8a6fb0388d14314f0924e751399bb457419db92e0aacc"
+      },
+      "metadata": {
+        "family": "temperature_front",
+        "condition": "null_clean",
+        "parent_scene_id": "old_front_fixed_null",
+        "origin_original_frozen_sha256": "245206f6e58a8242a29a33aabd2dcc6bce263b8812193ecbd281a9f4954e0a95",
+        "scope": "same old-front fields and S=0; continuous electrons are an oracle numerical diagnostic",
+        "input_kind": "raw_DN",
+        "variant": "old_noisy",
+        "source_audit_v2_case": "front_old_noisy_quantized"
+      }
+    },
+    {
+      "case_id": "same_front_signal_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_signal_continuous.npz",
+      "file_sha256": "af4e25fb1d19e171d77c200d10c8876c2924a5d4a1c02982f10cb56c3f4e90ca",
+      "raw_array_sha256": "9ac21ce3ecaa33b7dbfe0a1b61442e2920c46a48f7d1025835f89e2f66434926",
+      "array_sha256": {
+        "raw_dn": "9ac21ce3ecaa33b7dbfe0a1b61442e2920c46a48f7d1025835f89e2f66434926",
+        "expected_e": "aec166ddc0f5d1a3c4238ba82846df4fa843990fd854b46c7ca9ff0ce4696bc4",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_signal",
+        "condition": "signal",
+        "parent_scene_id": "same_front_signal",
+        "geometry": "old",
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "same_front_signal_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_signal_quantization_only.npz",
+      "file_sha256": "af4e25fb1d19e171d77c200d10c8876c2924a5d4a1c02982f10cb56c3f4e90ca",
+      "raw_array_sha256": "9ac21ce3ecaa33b7dbfe0a1b61442e2920c46a48f7d1025835f89e2f66434926",
+      "array_sha256": {
+        "raw_dn": "9ac21ce3ecaa33b7dbfe0a1b61442e2920c46a48f7d1025835f89e2f66434926",
+        "expected_e": "aec166ddc0f5d1a3c4238ba82846df4fa843990fd854b46c7ca9ff0ce4696bc4",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_signal",
+        "condition": "signal",
+        "parent_scene_id": "same_front_signal",
+        "geometry": "old",
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "same_front_weak_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_weak_continuous.npz",
+      "file_sha256": "1a864d30708803c2b54aae2c3909f71befb8c803e5fed8d8e01f2082ad834061",
+      "raw_array_sha256": "4f3b6853542e0598e740c3b815c9fc17dfaa9b0a966c05b29e90c33f102bef22",
+      "array_sha256": {
+        "raw_dn": "4f3b6853542e0598e740c3b815c9fc17dfaa9b0a966c05b29e90c33f102bef22",
+        "expected_e": "56f6e62a5d03958d64568d10bd0b9fdc749a8cf2a5f8ed40b9454592c8ef0d8f",
+        "template_e": "8d2794ae3fd65f3503be5f690692e8225eb62875625ef7f1da3198f6de7f2817",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_weak",
+        "condition": "signal",
+        "parent_scene_id": "same_front_weak",
+        "geometry": "old",
+        "template_peak_preblur_e": 45.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "same_front_weak_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_weak_quantization_only.npz",
+      "file_sha256": "1a864d30708803c2b54aae2c3909f71befb8c803e5fed8d8e01f2082ad834061",
+      "raw_array_sha256": "4f3b6853542e0598e740c3b815c9fc17dfaa9b0a966c05b29e90c33f102bef22",
+      "array_sha256": {
+        "raw_dn": "4f3b6853542e0598e740c3b815c9fc17dfaa9b0a966c05b29e90c33f102bef22",
+        "expected_e": "56f6e62a5d03958d64568d10bd0b9fdc749a8cf2a5f8ed40b9454592c8ef0d8f",
+        "template_e": "8d2794ae3fd65f3503be5f690692e8225eb62875625ef7f1da3198f6de7f2817",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_weak",
+        "condition": "signal",
+        "parent_scene_id": "same_front_weak",
+        "geometry": "old",
+        "template_peak_preblur_e": 45.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "same_front_negative_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_negative_continuous.npz",
+      "file_sha256": "2edcb8d29ababc8d96da1443b338333a1b3d38a1735f40582b3e807e3cd2f3b3",
+      "raw_array_sha256": "003c018da9b3f773592eb559f8481b347b2f15edf4a001df57196a39bd619115",
+      "array_sha256": {
+        "raw_dn": "003c018da9b3f773592eb559f8481b347b2f15edf4a001df57196a39bd619115",
+        "expected_e": "1a467dc7e76825263f9e0599b27ee860f8a69bad232ca7973c88ee355866e0a3",
+        "template_e": "785a4665fa23c72231b603553e5abe0a2f3341d35dda99152f27c2f9581ca08d",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_negative",
+        "condition": "signal",
+        "parent_scene_id": "same_front_negative",
+        "geometry": "old",
+        "template_peak_preblur_e": -120.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "same_front_negative_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/same_front_negative_quantization_only.npz",
+      "file_sha256": "2edcb8d29ababc8d96da1443b338333a1b3d38a1735f40582b3e807e3cd2f3b3",
+      "raw_array_sha256": "003c018da9b3f773592eb559f8481b347b2f15edf4a001df57196a39bd619115",
+      "array_sha256": {
+        "raw_dn": "003c018da9b3f773592eb559f8481b347b2f15edf4a001df57196a39bd619115",
+        "expected_e": "1a467dc7e76825263f9e0599b27ee860f8a69bad232ca7973c88ee355866e0a3",
+        "template_e": "785a4665fa23c72231b603553e5abe0a2f3341d35dda99152f27c2f9581ca08d",
+        "temperature_latent_K": "2a0c786c86c79740aaa8d02694a063cebd7d80ec9511e420b0b1f23e4ea4337d",
+        "temperature_observed_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "temperature_reference_color_K": "63d1efdb2f6932a889a1589a3173fe6aced0534185307959124c890097cbf93f",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "same_front_negative",
+        "condition": "signal",
+        "parent_scene_id": "same_front_negative",
+        "geometry": "old",
+        "template_peak_preblur_e": -120.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "rotated70_null_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/rotated70_null_continuous.npz",
+      "file_sha256": "a4cc4016d7b1a3e479ff635a32fa3d5392cafc9745f672461ab25bccd09d2d06",
+      "raw_array_sha256": "3d5b31de3e4fb8bffff9a1edbac4237d85e903a07b6f6b73fd94410c30d98c17",
+      "array_sha256": {
+        "raw_dn": "3d5b31de3e4fb8bffff9a1edbac4237d85e903a07b6f6b73fd94410c30d98c17",
+        "expected_e": "ec4a60bf3770c3eff87de8e5e6fc056eba08c63fd005f2d16d01a315ddd21a77",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "39533e7e4cefae2c9d9d87e556a3e330e81ff667e6d61cae9168ffebebda36dd",
+        "temperature_observed_color_K": "cedbbe43dce4b24254a6aef67e7d96c3c960fc6d21df73941c401734ca2bc49c",
+        "temperature_reference_color_K": "cedbbe43dce4b24254a6aef67e7d96c3c960fc6d21df73941c401734ca2bc49c",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "rotated70_null",
+        "condition": "null_clean",
+        "parent_scene_id": "rotated70_null",
+        "geometry": 70.0,
+        "template_peak_preblur_e": 0.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "rotated70_null_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/rotated70_null_quantization_only.npz",
+      "file_sha256": "a4cc4016d7b1a3e479ff635a32fa3d5392cafc9745f672461ab25bccd09d2d06",
+      "raw_array_sha256": "3d5b31de3e4fb8bffff9a1edbac4237d85e903a07b6f6b73fd94410c30d98c17",
+      "array_sha256": {
+        "raw_dn": "3d5b31de3e4fb8bffff9a1edbac4237d85e903a07b6f6b73fd94410c30d98c17",
+        "expected_e": "ec4a60bf3770c3eff87de8e5e6fc056eba08c63fd005f2d16d01a315ddd21a77",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "39533e7e4cefae2c9d9d87e556a3e330e81ff667e6d61cae9168ffebebda36dd",
+        "temperature_observed_color_K": "cedbbe43dce4b24254a6aef67e7d96c3c960fc6d21df73941c401734ca2bc49c",
+        "temperature_reference_color_K": "cedbbe43dce4b24254a6aef67e7d96c3c960fc6d21df73941c401734ca2bc49c",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "rotated70_null",
+        "condition": "null_clean",
+        "parent_scene_id": "rotated70_null",
+        "geometry": 70.0,
+        "template_peak_preblur_e": 0.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "rotated25_signal_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/rotated25_signal_continuous.npz",
+      "file_sha256": "336dc2226bc6e6e2668176092c488577fbf9db8987d7b68cb90b6639463a70e7",
+      "raw_array_sha256": "bd1432b7aa6e51df2227400219f408c520eb37caa829d8c097b0f7070c632dff",
+      "array_sha256": {
+        "raw_dn": "bd1432b7aa6e51df2227400219f408c520eb37caa829d8c097b0f7070c632dff",
+        "expected_e": "5289cba25adb6f3fa432cbe617af2b03b1b30f8722b82e61b55293b55aa856ef",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "371ab452c92e2174c6147be7c24cdd1d8cc1f807fc926aa4c3f84abc12da0f0a",
+        "temperature_observed_color_K": "7a86286e9a59396027f330d6fd4f65bdba429c711e3a48206fd73c92fda65667",
+        "temperature_reference_color_K": "7a86286e9a59396027f330d6fd4f65bdba429c711e3a48206fd73c92fda65667",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "rotated25_signal",
+        "condition": "signal",
+        "parent_scene_id": "rotated25_signal",
+        "geometry": 25.0,
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "rotated25_signal_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/rotated25_signal_quantization_only.npz",
+      "file_sha256": "336dc2226bc6e6e2668176092c488577fbf9db8987d7b68cb90b6639463a70e7",
+      "raw_array_sha256": "bd1432b7aa6e51df2227400219f408c520eb37caa829d8c097b0f7070c632dff",
+      "array_sha256": {
+        "raw_dn": "bd1432b7aa6e51df2227400219f408c520eb37caa829d8c097b0f7070c632dff",
+        "expected_e": "5289cba25adb6f3fa432cbe617af2b03b1b30f8722b82e61b55293b55aa856ef",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "371ab452c92e2174c6147be7c24cdd1d8cc1f807fc926aa4c3f84abc12da0f0a",
+        "temperature_observed_color_K": "7a86286e9a59396027f330d6fd4f65bdba429c711e3a48206fd73c92fda65667",
+        "temperature_reference_color_K": "7a86286e9a59396027f330d6fd4f65bdba429c711e3a48206fd73c92fda65667",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "rotated25_signal",
+        "condition": "signal",
+        "parent_scene_id": "rotated25_signal",
+        "geometry": 25.0,
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "flat_null_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/flat_null_continuous.npz",
+      "file_sha256": "bce4b94eeca64340d6fbe648032e6a5703f3014d2448b333dfa667d329d76510",
+      "raw_array_sha256": "ccc082a13a0e081fe38f7c21bcbbf38219546d948948d619c1c849888b57aae2",
+      "array_sha256": {
+        "raw_dn": "ccc082a13a0e081fe38f7c21bcbbf38219546d948948d619c1c849888b57aae2",
+        "expected_e": "1af5a0fd18227086de7ff7c66b0d595dc6db0f2bd091b978dcf3fd6eaf0bde77",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "ef90d92ad18b3cc776a5a0b910abd1e8461cf35be60d9182f7dbe1a2c5906f2e",
+        "temperature_observed_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "temperature_reference_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "flat_null",
+        "condition": "null_clean",
+        "parent_scene_id": "flat_null",
+        "geometry": "flat",
+        "template_peak_preblur_e": 0.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "flat_null_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/flat_null_quantization_only.npz",
+      "file_sha256": "bce4b94eeca64340d6fbe648032e6a5703f3014d2448b333dfa667d329d76510",
+      "raw_array_sha256": "ccc082a13a0e081fe38f7c21bcbbf38219546d948948d619c1c849888b57aae2",
+      "array_sha256": {
+        "raw_dn": "ccc082a13a0e081fe38f7c21bcbbf38219546d948948d619c1c849888b57aae2",
+        "expected_e": "1af5a0fd18227086de7ff7c66b0d595dc6db0f2bd091b978dcf3fd6eaf0bde77",
+        "template_e": "d25993c6ce8fef0b66795203bfa51f9af405f59e43bf76a22bb2ea054dd72ce5",
+        "temperature_latent_K": "ef90d92ad18b3cc776a5a0b910abd1e8461cf35be60d9182f7dbe1a2c5906f2e",
+        "temperature_observed_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "temperature_reference_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "flat_null",
+        "condition": "null_clean",
+        "parent_scene_id": "flat_null",
+        "geometry": "flat",
+        "template_peak_preblur_e": 0.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "flat_signal_continuous",
+      "suite": "gate",
+      "path": "frozen/gate/flat_signal_continuous.npz",
+      "file_sha256": "90b097339c8c636f3227e7bd35449c20b44084b6ee7be708eb4f09efccac24b0",
+      "raw_array_sha256": "610fee743905ef69f9e4d371e2244310f43e86579672cf5815a0ce749434b0f2",
+      "array_sha256": {
+        "raw_dn": "610fee743905ef69f9e4d371e2244310f43e86579672cf5815a0ce749434b0f2",
+        "expected_e": "4b5f066441462f6e96f93a09e807749355ccbc1eabcd00477cbec10523c12b26",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "ef90d92ad18b3cc776a5a0b910abd1e8461cf35be60d9182f7dbe1a2c5906f2e",
+        "temperature_observed_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "temperature_reference_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "flat_signal",
+        "condition": "signal",
+        "parent_scene_id": "flat_signal",
+        "geometry": "flat",
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "oracle_continuous_e",
+        "variant": "continuous",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    },
+    {
+      "case_id": "flat_signal_quantization_only",
+      "suite": "gate",
+      "path": "frozen/gate/flat_signal_quantization_only.npz",
+      "file_sha256": "90b097339c8c636f3227e7bd35449c20b44084b6ee7be708eb4f09efccac24b0",
+      "raw_array_sha256": "610fee743905ef69f9e4d371e2244310f43e86579672cf5815a0ce749434b0f2",
+      "array_sha256": {
+        "raw_dn": "610fee743905ef69f9e4d371e2244310f43e86579672cf5815a0ce749434b0f2",
+        "expected_e": "4b5f066441462f6e96f93a09e807749355ccbc1eabcd00477cbec10523c12b26",
+        "template_e": "52e18f2c086963c772a7f0a8c47ac3b5ecbbf47f156ef95382ccb6a03da27a48",
+        "temperature_latent_K": "ef90d92ad18b3cc776a5a0b910abd1e8461cf35be60d9182f7dbe1a2c5906f2e",
+        "temperature_observed_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "temperature_reference_color_K": "8f12d6f7f842c737365c292abccd5c92bbbea9ccfaff77cff9a4824d55813c12",
+        "evaluation_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "uniform_temperature_domain": "dc3883aa0685006c780986def28c0d504bb46e3faa4b03e600cc0f3c0a71dec5",
+        "saturated": "7434a9debf0fa97d130794f3b80cfb7ad2da79fe3fb5378b0b18d34bacd64e40"
+      },
+      "metadata": {
+        "family": "flat_signal",
+        "condition": "signal",
+        "parent_scene_id": "flat_signal",
+        "geometry": "flat",
+        "template_peak_preblur_e": 210.0,
+        "input_kind": "raw_DN",
+        "variant": "quantization_only",
+        "truth_enters_generation_and_scoring_only": true
+      }
+    }
+  ],
+  "counts": {
+    "gate": 16,
+    "diagnostic": 1
+  },
+  "old_inputs_exact_copies": 3,
+  "prior_smoke_and_validation_manifest": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\audit_v2\\run_001\\frozen_manifest.json",
+  "audit_v2_manifest_sha256": "2d3052595cb9f45887578a2ed703560f76532bed347c5502f6db2c72122f230e"
+}
