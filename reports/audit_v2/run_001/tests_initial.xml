@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="33" time="5.294" timestamp="2026-10-12T01:39:20.907810+08:00" hostname="RYLAN"><testcase classname="tests.test_metrics_v2" name="test_A_perfect_45e_weak_signal" time="0.010" /><testcase classname="tests.test_metrics_v2" name="test_B_weak_failure_and_missing_requirement_cannot_pass" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_C_prediction_valid_cannot_improve_fixed_errors" time="0.003" /><testcase classname="tests.test_metrics_v2" name="test_D_one_percent_1000K_errors_remain_100K_RMSE" time="0.002" /><testcase classname="tests.test_metrics_v2" name="test_E_blank_invalid_ghosts_still_count" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_F_signed_cancellation_is_separate_from_absolute_bias" time="0.002" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[missing_domain]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[empty]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[saturated]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[nonfinite]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[missing]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_explicit_incomplete_or_failed_frame[out_of_bounds]" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_H_exception_timeout_durable_resume" time="0.018" /><testcase classname="tests.test_metrics_v2" name="test_I_exact_threshold_equalities" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_J_raw_only_interface_and_truth_independent_detector" time="0.001" /><testcase classname="tests.test_metrics_v2" name="test_source_domain_and_outside_signal_not_diluted" time="0.001" /><testcase classname="tests.test_physics_v2" name="test_forward_adjoint_inner_product[physics0-cpu]" time="0.093" /><testcase classname="tests.test_physics_v2" name="test_forward_adjoint_inner_product[physics0-cuda]" time="0.555" /><testcase classname="tests.test_physics_v2" name="test_forward_adjoint_inner_product[physics1-cpu]" time="0.016" /><testcase classname="tests.test_physics_v2" name="test_forward_adjoint_inner_product[physics1-cuda]" time="0.146" /><testcase classname="tests.test_physics_v2" name="test_jvp_vjp_and_finite_difference_off_knots[physics0-cpu]" time="0.031"><failure message="assert 0.0036062225699424744 &lt; 0.003">physics = SpectralPhysics(
+  (op): CodedOperator()
+), device = 'cpu'
+
+    @pytest.mark.parametrize("device", DEVICES)
+    def test_jvp_vjp_and_finite_difference_off_knots(physics, device):
+        p = physics.to(device)
+        gen = torch.Generator(device=device).manual_seed(452)
+        state = torch.zeros(1, 5, 64, 64, dtype=p.M.dtype, device=device)
+        state[:, 0] = -.1977  # 2802.3 K, away from 5 K LUT knots
+        state[:, 1] = np.log(.6)
+        state[:, 4] = 1.
+        beta = torch.tensor([[.45, .06, -.04]], dtype=p.M.dtype, device=device)
+        dz = torch.randn(state.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        db = torch.randn(beta.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        r = torch.randn((1, 64, 64), generator=gen, device=device, dtype=p.M.dtype)
+        j = p.jvp(state, beta, dz, db)
+        gz, gb = p.vjp(state, beta, r)
+        a, b = (j*r).sum(), (gz*dz).sum()+(gb*db).sum()
+        tol = 3e-5 if p.M.dtype == torch.float32 else 2e-12
+        assert float(abs(a-b)/(abs(a)+abs(b))) &lt; tol
+        eps = .01 if p.M.dtype == torch.float32 else 1e-5
+        fd = (p(state+eps*dz, beta+eps*db)-p(state-eps*dz, beta-eps*db))/(2*eps)
+        rel = float(torch.linalg.vector_norm(fd-j)/torch.linalg.vector_norm(j))
+&gt;       assert rel &lt; (3e-3 if p.M.dtype == torch.float32 else 2e-7)
+E       assert 0.0036062225699424744 &lt; 0.003
+
+tests\test_physics_v2.py:49: AssertionError</failure></testcase><testcase classname="tests.test_physics_v2" name="test_jvp_vjp_and_finite_difference_off_knots[physics0-cuda]" time="0.274"><failure message="assert 0.003383975476026535 &lt; 0.003">physics = SpectralPhysics(
+  (op): CodedOperator()
+), device = 'cuda'
+
+    @pytest.mark.parametrize("device", DEVICES)
+    def test_jvp_vjp_and_finite_difference_off_knots(physics, device):
+        p = physics.to(device)
+        gen = torch.Generator(device=device).manual_seed(452)
+        state = torch.zeros(1, 5, 64, 64, dtype=p.M.dtype, device=device)
+        state[:, 0] = -.1977  # 2802.3 K, away from 5 K LUT knots
+        state[:, 1] = np.log(.6)
+        state[:, 4] = 1.
+        beta = torch.tensor([[.45, .06, -.04]], dtype=p.M.dtype, device=device)
+        dz = torch.randn(state.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        db = torch.randn(beta.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        r = torch.randn((1, 64, 64), generator=gen, device=device, dtype=p.M.dtype)
+        j = p.jvp(state, beta, dz, db)
+        gz, gb = p.vjp(state, beta, r)
+        a, b = (j*r).sum(), (gz*dz).sum()+(gb*db).sum()
+        tol = 3e-5 if p.M.dtype == torch.float32 else 2e-12
+        assert float(abs(a-b)/(abs(a)+abs(b))) &lt; tol
+        eps = .01 if p.M.dtype == torch.float32 else 1e-5
+        fd = (p(state+eps*dz, beta+eps*db)-p(state-eps*dz, beta-eps*db))/(2*eps)
+        rel = float(torch.linalg.vector_norm(fd-j)/torch.linalg.vector_norm(j))
+&gt;       assert rel &lt; (3e-3 if p.M.dtype == torch.float32 else 2e-7)
+E       assert 0.003383975476026535 &lt; 0.003
+
+tests\test_physics_v2.py:49: AssertionError</failure></testcase><testcase classname="tests.test_physics_v2" name="test_jvp_vjp_and_finite_difference_off_knots[physics1-cpu]" time="0.027" /><testcase classname="tests.test_physics_v2" name="test_jvp_vjp_and_finite_difference_off_knots[physics1-cuda]" time="0.080" /><testcase classname="tests.test_physics_v2" name="test_noiseless_decoder_target_is_post_object_blur[physics0]" time="0.009" /><testcase classname="tests.test_physics_v2" name="test_noiseless_decoder_target_is_post_object_blur[physics1]" time="0.011" /><testcase classname="tests.test_physics_v2" name="test_G_700nm_multiplier_changes_observed_not_latent[physics0]" time="0.018" /><testcase classname="tests.test_physics_v2" name="test_G_700nm_multiplier_changes_observed_not_latent[physics1]" time="0.011" /><testcase classname="tests.test_physics_v2" name="test_exposure_half_counts_and_noise_variances[physics0]" time="0.022" /><testcase classname="tests.test_physics_v2" name="test_exposure_half_counts_and_noise_variances[physics1]" time="0.024" /><testcase classname="tests.test_physics_v2" name="test_empirical_poisson_and_read_noise_exposure" time="0.013" /><testcase classname="tests.test_physics_v2" name="test_ADC_and_full_well_units[physics0]" time="0.007" /><testcase classname="tests.test_physics_v2" name="test_ADC_and_full_well_units[physics1]" time="0.008" /></testsuite></testsuites>

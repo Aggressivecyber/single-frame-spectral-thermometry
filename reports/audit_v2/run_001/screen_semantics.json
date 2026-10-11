@@ -1,0 +1,1898 @@
+{
+  "B0_constant_train": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": true,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": 141.3063319004873,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 46.69133051606001,
+          "median": 47.69040743429309,
+          "P90": 64.0144664180016,
+          "max": 69.07017474938002
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 128.58051676253106,
+          "median": 101.53246680882474,
+          "P90": 232.48746783583175,
+          "max": 251.36026922140445
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": 141.3063319004873,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 10.0052851158144,
+          "median": 10.219373289077488,
+          "P90": 13.71738483374882,
+          "max": 14.800751516494884
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 128.58051676253106,
+          "median": 101.53246680882474,
+          "P90": 232.48746783583175,
+          "max": 251.36026922140445
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 141.3063319004873,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 128.58051676253106,
+          "median": 101.53246680882474,
+          "P90": 232.48746783583175,
+          "max": 251.36026922140445
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 141.3063319004873,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 128.58051676253106,
+          "median": 101.53246680882474,
+          "P90": 232.48746783583175,
+          "max": 251.36026922140445
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B0_mean_field_train": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": true,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": 142.8114961742877,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 46.69133051606001,
+          "median": 47.69040743429309,
+          "P90": 64.0144664180016,
+          "max": 69.07017474938002
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 127.22928100756411,
+          "median": 108.24557664150412,
+          "P90": 238.0488350637075,
+          "max": 259.0471276828426
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": 142.8114961742877,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 10.0052851158144,
+          "median": 10.219373289077488,
+          "P90": 13.71738483374882,
+          "max": 14.800751516494884
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 127.22928100756411,
+          "median": 108.24557664150412,
+          "P90": 238.0488350637075,
+          "max": 259.0471276828426
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 142.8114961742877,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 127.22928100756411,
+          "median": 108.24557664150412,
+          "P90": 238.0488350637075,
+          "max": 259.0471276828426
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 142.8114961742877,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 127.22928100756411,
+          "median": 108.24557664150412,
+          "P90": 238.0488350637075,
+          "max": 259.0471276828426
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "Z0_zero_template": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": true,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": null,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 46.69133051606001,
+          "median": 47.69040743429309,
+          "P90": 64.0144664180016,
+          "max": 69.07017474938002
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.0,
+        "pooled_signed_integral_bias": -1.0,
+        "pooled_temperature_RMSE_K": null,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 10.0052851158144,
+          "median": 10.219373289077488,
+          "P90": 13.71738483374882,
+          "max": 14.800751516494884
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0,
+          "median": 1.0,
+          "P90": 1.0,
+          "max": 1.0
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": null,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": null,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "P90": 0.0,
+          "max": 0.0
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B1_demod_fit": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": false,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.3506856219411296,
+        "pooled_signed_integral_bias": -0.15634419312519388,
+        "pooled_temperature_RMSE_K": 54.87242060577452,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.6049317255471867,
+          "median": 1.269464639451226,
+          "P90": 3.0300824451601605,
+          "max": 3.256894507826964
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 65.52169110121055,
+          "median": 64.89397206064433,
+          "P90": 71.68204333412112,
+          "max": 76.0276904148662
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 46.19799699204469,
+          "median": 33.74795762967965,
+          "P90": 103.93475898686603,
+          "max": 113.06101223347156
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.21477787699161863,
+          "median": 0.10573544301618357,
+          "P90": 0.509323226655002,
+          "max": 1.008276521400441
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.9166666666666666,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 6.29610014199847,
+        "pooled_signed_integral_bias": -0.7384545993508435,
+        "pooled_temperature_RMSE_K": 54.841083234393466,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 7.479905449371529,
+          "median": 5.904583534105125,
+          "P90": 14.100585888390164,
+          "max": 15.18495976091593
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 65.44642727508402,
+          "median": 64.69956646375485,
+          "P90": 71.88805169611989,
+          "max": 75.82182285148684
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 46.15649219691838,
+          "median": 33.67613836408351,
+          "P90": 103.91066954251191,
+          "max": 113.03734155174487
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0114286038242868,
+          "median": 0.4770865122934111,
+          "P90": 2.439570885446642,
+          "max": 4.781711837083824
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 54.838374354749455,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 65.44553854396402,
+          "median": 64.64893306464765,
+          "P90": 71.70380831268973,
+          "max": 76.01081333517905
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 46.15694574439894,
+          "median": 33.68945334957574,
+          "P90": 103.91412889406342,
+          "max": 113.0071904812917
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.014203389485677084,
+          "median": 0.00997161865234375,
+          "P90": 0.0245758056640625,
+          "max": 0.0261077880859375
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.15667597452799478,
+          "median": 0.15755462646484375,
+          "P90": 0.19430389404296874,
+          "max": 0.1972808837890625
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 54.85582403706229,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 65.59187652502247,
+          "median": 65.03854469318229,
+          "P90": 72.16536344359076,
+          "max": 75.87893697539175
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 46.189445555312254,
+          "median": 33.71953129626627,
+          "P90": 103.92759243554157,
+          "max": 112.96698611905143
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.014378865559895834,
+          "median": 0.01044464111328125,
+          "P90": 0.02490081787109375,
+          "max": 0.02685546875
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.15734736124674478,
+          "median": 0.15921783447265625,
+          "P90": 0.193634033203125,
+          "max": 0.1989593505859375
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B2_six_stage_no_CNN": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": false,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 0.941365407936771,
+        "pooled_signed_integral_bias": 0.09280395759416707,
+        "pooled_temperature_RMSE_K": 48.00628573328569,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 0.9535432229230981,
+          "median": 1.0593108702130676,
+          "P90": 1.383930660108349,
+          "max": 1.4246075780201686
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 41.77555255831475,
+          "median": 35.27004089521761,
+          "P90": 63.58715268191746,
+          "max": 78.41777803777562
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 33.588831021369046,
+          "median": 14.356893898712581,
+          "P90": 99.89824099206301,
+          "max": 107.35561820374556
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.13663049659017848,
+          "median": 0.14109873060667116,
+          "P90": 0.2413859117884758,
+          "max": 0.3608459957101402
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.25,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 4.378470356671502,
+        "pooled_signed_integral_bias": 0.4286337309029509,
+        "pooled_temperature_RMSE_K": 48.06329198591145,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 4.439726493645167,
+          "median": 4.904542295600398,
+          "P90": 6.451693727455075,
+          "max": 6.6176508917893315
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 41.673188186397375,
+          "median": 35.22523067056455,
+          "P90": 63.3935681755487,
+          "max": 78.3126877425729
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 33.651649885362986,
+          "median": 14.32115897935294,
+          "P90": 99.94824312064911,
+          "max": 107.35691948882389
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.636096864168742,
+          "median": 0.6439858512764934,
+          "P90": 1.1375597354940903,
+          "max": 1.6668057713188777
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 48.03927189278591,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 41.78743221938503,
+          "median": 35.268081767764485,
+          "P90": 63.40471612922974,
+          "max": 78.28682237579929
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 33.62519475377585,
+          "median": 14.287080380737045,
+          "P90": 99.93653469099297,
+          "max": 107.30905870132817
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.01052093505859375,
+          "median": 0.0,
+          "P90": 0.031646728515625,
+          "max": 0.0506134033203125
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0817108154296875,
+          "median": 0.05617523193359375,
+          "P90": 0.19836425781250003,
+          "max": 0.249053955078125
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 48.01938058572801,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 50.622419065195224,
+          "median": 48.201845947023884,
+          "P90": 64.82033281715113,
+          "max": 79.45220153594057
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 33.61825190848203,
+          "median": 14.158253894011187,
+          "P90": 99.94877823940888,
+          "max": 107.17757150156565
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.009980519612630209,
+          "median": 0.0036163330078125,
+          "P90": 0.026863098144531253,
+          "max": 0.0348968505859375
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.12672932942708334,
+          "median": 0.1066741943359375,
+          "P90": 0.20286865234375,
+          "max": 0.279754638671875
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B3_physics_iterated": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": false,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 0.9346083252605231,
+        "pooled_signed_integral_bias": 0.13489281533028671,
+        "pooled_temperature_RMSE_K": 47.31963595608093,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 0.9982496859095299,
+          "median": 0.9245405553140059,
+          "P90": 1.6427401174666976,
+          "max": 1.6813474598037543
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 42.753628494058866,
+          "median": 38.25715200557943,
+          "P90": 64.47316996573176,
+          "max": 80.44289859832999
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.844767069562,
+          "median": 13.987921951482477,
+          "P90": 98.8727710716689,
+          "max": 106.43542909984427
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.16368559866402968,
+          "median": 0.15335752560829927,
+          "P90": 0.33486868606439374,
+          "max": 0.3629504545626194
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.25,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 4.355443061091383,
+        "pooled_signed_integral_bias": 0.6173017644234291,
+        "pooled_temperature_RMSE_K": 47.35541438681348,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 4.652619194939564,
+          "median": 4.311065314547056,
+          "P90": 7.65778628361434,
+          "max": 7.840232492815759
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 42.69675541319393,
+          "median": 38.236515473529124,
+          "P90": 64.37481827361383,
+          "max": 80.39132614978985
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.879985173088414,
+          "median": 13.945461279214014,
+          "P90": 98.94620907582954,
+          "max": 106.4492951465558
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.7521619337494071,
+          "median": 0.7199649693712071,
+          "P90": 1.4964258336037346,
+          "max": 1.6783151880250442
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 47.29842796697824,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 42.6664345837164,
+          "median": 38.16087640924473,
+          "P90": 64.2559112819506,
+          "max": 80.34497682760518
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.82178915796644,
+          "median": 13.919290200487008,
+          "P90": 98.87969912894046,
+          "max": 106.41075415278152
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.00972747802734375,
+          "median": 0.0009002685546875,
+          "P90": 0.026919555664062508,
+          "max": 0.070465087890625
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.09451039632161458,
+          "median": 0.07279205322265625,
+          "P90": 0.20577392578125003,
+          "max": 0.258758544921875
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 47.32969649259679,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 50.56514258147479,
+          "median": 46.81442234724767,
+          "P90": 65.48123857900552,
+          "max": 81.43685895708373
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.881861583660374,
+          "median": 13.85389128284189,
+          "P90": 98.90022247494586,
+          "max": 106.33367474120557
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.011292775472005209,
+          "median": 0.00315093994140625,
+          "P90": 0.023873901367187502,
+          "max": 0.0559234619140625
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.13044611612955728,
+          "median": 0.10013580322265625,
+          "P90": 0.21545562744140626,
+          "max": 0.28448486328125
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B4_published": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": false,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 0.513356528671802,
+        "pooled_signed_integral_bias": 0.03837289406745723,
+        "pooled_temperature_RMSE_K": 48.848204644808106,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 0.5027687957881714,
+          "median": 0.5459014826006954,
+          "P90": 0.6584445433851496,
+          "max": 0.9611661141153234
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 22.619808114022565,
+          "median": 18.48756661182889,
+          "P90": 38.21097943864307,
+          "max": 42.97979072134721
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.48311746699809,
+          "median": 12.65725975613065,
+          "P90": 103.75057126617962,
+          "max": 112.53664807573908
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.12192860126987938,
+          "median": 0.07443050570058385,
+          "P90": 0.24073882287872947,
+          "max": 0.37553727846701984
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.3333333333333333,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 1.8630168451010212,
+        "pooled_signed_integral_bias": 0.7365945642013656,
+        "pooled_temperature_RMSE_K": 48.80505181329576,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 1.7645111447379318,
+          "median": 1.9374664582442702,
+          "P90": 2.360100257499155,
+          "max": 3.755807256895462
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 17.05329166027204,
+          "median": 12.68093223368281,
+          "P90": 31.852792033686033,
+          "max": 32.88246259222675
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.106184913520856,
+          "median": 12.242170502801397,
+          "P90": 104.18471669201134,
+          "max": 112.67904368372659
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.9371530014217596,
+          "median": 0.742138826990685,
+          "P90": 2.1801155127600214,
+          "max": 2.4079986919339937
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 48.89790052835782,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 16.043141093600507,
+          "median": 11.823275845224192,
+          "P90": 30.076090315848184,
+          "max": 30.63369085985125
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.083513422023074,
+          "median": 12.105658306369826,
+          "P90": 104.60407641752903,
+          "max": 112.88941485456634
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.009400685628255209,
+          "median": 0.0,
+          "P90": 0.031182861328125002,
+          "max": 0.0445709228515625
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.019644419352213543,
+          "median": 0.00124359130859375,
+          "P90": 0.058444213867187504,
+          "max": 0.07574462890625
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 49.07375419106326,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 21.02946895265005,
+          "median": 18.286981424169568,
+          "P90": 28.67789438353566,
+          "max": 30.810711701731044
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 32.20913226842962,
+          "median": 12.124596296660876,
+          "P90": 105.37399208670074,
+          "max": 113.05981562037222
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.010395050048828125,
+          "median": 0.002960205078125,
+          "P90": 0.0235595703125,
+          "max": 0.037017822265625
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.03128814697265625,
+          "median": 0.0212860107421875,
+          "P90": 0.06295928955078126,
+          "max": 0.0661773681640625
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      }
+    }
+  },
+  "B1_tikhonov": {
+    "screens": {
+      "numerical_execution_passed": true,
+      "nominal_screen_passed": false,
+      "weak_signal_screen_passed": false,
+      "null_screen_passed": false,
+      "robustness_screen_passed": false
+    },
+    "status": "failed",
+    "required": [
+      "numerical_execution_passed",
+      "nominal_screen_passed",
+      "weak_signal_screen_passed",
+      "null_screen_passed",
+      "robustness_screen_passed"
+    ],
+    "all_required_screens_passed": false,
+    "scope": "preregistered legacy internal engineering screens; no scientific/hardware acceptance",
+    "grouped": {
+      "signal_nominal": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 0.6286470598331193,
+        "pooled_signed_integral_bias": -0.1611346322573506,
+        "pooled_temperature_RMSE_K": 46.685305558150034,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 0.7399421966039132,
+          "median": 0.5871290406287653,
+          "P90": 1.3791324707464778,
+          "max": 1.458212695878563
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 30.39793048240028,
+          "median": 30.379600886187998,
+          "P90": 34.86087788709904,
+          "max": 38.191624388674875
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 31.38214230635256,
+          "median": 15.192704995219424,
+          "P90": 99.40926461126949,
+          "max": 108.91332467520911
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 0.2157914145005685,
+          "median": 0.112253147966142,
+          "P90": 0.5096094267223592,
+          "max": 1.011449932064179
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 1.0,
+        "blank_frame_false_positive_rate": null
+      },
+      "signal_weak": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": 2.927580718855399,
+        "pooled_signed_integral_bias": -0.7608024552910277,
+        "pooled_temperature_RMSE_K": 46.680191864057974,
+        "per_case_L2": {
+          "n": 12,
+          "mean": 3.4398772333628798,
+          "median": 2.7535640839579854,
+          "P90": 6.40011939914434,
+          "max": 6.711254535870617
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 30.324270885023186,
+          "median": 30.214742354611783,
+          "P90": 34.73427467294445,
+          "max": 38.50248233394895
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 31.37207258571122,
+          "median": 15.204762181803357,
+          "P90": 99.39688147328788,
+          "max": 108.91596832355222
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 12,
+          "mean": 1.0161745856660906,
+          "median": 0.5075735808518534,
+          "P90": 2.4408998818880185,
+          "max": 4.796423009014987
+        },
+        "per_case_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_historical60_null_FP": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "frame_detection_rate": 0.16666666666666666,
+        "blank_frame_false_positive_rate": null
+      },
+      "null_clean": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 46.6707333419732,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 30.312815789287498,
+          "median": 30.195550862317056,
+          "P90": 34.84218576432064,
+          "max": 38.368629893589
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 31.36163003929755,
+          "median": 15.198137672193536,
+          "P90": 99.39221042219235,
+          "max": 108.8843330252418
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.014951070149739584,
+          "median": 0.0110931396484375,
+          "P90": 0.028253173828125002,
+          "max": 0.029388427734375
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.0166015625,
+          "median": 0.01253509521484375,
+          "P90": 0.0306610107421875,
+          "max": 0.031982421875
+        },
+        "frame_detection_rate": 0.0,
+        "blank_frame_false_positive_rate": 0.0
+      },
+      "null_structured_background": {
+        "metric_schema": "spectral-thermometry-evaluation-v2.2",
+        "cases": 12,
+        "complete": true,
+        "successful_cases": 12,
+        "failure_fraction": 0.0,
+        "pooled_template_L2": null,
+        "pooled_signed_integral_bias": null,
+        "pooled_temperature_RMSE_K": 46.66891405011875,
+        "per_case_L2": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_template_RMSE_e": {
+          "n": 12,
+          "mean": 30.40090001225215,
+          "median": 30.360667534539434,
+          "P90": 34.76090570754783,
+          "max": 38.75112635115886
+        },
+        "per_case_temperature_RMSE_K": {
+          "n": 12,
+          "mean": 31.395940515956166,
+          "median": 15.241710758900648,
+          "P90": 99.39032753029859,
+          "max": 108.80548275340728
+        },
+        "per_case_absolute_integral_bias": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "P90": null,
+          "max": null
+        },
+        "per_case_null_FP": {
+          "n": 12,
+          "mean": 0.015009562174479166,
+          "median": 0.0114593505859375,
+          "P90": 0.0278656005859375,
+          "max": 0.0306396484375
+        },
+        "per_case_historical60_null_FP": {
+          "n": 12,
+          "mean": 0.016649881998697918,
+          "median": 0.012939453125,
+          "P90": 0.03034820556640625,
+          "max": 0.0333099365234375
+        },
+        "frame_detection_rate": 0.08333333333333333,
+        "blank_frame_false_positive_rate": 0.08333333333333333
+      }
+    }
+  }
+}

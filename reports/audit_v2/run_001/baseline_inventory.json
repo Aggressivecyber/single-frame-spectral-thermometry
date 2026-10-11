@@ -1,0 +1,245 @@
+{
+  "utc": "2026-10-11T17:53:05.397841+00:00",
+  "original_HEAD": "484b9a38423e4d9e789e5514b42c5fdc5f77635a",
+  "initial_dirty_diff": "",
+  "fingerprints": {
+    "checkpoint_sha256": "d777888c53b086118128a824da007e1cba471f185ad9f8a973eb68c5edb434f1",
+    "CNN_parameters_sha256": "21f99a456da87ff025837d7ab06e90ee932f8f607b2a68ebf75018eb0120ffd6",
+    "physics_buffers_sha256": "0bb86530209b94b97d174f1dc1e11c9cf9dd3325efd8fe9d6f5a2549e80460d2",
+    "all_buffers_sha256": "51be3f24ac4e6514fb84d540c19d324694087349518e33b719f16b5f54eb1ad8",
+    "complete_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+    "config": {
+      "schema": "parameter-unfold-v004",
+      "shape": [
+        256,
+        256
+      ],
+      "exposure_s": 2e-05,
+      "centers_nm": [
+        430,
+        450,
+        486,
+        513,
+        535,
+        700,
+        905
+      ],
+      "widths_nm": [
+        10,
+        10,
+        6,
+        10,
+        10,
+        10,
+        10
+      ],
+      "quantum_efficiencies": [
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.5,
+        0.5
+      ],
+      "temperature_range_K": [
+        1200,
+        4500
+      ],
+      "temperature_lut_step_K": 5,
+      "reference_temperature_K": 3300,
+      "reference_905_e": 24000,
+      "carrier_bins_xy": [
+        [
+          51,
+          0
+        ],
+        [
+          0,
+          51
+        ],
+        [
+          51,
+          51
+        ],
+        [
+          -51,
+          51
+        ],
+        [
+          102,
+          0
+        ],
+        [
+          0,
+          102
+        ],
+        [
+          102,
+          51
+        ]
+      ],
+      "modulation_depth": [
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "channel_gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "phase_rad": [
+        0.3,
+        -0.4,
+        0.2,
+        -0.1,
+        0.1,
+        -0.2,
+        0.35
+      ],
+      "object_cutoff_cpp": 0.075,
+      "decode_cutoff_cpp": 0.08,
+      "relay_psf_sigma_px": 0.35,
+      "read_noise_e": 3,
+      "full_well_e": 60000,
+      "adc_bits": 12,
+      "black_level_DN": 128,
+      "species_names": [
+        "CH",
+        "C2",
+        "AlO"
+      ],
+      "active_species": [
+        false,
+        false,
+        true
+      ],
+      "species_scale_e": 60,
+      "background_scale_e": 100,
+      "temperature_center_K": 3000,
+      "temperature_scale_K": 1000,
+      "template_response": [
+        [
+          1.0,
+          0.03,
+          0.08
+        ],
+        [
+          0.02,
+          0.05,
+          0.35
+        ],
+        [
+          0.01,
+          0.04,
+          1.0
+        ],
+        [
+          0.01,
+          1.0,
+          0.75
+        ],
+        [
+          0.01,
+          0.05,
+          0.22
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "background_response": [
+        0.9,
+        1.0,
+        0.9,
+        0.85,
+        0.82,
+        0,
+        0
+      ],
+      "response_provenance": {
+        "kind": "synthetic_engineering_fixture",
+        "matrix_is_measured": false,
+        "matrix_is_derived_from_real_line_list": false,
+        "QE_is_measured": false,
+        "filter_response_is_measured": false,
+        "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+      },
+      "steps": 6,
+      "CNN_width": 16,
+      "CG_steps_per_spectral_block": 4,
+      "GN_damping": 0.001,
+      "parameter_correction_bounds": [
+        0.025,
+        0.05,
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe",
+  "torch": "2.12.0+cu130",
+  "CUDA_build": "13.0",
+  "CUDA_available": true,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "GPU_total_memory_MiB": 8187.5,
+  "sources": {
+    "audit_next.py": "976f0fe90e3ef00ab0113ee9b99d52c1b16ae954b0238ebdd5b1d49ff2608ce8",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "evaluation_v2/__init__.py": "f050cfb95502472c984468822b4146d9827adfa042704110ca4f0c974ec59fde",
+    "evaluation_v2/audit.py": "113f2d80bf2c6973a5b5374513f21508700a98120ac67af601b072559fb77ce7",
+    "evaluation_v2/common.py": "6681412a7cb6e8262b1957160ae33fe46575590778dd439845c487c914513b33",
+    "evaluation_v2/fixtures.py": "c372400dfb9f7c94d2ebe799be4e30bf2b7209a2a03ca3602dd662223862e9b7",
+    "evaluation_v2/methods.py": "34bc9a5fcc77ebf2f48ff6cfa17dc4cf404a52d1505dab5d30f3ae0de29cae0b",
+    "evaluation_v2/metrics.py": "e5e5821265e676f845d4576b9e42bca02c433bf073bb3290ec52b9f35167e14b",
+    "evaluation_v2/physics_v2.py": "2468992f85c284259897a0b44f45dc1e95ef12c5d5a85a6c891ab954c038123b",
+    "evaluation_v2/protocol.py": "2da494041fc058cc05cc0bcb45d22d41361b1f8829b8b629653c731c5bfab74a",
+    "evaluation_v2/report.py": "b8a17d0f15fff2475c23dac413a5f083e6898fe255035b0fa47d6bff6470ade2",
+    "infer.py": "5160c36e11081c1a93c16ae2ea0a035d3ea9223195177c1d60798d2a9be5bdc6",
+    "network.py": "6ab4d8629219567dbe5826e43f512aac2343f63a00064db27c6b85facb7762e8",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "prepare_real_shapes.py": "0da40f7ed8fc124398ac03b6db6e575bdd60a3497a035f03c3c5c0301c380aa9",
+    "real_shape_test.py": "788dde54d5ac86c5c65c9890f7025da0d3931bc3a137fc6c32008070e2c17b2c",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "scenario_suite.py": "3ee21a70a61b8b6099832d8b3f76bce28178125db708f7b8b370d2c7df06c11d",
+    "scenes.py": "732f5bbb35f00dac82ad20c13a84bd5db5588aedafe9fc47dd2dffeef03dc4cc",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c"
+  },
+  "protocol_sha256": "61e17a628c30ef281ec87fecc0c6d09e4c8475b82c81320906c6f74ae49d32e7",
+  "unprovided_optional_attachments": [
+    "metric_logic_checks.py",
+    "physics_sensitivity_checks.py"
+  ],
+  "all_original_tracked_files_unchanged": true,
+  "tests": {
+    "passed": true,
+    "tests": 36,
+    "xml_sha256": "273a77d6efef30a779202308ac09d9fad9f91b45b449d102f0460b35e21d9272",
+    "tested_source_sha256": {
+      "tests/test_metrics_v2.py": "a4c449afe456483ff2a4df428143cf079e69c2c58c93117d78b85f457d821a6f",
+      "tests/test_physics_v2.py": "ac72d41a5548cf30f601c4583d5178a3be13d952f3630cc8e07d392acfefb196",
+      "tests/test_methods_v2.py": "9e3c73cf0a6866a949f457ad24cf7cc88a5793dac6ea15afc5d832131062bef5",
+      "evaluation_v2/metrics.py": "e5e5821265e676f845d4576b9e42bca02c433bf073bb3290ec52b9f35167e14b",
+      "evaluation_v2/physics_v2.py": "2468992f85c284259897a0b44f45dc1e95ef12c5d5a85a6c891ab954c038123b"
+    }
+  }
+}

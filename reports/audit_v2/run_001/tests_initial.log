@@ -1,0 +1,66 @@
+....................FF...........                                        [100%]
+================================== FAILURES ===================================
+_________ test_jvp_vjp_and_finite_difference_off_knots[physics0-cpu] __________
+
+physics = SpectralPhysics(
+  (op): CodedOperator()
+), device = 'cpu'
+
+    @pytest.mark.parametrize("device", DEVICES)
+    def test_jvp_vjp_and_finite_difference_off_knots(physics, device):
+        p = physics.to(device)
+        gen = torch.Generator(device=device).manual_seed(452)
+        state = torch.zeros(1, 5, 64, 64, dtype=p.M.dtype, device=device)
+        state[:, 0] = -.1977  # 2802.3 K, away from 5 K LUT knots
+        state[:, 1] = np.log(.6)
+        state[:, 4] = 1.
+        beta = torch.tensor([[.45, .06, -.04]], dtype=p.M.dtype, device=device)
+        dz = torch.randn(state.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        db = torch.randn(beta.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        r = torch.randn((1, 64, 64), generator=gen, device=device, dtype=p.M.dtype)
+        j = p.jvp(state, beta, dz, db)
+        gz, gb = p.vjp(state, beta, r)
+        a, b = (j*r).sum(), (gz*dz).sum()+(gb*db).sum()
+        tol = 3e-5 if p.M.dtype == torch.float32 else 2e-12
+        assert float(abs(a-b)/(abs(a)+abs(b))) < tol
+        eps = .01 if p.M.dtype == torch.float32 else 1e-5
+        fd = (p(state+eps*dz, beta+eps*db)-p(state-eps*dz, beta-eps*db))/(2*eps)
+        rel = float(torch.linalg.vector_norm(fd-j)/torch.linalg.vector_norm(j))
+>       assert rel < (3e-3 if p.M.dtype == torch.float32 else 2e-7)
+E       assert 0.0036062225699424744 < 0.003
+
+tests\test_physics_v2.py:49: AssertionError
+_________ test_jvp_vjp_and_finite_difference_off_knots[physics0-cuda] _________
+
+physics = SpectralPhysics(
+  (op): CodedOperator()
+), device = 'cuda'
+
+    @pytest.mark.parametrize("device", DEVICES)
+    def test_jvp_vjp_and_finite_difference_off_knots(physics, device):
+        p = physics.to(device)
+        gen = torch.Generator(device=device).manual_seed(452)
+        state = torch.zeros(1, 5, 64, 64, dtype=p.M.dtype, device=device)
+        state[:, 0] = -.1977  # 2802.3 K, away from 5 K LUT knots
+        state[:, 1] = np.log(.6)
+        state[:, 4] = 1.
+        beta = torch.tensor([[.45, .06, -.04]], dtype=p.M.dtype, device=device)
+        dz = torch.randn(state.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        db = torch.randn(beta.shape, generator=gen, device=device, dtype=p.M.dtype)*.02
+        r = torch.randn((1, 64, 64), generator=gen, device=device, dtype=p.M.dtype)
+        j = p.jvp(state, beta, dz, db)
+        gz, gb = p.vjp(state, beta, r)
+        a, b = (j*r).sum(), (gz*dz).sum()+(gb*db).sum()
+        tol = 3e-5 if p.M.dtype == torch.float32 else 2e-12
+        assert float(abs(a-b)/(abs(a)+abs(b))) < tol
+        eps = .01 if p.M.dtype == torch.float32 else 1e-5
+        fd = (p(state+eps*dz, beta+eps*db)-p(state-eps*dz, beta-eps*db))/(2*eps)
+        rel = float(torch.linalg.vector_norm(fd-j)/torch.linalg.vector_norm(j))
+>       assert rel < (3e-3 if p.M.dtype == torch.float32 else 2e-7)
+E       assert 0.003383975476026535 < 0.003
+
+tests\test_physics_v2.py:49: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_physics_v2.py::test_jvp_vjp_and_finite_difference_off_knots[physics0-cpu]
+FAILED tests/test_physics_v2.py::test_jvp_vjp_and_finite_difference_off_knots[physics0-cuda]
+2 failed, 31 passed in 5.29s

@@ -1,0 +1,123 @@
+{
+  "frozen_manifest_sha256": "2d3052595cb9f45887578a2ed703560f76532bed347c5502f6db2c72122f230e",
+  "validation_parent_ids": [
+    "channel_gain_3pct_parent100",
+    "channel_gain_3pct_parent101",
+    "multiple_peaks_parent100",
+    "multiple_peaks_parent101",
+    "nominal_blob_parent100",
+    "nominal_blob_parent101",
+    "non_gray_continuum_parent100",
+    "non_gray_continuum_parent101",
+    "temperature_front_parent100",
+    "temperature_front_parent101",
+    "thin_filament_parent100",
+    "thin_filament_parent101"
+  ],
+  "validation_null_frames": 24,
+  "detectors": {
+    "B0_constant_train": {
+      "pixel_threshold_e": 0.0,
+      "frame_threshold_e": 0.0,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B0_mean_field_train": {
+      "pixel_threshold_e": 0.0,
+      "frame_threshold_e": 0.0,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "Z0_zero_template": {
+      "pixel_threshold_e": 0.0,
+      "frame_threshold_e": 0.0,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B1_demod_fit": {
+      "pixel_threshold_e": 142.41562210083,
+      "frame_threshold_e": 190.33482818603517,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B2_six_stage_no_CNN": {
+      "pixel_threshold_e": 149.94574066162085,
+      "frame_threshold_e": 227.82682266235352,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B3_physics_iterated": {
+      "pixel_threshold_e": 144.08542114257727,
+      "frame_threshold_e": 236.03250656127935,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B4_published": {
+      "pixel_threshold_e": 85.9517756652831,
+      "frame_threshold_e": 174.71188201904312,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    },
+    "B1_tikhonov": {
+      "pixel_threshold_e": 61.482383270263526,
+      "frame_threshold_e": 81.36072883605958,
+      "pixel_quantile": 0.99,
+      "frame_score": "full_FOV_signed_template_99th_percentile",
+      "comparison": "prediction strictly greater than threshold",
+      "validation_null_frames": 24,
+      "frame_threshold_rule": "maximum validation-null score, strict >",
+      "statistical_limit": "Small validation set; no certified 1% frame-FPR control"
+    }
+  },
+  "regularizer_validation_results": [
+    {
+      "strength": 0.0,
+      "validation_signal_mean_L2_squared": 24.565362970609712,
+      "validation_null_mean_RMSE60_squared": 1.0435590001620287,
+      "validation_loss": 25.60892197077174
+    },
+    {
+      "strength": 4.0,
+      "validation_signal_mean_L2_squared": 12.299439693591525,
+      "validation_null_mean_RMSE60_squared": 0.5230387722536234,
+      "validation_loss": 12.822478465845148
+    },
+    {
+      "strength": 16.0,
+      "validation_signal_mean_L2_squared": 5.0086385540255725,
+      "validation_null_mean_RMSE60_squared": 0.21548009287940206,
+      "validation_loss": 5.224118646904975
+    }
+  ],
+  "selected_regularization": 16.0,
+  "hyperparameters_selected_on_validation_only": true,
+  "test_truth_used": false
+}
