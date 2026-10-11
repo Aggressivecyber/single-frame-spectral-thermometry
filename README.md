@@ -53,7 +53,27 @@ The original 24-case synthetic test (8 signal, 8 clean null, 8 null with a +5% c
 | Valid coverage | 100% | ≥98% |
 | Saturated pixels | 0 | 0 |
 
-The spatial L2 screen is still failed. These thresholds are internal engineering screens, not scientific or hardware acceptance criteria. More extensive scenario tests will be recorded in `reports/` with unchanged weights and explicit acquisition perturbations.
+The spatial L2 screen is still failed. These thresholds are internal engineering screens, not scientific or hardware acceptance criteria. Expanded scenario tests are recorded in `reports/` with unchanged weights and explicit acquisition perturbations.
+
+## Expanded evaluation
+
+Only the published selected model is evaluated. No optimizer steps or contribution/ablation controls are used. Twenty registered synthetic families cover morphology, signal strength, cold/hot continuum, temperature fronts, saturation, background errors and acquisition calibration/noise mismatches:
+
+```bash
+python -B scenario_suite.py --device cuda --output outputs/expanded_001
+```
+
+A second suite uses 72 experimental CH*/OH* image shapes from three public acquisition datasets, in four constructed conditions each: nominal signal, weak signal, clean null and a structured background. Download the five original files listed by `prepare_real_shapes.py` from their attributed sources, then:
+
+```bash
+python -m pip install -r requirements-data.txt
+python -B prepare_real_shapes.py --data-root data --output outputs/real_shapes
+python -B real_shape_test.py --shapes outputs/real_shapes --device cuda --output outputs/real_shape_test
+```
+
+These are **experimental-image-derived simulations**. Native image morphology is real; continuum temperature, spectrum, coefficient scale, encoding and photon noise are constructed. Error is against the constructed post-blur target, not measured gas temperature or AlO. Different channel images are not treated as synchronized truth. See [DATA_ATTRIBUTION.md](DATA_ATTRIBUTION.md) for sources, transformations and image licenses.
+
+All frames are frozen and hashed before inference. Reports retain per-case errors, minimum coverage, null positives, saturation, nominal and weak-signal results, and example signed maps. The default GPU budget is 900 seconds per evaluation phase; CPU runs require an explicitly appropriate budget.
 
 ## Scope
 
