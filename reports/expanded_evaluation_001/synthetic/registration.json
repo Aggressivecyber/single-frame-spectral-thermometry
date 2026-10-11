@@ -1,0 +1,215 @@
+{
+  "schema": "expanded-synthetic-scenarios-v1",
+  "checkpoint_sha256": "d777888c53b086118128a824da007e1cba471f185ad9f8a973eb68c5edb434f1",
+  "families": [
+    {
+      "name": "original_blob",
+      "axis": "matched synthetic control",
+      "shape": "blob"
+    },
+    {
+      "name": "multiple_peaks",
+      "axis": "geometry transfer",
+      "shape": "multiple"
+    },
+    {
+      "name": "thin_filament",
+      "axis": "geometry transfer",
+      "shape": "filament"
+    },
+    {
+      "name": "annulus",
+      "axis": "geometry transfer",
+      "shape": "annulus"
+    },
+    {
+      "name": "fragmented",
+      "axis": "geometry transfer",
+      "shape": "fragmented"
+    },
+    {
+      "name": "near_periodic_edge",
+      "axis": "periodic boundary",
+      "shape": "edge"
+    },
+    {
+      "name": "weak_emission",
+      "axis": "signal intensity",
+      "peak_e": [
+        30.0,
+        60.0
+      ]
+    },
+    {
+      "name": "strong_emission",
+      "axis": "signal intensity",
+      "peak_e": [
+        600.0,
+        900.0
+      ]
+    },
+    {
+      "name": "cold_continuum",
+      "axis": "temperature transfer",
+      "base_temperature_K": 2400.0
+    },
+    {
+      "name": "hot_continuum",
+      "axis": "temperature transfer",
+      "base_temperature_K": 3300.0
+    },
+    {
+      "name": "temperature_front",
+      "axis": "temperature geometry",
+      "temperature_front": true
+    },
+    {
+      "name": "bright_saturated",
+      "axis": "saturation stress",
+      "base_temperature_K": 3600.0,
+      "amplitude": 1.15
+    },
+    {
+      "name": "background_minus_5pct",
+      "axis": "background mismatch",
+      "background_fraction": -0.05
+    },
+    {
+      "name": "background_plus_10pct",
+      "axis": "background mismatch",
+      "background_fraction": 0.1
+    },
+    {
+      "name": "channel_gain_1pct",
+      "axis": "calibration mismatch",
+      "gain_error": 0.01
+    },
+    {
+      "name": "channel_gain_3pct",
+      "axis": "calibration mismatch",
+      "gain_error": 0.03
+    },
+    {
+      "name": "carrier_phase_0p1rad",
+      "axis": "calibration mismatch",
+      "phase_error_rad": 0.1
+    },
+    {
+      "name": "optical_bandwidth_0p06",
+      "axis": "calibration mismatch",
+      "object_cutoff_cpp": 0.06
+    },
+    {
+      "name": "read_noise_30e",
+      "axis": "noise mismatch",
+      "read_noise_e": 30.0
+    },
+    {
+      "name": "non_gray_continuum",
+      "axis": "continuum model mismatch",
+      "continuum_multiplier": [
+        1.12,
+        1.1,
+        1.06,
+        1.03,
+        1.0,
+        0.97,
+        1.0
+      ]
+    }
+  ],
+  "conditions": [
+    "signal",
+    "null_clean",
+    "null_background"
+  ],
+  "replicates_per_condition_per_family": 8,
+  "seed": 621001,
+  "scene_id_base": 910000,
+  "frames": 480,
+  "optimizer_updates": 0,
+  "checkpoint_selection": "none; published weights fixed",
+  "models": [
+    "published_model"
+  ],
+  "thresholds": {
+    "temperature_RMSE_K_max": 75.0,
+    "relative_L2_max": 0.25,
+    "absolute_integral_bias_max": 0.1,
+    "null_FP_max": 0.01,
+    "background_null_FP_max": 0.01,
+    "coverage_min": 0.98,
+    "detection_threshold_e": 60.0
+  },
+  "max_wall_s": 900.0,
+  "max_GPU_allocated_MiB": 3500.0,
+  "max_host_RSS_MiB": 4096.0,
+  "representatives": {
+    "original_blob": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "multiple_peaks": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "thin_filament": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "fragmented": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "weak_emission": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "cold_continuum": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "hot_continuum": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "temperature_front": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "bright_saturated": {
+      "replicate": 0,
+      "condition": "signal"
+    },
+    "background_plus_10pct": {
+      "replicate": 0,
+      "condition": "null_background"
+    },
+    "channel_gain_3pct": {
+      "replicate": 0,
+      "condition": "null_clean"
+    },
+    "non_gray_continuum": {
+      "replicate": 0,
+      "condition": "null_clean"
+    }
+  },
+  "truth": "post-acquisition-object-blur effective continuum color temperature and signed template coefficient",
+  "calibration_policy": "perturb acquisition only; reconstruct with unchanged nominal checkpoint",
+  "noise_pairing": "same generator seed for three conditions within a replicate; Poisson draws depend on expectation",
+  "coverage_policy": "template error uses full image with invalid predictions filled by zero; temperature error is conditional on jointly valid pixels",
+  "scope": "synthetic single-template engineering scenarios; no independent measured spectra or hardware",
+  "registered_utc": "2026-10-11T16:53:27.470644+00:00",
+  "source_sha256": {
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "infer.py": "5160c36e11081c1a93c16ae2ea0a035d3ea9223195177c1d60798d2a9be5bdc6",
+    "network.py": "6ab4d8629219567dbe5826e43f512aac2343f63a00064db27c6b85facb7762e8",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "prepare_real_shapes.py": "0da40f7ed8fc124398ac03b6db6e575bdd60a3497a035f03c3c5c0301c380aa9",
+    "real_shape_test.py": "788dde54d5ac86c5c65c9890f7025da0d3931bc3a137fc6c32008070e2c17b2c",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "scenario_suite.py": "3ee21a70a61b8b6099832d8b3f76bce28178125db708f7b8b370d2c7df06c11d",
+    "scenes.py": "732f5bbb35f00dac82ad20c13a84bd5db5588aedafe9fc47dd2dffeef03dc4cc",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c"
+  }
+}

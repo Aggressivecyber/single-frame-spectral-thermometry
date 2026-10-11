@@ -1,0 +1,54 @@
+{
+  "schema": "real-image-shape-transfer-v1",
+  "registered_utc": "2026-10-11T16:54:30.461085+00:00",
+  "checkpoint_sha256": "d777888c53b086118128a824da007e1cba471f185ad9f8a973eb68c5edb434f1",
+  "models": [
+    "published_model"
+  ],
+  "optimizer_updates": 0,
+  "measured_shape_frames": 72,
+  "source_groups": 6,
+  "acquisition_datasets": 3,
+  "frames": 288,
+  "conditions": [
+    "signal_nominal",
+    "signal_weak",
+    "null_clean",
+    "null_structured_background"
+  ],
+  "nominal_template_peak_e": 210.0,
+  "weak_template_peak_e": 45.0,
+  "structured_background_peak_e": 100.0,
+  "seed": 622001,
+  "scene_id_base": 1200000,
+  "thresholds": {
+    "temperature_RMSE_K_max": 75.0,
+    "relative_L2_max": 0.25,
+    "absolute_integral_bias_max": 0.1,
+    "null_FP_max": 0.01,
+    "background_null_FP_max": 0.01,
+    "coverage_min": 0.98,
+    "detection_threshold_e": 60.0
+  },
+  "shape_manifest_sha256": "3aa2615b917c708da0b327d4f10609d4b218c20be0455ac21a66496dd8fd8856",
+  "source_sha256": {
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "infer.py": "5160c36e11081c1a93c16ae2ea0a035d3ea9223195177c1d60798d2a9be5bdc6",
+    "network.py": "6ab4d8629219567dbe5826e43f512aac2343f63a00064db27c6b85facb7762e8",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "prepare_real_shapes.py": "0da40f7ed8fc124398ac03b6db6e575bdd60a3497a035f03c3c5c0301c380aa9",
+    "real_shape_test.py": "788dde54d5ac86c5c65c9890f7025da0d3931bc3a137fc6c32008070e2c17b2c",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "scenario_suite.py": "3ee21a70a61b8b6099832d8b3f76bce28178125db708f7b8b370d2c7df06c11d",
+    "scenes.py": "732f5bbb35f00dac82ad20c13a84bd5db5588aedafe9fc47dd2dffeef03dc4cc",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c"
+  },
+  "max_wall_s": 900.0,
+  "max_GPU_allocated_MiB": 3500.0,
+  "max_host_RSS_MiB": 4096.0,
+  "representatives": "replicate 0 per source partition, nominal, weak and structured-background conditions",
+  "source_pairing": "constructed independent shape/background combinations; synchronization not established",
+  "measured": "image spatial shape/texture only; native source and processed hashes recorded",
+  "synthetic": "continuum temperature, photon scale, seven-band spectrum, AlO-named template response, spatial code and noise",
+  "scope": "experimental-image-derived simulation, not direct real seven-band measurement or real temperature/AlO accuracy"
+}

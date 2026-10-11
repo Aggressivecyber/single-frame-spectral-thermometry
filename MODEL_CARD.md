@@ -23,4 +23,6 @@ Original fresh test IDs were 7000–7007, with three conditions per ID. They fol
 
 Known limitations: sensitivity to unmodelled background and spectral response; limited spatial detail at the specified optical bandwidth; signed false positives on null scenes; periodic edges; fixed encoding/calibration; no independently measured input data; no physical throughput measurement. Later module experiments are not adopted in this release. Expanded scenario evaluation must keep this checkpoint fixed and disclose saturation, valid coverage and each perturbation separately.
 
+The completed expanded run used the same checkpoint for 480 synthetic stress frames and 288 experimental-image-derived simulations. Six source partitions supplied 72 observed CH/OH shapes. Normal-strength coefficient L2 was 27.6%–67.1%, weak-strength L2 51.8%–227.2%; all six normal-strength partitions failed the 25% spatial screen. Source images are measured, but the seven-band overlapping raw frames and temperature references are still constructed. Details and per-case rows are in `reports/expanded_evaluation_001/`; scientific acceptance remains unchanged.
+
 Code and weights are released under the MIT license. No private acquisition data is included.

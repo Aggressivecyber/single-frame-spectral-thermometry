@@ -4,6 +4,10 @@
 
 A small physics-unfolded neural reconstruction prototype for seven spatially overlapping spectral channels in one common-field sensor image. The published model has **5,797 trainable parameters** and **six shared stages**. Each stage applies a matrix-free damped Gauss–Newton update before and after a bounded CNN correction.
 
+**最新测试：**同一份权重完成 768 次推理。由 72 帧真实火焰图像形态构建的测试中，正常信号空间相对 L2 为 **27.6%–67.1%**，弱信号为 **51.8%–227.2%**。六组正常信号都未达到 25% 空间误差目标。真实部分是图像形态，编码测量与温度仍是模拟设定，当前不报告实测测温精度。
+
+完整结果：[中文报告](reports/expanded_evaluation_001/RESULTS_zh.md) / [English report](reports/expanded_evaluation_001/RESULTS.md)。Only this selected model was evaluated; weights stayed fixed and there were no contribution controls. Two of 20 synthetic stress families passed all internal screens.
+
 ## Run
 
 Use Python 3.10 or newer with PyTorch, NumPy and Matplotlib. Install a PyTorch build appropriate for your CPU or CUDA device, then:
@@ -69,6 +73,12 @@ A second suite uses 72 experimental CH*/OH* image shapes from three public acqui
 python -m pip install -r requirements-data.txt
 python -B prepare_real_shapes.py --data-root data --output outputs/real_shapes
 python -B real_shape_test.py --shapes outputs/real_shapes --device cuda --output outputs/real_shape_test
+```
+
+The exact processed shapes used in the recorded run are included, so they can be tested directly without redownloading the original archives:
+
+```bash
+python -B real_shape_test.py --shapes reports/expanded_evaluation_001/experimental_shapes --device cuda --output outputs/real_shape_replay
 ```
 
 These are **experimental-image-derived simulations**. Native image morphology is real; continuum temperature, spectrum, coefficient scale, encoding and photon noise are constructed. Error is against the constructed post-blur target, not measured gas temperature or AlO. Different channel images are not treated as synchronized truth. See [DATA_ATTRIBUTION.md](DATA_ATTRIBUTION.md) for sources, transformations and image licenses.
