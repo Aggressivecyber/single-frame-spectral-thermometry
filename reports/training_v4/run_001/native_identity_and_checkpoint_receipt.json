@@ -1,0 +1,75 @@
+{
+  "native_shape": [
+    256,
+    256
+  ],
+  "case_id": "v4_validation_mother_0000_blank_clean_identity",
+  "raw_hash": "e68470494c76fdf099322207f165bbf83321f39b78306c7f27d157f27d5516ba",
+  "cache_key": "269c56eb505bf82ea615db381c57e47a6ab5adc7cc372029da52dd7da4c379ce",
+  "zero_head_bitwise_identity": {
+    "state": true,
+    "beta": true,
+    "template_e": true,
+    "temperature_color_K": true,
+    "band_images_e": true,
+    "expected_e": true
+  },
+  "checkpoint_checks": [
+    {
+      "seed": 101,
+      "complete_training_updates": 2000,
+      "selected_checkpoint_update": 100,
+      "selected_passes_all_development_gates": true,
+      "selected_parameters_hash_verified": true,
+      "native_repeat_inference_max_errors": {
+        "template_e": 0.0,
+        "temperature_color_K": 0.0
+      },
+      "selected_actual_Adam_steps": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "final_actual_Adam_steps": [
+        2000,
+        2000,
+        2000,
+        2000,
+        2000,
+        2000,
+        2000,
+        2000
+      ],
+      "selected_export": "training_v4/checkpoints/seed_101_validation_selected.pt",
+      "selected_sha256": "1f0185ecfaf119d8d40f39e91175d0d2c6d599d1e877df2cce86d8fc2713cde3",
+      "final_export": "training_v4/checkpoints/seed_101_final_2000.pt",
+      "final_sha256": "b052aeefce20b43339afdba396aef13d67420b79e3723d197ca1260b7b3f149f"
+    }
+  ],
+  "truth_used_in_inference": false,
+  "original_calibrated_physics_buffers_equal": {
+    "temperatures": true,
+    "continuum_lut": true,
+    "color_ratio_lut": true,
+    "M": true,
+    "q": true,
+    "background_basis": true,
+    "active": true,
+    "op.patterns": true,
+    "op.object_otf": true,
+    "op.relay_otf": true,
+    "op.decode_window": true,
+    "op.decode_transfers": true,
+    "op.pattern_energy": true
+  },
+  "torch": "2.12.0+cu130",
+  "CUDA": "13.0",
+  "GPU": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "Python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "interpreter": "E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe"
+}

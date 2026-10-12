@@ -1,0 +1,410 @@
+{
+  "method": "old_init__joint_update_v3",
+  "solver_config": {
+    "warm_iterations": 30,
+    "outer_iterations": 12,
+    "cg_max_iterations": 120,
+    "cg_relative_tolerance": 0.0001,
+    "LM_initial": 0.001,
+    "LM_minimum": 1e-08,
+    "LM_maximum": 100000000.0,
+    "LM_trials": 6,
+    "acceptance_ratio_minimum": 0.05,
+    "line_search": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "regularization": [
+      1e-05,
+      1e-05,
+      0.0,
+      0.0,
+      0.1
+    ],
+    "warm_regularization": [
+      1e-06,
+      1e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "per_frame_wall_s": 180.0,
+    "max_GPU_allocated_MiB": 2500.0,
+    "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+    "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+    "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+  },
+  "physics_config": {
+    "schema": "parameter-unfold-v004",
+    "shape": [
+      256,
+      256
+    ],
+    "exposure_s": 2e-05,
+    "centers_nm": [
+      430,
+      450,
+      486,
+      513,
+      535,
+      700,
+      905
+    ],
+    "widths_nm": [
+      10,
+      10,
+      6,
+      10,
+      10,
+      10,
+      10
+    ],
+    "quantum_efficiencies": [
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.5,
+      0.5
+    ],
+    "temperature_range_K": [
+      1200,
+      4500
+    ],
+    "temperature_lut_step_K": 5,
+    "reference_temperature_K": 3300,
+    "reference_905_e": 24000,
+    "carrier_bins_xy": [
+      [
+        51,
+        0
+      ],
+      [
+        0,
+        51
+      ],
+      [
+        51,
+        51
+      ],
+      [
+        -51,
+        51
+      ],
+      [
+        102,
+        0
+      ],
+      [
+        0,
+        102
+      ],
+      [
+        102,
+        51
+      ]
+    ],
+    "modulation_depth": [
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85
+    ],
+    "channel_gain": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "phase_rad": [
+      0.3,
+      -0.4,
+      0.2,
+      -0.1,
+      0.1,
+      -0.2,
+      0.35
+    ],
+    "object_cutoff_cpp": 0.075,
+    "decode_cutoff_cpp": 0.08,
+    "relay_psf_sigma_px": 0.35,
+    "read_noise_e": 3,
+    "full_well_e": 60000,
+    "adc_bits": 12,
+    "black_level_DN": 128,
+    "species_names": [
+      "CH",
+      "C2",
+      "AlO"
+    ],
+    "active_species": [
+      false,
+      false,
+      true
+    ],
+    "species_scale_e": 60,
+    "background_scale_e": 100,
+    "temperature_center_K": 3000,
+    "temperature_scale_K": 1000,
+    "template_response": [
+      [
+        1.0,
+        0.03,
+        0.08
+      ],
+      [
+        0.02,
+        0.05,
+        0.35
+      ],
+      [
+        0.01,
+        0.04,
+        1.0
+      ],
+      [
+        0.01,
+        1.0,
+        0.75
+      ],
+      [
+        0.01,
+        0.05,
+        0.22
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "background_response": [
+      0.9,
+      1.0,
+      0.9,
+      0.85,
+      0.82,
+      0,
+      0
+    ],
+    "response_provenance": {
+      "kind": "synthetic_engineering_fixture",
+      "matrix_is_measured": false,
+      "matrix_is_derived_from_real_line_list": false,
+      "QE_is_measured": false,
+      "filter_response_is_measured": false,
+      "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+    },
+    "steps": 6,
+    "CNN_width": 16,
+    "CG_steps_per_spectral_block": 4,
+    "GN_damping": 0.001,
+    "parameter_correction_bounds": [
+      0.025,
+      0.05,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "warm_start_omitted": true,
+  "old_init_gate_passed": true,
+  "validation_small_subset_cases": [
+    "v4_validation_mother_0000_blank_noise0",
+    "v4_validation_mother_0000_blank_noise1",
+    "v4_validation_mother_0000_weak_noise0",
+    "v4_validation_mother_0000_weak_noise1",
+    "v4_validation_mother_0000_normal_noise0",
+    "v4_validation_mother_0000_normal_noise1",
+    "v4_validation_mother_0000_strong_noise0",
+    "v4_validation_mother_0000_strong_noise1",
+    "v4_validation_mother_0007_blank_noise0",
+    "v4_validation_mother_0007_blank_noise1",
+    "v4_validation_mother_0007_weak_noise0",
+    "v4_validation_mother_0007_weak_noise1",
+    "v4_validation_mother_0007_normal_noise0",
+    "v4_validation_mother_0007_normal_noise1",
+    "v4_validation_mother_0007_strong_noise0",
+    "v4_validation_mother_0007_strong_noise1",
+    "v4_validation_mother_0016_blank_noise0",
+    "v4_validation_mother_0016_blank_noise1",
+    "v4_validation_mother_0016_weak_noise0",
+    "v4_validation_mother_0016_weak_noise1",
+    "v4_validation_mother_0016_normal_noise0",
+    "v4_validation_mother_0016_normal_noise1",
+    "v4_validation_mother_0016_strong_noise0",
+    "v4_validation_mother_0016_strong_noise1",
+    "v4_validation_mother_0023_blank_noise0",
+    "v4_validation_mother_0023_blank_noise1",
+    "v4_validation_mother_0023_weak_noise0",
+    "v4_validation_mother_0023_weak_noise1",
+    "v4_validation_mother_0023_normal_noise0",
+    "v4_validation_mother_0023_normal_noise1",
+    "v4_validation_mother_0023_strong_noise0",
+    "v4_validation_mother_0023_strong_noise1"
+  ],
+  "warm_comparison_loss": {
+    "consistent_init__joint_update_v3": 0.34977449473739874,
+    "old_init__joint_update_v3": 0.31961335357598075
+  },
+  "finite_template_regularization_grid": [
+    {
+      "lambda": 0.001,
+      "validation_loss": 0.31961335357598075,
+      "config": {
+        "warm_iterations": 30,
+        "outer_iterations": 12,
+        "cg_max_iterations": 120,
+        "cg_relative_tolerance": 0.0001,
+        "LM_initial": 0.001,
+        "LM_minimum": 1e-08,
+        "LM_maximum": 100000000.0,
+        "LM_trials": 6,
+        "acceptance_ratio_minimum": 0.05,
+        "line_search": [
+          1.0,
+          0.5,
+          0.25,
+          0.125,
+          0.0625
+        ],
+        "regularization": [
+          1e-05,
+          1e-05,
+          0.0,
+          0.0,
+          0.001
+        ],
+        "warm_regularization": [
+          1e-06,
+          1e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "per_frame_wall_s": 180.0,
+        "max_GPU_allocated_MiB": 2500.0,
+        "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+        "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+        "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+      }
+    },
+    {
+      "lambda": 0.01,
+      "validation_loss": 0.21967485067998394,
+      "config": {
+        "warm_iterations": 30,
+        "outer_iterations": 12,
+        "cg_max_iterations": 120,
+        "cg_relative_tolerance": 0.0001,
+        "LM_initial": 0.001,
+        "LM_minimum": 1e-08,
+        "LM_maximum": 100000000.0,
+        "LM_trials": 6,
+        "acceptance_ratio_minimum": 0.05,
+        "line_search": [
+          1.0,
+          0.5,
+          0.25,
+          0.125,
+          0.0625
+        ],
+        "regularization": [
+          1e-05,
+          1e-05,
+          0.0,
+          0.0,
+          0.01
+        ],
+        "warm_regularization": [
+          1e-06,
+          1e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "per_frame_wall_s": 180.0,
+        "max_GPU_allocated_MiB": 2500.0,
+        "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+        "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+        "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+      }
+    },
+    {
+      "lambda": 0.1,
+      "validation_loss": 0.11608190081073123,
+      "config": {
+        "warm_iterations": 30,
+        "outer_iterations": 12,
+        "cg_max_iterations": 120,
+        "cg_relative_tolerance": 0.0001,
+        "LM_initial": 0.001,
+        "LM_minimum": 1e-08,
+        "LM_maximum": 100000000.0,
+        "LM_trials": 6,
+        "acceptance_ratio_minimum": 0.05,
+        "line_search": [
+          1.0,
+          0.5,
+          0.25,
+          0.125,
+          0.0625
+        ],
+        "regularization": [
+          1e-05,
+          1e-05,
+          0.0,
+          0.0,
+          0.1
+        ],
+        "warm_regularization": [
+          1e-06,
+          1e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "per_frame_wall_s": 180.0,
+        "max_GPU_allocated_MiB": 2500.0,
+        "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+        "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+        "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+      }
+    }
+  ],
+  "selected_lambda": 0.1,
+  "selected_gate_passed": true,
+  "traditional_candidates": [
+    {
+      "regularization": 0.001,
+      "validation_template_MSE_normalized": 0.8147347182726458
+    },
+    {
+      "regularization": 0.01,
+      "validation_template_MSE_normalized": 0.8128964865836166
+    },
+    {
+      "regularization": 0.1,
+      "validation_template_MSE_normalized": 0.7949586448036449
+    }
+  ],
+  "traditional_selected": 0.1,
+  "truth_only_used_for_validation_scoring": true,
+  "final_test_used": false,
+  "selection_rule": "validation loss with fixed deterministic-gate admissibility; no solver search beyond the registered three values"
+}

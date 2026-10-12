@@ -1,0 +1,131 @@
+{
+  "schema": "physical-inverse-post-CNN-v4-first-training",
+  "baseline_commit": "9a7ac7e86339ba9b9d3006765fef731f10941029",
+  "model_name": "物理反演后CNN校正器",
+  "unfolded_training": false,
+  "native_shape": [
+    256,
+    256
+  ],
+  "train_mothers": 256,
+  "validation_mothers": 64,
+  "registered_unopened_final_mothers": 64,
+  "conditions": [
+    "blank",
+    "weak",
+    "normal",
+    "strong"
+  ],
+  "independent_noise_replicates": 2,
+  "clean_identity_per_mother": 1,
+  "temperature_geometries": [
+    "front",
+    "multipeak",
+    "ring",
+    "stripe",
+    "flat",
+    "smooth_random"
+  ],
+  "template_geometries": [
+    "blob",
+    "multipeak",
+    "ring",
+    "stripe",
+    "filament",
+    "smooth_random"
+  ],
+  "selection_validation_mothers": 4,
+  "backbones": [
+    "old_init__joint_update_v3",
+    "consistent_init__joint_update_v3"
+  ],
+  "template_regularization_candidates": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "traditional_tikhonov_candidates": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "warm_omission_rule": "all 16 development gates; validation loss <= 1.05 times combined v3; otherwise keep warm start",
+  "backbone_config": {
+    "warm_iterations": 30,
+    "outer_iterations": 12,
+    "cg_max_iterations": 120,
+    "cg_relative_tolerance": 0.0001,
+    "LM_initial": 0.001,
+    "LM_minimum": 1e-08,
+    "LM_maximum": 100000000.0,
+    "LM_trials": 6,
+    "acceptance_ratio_minimum": 0.05,
+    "line_search": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625
+    ],
+    "regularization": [
+      1e-05,
+      1e-05,
+      0.0,
+      0.0,
+      0.001
+    ],
+    "warm_regularization": [
+      1e-06,
+      1e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "per_frame_wall_s": 180.0,
+    "max_GPU_allocated_MiB": 2500.0,
+    "data_weights": "fixed reciprocal(max(observed_e,0)+read_noise_squared+ADC_variance)",
+    "regularizer": "periodic latent-field nearest-neighbour quadratic; no template positivity",
+    "damping": "LM diagonal scaling in step system only; absent from acceptance objective"
+  },
+  "CNN": {
+    "inputs": 19,
+    "width": 16,
+    "shared_corrections": 6,
+    "parameters": 5797,
+    "heads": [
+      2,
+      3
+    ],
+    "head_initialization": "zero",
+    "stage_features_recomputed": true
+  },
+  "training": {
+    "optimizer": "Adam",
+    "lr": 0.0001,
+    "batch": 1,
+    "accumulation": 4,
+    "gradient_clip": 1.0,
+    "optimizer_updates": 2000,
+    "validation_interval": 100,
+    "seed": 101,
+    "additional_seeds_only_after_clear_validation_gain": true
+  },
+  "loss": {
+    "template_scale_e": 60.0,
+    "temperature_scale_K": 75.0,
+    "band_scale_e": 300.0,
+    "template": 1.0,
+    "color": 0.2,
+    "bands": 0.2,
+    "raw": 0.01,
+    "signed_blank": 1.0,
+    "truth_source": "synthesis only, never B4/v3"
+  },
+  "checkpoint_selection": "lowest full-validation supervised loss, final test never opened",
+  "detection": "historical signed prediction >60 e, never raised for success",
+  "overfit_updates": 200,
+  "all_written_files_on": "E/D",
+  "training_device": "local CUDA RTX4060",
+  "old_954_full_rerun": false,
+  "old_CNN_and_physics_files_preserved": true
+}

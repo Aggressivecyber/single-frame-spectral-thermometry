@@ -1,0 +1,68 @@
+...FF                                                                    [100%]
+================================== FAILURES ===================================
+_ test_vectorized_independent_frames_match_scalar_v3_in_float64[old_init__joint_update_v3] _
+
+method = 'old_init__joint_update_v3'
+
+    @pytest.mark.parametrize('method', ['old_init__joint_update_v3', 'consistent_init__joint_update_v3'])
+    def test_vectorized_independent_frames_match_scalar_v3_in_float64(method):
+        p, _, _, raw = sample(dtype=torch.float64)
+        config = copy.deepcopy(DEFAULTS)
+        config.update(warm_iterations=3, outer_iterations=2, cg_max_iterations=15)
+        inputs = torch.cat([raw, raw*1.04])
+        with torch.no_grad():
+            z, b, _, _ = invert_batch(p, inputs, method, config)
+            for i in range(2):
+                if method.startswith('consistent'):
+                    zs, bs, _ = consistent_initialize(p, inputs[i:i+1], config)
+                else:
+                    zs, bs = p.initialize(inputs[i:i+1])
+                damping = config['LM_initial']
+                for _ in range(2):
+                    zs, bs, info = joint_data_step(p, inputs[i:i+1], zs, bs, config, damping)
+                    damping = info['next_damping']
+                    if not info['accepted']:
+                        break
+>               torch.testing.assert_close(z[i:i+1], zs, atol=1e-7, rtol=1e-7)
+E               AssertionError: Tensor-likes are not close!
+E               
+E               Mismatched elements: 12263 / 20480 (59.9%)
+E               Greatest absolute difference: 0.0067937222884713044 at index (0, 4, 43, 60) (up to 1e-07 allowed)
+E               Greatest relative difference: 27.066161110749217 at index (0, 4, 9, 16) (up to 1e-07 allowed)
+
+training_v4\tests.py:89: AssertionError
+_ test_vectorized_independent_frames_match_scalar_v3_in_float64[consistent_init__joint_update_v3] _
+
+method = 'consistent_init__joint_update_v3'
+
+    @pytest.mark.parametrize('method', ['old_init__joint_update_v3', 'consistent_init__joint_update_v3'])
+    def test_vectorized_independent_frames_match_scalar_v3_in_float64(method):
+        p, _, _, raw = sample(dtype=torch.float64)
+        config = copy.deepcopy(DEFAULTS)
+        config.update(warm_iterations=3, outer_iterations=2, cg_max_iterations=15)
+        inputs = torch.cat([raw, raw*1.04])
+        with torch.no_grad():
+            z, b, _, _ = invert_batch(p, inputs, method, config)
+            for i in range(2):
+                if method.startswith('consistent'):
+                    zs, bs, _ = consistent_initialize(p, inputs[i:i+1], config)
+                else:
+                    zs, bs = p.initialize(inputs[i:i+1])
+                damping = config['LM_initial']
+                for _ in range(2):
+                    zs, bs, info = joint_data_step(p, inputs[i:i+1], zs, bs, config, damping)
+                    damping = info['next_damping']
+                    if not info['accepted']:
+                        break
+>               torch.testing.assert_close(z[i:i+1], zs, atol=1e-7, rtol=1e-7)
+E               AssertionError: Tensor-likes are not close!
+E               
+E               Mismatched elements: 4233 / 20480 (20.7%)
+E               Greatest absolute difference: 6.394594096681416e-06 at index (0, 4, 31, 32) (up to 1e-07 allowed)
+E               Greatest relative difference: 0.027090007973665245 at index (0, 4, 9, 17) (up to 1e-07 allowed)
+
+training_v4\tests.py:89: AssertionError
+=========================== short test summary info ===========================
+FAILED training_v4/tests.py::test_vectorized_independent_frames_match_scalar_v3_in_float64[old_init__joint_update_v3]
+FAILED training_v4/tests.py::test_vectorized_independent_frames_match_scalar_v3_in_float64[consistent_init__joint_update_v3]
+2 failed, 3 passed in 7.78s
