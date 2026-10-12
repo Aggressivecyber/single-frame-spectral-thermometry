@@ -1,0 +1,236 @@
+{
+  "selected_lambda_decoder": 100.0,
+  "selection_rows": 512,
+  "validation_only": true,
+  "criterion": "absolute template MSE/60^2 +0.2 color MSE/75^2, main noisy validation only",
+  "grid": [
+    {
+      "lambda_decoder": 0.1,
+      "validation_objective": 0.8660730782561747,
+      "groups": [
+        {
+          "condition": "blank",
+          "frames": 128,
+          "template_RMSE_e": 54.00417766923021,
+          "template_L2": null,
+          "mean_gradient_energy": 363.5561447359522,
+          "mean_truth_gradient_energy": 0.0,
+          "mean_signed_projection": null
+        },
+        {
+          "condition": "weak",
+          "frames": 128,
+          "template_RMSE_e": 54.18060295121359,
+          "template_L2": 5.3069830299225575,
+          "mean_gradient_energy": 366.6748333209654,
+          "mean_truth_gradient_energy": 0.22944667289099493,
+          "mean_signed_projection": 0.9993710584385287
+        },
+        {
+          "condition": "normal",
+          "frames": 128,
+          "template_RMSE_e": 54.13544213146673,
+          "template_L2": 0.9768417417222522,
+          "mean_gradient_energy": 371.6078761287696,
+          "mean_truth_gradient_energy": 6.857228971128812,
+          "mean_signed_projection": 1.000220326438131
+        },
+        {
+          "condition": "strong",
+          "frames": 128,
+          "template_RMSE_e": 54.23326162458213,
+          "template_L2": 0.4777173905267813,
+          "mean_gradient_energy": 393.5697406626481,
+          "mean_truth_gradient_energy": 27.903592397576727,
+          "mean_signed_projection": 1.000144564059371
+        }
+      ],
+      "retained_passband_transfer_min": 0.976010799407959,
+      "retained_passband_transfer_median": 0.9878894686698914,
+      "reference_note": "gradient energy and projection jointly describe smoothing/detail loss; noisy gradient energy alone is not recovered detail"
+    },
+    {
+      "lambda_decoder": 1.0,
+      "validation_objective": 0.7093721005639073,
+      "groups": [
+        {
+          "condition": "blank",
+          "frames": 128,
+          "template_RMSE_e": 48.87076252721921,
+          "template_L2": null,
+          "mean_gradient_energy": 278.41227468657905,
+          "mean_truth_gradient_energy": 0.0,
+          "mean_signed_projection": null
+        },
+        {
+          "condition": "weak",
+          "frames": 128,
+          "template_RMSE_e": 49.02554875066884,
+          "template_L2": 4.802046139772848,
+          "mean_gradient_energy": 280.68360663397283,
+          "mean_truth_gradient_energy": 0.22944667289099493,
+          "mean_signed_projection": 0.9955485805148913
+        },
+        {
+          "condition": "normal",
+          "frames": 128,
+          "template_RMSE_e": 48.99852093701732,
+          "template_L2": 0.8841490648158753,
+          "mean_gradient_energy": 286.0585447851214,
+          "mean_truth_gradient_energy": 6.857228971128812,
+          "mean_signed_projection": 0.9971643382741457
+        },
+        {
+          "condition": "strong",
+          "frames": 128,
+          "template_RMSE_e": 49.09606341681094,
+          "template_L2": 0.43246602911275683,
+          "mean_gradient_energy": 307.09924174329444,
+          "mean_truth_gradient_energy": 27.903592397576727,
+          "mean_signed_projection": 0.9972225641864002
+        }
+      ],
+      "retained_passband_transfer_min": 0.8027047514915466,
+      "retained_passband_transfer_median": 0.8907966613769531,
+      "reference_note": "gradient energy and projection jointly describe smoothing/detail loss; noisy gradient energy alone is not recovered detail"
+    },
+    {
+      "lambda_decoder": 10.0,
+      "validation_objective": 0.2540601268026448,
+      "groups": [
+        {
+          "condition": "blank",
+          "frames": 128,
+          "template_RMSE_e": 29.055841430317916,
+          "template_L2": null,
+          "mean_gradient_energy": 64.59858132097152,
+          "mean_truth_gradient_energy": 0.0,
+          "mean_signed_projection": null
+        },
+        {
+          "condition": "weak",
+          "frames": 128,
+          "template_RMSE_e": 29.157950428807972,
+          "template_L2": 2.856017461679818,
+          "mean_gradient_energy": 65.16673968170775,
+          "mean_truth_gradient_energy": 0.22944667289099493,
+          "mean_signed_projection": 0.9671936338297976
+        },
+        {
+          "condition": "normal",
+          "frames": 128,
+          "template_RMSE_e": 29.25574078108885,
+          "template_L2": 0.5279023806727571,
+          "mean_gradient_energy": 70.27601250242269,
+          "mean_truth_gradient_energy": 6.857228971128812,
+          "mean_signed_projection": 0.9716538659417286
+        },
+        {
+          "condition": "strong",
+          "frames": 128,
+          "template_RMSE_e": 29.72882181123272,
+          "template_L2": 0.2618683581564358,
+          "mean_gradient_energy": 86.54631396725307,
+          "mean_truth_gradient_energy": 27.903592397576727,
+          "mean_signed_projection": 0.9723310229869044
+        }
+      ],
+      "retained_passband_transfer_min": 0.2891944944858551,
+      "retained_passband_transfer_median": 0.44925519824028015,
+      "reference_note": "gradient energy and projection jointly describe smoothing/detail loss; noisy gradient energy alone is not recovered detail"
+    },
+    {
+      "lambda_decoder": 100.0,
+      "validation_objective": 0.09391960924890731,
+      "groups": [
+        {
+          "condition": "blank",
+          "frames": 128,
+          "template_RMSE_e": 10.620397400375358,
+          "template_L2": null,
+          "mean_gradient_energy": 2.7172126625891146,
+          "mean_truth_gradient_energy": 0.0,
+          "mean_signed_projection": null
+        },
+        {
+          "condition": "weak",
+          "frames": 128,
+          "template_RMSE_e": 10.798870624183913,
+          "template_L2": 1.0577479766416955,
+          "mean_gradient_energy": 2.808458689192837,
+          "mean_truth_gradient_energy": 0.22944667289099493,
+          "mean_signed_projection": 0.8341774451635973
+        },
+        {
+          "condition": "normal",
+          "frames": 128,
+          "template_RMSE_e": 15.689475511816763,
+          "template_L2": 0.2831072211150051,
+          "mean_gradient_energy": 4.829778491155527,
+          "mean_truth_gradient_energy": 6.857228971128812,
+          "mean_signed_projection": 0.8419746865155984
+        },
+        {
+          "condition": "strong",
+          "frames": 128,
+          "template_RMSE_e": 25.849699557547837,
+          "template_L2": 0.22769884474246194,
+          "mean_gradient_energy": 11.075637311160857,
+          "mean_truth_gradient_energy": 27.903592397576727,
+          "mean_signed_projection": 0.8439600842592337
+        }
+      ],
+      "retained_passband_transfer_min": 0.03909486532211304,
+      "retained_passband_transfer_median": 0.07542011141777039,
+      "reference_note": "gradient energy and projection jointly describe smoothing/detail loss; noisy gradient energy alone is not recovered detail"
+    },
+    {
+      "lambda_decoder": 1000.0,
+      "validation_objective": 0.319206907701613,
+      "groups": [
+        {
+          "condition": "blank",
+          "frames": 128,
+          "template_RMSE_e": 3.53405631091108,
+          "template_L2": null,
+          "mean_gradient_energy": 0.05323070197694263,
+          "mean_truth_gradient_energy": 0.0,
+          "mean_signed_projection": null
+        },
+        {
+          "condition": "weak",
+          "frames": 128,
+          "template_RMSE_e": 5.790694954633813,
+          "template_L2": 0.5671978195475486,
+          "mean_gradient_energy": 0.062455870879772245,
+          "mean_truth_gradient_energy": 0.22944667289099493,
+          "mean_signed_projection": 0.5557780017623355
+        },
+        {
+          "condition": "normal",
+          "frames": 128,
+          "template_RMSE_e": 26.25333876893638,
+          "template_L2": 0.47372582839155464,
+          "mean_gradient_energy": 0.33693940082273055,
+          "mean_truth_gradient_energy": 6.857228971128812,
+          "mean_signed_projection": 0.565256199930088
+        },
+        {
+          "condition": "strong",
+          "frames": 128,
+          "template_RMSE_e": 52.292873711887566,
+          "template_L2": 0.4606253510201256,
+          "mean_gradient_energy": 1.1594765427411253,
+          "mean_truth_gradient_energy": 27.903592397576727,
+          "mean_signed_projection": 0.5689285061493194
+        }
+      ],
+      "retained_passband_transfer_min": 0.004052060190588236,
+      "retained_passband_transfer_median": 0.00809122808277607,
+      "reference_note": "gradient energy and projection jointly describe smoothing/detail loss; noisy gradient energy alone is not recovered detail"
+    }
+  ],
+  "physical_solver_template_coefficient_unchanged": 0.1,
+  "same_coefficient_as_physical_solver": false,
+  "final_test_used": false
+}

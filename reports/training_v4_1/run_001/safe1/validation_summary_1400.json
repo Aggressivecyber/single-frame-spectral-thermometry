@@ -1,0 +1,1155 @@
+{
+  "optimizer_update": 1400,
+  "validation_cases": 776,
+  "main_validation_loss": 0.05601789909810437,
+  "original_gates_pass": false,
+  "original_gates_pass_count": 14,
+  "protection_groups": [
+    {
+      "geometry": "front",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.4482571917829087,
+      "mean_temperature_MSE_delta": 0.03206836727463269,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.5819938200265737,
+      "mean_temperature_MSE_delta": -0.08720598888930908,
+      "passed": true
+    },
+    {
+      "geometry": "front",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.8614447630543427,
+      "mean_temperature_MSE_delta": 0.2117064635267525,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.2389008934864309,
+      "mean_temperature_MSE_delta": 0.13675186777868475,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.6604560755619637,
+      "mean_temperature_MSE_delta": 0.2876388090205637,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.34235358725264153,
+      "mean_temperature_MSE_delta": 0.18657799325455926,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.3576907822805413,
+      "mean_temperature_MSE_delta": 0.3442936159385681,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.067424370722736,
+      "mean_temperature_MSE_delta": 0.3581639383116908,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.13075173274310758,
+      "mean_temperature_MSE_delta": 0.09535537741135158,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.6890405263510073,
+      "mean_temperature_MSE_delta": -0.2060491686397654,
+      "passed": true
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.5609943160261316,
+      "mean_temperature_MSE_delta": 0.5349325470747317,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.01494806673206181,
+      "mean_temperature_MSE_delta": 0.30026974861243616,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 2.797223105017928,
+      "mean_temperature_MSE_delta": 2.117734731710243,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 2.8416567088215636,
+      "mean_temperature_MSE_delta": 1.9488570011383217,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.23469691734806347,
+      "mean_temperature_MSE_delta": 1.2758955818774211,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.168649781779587,
+      "mean_temperature_MSE_delta": 1.463864064146719,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.1339854641111602,
+      "mean_temperature_MSE_delta": 0.1292652594208903,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.896355964774251,
+      "mean_temperature_MSE_delta": -0.21386044306404983,
+      "passed": true
+    },
+    {
+      "geometry": "ring",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.3428762670206897,
+      "mean_temperature_MSE_delta": 0.22403164350430416,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.24002896459373319,
+      "mean_temperature_MSE_delta": -0.1640223405015604,
+      "passed": true
+    },
+    {
+      "geometry": "ring",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.2938682143732188,
+      "mean_temperature_MSE_delta": 1.264507658489265,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.3310191679723933,
+      "mean_temperature_MSE_delta": 1.09428438179134,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.041299488687616015,
+      "mean_temperature_MSE_delta": 0.20136330423770232,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.8806474864287083,
+      "mean_temperature_MSE_delta": -0.07439073073510372,
+      "passed": true
+    },
+    {
+      "geometry": "stripe",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.42131486588243305,
+      "mean_temperature_MSE_delta": 0.09978497455699653,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.3730887344734196,
+      "mean_temperature_MSE_delta": -0.23859344076413436,
+      "passed": true
+    },
+    {
+      "geometry": "stripe",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.9059022588283212,
+      "mean_temperature_MSE_delta": 0.4000697650890288,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.17029011338568767,
+      "mean_temperature_MSE_delta": -0.004689773745440107,
+      "passed": true
+    },
+    {
+      "geometry": "stripe",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 2.5915792226377348,
+      "mean_temperature_MSE_delta": 1.2135478012289695,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 2.559261665315373,
+      "mean_temperature_MSE_delta": 1.0364971777462415,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.9264233955242376,
+      "mean_temperature_MSE_delta": 1.0972902803464422,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.8793067405400696,
+      "mean_temperature_MSE_delta": 0.9821318737510865,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.5920273206485372,
+      "mean_temperature_MSE_delta": 0.03564539153580881,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.5740938853884292,
+      "mean_temperature_MSE_delta": -0.10846733633093208,
+      "passed": true
+    },
+    {
+      "geometry": "flat",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.1301845189318356,
+      "mean_temperature_MSE_delta": 0.40483573975711806,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.6591777040988316,
+      "mean_temperature_MSE_delta": 0.3041316459839436,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 2.1753066138920696,
+      "mean_temperature_MSE_delta": 0.7441195973269714,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.9809062648749491,
+      "mean_temperature_MSE_delta": 0.6812756737538166,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.1744166695770661,
+      "mean_temperature_MSE_delta": 0.6028517720571926,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.1690739317752399,
+      "mean_temperature_MSE_delta": 0.6490464994519698,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "blank",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.5926244807004128,
+      "mean_temperature_MSE_delta": 0.07340724882374161,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -0.6514820279204416,
+      "mean_temperature_MSE_delta": -0.08968675876326415,
+      "passed": true
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "weak",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.46433815943452084,
+      "mean_temperature_MSE_delta": 0.11028692663194306,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "weak",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 0.07620505787337059,
+      "mean_temperature_MSE_delta": 0.05162521517013374,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "normal",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.3154692144441757,
+      "mean_temperature_MSE_delta": 0.25439839992259294,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "normal",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": 1.2362183757187375,
+      "mean_temperature_MSE_delta": 0.2321011129620274,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "strong",
+      "input_kind": "continuous",
+      "frames": 4,
+      "mean_template_MSE_delta": -2.958204921243662,
+      "mean_temperature_MSE_delta": 0.044896651618728356,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "strong",
+      "input_kind": "quantization",
+      "frames": 4,
+      "mean_template_MSE_delta": -2.0795945675583605,
+      "mean_temperature_MSE_delta": 0.27059159073883166,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 27.26651809927677,
+      "mean_temperature_MSE_delta": 3.8805064269381546,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 25.881797907995498,
+      "mean_temperature_MSE_delta": 3.7971462840423555,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 493.94753913545725,
+      "mean_temperature_MSE_delta": 87.89479850051703,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 489.20222516696464,
+      "mean_temperature_MSE_delta": 88.37433341497945,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1.4244040573782188,
+      "mean_temperature_MSE_delta": 0.2047769288501513,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 0.8055878835690733,
+      "mean_temperature_MSE_delta": 0.24604555565838382,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1.9156028978870716,
+      "mean_temperature_MSE_delta": 0.4285950665598648,
+      "passed": false
+    },
+    {
+      "geometry": "front",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 0.9726270240356669,
+      "mean_temperature_MSE_delta": 0.5742053867970753,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 43.957223435977724,
+      "mean_temperature_MSE_delta": 8.318055499165894,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 42.89163263887492,
+      "mean_temperature_MSE_delta": 8.110480064667172,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1486.068798791177,
+      "mean_temperature_MSE_delta": 336.17116113410157,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 1483.0452954935483,
+      "mean_temperature_MSE_delta": 339.31977809219916,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1.3989977599226295,
+      "mean_temperature_MSE_delta": 0.34567328737557546,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 0.3942274264459933,
+      "mean_temperature_MSE_delta": -0.023279120384358976,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 2.529330964192242,
+      "mean_temperature_MSE_delta": 0.3508768102274189,
+      "passed": false
+    },
+    {
+      "geometry": "multipeak",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 2.219173163609744,
+      "mean_temperature_MSE_delta": 0.14866943554079626,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 50.41802168924267,
+      "mean_temperature_MSE_delta": 7.4301627876793646,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 53.975719296336614,
+      "mean_temperature_MSE_delta": 8.120727641160556,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1265.517727191894,
+      "mean_temperature_MSE_delta": 339.19543666230857,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 1266.3122260796795,
+      "mean_temperature_MSE_delta": 342.39200222902855,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 0.683529686772826,
+      "mean_temperature_MSE_delta": 0.16991357455117395,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": -0.61236309619212,
+      "mean_temperature_MSE_delta": -0.23187795625017316,
+      "passed": true
+    },
+    {
+      "geometry": "ring",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 0.7112274856203968,
+      "mean_temperature_MSE_delta": 0.08821631093906035,
+      "passed": false
+    },
+    {
+      "geometry": "ring",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": -0.5582192441254712,
+      "mean_temperature_MSE_delta": -0.25093868815565656,
+      "passed": true
+    },
+    {
+      "geometry": "stripe",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 72.00799335653028,
+      "mean_temperature_MSE_delta": 7.784228050374622,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 72.18161026152819,
+      "mean_temperature_MSE_delta": 8.136865316100739,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1219.4421369459542,
+      "mean_temperature_MSE_delta": 188.59573142798126,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 1213.673566745531,
+      "mean_temperature_MSE_delta": 187.60431834881,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 1.9958743600474116,
+      "mean_temperature_MSE_delta": 0.389313252937427,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 2.512427975320378,
+      "mean_temperature_MSE_delta": 0.538539441345165,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 30.55858819758099,
+      "mean_temperature_MSE_delta": 9.221017111621222,
+      "passed": false
+    },
+    {
+      "geometry": "stripe",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 27.03501760353332,
+      "mean_temperature_MSE_delta": 8.682022760912332,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 10.587319264039344,
+      "mean_temperature_MSE_delta": 1.1381994312032475,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 9.62338536770398,
+      "mean_temperature_MSE_delta": 0.8901355970992881,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 208.2049223771403,
+      "mean_temperature_MSE_delta": 22.23095378594826,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 219.89683161489498,
+      "mean_temperature_MSE_delta": 26.160324680978192,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 4.754559475145676,
+      "mean_temperature_MSE_delta": 0.7025210033680196,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 4.292127101470921,
+      "mean_temperature_MSE_delta": 0.7301944400351204,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 24.242323698028898,
+      "mean_temperature_MSE_delta": 8.971966685930965,
+      "passed": false
+    },
+    {
+      "geometry": "flat",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": -0.45444633766426534,
+      "mean_temperature_MSE_delta": 0.3203509336499337,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "negative_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 153.4389622158243,
+      "mean_temperature_MSE_delta": 33.671539216608835,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "negative_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 151.56290615456186,
+      "mean_temperature_MSE_delta": 34.16190800293498,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "negative_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 5810.384496576795,
+      "mean_temperature_MSE_delta": 1297.7181858008644,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "negative_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 5799.041340424644,
+      "mean_temperature_MSE_delta": 1312.162577640459,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "positive_weak",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 7.1616034974776674,
+      "mean_temperature_MSE_delta": 0.8920194115517006,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "positive_weak",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 5.939868989333893,
+      "mean_temperature_MSE_delta": 0.8825251377193126,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "positive_normal",
+      "input_kind": "continuous",
+      "frames": 1,
+      "mean_template_MSE_delta": 3.132853819498294,
+      "mean_temperature_MSE_delta": 0.29660531114222977,
+      "passed": false
+    },
+    {
+      "geometry": "smooth_random",
+      "condition": "positive_normal",
+      "input_kind": "quantization",
+      "frames": 1,
+      "mean_template_MSE_delta": 4.195865127191837,
+      "mean_temperature_MSE_delta": 0.5690100890360554,
+      "passed": false
+    }
+  ],
+  "protection_pass": false,
+  "noisy_temperature_pass": false,
+  "weak_L2": 0.9759727669752686,
+  "normal_RMSE_e": 11.815858956449054,
+  "eligible": false,
+  "small_residual_large_correction_fraction": 0.6375,
+  "groups": [
+    {
+      "input_kind": "noise",
+      "signed_aux": false,
+      "group": "blank",
+      "frames": 128,
+      "failures": 0,
+      "template_RMSE_e": 8.657573461941647,
+      "template_L2": null,
+      "color_RMSE_K": 16.289713992434063,
+      "physical_color_RMSE_K": 17.719138612135488,
+      "mean_template_excess_e2": -187.21437285810885,
+      "mean_temperature_excess_K2": -48.61309120076865
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": false,
+      "group": "weak",
+      "frames": 128,
+      "failures": 0,
+      "template_RMSE_e": 9.964002650947982,
+      "template_L2": 0.9759727669752686,
+      "color_RMSE_K": 16.394585778987786,
+      "physical_color_RMSE_K": 17.679673805518078,
+      "mean_template_excess_e2": -164.2371437513617,
+      "mean_temperature_excess_K2": -43.788423004933506
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": false,
+      "group": "normal",
+      "frames": 128,
+      "failures": 0,
+      "template_RMSE_e": 11.815858956449054,
+      "template_L2": 0.21321012239878137,
+      "color_RMSE_K": 16.878696510559497,
+      "physical_color_RMSE_K": 17.86322461754693,
+      "mean_template_excess_e2": -128.3568121747466,
+      "mean_temperature_excess_K2": -34.204397841361306
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": false,
+      "group": "strong",
+      "frames": 128,
+      "failures": 0,
+      "template_RMSE_e": 13.018503117362153,
+      "template_L2": 0.1146743742030827,
+      "color_RMSE_K": 17.13778806936042,
+      "physical_color_RMSE_K": 18.027653128799265,
+      "mean_template_excess_e2": -115.85143490728281,
+      "mean_temperature_excess_K2": -31.292497421993666
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": true,
+      "group": "weak",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 14.589171132443708,
+      "template_L2": 1.076712957750914,
+      "color_RMSE_K": 14.655340865661056,
+      "physical_color_RMSE_K": 15.382402659016815,
+      "mean_template_excess_e2": -185.47955673760714,
+      "mean_temperature_excess_K2": -21.83929567541266
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": true,
+      "group": "normal",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 17.168467199653723,
+      "template_L2": 0.31676767190495564,
+      "color_RMSE_K": 15.442938866220647,
+      "physical_color_RMSE_K": 16.017281934423618,
+      "mean_template_excess_e2": -125.02714567619812,
+      "mean_temperature_excess_K2": -18.068959740984912
+    },
+    {
+      "input_kind": "noise",
+      "signed_aux": true,
+      "group": "negative",
+      "frames": 12,
+      "failures": 0,
+      "template_RMSE_e": 32.01956079987018,
+      "template_L2": 0.8105414494622557,
+      "color_RMSE_K": 20.603092418253333,
+      "physical_color_RMSE_K": 15.562363099258233,
+      "mean_template_excess_e2": 638.0062169419897,
+      "mean_temperature_excess_K2": 182.30027196193373
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": false,
+      "group": "blank",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 0.6241947058664238,
+      "template_L2": null,
+      "color_RMSE_K": 0.2868211889175604,
+      "physical_color_RMSE_K": 0.0684004720367188,
+      "mean_template_excess_e2": 0.38649350931142656,
+      "mean_temperature_excess_K2": 0.07758776983723692
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": false,
+      "group": "weak",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 0.8947411526401898,
+      "template_L2": 0.07823150545347349,
+      "color_RMSE_K": 0.5789846422124455,
+      "physical_color_RMSE_K": 0.1446122458642208,
+      "mean_template_excess_e2": 0.7109567138826401,
+      "mean_temperature_excess_K2": 0.3143105142639797
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": false,
+      "group": "normal",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 2.106179687224449,
+      "template_L2": 0.03374922283939637,
+      "color_RMSE_K": 1.2388428202903685,
+      "physical_color_RMSE_K": 0.7445851420546613,
+      "mean_template_excess_e2": 1.8056504076545152,
+      "mean_temperature_excess_K2": 0.9803244996164343
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": false,
+      "group": "strong",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 3.2958094746473576,
+      "template_L2": 0.026397567161763696,
+      "color_RMSE_K": 1.6649838568733144,
+      "physical_color_RMSE_K": 1.4757165635613754,
+      "mean_template_excess_e2": -0.0036097016270753937,
+      "mean_temperature_excess_K2": 0.5944318676793424
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": true,
+      "group": "weak",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 1.8824730407723813,
+      "template_L2": 0.1389306559787322,
+      "color_RMSE_K": 0.7002368327375382,
+      "physical_color_RMSE_K": 0.19906961634050993,
+      "mean_template_excess_e2": 2.9031614727907384,
+      "mean_temperature_excess_K2": 0.45070290977234134
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": true,
+      "group": "normal",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 4.567658654015257,
+      "template_L2": 0.08427581688353161,
+      "color_RMSE_K": 1.9410003605408193,
+      "physical_color_RMSE_K": 0.7357102125720406,
+      "mean_template_excess_e2": 10.514987843801315,
+      "mean_temperature_excess_K2": 3.2262128827367937
+    },
+    {
+      "input_kind": "continuous",
+      "signed_aux": true,
+      "group": "negative",
+      "frames": 12,
+      "failures": 0,
+      "template_RMSE_e": 30.145536822220034,
+      "template_L2": 0.7631025067276719,
+      "color_RMSE_K": 13.957010527616607,
+      "physical_color_RMSE_K": 0.5438102987499472,
+      "mean_template_excess_e2": 903.4368049232756,
+      "mean_temperature_excess_K2": 194.50241322697426
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": false,
+      "group": "blank",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 0.7021912130562052,
+      "template_L2": null,
+      "color_RMSE_K": 1.516116716022678,
+      "physical_color_RMSE_K": 1.5671376516902717,
+      "mean_template_excess_e2": -0.6276758264890204,
+      "mean_temperature_excess_K2": -0.15731052274190915
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": false,
+      "group": "weak",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 1.1556684378509967,
+      "template_L2": 0.10104562803596079,
+      "color_RMSE_K": 1.5994006299030394,
+      "physical_color_RMSE_K": 1.5665475780787956,
+      "mean_template_excess_e2": 0.1532488118304416,
+      "mean_temperature_excess_K2": 0.10401106054969962
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": false,
+      "group": "normal",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 2.341357306422634,
+      "template_L2": 0.03751768662494251,
+      "color_RMSE_K": 1.9359877556575478,
+      "physical_color_RMSE_K": 1.698464904930792,
+      "mean_template_excess_e2": 1.7152359616592763,
+      "mean_temperature_excess_K2": 0.8632655567743844
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": false,
+      "group": "strong",
+      "frames": 24,
+      "failures": 0,
+      "template_RMSE_e": 3.482519501388831,
+      "template_L2": 0.02789300872432856,
+      "color_RMSE_K": 2.2143032836702834,
+      "physical_color_RMSE_K": 2.0724151352457034,
+      "mean_template_excess_e2": 0.03156067156418193,
+      "mean_temperature_excess_K2": 0.6082345392775323
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": true,
+      "group": "weak",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 1.9689693455741657,
+      "template_L2": 0.14531427375469658,
+      "color_RMSE_K": 1.184061127174147,
+      "physical_color_RMSE_K": 1.0222407592462437,
+      "mean_template_excess_e2": 2.2219793799913563,
+      "mean_temperature_excess_K2": 0.35702458302057494
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": true,
+      "group": "normal",
+      "frames": 6,
+      "failures": 0,
+      "template_RMSE_e": 4.117524546942504,
+      "template_L2": 0.07597059478744796,
+      "color_RMSE_K": 1.7917800476116421,
+      "physical_color_RMSE_K": 1.2395923063877718,
+      "mean_template_excess_e2": 5.568336222763471,
+      "mean_temperature_excess_K2": 1.6738866529634226
+    },
+    {
+      "input_kind": "quantization",
+      "signed_aux": true,
+      "group": "negative",
+      "frames": 12,
+      "failures": 0,
+      "template_RMSE_e": 30.144053211479935,
+      "template_L2": 0.7630649506847507,
+      "color_RMSE_K": 14.068229191859334,
+      "physical_color_RMSE_K": 1.1456538825687457,
+      "mean_template_excess_e2": 902.2740447626885,
+      "mean_temperature_excess_K2": 196.60254977603827
+    }
+  ],
+  "final_test_used": false
+}
