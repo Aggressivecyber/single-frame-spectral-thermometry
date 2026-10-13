@@ -1,0 +1,30 @@
+{
+  "observed_first_attempt_before": "2026-10-13T02:43:00+00:00",
+  "first_attempt": {
+    "stage": "naive_raw_Git_blob_comparison",
+    "outcome": "FAILED",
+    "exception": "AssertionError",
+    "path": "configs/synthetic_256.json",
+    "reason": "Existing CRLF working bytes differ from the eol=lf Git blob representation."
+  },
+  "resolution": {
+    "old_config_modified": false,
+    "working_bytes_sha256": "9873527d6eeb779100272df2f03e8925e37b5e1de17953fec2a9f88a727c020e",
+    "frozen_pre_training_sha256": "9873527d6eeb779100272df2f03e8925e37b5e1de17953fec2a9f88a727c020e",
+    "raw_sha256_match": true,
+    "Git_attributes": {
+      "text": "auto",
+      "eol": "lf"
+    },
+    "all_public_files_normalized_content_match": 850,
+    "normalization_check_command": [
+      "git",
+      "hash-object",
+      "--stdin-paths"
+    ],
+    "working_files_checked_against_prior_raw_SHA256": 770,
+    "newer_files_checked_against_exact_public_blob_bytes": 80,
+    "normalization_used_as_raw_byte_evidence": false
+  },
+  "verified_at": "2026-10-13T02:46:14.880094+00:00"
+}

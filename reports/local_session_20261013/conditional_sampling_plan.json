@@ -1,0 +1,47 @@
+{
+  "registered_at": "2026-10-13T10:12:00+08:00",
+  "status": "conditional_design_only_not_launched",
+  "activation_condition": "Complete residual_scaled's frozen 500 updates and native checks first. Only activate if the remaining joint failure includes noisy signed negative temperature while the raw-residual protection and main weak denoising pass.",
+  "question": "Does increasing exposure to existing negative noisy training cases reduce the remaining signed temperature failure at the same 500-update budget?",
+  "control": "residual_scaled, restarted from the exact same v4/update2000 CNN weights and an empty Adam state",
+  "single_changed_factor": "training sampling schedule",
+  "sampler": {
+    "microbatches_per_update": 4,
+    "slot_0": "Keep the original first noisy draw unchanged.",
+    "slot_1": "Replace the original second noisy draw with an existing TRAIN negative noisy case. Alternate negative_weak and negative_normal, each with a seeded shuffled round-robin over its 12 existing cases.",
+    "slots_2_3": "Keep the original continuous and quantized training draws unchanged.",
+    "seed": 4101,
+    "new_training_cases": 0,
+    "validation_cases_used_for_training": 0
+  },
+  "frozen": {
+    "maximum_updates": 500,
+    "lr": 0.00003,
+    "accumulation": 4,
+    "clip": 1.0,
+    "safe_weight": 1.0,
+    "coefficient_tau": 0.31241179656394347,
+    "coefficient_power": 9,
+    "parameters": 5797,
+    "features": 19,
+    "shared_CNN_corrections": 6,
+    "physical_backbone": "unchanged",
+    "original_16_checks": "unchanged",
+    "protection_96_groups": "unchanged",
+    "noisy_temperature_rule": "unchanged",
+    "final_test": "locked"
+  },
+  "budget": {
+    "device": "Windows local RTX4060 Laptop; no server GPU",
+    "expected_duration_minutes": 15,
+    "no_new_optimizer_updates_after": "2026-10-13T11:40:00+08:00",
+    "automatic_extension": false
+  },
+  "evidence": {
+    "original_negative_noisy_microbatches": 26,
+    "original_total_noisy_microbatches": 1000,
+    "original_total_microbatches": 2000,
+    "receipt": "reports/local_session_20261013/sampling_coverage.json"
+  },
+  "interpretation_limit": "This is a development-motivated sampling intervention. It repeats a small existing signed training set and does not establish real-camera generalization or prove that sampling is the sole cause. All new checkpoints remain local, and every failed checkpoint is retained."
+}

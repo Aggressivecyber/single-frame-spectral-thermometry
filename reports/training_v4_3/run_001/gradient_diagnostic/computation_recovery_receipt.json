@@ -1,0 +1,31 @@
+{
+  "stage": "COMPUTE_COMPLETE",
+  "cases": 96,
+  "optimizer_steps": 0,
+  "endpoints": [
+    {
+      "arm": "residual_scaled",
+      "checkpoint": "training_v4_3/checkpoints/residual_scaled/update_0500.pt",
+      "checkpoint_sha256": "753cad827cb6e288dc34a1020ef1c72a48430517a64e4d6681c576ee08205838",
+      "parameters_sha256_before_and_after": "c4dd961baf085faec5f8d7d792578d28c47f792529ca7c83749bd7b03387faa3",
+      "invariant_assertions_completed_before_saved_matrices": true,
+      "optimizer_steps": 0,
+      "training_probes": 48
+    },
+    {
+      "arm": "negative_balanced",
+      "checkpoint": "training_v4_3/checkpoints/negative_balanced/update_0500.pt",
+      "checkpoint_sha256": "00322d2c71715c1ba89a9343b5206b67b1cc9612648f0216b82d2ef210647718",
+      "parameters_sha256_before_and_after": "521ca70e7ff2d9fe8a040cb2b91412b28721188caa4831dff65a1f799a043373",
+      "invariant_assertions_completed_before_saved_matrices": true,
+      "optimizer_steps": 0,
+      "training_probes": 48
+    }
+  ],
+  "local_only": true,
+  "final_test_used": false,
+  "recovered_from_serialized_completed_computation": true,
+  "gpu_rerun": false,
+  "source_at_compute_sha256": "fc494fd88941f8c88a07117c26d4e5b2dc5dc494111b965955587a06ca106251",
+  "reason": "All gradients, endpoint invariant assertions, matrices and pooled scores completed; subsequent matplotlib import failed."
+}

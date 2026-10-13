@@ -1,0 +1,18 @@
+{
+  "registered_at": "2026-10-13T10:24:00+08:00",
+  "name": "same_training_strata_gradient_diagnostic",
+  "question": "At the two completed 500-update checkpoints, are the gradients from the main weak group and signed negative groups aligned or opposed, and which parameter groups carry that relation?",
+  "checkpoints": ["residual_scaled/update_0500.pt", "negative_balanced/update_0500.pt"],
+  "training_cases": "Lexicographically first NOISY TRAIN case per condition and geometry; eight conditions times six geometries = 48 cases. No selection by errors, no validation cases.",
+  "gradient_components": ["main", "safe_total", "sum"],
+  "parameter_groups": ["all", "trunk", "continuum_head", "emission_head"],
+  "outputs": ["per-case scalar loss and gradient norms", "mean group gradient vectors", "group cosine matrices", "template projection and color error on those same training probes"],
+  "optimizer_steps": 0,
+  "maximum_cases": 96,
+  "maximum_seconds": 300,
+  "gpu_concurrency": 1,
+  "execution_condition": "Run only after the fixed negative_balanced500 job has exited and both endpoint receipts are complete.",
+  "interpretation_limit": "A training-gradient relation is a local diagnostic, not proof of a unique cause or independent validation. This diagnostic does not authorize new training or changed gates.",
+  "final_test_used": false,
+  "local_only": true
+}

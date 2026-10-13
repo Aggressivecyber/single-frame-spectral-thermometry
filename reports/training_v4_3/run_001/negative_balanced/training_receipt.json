@@ -1,0 +1,85 @@
+{
+  "updates": 500,
+  "microbatches": 2000,
+  "unchanged_slot_comparisons": 1500,
+  "same_training_manifest_as_control": true,
+  "initial_audit_exact_control_match": true,
+  "initial_parameters_sha256": "2d1e4f35c935571d743f1a76f2d79b01eb02a75ded7506d7798109f2c61b9660",
+  "final_parameters_sha256": "521ca70e7ff2d9fe8a040cb2b91412b28721188caa4831dff65a1f799a043373",
+  "checkpoints": [
+    {
+      "update": 0,
+      "path": "training_v4_3/checkpoints/negative_balanced/initial.pt",
+      "sha256": "8a5b1dc8390f16b62a64c1897011172210b1a216913802dbc466adefe8a5b305",
+      "Adam_steps": []
+    },
+    {
+      "update": 100,
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0100.pt",
+      "sha256": "5b0a8714eadef9260185abcfb9296bf041a0520fbbbd066c008dd3f2006572a1",
+      "Adam_steps": [
+        100
+      ]
+    },
+    {
+      "update": 200,
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0200.pt",
+      "sha256": "1eb46f85abe67d228290fa05505a020dc92868b4e78715ecff3753a13e106a0c",
+      "Adam_steps": [
+        200
+      ]
+    },
+    {
+      "update": 300,
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0300.pt",
+      "sha256": "1da6508a64600f72fdc9729444c878dd10c5d2285e02c182ac6b96331c9fdc46",
+      "Adam_steps": [
+        300
+      ]
+    },
+    {
+      "update": 400,
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0400.pt",
+      "sha256": "8989cdaa3a889b1e9d52b3189ab4de1e1d213721b4835abc47cdef65850355b8",
+      "Adam_steps": [
+        400
+      ]
+    },
+    {
+      "update": 500,
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0500.pt",
+      "sha256": "00322d2c71715c1ba89a9343b5206b67b1cc9612648f0216b82d2ef210647718",
+      "Adam_steps": [
+        500
+      ]
+    }
+  ],
+  "native_replays": [
+    {
+      "case_id": "v4_1_signed_validation_mother_0000_negative_normal_continuous",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      }
+    },
+    {
+      "case_id": "v4_1_signed_validation_mother_0000_negative_normal_noise",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      }
+    },
+    {
+      "case_id": "v4_validation_mother_0000_weak_noise0",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      }
+    }
+  ],
+  "original_physics_buffers_unchanged": true,
+  "local_only": true,
+  "elapsed_s": 602.2039999999979,
+  "source_sha256": "e0df9ad4300e00ce27ed3679a425b8dd7da2d9815e7f9feb271246004a24b6e9",
+  "final_test_used": false
+}

@@ -1,0 +1,20 @@
+{
+  "tau": 0.31241179656394347,
+  "power": 9,
+  "design_leakage_target": 0.0001,
+  "training_protection_max_RMS": 0.10100170224905014,
+  "training_noise_min_RMS": 0.9663315415382385,
+  "protected_count": 480,
+  "noise_count": 2096,
+  "training_cases": 2576,
+  "protected_upper_coefficient": 3.8582881942800594e-05,
+  "noise_lower_coefficient": 0.9999614171180572,
+  "formula": "alpha = sigmoid(power * log(rho / tau)); rho from cached physical raw residual",
+  "calibration_inputs": "training raw/cached-state residuals and training noise-kind metadata only; no truth MSE or validation scores",
+  "inference_inputs": "raw_dn,cached_state,cached_beta only",
+  "records_sha256": "1cfe1b74fe1ae335c6d801f91cdfe61990715b025b1aed8d91e9391cd4c74bb1",
+  "data_manifest_sha256": "53bbc44dda8be149fdb9106a4ce344f368c3ee21994095334e612a655a351bf3",
+  "local_only": true,
+  "validation_motivated_diagnostic": true,
+  "final_test_used": false
+}

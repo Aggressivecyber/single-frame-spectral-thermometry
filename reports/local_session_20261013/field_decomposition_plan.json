@@ -1,0 +1,20 @@
+{
+  "registered_at": "2026-10-13T10:31:00+08:00",
+  "checkpoints": ["residual_scaled/update_0500.pt", "negative_balanced/update_0500.pt"],
+  "case_scope": "Exactly the already frozen 144 stage_validation_ids in reports/training_v4_2/run_001/protocol.json, all three input kinds; no error-based selection.",
+  "continuum_state_fields": [0, 1],
+  "signed_state_fields": [2, 3, 4],
+  "combinations": ["physics continuum + physics signed", "physics continuum + CNN signed", "CNN continuum + physics signed", "CNN continuum + CNN signed"],
+  "beta": "unchanged cached beta",
+  "truth_usage": "scoring only; never selecting a combination",
+  "maximum_gpu_seconds": 120,
+  "optimizer_updates": 0,
+  "gpu_concurrency": 1,
+  "execution_order": "After the 48-case training gradient diagnostic has exited; run serially.",
+  "native_check": "The complete CNN/CNN combination must reproduce the frozen same-checkpoint native output for every one of the 144 cases.",
+  "outputs": ["color error", "signed template error and projection", "fixed signed 60e recall", "weighted raw residual", "invalid output fraction"],
+  "not_a_model_selection": true,
+  "final_test_used": false,
+  "local_only": true,
+  "interpretation": "These are fixed diagnostic state substitutions on an exposed development subset, not a new selected model or an evaluation of all 776 frames. The code allows signed values in [-20,20]; learned near-zero signed output is distinct from explicit nonnegative truncation."
+}
