@@ -1,0 +1,32 @@
+{
+  "schema": "v5-one-time-wake-plan-v1",
+  "task_spec_sha256": "ce8c7e7b0f0de81a8a3bb2e368b60a46ee8d7ad3858736c38862e31632c0519c",
+  "protocol_sha256": "3fee043711f45ba36c289af45544d62ace8edc84fc1052ced22a5fc6d635fdf1",
+  "development_source_sha256": "f16e43b5ce9afce07dff2f9e8c83137b11b80df56eb0d8ce440af99bc5a4d439",
+  "final_source_sha256": "e8ebceb2dee98fee84e4b1f0784ae813dba81e1f22b29f50a3c01087fddd5636",
+  "automation_id": "v5",
+  "automation_kind": "heartbeat",
+  "automation_status_verified": "ACTIVE",
+  "wake_time_Asia_Singapore": "2026-10-13T23:45:00+08:00",
+  "wake_time_UTC": "2026-10-13T15:45:00Z",
+  "replaces_previous_wake_time": "2026-10-13T22:00:00+08:00",
+  "reason": "One live state check found the development grid still running with4184 of4320 expected entries, followed by independent null and uncertainty stages.",
+  "observation": {
+    "phase": "development-compare",
+    "launcher_pid": 38568,
+    "worker_pid": 43840,
+    "verified_live_command_line": "-B -m research_v5.run --phase development-compare --device cuda",
+    "ledger_rows_observed": 4184,
+    "expected_grid_rows": 4320,
+    "phase_terminal": false,
+    "stderr_empty": true,
+    "observation_count_this_goal_turn": 1
+  },
+  "continuous_monitoring": false,
+  "goal_tool_last_observed_status": "paused",
+  "goal_state_modified_by_this_turn": false,
+  "research_objective_unchanged": true,
+  "scientific_task_complete": false,
+  "next_action": "Read actual process command lines and terminal phase receipts once at the scheduled wake. Review complete scientific evidence or reschedule if still running. Preserve and diagnose any terminal error without restarting completed inputs.",
+  "acceptance_review_plan": "reports/research_v5/run_001/ROOT_ACCEPTANCE_REVIEW_PLAN_001.json"
+}

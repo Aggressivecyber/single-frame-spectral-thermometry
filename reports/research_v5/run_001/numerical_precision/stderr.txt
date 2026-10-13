@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "E:\CodexWork\thermometry\public_repository_001\reports\research_v5\run_001\numerical_precision\verify_same_probes.py", line 110, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "E:\GAN\runtime_envs\local_cuda_retry_20261007073613_UTC\venv\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\CodexWork\thermometry\public_repository_001\reports\research_v5\run_001\numerical_precision\verify_same_probes.py", line 40, in main
+    assert common.sha(raw_path) == row['raw_file_sha256']
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\CodexWork\thermometry\public_repository_001\research_v5\common.py", line 55, in sha
+    with Path(path).open('rb') as handle:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\CodexWork\\thermometry\\public_repository_001\\raw\\v4_validation_mother_0000\\positive_normal_noise.npz'

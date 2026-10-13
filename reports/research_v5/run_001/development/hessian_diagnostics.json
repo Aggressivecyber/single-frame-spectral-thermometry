@@ -1,0 +1,135 @@
+{
+  "schema": "v5-packed-latent-hessian-audit-001",
+  "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+  "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+  "summary": {
+    "schema": "v5-finite-hessian-probes-001",
+    "options": {
+      "probes": 8,
+      "seed": 53126,
+      "cg_tolerance": 0.0001,
+      "cg_max_iterations": 200
+    },
+    "quantity": "H^-1 F H^-1 local penalized-estimator covariance",
+    "shape": [
+      65539
+    ],
+    "parameter_units": "exactly the caller matvec coordinates; no postblur variance transform inferred",
+    "residual_stopping_checks": "physical and diagonal-equilibrated true residual",
+    "probe_distribution": "fixed-seed Rademacher",
+    "successful_probes": 0,
+    "all_converged": false,
+    "solves": [
+      {
+        "probe": 0,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 3732445331456.0,
+          "equilibrated_true_relative_residual": 230964208.0
+        },
+        "successful": false
+      },
+      {
+        "probe": 1,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 201484599296.0,
+          "equilibrated_true_relative_residual": 10573955.0
+        },
+        "successful": false
+      },
+      {
+        "probe": 2,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 232320090112.0,
+          "equilibrated_true_relative_residual": 10150103.0
+        },
+        "successful": false
+      },
+      {
+        "probe": 3,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 101289123840.0,
+          "equilibrated_true_relative_residual": 5983037.0
+        },
+        "successful": false
+      },
+      {
+        "probe": 4,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 324698308608.0,
+          "equilibrated_true_relative_residual": 14046915.0
+        },
+        "successful": false
+      },
+      {
+        "probe": 5,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 130082136064.0,
+          "equilibrated_true_relative_residual": 2099889.5
+        },
+        "successful": false
+      },
+      {
+        "probe": 6,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 170053484544.0,
+          "equilibrated_true_relative_residual": 8243981.5
+        },
+        "successful": false
+      },
+      {
+        "probe": 7,
+        "inverse_solve": {
+          "converged": false,
+          "iterations": 200,
+          "termination": "maximum_iterations",
+          "true_relative_residual": 218161496064.0,
+          "equilibrated_true_relative_residual": 7116076.5
+        },
+        "successful": false
+      }
+    ],
+    "nonpositive_diagonal_pixels": 0,
+    "valid_fraction": 0.0,
+    "limitations": [
+      "finite-probe diagonal approximation; estimates can be negative",
+      "local linearization in the passed parameter coordinates",
+      "H contains priors/regularization; not an unbiased measurement CRLB",
+      "sandwich assumes F matches fixed raw W and noise covariance",
+      "PCG nonconvergence invalidates reported sigma proxy"
+    ]
+  },
+  "arrays": {
+    "path": "outputs/research_v5/run_001/hessian_probes/v5_development_selection_mother_0000_positive_normal_noise0.npz",
+    "sha256": "5c65e29779d3d1c0943a1cbfd69e0016f6e1a69e74e085b28a419cc677080548"
+  },
+  "coordinates": {
+    "first_n": 65536,
+    "first_units": "latent S electrons",
+    "last_n": 3,
+    "last_units": "normalized beta coefficients"
+  },
+  "postblur_sigma_claimed": false,
+  "continuum_propagated": false,
+  "exact_full_image_CRLB_claimed": false
+}

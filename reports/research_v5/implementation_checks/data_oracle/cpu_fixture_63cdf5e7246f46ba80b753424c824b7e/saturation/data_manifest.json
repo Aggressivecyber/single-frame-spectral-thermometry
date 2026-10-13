@@ -1,0 +1,490 @@
+{
+  "schema": "v5-stage1-matched-signed-diagnostic-v1",
+  "fixture_only": true,
+  "physics_config": {
+    "schema": "parameter-unfold-v004",
+    "shape": [
+      24,
+      24
+    ],
+    "exposure_s": 2e-05,
+    "centers_nm": [
+      430,
+      450,
+      486,
+      513,
+      535,
+      700,
+      905
+    ],
+    "widths_nm": [
+      10,
+      10,
+      6,
+      10,
+      10,
+      10,
+      10
+    ],
+    "quantum_efficiencies": [
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.5,
+      0.5
+    ],
+    "temperature_range_K": [
+      1200,
+      4500
+    ],
+    "temperature_lut_step_K": 5,
+    "reference_temperature_K": 3300,
+    "reference_905_e": 24000,
+    "carrier_bins_xy": [
+      [
+        5,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        -5,
+        5
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        10,
+        5
+      ]
+    ],
+    "modulation_depth": [
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85
+    ],
+    "channel_gain": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "phase_rad": [
+      0.3,
+      -0.4,
+      0.2,
+      -0.1,
+      0.1,
+      -0.2,
+      0.35
+    ],
+    "object_cutoff_cpp": 0.075,
+    "decode_cutoff_cpp": 0.08,
+    "relay_psf_sigma_px": 0.35,
+    "read_noise_e": 3,
+    "full_well_e": 60000,
+    "adc_bits": 12,
+    "black_level_DN": 128,
+    "species_names": [
+      "CH",
+      "C2",
+      "AlO"
+    ],
+    "active_species": [
+      false,
+      false,
+      true
+    ],
+    "species_scale_e": 60,
+    "background_scale_e": 100,
+    "temperature_center_K": 3000,
+    "temperature_scale_K": 1000,
+    "template_response": [
+      [
+        1.0,
+        0.03,
+        0.08
+      ],
+      [
+        0.02,
+        0.05,
+        0.35
+      ],
+      [
+        0.01,
+        0.04,
+        1.0
+      ],
+      [
+        0.01,
+        1.0,
+        0.75
+      ],
+      [
+        0.01,
+        0.05,
+        0.22
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "background_response": [
+      0.9,
+      1.0,
+      0.9,
+      0.85,
+      0.82,
+      0,
+      0
+    ],
+    "response_provenance": {
+      "kind": "synthetic_engineering_fixture",
+      "matrix_is_measured": false,
+      "matrix_is_derived_from_real_line_list": false,
+      "QE_is_measured": false,
+      "filter_response_is_measured": false,
+      "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+    },
+    "steps": 6,
+    "CNN_width": 16,
+    "CG_steps_per_spectral_block": 4,
+    "GN_damping": 0.001,
+    "parameter_correction_bounds": [
+      0.025,
+      0.05,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "physics_config_sha256": "e95ed9eb78976c4b24560c2b410acac732dfff45f034800a99e55494b202601b",
+  "generator_source_sha256": "3c144b3eb764c125f20777c79efe7c242760f5976ab79dd88638620df06f311d",
+  "plan_sha256": "ccc0f1f20702c652d194fb136e46a113e1793e83ee0db00b1e439ab97eee4de7",
+  "source_manifest_sha256": [
+    "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1"
+  ],
+  "planned_rows": 2,
+  "generated_raw_rows": 2,
+  "unavailable_rows": 0,
+  "counts": {
+    "continuous": 1,
+    "quantization": 1,
+    "noise": 0
+  },
+  "selected_mothers": [
+    {
+      "mother_id": "v4_validation_mother_0000",
+      "split": "validation",
+      "index": 0,
+      "seed": 200000,
+      "temperature_seed": 200001,
+      "amplitude_seed": 200029,
+      "template_seed": 200053,
+      "background_seed": 200071,
+      "temperature_geometry": "front",
+      "template_geometry": "blob",
+      "raw_noise_seed_base": 10200000,
+      "temperature_field_sha256": "8a57a55341410544cfec75881f327aeb049bfb0e024461727a93691903ce1bfd",
+      "amplitude_field_sha256": "c2d7e856f4b458a789fa982d594f41606fc05f98d056348def251223d7f64baa",
+      "template_shape_sha256": "d803577e42b90d58d46a92e5f3a15f825974661c74a96e1d9099a923ac2e305b",
+      "streams_independent": true,
+      "scene_transform_before_encoding": true
+    }
+  ],
+  "labels": [
+    {
+      "mother_id": "v4_validation_mother_0000",
+      "condition": "positive_normal",
+      "coefficient_e": 180.0,
+      "path": "diagnostic_labels/v4_validation_mother_0000/positive_normal.npz",
+      "sha256": "2932033c1204aa114dcf808a3cd60a00287a0256e921d88ff2b34c6a66956a2e",
+      "truth_use": "external diagnostic oracle and scoring only",
+      "protected_field_hashes": {
+        "latent_temperature_K": "edc1624bcec89e9d169186a31767bdfff4bb43909f482411dabf485e068f2365",
+        "latent_log_amplitude": "4e50503ff5f21d273109f30b85ade9d4a76bd284d9cd7cd3a800ae7a00dfd066",
+        "beta": "506d505a1d89ed4723e8dbfb0c5e71eadead939efeefbfc8414bd7f62d51cb92",
+        "template_shape": "f6d32c340e4f7bad69bdae8529a02dbc3dddca9084345721b005a44784927e3a",
+        "continuum_latent": "76a498aa57123480a4f84c19e86bedb925282a0007cb81ea75f7272e485d17f2"
+      },
+      "replayed_mother_provenance": {
+        "fixture_artificial_mother": true
+      },
+      "original_provenance_exact_hash_match": {
+        "temperature_field_sha256": false,
+        "amplitude_field_sha256": false,
+        "template_shape_sha256": false
+      },
+      "actual_template_preblur_min_e": 180.0,
+      "actual_template_preblur_max_e": 180.0,
+      "actual_template_postblur_min_e": 180.0,
+      "actual_template_postblur_max_e": 180.0,
+      "diagnostics": {
+        "expected_all_finite": true,
+        "expected_nonnegative": true,
+        "minimum_expected_e": 767349.1873641616,
+        "maximum_expected_e": 2207157.734093066,
+        "negative_expected_pixels": 0,
+        "expected_ADC_high_clip_pixels": 576,
+        "expected_ADC_low_clip_pixels": 0,
+        "expected_ADC_at_or_above_saturation_pixels": 576,
+        "minimum_latent_band_e": 49903.75806695356,
+        "minimum_postblur_band_e": 49903.75806695356,
+        "latent_bands_all_finite": true,
+        "postblur_bands_all_finite": true,
+        "latent_bands_nonnegative": true,
+        "postblur_bands_nonnegative": true,
+        "latent_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "postblur_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "negative_latent_band_pixels": 0,
+        "negative_postblur_band_pixels": 0,
+        "negative_band_policy": "retain numerical signed-stress diagnostics; do not claim negative concentration",
+        "mother_fields_modified_for_legality": false
+      }
+    }
+  ],
+  "rows": [
+    {
+      "schema": "v5-stage1-matched-signed-diagnostic-v1",
+      "case_id": "v4_validation_mother_0000_v5_positive_normal_continuous",
+      "mother_id": "v4_validation_mother_0000",
+      "split": "development_validation",
+      "source_split": "validation",
+      "geometry": "front",
+      "temperature_geometry": "front",
+      "template_geometry": "blob",
+      "condition": "positive_normal",
+      "group": "normal",
+      "coefficient_e": 180.0,
+      "input_kind": "continuous",
+      "noise_seed": null,
+      "registered_noise_seed": 2645236905630045332,
+      "source_manifest_sha256": "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1",
+      "source_physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+      "source_physics_shape": [
+        256,
+        256
+      ],
+      "matched_fields": [
+        "T",
+        "loga",
+        "beta",
+        "template_shape",
+        "geometry"
+      ],
+      "same_noise_realization_claimed": false,
+      "temperature_shift_K": 0.0,
+      "continuum_amplitude_scale": 1.0,
+      "template_shape_amplitude_scale": 1.0,
+      "truth_use": "external diagnostic oracle and scoring only",
+      "signed_semantics": "synthetic template deviation; negative values are not concentrations",
+      "fixture_only": true,
+      "physics_config_sha256": "e95ed9eb78976c4b24560c2b410acac732dfff45f034800a99e55494b202601b",
+      "label_path": "diagnostic_labels/v4_validation_mother_0000/positive_normal.npz",
+      "label_sha256": "2932033c1204aa114dcf808a3cd60a00287a0256e921d88ff2b34c6a66956a2e",
+      "expectation_diagnostics": {
+        "expected_all_finite": true,
+        "expected_nonnegative": true,
+        "minimum_expected_e": 767349.1873641616,
+        "maximum_expected_e": 2207157.734093066,
+        "negative_expected_pixels": 0,
+        "expected_ADC_high_clip_pixels": 576,
+        "expected_ADC_low_clip_pixels": 0,
+        "expected_ADC_at_or_above_saturation_pixels": 576,
+        "minimum_latent_band_e": 49903.75806695356,
+        "minimum_postblur_band_e": 49903.75806695356,
+        "latent_bands_all_finite": true,
+        "postblur_bands_all_finite": true,
+        "latent_bands_nonnegative": true,
+        "postblur_bands_nonnegative": true,
+        "latent_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "postblur_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "negative_latent_band_pixels": 0,
+        "negative_postblur_band_pixels": 0,
+        "negative_band_policy": "retain numerical signed-stress diagnostics; do not claim negative concentration",
+        "mother_fields_modified_for_legality": false
+      },
+      "raw_available": true,
+      "raw_path": "raw/v4_validation_mother_0000/positive_normal_continuous.npz",
+      "raw_hash": "60b9fee210b6ef0f596790bb723b1eedf07282153456d46de0b2a16fc612bd6a",
+      "raw_file_sha256": "8871be9b9ca6f220f0863422600b2fb41659909c79e751027fbfa2810d4ca900",
+      "raw_generation_status": "GENERATED",
+      "ADC_diagnostics": {
+        "unquantized_below_zero_pixels": 0,
+        "unquantized_above_maximum_pixels": 576,
+        "rounded_low_clip_pixels": 0,
+        "rounded_high_clip_pixels": 576,
+        "raw_saturated_pixels": 576,
+        "raw_at_zero_pixels": 0
+      },
+      "shape": [
+        24,
+        24
+      ],
+      "dtype": "float64"
+    },
+    {
+      "schema": "v5-stage1-matched-signed-diagnostic-v1",
+      "case_id": "v4_validation_mother_0000_v5_positive_normal_quantization",
+      "mother_id": "v4_validation_mother_0000",
+      "split": "development_validation",
+      "source_split": "validation",
+      "geometry": "front",
+      "temperature_geometry": "front",
+      "template_geometry": "blob",
+      "condition": "positive_normal",
+      "group": "normal",
+      "coefficient_e": 180.0,
+      "input_kind": "quantization",
+      "noise_seed": null,
+      "registered_noise_seed": 2645236905630045332,
+      "source_manifest_sha256": "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1",
+      "source_physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+      "source_physics_shape": [
+        256,
+        256
+      ],
+      "matched_fields": [
+        "T",
+        "loga",
+        "beta",
+        "template_shape",
+        "geometry"
+      ],
+      "same_noise_realization_claimed": false,
+      "temperature_shift_K": 0.0,
+      "continuum_amplitude_scale": 1.0,
+      "template_shape_amplitude_scale": 1.0,
+      "truth_use": "external diagnostic oracle and scoring only",
+      "signed_semantics": "synthetic template deviation; negative values are not concentrations",
+      "fixture_only": true,
+      "physics_config_sha256": "e95ed9eb78976c4b24560c2b410acac732dfff45f034800a99e55494b202601b",
+      "label_path": "diagnostic_labels/v4_validation_mother_0000/positive_normal.npz",
+      "label_sha256": "2932033c1204aa114dcf808a3cd60a00287a0256e921d88ff2b34c6a66956a2e",
+      "expectation_diagnostics": {
+        "expected_all_finite": true,
+        "expected_nonnegative": true,
+        "minimum_expected_e": 767349.1873641616,
+        "maximum_expected_e": 2207157.734093066,
+        "negative_expected_pixels": 0,
+        "expected_ADC_high_clip_pixels": 576,
+        "expected_ADC_low_clip_pixels": 0,
+        "expected_ADC_at_or_above_saturation_pixels": 576,
+        "minimum_latent_band_e": 49903.75806695356,
+        "minimum_postblur_band_e": 49903.75806695356,
+        "latent_bands_all_finite": true,
+        "postblur_bands_all_finite": true,
+        "latent_bands_nonnegative": true,
+        "postblur_bands_nonnegative": true,
+        "latent_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "postblur_band_minima_e": [
+          49903.75806695356,
+          70791.02998071606,
+          72815.17348467335,
+          170280.47828638626,
+          217175.847057008,
+          792295.7646634785,
+          1499785.408725714
+        ],
+        "negative_latent_band_pixels": 0,
+        "negative_postblur_band_pixels": 0,
+        "negative_band_policy": "retain numerical signed-stress diagnostics; do not claim negative concentration",
+        "mother_fields_modified_for_legality": false
+      },
+      "raw_available": true,
+      "raw_path": "raw/v4_validation_mother_0000/positive_normal_quantization.npz",
+      "raw_hash": "544e97e19641da9b44323c85a1589659c88e17d177a5f180b80ca82802b18fee",
+      "raw_file_sha256": "64408984a111e1130e724dc51503e6c1e0d4fe91bbb8a92278d7c9730e4030bb",
+      "raw_generation_status": "GENERATED",
+      "ADC_diagnostics": {
+        "unquantized_below_zero_pixels": 0,
+        "unquantized_above_maximum_pixels": 576,
+        "rounded_low_clip_pixels": 0,
+        "rounded_high_clip_pixels": 576,
+        "raw_saturated_pixels": 576,
+        "raw_at_zero_pixels": 0
+      },
+      "shape": [
+        24,
+        24
+      ],
+      "dtype": "uint16"
+    }
+  ],
+  "matched_continuum_background_shape_verified": true,
+  "same_noise_realization_claimed": false,
+  "noise_policy": "distinct preregistered streams for every mother/coefficient Poisson mean",
+  "protected_geometry_note": "Original front/stripe geometry names and seeds are unchanged; old stripe is a two-stripe field",
+  "negative_concentration_claimed": false,
+  "labels_accepted_by_deployment": false,
+  "final_test_opened": false,
+  "confirmation_test_opened": false
+}

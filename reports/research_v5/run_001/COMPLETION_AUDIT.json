@@ -1,0 +1,374 @@
+{
+  "schema": "v5-root-task-completion-audit-v2",
+  "time": "2026-10-13T17:22:45.890576+00:00",
+  "origin": "Root review supersedes automatic file-presence draft archived in root_review_001/automatic_drafts",
+  "task_spec_sha256": "ce8c7e7b0f0de81a8a3bb2e368b60a46ee8d7ad3858736c38862e31632c0519c",
+  "protocol_sha256": "3fee043711f45ba36c289af45544d62ace8edc84fc1052ced22a5fc6d635fdf1",
+  "requirements": [
+    {
+      "id": "S0_IMMUTABILITY",
+      "requirement": "Original platform, checkpoints, raw arrays and frozen v5 source/config/protocol unchanged",
+      "status": "COMPLETED",
+      "scientific_acceptance_passed": null,
+      "finding": "1452 old tracked files byte hashes and33 source hashes match;12869 old arrays metadata/readonly match without opening sealed payloads.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/root_review_001/ROOT_DATA_AUDIT.json",
+          "sha256": "308befca29abc824569b5e8d3597a4aff7c1df8bb4c1d22ac922f826cbe4f412"
+        },
+        {
+          "path": "reports/research_v5/run_001/baseline_readonly_inventory.json",
+          "sha256": "a1fb90a57df48c37bb87afe341329026aa792ccec4acd16917442449d3e4d936"
+        },
+        {
+          "path": "reports/research_v5/run_001/old_array_readonly_inventory.json",
+          "sha256": "a5f5b774561030535b9558ad24975c14ce9c081dc380df770a78b6a17d399737"
+        }
+      ]
+    },
+    {
+      "id": "S1_ORACLE",
+      "requirement": "180 diagnostic inputs, same-raw four-level ladder, four fixed baselines",
+      "status": "COMPLETED",
+      "scientific_acceptance_passed": true,
+      "finding": "180 unique raw cases x4=720;84x4=336 baselines; O0 clean normal gate passes.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/ROOT_ORACLE_EVIDENCE_REVIEW.json",
+          "sha256": "075a7acaf11df85515cb6755d4348cdf3e4df61ea45e260a922e2781c2752f31"
+        },
+        {
+          "path": "reports/research_v5/run_001/ORACLE_SUMMARY.json",
+          "sha256": "245c33c69107ee9e4a4a62ab7cefa70694e72aa183704a57926a7e2c76421fba"
+        }
+      ]
+    },
+    {
+      "id": "S1_NUMERICS",
+      "requirement": "Adjoint, finite differences, optical nullspace, scoped finite-mode Fisher",
+      "status": "COMPLETED_WITH_PRECISION_ADDENDUM",
+      "scientific_acceptance_passed": null,
+      "finding": "Original6/2016 float32 failures preserved; same2016 float64 probes pass3e-11 and192 FD pass;24 finite-mode Fisher/optical cases. Not full-image CRLB.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/ROOT_INFORMATION_EVIDENCE_REVIEW.json",
+          "sha256": "77219a93ec7a18afc3b0b86ec22d12e7b247437a359ff63f128585b23b2bf4cf"
+        },
+        {
+          "path": "reports/research_v5/run_001/numerical_precision/summary_002.json",
+          "sha256": "d6ae55443ff15e4c43f49599b8ecaad30e015d9ba3a7992963c4933b936ed7cc"
+        }
+      ]
+    },
+    {
+      "id": "S2_GRID",
+      "requirement": "Only the four registered alphas, same frozen continuum per raw, all four fixed baselines",
+      "status": "COMPLETED_WITH_FAILURES",
+      "scientific_acceptance_passed": false,
+      "finding": "Exact4320keys,4318successful and2nonselected numerical failures retained; original wall timeout preserved.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/root_review_001/ROOT_DATA_AUDIT.json",
+          "sha256": "308befca29abc824569b5e8d3597a4aff7c1df8bb4c1d22ac922f826cbe4f412"
+        },
+        {
+          "path": "reports/research_v5/run_001/development/records.jsonl",
+          "sha256": "dd04da43edecce5320cd98e5359f6e034c64115c3f77c89248fabbbc19d3b46c"
+        },
+        {
+          "path": "reports/research_v5/run_001/execution_recovery_001/END.json",
+          "sha256": "3f1b33da2f73b61b3e8c2ae25302eef89814c68a9470110b0f4c1274679a5548"
+        }
+      ]
+    },
+    {
+      "id": "S2_SELECTION",
+      "requirement": "Development-only alpha and best traditional method selected by frozen rule",
+      "status": "COMPLETED_NEGATIVE_RESULT",
+      "scientific_acceptance_passed": false,
+      "finding": "All four registered alphas infeasible;alpha1 diagnosticfallback;traditional v3 selected by original rule; no reselection.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/selection.json",
+          "sha256": "16a93a0c122430b440302621270f529857b9ba24d499ba4ff8a8b05f9b330566"
+        }
+      ]
+    },
+    {
+      "id": "S2_COLOR",
+      "requirement": "Nominal postblur continuum color RMSE <=20 K; full truth domain and separate latent/reference targets",
+      "status": "COMPLETED_NEGATIVE_RESULT",
+      "scientific_acceptance_passed": false,
+      "finding": "Nominal noisy180frames/36mothers RMSE28.5398826K>20K;mother95%CI[26.8342,30.4089]K; latent/reference targets separate.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/root_review_001/RESULT_SUMMARY.json",
+          "sha256": "443a63437d35455e7b3afa28fd370a8805dc1f7fb5c6093a1ab6efdf3ea15c5c"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/PER_MOTHER_NOMINAL.csv",
+          "sha256": "c0d61743731a4318a1674138d55181dc27052ff75bcc20137f688969460f59ce"
+        }
+      ]
+    },
+    {
+      "id": "S2_SIGNED_RMSE",
+      "requirement": "Positive and negative normal signal each <=1.05 frozen traditional RMSE",
+      "status": "COMPLETED_NEGATIVE_RESULT",
+      "scientific_acceptance_passed": false,
+      "finding": "Normal positive/negative RMSE ratios3.75867/3.70212>1.05; all36matchedmothers retained eachsign.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/paired_statistics.json",
+          "sha256": "9bd7264c9c2d7b19f50c62339c2bdb6a83bf4b66103bbbf6bb42daa0fba6d28b"
+        },
+        {
+          "path": "reports/research_v5/run_001/development/development_gate.json",
+          "sha256": "9b8e04ca4afb91d2154bf158ed018bd74a7a58ad49fce456d7620426cc95b4c9"
+        }
+      ]
+    },
+    {
+      "id": "S2_SIGNED_PROJECTION",
+      "requirement": "Task section 4B also requires normal positive and negative amplitude projection noninferiority",
+      "status": "COMPLETED_NEGATIVE_RESULT",
+      "scientific_acceptance_passed": false,
+      "finding": "Both signs fail original Task4B and final-rule noninferiority. Frozen development boolean omission is explicitly supplemented at root review, not by source modification.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/execution_recovery_001/scientific_stop.json",
+          "sha256": "6d7d70f3ccc98b5dfa25dcf6c3a308d736540686ca426c536e904699a890eebe"
+        }
+      ]
+    },
+    {
+      "id": "S2_CG",
+      "requirement": "True residual <=1e-4, <=200 PCG steps, failures and invalid estimates retained",
+      "status": "COMPLETED_SELECTED_CONFIGURATION_PASSED",
+      "scientific_acceptance_passed": true,
+      "finding": "Selected noisy180 allconverged, true residual max9.84244e-5,valid1; failures on other alphas retained.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/development_gate.json",
+          "sha256": "9b8e04ca4afb91d2154bf158ed018bd74a7a58ad49fce456d7620426cc95b4c9"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/RESULT_SUMMARY.json",
+          "sha256": "443a63437d35455e7b3afa28fd370a8805dc1f7fb5c6093a1ab6efdf3ea15c5c"
+        }
+      ]
+    },
+    {
+      "id": "S2_NULL",
+      "requirement": "Independent null threshold calibration and evaluation, pixel/frame false positives",
+      "status": "COMPLETED_EMPIRICAL_GATE_PASSED",
+      "scientific_acceptance_passed": true,
+      "finding": "96calibration/96disjoint evaluation,threshold48.1619529724 frozenbeforeevaluation;FP2/96 withmotherCI[0,.0520833], no instrument guarantee.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/null_threshold.json",
+          "sha256": "c8c91059c86b6d2dde5e4b0361bf3b388b66877e2bc29ad9cbe1a4dbe8b99c36"
+        }
+      ]
+    },
+    {
+      "id": "S2_MC",
+      "requirement": "Fixed repeat noise uncertainty propagates complete continuum estimation; empirical nominal interval coverage",
+      "status": "COMPLETED_NEGATIVE_RESULT_WITH_LOG_LIMITATION",
+      "scientific_acceptance_passed": false,
+      "finding": "12normalcases x8repeats,6mothermean signedcoverage.903968811 andcolor.897291819<.90. Original3repeatlogs unavailable; weakcoverage unmeasured.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/mc_coverage.json",
+          "sha256": "cfd75c85c66967e6ec89a924fa6349ceec5e145e95a2e18e5346802652864985"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/MC_ARRAY_REOPEN_REVIEW.json",
+          "sha256": "0932a69e39df375dd48ca07c460d60ae64ee17cf7f087cc9f715b28ab6fc0238"
+        }
+      ]
+    },
+    {
+      "id": "S2_HESSIAN",
+      "requirement": "Linear Hessian diagnostic, accurate scope and convergence",
+      "status": "COMPLETED_NUMERICAL_FAILURE",
+      "scientific_acceptance_passed": false,
+      "finding": "All8actualprobeIDs0..7 attempted200iterations;0converged,0validcovariancecoordinates. Failure diagnostic complete, covariance unavailable.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/hessian_diagnostics.json",
+          "sha256": "60a7f710d80c7f10763508db51cade15be26f7df4ae170718652b2fec72e13e9"
+        },
+        {
+          "path": "reports/research_v5/run_001/execution_recovery_001/END.json",
+          "sha256": "3f1b33da2f73b61b3e8c2ae25302eef89814c68a9470110b0f4c1274679a5548"
+        }
+      ]
+    },
+    {
+      "id": "S2_STRESS",
+      "requirement": "Unknown gain and emissivity mismatch evaluated separately",
+      "status": "COMPLETED_NEGATIVE_RESULT",
+      "scientific_acceptance_passed": false,
+      "finding": "36x5=180rows;gain/emissivity nominalcolorRMSE110.464/176.521K;valid1,abstention0. Successful mismatch rejection was not established.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/calibration_stress_records.jsonl",
+          "sha256": "5d60783310366fec2848fc2a96ae2ebe5d35ccc72ef07e9b144f90a01e52f623"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/RESULT_SUMMARY.json",
+          "sha256": "443a63437d35455e7b3afa28fd370a8805dc1f7fb5c6093a1ab6efdf3ea15c5c"
+        }
+      ]
+    },
+    {
+      "id": "S2_STATISTICS",
+      "requirement": "Pooled, per-mother, paired development statistics and 95% confidence intervals",
+      "status": "COMPLETED",
+      "scientific_acceptance_passed": null,
+      "finding": "Six paired normal/weak/sign comparisons reproduced exactly; colorCI added withsame2000/53130motherbootstrap;72weakarraydetectionsrescored,3thresholdpixelsallofftruthsupport.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/development/paired_statistics.json",
+          "sha256": "9bd7264c9c2d7b19f50c62339c2bdb6a83bf4b66103bbbf6bb42daa0fba6d28b"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/RESULT_SUMMARY.json",
+          "sha256": "443a63437d35455e7b3afa28fd370a8805dc1f7fb5c6093a1ab6efdf3ea15c5c"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/PER_MOTHER_NOMINAL.csv",
+          "sha256": "c0d61743731a4318a1674138d55181dc27052ff75bcc20137f688969460f59ce"
+        }
+      ]
+    },
+    {
+      "id": "S2_DEPLOYMENT_BOUNDARY",
+      "requirement": "Inference only receives raw DN and external calibration/selection, raw likelihood once, object blur once, fixed continuum",
+      "status": "COMPLETED_IMPLEMENTATION_AND_EXECUTION_REVIEW",
+      "scientific_acceptance_passed": null,
+      "finding": "Frozen raw-only API/contracts plus actual source-bound runs; no duplicated likelihood or continuum feedback. Implementation acceptance is separate from failed scientific performance.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/SOURCE_REGISTRATION_CHECKS.json",
+          "sha256": "5baf97b4ae53bc79592a94a7809da2906ec9d097cc79c8a96335998c7cfa5a35"
+        },
+        {
+          "path": "reports/research_v5/run_001/ROOT_FINAL_REPORT.md",
+          "sha256": "13f7e7b8001a82e0811f51dcce2184f5c815522ff171b8199b575f8bafd229d3"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/ROOT_DATA_AUDIT.json",
+          "sha256": "308befca29abc824569b5e8d3597a4aff7c1df8bb4c1d22ac922f826cbe4f412"
+        }
+      ]
+    },
+    {
+      "id": "S3_NEURAL",
+      "requirement": "Optional single bounded sign-preserving identity-initialized model; no continuum feedback",
+      "status": "NOT_APPLICABLE_REGISTERED_SCIENTIFIC_STOP",
+      "scientific_acceptance_passed": null,
+      "finding": "Physical prerequisite failed;0optimizerupdates,noCNNcheckpoint,benefitunknown.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/CONDITIONAL_STAGE_CLOSURE.json",
+          "sha256": "6fe0185d3daf20a8cf0394cbdd5132f62f7a3b9ff58578de9b57edf06a1315be"
+        },
+        {
+          "path": "reports/research_v5/run_001/TRAIN_V5_REPORT.md",
+          "sha256": "82a25fe5cc8d15fc18ad24867d25b3dc70d384b99a65f55288c5056ed8d4ba58"
+        }
+      ]
+    },
+    {
+      "id": "S4_CANDIDATE",
+      "requirement": "One real eligible candidate with threshold, configuration and mother statistics frozen",
+      "status": "NOT_APPLICABLE_NO_ELIGIBLE_CANDIDATE",
+      "scientific_acceptance_passed": null,
+      "finding": "No scientifically eligible candidate or final_protocol created; no candidate-review run claimed.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/CONDITIONAL_STAGE_CLOSURE.json",
+          "sha256": "6fe0185d3daf20a8cf0394cbdd5132f62f7a3b9ff58578de9b57edf06a1315be"
+        }
+      ]
+    },
+    {
+      "id": "S4_FINAL",
+      "requirement": "Open sealed confirmation/final arrays only after candidate freeze, evaluate once",
+      "status": "NOT_APPLICABLE_SEALED_BY_SCIENTIFIC_STOP",
+      "scientific_acceptance_passed": null,
+      "finding": "64original+36signedmothers remain sealed;0finalcaseevaluations;accuracyunknown,notafailedfinaltest.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/CONDITIONAL_STAGE_CLOSURE.json",
+          "sha256": "6fe0185d3daf20a8cf0394cbdd5132f62f7a3b9ff58578de9b57edf06a1315be"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/ROOT_DATA_AUDIT.json",
+          "sha256": "308befca29abc824569b5e8d3597a4aff7c1df8bb4c1d22ac922f826cbe4f412"
+        }
+      ]
+    },
+    {
+      "id": "FINAL_DECISION",
+      "requirement": "One page answers all six scientific questions and preserves failed results/scope",
+      "status": "COMPLETED",
+      "scientific_acceptance_passed": null,
+      "finding": "Allsixquestionsanswered;rawproxy/Fisher/MC/calibration/failureboundariesexplicit;figurevisuallyreviewed.",
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/V5_SCIENTIFIC_DECISION.md",
+          "sha256": "fe460edd23c9e35dee8a1d274f0542d66e068cb848a3b42163b2a6ad01565542"
+        },
+        {
+          "path": "reports/research_v5/run_001/ROOT_FINAL_REPORT.md",
+          "sha256": "13f7e7b8001a82e0811f51dcce2184f5c815522ff171b8199b575f8bafd229d3"
+        },
+        {
+          "path": "reports/research_v5/run_001/root_review_001/INDEPENDENT_FINAL_REVIEW.json",
+          "sha256": "d95517cd44293c92675dff8b4d187f0d0c0738ceea11c64a7dd61b833eee59b7"
+        }
+      ]
+    },
+    {
+      "id": "DELIVERY",
+      "requirement": "Runnable entrypoints, actual applicable science artifacts and GitHub delivery",
+      "status": "PENDING_GITHUB_UPLOAD",
+      "scientific_acceptance_passed": null,
+      "finding": "GitHub successful push and all release asset upload/publish exit codes required. No re-download verification requested.",
+      "evidence": []
+    }
+  ],
+  "all_applicable_scientific_work_accounted_for": true,
+  "all_applicable_delivery_complete": false,
+  "user_objective_complete": false,
+  "source_frozen_and_unchanged": true,
+  "research_route_fully_audited": true,
+  "estimator_scientific_acceptance_passed": false,
+  "numerical_execution_all_passed": false,
+  "scientific_final_acceptance_passed": null,
+  "final_performance": "UNKNOWN_SEALED_NOT_RUN",
+  "sealed_evaluation_started": false,
+  "sealed_arrays_generated": false,
+  "sealed_evaluation_completed": false,
+  "formal_training_optimizer_updates": 0,
+  "negative_results_preserved": true,
+  "root_actual_audit_check_count": 100,
+  "visual_QA": {
+    "path": "root_review_001/V5_DECISION_EVIDENCE.png",
+    "actually_viewed_by_root": true,
+    "result": "Four panels readable; correct color/template errors, MC95% nominal vs90% gate, stressreferencevsnominal andzeroabstention; no clipping or label overlap"
+  },
+  "limitations": [
+    "Original21600srun timedout; separately registered5400ssupplement used2299.515s.",
+    "OriginalthreeMC repeatlogs unavailable; arrays andcoveragechecked; weakMCcoverage unmeasured.",
+    "Originalsixfloat32 adjointfailures retained with highprecisionreferencepass.",
+    "Two nonselectedgrid solves andall8Hessianprobes failed.",
+    "Unknown calibrationstress not automatically rejected.",
+    "Finite-modeFisher andrawproxy do not provefull-imageCRLB orweakdetectability.",
+    "Syntheticcolor/templateonly; noexperimentalgastemperature/concentration/10kHzclaim.",
+    "Old array byte-level identity was not newly rehashed; frozenmetadata/readonly andpriorgenerationhashesretained toprotectsealedpayloads."
+  ]
+}

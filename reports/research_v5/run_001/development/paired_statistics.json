@@ -1,0 +1,4356 @@
+{
+  "schema": "v5-development-paired-statistics-001",
+  "plan": {
+    "unit": "mother_scene",
+    "draws": 2000,
+    "seed": 53130,
+    "confidence_level": 0.95,
+    "method": "percentile",
+    "keep_all_noise_repeats_and_signed_conditions_together": true,
+    "primary_targets": [
+      "template_postblur_e",
+      "continuum_postblur_color_temperature_K"
+    ],
+    "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+    "selection_population": "fresh development mothers; normal +/- noisy raw only",
+    "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+    "final_tuning": false,
+    "pixel_independence_assumed": false
+  },
+  "selection_hash": "16a93a0c122430b440302621270f529857b9ba24d499ba4ff8a8b05f9b330566",
+  "comparisons": [
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "normal",
+        "input_kind": "noise",
+        "sign": null
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 5898.668929203372,
+          "reference_MSE_e2": 326.51877428983187,
+          "paired_MSE_difference_e2": 5572.15015491354
+        },
+        {
+          "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 6223.063448589066,
+          "reference_MSE_e2": 331.12438429383553,
+          "paired_MSE_difference_e2": 5891.93906429523
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4471.028129105187,
+          "reference_MSE_e2": 267.833696331852,
+          "paired_MSE_difference_e2": 4203.1944327733345
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4600.26994564111,
+          "reference_MSE_e2": 342.680277081407,
+          "paired_MSE_difference_e2": 4257.589668559704
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9608.534822402527,
+          "reference_MSE_e2": 466.28330532541133,
+          "paired_MSE_difference_e2": 9142.251517077117
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9603.084722678599,
+          "reference_MSE_e2": 443.29253045773976,
+          "paired_MSE_difference_e2": 9159.792192220859
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10484.51557363812,
+          "reference_MSE_e2": 511.12262548371785,
+          "paired_MSE_difference_e2": 9973.392948154402
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10476.793659471488,
+          "reference_MSE_e2": 455.579728446281,
+          "paired_MSE_difference_e2": 10021.213931025208
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 5430.134695898724,
+          "reference_MSE_e2": 460.20283965904446,
+          "paired_MSE_difference_e2": 4969.93185623968
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 6245.295067415942,
+          "reference_MSE_e2": 372.98572893252185,
+          "paired_MSE_difference_e2": 5872.30933848342
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3558.3409185053424,
+          "reference_MSE_e2": 272.8193388777487,
+          "paired_MSE_difference_e2": 3285.521579627594
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3901.8749587183856,
+          "reference_MSE_e2": 279.8685286094099,
+          "paired_MSE_difference_e2": 3622.0064301089756
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2006.25409859605,
+          "reference_MSE_e2": 202.07689774223908,
+          "paired_MSE_difference_e2": 1804.177200853811
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 1906.2618850214367,
+          "reference_MSE_e2": 212.20469434738257,
+          "paired_MSE_difference_e2": 1694.057190674054
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6480.192465386505,
+          "reference_MSE_e2": 358.09956861632196,
+          "paired_MSE_difference_e2": 6122.092896770183
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6477.595168988244,
+          "reference_MSE_e2": 425.0643764125124,
+          "paired_MSE_difference_e2": 6052.5307925757315
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5537.213498644468,
+          "reference_MSE_e2": 366.07388345906963,
+          "paired_MSE_difference_e2": 5171.139615185399
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5438.214597064987,
+          "reference_MSE_e2": 406.8214056799304,
+          "paired_MSE_difference_e2": 5031.3931913850565
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6418.980515456393,
+          "reference_MSE_e2": 422.77105994886807,
+          "paired_MSE_difference_e2": 5996.209455507525
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6845.245304538681,
+          "reference_MSE_e2": 433.4408108826743,
+          "paired_MSE_difference_e2": 6411.804493656006
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2467.9296101446826,
+          "reference_MSE_e2": 266.28202330250247,
+          "paired_MSE_difference_e2": 2201.6475868421803
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2355.800452824616,
+          "reference_MSE_e2": 234.1469817751409,
+          "paired_MSE_difference_e2": 2121.6534710494752
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 1950.7647656974186,
+          "reference_MSE_e2": 191.38608551086182,
+          "paired_MSE_difference_e2": 1759.3786801865567
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 2211.653381940866,
+          "reference_MSE_e2": 218.43305465417285,
+          "paired_MSE_difference_e2": 1993.2203272866932
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3911.554297460682,
+          "reference_MSE_e2": 293.9671490457364,
+          "paired_MSE_difference_e2": 3617.5871484149457
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3306.87212639479,
+          "reference_MSE_e2": 264.42758700404505,
+          "paired_MSE_difference_e2": 3042.444539390745
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1688.637252806933,
+          "reference_MSE_e2": 194.18529986830237,
+          "paired_MSE_difference_e2": 1494.4519529386307
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 2099.2686472468663,
+          "reference_MSE_e2": 213.72496672884276,
+          "paired_MSE_difference_e2": 1885.5436805180236
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 4042.017451267522,
+          "reference_MSE_e2": 302.0695082734562,
+          "paired_MSE_difference_e2": 3739.9479429940657
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3462.623797326888,
+          "reference_MSE_e2": 276.6804464227416,
+          "paired_MSE_difference_e2": 3185.9433509041464
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2865.9274853382535,
+          "reference_MSE_e2": 293.3459815331868,
+          "paired_MSE_difference_e2": 2572.581503805067
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2822.503246319896,
+          "reference_MSE_e2": 295.5093225314131,
+          "paired_MSE_difference_e2": 2526.993923788483
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3434.295168063902,
+          "reference_MSE_e2": 310.8853741852168,
+          "paired_MSE_difference_e2": 3123.4097938786854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3736.180754285868,
+          "reference_MSE_e2": 252.68407269989027,
+          "paired_MSE_difference_e2": 3483.4966815859775
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1571.7796204686113,
+          "reference_MSE_e2": 217.00512225291845,
+          "paired_MSE_difference_e2": 1354.7744982156928
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1595.5218745622585,
+          "reference_MSE_e2": 203.59902438421886,
+          "paired_MSE_difference_e2": 1391.9228501780397
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2652.6349962161694,
+          "reference_MSE_e2": 279.4590470977462,
+          "paired_MSE_difference_e2": 2373.175949118423
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2649.4370670344374,
+          "reference_MSE_e2": 245.26174592483255,
+          "paired_MSE_difference_e2": 2404.1753211096047
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2921.312391656676,
+          "reference_MSE_e2": 259.01382110705663,
+          "paired_MSE_difference_e2": 2662.2985705496194
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2909.6061282449027,
+          "reference_MSE_e2": 272.54478744425285,
+          "paired_MSE_difference_e2": 2637.0613408006498
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4223.008866882688,
+          "reference_MSE_e2": 319.95983658130126,
+          "paired_MSE_difference_e2": 3903.049030301387
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4398.850838269775,
+          "reference_MSE_e2": 340.03609644190107,
+          "paired_MSE_difference_e2": 4058.8147418278736
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4075.6332946732828,
+          "reference_MSE_e2": 292.1716034999614,
+          "paired_MSE_difference_e2": 3783.4616911733215
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4771.855284982226,
+          "reference_MSE_e2": 301.6055076151396,
+          "paired_MSE_difference_e2": 4470.249777367087
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1834.0873538110638,
+          "reference_MSE_e2": 229.627275186884,
+          "paired_MSE_difference_e2": 1604.46007862418
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1876.9149636352454,
+          "reference_MSE_e2": 249.1575707364559,
+          "paired_MSE_difference_e2": 1627.7573928987895
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 958.3584905547159,
+          "reference_MSE_e2": 128.96038203463965,
+          "paired_MSE_difference_e2": 829.3981085200762
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1061.241043009496,
+          "reference_MSE_e2": 147.0659694370835,
+          "paired_MSE_difference_e2": 914.1750735724125
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7567.1888231432295,
+          "reference_MSE_e2": 391.49417445858296,
+          "paired_MSE_difference_e2": 7175.694648684646
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7431.721545183125,
+          "reference_MSE_e2": 416.47249580050453,
+          "paired_MSE_difference_e2": 7015.249049382621
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6680.501617434277,
+          "reference_MSE_e2": 406.8240933828582,
+          "paired_MSE_difference_e2": 6273.677524051419
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 7058.440514980285,
+          "reference_MSE_e2": 381.4400653577923,
+          "paired_MSE_difference_e2": 6677.000449622493
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 1890.634717322856,
+          "reference_MSE_e2": 189.58209662994787,
+          "paired_MSE_difference_e2": 1701.052620692908
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2223.166142975235,
+          "reference_MSE_e2": 212.5843412039724,
+          "paired_MSE_difference_e2": 2010.5818017712625
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3351.693412325072,
+          "reference_MSE_e2": 255.92260528959585,
+          "paired_MSE_difference_e2": 3095.770807035476
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3306.3111965411204,
+          "reference_MSE_e2": 242.18987375053968,
+          "paired_MSE_difference_e2": 3064.1213227905805
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2131.223546477152,
+          "reference_MSE_e2": 233.7351053782187,
+          "paired_MSE_difference_e2": 1897.4884410989334
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2210.6727926221,
+          "reference_MSE_e2": 223.05312964860354,
+          "paired_MSE_difference_e2": 1987.6196629734966
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1442.7869356229676,
+          "reference_MSE_e2": 179.45745891817725,
+          "paired_MSE_difference_e2": 1263.3294767047903
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1662.0142888323035,
+          "reference_MSE_e2": 198.3144235741379,
+          "paired_MSE_difference_e2": 1463.6998652581656
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3815.7472413666546,
+          "reference_MSE_e2": 321.83030677654006,
+          "paired_MSE_difference_e2": 3493.9169345901146
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3749.2485379429395,
+          "reference_MSE_e2": 317.5794803231356,
+          "paired_MSE_difference_e2": 3431.669057619804
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2944.577323324585,
+          "reference_MSE_e2": 254.35540382423898,
+          "paired_MSE_difference_e2": 2690.221919500346
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2699.5926602249247,
+          "reference_MSE_e2": 242.5688059707537,
+          "paired_MSE_difference_e2": 2457.023854254171
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5107.836581974223,
+          "reference_MSE_e2": 305.4661226638276,
+          "paired_MSE_difference_e2": 4802.370459310396
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5161.406595033046,
+          "reference_MSE_e2": 316.33831575708854,
+          "paired_MSE_difference_e2": 4845.068279275957
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6224.377945695319,
+          "reference_MSE_e2": 353.3146622885643,
+          "paired_MSE_difference_e2": 5871.063283406755
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6631.21727639973,
+          "reference_MSE_e2": 341.29520349668377,
+          "paired_MSE_difference_e2": 6289.922072903046
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4370.28589078165,
+          "reference_MSE_e2": 301.96485336446415,
+          "paired_MSE_difference_e2": 4068.321037417186
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4101.266479401988,
+          "reference_MSE_e2": 291.8294881766706,
+          "paired_MSE_difference_e2": 3809.436991225318
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2338.9691087029437,
+          "reference_MSE_e2": 252.55388557981405,
+          "paired_MSE_difference_e2": 2086.4152231231296
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 3156.425213524372,
+          "reference_MSE_e2": 241.93858334324756,
+          "paired_MSE_difference_e2": 2914.4866301811244
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 6060.866188896219,
+          "reference_MSE_e2": 328.8215792918337,
+          "paired_MSE_difference_e2": 5732.044609604385
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4535.6490373731485,
+          "reference_MSE_e2": 305.2569867066295,
+          "paired_MSE_difference_e2": 4230.392050666519
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9605.809772540564,
+          "reference_MSE_e2": 454.78791789157555,
+          "paired_MSE_difference_e2": 9151.021854648989
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 10480.654616554804,
+          "reference_MSE_e2": 483.35117696499947,
+          "paired_MSE_difference_e2": 9997.303439589805
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 5837.7148816573335,
+          "reference_MSE_e2": 416.59428429578315,
+          "paired_MSE_difference_e2": 5421.120597361551
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 3730.107938611864,
+          "reference_MSE_e2": 276.3439337435793,
+          "paired_MSE_difference_e2": 3453.7640048682847
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 1956.2579918087433,
+          "reference_MSE_e2": 207.14079604481083,
+          "paired_MSE_difference_e2": 1749.1171957639326
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6478.893817187374,
+          "reference_MSE_e2": 391.5819725144172,
+          "paired_MSE_difference_e2": 6087.311844672957
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5487.714047854728,
+          "reference_MSE_e2": 386.4476445695,
+          "paired_MSE_difference_e2": 5101.266403285228
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6632.112909997537,
+          "reference_MSE_e2": 428.1059354157712,
+          "paired_MSE_difference_e2": 6204.0069745817655
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2411.865031484649,
+          "reference_MSE_e2": 250.21450253882168,
+          "paired_MSE_difference_e2": 2161.650528945828
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 2081.2090738191423,
+          "reference_MSE_e2": 204.90957008251735,
+          "paired_MSE_difference_e2": 1876.299503736625
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3609.2132119277358,
+          "reference_MSE_e2": 279.1973680248907,
+          "paired_MSE_difference_e2": 3330.0158439028455
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 1893.9529500268995,
+          "reference_MSE_e2": 203.95513329857255,
+          "paired_MSE_difference_e2": 1689.997816728327
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 3752.320624297205,
+          "reference_MSE_e2": 289.3749773480989,
+          "paired_MSE_difference_e2": 3462.945646949106
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2844.2153658290745,
+          "reference_MSE_e2": 294.42765203229993,
+          "paired_MSE_difference_e2": 2549.787713796775
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3585.2379611748847,
+          "reference_MSE_e2": 281.7847234425535,
+          "paired_MSE_difference_e2": 3303.453237732331
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1583.650747515435,
+          "reference_MSE_e2": 210.30207331856866,
+          "paired_MSE_difference_e2": 1373.3486741968663
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 2651.0360316253036,
+          "reference_MSE_e2": 262.36039651128937,
+          "paired_MSE_difference_e2": 2388.675635114014
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2915.4592599507896,
+          "reference_MSE_e2": 265.77930427565474,
+          "paired_MSE_difference_e2": 2649.679955675135
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4310.9298525762315,
+          "reference_MSE_e2": 329.99796651160113,
+          "paired_MSE_difference_e2": 3980.9318860646304
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4423.744289827755,
+          "reference_MSE_e2": 296.8885555575505,
+          "paired_MSE_difference_e2": 4126.855734270204
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1855.5011587231547,
+          "reference_MSE_e2": 239.39242296166995,
+          "paired_MSE_difference_e2": 1616.1087357614847
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 1009.799766782106,
+          "reference_MSE_e2": 138.01317573586158,
+          "paired_MSE_difference_e2": 871.7865910462444
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7499.455184163177,
+          "reference_MSE_e2": 403.9833351295438,
+          "paired_MSE_difference_e2": 7095.471849033634
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 6869.471066207281,
+          "reference_MSE_e2": 394.1320793703253,
+          "paired_MSE_difference_e2": 6475.338986836956
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 2056.9004301490454,
+          "reference_MSE_e2": 201.08321891696013,
+          "paired_MSE_difference_e2": 1855.8172112320854
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3329.0023044330965,
+          "reference_MSE_e2": 249.05623952006778,
+          "paired_MSE_difference_e2": 3079.9460649130283
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2170.948169549626,
+          "reference_MSE_e2": 228.39411751341112,
+          "paired_MSE_difference_e2": 1942.5540520362151
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1552.4006122276355,
+          "reference_MSE_e2": 188.88594124615759,
+          "paired_MSE_difference_e2": 1363.514670981478
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3782.4978896547973,
+          "reference_MSE_e2": 319.70489354983783,
+          "paired_MSE_difference_e2": 3462.7929961049595
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2822.0849917747546,
+          "reference_MSE_e2": 248.46210489749632,
+          "paired_MSE_difference_e2": 2573.6228868772587
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 5134.6215885036345,
+          "reference_MSE_e2": 310.90221921045804,
+          "paired_MSE_difference_e2": 4823.719369293176
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 6427.797611047525,
+          "reference_MSE_e2": 347.30493289262404,
+          "paired_MSE_difference_e2": 6080.4926781549
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4235.77618509182,
+          "reference_MSE_e2": 296.8971707705674,
+          "paired_MSE_difference_e2": 3938.879014321252
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 2747.697161113658,
+          "reference_MSE_e2": 247.2462344615308,
+          "paired_MSE_difference_e2": 2500.4509266521272
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3825.041310705581,
+        "CI95": [
+          3146.47428425832,
+          4522.123952041667
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5732.044609604385,
+          "v5_development_selection_mother_0001": 4230.392050666519,
+          "v5_development_selection_mother_0002": 9151.021854648989,
+          "v5_development_selection_mother_0003": 9997.303439589805,
+          "v5_development_selection_mother_0004": 5421.120597361551,
+          "v5_development_selection_mother_0005": 3453.7640048682847,
+          "v5_development_selection_mother_0006": 1749.1171957639326,
+          "v5_development_selection_mother_0007": 6087.311844672957,
+          "v5_development_selection_mother_0008": 5101.266403285228,
+          "v5_development_selection_mother_0009": 6204.0069745817655,
+          "v5_development_selection_mother_0010": 2161.650528945828,
+          "v5_development_selection_mother_0011": 1876.299503736625,
+          "v5_development_selection_mother_0012": 3330.0158439028455,
+          "v5_development_selection_mother_0013": 1689.997816728327,
+          "v5_development_selection_mother_0014": 3462.945646949106,
+          "v5_development_selection_mother_0015": 2549.787713796775,
+          "v5_development_selection_mother_0016": 3303.453237732331,
+          "v5_development_selection_mother_0017": 1373.3486741968663,
+          "v5_development_selection_mother_0018": 2388.675635114014,
+          "v5_development_selection_mother_0019": 2649.679955675135,
+          "v5_development_selection_mother_0020": 3980.9318860646304,
+          "v5_development_selection_mother_0021": 4126.855734270204,
+          "v5_development_selection_mother_0022": 1616.1087357614847,
+          "v5_development_selection_mother_0023": 871.7865910462444,
+          "v5_development_selection_mother_0024": 7095.471849033634,
+          "v5_development_selection_mother_0025": 6475.338986836956,
+          "v5_development_selection_mother_0026": 1855.8172112320854,
+          "v5_development_selection_mother_0027": 3079.9460649130283,
+          "v5_development_selection_mother_0028": 1942.5540520362151,
+          "v5_development_selection_mother_0029": 1363.514670981478,
+          "v5_development_selection_mother_0030": 3462.7929961049595,
+          "v5_development_selection_mother_0031": 2573.6228868772587,
+          "v5_development_selection_mother_0032": 4823.719369293176,
+          "v5_development_selection_mother_0033": 6080.4926781549,
+          "v5_development_selection_mother_0034": 3938.879014321252,
+          "v5_development_selection_mother_0035": 2500.4509266521272
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.7304525532163058,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.5457582350585626,
+        3.9052979996661703
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 72,
+        "mothers": 36,
+        "domain_pixels": 4718592,
+        "numerical_success_cases": 72,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 19446178738.596573,
+        "temperature_SSE_K2": 3869655573.4543204,
+        "template_truth_energy": 12979641542.831394,
+        "template_MSE_e2": 4121.182492276631,
+        "template_RMSE_e": 64.19643675685303,
+        "temperature_MSE_K2": 820.0869186092632,
+        "temperature_RMSE_K": 28.637159751086756,
+        "template_bias_e": 2.152675253550495,
+        "temperature_bias_K": 0.2599899250910514,
+        "template_spatial_error_variance_e2": 4116.548481529382,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.2240123146772246,
+        "signed_projection": 0.9996794404357539,
+        "latency": {
+          "known_cases": 72,
+          "mean_seconds": 25.79579454166762,
+          "total_seconds": 1857.2972070000687,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 72,
+          "converged_cases": 72,
+          "all_converged": true,
+          "max_true_relative_residual": 9.79608012130484e-05,
+          "max_equilibrated_true_relative_residual": 9.998612949857488e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3363364424.0
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 72,
+        "mothers": 36,
+        "domain_pixels": 4718592,
+        "numerical_success_cases": 72,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 0.9977510240342882,
+        "template_SSE": 1397369410.231708,
+        "temperature_SSE_K2": 1321654687.6272626,
+        "template_truth_energy": 12979641542.831394,
+        "template_MSE_e2": 296.1411815710509,
+        "template_RMSE_e": 17.208753051021763,
+        "temperature_MSE_K2": 280.09514016623234,
+        "temperature_RMSE_K": 16.736043145446068,
+        "template_bias_e": 0.7348153705179933,
+        "temperature_bias_K": -0.49783277946213883,
+        "template_spatial_error_variance_e2": 295.60122794230136,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 0.32811362621993695,
+        "signed_projection": 0.9925502389459939,
+        "latency": {
+          "known_cases": 72,
+          "mean_seconds": 7.637251152777026,
+          "total_seconds": 549.8820829999459,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    },
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "normal",
+        "input_kind": "noise",
+        "sign": "positive"
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 6223.063448589066,
+          "reference_MSE_e2": 331.12438429383553,
+          "paired_MSE_difference_e2": 5891.93906429523
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4600.26994564111,
+          "reference_MSE_e2": 342.680277081407,
+          "paired_MSE_difference_e2": 4257.589668559704
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9603.084722678599,
+          "reference_MSE_e2": 443.29253045773976,
+          "paired_MSE_difference_e2": 9159.792192220859
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10476.793659471488,
+          "reference_MSE_e2": 455.579728446281,
+          "paired_MSE_difference_e2": 10021.213931025208
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 6245.295067415942,
+          "reference_MSE_e2": 372.98572893252185,
+          "paired_MSE_difference_e2": 5872.30933848342
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3901.8749587183856,
+          "reference_MSE_e2": 279.8685286094099,
+          "paired_MSE_difference_e2": 3622.0064301089756
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 1906.2618850214367,
+          "reference_MSE_e2": 212.20469434738257,
+          "paired_MSE_difference_e2": 1694.057190674054
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6477.595168988244,
+          "reference_MSE_e2": 425.0643764125124,
+          "paired_MSE_difference_e2": 6052.5307925757315
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5438.214597064987,
+          "reference_MSE_e2": 406.8214056799304,
+          "paired_MSE_difference_e2": 5031.3931913850565
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6845.245304538681,
+          "reference_MSE_e2": 433.4408108826743,
+          "paired_MSE_difference_e2": 6411.804493656006
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2355.800452824616,
+          "reference_MSE_e2": 234.1469817751409,
+          "paired_MSE_difference_e2": 2121.6534710494752
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 2211.653381940866,
+          "reference_MSE_e2": 218.43305465417285,
+          "paired_MSE_difference_e2": 1993.2203272866932
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3306.87212639479,
+          "reference_MSE_e2": 264.42758700404505,
+          "paired_MSE_difference_e2": 3042.444539390745
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 2099.2686472468663,
+          "reference_MSE_e2": 213.72496672884276,
+          "paired_MSE_difference_e2": 1885.5436805180236
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3462.623797326888,
+          "reference_MSE_e2": 276.6804464227416,
+          "paired_MSE_difference_e2": 3185.9433509041464
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2822.503246319896,
+          "reference_MSE_e2": 295.5093225314131,
+          "paired_MSE_difference_e2": 2526.993923788483
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3736.180754285868,
+          "reference_MSE_e2": 252.68407269989027,
+          "paired_MSE_difference_e2": 3483.4966815859775
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1595.5218745622585,
+          "reference_MSE_e2": 203.59902438421886,
+          "paired_MSE_difference_e2": 1391.9228501780397
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2649.4370670344374,
+          "reference_MSE_e2": 245.26174592483255,
+          "paired_MSE_difference_e2": 2404.1753211096047
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2909.6061282449027,
+          "reference_MSE_e2": 272.54478744425285,
+          "paired_MSE_difference_e2": 2637.0613408006498
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4398.850838269775,
+          "reference_MSE_e2": 340.03609644190107,
+          "paired_MSE_difference_e2": 4058.8147418278736
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4771.855284982226,
+          "reference_MSE_e2": 301.6055076151396,
+          "paired_MSE_difference_e2": 4470.249777367087
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1876.9149636352454,
+          "reference_MSE_e2": 249.1575707364559,
+          "paired_MSE_difference_e2": 1627.7573928987895
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1061.241043009496,
+          "reference_MSE_e2": 147.0659694370835,
+          "paired_MSE_difference_e2": 914.1750735724125
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7431.721545183125,
+          "reference_MSE_e2": 416.47249580050453,
+          "paired_MSE_difference_e2": 7015.249049382621
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 7058.440514980285,
+          "reference_MSE_e2": 381.4400653577923,
+          "paired_MSE_difference_e2": 6677.000449622493
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2223.166142975235,
+          "reference_MSE_e2": 212.5843412039724,
+          "paired_MSE_difference_e2": 2010.5818017712625
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3306.3111965411204,
+          "reference_MSE_e2": 242.18987375053968,
+          "paired_MSE_difference_e2": 3064.1213227905805
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2210.6727926221,
+          "reference_MSE_e2": 223.05312964860354,
+          "paired_MSE_difference_e2": 1987.6196629734966
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1662.0142888323035,
+          "reference_MSE_e2": 198.3144235741379,
+          "paired_MSE_difference_e2": 1463.6998652581656
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3749.2485379429395,
+          "reference_MSE_e2": 317.5794803231356,
+          "paired_MSE_difference_e2": 3431.669057619804
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2699.5926602249247,
+          "reference_MSE_e2": 242.5688059707537,
+          "paired_MSE_difference_e2": 2457.023854254171
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5161.406595033046,
+          "reference_MSE_e2": 316.33831575708854,
+          "paired_MSE_difference_e2": 4845.068279275957
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6631.21727639973,
+          "reference_MSE_e2": 341.29520349668377,
+          "paired_MSE_difference_e2": 6289.922072903046
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4101.266479401988,
+          "reference_MSE_e2": 291.8294881766706,
+          "paired_MSE_difference_e2": 3809.436991225318
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_positive_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 3156.425213524372,
+          "reference_MSE_e2": 241.93858334324756,
+          "paired_MSE_difference_e2": 2914.4866301811244
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 6223.063448589066,
+          "reference_MSE_e2": 331.12438429383553,
+          "paired_MSE_difference_e2": 5891.93906429523
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4600.26994564111,
+          "reference_MSE_e2": 342.680277081407,
+          "paired_MSE_difference_e2": 4257.589668559704
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9603.084722678599,
+          "reference_MSE_e2": 443.29253045773976,
+          "paired_MSE_difference_e2": 9159.792192220859
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 10476.793659471488,
+          "reference_MSE_e2": 455.579728446281,
+          "paired_MSE_difference_e2": 10021.213931025208
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 6245.295067415942,
+          "reference_MSE_e2": 372.98572893252185,
+          "paired_MSE_difference_e2": 5872.30933848342
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 3901.8749587183856,
+          "reference_MSE_e2": 279.8685286094099,
+          "paired_MSE_difference_e2": 3622.0064301089756
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 1906.2618850214367,
+          "reference_MSE_e2": 212.20469434738257,
+          "paired_MSE_difference_e2": 1694.057190674054
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6477.595168988244,
+          "reference_MSE_e2": 425.0643764125124,
+          "paired_MSE_difference_e2": 6052.5307925757315
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5438.214597064987,
+          "reference_MSE_e2": 406.8214056799304,
+          "paired_MSE_difference_e2": 5031.3931913850565
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6845.245304538681,
+          "reference_MSE_e2": 433.4408108826743,
+          "paired_MSE_difference_e2": 6411.804493656006
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2355.800452824616,
+          "reference_MSE_e2": 234.1469817751409,
+          "paired_MSE_difference_e2": 2121.6534710494752
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 2211.653381940866,
+          "reference_MSE_e2": 218.43305465417285,
+          "paired_MSE_difference_e2": 1993.2203272866932
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3306.87212639479,
+          "reference_MSE_e2": 264.42758700404505,
+          "paired_MSE_difference_e2": 3042.444539390745
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 2099.2686472468663,
+          "reference_MSE_e2": 213.72496672884276,
+          "paired_MSE_difference_e2": 1885.5436805180236
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 3462.623797326888,
+          "reference_MSE_e2": 276.6804464227416,
+          "paired_MSE_difference_e2": 3185.9433509041464
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2822.503246319896,
+          "reference_MSE_e2": 295.5093225314131,
+          "paired_MSE_difference_e2": 2526.993923788483
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3736.180754285868,
+          "reference_MSE_e2": 252.68407269989027,
+          "paired_MSE_difference_e2": 3483.4966815859775
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1595.5218745622585,
+          "reference_MSE_e2": 203.59902438421886,
+          "paired_MSE_difference_e2": 1391.9228501780397
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 2649.4370670344374,
+          "reference_MSE_e2": 245.26174592483255,
+          "paired_MSE_difference_e2": 2404.1753211096047
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2909.6061282449027,
+          "reference_MSE_e2": 272.54478744425285,
+          "paired_MSE_difference_e2": 2637.0613408006498
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4398.850838269775,
+          "reference_MSE_e2": 340.03609644190107,
+          "paired_MSE_difference_e2": 4058.8147418278736
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4771.855284982226,
+          "reference_MSE_e2": 301.6055076151396,
+          "paired_MSE_difference_e2": 4470.249777367087
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1876.9149636352454,
+          "reference_MSE_e2": 249.1575707364559,
+          "paired_MSE_difference_e2": 1627.7573928987895
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 1061.241043009496,
+          "reference_MSE_e2": 147.0659694370835,
+          "paired_MSE_difference_e2": 914.1750735724125
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7431.721545183125,
+          "reference_MSE_e2": 416.47249580050453,
+          "paired_MSE_difference_e2": 7015.249049382621
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 7058.440514980285,
+          "reference_MSE_e2": 381.4400653577923,
+          "paired_MSE_difference_e2": 6677.000449622493
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 2223.166142975235,
+          "reference_MSE_e2": 212.5843412039724,
+          "paired_MSE_difference_e2": 2010.5818017712625
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3306.3111965411204,
+          "reference_MSE_e2": 242.18987375053968,
+          "paired_MSE_difference_e2": 3064.1213227905805
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2210.6727926221,
+          "reference_MSE_e2": 223.05312964860354,
+          "paired_MSE_difference_e2": 1987.6196629734966
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1662.0142888323035,
+          "reference_MSE_e2": 198.3144235741379,
+          "paired_MSE_difference_e2": 1463.6998652581656
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3749.2485379429395,
+          "reference_MSE_e2": 317.5794803231356,
+          "paired_MSE_difference_e2": 3431.669057619804
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2699.5926602249247,
+          "reference_MSE_e2": 242.5688059707537,
+          "paired_MSE_difference_e2": 2457.023854254171
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 5161.406595033046,
+          "reference_MSE_e2": 316.33831575708854,
+          "paired_MSE_difference_e2": 4845.068279275957
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 6631.21727639973,
+          "reference_MSE_e2": 341.29520349668377,
+          "paired_MSE_difference_e2": 6289.922072903046
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4101.266479401988,
+          "reference_MSE_e2": 291.8294881766706,
+          "paired_MSE_difference_e2": 3809.436991225318
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 3156.425213524372,
+          "reference_MSE_e2": 241.93858334324756,
+          "paired_MSE_difference_e2": 2914.4866301811244
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3881.2213278477857,
+        "CI95": [
+          3195.2090999400775,
+          4597.750179638403
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5891.93906429523,
+          "v5_development_selection_mother_0001": 4257.589668559704,
+          "v5_development_selection_mother_0002": 9159.792192220859,
+          "v5_development_selection_mother_0003": 10021.213931025208,
+          "v5_development_selection_mother_0004": 5872.30933848342,
+          "v5_development_selection_mother_0005": 3622.0064301089756,
+          "v5_development_selection_mother_0006": 1694.057190674054,
+          "v5_development_selection_mother_0007": 6052.5307925757315,
+          "v5_development_selection_mother_0008": 5031.3931913850565,
+          "v5_development_selection_mother_0009": 6411.804493656006,
+          "v5_development_selection_mother_0010": 2121.6534710494752,
+          "v5_development_selection_mother_0011": 1993.2203272866932,
+          "v5_development_selection_mother_0012": 3042.444539390745,
+          "v5_development_selection_mother_0013": 1885.5436805180236,
+          "v5_development_selection_mother_0014": 3185.9433509041464,
+          "v5_development_selection_mother_0015": 2526.993923788483,
+          "v5_development_selection_mother_0016": 3483.4966815859775,
+          "v5_development_selection_mother_0017": 1391.9228501780397,
+          "v5_development_selection_mother_0018": 2404.1753211096047,
+          "v5_development_selection_mother_0019": 2637.0613408006498,
+          "v5_development_selection_mother_0020": 4058.8147418278736,
+          "v5_development_selection_mother_0021": 4470.249777367087,
+          "v5_development_selection_mother_0022": 1627.7573928987895,
+          "v5_development_selection_mother_0023": 914.1750735724125,
+          "v5_development_selection_mother_0024": 7015.249049382621,
+          "v5_development_selection_mother_0025": 6677.000449622493,
+          "v5_development_selection_mother_0026": 2010.5818017712625,
+          "v5_development_selection_mother_0027": 3064.1213227905805,
+          "v5_development_selection_mother_0028": 1987.6196629734966,
+          "v5_development_selection_mother_0029": 1463.6998652581656,
+          "v5_development_selection_mother_0030": 3431.669057619804,
+          "v5_development_selection_mother_0031": 2457.023854254171,
+          "v5_development_selection_mother_0032": 4845.068279275957,
+          "v5_development_selection_mother_0033": 6289.922072903046,
+          "v5_development_selection_mother_0034": 3809.436991225318,
+          "v5_development_selection_mother_0035": 2914.4866301811244
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.7586672547031106,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.5628391606055514,
+        3.938569051259567
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 9854485240.733187,
+        "temperature_SSE_K2": 1964880832.8137197,
+        "template_truth_energy": 6489820771.415697,
+        "template_MSE_e2": 4176.8753224407565,
+        "template_RMSE_e": 64.62874996811215,
+        "temperature_MSE_K2": 832.8250600237188,
+        "temperature_RMSE_K": 28.858708564724772,
+        "template_bias_e": 2.0603834680555986,
+        "temperature_bias_K": 0.39045335724949837,
+        "template_spatial_error_variance_e2": 4172.63014240532,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.232255088281358,
+        "signed_projection": 1.022731413212066,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 24.841322897224018,
+          "total_seconds": 894.2876243000646,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 36,
+          "converged_cases": 36,
+          "all_converged": true,
+          "max_true_relative_residual": 8.541813440388069e-05,
+          "max_equilibrated_true_relative_residual": 9.998612949857488e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3388314160.0
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 697535286.827218,
+        "temperature_SSE_K2": 668842375.5597906,
+        "template_truth_energy": 6489820771.415697,
+        "template_MSE_e2": 295.653994592971,
+        "template_RMSE_e": 17.19459201589183,
+        "temperature_MSE_K2": 283.4923534646736,
+        "temperature_RMSE_K": 16.837231169781855,
+        "template_bias_e": 0.5872539714224764,
+        "temperature_bias_K": -0.3888138300842709,
+        "template_spatial_error_variance_e2": 295.30912736601954,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 0.32784362242746373,
+        "signed_projection": 1.0018390602243643,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 7.473405080554787,
+          "total_seconds": 269.04258289997233,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    },
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "normal",
+        "input_kind": "noise",
+        "sign": "negative"
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 5898.668929203372,
+          "reference_MSE_e2": 326.51877428983187,
+          "paired_MSE_difference_e2": 5572.15015491354
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4471.028129105187,
+          "reference_MSE_e2": 267.833696331852,
+          "paired_MSE_difference_e2": 4203.1944327733345
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9608.534822402527,
+          "reference_MSE_e2": 466.28330532541133,
+          "paired_MSE_difference_e2": 9142.251517077117
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10484.51557363812,
+          "reference_MSE_e2": 511.12262548371785,
+          "paired_MSE_difference_e2": 9973.392948154402
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 5430.134695898724,
+          "reference_MSE_e2": 460.20283965904446,
+          "paired_MSE_difference_e2": 4969.93185623968
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3558.3409185053424,
+          "reference_MSE_e2": 272.8193388777487,
+          "paired_MSE_difference_e2": 3285.521579627594
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2006.25409859605,
+          "reference_MSE_e2": 202.07689774223908,
+          "paired_MSE_difference_e2": 1804.177200853811
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6480.192465386505,
+          "reference_MSE_e2": 358.09956861632196,
+          "paired_MSE_difference_e2": 6122.092896770183
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5537.213498644468,
+          "reference_MSE_e2": 366.07388345906963,
+          "paired_MSE_difference_e2": 5171.139615185399
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6418.980515456393,
+          "reference_MSE_e2": 422.77105994886807,
+          "paired_MSE_difference_e2": 5996.209455507525
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2467.9296101446826,
+          "reference_MSE_e2": 266.28202330250247,
+          "paired_MSE_difference_e2": 2201.6475868421803
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 1950.7647656974186,
+          "reference_MSE_e2": 191.38608551086182,
+          "paired_MSE_difference_e2": 1759.3786801865567
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3911.554297460682,
+          "reference_MSE_e2": 293.9671490457364,
+          "paired_MSE_difference_e2": 3617.5871484149457
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1688.637252806933,
+          "reference_MSE_e2": 194.18529986830237,
+          "paired_MSE_difference_e2": 1494.4519529386307
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 4042.017451267522,
+          "reference_MSE_e2": 302.0695082734562,
+          "paired_MSE_difference_e2": 3739.9479429940657
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2865.9274853382535,
+          "reference_MSE_e2": 293.3459815331868,
+          "paired_MSE_difference_e2": 2572.581503805067
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3434.295168063902,
+          "reference_MSE_e2": 310.8853741852168,
+          "paired_MSE_difference_e2": 3123.4097938786854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1571.7796204686113,
+          "reference_MSE_e2": 217.00512225291845,
+          "paired_MSE_difference_e2": 1354.7744982156928
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2652.6349962161694,
+          "reference_MSE_e2": 279.4590470977462,
+          "paired_MSE_difference_e2": 2373.175949118423
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2921.312391656676,
+          "reference_MSE_e2": 259.01382110705663,
+          "paired_MSE_difference_e2": 2662.2985705496194
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4223.008866882688,
+          "reference_MSE_e2": 319.95983658130126,
+          "paired_MSE_difference_e2": 3903.049030301387
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4075.6332946732828,
+          "reference_MSE_e2": 292.1716034999614,
+          "paired_MSE_difference_e2": 3783.4616911733215
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1834.0873538110638,
+          "reference_MSE_e2": 229.627275186884,
+          "paired_MSE_difference_e2": 1604.46007862418
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 958.3584905547159,
+          "reference_MSE_e2": 128.96038203463965,
+          "paired_MSE_difference_e2": 829.3981085200762
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7567.1888231432295,
+          "reference_MSE_e2": 391.49417445858296,
+          "paired_MSE_difference_e2": 7175.694648684646
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6680.501617434277,
+          "reference_MSE_e2": 406.8240933828582,
+          "paired_MSE_difference_e2": 6273.677524051419
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 1890.634717322856,
+          "reference_MSE_e2": 189.58209662994787,
+          "paired_MSE_difference_e2": 1701.052620692908
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3351.693412325072,
+          "reference_MSE_e2": 255.92260528959585,
+          "paired_MSE_difference_e2": 3095.770807035476
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2131.223546477152,
+          "reference_MSE_e2": 233.7351053782187,
+          "paired_MSE_difference_e2": 1897.4884410989334
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1442.7869356229676,
+          "reference_MSE_e2": 179.45745891817725,
+          "paired_MSE_difference_e2": 1263.3294767047903
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3815.7472413666546,
+          "reference_MSE_e2": 321.83030677654006,
+          "paired_MSE_difference_e2": 3493.9169345901146
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2944.577323324585,
+          "reference_MSE_e2": 254.35540382423898,
+          "paired_MSE_difference_e2": 2690.221919500346
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5107.836581974223,
+          "reference_MSE_e2": 305.4661226638276,
+          "paired_MSE_difference_e2": 4802.370459310396
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6224.377945695319,
+          "reference_MSE_e2": 353.3146622885643,
+          "paired_MSE_difference_e2": 5871.063283406755
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4370.28589078165,
+          "reference_MSE_e2": 301.96485336446415,
+          "paired_MSE_difference_e2": 4068.321037417186
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_negative_normal_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2338.9691087029437,
+          "reference_MSE_e2": 252.55388557981405,
+          "paired_MSE_difference_e2": 2086.4152231231296
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 5898.668929203372,
+          "reference_MSE_e2": 326.51877428983187,
+          "paired_MSE_difference_e2": 5572.15015491354
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4471.028129105187,
+          "reference_MSE_e2": 267.833696331852,
+          "paired_MSE_difference_e2": 4203.1944327733345
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9608.534822402527,
+          "reference_MSE_e2": 466.28330532541133,
+          "paired_MSE_difference_e2": 9142.251517077117
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 10484.51557363812,
+          "reference_MSE_e2": 511.12262548371785,
+          "paired_MSE_difference_e2": 9973.392948154402
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 5430.134695898724,
+          "reference_MSE_e2": 460.20283965904446,
+          "paired_MSE_difference_e2": 4969.93185623968
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 3558.3409185053424,
+          "reference_MSE_e2": 272.8193388777487,
+          "paired_MSE_difference_e2": 3285.521579627594
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 2006.25409859605,
+          "reference_MSE_e2": 202.07689774223908,
+          "paired_MSE_difference_e2": 1804.177200853811
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6480.192465386505,
+          "reference_MSE_e2": 358.09956861632196,
+          "paired_MSE_difference_e2": 6122.092896770183
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5537.213498644468,
+          "reference_MSE_e2": 366.07388345906963,
+          "paired_MSE_difference_e2": 5171.139615185399
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6418.980515456393,
+          "reference_MSE_e2": 422.77105994886807,
+          "paired_MSE_difference_e2": 5996.209455507525
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2467.9296101446826,
+          "reference_MSE_e2": 266.28202330250247,
+          "paired_MSE_difference_e2": 2201.6475868421803
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 1950.7647656974186,
+          "reference_MSE_e2": 191.38608551086182,
+          "paired_MSE_difference_e2": 1759.3786801865567
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3911.554297460682,
+          "reference_MSE_e2": 293.9671490457364,
+          "paired_MSE_difference_e2": 3617.5871484149457
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 1688.637252806933,
+          "reference_MSE_e2": 194.18529986830237,
+          "paired_MSE_difference_e2": 1494.4519529386307
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 4042.017451267522,
+          "reference_MSE_e2": 302.0695082734562,
+          "paired_MSE_difference_e2": 3739.9479429940657
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2865.9274853382535,
+          "reference_MSE_e2": 293.3459815331868,
+          "paired_MSE_difference_e2": 2572.581503805067
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3434.295168063902,
+          "reference_MSE_e2": 310.8853741852168,
+          "paired_MSE_difference_e2": 3123.4097938786854
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1571.7796204686113,
+          "reference_MSE_e2": 217.00512225291845,
+          "paired_MSE_difference_e2": 1354.7744982156928
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 2652.6349962161694,
+          "reference_MSE_e2": 279.4590470977462,
+          "paired_MSE_difference_e2": 2373.175949118423
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2921.312391656676,
+          "reference_MSE_e2": 259.01382110705663,
+          "paired_MSE_difference_e2": 2662.2985705496194
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4223.008866882688,
+          "reference_MSE_e2": 319.95983658130126,
+          "paired_MSE_difference_e2": 3903.049030301387
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4075.6332946732828,
+          "reference_MSE_e2": 292.1716034999614,
+          "paired_MSE_difference_e2": 3783.4616911733215
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1834.0873538110638,
+          "reference_MSE_e2": 229.627275186884,
+          "paired_MSE_difference_e2": 1604.46007862418
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 958.3584905547159,
+          "reference_MSE_e2": 128.96038203463965,
+          "paired_MSE_difference_e2": 829.3981085200762
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7567.1888231432295,
+          "reference_MSE_e2": 391.49417445858296,
+          "paired_MSE_difference_e2": 7175.694648684646
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 6680.501617434277,
+          "reference_MSE_e2": 406.8240933828582,
+          "paired_MSE_difference_e2": 6273.677524051419
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 1890.634717322856,
+          "reference_MSE_e2": 189.58209662994787,
+          "paired_MSE_difference_e2": 1701.052620692908
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3351.693412325072,
+          "reference_MSE_e2": 255.92260528959585,
+          "paired_MSE_difference_e2": 3095.770807035476
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2131.223546477152,
+          "reference_MSE_e2": 233.7351053782187,
+          "paired_MSE_difference_e2": 1897.4884410989334
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1442.7869356229676,
+          "reference_MSE_e2": 179.45745891817725,
+          "paired_MSE_difference_e2": 1263.3294767047903
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3815.7472413666546,
+          "reference_MSE_e2": 321.83030677654006,
+          "paired_MSE_difference_e2": 3493.9169345901146
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2944.577323324585,
+          "reference_MSE_e2": 254.35540382423898,
+          "paired_MSE_difference_e2": 2690.221919500346
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 5107.836581974223,
+          "reference_MSE_e2": 305.4661226638276,
+          "paired_MSE_difference_e2": 4802.370459310396
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 6224.377945695319,
+          "reference_MSE_e2": 353.3146622885643,
+          "paired_MSE_difference_e2": 5871.063283406755
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4370.28589078165,
+          "reference_MSE_e2": 301.96485336446415,
+          "paired_MSE_difference_e2": 4068.321037417186
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 2338.9691087029437,
+          "reference_MSE_e2": 252.55388557981405,
+          "paired_MSE_difference_e2": 2086.4152231231296
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3768.861293563375,
+        "CI95": [
+          3096.4330384269206,
+          4476.128717058455
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5572.15015491354,
+          "v5_development_selection_mother_0001": 4203.1944327733345,
+          "v5_development_selection_mother_0002": 9142.251517077117,
+          "v5_development_selection_mother_0003": 9973.392948154402,
+          "v5_development_selection_mother_0004": 4969.93185623968,
+          "v5_development_selection_mother_0005": 3285.521579627594,
+          "v5_development_selection_mother_0006": 1804.177200853811,
+          "v5_development_selection_mother_0007": 6122.092896770183,
+          "v5_development_selection_mother_0008": 5171.139615185399,
+          "v5_development_selection_mother_0009": 5996.209455507525,
+          "v5_development_selection_mother_0010": 2201.6475868421803,
+          "v5_development_selection_mother_0011": 1759.3786801865567,
+          "v5_development_selection_mother_0012": 3617.5871484149457,
+          "v5_development_selection_mother_0013": 1494.4519529386307,
+          "v5_development_selection_mother_0014": 3739.9479429940657,
+          "v5_development_selection_mother_0015": 2572.581503805067,
+          "v5_development_selection_mother_0016": 3123.4097938786854,
+          "v5_development_selection_mother_0017": 1354.7744982156928,
+          "v5_development_selection_mother_0018": 2373.175949118423,
+          "v5_development_selection_mother_0019": 2662.2985705496194,
+          "v5_development_selection_mother_0020": 3903.049030301387,
+          "v5_development_selection_mother_0021": 3783.4616911733215,
+          "v5_development_selection_mother_0022": 1604.46007862418,
+          "v5_development_selection_mother_0023": 829.3981085200762,
+          "v5_development_selection_mother_0024": 7175.694648684646,
+          "v5_development_selection_mother_0025": 6273.677524051419,
+          "v5_development_selection_mother_0026": 1701.052620692908,
+          "v5_development_selection_mother_0027": 3095.770807035476,
+          "v5_development_selection_mother_0028": 1897.4884410989334,
+          "v5_development_selection_mother_0029": 1263.3294767047903,
+          "v5_development_selection_mother_0030": 3493.9169345901146,
+          "v5_development_selection_mother_0031": 2690.221919500346,
+          "v5_development_selection_mother_0032": 4802.370459310396,
+          "v5_development_selection_mother_0033": 5871.063283406755,
+          "v5_development_selection_mother_0034": 4068.321037417186,
+          "v5_development_selection_mother_0035": 2086.4152231231296
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.7021165658995927,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.516777893476091,
+        3.8794195865933623
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 9591693497.863388,
+        "temperature_SSE_K2": 1904774740.6406004,
+        "template_truth_energy": 6489820771.415697,
+        "template_MSE_e2": 4065.4896621125063,
+        "template_RMSE_e": 63.76119244581697,
+        "temperature_MSE_K2": 807.3487771948074,
+        "temperature_RMSE_K": 28.41388352891606,
+        "template_bias_e": 2.2449670390453917,
+        "temperature_bias_K": 0.12952649293260443,
+        "template_spatial_error_variance_e2": 4060.449785106106,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.215713654759087,
+        "signed_projection": 0.9766274676594416,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 26.750266186111226,
+          "total_seconds": 963.0095827000041,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 36,
+          "converged_cases": 36,
+          "all_converged": true,
+          "max_true_relative_residual": 9.79608012130484e-05,
+          "max_equilibrated_true_relative_residual": 9.911885717883706e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3338414688.0
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 0.9955020480685763,
+        "template_SSE": 699834123.4044899,
+        "temperature_SSE_K2": 652812312.0674719,
+        "template_truth_energy": 6489820771.415697,
+        "template_MSE_e2": 296.6283685491307,
+        "template_RMSE_e": 17.222902442652654,
+        "temperature_MSE_K2": 276.697926867791,
+        "temperature_RMSE_K": 16.634239593915648,
+        "template_bias_e": 0.8823767696135102,
+        "temperature_bias_K": -0.6068517288400067,
+        "template_spatial_error_variance_e2": 295.84977978557714,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 0.328383408009649,
+        "signed_projection": 0.9832614176676236,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 7.801097224999264,
+          "total_seconds": 280.8395000999735,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    },
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "weak",
+        "input_kind": "noise",
+        "sign": null
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 6172.442189445721,
+          "reference_MSE_e2": 374.97954496066455,
+          "paired_MSE_difference_e2": 5797.462644485056
+        },
+        {
+          "case_id": "v5_development_selection_mother_0000_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 5970.559612274383,
+          "reference_MSE_e2": 311.49371792225134,
+          "paired_MSE_difference_e2": 5659.065894352131
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4281.847045069901,
+          "reference_MSE_e2": 316.93909679660055,
+          "paired_MSE_difference_e2": 3964.9079482733
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4932.948934975013,
+          "reference_MSE_e2": 315.67936760473197,
+          "paired_MSE_difference_e2": 4617.269567370281
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9427.155703152097,
+          "reference_MSE_e2": 511.0798602407963,
+          "paired_MSE_difference_e2": 8916.075842911301
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9008.814143586986,
+          "reference_MSE_e2": 423.00232774628483,
+          "paired_MSE_difference_e2": 8585.811815840701
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10786.864030360055,
+          "reference_MSE_e2": 446.35189205215823,
+          "paired_MSE_difference_e2": 10340.512138307897
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 9993.619604743537,
+          "reference_MSE_e2": 481.274141017848,
+          "paired_MSE_difference_e2": 9512.34546372569
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 5238.703943968375,
+          "reference_MSE_e2": 399.9572347446615,
+          "paired_MSE_difference_e2": 4838.746709223713
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 6293.6960519521035,
+          "reference_MSE_e2": 388.00995841454,
+          "paired_MSE_difference_e2": 5905.6860935375635
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3415.385514576585,
+          "reference_MSE_e2": 219.32168540432406,
+          "paired_MSE_difference_e2": 3196.063829172261
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 4028.2271949694987,
+          "reference_MSE_e2": 263.9998007923498,
+          "paired_MSE_difference_e2": 3764.227394177149
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2011.9629454040587,
+          "reference_MSE_e2": 202.307446945366,
+          "paired_MSE_difference_e2": 1809.6554984586928
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2202.782333390639,
+          "reference_MSE_e2": 187.56573732997387,
+          "paired_MSE_difference_e2": 2015.216596060665
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6691.513876220664,
+          "reference_MSE_e2": 415.7820691504132,
+          "paired_MSE_difference_e2": 6275.731807070251
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6671.221863078994,
+          "reference_MSE_e2": 330.69787434214516,
+          "paired_MSE_difference_e2": 6340.523988736849
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5181.741463630687,
+          "reference_MSE_e2": 354.41459293214655,
+          "paired_MSE_difference_e2": 4827.32687069854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5269.352348947067,
+          "reference_MSE_e2": 297.7612759351953,
+          "paired_MSE_difference_e2": 4971.591073011872
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6135.999688127531,
+          "reference_MSE_e2": 416.4893380534389,
+          "paired_MSE_difference_e2": 5719.5103500740925
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6245.4593198194825,
+          "reference_MSE_e2": 426.1491090753434,
+          "paired_MSE_difference_e2": 5819.310210744139
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2269.3756397651932,
+          "reference_MSE_e2": 271.56420144839234,
+          "paired_MSE_difference_e2": 1997.8114383168008
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2151.95852553254,
+          "reference_MSE_e2": 270.49043196566095,
+          "paired_MSE_difference_e2": 1881.4680935668791
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 2016.1761378665506,
+          "reference_MSE_e2": 207.08291339136755,
+          "paired_MSE_difference_e2": 1809.093224475183
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 1814.4799546224751,
+          "reference_MSE_e2": 221.51057015060326,
+          "paired_MSE_difference_e2": 1592.9693844718718
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3275.137017901159,
+          "reference_MSE_e2": 290.52096031370223,
+          "paired_MSE_difference_e2": 2984.616057587457
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3480.451657486792,
+          "reference_MSE_e2": 292.4140414544493,
+          "paired_MSE_difference_e2": 3188.0376160323426
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1935.5844065775705,
+          "reference_MSE_e2": 175.68304149666878,
+          "paired_MSE_difference_e2": 1759.9013650809018
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1828.7483791617083,
+          "reference_MSE_e2": 196.68800638404346,
+          "paired_MSE_difference_e2": 1632.0603727776647
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3756.850387194696,
+          "reference_MSE_e2": 292.6128910009596,
+          "paired_MSE_difference_e2": 3464.237496193736
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3721.7127310569435,
+          "reference_MSE_e2": 289.51568056756173,
+          "paired_MSE_difference_e2": 3432.1970504893816
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2621.572014157655,
+          "reference_MSE_e2": 265.8063418632095,
+          "paired_MSE_difference_e2": 2355.7656722944453
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2568.7884243850563,
+          "reference_MSE_e2": 299.42878308599086,
+          "paired_MSE_difference_e2": 2269.3596412990655
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3498.9728717961257,
+          "reference_MSE_e2": 284.811165531272,
+          "paired_MSE_difference_e2": 3214.161706264854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3654.097081169463,
+          "reference_MSE_e2": 269.88976492773054,
+          "paired_MSE_difference_e2": 3384.2073162417323
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1688.456382846874,
+          "reference_MSE_e2": 202.1175825519405,
+          "paired_MSE_difference_e2": 1486.3388002949334
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1803.1017821961725,
+          "reference_MSE_e2": 227.79987222315668,
+          "paired_MSE_difference_e2": 1575.3019099730159
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2741.2801657789487,
+          "reference_MSE_e2": 243.20393472146984,
+          "paired_MSE_difference_e2": 2498.0762310574787
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 3098.1914453784225,
+          "reference_MSE_e2": 235.59700375881008,
+          "paired_MSE_difference_e2": 2862.5944416196126
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2719.4162379661548,
+          "reference_MSE_e2": 230.95289842062934,
+          "paired_MSE_difference_e2": 2488.4633395455253
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2755.5015093232096,
+          "reference_MSE_e2": 227.1820974003053,
+          "paired_MSE_difference_e2": 2528.3194119229042
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4292.429143344026,
+          "reference_MSE_e2": 350.07502497229086,
+          "paired_MSE_difference_e2": 3942.354118371735
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4647.210956178249,
+          "reference_MSE_e2": 367.482613595566,
+          "paired_MSE_difference_e2": 4279.728342582683
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4282.751416423641,
+          "reference_MSE_e2": 303.6380867464611,
+          "paired_MSE_difference_e2": 3979.1133296771795
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4406.841781732106,
+          "reference_MSE_e2": 272.1294141203397,
+          "paired_MSE_difference_e2": 4134.712367611766
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1639.7697245949066,
+          "reference_MSE_e2": 182.22877769995966,
+          "paired_MSE_difference_e2": 1457.540946894947
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1881.662753344454,
+          "reference_MSE_e2": 214.8970422800853,
+          "paired_MSE_difference_e2": 1666.7657110643686
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1022.898962601812,
+          "reference_MSE_e2": 134.66621402765804,
+          "paired_MSE_difference_e2": 888.2327485741539
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1022.2778047796636,
+          "reference_MSE_e2": 126.96415852230018,
+          "paired_MSE_difference_e2": 895.3136462573634
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7335.559502440924,
+          "reference_MSE_e2": 440.4425652893155,
+          "paired_MSE_difference_e2": 6895.116937151609
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7297.831839840333,
+          "reference_MSE_e2": 432.15579735828,
+          "paired_MSE_difference_e2": 6865.676042482052
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6148.262436392728,
+          "reference_MSE_e2": 294.72047305224083,
+          "paired_MSE_difference_e2": 5853.541963340487
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6557.896790911611,
+          "reference_MSE_e2": 331.7971338140967,
+          "paired_MSE_difference_e2": 6226.099657097514
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2180.978852746488,
+          "reference_MSE_e2": 214.61382657065184,
+          "paired_MSE_difference_e2": 1966.3650261758362
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2258.671225430024,
+          "reference_MSE_e2": 199.80311837939718,
+          "paired_MSE_difference_e2": 2058.868107050627
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3119.3600188777723,
+          "reference_MSE_e2": 228.98300239623703,
+          "paired_MSE_difference_e2": 2890.377016481535
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3411.6802244161763,
+          "reference_MSE_e2": 259.13968734502606,
+          "paired_MSE_difference_e2": 3152.54053707115
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2180.616113079091,
+          "reference_MSE_e2": 210.9252483357445,
+          "paired_MSE_difference_e2": 1969.6908647433465
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2290.1891205410684,
+          "reference_MSE_e2": 217.02340466394944,
+          "paired_MSE_difference_e2": 2073.165715877119
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1386.964671258518,
+          "reference_MSE_e2": 171.93939175931445,
+          "paired_MSE_difference_e2": 1215.0252794992034
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1530.9032915536789,
+          "reference_MSE_e2": 192.0946880654883,
+          "paired_MSE_difference_e2": 1338.8086034881906
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3552.482402908321,
+          "reference_MSE_e2": 276.3425362264156,
+          "paired_MSE_difference_e2": 3276.1398666819055
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3545.525349384004,
+          "reference_MSE_e2": 317.54546644060486,
+          "paired_MSE_difference_e2": 3227.9798829433994
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2683.6933573398564,
+          "reference_MSE_e2": 252.350026504244,
+          "paired_MSE_difference_e2": 2431.3433308356125
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2716.2972513928926,
+          "reference_MSE_e2": 247.33252815844838,
+          "paired_MSE_difference_e2": 2468.964723234444
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5282.26150227479,
+          "reference_MSE_e2": 354.0181460245735,
+          "paired_MSE_difference_e2": 4928.243356250216
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 6149.853645145491,
+          "reference_MSE_e2": 321.31934437687903,
+          "paired_MSE_difference_e2": 5828.534300768612
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6871.580937724312,
+          "reference_MSE_e2": 358.2411477421361,
+          "paired_MSE_difference_e2": 6513.339789982176
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 5738.255554855494,
+          "reference_MSE_e2": 399.2222848711538,
+          "paired_MSE_difference_e2": 5339.03326998434
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4162.957054139373,
+          "reference_MSE_e2": 351.27803270131477,
+          "paired_MSE_difference_e2": 3811.6790214380585
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4053.414147649454,
+          "reference_MSE_e2": 329.0504095909244,
+          "paired_MSE_difference_e2": 3724.3637380585296
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2840.070757791361,
+          "reference_MSE_e2": 254.50838286294442,
+          "paired_MSE_difference_e2": 2585.5623749284164
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2650.9205085031313,
+          "reference_MSE_e2": 244.74251795373078,
+          "paired_MSE_difference_e2": 2406.1779905494004
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 6071.500900860052,
+          "reference_MSE_e2": 343.2366314414579,
+          "paired_MSE_difference_e2": 5728.264269418594
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4607.397990022457,
+          "reference_MSE_e2": 316.30923220066626,
+          "paired_MSE_difference_e2": 4291.088757821791
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9217.984923369542,
+          "reference_MSE_e2": 467.0410939935406,
+          "paired_MSE_difference_e2": 8750.943829376001
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 10390.241817551796,
+          "reference_MSE_e2": 463.81301653500316,
+          "paired_MSE_difference_e2": 9926.428801016793
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 5766.199997960239,
+          "reference_MSE_e2": 393.98359657960077,
+          "paired_MSE_difference_e2": 5372.216401380638
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 3721.8063547730417,
+          "reference_MSE_e2": 241.66074309833692,
+          "paired_MSE_difference_e2": 3480.145611674705
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 2107.372639397349,
+          "reference_MSE_e2": 194.93659213766995,
+          "paired_MSE_difference_e2": 1912.436047259679
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6681.367869649829,
+          "reference_MSE_e2": 373.23997174627914,
+          "paired_MSE_difference_e2": 6308.127897903551
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5225.546906288877,
+          "reference_MSE_e2": 326.0879344336709,
+          "paired_MSE_difference_e2": 4899.458971855206
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6190.729503973507,
+          "reference_MSE_e2": 421.31922356439117,
+          "paired_MSE_difference_e2": 5769.410280409116
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2210.6670826488667,
+          "reference_MSE_e2": 271.02731670702667,
+          "paired_MSE_difference_e2": 1939.6397659418399
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 1915.3280462445127,
+          "reference_MSE_e2": 214.29674177098542,
+          "paired_MSE_difference_e2": 1701.0313044735274
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3377.7943376939756,
+          "reference_MSE_e2": 291.4675008840758,
+          "paired_MSE_difference_e2": 3086.3268368098998
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 1882.1663928696394,
+          "reference_MSE_e2": 186.18552394035612,
+          "paired_MSE_difference_e2": 1695.9808689292831
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 3739.2815591258195,
+          "reference_MSE_e2": 291.0642857842607,
+          "paired_MSE_difference_e2": 3448.217273341559
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2595.180219271356,
+          "reference_MSE_e2": 282.61756247460016,
+          "paired_MSE_difference_e2": 2312.5626567967556
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3576.5349764827943,
+          "reference_MSE_e2": 277.3504652295013,
+          "paired_MSE_difference_e2": 3299.184511253293
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1745.7790825215234,
+          "reference_MSE_e2": 214.9587273875486,
+          "paired_MSE_difference_e2": 1530.8203551339748
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 2919.7358055786854,
+          "reference_MSE_e2": 239.40046924013996,
+          "paired_MSE_difference_e2": 2680.335336338546
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2737.458873644682,
+          "reference_MSE_e2": 229.06749791046732,
+          "paired_MSE_difference_e2": 2508.3913757342148
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4469.820049761138,
+          "reference_MSE_e2": 358.77881928392844,
+          "paired_MSE_difference_e2": 4111.041230477209
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4344.796599077874,
+          "reference_MSE_e2": 287.8837504334004,
+          "paired_MSE_difference_e2": 4056.912848644473
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1760.7162389696803,
+          "reference_MSE_e2": 198.5629099900225,
+          "paired_MSE_difference_e2": 1562.1533289796578
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 1022.5883836907378,
+          "reference_MSE_e2": 130.8151862749791,
+          "paired_MSE_difference_e2": 891.7731974157587
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7316.695671140628,
+          "reference_MSE_e2": 436.2991813237977,
+          "paired_MSE_difference_e2": 6880.396489816831
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 6353.079613652169,
+          "reference_MSE_e2": 313.25880343316874,
+          "paired_MSE_difference_e2": 6039.820810219
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 2219.825039088256,
+          "reference_MSE_e2": 207.2084724750245,
+          "paired_MSE_difference_e2": 2012.6165666132315
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3265.520121646974,
+          "reference_MSE_e2": 244.06134487063156,
+          "paired_MSE_difference_e2": 3021.4587767763423
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2235.40261681008,
+          "reference_MSE_e2": 213.97432649984697,
+          "paired_MSE_difference_e2": 2021.4282903102328
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1458.9339814060984,
+          "reference_MSE_e2": 182.01703991240137,
+          "paired_MSE_difference_e2": 1276.9169414936969
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3549.003876146163,
+          "reference_MSE_e2": 296.9440013335102,
+          "paired_MSE_difference_e2": 3252.059874812652
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2699.9953043663745,
+          "reference_MSE_e2": 249.8412773313462,
+          "paired_MSE_difference_e2": 2450.1540270350283
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 5716.057573710141,
+          "reference_MSE_e2": 337.6687452007263,
+          "paired_MSE_difference_e2": 5378.388828509414
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 6304.9182462899025,
+          "reference_MSE_e2": 378.73171630664496,
+          "paired_MSE_difference_e2": 5926.186529983258
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4108.185600894414,
+          "reference_MSE_e2": 340.1642211461196,
+          "paired_MSE_difference_e2": 3768.021379748294
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 2745.495633147246,
+          "reference_MSE_e2": 249.6254504083376,
+          "paired_MSE_difference_e2": 2495.8701827389086
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3771.8391793456376,
+        "CI95": [
+          3107.2053590171,
+          4451.4339521752945
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5728.264269418594,
+          "v5_development_selection_mother_0001": 4291.088757821791,
+          "v5_development_selection_mother_0002": 8750.943829376001,
+          "v5_development_selection_mother_0003": 9926.428801016793,
+          "v5_development_selection_mother_0004": 5372.216401380638,
+          "v5_development_selection_mother_0005": 3480.145611674705,
+          "v5_development_selection_mother_0006": 1912.436047259679,
+          "v5_development_selection_mother_0007": 6308.127897903551,
+          "v5_development_selection_mother_0008": 4899.458971855206,
+          "v5_development_selection_mother_0009": 5769.410280409116,
+          "v5_development_selection_mother_0010": 1939.6397659418399,
+          "v5_development_selection_mother_0011": 1701.0313044735274,
+          "v5_development_selection_mother_0012": 3086.3268368098998,
+          "v5_development_selection_mother_0013": 1695.9808689292831,
+          "v5_development_selection_mother_0014": 3448.217273341559,
+          "v5_development_selection_mother_0015": 2312.5626567967556,
+          "v5_development_selection_mother_0016": 3299.184511253293,
+          "v5_development_selection_mother_0017": 1530.8203551339748,
+          "v5_development_selection_mother_0018": 2680.335336338546,
+          "v5_development_selection_mother_0019": 2508.3913757342148,
+          "v5_development_selection_mother_0020": 4111.041230477209,
+          "v5_development_selection_mother_0021": 4056.912848644473,
+          "v5_development_selection_mother_0022": 1562.1533289796578,
+          "v5_development_selection_mother_0023": 891.7731974157587,
+          "v5_development_selection_mother_0024": 6880.396489816831,
+          "v5_development_selection_mother_0025": 6039.820810219,
+          "v5_development_selection_mother_0026": 2012.6165666132315,
+          "v5_development_selection_mother_0027": 3021.4587767763423,
+          "v5_development_selection_mother_0028": 2021.4282903102328,
+          "v5_development_selection_mother_0029": 1276.9169414936969,
+          "v5_development_selection_mother_0030": 3252.059874812652,
+          "v5_development_selection_mother_0031": 2450.1540270350283,
+          "v5_development_selection_mother_0032": 5378.388828509414,
+          "v5_development_selection_mother_0033": 5926.186529983258,
+          "v5_development_selection_mother_0034": 3768.021379748294,
+          "v5_development_selection_mother_0035": 2495.8701827389086
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.738368054669683,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.5520047766221436,
+        3.9108922152425123
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 72,
+        "mothers": 36,
+        "domain_pixels": 4718592,
+        "numerical_success_cases": 72,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 19169425467.601902,
+        "temperature_SSE_K2": 3830742932.096429,
+        "template_truth_energy": 811227596.4269621,
+        "template_MSE_e2": 4062.530828603512,
+        "template_RMSE_e": 63.73798575891391,
+        "temperature_MSE_K2": 811.8402549100301,
+        "temperature_RMSE_K": 28.492810582847564,
+        "template_bias_e": 2.138944568923634,
+        "temperature_bias_K": 0.08393234619870782,
+        "template_spatial_error_variance_e2": 4057.955744734584,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 4.861084722014818,
+        "signed_projection": 1.0213188681664238,
+        "latency": {
+          "known_cases": 72,
+          "mean_seconds": 26.16642929027633,
+          "total_seconds": 1883.9829088998958,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 72,
+          "converged_cases": 72,
+          "all_converged": true,
+          "max_true_relative_residual": 9.842441068030894e-05,
+          "max_equilibrated_true_relative_residual": 9.867830522125587e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3349794476.4444447
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 72,
+        "mothers": 36,
+        "domain_pixels": 4718592,
+        "numerical_success_cases": 72,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 1371655290.6550102,
+        "temperature_SSE_K2": 1314998149.924354,
+        "template_truth_energy": 811227596.4269621,
+        "template_MSE_e2": 290.691649257874,
+        "template_RMSE_e": 17.049681793449228,
+        "temperature_MSE_K2": 278.68443593435376,
+        "temperature_RMSE_K": 16.69384425272842,
+        "template_bias_e": 0.6676909930742174,
+        "temperature_bias_K": -0.6720884972148471,
+        "template_spatial_error_variance_e2": 290.2458379956416,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.3003226677862074,
+        "signed_projection": 1.0113673177285012,
+        "latency": {
+          "known_cases": 72,
+          "mean_seconds": 7.470762148610245,
+          "total_seconds": 537.8948746999376,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    },
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "weak",
+        "input_kind": "noise",
+        "sign": "positive"
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 5970.559612274383,
+          "reference_MSE_e2": 311.49371792225134,
+          "paired_MSE_difference_e2": 5659.065894352131
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4932.948934975013,
+          "reference_MSE_e2": 315.67936760473197,
+          "paired_MSE_difference_e2": 4617.269567370281
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9008.814143586986,
+          "reference_MSE_e2": 423.00232774628483,
+          "paired_MSE_difference_e2": 8585.811815840701
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 9993.619604743537,
+          "reference_MSE_e2": 481.274141017848,
+          "paired_MSE_difference_e2": 9512.34546372569
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 6293.6960519521035,
+          "reference_MSE_e2": 388.00995841454,
+          "paired_MSE_difference_e2": 5905.6860935375635
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 4028.2271949694987,
+          "reference_MSE_e2": 263.9998007923498,
+          "paired_MSE_difference_e2": 3764.227394177149
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2202.782333390639,
+          "reference_MSE_e2": 187.56573732997387,
+          "paired_MSE_difference_e2": 2015.216596060665
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6671.221863078994,
+          "reference_MSE_e2": 330.69787434214516,
+          "paired_MSE_difference_e2": 6340.523988736849
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5269.352348947067,
+          "reference_MSE_e2": 297.7612759351953,
+          "paired_MSE_difference_e2": 4971.591073011872
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6245.4593198194825,
+          "reference_MSE_e2": 426.1491090753434,
+          "paired_MSE_difference_e2": 5819.310210744139
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2151.95852553254,
+          "reference_MSE_e2": 270.49043196566095,
+          "paired_MSE_difference_e2": 1881.4680935668791
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 1814.4799546224751,
+          "reference_MSE_e2": 221.51057015060326,
+          "paired_MSE_difference_e2": 1592.9693844718718
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3480.451657486792,
+          "reference_MSE_e2": 292.4140414544493,
+          "paired_MSE_difference_e2": 3188.0376160323426
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1828.7483791617083,
+          "reference_MSE_e2": 196.68800638404346,
+          "paired_MSE_difference_e2": 1632.0603727776647
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3721.7127310569435,
+          "reference_MSE_e2": 289.51568056756173,
+          "paired_MSE_difference_e2": 3432.1970504893816
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2568.7884243850563,
+          "reference_MSE_e2": 299.42878308599086,
+          "paired_MSE_difference_e2": 2269.3596412990655
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3654.097081169463,
+          "reference_MSE_e2": 269.88976492773054,
+          "paired_MSE_difference_e2": 3384.2073162417323
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1803.1017821961725,
+          "reference_MSE_e2": 227.79987222315668,
+          "paired_MSE_difference_e2": 1575.3019099730159
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 3098.1914453784225,
+          "reference_MSE_e2": 235.59700375881008,
+          "paired_MSE_difference_e2": 2862.5944416196126
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2755.5015093232096,
+          "reference_MSE_e2": 227.1820974003053,
+          "paired_MSE_difference_e2": 2528.3194119229042
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4647.210956178249,
+          "reference_MSE_e2": 367.482613595566,
+          "paired_MSE_difference_e2": 4279.728342582683
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4406.841781732106,
+          "reference_MSE_e2": 272.1294141203397,
+          "paired_MSE_difference_e2": 4134.712367611766
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1881.662753344454,
+          "reference_MSE_e2": 214.8970422800853,
+          "paired_MSE_difference_e2": 1666.7657110643686
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1022.2778047796636,
+          "reference_MSE_e2": 126.96415852230018,
+          "paired_MSE_difference_e2": 895.3136462573634
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7297.831839840333,
+          "reference_MSE_e2": 432.15579735828,
+          "paired_MSE_difference_e2": 6865.676042482052
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6557.896790911611,
+          "reference_MSE_e2": 331.7971338140967,
+          "paired_MSE_difference_e2": 6226.099657097514
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2258.671225430024,
+          "reference_MSE_e2": 199.80311837939718,
+          "paired_MSE_difference_e2": 2058.868107050627
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3411.6802244161763,
+          "reference_MSE_e2": 259.13968734502606,
+          "paired_MSE_difference_e2": 3152.54053707115
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2290.1891205410684,
+          "reference_MSE_e2": 217.02340466394944,
+          "paired_MSE_difference_e2": 2073.165715877119
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1530.9032915536789,
+          "reference_MSE_e2": 192.0946880654883,
+          "paired_MSE_difference_e2": 1338.8086034881906
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3545.525349384004,
+          "reference_MSE_e2": 317.54546644060486,
+          "paired_MSE_difference_e2": 3227.9798829433994
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2716.2972513928926,
+          "reference_MSE_e2": 247.33252815844838,
+          "paired_MSE_difference_e2": 2468.964723234444
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 6149.853645145491,
+          "reference_MSE_e2": 321.31934437687903,
+          "paired_MSE_difference_e2": 5828.534300768612
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 5738.255554855494,
+          "reference_MSE_e2": 399.2222848711538,
+          "paired_MSE_difference_e2": 5339.03326998434
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4053.414147649454,
+          "reference_MSE_e2": 329.0504095909244,
+          "paired_MSE_difference_e2": 3724.3637380585296
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_positive_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2650.9205085031313,
+          "reference_MSE_e2": 244.74251795373078,
+          "paired_MSE_difference_e2": 2406.1779905494004
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 5970.559612274383,
+          "reference_MSE_e2": 311.49371792225134,
+          "paired_MSE_difference_e2": 5659.065894352131
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4932.948934975013,
+          "reference_MSE_e2": 315.67936760473197,
+          "paired_MSE_difference_e2": 4617.269567370281
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9008.814143586986,
+          "reference_MSE_e2": 423.00232774628483,
+          "paired_MSE_difference_e2": 8585.811815840701
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 9993.619604743537,
+          "reference_MSE_e2": 481.274141017848,
+          "paired_MSE_difference_e2": 9512.34546372569
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 6293.6960519521035,
+          "reference_MSE_e2": 388.00995841454,
+          "paired_MSE_difference_e2": 5905.6860935375635
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 4028.2271949694987,
+          "reference_MSE_e2": 263.9998007923498,
+          "paired_MSE_difference_e2": 3764.227394177149
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 2202.782333390639,
+          "reference_MSE_e2": 187.56573732997387,
+          "paired_MSE_difference_e2": 2015.216596060665
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6671.221863078994,
+          "reference_MSE_e2": 330.69787434214516,
+          "paired_MSE_difference_e2": 6340.523988736849
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5269.352348947067,
+          "reference_MSE_e2": 297.7612759351953,
+          "paired_MSE_difference_e2": 4971.591073011872
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6245.4593198194825,
+          "reference_MSE_e2": 426.1491090753434,
+          "paired_MSE_difference_e2": 5819.310210744139
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2151.95852553254,
+          "reference_MSE_e2": 270.49043196566095,
+          "paired_MSE_difference_e2": 1881.4680935668791
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 1814.4799546224751,
+          "reference_MSE_e2": 221.51057015060326,
+          "paired_MSE_difference_e2": 1592.9693844718718
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3480.451657486792,
+          "reference_MSE_e2": 292.4140414544493,
+          "paired_MSE_difference_e2": 3188.0376160323426
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 1828.7483791617083,
+          "reference_MSE_e2": 196.68800638404346,
+          "paired_MSE_difference_e2": 1632.0603727776647
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 3721.7127310569435,
+          "reference_MSE_e2": 289.51568056756173,
+          "paired_MSE_difference_e2": 3432.1970504893816
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2568.7884243850563,
+          "reference_MSE_e2": 299.42878308599086,
+          "paired_MSE_difference_e2": 2269.3596412990655
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3654.097081169463,
+          "reference_MSE_e2": 269.88976492773054,
+          "paired_MSE_difference_e2": 3384.2073162417323
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1803.1017821961725,
+          "reference_MSE_e2": 227.79987222315668,
+          "paired_MSE_difference_e2": 1575.3019099730159
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 3098.1914453784225,
+          "reference_MSE_e2": 235.59700375881008,
+          "paired_MSE_difference_e2": 2862.5944416196126
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2755.5015093232096,
+          "reference_MSE_e2": 227.1820974003053,
+          "paired_MSE_difference_e2": 2528.3194119229042
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4647.210956178249,
+          "reference_MSE_e2": 367.482613595566,
+          "paired_MSE_difference_e2": 4279.728342582683
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4406.841781732106,
+          "reference_MSE_e2": 272.1294141203397,
+          "paired_MSE_difference_e2": 4134.712367611766
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1881.662753344454,
+          "reference_MSE_e2": 214.8970422800853,
+          "paired_MSE_difference_e2": 1666.7657110643686
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 1022.2778047796636,
+          "reference_MSE_e2": 126.96415852230018,
+          "paired_MSE_difference_e2": 895.3136462573634
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7297.831839840333,
+          "reference_MSE_e2": 432.15579735828,
+          "paired_MSE_difference_e2": 6865.676042482052
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 6557.896790911611,
+          "reference_MSE_e2": 331.7971338140967,
+          "paired_MSE_difference_e2": 6226.099657097514
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 2258.671225430024,
+          "reference_MSE_e2": 199.80311837939718,
+          "paired_MSE_difference_e2": 2058.868107050627
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3411.6802244161763,
+          "reference_MSE_e2": 259.13968734502606,
+          "paired_MSE_difference_e2": 3152.54053707115
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2290.1891205410684,
+          "reference_MSE_e2": 217.02340466394944,
+          "paired_MSE_difference_e2": 2073.165715877119
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1530.9032915536789,
+          "reference_MSE_e2": 192.0946880654883,
+          "paired_MSE_difference_e2": 1338.8086034881906
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3545.525349384004,
+          "reference_MSE_e2": 317.54546644060486,
+          "paired_MSE_difference_e2": 3227.9798829433994
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2716.2972513928926,
+          "reference_MSE_e2": 247.33252815844838,
+          "paired_MSE_difference_e2": 2468.964723234444
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 6149.853645145491,
+          "reference_MSE_e2": 321.31934437687903,
+          "paired_MSE_difference_e2": 5828.534300768612
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 5738.255554855494,
+          "reference_MSE_e2": 399.2222848711538,
+          "paired_MSE_difference_e2": 5339.03326998434
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4053.414147649454,
+          "reference_MSE_e2": 329.0504095909244,
+          "paired_MSE_difference_e2": 3724.3637380585296
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 2650.9205085031313,
+          "reference_MSE_e2": 244.74251795373078,
+          "paired_MSE_difference_e2": 2406.1779905494004
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3811.785999224252,
+        "CI95": [
+          3145.125373495289,
+          4475.283098567529
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5659.065894352131,
+          "v5_development_selection_mother_0001": 4617.269567370281,
+          "v5_development_selection_mother_0002": 8585.811815840701,
+          "v5_development_selection_mother_0003": 9512.34546372569,
+          "v5_development_selection_mother_0004": 5905.6860935375635,
+          "v5_development_selection_mother_0005": 3764.227394177149,
+          "v5_development_selection_mother_0006": 2015.216596060665,
+          "v5_development_selection_mother_0007": 6340.523988736849,
+          "v5_development_selection_mother_0008": 4971.591073011872,
+          "v5_development_selection_mother_0009": 5819.310210744139,
+          "v5_development_selection_mother_0010": 1881.4680935668791,
+          "v5_development_selection_mother_0011": 1592.9693844718718,
+          "v5_development_selection_mother_0012": 3188.0376160323426,
+          "v5_development_selection_mother_0013": 1632.0603727776647,
+          "v5_development_selection_mother_0014": 3432.1970504893816,
+          "v5_development_selection_mother_0015": 2269.3596412990655,
+          "v5_development_selection_mother_0016": 3384.2073162417323,
+          "v5_development_selection_mother_0017": 1575.3019099730159,
+          "v5_development_selection_mother_0018": 2862.5944416196126,
+          "v5_development_selection_mother_0019": 2528.3194119229042,
+          "v5_development_selection_mother_0020": 4279.728342582683,
+          "v5_development_selection_mother_0021": 4134.712367611766,
+          "v5_development_selection_mother_0022": 1666.7657110643686,
+          "v5_development_selection_mother_0023": 895.3136462573634,
+          "v5_development_selection_mother_0024": 6865.676042482052,
+          "v5_development_selection_mother_0025": 6226.099657097514,
+          "v5_development_selection_mother_0026": 2058.868107050627,
+          "v5_development_selection_mother_0027": 3152.54053707115,
+          "v5_development_selection_mother_0028": 2073.165715877119,
+          "v5_development_selection_mother_0029": 1338.8086034881906,
+          "v5_development_selection_mother_0030": 3227.9798829433994,
+          "v5_development_selection_mother_0031": 2468.964723234444,
+          "v5_development_selection_mother_0032": 5828.534300768612,
+          "v5_development_selection_mother_0033": 5339.03326998434,
+          "v5_development_selection_mother_0034": 3724.3637380585296,
+          "v5_development_selection_mother_0035": 2406.1779905494004
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.7627308825942922,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.5733285680206657,
+        3.941254249131365
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 9676596520.13807,
+        "temperature_SSE_K2": 1931932843.7294009,
+        "template_truth_energy": 405613798.21348107,
+        "template_MSE_e2": 4101.476253991898,
+        "template_RMSE_e": 64.04276894382299,
+        "temperature_MSE_K2": 818.8598818161862,
+        "temperature_RMSE_K": 28.615727875002346,
+        "template_bias_e": 2.061110155922448,
+        "temperature_bias_K": 0.14575988675157228,
+        "template_spatial_error_variance_e2": 4097.228078917052,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 4.884329524404597,
+        "signed_projection": 1.1011572872883668,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 25.73743227777514,
+          "total_seconds": 926.5475619999052,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 36,
+          "converged_cases": 36,
+          "all_converged": true,
+          "max_true_relative_residual": 9.594716539140791e-05,
+          "max_equilibrated_true_relative_residual": 9.867830522125587e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3354523054.2222223
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 683465059.3122874,
+        "temperature_SSE_K2": 656180864.1110204,
+        "template_truth_energy": 405613798.21348107,
+        "template_MSE_e2": 289.6902547676457,
+        "template_RMSE_e": 17.020289503050343,
+        "temperature_MSE_K2": 278.1257053421955,
+        "temperature_RMSE_K": 16.677101227197593,
+        "template_bias_e": 0.5810122678477055,
+        "temperature_bias_K": -0.7177595500316885,
+        "template_spatial_error_variance_e2": 289.35267951225615,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.298081015306892,
+        "signed_projection": 1.0358444532889104,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 7.440968041665554,
+          "total_seconds": 267.87484949995996,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    },
+    {
+      "schema": "v5-paired-mother-statistics-001",
+      "method": "v5_physics",
+      "reference": "v3_physics",
+      "population": {
+        "group": "weak",
+        "input_kind": "noise",
+        "sign": "negative"
+      },
+      "complete": true,
+      "same_raw_cases": true,
+      "case_pairs": [
+        {
+          "case_id": "v5_development_selection_mother_0000_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0000",
+          "candidate_MSE_e2": 6172.442189445721,
+          "reference_MSE_e2": 374.97954496066455,
+          "paired_MSE_difference_e2": 5797.462644485056
+        },
+        {
+          "case_id": "v5_development_selection_mother_0001_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0001",
+          "candidate_MSE_e2": 4281.847045069901,
+          "reference_MSE_e2": 316.93909679660055,
+          "paired_MSE_difference_e2": 3964.9079482733
+        },
+        {
+          "case_id": "v5_development_selection_mother_0002_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0002",
+          "candidate_MSE_e2": 9427.155703152097,
+          "reference_MSE_e2": 511.0798602407963,
+          "paired_MSE_difference_e2": 8916.075842911301
+        },
+        {
+          "case_id": "v5_development_selection_mother_0003_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0003",
+          "candidate_MSE_e2": 10786.864030360055,
+          "reference_MSE_e2": 446.35189205215823,
+          "paired_MSE_difference_e2": 10340.512138307897
+        },
+        {
+          "case_id": "v5_development_selection_mother_0004_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0004",
+          "candidate_MSE_e2": 5238.703943968375,
+          "reference_MSE_e2": 399.9572347446615,
+          "paired_MSE_difference_e2": 4838.746709223713
+        },
+        {
+          "case_id": "v5_development_selection_mother_0005_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0005",
+          "candidate_MSE_e2": 3415.385514576585,
+          "reference_MSE_e2": 219.32168540432406,
+          "paired_MSE_difference_e2": 3196.063829172261
+        },
+        {
+          "case_id": "v5_development_selection_mother_0006_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0006",
+          "candidate_MSE_e2": 2011.9629454040587,
+          "reference_MSE_e2": 202.307446945366,
+          "paired_MSE_difference_e2": 1809.6554984586928
+        },
+        {
+          "case_id": "v5_development_selection_mother_0007_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0007",
+          "candidate_MSE_e2": 6691.513876220664,
+          "reference_MSE_e2": 415.7820691504132,
+          "paired_MSE_difference_e2": 6275.731807070251
+        },
+        {
+          "case_id": "v5_development_selection_mother_0008_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0008",
+          "candidate_MSE_e2": 5181.741463630687,
+          "reference_MSE_e2": 354.41459293214655,
+          "paired_MSE_difference_e2": 4827.32687069854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0009_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0009",
+          "candidate_MSE_e2": 6135.999688127531,
+          "reference_MSE_e2": 416.4893380534389,
+          "paired_MSE_difference_e2": 5719.5103500740925
+        },
+        {
+          "case_id": "v5_development_selection_mother_0010_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0010",
+          "candidate_MSE_e2": 2269.3756397651932,
+          "reference_MSE_e2": 271.56420144839234,
+          "paired_MSE_difference_e2": 1997.8114383168008
+        },
+        {
+          "case_id": "v5_development_selection_mother_0011_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0011",
+          "candidate_MSE_e2": 2016.1761378665506,
+          "reference_MSE_e2": 207.08291339136755,
+          "paired_MSE_difference_e2": 1809.093224475183
+        },
+        {
+          "case_id": "v5_development_selection_mother_0012_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0012",
+          "candidate_MSE_e2": 3275.137017901159,
+          "reference_MSE_e2": 290.52096031370223,
+          "paired_MSE_difference_e2": 2984.616057587457
+        },
+        {
+          "case_id": "v5_development_selection_mother_0013_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0013",
+          "candidate_MSE_e2": 1935.5844065775705,
+          "reference_MSE_e2": 175.68304149666878,
+          "paired_MSE_difference_e2": 1759.9013650809018
+        },
+        {
+          "case_id": "v5_development_selection_mother_0014_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0014",
+          "candidate_MSE_e2": 3756.850387194696,
+          "reference_MSE_e2": 292.6128910009596,
+          "paired_MSE_difference_e2": 3464.237496193736
+        },
+        {
+          "case_id": "v5_development_selection_mother_0015_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0015",
+          "candidate_MSE_e2": 2621.572014157655,
+          "reference_MSE_e2": 265.8063418632095,
+          "paired_MSE_difference_e2": 2355.7656722944453
+        },
+        {
+          "case_id": "v5_development_selection_mother_0016_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0016",
+          "candidate_MSE_e2": 3498.9728717961257,
+          "reference_MSE_e2": 284.811165531272,
+          "paired_MSE_difference_e2": 3214.161706264854
+        },
+        {
+          "case_id": "v5_development_selection_mother_0017_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0017",
+          "candidate_MSE_e2": 1688.456382846874,
+          "reference_MSE_e2": 202.1175825519405,
+          "paired_MSE_difference_e2": 1486.3388002949334
+        },
+        {
+          "case_id": "v5_development_selection_mother_0018_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0018",
+          "candidate_MSE_e2": 2741.2801657789487,
+          "reference_MSE_e2": 243.20393472146984,
+          "paired_MSE_difference_e2": 2498.0762310574787
+        },
+        {
+          "case_id": "v5_development_selection_mother_0019_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0019",
+          "candidate_MSE_e2": 2719.4162379661548,
+          "reference_MSE_e2": 230.95289842062934,
+          "paired_MSE_difference_e2": 2488.4633395455253
+        },
+        {
+          "case_id": "v5_development_selection_mother_0020_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0020",
+          "candidate_MSE_e2": 4292.429143344026,
+          "reference_MSE_e2": 350.07502497229086,
+          "paired_MSE_difference_e2": 3942.354118371735
+        },
+        {
+          "case_id": "v5_development_selection_mother_0021_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0021",
+          "candidate_MSE_e2": 4282.751416423641,
+          "reference_MSE_e2": 303.6380867464611,
+          "paired_MSE_difference_e2": 3979.1133296771795
+        },
+        {
+          "case_id": "v5_development_selection_mother_0022_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0022",
+          "candidate_MSE_e2": 1639.7697245949066,
+          "reference_MSE_e2": 182.22877769995966,
+          "paired_MSE_difference_e2": 1457.540946894947
+        },
+        {
+          "case_id": "v5_development_selection_mother_0023_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0023",
+          "candidate_MSE_e2": 1022.898962601812,
+          "reference_MSE_e2": 134.66621402765804,
+          "paired_MSE_difference_e2": 888.2327485741539
+        },
+        {
+          "case_id": "v5_development_selection_mother_0024_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0024",
+          "candidate_MSE_e2": 7335.559502440924,
+          "reference_MSE_e2": 440.4425652893155,
+          "paired_MSE_difference_e2": 6895.116937151609
+        },
+        {
+          "case_id": "v5_development_selection_mother_0025_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0025",
+          "candidate_MSE_e2": 6148.262436392728,
+          "reference_MSE_e2": 294.72047305224083,
+          "paired_MSE_difference_e2": 5853.541963340487
+        },
+        {
+          "case_id": "v5_development_selection_mother_0026_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0026",
+          "candidate_MSE_e2": 2180.978852746488,
+          "reference_MSE_e2": 214.61382657065184,
+          "paired_MSE_difference_e2": 1966.3650261758362
+        },
+        {
+          "case_id": "v5_development_selection_mother_0027_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0027",
+          "candidate_MSE_e2": 3119.3600188777723,
+          "reference_MSE_e2": 228.98300239623703,
+          "paired_MSE_difference_e2": 2890.377016481535
+        },
+        {
+          "case_id": "v5_development_selection_mother_0028_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0028",
+          "candidate_MSE_e2": 2180.616113079091,
+          "reference_MSE_e2": 210.9252483357445,
+          "paired_MSE_difference_e2": 1969.6908647433465
+        },
+        {
+          "case_id": "v5_development_selection_mother_0029_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0029",
+          "candidate_MSE_e2": 1386.964671258518,
+          "reference_MSE_e2": 171.93939175931445,
+          "paired_MSE_difference_e2": 1215.0252794992034
+        },
+        {
+          "case_id": "v5_development_selection_mother_0030_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0030",
+          "candidate_MSE_e2": 3552.482402908321,
+          "reference_MSE_e2": 276.3425362264156,
+          "paired_MSE_difference_e2": 3276.1398666819055
+        },
+        {
+          "case_id": "v5_development_selection_mother_0031_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0031",
+          "candidate_MSE_e2": 2683.6933573398564,
+          "reference_MSE_e2": 252.350026504244,
+          "paired_MSE_difference_e2": 2431.3433308356125
+        },
+        {
+          "case_id": "v5_development_selection_mother_0032_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0032",
+          "candidate_MSE_e2": 5282.26150227479,
+          "reference_MSE_e2": 354.0181460245735,
+          "paired_MSE_difference_e2": 4928.243356250216
+        },
+        {
+          "case_id": "v5_development_selection_mother_0033_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0033",
+          "candidate_MSE_e2": 6871.580937724312,
+          "reference_MSE_e2": 358.2411477421361,
+          "paired_MSE_difference_e2": 6513.339789982176
+        },
+        {
+          "case_id": "v5_development_selection_mother_0034_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0034",
+          "candidate_MSE_e2": 4162.957054139373,
+          "reference_MSE_e2": 351.27803270131477,
+          "paired_MSE_difference_e2": 3811.6790214380585
+        },
+        {
+          "case_id": "v5_development_selection_mother_0035_negative_weak_noise0",
+          "mother_id": "v5_development_selection_mother_0035",
+          "candidate_MSE_e2": 2840.070757791361,
+          "reference_MSE_e2": 254.50838286294442,
+          "paired_MSE_difference_e2": 2585.5623749284164
+        }
+      ],
+      "mother_pairs": {
+        "v5_development_selection_mother_0000": {
+          "candidate_MSE_e2": 6172.442189445721,
+          "reference_MSE_e2": 374.97954496066455,
+          "paired_MSE_difference_e2": 5797.462644485056
+        },
+        "v5_development_selection_mother_0001": {
+          "candidate_MSE_e2": 4281.847045069901,
+          "reference_MSE_e2": 316.93909679660055,
+          "paired_MSE_difference_e2": 3964.9079482733
+        },
+        "v5_development_selection_mother_0002": {
+          "candidate_MSE_e2": 9427.155703152097,
+          "reference_MSE_e2": 511.0798602407963,
+          "paired_MSE_difference_e2": 8916.075842911301
+        },
+        "v5_development_selection_mother_0003": {
+          "candidate_MSE_e2": 10786.864030360055,
+          "reference_MSE_e2": 446.35189205215823,
+          "paired_MSE_difference_e2": 10340.512138307897
+        },
+        "v5_development_selection_mother_0004": {
+          "candidate_MSE_e2": 5238.703943968375,
+          "reference_MSE_e2": 399.9572347446615,
+          "paired_MSE_difference_e2": 4838.746709223713
+        },
+        "v5_development_selection_mother_0005": {
+          "candidate_MSE_e2": 3415.385514576585,
+          "reference_MSE_e2": 219.32168540432406,
+          "paired_MSE_difference_e2": 3196.063829172261
+        },
+        "v5_development_selection_mother_0006": {
+          "candidate_MSE_e2": 2011.9629454040587,
+          "reference_MSE_e2": 202.307446945366,
+          "paired_MSE_difference_e2": 1809.6554984586928
+        },
+        "v5_development_selection_mother_0007": {
+          "candidate_MSE_e2": 6691.513876220664,
+          "reference_MSE_e2": 415.7820691504132,
+          "paired_MSE_difference_e2": 6275.731807070251
+        },
+        "v5_development_selection_mother_0008": {
+          "candidate_MSE_e2": 5181.741463630687,
+          "reference_MSE_e2": 354.41459293214655,
+          "paired_MSE_difference_e2": 4827.32687069854
+        },
+        "v5_development_selection_mother_0009": {
+          "candidate_MSE_e2": 6135.999688127531,
+          "reference_MSE_e2": 416.4893380534389,
+          "paired_MSE_difference_e2": 5719.5103500740925
+        },
+        "v5_development_selection_mother_0010": {
+          "candidate_MSE_e2": 2269.3756397651932,
+          "reference_MSE_e2": 271.56420144839234,
+          "paired_MSE_difference_e2": 1997.8114383168008
+        },
+        "v5_development_selection_mother_0011": {
+          "candidate_MSE_e2": 2016.1761378665506,
+          "reference_MSE_e2": 207.08291339136755,
+          "paired_MSE_difference_e2": 1809.093224475183
+        },
+        "v5_development_selection_mother_0012": {
+          "candidate_MSE_e2": 3275.137017901159,
+          "reference_MSE_e2": 290.52096031370223,
+          "paired_MSE_difference_e2": 2984.616057587457
+        },
+        "v5_development_selection_mother_0013": {
+          "candidate_MSE_e2": 1935.5844065775705,
+          "reference_MSE_e2": 175.68304149666878,
+          "paired_MSE_difference_e2": 1759.9013650809018
+        },
+        "v5_development_selection_mother_0014": {
+          "candidate_MSE_e2": 3756.850387194696,
+          "reference_MSE_e2": 292.6128910009596,
+          "paired_MSE_difference_e2": 3464.237496193736
+        },
+        "v5_development_selection_mother_0015": {
+          "candidate_MSE_e2": 2621.572014157655,
+          "reference_MSE_e2": 265.8063418632095,
+          "paired_MSE_difference_e2": 2355.7656722944453
+        },
+        "v5_development_selection_mother_0016": {
+          "candidate_MSE_e2": 3498.9728717961257,
+          "reference_MSE_e2": 284.811165531272,
+          "paired_MSE_difference_e2": 3214.161706264854
+        },
+        "v5_development_selection_mother_0017": {
+          "candidate_MSE_e2": 1688.456382846874,
+          "reference_MSE_e2": 202.1175825519405,
+          "paired_MSE_difference_e2": 1486.3388002949334
+        },
+        "v5_development_selection_mother_0018": {
+          "candidate_MSE_e2": 2741.2801657789487,
+          "reference_MSE_e2": 243.20393472146984,
+          "paired_MSE_difference_e2": 2498.0762310574787
+        },
+        "v5_development_selection_mother_0019": {
+          "candidate_MSE_e2": 2719.4162379661548,
+          "reference_MSE_e2": 230.95289842062934,
+          "paired_MSE_difference_e2": 2488.4633395455253
+        },
+        "v5_development_selection_mother_0020": {
+          "candidate_MSE_e2": 4292.429143344026,
+          "reference_MSE_e2": 350.07502497229086,
+          "paired_MSE_difference_e2": 3942.354118371735
+        },
+        "v5_development_selection_mother_0021": {
+          "candidate_MSE_e2": 4282.751416423641,
+          "reference_MSE_e2": 303.6380867464611,
+          "paired_MSE_difference_e2": 3979.1133296771795
+        },
+        "v5_development_selection_mother_0022": {
+          "candidate_MSE_e2": 1639.7697245949066,
+          "reference_MSE_e2": 182.22877769995966,
+          "paired_MSE_difference_e2": 1457.540946894947
+        },
+        "v5_development_selection_mother_0023": {
+          "candidate_MSE_e2": 1022.898962601812,
+          "reference_MSE_e2": 134.66621402765804,
+          "paired_MSE_difference_e2": 888.2327485741539
+        },
+        "v5_development_selection_mother_0024": {
+          "candidate_MSE_e2": 7335.559502440924,
+          "reference_MSE_e2": 440.4425652893155,
+          "paired_MSE_difference_e2": 6895.116937151609
+        },
+        "v5_development_selection_mother_0025": {
+          "candidate_MSE_e2": 6148.262436392728,
+          "reference_MSE_e2": 294.72047305224083,
+          "paired_MSE_difference_e2": 5853.541963340487
+        },
+        "v5_development_selection_mother_0026": {
+          "candidate_MSE_e2": 2180.978852746488,
+          "reference_MSE_e2": 214.61382657065184,
+          "paired_MSE_difference_e2": 1966.3650261758362
+        },
+        "v5_development_selection_mother_0027": {
+          "candidate_MSE_e2": 3119.3600188777723,
+          "reference_MSE_e2": 228.98300239623703,
+          "paired_MSE_difference_e2": 2890.377016481535
+        },
+        "v5_development_selection_mother_0028": {
+          "candidate_MSE_e2": 2180.616113079091,
+          "reference_MSE_e2": 210.9252483357445,
+          "paired_MSE_difference_e2": 1969.6908647433465
+        },
+        "v5_development_selection_mother_0029": {
+          "candidate_MSE_e2": 1386.964671258518,
+          "reference_MSE_e2": 171.93939175931445,
+          "paired_MSE_difference_e2": 1215.0252794992034
+        },
+        "v5_development_selection_mother_0030": {
+          "candidate_MSE_e2": 3552.482402908321,
+          "reference_MSE_e2": 276.3425362264156,
+          "paired_MSE_difference_e2": 3276.1398666819055
+        },
+        "v5_development_selection_mother_0031": {
+          "candidate_MSE_e2": 2683.6933573398564,
+          "reference_MSE_e2": 252.350026504244,
+          "paired_MSE_difference_e2": 2431.3433308356125
+        },
+        "v5_development_selection_mother_0032": {
+          "candidate_MSE_e2": 5282.26150227479,
+          "reference_MSE_e2": 354.0181460245735,
+          "paired_MSE_difference_e2": 4928.243356250216
+        },
+        "v5_development_selection_mother_0033": {
+          "candidate_MSE_e2": 6871.580937724312,
+          "reference_MSE_e2": 358.2411477421361,
+          "paired_MSE_difference_e2": 6513.339789982176
+        },
+        "v5_development_selection_mother_0034": {
+          "candidate_MSE_e2": 4162.957054139373,
+          "reference_MSE_e2": 351.27803270131477,
+          "paired_MSE_difference_e2": 3811.6790214380585
+        },
+        "v5_development_selection_mother_0035": {
+          "candidate_MSE_e2": 2840.070757791361,
+          "reference_MSE_e2": 254.50838286294442,
+          "paired_MSE_difference_e2": 2585.5623749284164
+        }
+      },
+      "paired_MSE_difference_bootstrap": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "mothers": 36,
+        "mother_ids": [
+          "v5_development_selection_mother_0000",
+          "v5_development_selection_mother_0001",
+          "v5_development_selection_mother_0002",
+          "v5_development_selection_mother_0003",
+          "v5_development_selection_mother_0004",
+          "v5_development_selection_mother_0005",
+          "v5_development_selection_mother_0006",
+          "v5_development_selection_mother_0007",
+          "v5_development_selection_mother_0008",
+          "v5_development_selection_mother_0009",
+          "v5_development_selection_mother_0010",
+          "v5_development_selection_mother_0011",
+          "v5_development_selection_mother_0012",
+          "v5_development_selection_mother_0013",
+          "v5_development_selection_mother_0014",
+          "v5_development_selection_mother_0015",
+          "v5_development_selection_mother_0016",
+          "v5_development_selection_mother_0017",
+          "v5_development_selection_mother_0018",
+          "v5_development_selection_mother_0019",
+          "v5_development_selection_mother_0020",
+          "v5_development_selection_mother_0021",
+          "v5_development_selection_mother_0022",
+          "v5_development_selection_mother_0023",
+          "v5_development_selection_mother_0024",
+          "v5_development_selection_mother_0025",
+          "v5_development_selection_mother_0026",
+          "v5_development_selection_mother_0027",
+          "v5_development_selection_mother_0028",
+          "v5_development_selection_mother_0029",
+          "v5_development_selection_mother_0030",
+          "v5_development_selection_mother_0031",
+          "v5_development_selection_mother_0032",
+          "v5_development_selection_mother_0033",
+          "v5_development_selection_mother_0034",
+          "v5_development_selection_mother_0035"
+        ],
+        "complete": true,
+        "estimate": 3731.8923594670227,
+        "CI95": [
+          3051.466585561111,
+          4440.33145986281
+        ],
+        "mother_values": {
+          "v5_development_selection_mother_0000": 5797.462644485056,
+          "v5_development_selection_mother_0001": 3964.9079482733,
+          "v5_development_selection_mother_0002": 8916.075842911301,
+          "v5_development_selection_mother_0003": 10340.512138307897,
+          "v5_development_selection_mother_0004": 4838.746709223713,
+          "v5_development_selection_mother_0005": 3196.063829172261,
+          "v5_development_selection_mother_0006": 1809.6554984586928,
+          "v5_development_selection_mother_0007": 6275.731807070251,
+          "v5_development_selection_mother_0008": 4827.32687069854,
+          "v5_development_selection_mother_0009": 5719.5103500740925,
+          "v5_development_selection_mother_0010": 1997.8114383168008,
+          "v5_development_selection_mother_0011": 1809.093224475183,
+          "v5_development_selection_mother_0012": 2984.616057587457,
+          "v5_development_selection_mother_0013": 1759.9013650809018,
+          "v5_development_selection_mother_0014": 3464.237496193736,
+          "v5_development_selection_mother_0015": 2355.7656722944453,
+          "v5_development_selection_mother_0016": 3214.161706264854,
+          "v5_development_selection_mother_0017": 1486.3388002949334,
+          "v5_development_selection_mother_0018": 2498.0762310574787,
+          "v5_development_selection_mother_0019": 2488.4633395455253,
+          "v5_development_selection_mother_0020": 3942.354118371735,
+          "v5_development_selection_mother_0021": 3979.1133296771795,
+          "v5_development_selection_mother_0022": 1457.540946894947,
+          "v5_development_selection_mother_0023": 888.2327485741539,
+          "v5_development_selection_mother_0024": 6895.116937151609,
+          "v5_development_selection_mother_0025": 5853.541963340487,
+          "v5_development_selection_mother_0026": 1966.3650261758362,
+          "v5_development_selection_mother_0027": 2890.377016481535,
+          "v5_development_selection_mother_0028": 1969.6908647433465,
+          "v5_development_selection_mother_0029": 1215.0252794992034,
+          "v5_development_selection_mother_0030": 3276.1398666819055,
+          "v5_development_selection_mother_0031": 2431.3433308356125,
+          "v5_development_selection_mother_0032": 4928.243356250216,
+          "v5_development_selection_mother_0033": 6513.339789982176,
+          "v5_development_selection_mother_0034": 3811.6790214380585,
+          "v5_development_selection_mother_0035": 2585.5623749284164
+        },
+        "single_mother_CI_is_degenerate": false
+      },
+      "paired_parent_RMSE_ratio": 3.714014336610116,
+      "paired_parent_RMSE_ratio_CI95": [
+        3.5312551418570415,
+        3.8952551899734322
+      ],
+      "candidate_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 9492828947.463833,
+        "temperature_SSE_K2": 1898810088.367028,
+        "template_truth_energy": 405613798.21348107,
+        "template_MSE_e2": 4023.5854032151256,
+        "template_RMSE_e": 63.43173813805772,
+        "temperature_MSE_K2": 804.820628003874,
+        "temperature_RMSE_K": 28.369360726034593,
+        "template_bias_e": 2.21677898192482,
+        "temperature_bias_K": 0.022104805645843346,
+        "template_spatial_error_variance_e2": 4018.671294160422,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 4.837728231953641,
+        "signed_projection": 0.9414804490444808,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 26.59542630277752,
+          "total_seconds": 957.4353468999907,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 36,
+          "converged_cases": 36,
+          "all_converged": true,
+          "max_true_relative_residual": 9.842441068030894e-05,
+          "max_equilibrated_true_relative_residual": 9.823342406889424e-05
+        },
+        "mean_latent_S_gradient_energy_e2": 3345065898.6666665
+      },
+      "reference_pooled": {
+        "schema": "v5-fixed-domain-aggregate-001",
+        "complete": true,
+        "cases": 36,
+        "mothers": 36,
+        "domain_pixels": 2359296,
+        "numerical_success_cases": 36,
+        "failed_or_abstained_cases": [],
+        "pixel_independence_assumed": false,
+        "valid_fraction": 1.0,
+        "template_SSE": 688190231.3427228,
+        "temperature_SSE_K2": 658817285.8133336,
+        "template_truth_energy": 405613798.21348107,
+        "template_MSE_e2": 291.6930437481023,
+        "template_RMSE_e": 17.079023501011477,
+        "temperature_MSE_K2": 279.24316652651197,
+        "temperature_RMSE_K": 16.710570502724075,
+        "template_bias_e": 0.7543697183007292,
+        "temperature_bias_K": -0.6264174443980058,
+        "template_spatial_error_variance_e2": 291.1239700762132,
+        "bias_variance_scope": "pooled spatial errors; MC repeat variance reported separately",
+        "template_relative_L2": 1.3025604624803822,
+        "signed_projection": 0.9868901821680922,
+        "latency": {
+          "known_cases": 36,
+          "mean_seconds": 7.500556255554936,
+          "total_seconds": 270.0200251999777,
+          "shared_continuum_time_included": true
+        },
+        "CG": {
+          "reported_cases": 0,
+          "converged_cases": 0,
+          "all_converged": false,
+          "max_true_relative_residual": null,
+          "max_equilibrated_true_relative_residual": null
+        },
+        "mean_latent_S_gradient_energy_e2": null
+      },
+      "plan": {
+        "unit": "mother_scene",
+        "draws": 2000,
+        "seed": 53130,
+        "confidence_level": 0.95,
+        "method": "percentile",
+        "keep_all_noise_repeats_and_signed_conditions_together": true,
+        "primary_targets": [
+          "template_postblur_e",
+          "continuum_postblur_color_temperature_K"
+        ],
+        "error_domain": "full fixed truth evaluation_domain, including rejected pixels",
+        "selection_population": "fresh development mothers; normal +/- noisy raw only",
+        "primary_comparison": "paired mother mean template MSE and pooled RMSE by sign",
+        "final_tuning": false,
+        "pixel_independence_assumed": false
+      }
+    }
+  ],
+  "frozen_before_final": true
+}

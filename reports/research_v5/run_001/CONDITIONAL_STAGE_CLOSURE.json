@@ -1,0 +1,49 @@
+{
+  "schema": "v5-root-conditional-stage-closure-v1",
+  "time": "2026-10-13T17:17:28.954799+00:00",
+  "decision": "STOP_AFTER_PHYSICS_NEGATIVE_RESULT",
+  "origin": "Root application of original TASK_SPEC stage 4 strict stop, not a fabricated CLI receipt",
+  "evidence": {
+    "reports/research_v5/run_001/development/development_gate.json": "9b8e04ca4afb91d2154bf158ed018bd74a7a58ad49fce456d7620426cc95b4c9",
+    "reports/research_v5/run_001/execution_recovery_001/scientific_stop.json": "6d7d70f3ccc98b5dfa25dcf6c3a308d736540686ca426c536e904699a890eebe",
+    "reports/research_v5/run_001/execution_recovery_001/END.json": "3f1b33da2f73b61b3e8c2ae25302eef89814c68a9470110b0f4c1274679a5548",
+    "reports/research_v5/run_001/root_review_001/ROOT_DATA_AUDIT.json": "308befca29abc824569b5e8d3597a4aff7c1df8bb4c1d22ac922f826cbe4f412"
+  },
+  "failed_physics_gates": [
+    "signed_normal_positive",
+    "signed_normal_negative",
+    "selection_feasible",
+    "nominal_color",
+    "MC_nominal_coverage",
+    "normal_positive_projection_noninferiority",
+    "normal_negative_projection_noninferiority"
+  ],
+  "alpha_g": 1.0,
+  "selection_feasible": false,
+  "train_denoiser": {
+    "status": "NOT_APPLICABLE_REGISTERED_SCIENTIFIC_STOP",
+    "executed": false,
+    "optimizer_updates": 0,
+    "checkpoint_created": false,
+    "CNN_benefit": "unknown"
+  },
+  "candidate_review": {
+    "status": "NOT_APPLICABLE_NO_ELIGIBLE_PHYSICS_CANDIDATE",
+    "executed": false,
+    "candidate_exists": false,
+    "final_protocol_frozen": false
+  },
+  "final_once": {
+    "status": "NOT_APPLICABLE_SEALED_BY_SCIENTIFIC_STOP",
+    "executed": false,
+    "original_final_mothers_sealed": 64,
+    "signed_confirmation_mothers_sealed": 36,
+    "final_case_results": 0,
+    "final_accuracy": null,
+    "scientific_test_result": null
+  },
+  "missing_weak_MC_interval_coverage": "unmeasured; registered MC population was 12 normal signed cases, not weak cases",
+  "no_additional_scientific_phase_required_for_negative_route": true,
+  "estimator_scientific_acceptance_passed": false,
+  "delivery_still_required": true
+}

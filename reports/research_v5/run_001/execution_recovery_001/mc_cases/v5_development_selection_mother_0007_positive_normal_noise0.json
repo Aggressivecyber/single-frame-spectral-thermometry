@@ -1,0 +1,72 @@
+{
+  "case_id": "v5_development_selection_mother_0007_positive_normal_noise0",
+  "mother_id": "v5_development_selection_mother_0007",
+  "sign": "positive",
+  "geometry": "multipeak",
+  "template_geometry": "multipeak",
+  "status": "completed",
+  "raw_sha256": "1152ffe549710bf3a7336e0d4265d0553702d8de9af917cfb1f409569a8a6fdd",
+  "original_same_raw_cache": {
+    "path": "outputs/research_v5/run_001/development_grid_predictions/v5_development_selection_mother_0007_positive_normal_noise0.npz",
+    "sha256": "7eb23b251ff5e9f2cf98ce6593b9f24c6b326e62ae4305727afb8315d2726de3",
+    "alpha_key": "a1"
+  },
+  "signed_interval": {
+    "available_pixels": 65536,
+    "covered_pixels": 59289,
+    "available_fraction": 1.0,
+    "coverage_full_truth_domain": 0.9046783447265625,
+    "coverage_conditional_on_interval_available": 0.9046783447265625,
+    "mean_width": 299.9611826014403
+  },
+  "temperature_interval": {
+    "available_pixels": 65536,
+    "covered_pixels": 58337,
+    "available_fraction": 1.0,
+    "coverage_full_truth_domain": 0.8901519775390625,
+    "coverage_conditional_on_interval_available": 0.8901519775390625,
+    "mean_width": 81.87489688671664
+  },
+  "uncertainty_arrays": {
+    "path": "outputs/research_v5/run_001/mc_uncertainty_predictions/v5_development_selection_mother_0007_positive_normal_noise0.npz",
+    "sha256": "cdb1cf3a25fbcd76fc3af42b49cb21227e4eed026e57b0711ce50d4ba47fa9c2"
+  },
+  "MC": {
+    "schema": "v5-mc-persisted-array-recovery-v1",
+    "status": "completed",
+    "options": {
+      "repeats": 8,
+      "seed": 53125,
+      "confidence_level": 0.95,
+      "minimum_valid_fraction": 0.75,
+      "minimum_successful_repeats": 3,
+      "keep_samples": false
+    },
+    "seed_plan_from_frozen_code": [
+      8907590277662302188,
+      3866566044510861036,
+      6249036297450528716,
+      3174909177804429324,
+      1820711598877825024,
+      599644508114615547,
+      1475980736127601613,
+      3757709364270756562
+    ],
+    "per_repeat_records": null,
+    "per_repeat_records_status": "not persisted before original timeout",
+    "completed_repeats_inferred_from_valid_fraction": 8,
+    "inference_basis": "Every saved mc_valid_fraction equals1; frozen loop has8 samples, and save occurs only after status=completed.",
+    "per_repeat_CG_timing_clipping_details": "unavailable; not reconstructed or invented",
+    "reconstructions_executed_during_recovery": 0,
+    "interval_centers_checked_against_hash_bound_original_prediction": true,
+    "scoring_device": "cpu",
+    "original_execution_device": "cuda"
+  },
+  "bias_variance": {
+    "baseline_template_bias_e": 5.217399539679263,
+    "baseline_temperature_bias_K": -0.255173671990633,
+    "MC_empirical_postblur_template_variance_mean_e2": 6321.701918755742,
+    "MC_empirical_color_temperature_variance_mean_K2": 468.1885927596679,
+    "variance_scope": "finite raw-plugin noise repeats; calibration/model discrepancy omitted"
+  }
+}

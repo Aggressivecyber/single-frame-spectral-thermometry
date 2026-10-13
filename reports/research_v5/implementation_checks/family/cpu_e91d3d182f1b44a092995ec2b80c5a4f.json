@@ -1,0 +1,21 @@
+{
+  "schema": "v5-family-cpu-controls-v1",
+  "all_passed": false,
+  "checks": 0,
+  "failures": [],
+  "errors": [
+    [
+      "setUpClass (__main__.FamilyContracts)",
+      "Traceback (most recent call last):\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v5\\tests_family.py\", line 29, in setUpClass\n    cls.manifest = generate_family(cls.physics, cls.plan, cls.folder / 'matched', {'fixture_only': True})\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v5\\family_data.py\", line 247, in generate_family\n    'saturated_pixels':int((raw>=maximum_dn).sum())})\n                            ^^^^^^^^^^^^^^^\nNotImplementedError: \"ge_cpu\" not implemented for 'UInt16'\n"
+    ]
+  ],
+  "fixture_folder": "outputs/research_v5/run_001/_implementation_checks/family_2a914fc73c4f491f837ac3aa1d836823",
+  "formal_scientific_acceptance": false,
+  "sealed_arrays_generated": false,
+  "wall_s": 2.485198100010166,
+  "sources": {
+    "research_v5/family_data.py": "b9200a62e34ef749b360933340f1a8df73b34131b85b8477a0afbc56abd00008",
+    "research_v5/planning.py": "a023358c2a220debccf7db2c686a0e4d058c8bd28cabecc6f6e15dd1220ccb80",
+    "research_v5/tests_family.py": "4a357fda00a2ce0e7b85bdc388303843145a4abbc35434ca5522b928c997310e"
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "schema": "v5-development-implementation-controls-001",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "mother_cluster_not_pixel_or_repeat_independence",
+      "passed": true
+    },
+    {
+      "name": "fixed_2000_seed_53130_bootstrap",
+      "passed": true
+    },
+    {
+      "name": "same_raw_paired_mother_bootstrap",
+      "passed": true
+    },
+    {
+      "name": "missing_case_invalidates_paired_population",
+      "passed": true
+    },
+    {
+      "name": "different_raw_pair_hash_rejected",
+      "passed": true
+    },
+    {
+      "name": "rejection_never_shrinks_full_error_domain",
+      "passed": true
+    },
+    {
+      "name": "selection_only_normal_noisy_mother_mse_and_color_gate",
+      "passed": true
+    },
+    {
+      "name": "all_declared_physics_gate_factors",
+      "passed": true
+    },
+    {
+      "name": "null_gate_fail_closed",
+      "passed": true
+    },
+    {
+      "name": "MC_coverage_gate_fail_closed",
+      "passed": true
+    },
+    {
+      "name": "stage1_hard_stop_cannot_be_overridden",
+      "passed": true
+    },
+    {
+      "name": "null_threshold_score_is_full_FOV_maximum",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_pixel_cannot_disappear_from_FOV_control",
+      "passed": true
+    },
+    {
+      "name": "independent_null_higher_quantile_is_fixed",
+      "passed": true
+    },
+    {
+      "name": "failed_null_fit_invalidates_calibration",
+      "passed": true
+    },
+    {
+      "name": "null_FP_reports_frames_and_pixels_separately",
+      "passed": true
+    },
+    {
+      "name": "raw_only_proxy_matches_declared_postblur_spectral_formula",
+      "passed": true
+    },
+    {
+      "name": "proxy_limitations_and_no_MC_claim",
+      "passed": true
+    },
+    {
+      "name": "MC_real_raw_callback_reruns_core_eight_times",
+      "passed": true
+    },
+    {
+      "name": "MC_nominal_coverage_is_external_not_inferred",
+      "passed": true
+    },
+    {
+      "name": "real_grid_once_continuum_four_alphas_and_same_raw_four_references",
+      "passed": true
+    },
+    {
+      "name": "hash_bound_selected_cache_rescores_without_reconstruction_or_CG_loss",
+      "passed": true
+    },
+    {
+      "name": "all_real_fixture_comparison_records_JSON_safe",
+      "passed": true
+    },
+    {
+      "name": "eight_finite_Hessian_probes_are_packed_coordinate_sandwich",
+      "passed": true
+    },
+    {
+      "name": "real_selected_Hessian_coordinates_latent_S_plus_beta",
+      "passed": true
+    },
+    {
+      "name": "eligible_physics_does_not_force_neural_training",
+      "passed": true
+    },
+    {
+      "name": "failed_physics_leaves_final_sealed",
+      "passed": true
+    },
+    {
+      "name": "one_accepted_neural_checkpoint_preserved",
+      "passed": true
+    },
+    {
+      "name": "single_sign_neural_claim_rejected",
+      "passed": true
+    },
+    {
+      "name": "final_MC_subset_frozen_from_metadata_only",
+      "passed": true
+    },
+    {
+      "name": "statistical_plan_has_no_pixel_independence",
+      "passed": true
+    },
+    {
+      "name": "review_and_final_consumer_share_exact_frozen_evaluation_schema",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "research_v5/development.py": "1b65e2cf61b9ccf57c14156bd8a0e2f5f0580af8edf82d281805bc6b864bd826",
+    "research_v5/statistics.py": "bfd865d2d86fcbb39d5b23fd83c52b732ed99f422fe6abe93179fd3cf1ec8120",
+    "research_v5/candidate_review.py": "d0bf97d18884d852b7975ac7d80f14d3e3ca3db33f604b529cc3ddf7ea166f93",
+    "research_v5/tests_development.py": "7894e6958773a049fdc6c5630433af5390a185bae77accef0e1e569c1d325001"
+  },
+  "details": {
+    "bootstrap": {
+      "unit": "mother_scene",
+      "draws": 2000,
+      "seed": 53130,
+      "confidence_level": 0.95,
+      "method": "percentile",
+      "keep_all_noise_repeats_and_signed_conditions_together": true,
+      "mothers": 2,
+      "mother_ids": [
+        "m1",
+        "m2"
+      ],
+      "complete": true,
+      "estimate": 5.0,
+      "CI95": [
+        1.0,
+        9.0
+      ],
+      "mother_values": {
+        "m1": 1.0,
+        "m2": 9.0
+      },
+      "single_mother_CI_is_degenerate": false
+    },
+    "proxy": {
+      "schema": "v5-raw-noise-proxy-001",
+      "kind": "raw_derived_uniform_W_postblur_noise_proxy",
+      "raw_weight_rule": "W=1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+      "formula": "sigma_proxy^2=mean_f[H(f)^2*F(f)/(F(f)+lambda_g*L(f)+lambda0)^2]; F=mean(W)*stationary_A_S_normal_symbol",
+      "spatial_form": "one positive scalar broadcast over the full FOV per observed raw",
+      "target": "postblur signed template, electrons",
+      "limitations": [
+        "uniform-W diagonal propagation approximation; not full spatial covariance",
+        "continuum uncertainty and jointly estimated beta are omitted",
+        "not an MC sigma, measurement CRLB, or guaranteed confidence interval",
+        "independent nominal null calibration supplies the operational threshold",
+        "calibration/model mismatch can invalidate nominal null control"
+      ],
+      "raw_only": true,
+      "truth_used": false,
+      "floor_rule": "none; nonpositive or nonfinite proxy invalidates detection",
+      "frames": [
+        {
+          "sigma_proxy_e": 13.265174082289393,
+          "raw_weight_mean": 7.143498158794956e-05,
+          "raw_variance_min_e2": 7757.057125405592,
+          "raw_variance_max_e2": 23351.45041617073,
+          "lambda_g": 4.439864724668897e-08,
+          "lambda0": 4.439864724668897e-13,
+          "diagonal_scale": 4.439864724668897e-07
+        }
+      ],
+      "alpha_g": 0.1
+    },
+    "MC": {
+      "schema": "v5-raw-plugin-mc-001",
+      "status": "completed",
+      "options": {
+        "repeats": 8,
+        "seed": 53125,
+        "confidence_level": 0.95,
+        "minimum_valid_fraction": 0.75,
+        "minimum_successful_repeats": 3,
+        "keep_samples": false
+      },
+      "seed_plan": [
+        8907590277662302188,
+        3866566044510861036,
+        6249036297450528716,
+        3174909177804429324,
+        1820711598877825024,
+        599644508114615547,
+        1475980736127601613,
+        3757709364270756562
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "seed": 8907590277662302188,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 1,
+          "seed": 3866566044510861036,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 2,
+          "seed": 6249036297450528716,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 3,
+          "seed": 3174909177804429324,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 4,
+          "seed": 1820711598877825024,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 5,
+          "seed": 599644508114615547,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 6,
+          "seed": 1475980736127601613,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        },
+        {
+          "repeat": 7,
+          "seed": 3757709364270756562,
+          "upper_clipped_pixels": 0,
+          "lower_clipped_pixels": 0,
+          "status": "completed",
+          "valid_pixel_fraction": 1.0
+        }
+      ],
+      "completed_repeats": 8,
+      "calibration_sha256": "4430fd9dea3b85589b803a450488843d6c0bd62b10785ac0cbb26e1d36f7f0a2",
+      "selection_sha256": "7b338e617c7ebaa8ceb9493decc2ad82e4cb70696d228f492b449f50c4080f11",
+      "raw_shape": [
+        1,
+        16,
+        16
+      ],
+      "noise_model": "Poisson(original-raw fitted expected_e) + Gaussian read noise, ADC round/clamp to DN",
+      "expected_source": "fit of the same original raw; plug-in, not independent measurement",
+      "interval_method": "baseline +/- normal quantile * MC sample sigma; approximate, no bias correction",
+      "confidence_level": 0.95,
+      "normal_quantile": 1.9599639845400536,
+      "MC_template_target": "signed template_postblur_e",
+      "MC_temperature_target": "continuum postblur temperature_color_K",
+      "baseline_valid_fraction": 1.0,
+      "valid_coverage_fraction": 1.0,
+      "interval_available_fraction": 1.0,
+      "low_confidence_fraction": 1.0,
+      "undetectable_fraction": 1.0,
+      "empirical_nominal_coverage": "not assessed; external nominal validation only",
+      "budget": "8 repeats recommended, 16 maximum; fixed mother subset chosen outside callback",
+      "limitations": [
+        "small finite MC sample; sample sigma is itself noisy",
+        "plug-in mean and calibration/model errors can bias uncertainty",
+        "nominal interval coverage requires separate externally scored validation",
+        "normal approximate signed interval does not impose template positivity",
+        "callback must rerun continuum and signed solver for every repeat"
+      ]
+    },
+    "Hessian": {
+      "schema": "v5-finite-hessian-probes-001",
+      "options": {
+        "probes": 8,
+        "seed": 53126,
+        "cg_tolerance": 0.0001,
+        "cg_max_iterations": 200
+      },
+      "quantity": "H^-1 F H^-1 local penalized-estimator covariance",
+      "shape": [
+        7
+      ],
+      "parameter_units": "exactly the caller matvec coordinates; no postblur variance transform inferred",
+      "residual_stopping_checks": "physical-coordinate true residual",
+      "probe_distribution": "fixed-seed Rademacher",
+      "successful_probes": 8,
+      "all_converged": true,
+      "solves": [
+        {
+          "probe": 0,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 1,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 2,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 3,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 4,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 5,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 6,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        },
+        {
+          "probe": 7,
+          "inverse_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "sandwich_solve": {
+            "converged": true,
+            "iterations": 1,
+            "termination": "converged",
+            "true_relative_residual": 0.0,
+            "equilibrated_true_relative_residual": 0.0
+          },
+          "successful": true
+        }
+      ],
+      "nonpositive_diagonal_pixels": 0,
+      "valid_fraction": 1.0,
+      "limitations": [
+        "finite-probe diagonal approximation; estimates can be negative",
+        "local linearization in the passed parameter coordinates",
+        "H contains priors/regularization; not an unbiased measurement CRLB",
+        "sandwich assumes F matches fixed raw W and noise covariance",
+        "PCG nonconvergence invalidates reported sigma proxy"
+      ]
+    }
+  },
+  "device": "cpu",
+  "numerical_fixture_shape": [
+    16,
+    16
+  ],
+  "assertions_enabled": true,
+  "no_bytecode": true,
+  "formal_data_generated": false,
+  "GPU_used": false,
+  "training_executed": false,
+  "sealed_final_or_confirmation_arrays_opened": false,
+  "duration_seconds": 0.72491849999642,
+  "scope": "CPU software contracts and real tiny inference; no scientific acceptance"
+}

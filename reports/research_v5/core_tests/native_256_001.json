@@ -1,0 +1,877 @@
+{
+  "schema": "v5-native-resolution-control-v1",
+  "shape": [
+    256,
+    256
+  ],
+  "device": "cuda",
+  "dtype": "float64",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "native_full_forward_adjoint",
+      "value": 3.315809048223714e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "native_JVP_VJP",
+      "value": 4.713430521516023e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "native_JVP_finite_difference",
+      "value": 1.798236860343616e-08,
+      "limit": 1e-06,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_+1_CG_true_residual",
+      "value": 3.2185301791709665e-06,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_+1_CG_equilibrated_true_residual",
+      "value": 3.2185301791709665e-06,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_+1_postblur_RMSE_e",
+      "value": 0.0004063059330294871,
+      "limit": 0.5,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_+1_postblur_L2",
+      "value": 3.881374490742218e-06,
+      "limit": 0.02,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_+1_CG_true_residual",
+      "value": 1.27078576058974e-05,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_+1_CG_equilibrated_true_residual",
+      "value": 3.360540804577155e-05,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_+1_postblur_RMSE_e",
+      "value": 0.20772684132814004,
+      "limit": 0.5,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_+1_postblur_L2",
+      "value": 0.001984380727502164,
+      "limit": 0.02,
+      "passed": true
+    },
+    {
+      "name": "continuum_+1_template_fields_remain_zero",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "continuum_+1_single_blur",
+      "value": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_-1_CG_true_residual",
+      "value": 9.905619908996455e-05,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_-1_CG_equilibrated_true_residual",
+      "value": 9.905619908996453e-05,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_-1_postblur_RMSE_e",
+      "value": 0.011813300667239174,
+      "limit": 0.5,
+      "passed": true
+    },
+    {
+      "name": "fixed_beta_-1_postblur_L2",
+      "value": 0.0001128505397876199,
+      "limit": 0.02,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_-1_CG_true_residual",
+      "value": 5.731297690457412e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_-1_CG_equilibrated_true_residual",
+      "value": 4.176467783960979e-06,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_-1_postblur_RMSE_e",
+      "value": 0.001026573616496635,
+      "limit": 0.5,
+      "passed": true
+    },
+    {
+      "name": "joint_beta_-1_postblur_L2",
+      "value": 9.806690781573828e-06,
+      "limit": 0.02,
+      "passed": true
+    },
+    {
+      "name": "continuum_-1_template_fields_remain_zero",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "continuum_-1_single_blur",
+      "value": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    }
+  ],
+  "controls": [
+    {
+      "sign": 1,
+      "background": "fixed_beta",
+      "wall_s": 0.28853890000027604,
+      "template_RMSE_e": 0.0004063059330294871,
+      "template_L2": 3.881374490742218e-06,
+      "info": {
+        "frames": [
+          {
+            "frame": 0,
+            "CG": {
+              "iterations": 3,
+              "relative_true_residual": 3.2185301791709665e-06,
+              "relative_residual": 3.2185301791709665e-06,
+              "equilibrated_relative_true_residual": 3.2185301791709665e-06,
+              "true_residual_history": [
+                0.016040068623979224,
+                0.00022295348079083286,
+                3.2185301791709665e-06
+              ],
+              "equilibrated_true_residual_history": [
+                0.016040068623979224,
+                0.00022295348079083286,
+                3.2185301791709665e-06
+              ],
+              "recursive_residual_history": [
+                0.016040068623979258,
+                0.00022295348079081706,
+                3.2185301791820385e-06
+              ],
+              "residual_refreshes": [],
+              "stop": "RELATIVE_TRUE_RESIDUAL",
+              "objective_history": [
+                {
+                  "iteration": 0,
+                  "objective": 51291.7022988722
+                },
+                {
+                  "iteration": 1,
+                  "objective": 14.777590307072387
+                },
+                {
+                  "iteration": 2,
+                  "objective": 0.013347304629860446
+                },
+                {
+                  "iteration": 3,
+                  "objective": 0.010043195230537094
+                }
+              ],
+              "converged": true,
+              "rhs_norm_physical": 3.7989105847404083,
+              "rhs_norm_equilibrated": 6929.249887627845,
+              "rtol": 0.0001,
+              "max_iterations": 200
+            },
+            "accepted": true,
+            "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+            "acceptance_roundoff_allowance": 3.6444946473233274e-10,
+            "objective_before": 51291.7022988722,
+            "objective_after": 0.010043195249481269,
+            "objective_terms_before": {
+              "data": 51291.692366549265,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.0,
+              "ridge_beta": 0.009932322939958526,
+              "gradient_energy_S_e2": 0.0
+            },
+            "objective_terms_after": {
+              "data": 7.794235695364628e-07,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.00011009288595320512,
+              "ridge_beta": 0.009932322939958526,
+              "gradient_energy_S_e2": 97517.16781914831
+            },
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 51291.7022988722
+              },
+              {
+                "iteration": 1,
+                "objective": 14.777590307072387
+              },
+              {
+                "iteration": 2,
+                "objective": 0.013347304629860446
+              },
+              {
+                "iteration": 3,
+                "objective": 0.010043195230537094
+              }
+            ],
+            "best_iteration_by_objective": 3,
+            "output_iteration": 3,
+            "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+            "alpha_g": 0.0,
+            "lambda_g": 0.0,
+            "lambda0": 3.0056974445857865e-13,
+            "lambda_beta": 0.07935542147175494,
+            "lambda0_factor": 1e-06,
+            "lambda_beta_factor": 1e-06,
+            "median_diag_A_S_T_W_A_S": 3.005697444585787e-07,
+            "diagonal_S_min": 3.005697444585787e-07,
+            "diagonal_S_max": 3.005697444585787e-07,
+            "diagonal_S": {
+              "method": "stationary_weight_mean",
+              "exact_for_uniform_weights": true,
+              "approximate_for_nonuniform_weights": true,
+              "formula": "mean(W)*mean_f[H(f)^2*(dc^2*R(f)^2+sum_carriers |c_k|^2*(R(f+k)^2+R(f-k)^2))]",
+              "cross_carrier_terms": "zero under declared nonoverlapping object bandwidth"
+            },
+            "diag_A_beta_T_W_A_beta": [
+              321262.3305144049,
+              78157.41882303364,
+              79355.42147175493
+            ],
+            "median_diag_A_beta_T_W_A_beta": 79355.42147175493,
+            "beta_diagonal_method": "exact three coded background columns",
+            "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+            "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+            "normal_equations_use_actual_fixed_W": true,
+            "hidden_damping": false,
+            "fixed_beta_diagnostic_oracle": true,
+            "expected_e_min": 5611.617912435223,
+            "expected_e_max": 17564.247742135733,
+            "expected_e_nonnegative": true,
+            "no_template_positivity_constraint": true,
+            "numeric_dtype": "torch.float64",
+            "S_units": "e",
+            "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+            "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+            "weight_min": 5.684301383981124e-05,
+            "weight_max": 0.00017731500031457534,
+            "weight_mean": 9.60008201210672e-05
+          }
+        ],
+        "options": {
+          "alpha_g": 0.0,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "rtol": 0.0001,
+          "max_iterations": 200,
+          "diagonal_mode": "stationary_weight_mean",
+          "residual_refresh_interval": 25
+        },
+        "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+        "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+        "all_CG_converged": true,
+        "all_accepted": true,
+        "continuum_frozen": true
+      }
+    },
+    {
+      "sign": 1,
+      "background": "joint_beta",
+      "wall_s": 0.08107340001151897,
+      "template_RMSE_e": 0.20772684132814004,
+      "template_L2": 0.001984380727502164,
+      "info": {
+        "frames": [
+          {
+            "frame": 0,
+            "CG": {
+              "iterations": 7,
+              "relative_true_residual": 1.27078576058974e-05,
+              "relative_residual": 1.27078576058974e-05,
+              "equilibrated_relative_true_residual": 3.360540804577155e-05,
+              "true_residual_history": [
+                0.007912753562236773,
+                0.0005202451809836257,
+                0.0003732557601033098,
+                0.00036367254562603475,
+                9.435454486008175e-05,
+                8.257484394409302e-05,
+                1.27078576058974e-05
+              ],
+              "equilibrated_true_residual_history": [
+                0.08906527660246864,
+                0.0014403682765504304,
+                0.0007017431357240708,
+                0.00046792349853144104,
+                0.0007281361964959473,
+                0.00015349845422673596,
+                3.360540804577155e-05
+              ],
+              "recursive_residual_history": [
+                0.007912753562236597,
+                0.0005202451809838067,
+                0.0003732557601032583,
+                0.0003636725456260787,
+                9.435454486008583e-05,
+                8.257484394412319e-05,
+                1.2707857605918722e-05
+              ],
+              "residual_refreshes": [
+                5,
+                6
+              ],
+              "stop": "RELATIVE_TRUE_RESIDUAL",
+              "objective_history": [
+                {
+                  "iteration": 0,
+                  "objective": 176166.82587887708
+                },
+                {
+                  "iteration": 1,
+                  "objective": 1615.789158952597
+                },
+                {
+                  "iteration": 2,
+                  "objective": 4.374949476448819
+                },
+                {
+                  "iteration": 3,
+                  "objective": 3.8511994056752883
+                },
+                {
+                  "iteration": 4,
+                  "objective": 3.70455937407678
+                },
+                {
+                  "iteration": 5,
+                  "objective": 0.15242907806532457
+                },
+                {
+                  "iteration": 6,
+                  "objective": 0.02092245069798082
+                },
+                {
+                  "iteration": 7,
+                  "objective": 0.015657441515941173
+                }
+              ],
+              "converged": true,
+              "rhs_norm_physical": 329996.9589107433,
+              "rhs_norm_equilibrated": 12920.865546081837,
+              "rtol": 0.0001,
+              "max_iterations": 200
+            },
+            "accepted": true,
+            "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+            "acceptance_roundoff_allowance": 1.2517405841015053e-09,
+            "objective_before": 176166.82587887708,
+            "objective_after": 0.015657441516456223,
+            "objective_terms_before": {
+              "data": 176166.82587887708,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.0,
+              "ridge_beta": 0.0,
+              "gradient_energy_S_e2": 0.0
+            },
+            "objective_terms_after": {
+              "data": 0.005577156634792218,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.00010973543260036274,
+              "ridge_beta": 0.009970549449063643,
+              "gradient_energy_S_e2": 97229.86362143097
+            },
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 176166.82587887708
+              },
+              {
+                "iteration": 1,
+                "objective": 1615.789158952597
+              },
+              {
+                "iteration": 2,
+                "objective": 4.374949476448819
+              },
+              {
+                "iteration": 3,
+                "objective": 3.8511994056752883
+              },
+              {
+                "iteration": 4,
+                "objective": 3.70455937407678
+              },
+              {
+                "iteration": 5,
+                "objective": 0.15242907806532457
+              },
+              {
+                "iteration": 6,
+                "objective": 0.02092245069798082
+              },
+              {
+                "iteration": 7,
+                "objective": 0.015657441515941173
+              }
+            ],
+            "best_iteration_by_objective": 7,
+            "output_iteration": 7,
+            "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+            "alpha_g": 0.0,
+            "lambda_g": 0.0,
+            "lambda0": 3.0056974445857865e-13,
+            "lambda_beta": 0.07935542147175494,
+            "lambda0_factor": 1e-06,
+            "lambda_beta_factor": 1e-06,
+            "median_diag_A_S_T_W_A_S": 3.005697444585787e-07,
+            "diagonal_S_min": 3.005697444585787e-07,
+            "diagonal_S_max": 3.005697444585787e-07,
+            "diagonal_S": {
+              "method": "stationary_weight_mean",
+              "exact_for_uniform_weights": true,
+              "approximate_for_nonuniform_weights": true,
+              "formula": "mean(W)*mean_f[H(f)^2*(dc^2*R(f)^2+sum_carriers |c_k|^2*(R(f+k)^2+R(f-k)^2))]",
+              "cross_carrier_terms": "zero under declared nonoverlapping object bandwidth"
+            },
+            "diag_A_beta_T_W_A_beta": [
+              321262.3305144049,
+              78157.41882303364,
+              79355.42147175493
+            ],
+            "median_diag_A_beta_T_W_A_beta": 79355.42147175493,
+            "beta_diagonal_method": "exact three coded background columns",
+            "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+            "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+            "normal_equations_use_actual_fixed_W": true,
+            "hidden_damping": false,
+            "fixed_beta_diagnostic_oracle": false,
+            "expected_e_min": 5611.559674770693,
+            "expected_e_max": 17564.249846658116,
+            "expected_e_nonnegative": true,
+            "no_template_positivity_constraint": true,
+            "numeric_dtype": "torch.float64",
+            "S_units": "e",
+            "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+            "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+            "weight_min": 5.684301383981124e-05,
+            "weight_max": 0.00017731500031457534,
+            "weight_mean": 9.60008201210672e-05
+          }
+        ],
+        "options": {
+          "alpha_g": 0.0,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "rtol": 0.0001,
+          "max_iterations": 200,
+          "diagonal_mode": "stationary_weight_mean",
+          "residual_refresh_interval": 25
+        },
+        "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+        "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+        "all_CG_converged": true,
+        "all_accepted": true,
+        "continuum_frozen": true
+      }
+    },
+    {
+      "sign": -1,
+      "background": "fixed_beta",
+      "wall_s": 0.06716690000030212,
+      "template_RMSE_e": 0.011813300667239174,
+      "template_L2": 0.0001128505397876199,
+      "info": {
+        "frames": [
+          {
+            "frame": 0,
+            "CG": {
+              "iterations": 2,
+              "relative_true_residual": 9.905619908996455e-05,
+              "relative_residual": 9.905619908996455e-05,
+              "equilibrated_relative_true_residual": 9.905619908996453e-05,
+              "true_residual_history": [
+                0.01026235439661627,
+                9.905619908996455e-05
+              ],
+              "equilibrated_true_residual_history": [
+                0.010262354396616269,
+                9.905619908996453e-05
+              ],
+              "recursive_residual_history": [
+                0.010262354396616255,
+                9.905619908998177e-05
+              ],
+              "residual_refreshes": [],
+              "stop": "RELATIVE_TRUE_RESIDUAL",
+              "objective_history": [
+                {
+                  "iteration": 0,
+                  "objective": 52912.139161320054
+                },
+                {
+                  "iteration": 1,
+                  "objective": 6.333020146688796
+                },
+                {
+                  "iteration": 2,
+                  "objective": 0.010971850162604824
+                }
+              ],
+              "converged": true,
+              "rhs_norm_physical": 3.9173218123540816,
+              "rhs_norm_equilibrated": 7061.265207285771,
+              "rtol": 0.0001,
+              "max_iterations": 200
+            },
+            "accepted": true,
+            "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+            "acceptance_roundoff_allowance": 3.7596336114603484e-10,
+            "objective_before": 52912.139161320054,
+            "objective_after": 0.010971850155315281,
+            "objective_terms_before": {
+              "data": 52912.128979405265,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.0,
+              "ridge_beta": 0.010181914787793919,
+              "gradient_energy_S_e2": 0.0
+            },
+            "objective_terms_after": {
+              "data": 0.0006772083994732193,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.00011272696804814298,
+              "ridge_beta": 0.010181914787793919,
+              "gradient_energy_S_e2": 97526.31594523042
+            },
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 52912.139161320054
+              },
+              {
+                "iteration": 1,
+                "objective": 6.333020146688796
+              },
+              {
+                "iteration": 2,
+                "objective": 0.010971850162604824
+              }
+            ],
+            "best_iteration_by_objective": 2,
+            "output_iteration": 2,
+            "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+            "alpha_g": 0.0,
+            "lambda_g": 0.0,
+            "lambda0": 3.077606008479634e-13,
+            "lambda_beta": 0.08134956386932124,
+            "lambda0_factor": 1e-06,
+            "lambda_beta_factor": 1e-06,
+            "median_diag_A_S_T_W_A_S": 3.077606008479634e-07,
+            "diagonal_S_min": 3.077606008479634e-07,
+            "diagonal_S_max": 3.077606008479634e-07,
+            "diagonal_S": {
+              "method": "stationary_weight_mean",
+              "exact_for_uniform_weights": true,
+              "approximate_for_nonuniform_weights": true,
+              "formula": "mean(W)*mean_f[H(f)^2*(dc^2*R(f)^2+sum_carriers |c_k|^2*(R(f+k)^2+R(f-k)^2))]",
+              "cross_carrier_terms": "zero under declared nonoverlapping object bandwidth"
+            },
+            "diag_A_beta_T_W_A_beta": [
+              329324.2124861694,
+              80543.1860984137,
+              81349.56386932124
+            ],
+            "median_diag_A_beta_T_W_A_beta": 81349.56386932124,
+            "beta_diagonal_method": "exact three coded background columns",
+            "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+            "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+            "normal_equations_use_actual_fixed_W": true,
+            "hidden_damping": false,
+            "fixed_beta_diagnostic_oracle": true,
+            "expected_e_min": 5424.919238709744,
+            "expected_e_max": 17038.736863483005,
+            "expected_e_nonnegative": true,
+            "no_template_positivity_constraint": true,
+            "numeric_dtype": "torch.float64",
+            "S_units": "e",
+            "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+            "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+            "weight_min": 5.8593348651463866e-05,
+            "weight_max": 0.00018338688670085186,
+            "weight_mean": 9.829755198939696e-05
+          }
+        ],
+        "options": {
+          "alpha_g": 0.0,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "rtol": 0.0001,
+          "max_iterations": 200,
+          "diagonal_mode": "stationary_weight_mean",
+          "residual_refresh_interval": 25
+        },
+        "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+        "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+        "all_CG_converged": true,
+        "all_accepted": true,
+        "continuum_frozen": true
+      }
+    },
+    {
+      "sign": -1,
+      "background": "joint_beta",
+      "wall_s": 0.1629228000092553,
+      "template_RMSE_e": 0.001026573616496635,
+      "template_L2": 9.806690781573828e-06,
+      "info": {
+        "frames": [
+          {
+            "frame": 0,
+            "CG": {
+              "iterations": 9,
+              "relative_true_residual": 5.731297690457412e-07,
+              "relative_residual": 5.731297690457412e-07,
+              "equilibrated_relative_true_residual": 4.176467783960979e-06,
+              "true_residual_history": [
+                1.098855405659008,
+                0.17939502631287502,
+                0.0860235421311014,
+                0.068673530717442,
+                0.0005385917877838643,
+                0.0004929848374316056,
+                0.003159957304368753,
+                0.0002922768822595024,
+                5.731297690457412e-07
+              ],
+              "equilibrated_true_residual_history": [
+                0.2040033987261233,
+                0.0435418257269562,
+                0.19029112235405946,
+                0.024094872209175885,
+                0.001175215595886248,
+                0.00014292793321044465,
+                0.0008595163982276538,
+                0.00038729788119390353,
+                4.176467783960979e-06
+              ],
+              "recursive_residual_history": [
+                1.098855405659008,
+                0.17939502631287518,
+                0.0860235421311009,
+                0.0686735307174421,
+                0.0005385917877836539,
+                0.0004929848374311442,
+                0.003159957304367596,
+                0.0002922768822605313,
+                5.731297690945011e-07
+              ],
+              "residual_refreshes": [],
+              "stop": "RELATIVE_TRUE_RESIDUAL",
+              "objective_history": [
+                {
+                  "iteration": 0,
+                  "objective": 6958.884802157758
+                },
+                {
+                  "iteration": 1,
+                  "objective": 1426.466619590341
+                },
+                {
+                  "iteration": 2,
+                  "objective": 1118.4075578495467
+                },
+                {
+                  "iteration": 3,
+                  "objective": 359.23037798288715
+                },
+                {
+                  "iteration": 4,
+                  "objective": 3.637009209389362
+                },
+                {
+                  "iteration": 5,
+                  "objective": 0.042541589833490434
+                },
+                {
+                  "iteration": 6,
+                  "objective": 0.031672768280259334
+                },
+                {
+                  "iteration": 7,
+                  "objective": 0.02694302955387684
+                },
+                {
+                  "iteration": 8,
+                  "objective": 0.011615232264375663
+                },
+                {
+                  "iteration": 9,
+                  "objective": 0.01029473797098035
+                }
+              ],
+              "converged": true,
+              "rhs_norm_physical": 10803.767451185804,
+              "rhs_norm_equilibrated": 2193.741585558594,
+              "rtol": 0.0001,
+              "max_iterations": 200
+            },
+            "accepted": true,
+            "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+            "acceptance_roundoff_allowance": 4.944585045164557e-11,
+            "objective_before": 6958.884802157758,
+            "objective_after": 0.010294737974624924,
+            "objective_terms_before": {
+              "data": 6958.884802157758,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.0,
+              "ridge_beta": 0.0,
+              "gradient_energy_S_e2": 0.0
+            },
+            "objective_terms_after": {
+              "data": 2.893696303158771e-07,
+              "gradient_penalty": 0.0,
+              "ridge_S": 0.00011272505849222964,
+              "ridge_beta": 0.010181723546502378,
+              "gradient_energy_S_e2": 97518.91038810443
+            },
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 6958.884802157758
+              },
+              {
+                "iteration": 1,
+                "objective": 1426.466619590341
+              },
+              {
+                "iteration": 2,
+                "objective": 1118.4075578495467
+              },
+              {
+                "iteration": 3,
+                "objective": 359.23037798288715
+              },
+              {
+                "iteration": 4,
+                "objective": 3.637009209389362
+              },
+              {
+                "iteration": 5,
+                "objective": 0.042541589833490434
+              },
+              {
+                "iteration": 6,
+                "objective": 0.031672768280259334
+              },
+              {
+                "iteration": 7,
+                "objective": 0.02694302955387684
+              },
+              {
+                "iteration": 8,
+                "objective": 0.011615232264375663
+              },
+              {
+                "iteration": 9,
+                "objective": 0.01029473797098035
+              }
+            ],
+            "best_iteration_by_objective": 9,
+            "output_iteration": 9,
+            "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+            "alpha_g": 0.0,
+            "lambda_g": 0.0,
+            "lambda0": 3.077606008479634e-13,
+            "lambda_beta": 0.08134956386932124,
+            "lambda0_factor": 1e-06,
+            "lambda_beta_factor": 1e-06,
+            "median_diag_A_S_T_W_A_S": 3.077606008479634e-07,
+            "diagonal_S_min": 3.077606008479634e-07,
+            "diagonal_S_max": 3.077606008479634e-07,
+            "diagonal_S": {
+              "method": "stationary_weight_mean",
+              "exact_for_uniform_weights": true,
+              "approximate_for_nonuniform_weights": true,
+              "formula": "mean(W)*mean_f[H(f)^2*(dc^2*R(f)^2+sum_carriers |c_k|^2*(R(f+k)^2+R(f-k)^2))]",
+              "cross_carrier_terms": "zero under declared nonoverlapping object bandwidth"
+            },
+            "diag_A_beta_T_W_A_beta": [
+              329324.2124861694,
+              80543.1860984137,
+              81349.56386932124
+            ],
+            "median_diag_A_beta_T_W_A_beta": 81349.56386932124,
+            "beta_diagonal_method": "exact three coded background columns",
+            "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+            "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+            "normal_equations_use_actual_fixed_W": true,
+            "hidden_damping": false,
+            "fixed_beta_diagnostic_oracle": false,
+            "expected_e_min": 5424.889527003664,
+            "expected_e_max": 17038.720133000734,
+            "expected_e_nonnegative": true,
+            "no_template_positivity_constraint": true,
+            "numeric_dtype": "torch.float64",
+            "S_units": "e",
+            "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+            "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+            "weight_min": 5.8593348651463866e-05,
+            "weight_max": 0.00018338688670085186,
+            "weight_mean": 9.829755198939696e-05
+          }
+        ],
+        "options": {
+          "alpha_g": 0.0,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "rtol": 0.0001,
+          "max_iterations": 200,
+          "diagonal_mode": "stationary_weight_mean",
+          "residual_refresh_interval": 25
+        },
+        "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+        "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+        "all_CG_converged": true,
+        "all_accepted": true,
+        "continuum_frozen": true
+      }
+    }
+  ],
+  "wall_s": 47.9588545000006,
+  "scientific_cohort_acceptance": false,
+  "new_or_sealed_mother_arrays_generated": false,
+  "synthetic_control_seed": 510133,
+  "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+  "sources": {
+    "research_v5/tests_native.py": "db47e5c6b21c7bdc135755cd96eba85e37bd2fa5af2fed038240af0629f92a5d",
+    "research_v5/continuum_solver.py": "6902f138cf6240c0ff93d501130a7e482d75471dc960f376d36442115548e9c8",
+    "research_v5/signed_linear_solver.py": "0bd21ffaa55550d4326e3f8586f0cc92d2a5b2405a02227171a9c0e7bc9109f8"
+  }
+}

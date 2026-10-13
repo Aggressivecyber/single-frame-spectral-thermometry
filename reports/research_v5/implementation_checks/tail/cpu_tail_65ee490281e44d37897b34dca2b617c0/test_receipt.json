@@ -1,0 +1,42 @@
+{
+  "schema": "v5-tail-bounded-CPU-controls-001",
+  "tests": 0,
+  "failures": 0,
+  "errors": 1,
+  "passed": false,
+  "elapsed_seconds": 0.12871189998986665,
+  "device": "cpu",
+  "shape": [
+    8,
+    8
+  ],
+  "assertions_enabled": true,
+  "bytecode_disabled": true,
+  "formal_family_generation": false,
+  "formal_training": false,
+  "reserved_confirmatory_or_final_payloads_opened": 0,
+  "GPU_calls": 0,
+  "tiny_optimizer_control_updates": 3,
+  "source_sha256": {
+    "signed_gain_denoiser.py": "087fb32c170a98ccc4680dae6b84121c4414946c79af81ad47ce473edbb7c216",
+    "train.py": "29b5c70135f36b3bbb1764f6f94123e986f27464ed497ce67ac5b07ff3d7429a",
+    "final.py": "6fc91940abd437d60c40eb6ea68daf4c02974fe985778c492b8c8dbb8dc238ba",
+    "tests_tail.py": "99a17ceb2d17400bbcc424c6af73d927d74bd552f0df95fcfd54d2ed39e297d5"
+  },
+  "checks": [
+    "test_O_EXCL_final_guard_never_overwrites",
+    "test_abstention_nan_output_preserved_and_reopened",
+    "test_actual_cpu_optimizer_update_receipt_and_reopened_weights",
+    "test_below_limit_has_interval_and_abstention_without_truth",
+    "test_final_freeze_binds_exact_rules_stats_population_and_version",
+    "test_ineligible_final_opens_no_reserved_data",
+    "test_no_continuum_feedback_or_gradients",
+    "test_one_weight_needs_both_signs_normal_weak_and_null",
+    "test_only_registered_architecture_allowed",
+    "test_sign_and_zero_preserved_at_both_gain_bounds",
+    "test_signed_parent_bootstrap_and_missing_case_failure",
+    "test_training_gates_are_fail_closed",
+    "test_truth_identity_and_invalid_sigma_refused",
+    "test_zero_head_is_exact_identity"
+  ]
+}

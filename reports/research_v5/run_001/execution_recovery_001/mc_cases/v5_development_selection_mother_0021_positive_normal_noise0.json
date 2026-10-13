@@ -1,0 +1,159 @@
+{
+  "case_id": "v5_development_selection_mother_0021_positive_normal_noise0",
+  "mother_id": "v5_development_selection_mother_0021",
+  "sign": "positive",
+  "geometry": "stripe",
+  "template_geometry": "stripe",
+  "status": "completed",
+  "raw_sha256": "bc961b1f0b60e1bba6afd4d5c1e4d62394ce3546d7852bbf52c5741167d218f5",
+  "original_same_raw_cache": {
+    "path": "outputs/research_v5/run_001/development_grid_predictions/v5_development_selection_mother_0021_positive_normal_noise0.npz",
+    "sha256": "5769b874ead7f84264baa66a9ddfb3deb33f70d2a6b5d4d048e4276af9b91571",
+    "alpha_key": "a1"
+  },
+  "MC": {
+    "schema": "v5-raw-plugin-mc-001",
+    "status": "completed",
+    "options": {
+      "repeats": 8,
+      "seed": 53125,
+      "confidence_level": 0.95,
+      "minimum_valid_fraction": 0.75,
+      "minimum_successful_repeats": 3,
+      "keep_samples": false
+    },
+    "seed_plan": [
+      8907590277662302188,
+      3866566044510861036,
+      6249036297450528716,
+      3174909177804429324,
+      1820711598877825024,
+      599644508114615547,
+      1475980736127601613,
+      3757709364270756562
+    ],
+    "repeats": [
+      {
+        "repeat": 0,
+        "seed": 8907590277662302188,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 1,
+        "seed": 3866566044510861036,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 2,
+        "seed": 6249036297450528716,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 3,
+        "seed": 3174909177804429324,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 4,
+        "seed": 1820711598877825024,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 5,
+        "seed": 599644508114615547,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 6,
+        "seed": 1475980736127601613,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      },
+      {
+        "repeat": 7,
+        "seed": 3757709364270756562,
+        "upper_clipped_pixels": 0,
+        "lower_clipped_pixels": 0,
+        "status": "completed",
+        "valid_pixel_fraction": 1.0
+      }
+    ],
+    "completed_repeats": 8,
+    "calibration_sha256": "06890aa8219b948e4f45197f830e16a21f1a02f2cebd8818bb2c832af8f11152",
+    "selection_sha256": "dcf6fe535be941e730ff81fa7ffe2a1516ecda2ab37c3165c821b851a8fe552f",
+    "raw_shape": [
+      1,
+      256,
+      256
+    ],
+    "noise_model": "Poisson(original-raw fitted expected_e) + Gaussian read noise, ADC round/clamp to DN",
+    "expected_source": "fit of the same original raw; plug-in, not independent measurement",
+    "interval_method": "baseline +/- normal quantile * MC sample sigma; approximate, no bias correction",
+    "confidence_level": 0.95,
+    "normal_quantile": 1.9599639845400536,
+    "MC_template_target": "signed template_postblur_e",
+    "MC_temperature_target": "continuum postblur temperature_color_K",
+    "baseline_valid_fraction": 1.0,
+    "valid_coverage_fraction": 1.0,
+    "interval_available_fraction": 1.0,
+    "low_confidence_fraction": 0.7631683349609375,
+    "undetectable_fraction": 0.7631683349609375,
+    "empirical_nominal_coverage": "not assessed; external nominal validation only",
+    "budget": "8 repeats recommended, 16 maximum; fixed mother subset chosen outside callback",
+    "limitations": [
+      "small finite MC sample; sample sigma is itself noisy",
+      "plug-in mean and calibration/model errors can bias uncertainty",
+      "nominal interval coverage requires separate externally scored validation",
+      "normal approximate signed interval does not impose template positivity",
+      "callback must rerun continuum and signed solver for every repeat"
+    ]
+  },
+  "signed_interval": {
+    "available_pixels": 65536,
+    "covered_pixels": 58970,
+    "available_fraction": 1.0,
+    "coverage_full_truth_domain": 0.899810791015625,
+    "coverage_conditional_on_interval_available": 0.899810791015625,
+    "mean_width": 242.89021131232116
+  },
+  "temperature_interval": {
+    "available_pixels": 65536,
+    "covered_pixels": 58475,
+    "available_fraction": 1.0,
+    "coverage_full_truth_domain": 0.8922576904296875,
+    "coverage_conditional_on_interval_available": 0.8922576904296875,
+    "mean_width": 103.80609379747835
+  },
+  "uncertainty_arrays": {
+    "path": "outputs/research_v5/run_001/mc_uncertainty_predictions/v5_development_selection_mother_0021_positive_normal_noise0.npz",
+    "sha256": "6d21f6d3821fc7293bf3d8c271a195696b4ce718a14cde13ca5b547d1c22fcf4"
+  },
+  "bias_variance": {
+    "baseline_template_bias_e": 3.100795800314245,
+    "baseline_temperature_bias_K": 0.7018422186374664,
+    "MC_empirical_postblur_template_variance_mean_e2": 4387.107004971742,
+    "MC_empirical_color_temperature_variance_mean_K2": 756.6458693382671,
+    "variance_scope": "finite raw-plugin noise repeats; calibration/model discrepancy omitted"
+  },
+  "execution_provenance": "original frozen MC function; previously unexecuted case; same protocol/seeds/options"
+}

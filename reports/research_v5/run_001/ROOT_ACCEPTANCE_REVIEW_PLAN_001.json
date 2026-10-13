@@ -1,0 +1,153 @@
+{
+  "schema": "v5-root-remaining-acceptance-review-plan-v1",
+  "evidence_as_of": "2026-10-13T21:54:30+08:00",
+  "scope": "Review plan from the complete task specification and inspected frozen source. Not a completion receipt or scientific acceptance.",
+  "task_spec_sha256": "ce8c7e7b0f0de81a8a3bb2e368b60a46ee8d7ad3858736c38862e31632c0519c",
+  "protocol_sha256": "3fee043711f45ba36c289af45544d62ace8edc84fc1052ced22a5fc6d635fdf1",
+  "development_source_sha256": "f16e43b5ce9afce07dff2f9e8c83137b11b80df56eb0d8ce440af99bc5a4d439",
+  "final_source_sha256": "e8ebceb2dee98fee84e4b1f0784ae813dba81e1f22b29f50a3c01087fddd5636",
+  "previous_goal_turn_classification": "verified_wait: development process command lines were live in the preceding status reply",
+  "this_turn_classification": "progress: derived missing root amplitude-projection review, corrected expected baseline counts from frozen execution source, and rescheduled a single wake",
+  "current_execution": {
+    "phase": "development-compare",
+    "launcher_pid": 38568,
+    "worker_pid": 43840,
+    "verified_live_command_line": "-B -m research_v5.run --phase development-compare --device cuda",
+    "ledger_rows_observed": 4184,
+    "expected_grid_rows": 4320,
+    "phase_terminal": false,
+    "stderr_empty": true,
+    "observation_count_this_goal_turn": 1
+  },
+  "expected_evidence": [
+    {
+      "id": "S0_IMMUTABILITY",
+      "requirement": "Original platform, checkpoints, raw arrays and frozen v5 source/config/protocol unchanged",
+      "proof": "Revalidate registered hashes and baseline inventories at closure; restrict all additions to v5 E/D directories",
+      "status": "PENDING_FINAL_REVALIDATION"
+    },
+    {
+      "id": "S1_ORACLE",
+      "requirement": "180 diagnostic inputs, same-raw four-level ladder, four fixed baselines",
+      "proof": "Exact case-level Cartesian product 180 x 4 = 720; baseline subset 84 x 4 = 336; no duplicate or omitted difficult cases",
+      "status": "COMPLETED_ROOT_REVIEW_ON_FILE",
+      "evidence": "ROOT_ORACLE_EVIDENCE_REVIEW.json"
+    },
+    {
+      "id": "S1_NUMERICS",
+      "requirement": "Adjoint, finite differences, optical nullspace, scoped finite-mode Fisher",
+      "proof": "24 cases; original 6 float32 failures preserved; identical 2016 float64 probes and 192 FD checks, optical results; no full-image CRLB claim",
+      "status": "COMPLETED_WITH_EXPLICIT_PRECISION_ADDENDUM",
+      "evidence": "ROOT_INFORMATION_EVIDENCE_REVIEW.json"
+    },
+    {
+      "id": "S2_GRID",
+      "requirement": "Only the four registered alphas, same frozen continuum per raw, all four fixed baselines",
+      "proof": "540 unique inputs x 4 physical alphas = 2160 plus 540 x 4 baselines = 2160; total 4320 exact unique case/method/alpha keys; native numerical failures retained",
+      "status": "RUNNING"
+    },
+    {
+      "id": "S2_SELECTION",
+      "requirement": "Development-only alpha and best traditional method selected by frozen rule",
+      "proof": "selection.json binds complete records, source, config, statistics; no train/null/final input used for selection",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_COLOR",
+      "requirement": "Nominal postblur continuum color RMSE <=20 K; full truth domain and separate latent/reference targets",
+      "proof": "Complete selected noisy 180-frame aggregate and per-mother distributions; no gain/emissivity stress pooled into nominal metrics",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_SIGNED_RMSE",
+      "requirement": "Positive and negative normal signal each <=1.05 frozen traditional RMSE",
+      "proof": "36 noisy normal positive and 36 noisy normal negative cases, same selected alpha and same development-selected traditional reference",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_SIGNED_PROJECTION",
+      "requirement": "Task section 4B also requires normal positive and negative amplitude projection noninferiority",
+      "proof": "For each sign use already computed pooled signed projection, and the frozen final evaluation rule abs(candidate_projection-1) <= 1.05*abs(reference_projection-1)",
+      "status": "PENDING_ROOT_REVIEW_REQUIRED",
+      "source_observation": "evaluate_physics_gate checks normal RMSE but does not include amplitude projection in its boolean gate. A true development_gate alone is insufficient to authorize the neural/candidate branch.",
+      "scope": "Root completeness check from task and existing frozen rule; no new model, refitting, sample exclusion, alpha reselection or threshold tuning"
+    },
+    {
+      "id": "S2_CG",
+      "requirement": "True residual <=1e-4, <=200 PCG steps, failures and invalid estimates retained",
+      "proof": "All selected record diagnostics, full-domain metrics and >=0.99 valid coverage; implementation QA alone is insufficient",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_NULL",
+      "requirement": "Independent null threshold calibration and evaluation, pixel/frame false positives",
+      "proof": "12 disjoint mothers x 8 repeats = 96 calibration and 96 evaluation rows; threshold frozen before evaluation; same threshold and full-field maximum statistic; heldout frame FP <=0.05",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_MC",
+      "requirement": "Fixed repeat noise uncertainty propagates complete continuum estimation; empirical nominal interval coverage",
+      "proof": "Exact 12 predeclared cases x 8 reconstructions, saved actual uncertainty arrays, full truth-domain signed and color interval coverage, mother aggregation/95% bootstrap; failed MC not dropped",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_HESSIAN",
+      "requirement": "Linear Hessian diagnostic, accurate scope and convergence",
+      "proof": "Eight fixed probes with true residual certificates; packed latent S/beta covariance proxy distinguished from postblur sigma and continuum propagation",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_STRESS",
+      "requirement": "Unknown gain and emissivity mismatch evaluated separately",
+      "proof": "36 fixed stress inputs x selected physics and four baselines = 180 records; report reference/nominal color, errors, validity, rejection without nominal pooling",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_STATISTICS",
+      "requirement": "Pooled, per-mother, paired development statistics and 95% confidence intervals",
+      "proof": "Complete same-raw/same-mother pairing; frozen 2000-draw bootstrap seed53130; normal and weak, both signs; no pixel-independence inference",
+      "status": "PENDING"
+    },
+    {
+      "id": "S2_DEPLOYMENT_BOUNDARY",
+      "requirement": "Inference only receives raw DN and external calibration/selection, raw likelihood once, object blur once, fixed continuum",
+      "proof": "Frozen source controls plus real execution receipts; truth/condition/case_id only in generation and external scoring",
+      "status": "IMPLEMENTED_REQUIRES_FINAL_EVIDENCE_REVIEW"
+    },
+    {
+      "id": "S3_NEURAL",
+      "requirement": "Optional single bounded sign-preserving identity-initialized model; no continuum feedback",
+      "proof": "Only after all applicable physics checks and detectable weak subsets both signs; exact new 36-mother 6x6 training; one LR/model, at most1000 real optimizer updates and 0/200/500/1000 evaluation; otherwise evidenced strict stop",
+      "status": "NOT_STARTED_NOT_AUTHORIZED_BY_CURRENT_EVIDENCE"
+    },
+    {
+      "id": "S4_CANDIDATE",
+      "requirement": "One real eligible candidate with threshold, configuration and mother statistics frozen",
+      "proof": "Canonical candidate_review/candidate_receipt.json, all hashes bound and actual preceding science gates passed; rejected branch records why no candidate",
+      "status": "PENDING_OR_CONDITIONAL_STOP"
+    },
+    {
+      "id": "S4_FINAL",
+      "requirement": "Open sealed confirmation/final arrays only after candidate freeze, evaluate once",
+      "proof": "36 signed mothers/288 cases plus64 original mothers/512 cases =800; original amplitude/noise rules; exclusive start and completed hash-bound receipt, no repeated cases/retuning; if science stop, explicit no-open evidence",
+      "status": "SEALED_CONDITIONAL"
+    },
+    {
+      "id": "FINAL_DECISION",
+      "requirement": "One page answers all six scientific questions and preserves failed results/scope",
+      "proof": "Actual final V5_SCIENTIFIC_DECISION.md with no real-gas-temperature, measured AlO or10kHz claims; color/template/noise limits evidence-linked",
+      "status": "PENDING"
+    },
+    {
+      "id": "DELIVERY",
+      "requirement": "Runnable entrypoints, actual applicable science artifacts and GitHub delivery",
+      "proof": "Final completion audit plus independent root review and upload receipt; successful push/upload sufficient, user requested no re-download verification",
+      "status": "PENDING"
+    }
+  ],
+  "budget_handling": "Frozen development wall budget remains21600s. If a terminal budget/implementation failure occurs, preserve it and enumerate completed/remaining planned computations. Do not label an execution timeout as a scientific negative or rerun the phase from scratch.",
+  "completion_claimed": false,
+  "source_or_protocol_modified": false,
+  "new_GPU_job_started": false,
+  "next_review_at": "2026-10-13T23:45:00+08:00"
+}

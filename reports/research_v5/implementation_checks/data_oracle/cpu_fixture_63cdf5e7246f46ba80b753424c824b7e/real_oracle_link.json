@@ -1,0 +1,1252 @@
+[
+  {
+    "level": "O0",
+    "oracle_level": "O0",
+    "diagnostic_oracle": true,
+    "deployable_path": false,
+    "continuum_source": "true",
+    "beta_mode": "fixed_true",
+    "raw_dn_sha256": "4ca1201e1be21688ced67ca089b0058de2458b5c9975af732814d807d2786f4a",
+    "raw_e_sha256": "43dc92082517c4c0672c6104dfc9ff394b0dfcbff83e481132b711728e94a8c9",
+    "linear_options": {
+      "alpha_g": 0.0,
+      "lambda0_factor": 1e-06,
+      "lambda_beta_factor": 1e-06,
+      "rtol": 0.0001,
+      "max_iterations": 200
+    },
+    "solver_latency_s": 0.02387530000123661,
+    "continuum_latency_s": 0.0,
+    "latency_s": 0.02387530000123661,
+    "latency_note": "estimated-continuum time included per deployable level; shared estimate actually run once",
+    "status": "RETURNED",
+    "truth_used_for_scoring_only_after_O3": true,
+    "output_selected_by_truth": false,
+    "metrics": {
+      "pixels": 576,
+      "template_SSE": 0.0005417120961114833,
+      "truth_energy": 288587.60599254916,
+      "template_MSE_e2": 9.404723890824364e-07,
+      "template_RMSE_e": 0.000969779556952216,
+      "template_L2": 4.3325684106351635e-05,
+      "signed_projection": 0.9999999189263312,
+      "sign_recall": 1.0,
+      "positive_sign_recall": null,
+      "negative_sign_recall": 1.0,
+      "recall_at_fixed60": 0.0,
+      "positive_recall60": null,
+      "negative_recall60": 0.0,
+      "null_pixel_FP60": null,
+      "null_frame_FP60": null,
+      "null_signed_bias_e": null,
+      "truth_support_pixels": 521,
+      "support_fraction_of_own_postblur_peak": 0.2,
+      "detection_threshold_e": 60.0,
+      "template_finite_coverage": 1.0,
+      "color_finite_coverage": 1.0,
+      "valid_coverage": 1.0,
+      "valid_and_finite_coverage": 1.0,
+      "registered_color_domain_pixels": 576,
+      "color_RMSE_K": 3.400062277578089e-13,
+      "color_bias_K": -2.336896108722107e-13,
+      "raw_reprojection_RMSE_e": 0.0011987499767064482,
+      "raw_weighted_MSE": 2.1161277059592406e-10,
+      "raw_weighted_RMSE": 1.4546916188523396e-05,
+      "raw_residual_all_finite": true,
+      "raw_weight_sha256": "6901e4054cbe4d3fdaa07e8f89eeaa70e36a6390dd3dac6eb36e3f572398ee1c",
+      "raw_weight_source": "same observed frame; fixed during each linear solve",
+      "all_template_pixels_finite": true,
+      "latent_temperature_RMSE_K_diagnostic": 0.0,
+      "latent_temperature_truth_is_deployable": false
+    },
+    "CG": {
+      "iterations": 3,
+      "relative_true_residual": 1.6103703682023273e-05,
+      "converged": true,
+      "stop": "RELATIVE_TRUE_RESIDUAL",
+      "accepted": true,
+      "true_residual_history": [
+        0.015030645342011447,
+        0.0003340897933883535,
+        1.6103703682023273e-05
+      ],
+      "objective_history": [
+        {
+          "iteration": 0,
+          "objective": 32.73216139934532
+        },
+        {
+          "iteration": 1,
+          "objective": 0.0595363168119718
+        },
+        {
+          "iteration": 2,
+          "objective": 4.9530648681184175e-05
+        },
+        {
+          "iteration": 3,
+          "objective": 5.944184636064165e-06
+        }
+      ],
+      "best_residual_iterate_diagnostic": {
+        "iteration": 2,
+        "value": 1.6103703682023273e-05
+      },
+      "best_iterate_diagnostic": {
+        "criterion": "minimum recorded fixed raw quadratic objective",
+        "best": {
+          "iteration": 3,
+          "value": 5.944184636064165e-06
+        },
+        "role": "retrospective diagnostic only",
+        "output_selected_by_this_diagnostic": false,
+        "truth_best_iterate_available": false,
+        "returned_output": "unaltered final solver output"
+      }
+    },
+    "solver_info": {
+      "frames": [
+        {
+          "frame": 0,
+          "CG": {
+            "iterations": 3,
+            "relative_true_residual": 1.6103703682023273e-05,
+            "relative_residual": 1.6103703682023273e-05,
+            "equilibrated_relative_true_residual": 1.6103703682023263e-05,
+            "true_residual_history": [
+              0.015030645342011447,
+              0.0003340897933883535,
+              1.6103703682023273e-05
+            ],
+            "equilibrated_true_residual_history": [
+              0.015030645342011434,
+              0.0003340897933883532,
+              1.6103703682023263e-05
+            ],
+            "recursive_residual_history": [
+              0.015030645342011357,
+              0.0003340897933883639,
+              1.6103703682174062e-05
+            ],
+            "residual_refreshes": [],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 32.73216139934532
+              },
+              {
+                "iteration": 1,
+                "objective": 0.0595363168119718
+              },
+              {
+                "iteration": 2,
+                "objective": 4.9530648681184175e-05
+              },
+              {
+                "iteration": 3,
+                "objective": 5.944184636064165e-06
+              }
+            ],
+            "converged": true,
+            "rhs_norm_physical": 0.1109693846742344,
+            "rhs_norm_equilibrated": 145.30787233726863,
+            "rtol": 0.0001,
+            "max_iterations": 200
+          },
+          "accepted": true,
+          "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+          "acceptance_roundoff_allowance": 2.3257599508031975e-13,
+          "objective_before": 32.73216139934532,
+          "objective_after": 5.944184652435749e-06,
+          "objective_terms_before": {
+            "data": 32.73215578646571,
+            "gradient_penalty": 0.0,
+            "ridge_S": 0.0,
+            "ridge_beta": 5.612879611591967e-06,
+            "gradient_energy_S_e2": 0.0
+          },
+          "objective_terms_after": {
+            "data": 6.094447793555984e-08,
+            "gradient_penalty": 0.0,
+            "ridge_S": 2.703605629082226e-07,
+            "ridge_beta": 5.612879611591967e-06,
+            "gradient_energy_S_e2": 62410.93349309822
+          },
+          "objective_history": [
+            {
+              "iteration": 0,
+              "objective": 32.73216139934532
+            },
+            {
+              "iteration": 1,
+              "objective": 0.0595363168119718
+            },
+            {
+              "iteration": 2,
+              "objective": 4.9530648681184175e-05
+            },
+            {
+              "iteration": 3,
+              "objective": 5.944184636064165e-06
+            }
+          ],
+          "best_iteration_by_objective": 3,
+          "output_iteration": 3,
+          "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+          "alpha_g": 0.0,
+          "lambda_g": 0.0,
+          "lambda0": 5.832135883377923e-13,
+          "lambda_beta": 0.00010660951486782038,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "median_diag_A_S_T_W_A_S": 5.832135883377923e-07,
+          "diagonal_S_min": 5.548343018427034e-07,
+          "diagonal_S_max": 6.08522674491011e-07,
+          "diagonal_S": {
+            "method": "exact_cyclic_finite_carrier_pair_correlations",
+            "exact_for_uniform_weights": true,
+            "approximate_for_nonuniform_weights": false,
+            "formula": "diag_j=sum_r W[r]*(A_S e_j)[r]^2; all finite carrier pairs retained",
+            "finite_carrier_terms": 11,
+            "carrier_pairs": 66,
+            "relative_sampled_pattern_projection_roundoff": 1.5165544584719403e-15,
+            "floating_point_scope": "exact finite-carrier model up to recorded sampled-pattern roundoff"
+          },
+          "diag_A_beta_T_W_A_beta": [
+            4419.2795789331685,
+            106.6095148678204,
+            106.52906703819221
+          ],
+          "median_diag_A_beta_T_W_A_beta": 106.6095148678204,
+          "beta_diagonal_method": "exact three coded background columns",
+          "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+          "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+          "normal_equations_use_actual_fixed_W": true,
+          "hidden_damping": false,
+          "fixed_beta_diagnostic_oracle": true,
+          "expected_e_min": 3607.9150439254954,
+          "expected_e_max": 10955.286938431,
+          "expected_e_nonnegative": true,
+          "no_template_positivity_constraint": true,
+          "numeric_dtype": "torch.float64",
+          "S_units": "e",
+          "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+          "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+          "weight_min": 9.104690672220537e-05,
+          "weight_max": 0.00027502918911696085,
+          "weight_mean": 0.00014968483797592118
+        }
+      ],
+      "options": {
+        "alpha_g": 0.0,
+        "lambda0_factor": 1e-06,
+        "lambda_beta_factor": 1e-06,
+        "rtol": 0.0001,
+        "max_iterations": 200,
+        "diagonal_mode": "exact_cyclic",
+        "residual_refresh_interval": 25
+      },
+      "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+      "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+      "all_CG_converged": true,
+      "all_accepted": true,
+      "continuum_frozen": true
+    }
+  },
+  {
+    "level": "O1",
+    "oracle_level": "O1",
+    "diagnostic_oracle": true,
+    "deployable_path": false,
+    "continuum_source": "estimated",
+    "beta_mode": "fixed_true",
+    "raw_dn_sha256": "4ca1201e1be21688ced67ca089b0058de2458b5c9975af732814d807d2786f4a",
+    "raw_e_sha256": "43dc92082517c4c0672c6104dfc9ff394b0dfcbff83e481132b711728e94a8c9",
+    "linear_options": {
+      "alpha_g": 0.0,
+      "lambda0_factor": 1e-06,
+      "lambda_beta_factor": 1e-06,
+      "rtol": 0.0001,
+      "max_iterations": 200
+    },
+    "solver_latency_s": 0.02215740000247024,
+    "continuum_latency_s": 0.08038690000830684,
+    "latency_s": 0.10254430001077708,
+    "latency_note": "estimated-continuum time included per deployable level; shared estimate actually run once",
+    "status": "RETURNED",
+    "truth_used_for_scoring_only_after_O3": true,
+    "output_selected_by_truth": false,
+    "metrics": {
+      "pixels": 576,
+      "template_SSE": 2962.6135811751196,
+      "truth_energy": 288587.60599254916,
+      "template_MSE_e2": 5.143426356206805,
+      "template_RMSE_e": 2.2679123343301444,
+      "template_L2": 0.10132081324429061,
+      "signed_projection": 0.9374928902482804,
+      "sign_recall": 1.0,
+      "positive_sign_recall": null,
+      "negative_sign_recall": 1.0,
+      "recall_at_fixed60": 0.0,
+      "positive_recall60": null,
+      "negative_recall60": 0.0,
+      "null_pixel_FP60": null,
+      "null_frame_FP60": null,
+      "null_signed_bias_e": null,
+      "truth_support_pixels": 521,
+      "support_fraction_of_own_postblur_peak": 0.2,
+      "detection_threshold_e": 60.0,
+      "template_finite_coverage": 1.0,
+      "color_finite_coverage": 1.0,
+      "valid_coverage": 1.0,
+      "valid_and_finite_coverage": 1.0,
+      "registered_color_domain_pixels": 576,
+      "color_RMSE_K": 1.2737448628511852,
+      "color_bias_K": 0.009094535589183137,
+      "raw_reprojection_RMSE_e": 0.6732157076562805,
+      "raw_weighted_MSE": 7.09384129468957e-05,
+      "raw_weighted_RMSE": 0.008422494461078362,
+      "raw_residual_all_finite": true,
+      "raw_weight_sha256": "6901e4054cbe4d3fdaa07e8f89eeaa70e36a6390dd3dac6eb36e3f572398ee1c",
+      "raw_weight_source": "same observed frame; fixed during each linear solve",
+      "all_template_pixels_finite": true,
+      "latent_temperature_RMSE_K_diagnostic": 28.08465405489539,
+      "latent_temperature_truth_is_deployable": false
+    },
+    "CG": {
+      "iterations": 3,
+      "relative_true_residual": 1.6084762349522235e-05,
+      "converged": true,
+      "stop": "RELATIVE_TRUE_RESIDUAL",
+      "accepted": true,
+      "true_residual_history": [
+        0.0151574293541224,
+        0.00033592989969505213,
+        1.6084762349522235e-05
+      ],
+      "objective_history": [
+        {
+          "iteration": 0,
+          "objective": 28.916789440784576
+        },
+        {
+          "iteration": 1,
+          "objective": 0.07627209185437778
+        },
+        {
+          "iteration": 2,
+          "objective": 0.020477969985691402
+        },
+        {
+          "iteration": 3,
+          "objective": 0.02043606666576636
+        }
+      ],
+      "best_residual_iterate_diagnostic": {
+        "iteration": 2,
+        "value": 1.6084762349522235e-05
+      },
+      "best_iterate_diagnostic": {
+        "criterion": "minimum recorded fixed raw quadratic objective",
+        "best": {
+          "iteration": 3,
+          "value": 0.02043606666576636
+        },
+        "role": "retrospective diagnostic only",
+        "output_selected_by_this_diagnostic": false,
+        "truth_best_iterate_available": false,
+        "returned_output": "unaltered final solver output"
+      }
+    },
+    "solver_info": {
+      "frames": [
+        {
+          "frame": 0,
+          "CG": {
+            "iterations": 3,
+            "relative_true_residual": 1.6084762349522235e-05,
+            "relative_residual": 1.6084762349522235e-05,
+            "equilibrated_relative_true_residual": 1.608476234952225e-05,
+            "true_residual_history": [
+              0.0151574293541224,
+              0.00033592989969505213,
+              1.6084762349522235e-05
+            ],
+            "equilibrated_true_residual_history": [
+              0.015157429354122407,
+              0.0003359298996950522,
+              1.608476234952225e-05
+            ],
+            "recursive_residual_history": [
+              0.015157429354122362,
+              0.00033592989969497575,
+              1.6084762349545396e-05
+            ],
+            "residual_refreshes": [],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 28.916789440784576
+              },
+              {
+                "iteration": 1,
+                "objective": 0.07627209185437778
+              },
+              {
+                "iteration": 2,
+                "objective": 0.020477969985691402
+              },
+              {
+                "iteration": 3,
+                "objective": 0.02043606666576636
+              }
+            ],
+            "converged": true,
+            "rhs_norm_physical": 0.10520111857891468,
+            "rhs_norm_equilibrated": 137.7546676777429,
+            "rtol": 0.0001,
+            "max_iterations": 200
+          },
+          "accepted": true,
+          "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+          "acceptance_roundoff_allowance": 2.054661467865385e-13,
+          "objective_before": 28.916789440784576,
+          "objective_after": 0.02043606666575989,
+          "objective_terms_before": {
+            "data": 28.916783827904965,
+            "gradient_penalty": 0.0,
+            "ridge_S": 0.0,
+            "ridge_beta": 5.612879611591967e-06,
+            "gradient_energy_S_e2": 0.0
+          },
+          "objective_terms_after": {
+            "data": 0.020430262928705575,
+            "gradient_penalty": 0.0,
+            "ridge_S": 1.9085744272513264e-07,
+            "ridge_beta": 5.612879611591967e-06,
+            "gradient_energy_S_e2": 33420.37346614588
+          },
+          "objective_history": [
+            {
+              "iteration": 0,
+              "objective": 28.916789440784576
+            },
+            {
+              "iteration": 1,
+              "objective": 0.07627209185437778
+            },
+            {
+              "iteration": 2,
+              "objective": 0.020477969985691402
+            },
+            {
+              "iteration": 3,
+              "objective": 0.02043606666576636
+            }
+          ],
+          "best_iteration_by_objective": 3,
+          "output_iteration": 3,
+          "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+          "alpha_g": 0.0,
+          "lambda_g": 0.0,
+          "lambda0": 5.832135883377923e-13,
+          "lambda_beta": 0.00010660951486782038,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "median_diag_A_S_T_W_A_S": 5.832135883377923e-07,
+          "diagonal_S_min": 5.548343018427034e-07,
+          "diagonal_S_max": 6.08522674491011e-07,
+          "diagonal_S": {
+            "method": "exact_cyclic_finite_carrier_pair_correlations",
+            "exact_for_uniform_weights": true,
+            "approximate_for_nonuniform_weights": false,
+            "formula": "diag_j=sum_r W[r]*(A_S e_j)[r]^2; all finite carrier pairs retained",
+            "finite_carrier_terms": 11,
+            "carrier_pairs": 66,
+            "relative_sampled_pattern_projection_roundoff": 1.5165544584719403e-15,
+            "floating_point_scope": "exact finite-carrier model up to recorded sampled-pattern roundoff"
+          },
+          "diag_A_beta_T_W_A_beta": [
+            4419.2795789331685,
+            106.6095148678204,
+            106.52906703819221
+          ],
+          "median_diag_A_beta_T_W_A_beta": 106.6095148678204,
+          "beta_diagonal_method": "exact three coded background columns",
+          "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+          "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+          "normal_equations_use_actual_fixed_W": true,
+          "hidden_damping": false,
+          "fixed_beta_diagnostic_oracle": true,
+          "expected_e_min": 3608.668809986079,
+          "expected_e_max": 10955.263199156156,
+          "expected_e_nonnegative": true,
+          "no_template_positivity_constraint": true,
+          "numeric_dtype": "torch.float64",
+          "S_units": "e",
+          "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+          "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+          "weight_min": 9.104690672220537e-05,
+          "weight_max": 0.00027502918911696085,
+          "weight_mean": 0.00014968483797592118
+        }
+      ],
+      "options": {
+        "alpha_g": 0.0,
+        "lambda0_factor": 1e-06,
+        "lambda_beta_factor": 1e-06,
+        "rtol": 0.0001,
+        "max_iterations": 200,
+        "diagonal_mode": "exact_cyclic",
+        "residual_refresh_interval": 25
+      },
+      "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+      "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+      "all_CG_converged": true,
+      "all_accepted": true,
+      "continuum_frozen": true
+    }
+  },
+  {
+    "level": "O2",
+    "oracle_level": "O2",
+    "diagnostic_oracle": true,
+    "deployable_path": false,
+    "continuum_source": "true",
+    "beta_mode": "jointly_estimated",
+    "raw_dn_sha256": "4ca1201e1be21688ced67ca089b0058de2458b5c9975af732814d807d2786f4a",
+    "raw_e_sha256": "43dc92082517c4c0672c6104dfc9ff394b0dfcbff83e481132b711728e94a8c9",
+    "linear_options": {
+      "alpha_g": 0.0,
+      "lambda0_factor": 1e-06,
+      "lambda_beta_factor": 1e-06,
+      "rtol": 0.0001,
+      "max_iterations": 200
+    },
+    "solver_latency_s": 0.049252299999352545,
+    "continuum_latency_s": 0.0,
+    "latency_s": 0.049252299999352545,
+    "latency_note": "estimated-continuum time included per deployable level; shared estimate actually run once",
+    "status": "RETURNED",
+    "truth_used_for_scoring_only_after_O3": true,
+    "output_selected_by_truth": false,
+    "metrics": {
+      "pixels": 576,
+      "template_SSE": 0.37033954865090624,
+      "truth_energy": 288587.60599254916,
+      "template_MSE_e2": 0.0006429506052967123,
+      "template_RMSE_e": 0.025356470679034026,
+      "template_L2": 0.001132820784699142,
+      "signed_projection": 0.999002504698916,
+      "sign_recall": 1.0,
+      "positive_sign_recall": null,
+      "negative_sign_recall": 1.0,
+      "recall_at_fixed60": 0.0,
+      "positive_recall60": null,
+      "negative_recall60": 0.0,
+      "null_pixel_FP60": null,
+      "null_frame_FP60": null,
+      "null_signed_bias_e": null,
+      "truth_support_pixels": 521,
+      "support_fraction_of_own_postblur_peak": 0.2,
+      "detection_threshold_e": 60.0,
+      "template_finite_coverage": 1.0,
+      "color_finite_coverage": 1.0,
+      "valid_coverage": 1.0,
+      "valid_and_finite_coverage": 1.0,
+      "registered_color_domain_pixels": 576,
+      "color_RMSE_K": 3.400062277578089e-13,
+      "color_bias_K": -2.336896108722107e-13,
+      "raw_reprojection_RMSE_e": 0.011110014519162648,
+      "raw_weighted_MSE": 1.8131331701763612e-08,
+      "raw_weighted_RMSE": 0.00013465263347504054,
+      "raw_residual_all_finite": true,
+      "raw_weight_sha256": "6901e4054cbe4d3fdaa07e8f89eeaa70e36a6390dd3dac6eb36e3f572398ee1c",
+      "raw_weight_source": "same observed frame; fixed during each linear solve",
+      "all_template_pixels_finite": true,
+      "latent_temperature_RMSE_K_diagnostic": 0.0,
+      "latent_temperature_truth_is_deployable": false
+    },
+    "CG": {
+      "iterations": 10,
+      "relative_true_residual": 1.3920263701374993e-05,
+      "converged": true,
+      "stop": "RELATIVE_TRUE_RESIDUAL",
+      "accepted": true,
+      "true_residual_history": [
+        0.007082952643628537,
+        0.012744687477452016,
+        0.01257339277192841,
+        0.005093839546263582,
+        0.0029823251682839502,
+        5.504270468216203e-05,
+        5.3225551230819236e-05,
+        0.0001432380058565011,
+        0.00012142541377919646,
+        1.3920263701374993e-05
+      ],
+      "objective_history": [
+        {
+          "iteration": 0,
+          "objective": 107.77825604596609
+        },
+        {
+          "iteration": 1,
+          "objective": 3.1905000336310536
+        },
+        {
+          "iteration": 2,
+          "objective": 2.58681386579903
+        },
+        {
+          "iteration": 3,
+          "objective": 2.496803792039344
+        },
+        {
+          "iteration": 4,
+          "objective": 0.6637107884004365
+        },
+        {
+          "iteration": 5,
+          "objective": 0.023057664733528327
+        },
+        {
+          "iteration": 6,
+          "objective": 0.0016899438477366857
+        },
+        {
+          "iteration": 7,
+          "objective": 0.001514652650143944
+        },
+        {
+          "iteration": 8,
+          "objective": 0.001442403033337314
+        },
+        {
+          "iteration": 9,
+          "objective": 0.0010188701162974212
+        },
+        {
+          "iteration": 10,
+          "objective": 1.1100027904831222e-05
+        }
+      ],
+      "best_residual_iterate_diagnostic": {
+        "iteration": 9,
+        "value": 1.3920263701374993e-05
+      },
+      "best_iterate_diagnostic": {
+        "criterion": "minimum recorded fixed raw quadratic objective",
+        "best": {
+          "iteration": 10,
+          "value": 1.1100027904831222e-05
+        },
+        "role": "retrospective diagnostic only",
+        "output_selected_by_this_diagnostic": false,
+        "truth_best_iterate_available": false,
+        "returned_output": "unaltered final solver output"
+      }
+    },
+    "solver_info": {
+      "frames": [
+        {
+          "frame": 0,
+          "CG": {
+            "iterations": 10,
+            "relative_true_residual": 1.3920263701374993e-05,
+            "relative_residual": 1.3920263701374993e-05,
+            "equilibrated_relative_true_residual": 3.7530423796269245e-05,
+            "true_residual_history": [
+              0.007082952643628537,
+              0.012744687477452016,
+              0.01257339277192841,
+              0.005093839546263582,
+              0.0029823251682839502,
+              5.504270468216203e-05,
+              5.3225551230819236e-05,
+              0.0001432380058565011,
+              0.00012142541377919646,
+              1.3920263701374993e-05
+            ],
+            "equilibrated_true_residual_history": [
+              0.030919561735199417,
+              0.014452505510501543,
+              0.013169424784852047,
+              0.009650290214339155,
+              0.005209460007448271,
+              0.00035981212266580887,
+              0.0001272351299406816,
+              0.0002598940366805382,
+              0.0005379249890921302,
+              3.7530423796269245e-05
+            ],
+            "recursive_residual_history": [
+              0.00708295264362863,
+              0.012744687477452527,
+              0.012573392771928472,
+              0.005093839546264115,
+              0.002982325168283599,
+              5.5042704682394765e-05,
+              5.3225551230818064e-05,
+              0.00014323800585634938,
+              0.00012142541377913782,
+              1.3920263701490049e-05
+            ],
+            "residual_refreshes": [
+              6,
+              7
+            ],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 107.77825604596609
+              },
+              {
+                "iteration": 1,
+                "objective": 3.1905000336310536
+              },
+              {
+                "iteration": 2,
+                "objective": 2.58681386579903
+              },
+              {
+                "iteration": 3,
+                "objective": 2.496803792039344
+              },
+              {
+                "iteration": 4,
+                "objective": 0.6637107884004365
+              },
+              {
+                "iteration": 5,
+                "objective": 0.023057664733528327
+              },
+              {
+                "iteration": 6,
+                "objective": 0.0016899438477366857
+              },
+              {
+                "iteration": 7,
+                "objective": 0.001514652650143944
+              },
+              {
+                "iteration": 8,
+                "objective": 0.001442403033337314
+              },
+              {
+                "iteration": 9,
+                "objective": 0.0010188701162974212
+              },
+              {
+                "iteration": 10,
+                "objective": 1.1100027904831222e-05
+              }
+            ],
+            "converged": true,
+            "rhs_norm_physical": 948.3185957554036,
+            "rhs_norm_equilibrated": 274.60741002039543,
+            "rtol": 0.0001,
+            "max_iterations": 200
+          },
+          "accepted": true,
+          "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+          "acceptance_roundoff_allowance": 7.65810569063533e-13,
+          "objective_before": 107.77825604596609,
+          "objective_after": 1.110002786063157e-05,
+          "objective_terms_before": {
+            "data": 107.77825604596609,
+            "gradient_penalty": 0.0,
+            "ridge_S": 0.0,
+            "ridge_beta": 0.0,
+            "gradient_energy_S_e2": 0.0
+          },
+          "objective_terms_after": {
+            "data": 5.221823530121348e-06,
+            "gradient_penalty": 0.0,
+            "ridge_S": 2.6995803808697667e-07,
+            "ridge_beta": 5.608246292423245e-06,
+            "gradient_energy_S_e2": 62302.69987553122
+          },
+          "objective_history": [
+            {
+              "iteration": 0,
+              "objective": 107.77825604596609
+            },
+            {
+              "iteration": 1,
+              "objective": 3.1905000336310536
+            },
+            {
+              "iteration": 2,
+              "objective": 2.58681386579903
+            },
+            {
+              "iteration": 3,
+              "objective": 2.496803792039344
+            },
+            {
+              "iteration": 4,
+              "objective": 0.6637107884004365
+            },
+            {
+              "iteration": 5,
+              "objective": 0.023057664733528327
+            },
+            {
+              "iteration": 6,
+              "objective": 0.0016899438477366857
+            },
+            {
+              "iteration": 7,
+              "objective": 0.001514652650143944
+            },
+            {
+              "iteration": 8,
+              "objective": 0.001442403033337314
+            },
+            {
+              "iteration": 9,
+              "objective": 0.0010188701162974212
+            },
+            {
+              "iteration": 10,
+              "objective": 1.1100027904831222e-05
+            }
+          ],
+          "best_iteration_by_objective": 10,
+          "output_iteration": 10,
+          "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+          "alpha_g": 0.0,
+          "lambda_g": 0.0,
+          "lambda0": 5.832135883377923e-13,
+          "lambda_beta": 0.00010660951486782038,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "median_diag_A_S_T_W_A_S": 5.832135883377923e-07,
+          "diagonal_S_min": 5.548343018427034e-07,
+          "diagonal_S_max": 6.08522674491011e-07,
+          "diagonal_S": {
+            "method": "exact_cyclic_finite_carrier_pair_correlations",
+            "exact_for_uniform_weights": true,
+            "approximate_for_nonuniform_weights": false,
+            "formula": "diag_j=sum_r W[r]*(A_S e_j)[r]^2; all finite carrier pairs retained",
+            "finite_carrier_terms": 11,
+            "carrier_pairs": 66,
+            "relative_sampled_pattern_projection_roundoff": 1.5165544584719403e-15,
+            "floating_point_scope": "exact finite-carrier model up to recorded sampled-pattern roundoff"
+          },
+          "diag_A_beta_T_W_A_beta": [
+            4419.2795789331685,
+            106.6095148678204,
+            106.52906703819221
+          ],
+          "median_diag_A_beta_T_W_A_beta": 106.6095148678204,
+          "beta_diagonal_method": "exact three coded background columns",
+          "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+          "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+          "normal_equations_use_actual_fixed_W": true,
+          "hidden_damping": false,
+          "fixed_beta_diagnostic_oracle": false,
+          "expected_e_min": 3607.926789955782,
+          "expected_e_max": 10955.286218464864,
+          "expected_e_nonnegative": true,
+          "no_template_positivity_constraint": true,
+          "numeric_dtype": "torch.float64",
+          "S_units": "e",
+          "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+          "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+          "weight_min": 9.104690672220537e-05,
+          "weight_max": 0.00027502918911696085,
+          "weight_mean": 0.00014968483797592118
+        }
+      ],
+      "options": {
+        "alpha_g": 0.0,
+        "lambda0_factor": 1e-06,
+        "lambda_beta_factor": 1e-06,
+        "rtol": 0.0001,
+        "max_iterations": 200,
+        "diagonal_mode": "exact_cyclic",
+        "residual_refresh_interval": 25
+      },
+      "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+      "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+      "all_CG_converged": true,
+      "all_accepted": true,
+      "continuum_frozen": true
+    }
+  },
+  {
+    "level": "O3",
+    "oracle_level": "O3",
+    "diagnostic_oracle": false,
+    "deployable_path": true,
+    "continuum_source": "estimated",
+    "beta_mode": "jointly_estimated",
+    "raw_dn_sha256": "4ca1201e1be21688ced67ca089b0058de2458b5c9975af732814d807d2786f4a",
+    "raw_e_sha256": "43dc92082517c4c0672c6104dfc9ff394b0dfcbff83e481132b711728e94a8c9",
+    "linear_options": {
+      "alpha_g": 0.0,
+      "lambda0_factor": 1e-06,
+      "lambda_beta_factor": 1e-06,
+      "rtol": 0.0001,
+      "max_iterations": 200
+    },
+    "solver_latency_s": 0.04754220000177156,
+    "continuum_latency_s": 0.08038690000830684,
+    "latency_s": 0.1279291000100784,
+    "latency_note": "estimated-continuum time included per deployable level; shared estimate actually run once",
+    "status": "RETURNED",
+    "truth_used_for_scoring_only_after_O3": true,
+    "output_selected_by_truth": false,
+    "metrics": {
+      "pixels": 576,
+      "template_SSE": 1385.5094697644276,
+      "truth_energy": 288587.60599254916,
+      "template_MSE_e2": 2.405398385007687,
+      "template_RMSE_e": 1.550934681089983,
+      "template_L2": 0.06928925814199312,
+      "signed_projection": 0.997966426536972,
+      "sign_recall": 1.0,
+      "positive_sign_recall": null,
+      "negative_sign_recall": 1.0,
+      "recall_at_fixed60": 0.0,
+      "positive_recall60": null,
+      "negative_recall60": 0.0,
+      "null_pixel_FP60": null,
+      "null_frame_FP60": null,
+      "null_signed_bias_e": null,
+      "truth_support_pixels": 521,
+      "support_fraction_of_own_postblur_peak": 0.2,
+      "detection_threshold_e": 60.0,
+      "template_finite_coverage": 1.0,
+      "color_finite_coverage": 1.0,
+      "valid_coverage": 1.0,
+      "valid_and_finite_coverage": 1.0,
+      "registered_color_domain_pixels": 576,
+      "color_RMSE_K": 1.2737448628511852,
+      "color_bias_K": 0.009094535589183137,
+      "raw_reprojection_RMSE_e": 0.5992672579889831,
+      "raw_weighted_MSE": 5.465640515710059e-05,
+      "raw_weighted_RMSE": 0.007392997034836453,
+      "raw_residual_all_finite": true,
+      "raw_weight_sha256": "6901e4054cbe4d3fdaa07e8f89eeaa70e36a6390dd3dac6eb36e3f572398ee1c",
+      "raw_weight_source": "same observed frame; fixed during each linear solve",
+      "all_template_pixels_finite": true,
+      "latent_temperature_RMSE_K_diagnostic": 28.08465405489539,
+      "latent_temperature_truth_is_deployable": false
+    },
+    "CG": {
+      "iterations": 10,
+      "relative_true_residual": 1.2443602929526968e-05,
+      "converged": true,
+      "stop": "RELATIVE_TRUE_RESIDUAL",
+      "accepted": true,
+      "true_residual_history": [
+        0.007299953423385112,
+        0.012378276578893229,
+        0.012542159374803751,
+        0.00422203545619897,
+        0.002291451824661491,
+        5.304009539953497e-05,
+        5.39137836528982e-05,
+        0.00012310760042339033,
+        0.00010043239626273836,
+        1.2443602929526968e-05
+      ],
+      "objective_history": [
+        {
+          "iteration": 0,
+          "objective": 112.17932419698789
+        },
+        {
+          "iteration": 1,
+          "objective": 3.281725566372927
+        },
+        {
+          "iteration": 2,
+          "objective": 2.686196488260208
+        },
+        {
+          "iteration": 3,
+          "objective": 2.592687138542658
+        },
+        {
+          "iteration": 4,
+          "objective": 0.6571466690685384
+        },
+        {
+          "iteration": 5,
+          "objective": 0.03360050386194757
+        },
+        {
+          "iteration": 6,
+          "objective": 0.017466873793182458
+        },
+        {
+          "iteration": 7,
+          "objective": 0.017293984811658447
+        },
+        {
+          "iteration": 8,
+          "objective": 0.017227684238037
+        },
+        {
+          "iteration": 9,
+          "objective": 0.016781918270766027
+        },
+        {
+          "iteration": 10,
+          "objective": 0.015747306335782696
+        }
+      ],
+      "best_residual_iterate_diagnostic": {
+        "iteration": 9,
+        "value": 1.2443602929526968e-05
+      },
+      "best_iterate_diagnostic": {
+        "criterion": "minimum recorded fixed raw quadratic objective",
+        "best": {
+          "iteration": 10,
+          "value": 0.015747306335782696
+        },
+        "role": "retrospective diagnostic only",
+        "output_selected_by_this_diagnostic": false,
+        "truth_best_iterate_available": false,
+        "returned_output": "unaltered final solver output"
+      }
+    },
+    "solver_info": {
+      "frames": [
+        {
+          "frame": 0,
+          "CG": {
+            "iterations": 10,
+            "relative_true_residual": 1.2443602929526968e-05,
+            "relative_residual": 1.2443602929526968e-05,
+            "equilibrated_relative_true_residual": 3.720169213400578e-05,
+            "true_residual_history": [
+              0.007299953423385112,
+              0.012378276578893229,
+              0.012542159374803751,
+              0.00422203545619897,
+              0.002291451824661491,
+              5.304009539953497e-05,
+              5.39137836528982e-05,
+              0.00012310760042339033,
+              0.00010043239626273836,
+              1.2443602929526968e-05
+            ],
+            "equilibrated_true_residual_history": [
+              0.030959027893054502,
+              0.014507517338961728,
+              0.012963885481422174,
+              0.009133767723708608,
+              0.004303511515975824,
+              0.0003819086876895522,
+              0.000127837350854327,
+              0.00023983672532779286,
+              0.0005705483685479452,
+              3.720169213400578e-05
+            ],
+            "recursive_residual_history": [
+              0.00729995342338499,
+              0.012378276578893043,
+              0.012542159374803992,
+              0.00422203545619881,
+              0.002291451824661575,
+              5.3040095399249597e-05,
+              5.3913783652923434e-05,
+              0.00012310760042318997,
+              0.00010043239626298398,
+              1.244360292936056e-05
+            ],
+            "residual_refreshes": [
+              6,
+              7
+            ],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [
+              {
+                "iteration": 0,
+                "objective": 112.17932419698789
+              },
+              {
+                "iteration": 1,
+                "objective": 3.281725566372927
+              },
+              {
+                "iteration": 2,
+                "objective": 2.686196488260208
+              },
+              {
+                "iteration": 3,
+                "objective": 2.592687138542658
+              },
+              {
+                "iteration": 4,
+                "objective": 0.6571466690685384
+              },
+              {
+                "iteration": 5,
+                "objective": 0.03360050386194757
+              },
+              {
+                "iteration": 6,
+                "objective": 0.017466873793182458
+              },
+              {
+                "iteration": 7,
+                "objective": 0.017293984811658447
+              },
+              {
+                "iteration": 8,
+                "objective": 0.017227684238037
+              },
+              {
+                "iteration": 9,
+                "objective": 0.016781918270766027
+              },
+              {
+                "iteration": 10,
+                "objective": 0.015747306335782696
+              }
+            ],
+            "converged": true,
+            "rhs_norm_physical": 973.2553299273206,
+            "rhs_norm_equilibrated": 281.8147330708887,
+            "rtol": 0.0001,
+            "max_iterations": 200
+          },
+          "accepted": true,
+          "acceptance": "finite fixed-quadratic objective <= zero-variable objective (roundoff allowance only)",
+          "acceptance_roundoff_allowance": 7.970820391064698e-13,
+          "objective_before": 112.17932419698789,
+          "objective_after": 0.015747306335816606,
+          "objective_terms_before": {
+            "data": 112.17932419698789,
+            "gradient_penalty": 0.0,
+            "ridge_S": 0.0,
+            "ridge_beta": 0.0,
+            "gradient_energy_S_e2": 0.0
+          },
+          "objective_terms_after": {
+            "data": 0.015741044685246466,
+            "gradient_penalty": 0.0,
+            "ridge_S": 2.244084721572268e-07,
+            "ridge_beta": 6.0372420979811955e-06,
+            "gradient_energy_S_e2": 39641.43374268867
+          },
+          "objective_history": [
+            {
+              "iteration": 0,
+              "objective": 112.17932419698789
+            },
+            {
+              "iteration": 1,
+              "objective": 3.281725566372927
+            },
+            {
+              "iteration": 2,
+              "objective": 2.686196488260208
+            },
+            {
+              "iteration": 3,
+              "objective": 2.592687138542658
+            },
+            {
+              "iteration": 4,
+              "objective": 0.6571466690685384
+            },
+            {
+              "iteration": 5,
+              "objective": 0.03360050386194757
+            },
+            {
+              "iteration": 6,
+              "objective": 0.017466873793182458
+            },
+            {
+              "iteration": 7,
+              "objective": 0.017293984811658447
+            },
+            {
+              "iteration": 8,
+              "objective": 0.017227684238037
+            },
+            {
+              "iteration": 9,
+              "objective": 0.016781918270766027
+            },
+            {
+              "iteration": 10,
+              "objective": 0.015747306335782696
+            }
+          ],
+          "best_iteration_by_objective": 10,
+          "output_iteration": 10,
+          "best_iteration_role": "diagnostic hindsight on the fixed raw quadratic; returned output is final CG iterate",
+          "alpha_g": 0.0,
+          "lambda_g": 0.0,
+          "lambda0": 5.832135883377923e-13,
+          "lambda_beta": 0.00010660951486782038,
+          "lambda0_factor": 1e-06,
+          "lambda_beta_factor": 1e-06,
+          "median_diag_A_S_T_W_A_S": 5.832135883377923e-07,
+          "diagonal_S_min": 5.548343018427034e-07,
+          "diagonal_S_max": 6.08522674491011e-07,
+          "diagonal_S": {
+            "method": "exact_cyclic_finite_carrier_pair_correlations",
+            "exact_for_uniform_weights": true,
+            "approximate_for_nonuniform_weights": false,
+            "formula": "diag_j=sum_r W[r]*(A_S e_j)[r]^2; all finite carrier pairs retained",
+            "finite_carrier_terms": 11,
+            "carrier_pairs": 66,
+            "relative_sampled_pattern_projection_roundoff": 1.5165544584719403e-15,
+            "floating_point_scope": "exact finite-carrier model up to recorded sampled-pattern roundoff"
+          },
+          "diag_A_beta_T_W_A_beta": [
+            4419.2795789331685,
+            106.6095148678204,
+            106.52906703819221
+          ],
+          "median_diag_A_beta_T_W_A_beta": 106.6095148678204,
+          "beta_diagonal_method": "exact three coded background columns",
+          "preconditioner": "uniform-W Fourier S normal plus exact regularized 3x3 beta Gram; block diagonal",
+          "preconditioner_weight_approximation": "W replaced by its spatial mean only in S preconditioner/declared approximate diagonal scale",
+          "normal_equations_use_actual_fixed_W": true,
+          "hidden_damping": false,
+          "fixed_beta_diagnostic_oracle": false,
+          "expected_e_min": 3608.367249921147,
+          "expected_e_max": 10955.285519256006,
+          "expected_e_nonnegative": true,
+          "no_template_positivity_constraint": true,
+          "numeric_dtype": "torch.float64",
+          "S_units": "e",
+          "beta_units": "normalized 3 coefficients; Bscale applied in operator",
+          "gradient_grid": "periodic unit-pixel differences; lambda_g units e^-2 for the dimensionless weighted objective",
+          "weight_min": 9.104690672220537e-05,
+          "weight_max": 0.00027502918911696085,
+          "weight_mean": 0.00014968483797592118
+        }
+      ],
+      "options": {
+        "alpha_g": 0.0,
+        "lambda0_factor": 1e-06,
+        "lambda_beta_factor": 1e-06,
+        "rtol": 0.0001,
+        "max_iterations": 200,
+        "diagonal_mode": "exact_cyclic",
+        "residual_refresh_interval": 25
+      },
+      "measurement_objective": "one fixed-W raw likelihood; decoded images are absent",
+      "weight_rule": "1/(clamp(observed raw_e,0)+read_noise_e^2+adc_step^2/12)",
+      "all_CG_converged": true,
+      "all_accepted": true,
+      "continuum_frozen": true
+    }
+  }
+]
