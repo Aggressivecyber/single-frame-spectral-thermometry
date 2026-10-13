@@ -1,0 +1,119 @@
+{
+  "probes": [
+    {
+      "file": "identity_restart_0000.jsonl",
+      "checkpoint": "identity_restart",
+      "update": 0,
+      "cases": 12,
+      "active_protection_cases": 0,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": null,
+      "median_safe_to_main_gradient_norm": 0.0,
+      "median_active_safe_to_main_gradient_norm": null,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "identity_restart_0100.jsonl",
+      "checkpoint": "identity_restart",
+      "update": 100,
+      "cases": 12,
+      "active_protection_cases": 2,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": 0.9512271881103516,
+      "median_safe_to_main_gradient_norm": 0.0,
+      "median_active_safe_to_main_gradient_norm": 2177.62098635119,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "identity_restart_0300.jsonl",
+      "checkpoint": "identity_restart",
+      "update": 300,
+      "cases": 12,
+      "active_protection_cases": 2,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": 0.9640403985977173,
+      "median_safe_to_main_gradient_norm": 0.0,
+      "median_active_safe_to_main_gradient_norm": 2178.8099664353344,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "identity_restart_0500.jsonl",
+      "checkpoint": "identity_restart",
+      "update": 500,
+      "cases": 12,
+      "active_protection_cases": 5,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": 0.9672604560852051,
+      "median_safe_to_main_gradient_norm": 0.0,
+      "median_active_safe_to_main_gradient_norm": 2868.999051380355,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "warm_control_0000.jsonl",
+      "checkpoint": "warm_control",
+      "update": 0,
+      "cases": 12,
+      "active_protection_cases": 8,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": 0.9481938406825066,
+      "median_safe_to_main_gradient_norm": 1496.561135081055,
+      "median_active_safe_to_main_gradient_norm": 1820.2936624314707,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "warm_control_0100.jsonl",
+      "checkpoint": "warm_control",
+      "update": 100,
+      "cases": 12,
+      "active_protection_cases": 8,
+      "opposed_gradient_cases": 0,
+      "mean_cosine_when_active": 0.8151398729532957,
+      "median_safe_to_main_gradient_norm": 1358.2379420274374,
+      "median_active_safe_to_main_gradient_norm": 1633.018942221589,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "warm_control_0300.jsonl",
+      "checkpoint": "warm_control",
+      "update": 300,
+      "cases": 12,
+      "active_protection_cases": 8,
+      "opposed_gradient_cases": 2,
+      "mean_cosine_when_active": 0.41014955658465624,
+      "median_safe_to_main_gradient_norm": 926.2820041308721,
+      "median_active_safe_to_main_gradient_norm": 1785.4116074410122,
+      "diagnostic_only_no_optimizer_steps": true
+    },
+    {
+      "file": "warm_control_0500.jsonl",
+      "checkpoint": "warm_control",
+      "update": 500,
+      "cases": 12,
+      "active_protection_cases": 6,
+      "opposed_gradient_cases": 2,
+      "mean_cosine_when_active": 0.3318614313999812,
+      "median_safe_to_main_gradient_norm": 426.8466968925719,
+      "median_active_safe_to_main_gradient_norm": 2405.533270996032,
+      "diagnostic_only_no_optimizer_steps": true
+    }
+  ],
+  "actual_training_clipping": [
+    {
+      "method": "warm_safe1",
+      "updates": 500,
+      "clipped_updates": 498,
+      "median_gradient_norm": 395.3791961669922,
+      "mean_main_loss": 0.03902074555587933,
+      "mean_safe_loss": 9.55328103381289
+    },
+    {
+      "method": "identity_restart",
+      "updates": 500,
+      "clipped_updates": 277,
+      "median_gradient_norm": 1.4270086288452148,
+      "mean_main_loss": 0.048721773235805316,
+      "mean_safe_loss": 1.181582093171226
+    }
+  ],
+  "interpretation_limit": "gradient opposition and clipping are diagnostics, not proof of a sole cause"
+}
