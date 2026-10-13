@@ -1,0 +1,68 @@
+{
+  "registered_at": "2026-10-13T03:15:02.314943+00:00",
+  "baseline_commit": "623568a4f866859a9185f8ddb2ab16bc14c0d2bf",
+  "name": "v4.4 final continuum constraint",
+  "zero_update_endpoints": {
+    "residual_scaled": {
+      "path": "training_v4_3/checkpoints/residual_scaled/update_0500.pt",
+      "sha256": "753cad827cb6e288dc34a1020ef1c72a48430517a64e4d6681c576ee08205838"
+    },
+    "negative_balanced": {
+      "path": "training_v4_3/checkpoints/negative_balanced/update_0500.pt",
+      "sha256": "00322d2c71715c1ba89a9343b5206b67b1cc9612648f0216b82d2ef210647718"
+    }
+  },
+  "one_changed_variable": "Only final continuum state equals detached cached physical state; six internal CNN stages unchanged.",
+  "train_updates": 500,
+  "maximum_gpu_seconds_per_training_arm": 1800,
+  "maximum_gpu_seconds_zero_audit": 600,
+  "checkpoint_interval": 100,
+  "seed": 4101,
+  "lr": 3e-05,
+  "accumulation": 4,
+  "clip": 1.0,
+  "safe_weight": 1.0,
+  "initial_checkpoint": "training_v4/checkpoints/seed_101_final_2000.pt",
+  "initial_sha256": "b052aeefce20b43339afdba396aef13d67420b79e3723d197ca1260b7b3f149f",
+  "draws_sha256": "0603f279a1eb44490cc5c7af2854afa72437cf48644abc6d791d411bdbc45457",
+  "manifest_sha256": "53bbc44dda8be149fdb9106a4ce344f368c3ee21994095334e612a655a351bf3",
+  "validation_ids_sha256": "971c4fc631797ffd2249ade0a8894085b87ec621a0fab4a02a3c850d5fd32173",
+  "calibration_sha256": "37efde9dd5182ae14e843e7e76c396ea0d8b027b5888113c4b3352ec1f0ef6eb",
+  "original_gates_changed": false,
+  "old_eligible_definition_changed": false,
+  "v4_4_additional_development_screen": {
+    "signed_conditions": [
+      "negative_weak",
+      "negative_normal",
+      "positive_weak",
+      "positive_normal"
+    ],
+    "template_relative_MSE_factor": 1.05,
+    "template_absolute_MSE_tolerance_e2": 0.25,
+    "separate_signed_weak_pooled_L2_strictly_less_than": 1.0,
+    "all_development_invalid_output_fraction": 0.0,
+    "finite_all_frames": true,
+    "interpretation": "New development rules motivated by exposed failure cases; not independent validation or a confidence bound."
+  },
+  "selection_rule": "After completing the registered comparisons, among candidates passing old eligible and all new screens, minimize main weak L2; ties use normal RMSE then earlier checkpoint.",
+  "noisy_signed_threshold_e": 60,
+  "parameters": 5797,
+  "internal_continuum_still_trainable": true,
+  "final_test_used": false,
+  "final_test_requires_frozen_candidate_and_separate_protocol": true,
+  "public_push_authorized_in_this_stage": false,
+  "hardware": "Windows RYLAN RTX 4060 Laptop; one root-controlled GPU job at a time",
+  "user_authorized_parallel_subagents": true,
+  "subagent_requested_model": "gpt-6-astra",
+  "subagent_requested_reasoning_effort": "max",
+  "host_default_service_tier": "priority",
+  "actual_subagent_service_tier_receipt": null,
+  "sources": {
+    "training_v4_4/__init__.py": "5f583108b866b98133db3e2f0e1a27e4774df3f4eabe6ddde73822f3d3c4b120",
+    "training_v4_4/evaluate.py": "174e3c5c5213e29ee2de38be0106619f592df9cf4f9f4723adb85182cb3c225f",
+    "training_v4_4/model.py": "f5d0f2b4b91b5e6717cf9021c707d90ce612e6a6fe2cf2ae5ce0101bfeedfe56",
+    "training_v4_4/model_tests.py": "5c9d500a92e9b72756633fd4087c110cd4541d7436e9413d965ff003eff0bbb7",
+    "training_v4_4/protocol.py": "05af2cc19d9b96906a92241778179d6696284a57d4f7be38fd4dc5c6d165d10c",
+    "training_v4_4/zero_audit.py": "b5074f47a22430aeac7ab5ba45145208dbb5f4c415c3a9386067063843801bae"
+  }
+}

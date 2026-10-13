@@ -1,0 +1,118 @@
+{
+  "status": "FROZEN_DATA_DESIGN_ONLY_NOT_LAUNCHED",
+  "anchor_commit": "623568a4f866859a9185f8ddb2ab16bc14c0d2bf",
+  "anchor_manifest": "reports/training_v4_1/run_001/data_manifest.json",
+  "anchor_manifest_sha256": "53bbc44dda8be149fdb9106a4ce344f368c3ee21994095334e612a655a351bf3",
+  "registry_sha256": "1d9d325e47f75f3cba7c48de1963d88b2e1ab3c0959ddc59d2d2cd4471305717",
+  "activation_condition": "The frozen-continuum contrast must finish its registered budget and verification. Activate only if signed distortion remains, after a separate bounded generation/training registration. This file authorizes no execution.",
+  "question": "Does complete signed geometry pairing and a second independent noise realization help beyond repeating the current 12 training mothers?",
+  "minimality": "Retain the 12 current TRAIN signed pairs and add exactly the 24 missing pairs. The repeatedly inspected 6 current DEV signed mothers cannot become untouched data, so create one fresh locked DEV confirmation mother for each of all 36 pairs. This is a coverage floor, not a power calculation or generalization guarantee.",
+  "counts": {
+    "new_train_mothers": 24,
+    "retained_signed_train_mothers": 12,
+    "total_signed_train_mothers": 36,
+    "new_locked_development_mothers": 36,
+    "new_train_mother_rows": 384,
+    "second_noise_rows_for_old_train_mothers": 48,
+    "total_new_train_rows": 432,
+    "new_locked_development_rows": 576,
+    "total_new_raw_rows": 1008,
+    "total_new_condition_labels": 240,
+    "existing_condition_labels_reused_for_second_noise": 48,
+    "train_rows_after_merge": 3008,
+    "train_mothers_after_merge": 292,
+    "old_development_rows_retained_separately": 776
+  },
+  "crossed_factors": {
+    "temperature_geometry": [
+      "front",
+      "multipeak",
+      "ring",
+      "stripe",
+      "flat",
+      "smooth_random"
+    ],
+    "template_geometry": [
+      "blob",
+      "multipeak",
+      "ring",
+      "stripe",
+      "filament",
+      "smooth_random"
+    ],
+    "conditions": [
+      "negative_weak",
+      "negative_normal",
+      "positive_weak",
+      "positive_normal"
+    ],
+    "preblur_signed_peaks_e": [
+      -45,
+      -180,
+      45,
+      180
+    ],
+    "input_kinds_per_condition": [
+      "continuous",
+      "quantization",
+      "noise0",
+      "noise1"
+    ],
+    "mothers_per_geometry_pair_in_repaired_train": 1,
+    "mothers_per_geometry_pair_in_locked_development": 1,
+    "noise_realizations_per_mother_condition": 2,
+    "noise_adds_mothers": false
+  },
+  "generator_freeze": {
+    "base_mother_function": "training_v4/data.py:mother_state",
+    "signed_transform_and_legality": "training_v4_1/data.py:generate",
+    "temperature_shift_K": 250.0,
+    "photon_noise": "Poisson(expected_e)",
+    "read_noise_sigma_e": 3,
+    "adc_bits": 12,
+    "native_shape": [
+      256,
+      256
+    ],
+    "sensor_physics_calibration": "bytewise/canonical identity with anchor; no new sensor randomization",
+    "one_shared_scale_for_matched_signs_and_strengths": true,
+    "legality_rule": "Keep existing deterministic continuum amplitude and signed template amplitude reductions and 24-attempt cap. Record actual scales; retain illegal cases and stop instead of resampling seeds.",
+    "no_expansion_of_amplitude_temperature_or_geometry_family_ranges": true,
+    "original_files_immutable": true
+  },
+  "independence_guards": [
+    "All conditions, raw input types and noise realizations for a mother keep the same split; split is assigned before field construction.",
+    "Explicitly persist every raw noise_index and noise_seed, actual post-transform field hashes, generator and physics hashes; do not rely on derived seeds alone.",
+    "Compare new TRAIN, current DEV, locked DEV and final registration IDs, seed namespaces, scene-field hashes, raw hashes and label hashes. A duplicate or collision stops generation; it never triggers an unregistered redraw.",
+    "Keep exact cached physical inverse identities based on raw/config/calibration/solver. Labels can score and supervise TRAIN but cannot enter inversion or inference.",
+    "Preserve the current 776 DEV cases as known development evidence. New locked DEV raw, labels, scores and residual distributions do not select a model, stopping time, sampler, tau, power, thresholds or implementation.",
+    "Freeze the model and endpoint before one model evaluation on locked DEV. Any later adaptation converts that set to development evidence; do not rename it independent confirmation.",
+    "Report parent-cluster paired statistics and per-geometry/per-sign/per-strength tables. The new confirmation unit count is 36, not 576 input rows or pixels.",
+    "Final-test frames, labels and evaluation results remain closed. This proposal creates development confirmation data and does not alter the existing final-test registration."
+  ],
+  "training_comparison_requirements_not_an_execution_plan": [
+    "Register a finite paired contrast separately. Freeze initialization, continuum handling, optimizer, loss, model, fixed budget and all existing gates before generation or performance inspection.",
+    "Only TRAIN data determine sampling and any recalibration. Retain the original same-input control and report unique mothers actually drawn, not just available manifest counts.",
+    "For a data-only claim, keep condition/input-kind exposure counts and all unsigned sample IDs paired; change only signed mother/noise selection. Additional sampling-policy changes require an explicit separate factor.",
+    "A pool with full factorial availability may still be poorly exposed by the old 5-percent signed sampler. Report actual drawn coverage and stop before claiming coverage repair if planned cells were not exposed.",
+    "One locked-DEV mother per cell cannot estimate a cell-level variance. Failure stops this bounded question; success warrants an independently registered confirmation, not a real-camera claim."
+  ],
+  "checks_performed_now": {
+    "metadata_only": true,
+    "new_seed_values": 828,
+    "new_seed_duplicates": 0,
+    "seed_overlap_with_old_train_dev_or_registered_final": 0,
+    "array_generation_calls": 0,
+    "gpu_calls": 0,
+    "optimizer_updates": 0
+  },
+  "explicit_noncoverage": [
+    "signed strong",
+    "signed near-zero continuum",
+    "bipolar within one template map",
+    "new geometry families",
+    "sensor/PSF/filter/QE drift",
+    "experimental calibration",
+    "independent acquisition"
+  ]
+}

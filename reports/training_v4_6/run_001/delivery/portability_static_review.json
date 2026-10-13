@@ -1,0 +1,88 @@
+{
+  "status": "PASS_STATIC_ONLY",
+  "reviewed_at": "2026-10-13T04:49:10.200078+00:00",
+  "script": "reports/training_v4_6/run_001/delivery/verify_portability.py",
+  "script_sha256": "2342233eb524e6a67359adf7657439e851618b3598fb24c29793f925bde31b98",
+  "script_was_edited_by_reviewer": false,
+  "unresolved_blocking_findings": [],
+  "resolved_findings": [
+    {
+      "id": "P1-upstream-completion-gates",
+      "original_issue": "Only the first raw inference receipt was required. A later raw case failure or watchdog failure could still allow portability execution.",
+      "root_fix_verified": "Before extraction, require training COMPLETE500 with exact final path, Adam step and weight SHA; require raw replay overall SUCCESS/passed/three cases and each record passed; require watchdog SUCCESS/passed and bind its worker receipt SHA.",
+      "lines": [
+        43,
+        64
+      ]
+    },
+    {
+      "id": "parent-bytecode-storage",
+      "original_issue": "The comparison parent imports NumPy but originally relied on the external invocation using -B.",
+      "root_fix_verified": "sys.dont_write_bytecode=True is now set at module level. The isolated child retains -I -B.",
+      "lines": [
+        13,
+        13
+      ]
+    }
+  ],
+  "static_checks": {
+    "main_script_and_embedded_child_compile": true,
+    "relocation_is_exact_requested_sibling_path": "E:/CodexWork/thermometry/portable_checks/v46_20261013",
+    "relocation_is_outside_checkout_and_on_ED": true,
+    "refuses_existing_relocation_or_portability_receipt": true,
+    "bundle_complete_receipt_and_zip_sha_required": true,
+    "zip_CRC_unique_exact_inventory_and_destination_resolve_checks": true,
+    "extracted_file_sha256_and_byte_counts_verified_before_CLI": true,
+    "child_flags": [
+      "-I",
+      "-B"
+    ],
+    "child_PYTHONPATH_and_PYTHONHOME_removed": true,
+    "only_extracted_bundle_is_explicitly_added_to_sys_path": true,
+    "loaded_module_origins_checked_against_original_checkout": true,
+    "runtime_module_must_resolve_inside_extracted_bundle": true,
+    "fixed_negative_normal_raw_and_exact_update500_checkpoint": true,
+    "child_runtime_tmp_and_CUDA_cache_paths_on_relocation_tree": true,
+    "subprocess_seconds_limit": 180,
+    "hidden_Windows_child_process": true,
+    "reference_and_relocated_receipt_identity_and_array_hashes_compared": true,
+    "all_prediction_and_inverse_npz_keys_dtype_and_exact_arrays_compared": true,
+    "bundle_payload_sha_rechecked_after_CLI": true,
+    "separate_physical_inverse_and_CNN_seconds_copied_to_receipt": true,
+    "old_DEV_example_only_not_independent_scientific_confirmation": true,
+    "failure_artifacts_retained": true
+  },
+  "read_only_preflight_fixtures": [
+    {
+      "name": "all_complete",
+      "guard_passed": true
+    },
+    {
+      "name": "training_partial",
+      "guard_passed": false
+    },
+    {
+      "name": "raw_replay_failed_after_first_case",
+      "guard_passed": false
+    },
+    {
+      "name": "watchdog_failed",
+      "guard_passed": false
+    },
+    {
+      "name": "training_endpoint_wrong",
+      "guard_passed": false
+    }
+  ],
+  "fixture_scope": "The source preflight prefix was parsed and exercised in memory with synthetic read/sha data and truncated before the first mkdir. The original run function and child CLI were not executed.",
+  "execution_assumption": "Use normal Python without -O/-OO or PYTHONOPTIMIZE; the script intentionally uses assert for gates and comparisons.",
+  "limitations": "Static review does not certify successful extraction, CUDA execution, portability or exact arrays. Those claims require the later native portability receipt.",
+  "model_loads": 0,
+  "GPU_calls": 0,
+  "array_files_opened": 0,
+  "subprocesses_started": 0,
+  "ZIP_files_opened": 0,
+  "bundle_built": false,
+  "frozen_sources_changed": false,
+  "final_test_used": false
+}

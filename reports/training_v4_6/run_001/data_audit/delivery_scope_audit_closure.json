@@ -1,0 +1,84 @@
+{
+  "finding_id": "DELIVERY-001",
+  "status": "CLOSED_BY_STATIC_REVIEW",
+  "reviewed_at": "2026-10-13T04:48:44.592476+00:00",
+  "original_audit": "reports/training_v4_6/run_001/data_audit/delivery_scope_audit.json",
+  "original_record_preserved": true,
+  "reviewed_source": "reports/parallel_session_20261013_v44_v46/seal_results.py",
+  "source_size_bytes": 19209,
+  "source_mtime_ns": 1791866831835830600,
+  "scope": "Only closure of the previously reported unused/unbound bundle receipt finding.",
+  "checks": [
+    {
+      "closed_condition": "Reject incomplete or unrelated bundle receipt and require same predetermined v4.6 update-500 checkpoint.",
+      "lines": [
+        85,
+        90
+      ]
+    },
+    {
+      "closed_condition": "Require delivery-contained paths, current ZIP size/hash, exact folder inventory, ZIP inventory/CRC, and every payload file/ZIP entry size/hash.",
+      "lines": [
+        91,
+        105
+      ]
+    },
+    {
+      "closed_condition": "Bind portability PASS and exact prediction/state/beta to this bundle receipt, this ZIP, and the current raw replay/worker watchdog receipts.",
+      "lines": [
+        107,
+        112
+      ]
+    },
+    {
+      "closed_condition": "Bind relocated inference receipt hash, external E/D relocation, SUCCESS and same checkpoint; compare to the same native reference raw/parameter/prediction/inverse/source identities.",
+      "lines": [
+        113,
+        124
+      ]
+    }
+  ],
+  "AST_evidence": {
+    "bundle_load_reference_count": 11,
+    "bundle_checked_keys": [
+      "bundle_file_count",
+      "bundle_files_sha256_and_bytes",
+      "bundle_path",
+      "checkpoint_auto_selected",
+      "checkpoint_role",
+      "checkpoint_sha256",
+      "checkpoint_update",
+      "status",
+      "zip_bytes",
+      "zip_path",
+      "zip_sha256"
+    ],
+    "portability_checked_keys": [
+      "all_prediction_arrays_exact",
+      "build_receipt_sha256",
+      "bundle_payload_unchanged",
+      "case_id",
+      "inference_receipt_path",
+      "inference_receipt_sha256",
+      "original_checkout_module_imports",
+      "physical_state_and_beta_exact",
+      "raw_replay_receipt_sha256",
+      "raw_replay_watchdog_receipt_sha256",
+      "reference_receipt_sha256",
+      "relocation_root",
+      "status",
+      "zip_sha256"
+    ]
+  },
+  "conclusion": "The new sealing gates cover the failure/unrelated-receipt, missing/changed ZIP, and stale/unbound portability cases raised in DELIVERY-001. The finding is closed at source-review level.",
+  "limits": [
+    "No seal, bundle build or portability process was executed by this closure review.",
+    "No artifact file hashes were recomputed and no arrays/checkpoint payloads were opened.",
+    "This does not replace the science agent full patch review or the later actual sealing receipt."
+  ],
+  "file_hash_audit_repeated": false,
+  "array_audit_repeated": false,
+  "model_calls": 0,
+  "gpu_calls": 0,
+  "frozen_source_or_data_mutations": 0
+}

@@ -1,0 +1,3126 @@
+{
+  "scope": "metadata_only_train_and_development_validation",
+  "audit_utc": "2026-10-13T03:16:14.500738+00:00",
+  "git_head_at_audit": "623568a4f866859a9185f8ddb2ab16bc14c0d2bf",
+  "frame_label_arrays_opened": 0,
+  "project_modules_imported": 0,
+  "gpu_calls": 0,
+  "optimizer_updates": 0,
+  "final_metadata_only": true,
+  "final_frame_label_or_result_opened": false,
+  "all_rows": 3352,
+  "all_mothers": 338,
+  "split_summaries": {
+    "train": {
+      "total": {
+        "rows": 2576,
+        "mothers": 268,
+        "condition_labels": 1072,
+        "unique_label_sha256": 1072,
+        "unique_raw_sha256": 2576,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "blank",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "blank",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "normal",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "normal",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "normal",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "strong",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "strong",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "strong",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "weak",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "weak",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "weak",
+            "input_kind": "quantization",
+            "count": 48
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 144
+          },
+          {
+            "origin": "v4_1_protection",
+            "count": 384
+          },
+          {
+            "origin": "v4_exact_reuse",
+            "count": 2048
+          }
+        ]
+      },
+      "main_noisy": {
+        "rows": 2048,
+        "mothers": 256,
+        "condition_labels": 1024,
+        "unique_label_sha256": 1024,
+        "unique_raw_sha256": 2048,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "normal",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "strong",
+            "input_kind": "noise",
+            "count": 512
+          },
+          {
+            "condition": "weak",
+            "input_kind": "noise",
+            "count": 512
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "v4_exact_reuse",
+            "count": 2048
+          }
+        ]
+      },
+      "main_protection": {
+        "rows": 384,
+        "mothers": 48,
+        "condition_labels": 192,
+        "unique_label_sha256": 192,
+        "unique_raw_sha256": 384,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "blank",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "normal",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "normal",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "strong",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "strong",
+            "input_kind": "quantization",
+            "count": 48
+          },
+          {
+            "condition": "weak",
+            "input_kind": "continuous",
+            "count": 48
+          },
+          {
+            "condition": "weak",
+            "input_kind": "quantization",
+            "count": 48
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "v4_1_protection",
+            "count": 384
+          }
+        ]
+      },
+      "signed": {
+        "rows": 144,
+        "mothers": 12,
+        "condition_labels": 48,
+        "unique_label_sha256": 48,
+        "unique_raw_sha256": 144,
+        "by_condition_kind": [
+          {
+            "condition": "negative_normal",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "quantization",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "continuous",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "quantization",
+            "count": 12
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 144
+          }
+        ]
+      },
+      "signed_negative_noisy": {
+        "rows": 24,
+        "mothers": 12,
+        "condition_labels": 24,
+        "unique_label_sha256": 24,
+        "unique_raw_sha256": 24,
+        "by_condition_kind": [
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 12
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 12
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 24
+          }
+        ]
+      }
+    },
+    "validation": {
+      "total": {
+        "rows": 776,
+        "mothers": 70,
+        "condition_labels": 280,
+        "unique_label_sha256": 280,
+        "unique_raw_sha256": 776,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "blank",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "blank",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "normal",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "normal",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "normal",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "strong",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "strong",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "strong",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "weak",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "weak",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "weak",
+            "input_kind": "quantization",
+            "count": 24
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 72
+          },
+          {
+            "origin": "v4_1_protection",
+            "count": 192
+          },
+          {
+            "origin": "v4_exact_reuse",
+            "count": 512
+          }
+        ]
+      },
+      "main_noisy": {
+        "rows": 512,
+        "mothers": 64,
+        "condition_labels": 256,
+        "unique_label_sha256": 256,
+        "unique_raw_sha256": 512,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "normal",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "strong",
+            "input_kind": "noise",
+            "count": 128
+          },
+          {
+            "condition": "weak",
+            "input_kind": "noise",
+            "count": 128
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "v4_exact_reuse",
+            "count": 512
+          }
+        ]
+      },
+      "main_protection": {
+        "rows": 192,
+        "mothers": 24,
+        "condition_labels": 96,
+        "unique_label_sha256": 96,
+        "unique_raw_sha256": 192,
+        "by_condition_kind": [
+          {
+            "condition": "blank",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "blank",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "normal",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "normal",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "strong",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "strong",
+            "input_kind": "quantization",
+            "count": 24
+          },
+          {
+            "condition": "weak",
+            "input_kind": "continuous",
+            "count": 24
+          },
+          {
+            "condition": "weak",
+            "input_kind": "quantization",
+            "count": 24
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "v4_1_protection",
+            "count": 192
+          }
+        ]
+      },
+      "signed": {
+        "rows": 72,
+        "mothers": 6,
+        "condition_labels": 24,
+        "unique_label_sha256": 24,
+        "unique_raw_sha256": 72,
+        "by_condition_kind": [
+          {
+            "condition": "negative_normal",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "negative_normal",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "positive_normal",
+            "input_kind": "quantization",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "continuous",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "positive_weak",
+            "input_kind": "quantization",
+            "count": 6
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 72
+          }
+        ]
+      },
+      "signed_negative_noisy": {
+        "rows": 12,
+        "mothers": 6,
+        "condition_labels": 12,
+        "unique_label_sha256": 12,
+        "unique_raw_sha256": 12,
+        "by_condition_kind": [
+          {
+            "condition": "negative_normal",
+            "input_kind": "noise",
+            "count": 6
+          },
+          {
+            "condition": "negative_weak",
+            "input_kind": "noise",
+            "count": 6
+          }
+        ],
+        "by_origin": [
+          {
+            "origin": "independent_signed",
+            "count": 12
+          }
+        ]
+      }
+    }
+  },
+  "geometry_coverage": {
+    "train_main": {
+      "mothers": 256,
+      "nonempty_pairs_of_36": 36,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 42
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 43
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 43
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 43
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 42
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 43
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 46
+        },
+        {
+          "template_geometry": "filament",
+          "count": 42
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 42
+        },
+        {
+          "template_geometry": "ring",
+          "count": 42
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 42
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 42
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 8
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 8
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 8
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 8
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 7
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 7
+        }
+      ]
+    },
+    "train_protection": {
+      "mothers": 48,
+      "nonempty_pairs_of_36": 36,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 8
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 8
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 8
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 8
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 8
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 8
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 8
+        },
+        {
+          "template_geometry": "filament",
+          "count": 8
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 8
+        },
+        {
+          "template_geometry": "ring",
+          "count": 8
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 8
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 8
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 2
+        }
+      ]
+    },
+    "train_signed": {
+      "mothers": 12,
+      "nonempty_pairs_of_36": 12,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 2
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 2
+        },
+        {
+          "template_geometry": "filament",
+          "count": 2
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 2
+        },
+        {
+          "template_geometry": "ring",
+          "count": 2
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 2
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 2
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        }
+      ]
+    },
+    "validation_main": {
+      "mothers": 64,
+      "nonempty_pairs_of_36": 36,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 10
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 11
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 11
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 11
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 10
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 11
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 12
+        },
+        {
+          "template_geometry": "filament",
+          "count": 10
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 12
+        },
+        {
+          "template_geometry": "ring",
+          "count": 12
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 6
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 12
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 2
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        }
+      ]
+    },
+    "validation_protection": {
+      "mothers": 24,
+      "nonempty_pairs_of_36": 24,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 4
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 4
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 4
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 4
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 4
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 4
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 4
+        },
+        {
+          "template_geometry": "filament",
+          "count": 4
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 4
+        },
+        {
+          "template_geometry": "ring",
+          "count": 4
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 4
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 4
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        }
+      ]
+    },
+    "validation_signed": {
+      "mothers": 6,
+      "nonempty_pairs_of_36": 6,
+      "per_temperature": [
+        {
+          "temperature_geometry": "flat",
+          "count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "count": 1
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "count": 1
+        }
+      ],
+      "per_template": [
+        {
+          "template_geometry": "blob",
+          "count": 1
+        },
+        {
+          "template_geometry": "filament",
+          "count": 1
+        },
+        {
+          "template_geometry": "multipeak",
+          "count": 1
+        },
+        {
+          "template_geometry": "ring",
+          "count": 1
+        },
+        {
+          "template_geometry": "smooth_random",
+          "count": 1
+        },
+        {
+          "template_geometry": "stripe",
+          "count": 1
+        }
+      ],
+      "matrix": [
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "blob",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "front",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "multipeak",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "multipeak",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "ring",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "ring",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "stripe",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "stripe",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "filament",
+          "mother_count": 1
+        },
+        {
+          "temperature_geometry": "flat",
+          "template_geometry": "smooth_random",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "blob",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "multipeak",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "ring",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "stripe",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "filament",
+          "mother_count": 0
+        },
+        {
+          "temperature_geometry": "smooth_random",
+          "template_geometry": "smooth_random",
+          "mother_count": 1
+        }
+      ]
+    }
+  },
+  "reported_prior_delivery_receipt": {
+    "status": "closed_not_qualified",
+    "active_local_training_jobs": 0,
+    "automatic_training_extension": false,
+    "training_arms": [
+      "fresh_trunk",
+      "residual_scaled",
+      "negative_balanced"
+    ],
+    "actual_optimizer_updates": 1500,
+    "microbatches": 6000,
+    "checkpoints": 18,
+    "validation_records": 13968,
+    "native_replays": 9,
+    "same_slot_comparisons": 1500,
+    "zero_training_scaled_balanced_exactly_equal": true,
+    "gradient_diagnostic_cases": 96,
+    "field_combinations": 1152,
+    "field_native_replays": 288,
+    "CUDA_tests_passed": 3,
+    "original_public_files_bytewise_unchanged": 850,
+    "used_input_cases_rehashed": 1993,
+    "unique_input_files_rehashed": 6994,
+    "qualified_checkpoint_count": 0,
+    "final_test_used": false,
+    "local_only": true,
+    "new_public_push": false,
+    "completed": "2026-10-13T02:43:59.118539+00:00",
+    "base_commit": "cca766c65814f89d6f8228f3e511974fa603455e",
+    "report_sha256": "6ebda46ac84fa491091f8c8c58a696e0cf5fc6e9d1ef2b4d5a5ba42e6b1c5efb"
+  },
+  "cross_split_row_metadata_overlap": {
+    "case_id": {
+      "train_unique": 2576,
+      "validation_unique": 776,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "mother_id": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "raw_path": {
+      "train_unique": 2576,
+      "validation_unique": 776,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "raw_hash": {
+      "train_unique": 2576,
+      "validation_unique": 776,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "raw_file_sha256": {
+      "train_unique": 2576,
+      "validation_unique": 776,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "label_path": {
+      "train_unique": 1072,
+      "validation_unique": 280,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "label_sha256": {
+      "train_unique": 1072,
+      "validation_unique": 280,
+      "intersection_count": 0,
+      "intersections": []
+    }
+  },
+  "cross_split_mother_metadata_overlap": {
+    "mother_id": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "seed": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "temperature_seed": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "amplitude_seed": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "template_seed": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "background_seed": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "temperature_field_sha256": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "amplitude_field_sha256": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    },
+    "template_shape_sha256": {
+      "train_unique": 268,
+      "validation_unique": 70,
+      "intersection_count": 0,
+      "intersections": []
+    }
+  },
+  "noise_seed_audit": {
+    "rows": 2632,
+    "signed_noisy_rows_with_no_explicit_noise_seed": 72,
+    "cross_split_overlap": {
+      "noise_seed": {
+        "train_unique": 2096,
+        "validation_unique": 536,
+        "intersection_count": 0,
+        "intersections": []
+      }
+    },
+    "within_split_unique": {
+      "train": 2096,
+      "validation": 536
+    },
+    "warning": "Different RNG seeds identify noise realizations; they do not add independent parent scenes."
+  },
+  "reuse_checks": {
+    "old_noisy_rows": 2560,
+    "reused_rows": 2560,
+    "all_old_noisy_ids_reused_exactly": true,
+    "all_selected_metadata_equal": true,
+    "all_protection_mothers_are_same_split_main_mothers": true,
+    "protection_added_independent_mothers": 0
+  },
+  "sampler": {
+    "v4_1_all_1500": {
+      "updates": 1500,
+      "microbatches": 6000,
+      "unique_cases": 2043,
+      "unique_mothers": 268,
+      "unique_signed_mothers": 12,
+      "signed_microbatches": 300,
+      "negative_noisy_microbatches": 74,
+      "unique_negative_noisy_cases": 24,
+      "unique_negative_noisy_mothers": 12,
+      "negative_noisy_per_case": [
+        {
+          "case_id": "v4_1_signed_train_mother_0000_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0000_negative_weak_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_normal_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_weak_noise",
+          "draws": 3
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0002_negative_normal_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0002_negative_weak_noise",
+          "draws": 5
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_normal_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_weak_noise",
+          "draws": 3
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0004_negative_normal_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0004_negative_weak_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0005_negative_normal_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0005_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0006_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0006_negative_weak_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0007_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0007_negative_weak_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0008_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0008_negative_weak_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_weak_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_normal_noise",
+          "draws": 5
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_weak_noise",
+          "draws": 3
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0011_negative_normal_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0011_negative_weak_noise",
+          "draws": 5
+        }
+      ],
+      "condition_kind_counts": [
+        {
+          "condition": "blank",
+          "input_kind": "continuous",
+          "count": 356
+        },
+        {
+          "condition": "blank",
+          "input_kind": "noise",
+          "count": 713
+        },
+        {
+          "condition": "blank",
+          "input_kind": "quantization",
+          "count": 356
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "continuous",
+          "count": 19
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "noise",
+          "count": 36
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "quantization",
+          "count": 19
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "continuous",
+          "count": 18
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "noise",
+          "count": 38
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "quantization",
+          "count": 19
+        },
+        {
+          "condition": "normal",
+          "input_kind": "continuous",
+          "count": 356
+        },
+        {
+          "condition": "normal",
+          "input_kind": "noise",
+          "count": 712
+        },
+        {
+          "condition": "normal",
+          "input_kind": "quantization",
+          "count": 357
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "continuous",
+          "count": 19
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "noise",
+          "count": 38
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "quantization",
+          "count": 19
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "continuous",
+          "count": 19
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "noise",
+          "count": 38
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "quantization",
+          "count": 18
+        },
+        {
+          "condition": "strong",
+          "input_kind": "continuous",
+          "count": 357
+        },
+        {
+          "condition": "strong",
+          "input_kind": "noise",
+          "count": 713
+        },
+        {
+          "condition": "strong",
+          "input_kind": "quantization",
+          "count": 356
+        },
+        {
+          "condition": "weak",
+          "input_kind": "continuous",
+          "count": 356
+        },
+        {
+          "condition": "weak",
+          "input_kind": "noise",
+          "count": 712
+        },
+        {
+          "condition": "weak",
+          "input_kind": "quantization",
+          "count": 356
+        }
+      ],
+      "in_batch_duplicate_count": 0,
+      "non_train_draws": 0
+    },
+    "v4_1_prefix_500": {
+      "updates": 500,
+      "microbatches": 2000,
+      "unique_cases": 1183,
+      "unique_mothers": 264,
+      "unique_signed_mothers": 12,
+      "signed_microbatches": 100,
+      "negative_noisy_microbatches": 26,
+      "unique_negative_noisy_cases": 15,
+      "unique_negative_noisy_mothers": 11,
+      "negative_noisy_per_case": [
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0002_negative_weak_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0004_negative_normal_noise",
+          "draws": 3
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0005_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0006_negative_normal_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0007_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0008_negative_weak_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_normal_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_weak_noise",
+          "draws": 4
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_normal_noise",
+          "draws": 2
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_weak_noise",
+          "draws": 1
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0011_negative_normal_noise",
+          "draws": 2
+        }
+      ],
+      "condition_kind_counts": [
+        {
+          "condition": "blank",
+          "input_kind": "continuous",
+          "count": 118
+        },
+        {
+          "condition": "blank",
+          "input_kind": "noise",
+          "count": 238
+        },
+        {
+          "condition": "blank",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "noise",
+          "count": 13
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "noise",
+          "count": 13
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "quantization",
+          "count": 7
+        },
+        {
+          "condition": "normal",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "normal",
+          "input_kind": "noise",
+          "count": 237
+        },
+        {
+          "condition": "normal",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "continuous",
+          "count": 7
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "noise",
+          "count": 12
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "noise",
+          "count": 12
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "strong",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "strong",
+          "input_kind": "noise",
+          "count": 238
+        },
+        {
+          "condition": "strong",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "weak",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "weak",
+          "input_kind": "noise",
+          "count": 237
+        },
+        {
+          "condition": "weak",
+          "input_kind": "quantization",
+          "count": 118
+        }
+      ],
+      "in_batch_duplicate_count": 0,
+      "non_train_draws": 0
+    },
+    "negative_balanced_500": {
+      "updates": 500,
+      "microbatches": 2000,
+      "unique_cases": 851,
+      "unique_mothers": 232,
+      "unique_signed_mothers": 12,
+      "signed_microbatches": 575,
+      "negative_noisy_microbatches": 513,
+      "unique_negative_noisy_cases": 24,
+      "unique_negative_noisy_mothers": 12,
+      "negative_noisy_per_case": [
+        {
+          "case_id": "v4_1_signed_train_mother_0000_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0000_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0001_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0002_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0002_negative_weak_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_normal_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0003_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0004_negative_normal_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0004_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0005_negative_normal_noise",
+          "draws": 20
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0005_negative_weak_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0006_negative_normal_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0006_negative_weak_noise",
+          "draws": 20
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0007_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0007_negative_weak_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0008_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0008_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_normal_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0009_negative_weak_noise",
+          "draws": 24
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_normal_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0010_negative_weak_noise",
+          "draws": 21
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0011_negative_normal_noise",
+          "draws": 22
+        },
+        {
+          "case_id": "v4_1_signed_train_mother_0011_negative_weak_noise",
+          "draws": 21
+        }
+      ],
+      "condition_kind_counts": [
+        {
+          "condition": "blank",
+          "input_kind": "continuous",
+          "count": 118
+        },
+        {
+          "condition": "blank",
+          "input_kind": "noise",
+          "count": 119
+        },
+        {
+          "condition": "blank",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "noise",
+          "count": 256
+        },
+        {
+          "condition": "negative_normal",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "noise",
+          "count": 257
+        },
+        {
+          "condition": "negative_weak",
+          "input_kind": "quantization",
+          "count": 7
+        },
+        {
+          "condition": "normal",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "normal",
+          "input_kind": "noise",
+          "count": 118
+        },
+        {
+          "condition": "normal",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "continuous",
+          "count": 7
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "noise",
+          "count": 6
+        },
+        {
+          "condition": "positive_normal",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "continuous",
+          "count": 6
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "noise",
+          "count": 6
+        },
+        {
+          "condition": "positive_weak",
+          "input_kind": "quantization",
+          "count": 6
+        },
+        {
+          "condition": "strong",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "strong",
+          "input_kind": "noise",
+          "count": 119
+        },
+        {
+          "condition": "strong",
+          "input_kind": "quantization",
+          "count": 119
+        },
+        {
+          "condition": "weak",
+          "input_kind": "continuous",
+          "count": 119
+        },
+        {
+          "condition": "weak",
+          "input_kind": "noise",
+          "count": 119
+        },
+        {
+          "condition": "weak",
+          "input_kind": "quantization",
+          "count": 118
+        }
+      ],
+      "in_batch_duplicate_count": 1,
+      "non_train_draws": 0
+    },
+    "negative_balanced_slot1": {
+      "updates": 500,
+      "unique_cases": 24,
+      "unique_mothers": 12,
+      "case_repeat_min": 20,
+      "case_repeat_max": 21,
+      "per_case_repeat_distribution": {
+        "20": 4,
+        "21": 20
+      },
+      "all_other_slots_match_original": true,
+      "matching_unchanged_slots": 1500,
+      "new_data_cases": 0
+    }
+  },
+  "signed_generation": {
+    "temperature_shift_K": [
+      250.0
+    ],
+    "continuum_amplitude_scales": [
+      {
+        "split": "train",
+        "continuum_amplitude_scale": 1.0,
+        "count": 12
+      },
+      {
+        "split": "validation",
+        "continuum_amplitude_scale": 1.0,
+        "count": 6
+      }
+    ],
+    "legal_template_scales": [
+      {
+        "split": "train",
+        "legal_amplitude_scale": 1.0,
+        "count": 12
+      },
+      {
+        "split": "validation",
+        "legal_amplitude_scale": 1.0,
+        "count": 6
+      }
+    ],
+    "actual_peak_e_by_condition": {
+      "negative_normal": [
+        -180.0
+      ],
+      "negative_weak": [
+        -45.0
+      ],
+      "positive_normal": [
+        180.0
+      ],
+      "positive_weak": [
+        45.0
+      ]
+    },
+    "minimum_expected_e": 2058.90234375,
+    "maximum_expected_e": 35055.15625,
+    "minimum_band_e": 135.65916442871094,
+    "mother_temperature_hash_scope": "pre +250 K latent temperature field as returned by mother_state; actual labels are post forward and post blur",
+    "one_noise_realization_per_signed_mother_condition": true,
+    "paired_signs_strengths_share_continuum_amplitude_background_template_shape": true
+  },
+  "final_registration_metadata": {
+    "registered_mothers": 64,
+    "final_parent_ids_overlap_used_splits": 0,
+    "final_seed_values_overlap_used_splits": 0,
+    "raw_or_labels_opened": false,
+    "evaluation_results_opened": false,
+    "current_absence_of_unregistered_final_outputs_independently_checked": false
+  },
+  "calibration_boundary": {
+    "tau": 0.31241179656394347,
+    "power": 9,
+    "training_cases": 2576,
+    "protected_count": 480,
+    "noise_count": 2096,
+    "calibration_inputs": "training raw/cached-state residuals and training noise-kind metadata only; no truth MSE or validation scores",
+    "validation_motivated_diagnostic": true,
+    "final_test_used": false
+  },
+  "source_provenance_checks": {
+    "training_v4/data.py": {
+      "manifest_sha256": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+      "current_file_sha256": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+      "bytewise_matches": true,
+      "LF_normalized_sha256": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+      "LF_normalized_matches": true
+    },
+    "training_v4_1/data.py": {
+      "manifest_sha256": "937bf9aedd46884b345e7e0d44011edc9f46832f42c5702276ed20794c057ced",
+      "current_file_sha256": "937bf9aedd46884b345e7e0d44011edc9f46832f42c5702276ed20794c057ced",
+      "bytewise_matches": true,
+      "LF_normalized_sha256": "937bf9aedd46884b345e7e0d44011edc9f46832f42c5702276ed20794c057ced",
+      "LF_normalized_matches": true
+    },
+    "v4_manifest_hash": {
+      "expected_by_v4_1": "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1",
+      "current": "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1",
+      "bytewise_matches": true
+    }
+  },
+  "script_sha256": "532acf517d2c13bc2a6087b9856c998cfd26f73b18370b3cc95ae2f9569a1f67",
+  "read_inventory": [
+    {
+      "path": "reports/training_v4/run_001/data_manifest.json",
+      "sha256": "1c8ea118a5d4e6094062f543a60d6c16e63203389b1820bfd5e32bd52e7c4ec1",
+      "bytes": 3364861
+    },
+    {
+      "path": "reports/training_v4_1/run_001/data_manifest.json",
+      "sha256": "53bbc44dda8be149fdb9106a4ce344f368c3ee21994095334e612a655a351bf3",
+      "bytes": 3863212
+    },
+    {
+      "path": "reports/training_v4_1/run_001/sampling_sequence.json",
+      "sha256": "4e2b595f6caa0e5fc715d68151327c04bdaee249d4f16636d3cf1375187eea68",
+      "bytes": 306849
+    },
+    {
+      "path": "reports/training_v4_3/run_001/negative_balanced/sampling_sequence.json",
+      "sha256": "f41ba75aa5e38f1c6a449a6bb1d7ba528ddfb5c7dd8e2a623390e48cf56697d8",
+      "bytes": 223334
+    },
+    {
+      "path": "reports/training_v4_1/run_001/signed_expectation_legality.json",
+      "sha256": "aa07a1cd819e47eb16c1159186090b3b22ae9944c08850c3c56d5949c4adbbf2",
+      "bytes": 19086
+    },
+    {
+      "path": "reports/local_session_20261013/final_receipt.json",
+      "sha256": "f06366a7140a5cd3d01c9472000139acca54906c1fcc2278ba6667620d617d36",
+      "bytes": 1022
+    },
+    {
+      "path": "reports/training_v4_3/run_001/residual_scaled/coefficient_calibration.json",
+      "sha256": "37efde9dd5182ae14e843e7e76c396ea0d8b027b5888113c4b3352ec1f0ef6eb",
+      "bytes": 953
+    },
+    {
+      "path": "training_v4/data.py",
+      "sha256": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+      "bytes": 10984
+    },
+    {
+      "path": "training_v4_1/data.py",
+      "sha256": "937bf9aedd46884b345e7e0d44011edc9f46832f42c5702276ed20794c057ced",
+      "bytes": 9544
+    },
+    {
+      "path": "training_v4_1/sampling.py",
+      "sha256": "9da3ff3bcfaf6b409602fb850d7f7db388b53d1b9f1dc1a9816650b46403c196",
+      "bytes": 1370
+    },
+    {
+      "path": "training_v4_3/balanced_sampling.py",
+      "sha256": "4b1546f02deb7ea708bbcb3b0cf54390ce027fa001660b6033bf8ad20fa55dee",
+      "bytes": 2843
+    },
+    {
+      "path": "training_v4_1/evaluate.py",
+      "sha256": "c1fed074235fcd44e5369834917e4686e034c6e381e36a04ba3c59ba3e5c1239",
+      "bytes": 7905
+    },
+    {
+      "path": "training_v4_1/cache.py",
+      "sha256": "3df2748ca0b0f76a5d638499e7ef1ddc5e70b3a14f242772bf87b6e0f6bca2ed",
+      "bytes": 6358
+    },
+    {
+      "path": "training_v4/select.py",
+      "sha256": "d0e78ed18145f9f5f077d278ab9265b555f47144010e6ec24e3e7709cce30f4a",
+      "bytes": 10427
+    },
+    {
+      "path": "training_v4_1/tikhonov.py",
+      "sha256": "7426c94bb25598d81a62577e5247cdf81d5be3c6511a461353c4205b5e1df3bc",
+      "bytes": 4101
+    },
+    {
+      "path": "training_v4_3/residual_scaling.py",
+      "sha256": "014c34ccb1fffd4b0857453c4801f0e08a87d72b68ae106faed10decac877ab2",
+      "bytes": 4022
+    },
+    {
+      "path": "reports/local_session_20261013/LOCAL_STUDY_REPORT.md",
+      "sha256": "6ebda46ac84fa491091f8c8c58a696e0cf5fc6e9d1ef2b4d5a5ba42e6b1c5efb",
+      "bytes": 5323
+    }
+  ]
+}

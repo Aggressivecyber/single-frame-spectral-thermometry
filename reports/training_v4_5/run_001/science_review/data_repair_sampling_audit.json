@@ -1,0 +1,66 @@
+{
+  "status": "PASS_METADATA_ONLY",
+  "reviewed_at": "2026-10-13T04:00:58.848600+00:00",
+  "scope": "Independent descriptor and positional audit; no arrays, model or execution actions.",
+  "source_sha256": {
+    "training_v4_6/protocol.py": "e3090b1821016da4fbb476c6dafc434817aad2e694ebb3210e22c764dcd63a0e",
+    "training_v4_6/data.py": "64709e98d939c92d87e299fdfae94db365690eb0eef420f79d7acdd7bcd3cdf6"
+  },
+  "source_files_stable_during_audit": true,
+  "verifier_source_sha256": "2bb2475f90009a39ffc5df1d59bae5a425907759f69efbcadb40983f96f47793",
+  "draw_sha256": "85faa97c4acabfb8464868d098e9fe26a0c8c04a95f9d7d2d2d99c795300660b",
+  "source_draw_sha256": "dc3c70e5ead4893acf30446761aafc4971e6f5e8d6e4134e231523eac326d03c",
+  "updates": 500,
+  "microbatches": 2000,
+  "unsigned_microbatches": 1425,
+  "signed_microbatches": 575,
+  "negative_noisy_positions_resampled": 513,
+  "actual_case_ids_changed": 502,
+  "other_positions_same_case_id": 1487,
+  "new_train_case_specs": 432,
+  "new_used_unique_cases": 120,
+  "new_unused_case_specs": 312,
+  "negative_noisy_exposure": [
+    {
+      "condition": "negative_weak",
+      "draws": 257,
+      "unique_cases": 72,
+      "unique_mothers": 36,
+      "geometry_pairs": 36,
+      "noise_realisations_per_mother": 2,
+      "minimum_case_draws": 3,
+      "maximum_case_draws": 4,
+      "frequency_histogram": {
+        "4": 41,
+        "3": 31
+      }
+    },
+    {
+      "condition": "negative_normal",
+      "draws": 256,
+      "unique_cases": 72,
+      "unique_mothers": 36,
+      "geometry_pairs": 36,
+      "noise_realisations_per_mother": 2,
+      "minimum_case_draws": 3,
+      "maximum_case_draws": 4,
+      "frequency_histogram": {
+        "4": 40,
+        "3": 32
+      }
+    }
+  ],
+  "all_other_signed_positions_retained": 62,
+  "new_positive_or_clean_cases_sampled": 0,
+  "training_run": false,
+  "model_inference_run": false,
+  "torch_imported": false,
+  "numpy_imported": false,
+  "array_reads": 0,
+  "gpu_calls": 0,
+  "registration_called": false,
+  "generator_called": false,
+  "cache_called": false,
+  "new_locked_dev_generated": false,
+  "final_test_used": false
+}

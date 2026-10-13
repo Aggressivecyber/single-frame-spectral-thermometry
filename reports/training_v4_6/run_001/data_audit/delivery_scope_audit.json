@@ -1,0 +1,193 @@
+{
+  "status": "FINDING_REQUIRES_SEAL_FIX",
+  "snapshot_at": "2026-10-13T04:46:14.799539+00:00",
+  "auditor_sha256": "b6e1f307ff9c0c9b8af9f2aef1a153a8bb45aedb3c23d9b26b5e4aae9d5745af",
+  "mode": "READ_ONLY_SOURCE_METADATA_AND_DIRECTORY_AUDIT",
+  "source_hashes": {
+    "reports/parallel_session_20261013_v44_v46/seal_results.py": "d78240bb21e652be99ebbd25adc40ba05dfa22316af57ab1b054418f3ac7a7b9",
+    "reports/training_v4_6/run_001/delivery/build_inference_bundle.py": "b7932564c472895d62fdaaedde2092997ec6875f58823abe205d90ab4dd253a3",
+    "reports/training_v4_6/run_001/delivery/verify_portability.py": "1a2924bcc4198577b44f61006e9d4ac22aa4abe2d69fb942c5b8ad92eb51650b",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "training_v4_1/common.py": "362cadf9e2d129e20b0bee401b2350b4d8e139a04b06a10fdf403c8acd91ed0e",
+    "training_v4_4/__init__.py": "5f583108b866b98133db3e2f0e1a27e4774df3f4eabe6ddde73822f3d3c4b120",
+    "training_v4_4/analyze.py": "b1a0e4648d4aed308cf159c26077ed04c34bde8868a10e63669243ec6c93fd94",
+    "training_v4_4/evaluate.py": "90d1d20b04ea43503b51ed67ecc936ff559f7117caa249ef5d57e3d66604b868",
+    "training_v4_4/infer.py": "62e671a3fcfa74fe164e37b020fb8c0a25f462bdaf590fa34c4854bd2a56ef56",
+    "training_v4_4/model.py": "f5d0f2b4b91b5e6717cf9021c707d90ce612e6a6fe2cf2ae5ce0101bfeedfe56",
+    "training_v4_4/model_tests.py": "5c9d500a92e9b72756633fd4087c110cd4541d7436e9413d965ff003eff0bbb7",
+    "training_v4_4/native_replay.py": "87efbcbb4419890f6c4224b8b9378ca420f97b1bd59eacd663aa1c86eec99b90",
+    "training_v4_4/protocol.py": "05af2cc19d9b96906a92241778179d6696284a57d4f7be38fd4dc5c6d165d10c",
+    "training_v4_4/train.py": "b4fbb3d23b83f5610c42deb481351e749e1921afa5757ceaa85ae3eae65b5af3",
+    "training_v4_4/zero_audit.py": "b5074f47a22430aeac7ab5ba45145208dbb5f4c415c3a9386067063843801bae",
+    "training_v4_5/__init__.py": "93f33ae9e1d89de8cc3b28589ec96fa98ab67349875f950e66ca339e40d9e9e7",
+    "training_v4_5/analyze.py": "a4d4c59844ddb9d2a1d3892d6036c551bb8659412cf8fc1f53ef2492b05254a2",
+    "training_v4_5/protocol.py": "2e8264f1479fa9f7a9acc16858784f96ae7c89a0a0fa84add6d62236e4ce1b3f",
+    "training_v4_5/train.py": "bd4332a3e21469934257a26e888ebfc7eacda486bcf938bc73951f8a4607b781",
+    "training_v4_6/analyze.py": "7a83190e53b8e9a6df4c89b2df1328f4c71506e505ed1c167d3fb605de736d1c",
+    "training_v4_6/cache.py": "cadd854df150e03b8e53ce49961b82eafc1f988ea3dbec5c98a1527fcad5a34d",
+    "training_v4_6/data.py": "9a2f31d383625fdc298d650bcb9ffe77f3e8fc64fc49b29b9810700ddb887462",
+    "training_v4_6/protocol.py": "667e09f9e755c34b18485af45d556884472f2ea51ca6902df7629480b0cfdcbe",
+    "training_v4_6/test_data_cache_cpu.py": "b8afddeee32531a7ff7271bcf09005fc070bbc39557a26c898803bc4e726eae6",
+    "training_v4_6/train.py": "383dda12572d5c333e1229f11d0803919af496c766e5d3aef99fcb782ad94c99"
+  },
+  "source_changed_during_audit": [],
+  "findings": [
+    {
+      "id": "DELIVERY-001",
+      "severity": "delivery_gate_gap",
+      "status": "OPEN_AT_SNAPSHOT",
+      "file": "reports/parallel_session_20261013_v44_v46/seal_results.py",
+      "lines": [
+        56,
+        61
+      ],
+      "title": "Seal does not validate or bind its bundle receipt",
+      "evidence": "bundle = read(bundle_receipt) has zero AST load references afterwards. Portability checks consume only status and all_prediction_arrays_exact.",
+      "impact": "With other prerequisites satisfied, a failed/unrelated bundle JSON or missing/changed bundle ZIP is not rejected by this seal gate; an old PASS portability receipt is not bound to this supplied bundle receipt.",
+      "observed_corruption": false,
+      "concrete_fix": "Check COMPLETE_BUNDLE_BYTES_AND_ZIP_VERIFIED, update 500, expected path/ZIP SHA and payload inventory; require portability.build_receipt_sha256 == sha(bundle_receipt), matching zip_sha256, physical_state_and_beta_exact, and the expected checkpoint through the referenced inference receipt."
+    }
+  ],
+  "c_drive_absolute_literals": [],
+  "absolute_literals": [
+    {
+      "path": "training_v4_1/common.py",
+      "line": 11,
+      "value": "E:/GAN/runtime_envs/local_cuda_retry_20261007073613_UTC/venv/Scripts/python.exe"
+    }
+  ],
+  "inference_storage_contract": {
+    "platform_scope": "Windows E or D drive relocation only",
+    "runtime_guard_before_runtime_torch_import": "training_v4_4/infer.py:18-39",
+    "output_guard_and_fresh_directory": "training_v4_4/infer.py:138-142,203",
+    "default_runtime_relative_to_loaded_bundle": true,
+    "inherited_GPU_PYTHON_constant_is_inert_on_inference_path": true,
+    "generic_POSIX_or_C_drive_execution_supported": false,
+    "bundle_absolute_paths_used_for_provenance_not_required_runtime_resolution": true
+  },
+  "builder_static_receipts_and_19_source_hashes_match": true,
+  "bundle_dependency_count": 19,
+  "source_matches": {
+    "config.py": true,
+    "evaluation_v2/__init__.py": true,
+    "evaluation_v2/common.py": true,
+    "physics.py": true,
+    "repair_v3/__init__.py": true,
+    "repair_v3/solver.py": true,
+    "runtime.py": true,
+    "solver.py": true,
+    "training_v4/__init__.py": true,
+    "training_v4/common.py": true,
+    "training_v4/model.py": true,
+    "training_v4/scalar_engine.py": true,
+    "training_v4_1/__init__.py": true,
+    "training_v4_1/common.py": true,
+    "training_v4_3/__init__.py": true,
+    "training_v4_3/residual_scaling.py": true,
+    "training_v4_4/__init__.py": true,
+    "training_v4_4/infer.py": true,
+    "training_v4_4/model.py": true
+  },
+  "seal_bundle_value_load_reference_lines": [],
+  "seal_portability_checked_keys": [
+    "all_prediction_arrays_exact",
+    "status"
+  ],
+  "data_scope": {
+    "new_rows_all_train": true,
+    "new_rows_count": 432,
+    "old_776_development_rows_unchanged": true,
+    "actual_new_raw_paths_exact": true,
+    "actual_new_label_paths_exact": true,
+    "builder_examples_all_old_development": true,
+    "builder_example_count": 3,
+    "generation_final_arrays_reported": 0,
+    "generation_locked_arrays_reported": 0,
+    "cache_final_arrays_reported": 0,
+    "cache_locked_arrays_reported": 0
+  },
+  "actual_output_inventories": {
+    "v4_4": {
+      "path": "outputs/training_v4_4/run_001",
+      "exists": true,
+      "file_count": 12,
+      "total_bytes": 21441502,
+      "top_level_file_counts": {
+        "native_replay": 12
+      },
+      "all_resolved_on_ED": true,
+      "symlink_or_junction_entries": [],
+      "registered_locked_parent_path_hits": [],
+      "registered_final_parent_path_hits": []
+    },
+    "v4_5": {
+      "path": "outputs/training_v4_5/run_001",
+      "exists": false,
+      "file_count": 0,
+      "total_bytes": 0,
+      "top_level_file_counts": {},
+      "all_resolved_on_ED": true,
+      "symlink_or_junction_entries": [],
+      "registered_locked_parent_path_hits": [],
+      "registered_final_parent_path_hits": []
+    },
+    "v4_6": {
+      "path": "outputs/training_v4_6/run_001",
+      "exists": true,
+      "file_count": 892,
+      "total_bytes": 348617147,
+      "top_level_file_counts": {
+        "generation_identity.json": 1,
+        "physical_scores": 120,
+        "runtime": 3,
+        "raw": 432,
+        "labels": 96,
+        "cache": 240
+      },
+      "all_resolved_on_ED": true,
+      "symlink_or_junction_entries": [],
+      "registered_locked_parent_path_hits": [],
+      "registered_final_parent_path_hits": []
+    }
+  },
+  "old_evidence": {
+    "original_inventory_count": 1046,
+    "all_file_sizes_checked": 1046,
+    "missing_or_size_changed": [],
+    "non_npz_non_pt_files_byte_hashed": 803,
+    "non_npz_non_pt_hash_mismatches": [],
+    "npz_and_pt_bytes_not_rehashed_in_this_scope_audit": true,
+    "sealed_full_1046_byte_preservation_still_pending": true
+  },
+  "artifact_state_at_snapshot": {
+    "training_status": {
+      "stage": "validation",
+      "time": "2026-10-13T04:45:08.270603+00:00",
+      "optimizer_updates": 400,
+      "limit": 500
+    },
+    "delivery_output_exists": false,
+    "bundle_build_receipt_exists": false,
+    "portability_receipt_exists": false,
+    "native_replay_receipt_exists": false
+  },
+  "overwrite_review": {
+    "builder_rejects_existing_bundle_zip_partial_and_receipts": "build_inference_bundle.py:459-478",
+    "builder_payload_and_zip_use_exclusive_create": "build_inference_bundle.py:355-367,543-558",
+    "seal_reports_and_archive_use_exclusive_create": "seal_results.py:23-24,115,128",
+    "no_legacy_write_destination_in_reviewed_delivery_path": true,
+    "status_and_runtime_temp_replace_operations_are_within_new_owned_run_paths": true
+  },
+  "limitations": [
+    "No bundle was built or relocated by this audit.",
+    "No raw/label/state array or checkpoint payload was opened; source and scalar metadata were read only.",
+    "Directory absence and reviewed call paths support the scope finding but are not a system-wide historical I/O trace.",
+    "The original 1046-file full byte-preservation seal must still run; this audit hashes 803 non-NPZ/non-PT files and stats all 1046.",
+    "Training was still in progress at this snapshot; checkpoint500, native replay and relocated inference are pending."
+  ],
+  "numpy_torch_runtime_imported": false,
+  "gpu_calls": 0,
+  "model_calls": 0,
+  "array_payloads_opened": 0,
+  "source_or_data_mutations": 0
+}

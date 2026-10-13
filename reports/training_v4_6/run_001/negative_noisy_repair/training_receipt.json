@@ -1,0 +1,223 @@
+{
+  "updates": 500,
+  "microbatches": 2000,
+  "protocol_sha256": "4d49cd48853b20f62960754d07637a3cca3ae454e79e8e4ac67b8a2f7d78b807",
+  "sampling_sequence_sha256": "66ef4ed9e470ed9c0bd11fde0f21b1fa7dd5cb50ef7a7a1869c47840a6921263",
+  "verified_frozen_input_paths": [
+    "reports/training_v4/run_001/data_manifest.json",
+    "reports/training_v4_1/run_001/data_manifest.json",
+    "reports/training_v4_4/run_001/data_audit/frozen_data_repair_plan.json",
+    "reports/training_v4_4/run_001/data_audit/repair_parent_registry.json",
+    "training_v4/data.py",
+    "training_v4_1/data.py",
+    "physics.py",
+    "infer.py",
+    "network.py",
+    "checkpoints/selected_checkpoint.pt",
+    "reports/training_v4/run_001/backbone_selection.json",
+    "reports/training_v4_3/run_001/residual_scaled/coefficient_calibration.json",
+    "training_v4_4/model.py",
+    "training_v4_4/evaluate.py",
+    "training_v4_1/model.py",
+    "training_v4/scalar_engine.py",
+    "training_v4/model.py",
+    "training_v4_1/evaluate.py",
+    "training_v4_3/residual_scaling.py",
+    "training_v4/common.py",
+    "training_v4/train.py",
+    "training_v4_1/common.py",
+    "training_v4_1/cache.py",
+    "training_v4/cache.py",
+    "evaluation_v2/common.py",
+    "runtime.py",
+    "repair_v3/solver.py",
+    "solver.py",
+    "config.py",
+    "reports/training_v4_5/run_001/balanced_fixed_continuum/status.json",
+    "reports/training_v4_5/run_001/candidate_selection.json",
+    "reports/training_v4_5/run_001/science_review/input_integrity_receipt.json",
+    "reports/training_v4_5/run_001/science_review/DATA_REPAIR_REVIEW.md",
+    "training_v4/checkpoints/seed_101_final_2000.pt",
+    "training_v4_6/analyze.py",
+    "training_v4_6/cache.py",
+    "training_v4_6/data.py",
+    "training_v4_6/protocol.py",
+    "training_v4_6/test_data_cache_cpu.py",
+    "training_v4_6/train.py"
+  ],
+  "total_microbatches": 2000,
+  "signed_microbatches": 575,
+  "negative_noisy_intervention_positions": 513,
+  "other_exactly_preserved_positions": 1487,
+  "actually_different_case_ids": 502,
+  "all_condition_input_kind_positions_preserved": true,
+  "negative_exposure": [
+    {
+      "condition": "negative_normal",
+      "draws": 256,
+      "unique_cases": 72,
+      "mothers": 36,
+      "geometry_pairs": 36,
+      "minimum_draws_per_case": 3,
+      "noise_realizations_per_mother": 2
+    },
+    {
+      "condition": "negative_weak",
+      "draws": 257,
+      "unique_cases": 72,
+      "mothers": 36,
+      "geometry_pairs": 36,
+      "minimum_draws_per_case": 3,
+      "noise_realizations_per_mother": 2
+    }
+  ],
+  "merged_manifest_sha256": "31e86e940f9ee0ec27dcfac796056193d7a80530db92147acd82aadc064f5859",
+  "new_rows_sha256": "2a703d33873dfa7fcb8ce1da2e17898cf49aa2498dd566ea8e605b75d6779a06",
+  "generation_receipt_sha256": "9da024964ba3514d4ae843fc312f5a00bd70e396367ca305afdee6ea06b53d70",
+  "cache_receipt_sha256": "773ba2515aa8dccad064c252f4d831ce77c3f7c3ba04092ac4bd3fed5b0baf92",
+  "cache_per_case_sha256": "709991259e2b6a752466e4e71fc46eee2ffaec65ceb371420c9c9238b5a5a4ec",
+  "reference_training_curve_sha256": "999005c53bf396cb45a38ca3ae0c908291361dbbd035807080bafc05a239844c",
+  "old_validation_rows_unchanged": true,
+  "selected_new_cache_cases": 120,
+  "cache_and_score_byte_hashes_verified": true,
+  "final_test_used": false,
+  "same_frozen_negative_noisy_parent_repair_draws": true,
+  "actual_unchanged_sample_identity_comparisons": 1487,
+  "initial_full_development_summary_equals_v4_5": true,
+  "empty_Adam_initial_state": true,
+  "initial_parameters_sha256": "2d1e4f35c935571d743f1a76f2d79b01eb02a75ded7506d7798109f2c61b9660",
+  "final_parameters_sha256": "f693ba732e74a7a43d868fd7dba93d3b125123ff77cef581f6df3dfbf1dea963",
+  "checkpoints": [
+    {
+      "update": 0,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/initial.pt",
+      "sha256": "0cca86db7f756aaa0a8afb23e0af3566816267e3a8722ebceb2e8d3c2ae3566f",
+      "Adam_steps": [],
+      "parameters_sha256": "2d1e4f35c935571d743f1a76f2d79b01eb02a75ded7506d7798109f2c61b9660"
+    },
+    {
+      "update": 100,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0100.pt",
+      "sha256": "e4c62f17a87dfaf761f119a9fba87b402edc322f3135e9342d8f8d3c8090db61",
+      "Adam_steps": [
+        100
+      ],
+      "parameters_sha256": "19e6a9683e0fd12834d4a76071a8519b65f85d3081984e207ad6b85c05b770c9"
+    },
+    {
+      "update": 200,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0200.pt",
+      "sha256": "8eab9aea0cb330953796fd5e66fed558493644c166bde3a8b7e80db50aeb3051",
+      "Adam_steps": [
+        200
+      ],
+      "parameters_sha256": "d8a1c0dd09252caa8875f70cdfb70aa9fc8aaa4e19ab37a59697ac43807c2767"
+    },
+    {
+      "update": 300,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0300.pt",
+      "sha256": "71c69d8613041e7b284bea5a24b71bd67ed60835ec491e8c43a468e910824f2e",
+      "Adam_steps": [
+        300
+      ],
+      "parameters_sha256": "f5eca0bea0eb52b59e0520d807997712796b94c6cf7cfce6f6f6381801f57bef"
+    },
+    {
+      "update": 400,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0400.pt",
+      "sha256": "359540ecbddc3377d7151c98751157f60560e4c0d849c13cc83f5d3e635109d3",
+      "Adam_steps": [
+        400
+      ],
+      "parameters_sha256": "cd794e0d0628399be90e5656b3d644c79f4af1c6845c6b981a2487d7379f73e0"
+    },
+    {
+      "update": 500,
+      "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0500.pt",
+      "sha256": "65bd9f127b7cf89b4390d684ffcd81c743b0368b0c0b701bd8d1d43a6e252560",
+      "Adam_steps": [
+        500
+      ],
+      "parameters_sha256": "f693ba732e74a7a43d868fd7dba93d3b125123ff77cef581f6df3dfbf1dea963"
+    }
+  ],
+  "native_replays": [
+    {
+      "case_id": "v4_1_signed_validation_mother_0000_negative_normal_noise",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      },
+      "cache_identity_unchanged": true
+    },
+    {
+      "case_id": "v4_validation_mother_0000_weak_noise0",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      },
+      "cache_identity_unchanged": true
+    },
+    {
+      "case_id": "v4_validation_mother_0000_blank_quantization",
+      "differences": {
+        "template_RMSE_e": 0.0,
+        "color_RMSE_K": 0.0
+      },
+      "cache_identity_unchanged": true
+    }
+  ],
+  "new_cache_native_replays": [
+    {
+      "case_id": "signed_repair_v1_training_t00_s02_negative_weak_noise0",
+      "raw_state_beta_exact": true,
+      "outputs_exact": true,
+      "cache_key": "68a4cf2cb9f20c71a0d6dc048d341dc653117734b1a5884448feb6b2062cd32d",
+      "cache_sha256": "f6214aba2589f2b31658126fb6578b725a9733a5271012e614d396e755f11d52"
+    },
+    {
+      "case_id": "signed_repair_v1_training_t00_s02_negative_normal_noise0",
+      "raw_state_beta_exact": true,
+      "outputs_exact": true,
+      "cache_key": "e5d41b175875cfa020b9c32159f00836f4302d9596bcf77711f4f74f0e203fd6",
+      "cache_sha256": "9ba72ab7f6c784a9ff255bb2a40108f38703af97076f4e002f51cd5c5a87a5ab"
+    }
+  ],
+  "physical_buffers_unchanged": true,
+  "source_hashes_at_start": {
+    "training_v4/data.py": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+    "training_v4_1/data.py": "937bf9aedd46884b345e7e0d44011edc9f46832f42c5702276ed20794c057ced",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "infer.py": "5160c36e11081c1a93c16ae2ea0a035d3ea9223195177c1d60798d2a9be5bdc6",
+    "network.py": "6ab4d8629219567dbe5826e43f512aac2343f63a00064db27c6b85facb7762e8",
+    "training_v4_4/model.py": "f5d0f2b4b91b5e6717cf9021c707d90ce612e6a6fe2cf2ae5ce0101bfeedfe56",
+    "training_v4_4/evaluate.py": "90d1d20b04ea43503b51ed67ecc936ff559f7117caa249ef5d57e3d66604b868",
+    "training_v4_1/model.py": "5ad1e0394dde89f5ecc3dbeef6c4f6bbfda6de8e2c2fa633d0a1ae0521e24531",
+    "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "training_v4_1/evaluate.py": "c1fed074235fcd44e5369834917e4686e034c6e381e36a04ba3c59ba3e5c1239",
+    "training_v4_3/residual_scaling.py": "014c34ccb1fffd4b0857453c4801f0e08a87d72b68ae106faed10decac877ab2",
+    "training_v4/common.py": "96c6d495ec856f47dd3c8a2d5346d2364fd09316c7f2a88837aed2387d1520ae",
+    "training_v4/train.py": "d23f821f7eb100fb800f54d1692a65d2481973337e41953ff15a8097edbc1b04",
+    "training_v4_1/common.py": "362cadf9e2d129e20b0bee401b2350b4d8e139a04b06a10fdf403c8acd91ed0e",
+    "training_v4_1/cache.py": "3df2748ca0b0f76a5d638499e7ef1ddc5e70b3a14f242772bf87b6e0f6bca2ed",
+    "training_v4/cache.py": "50a359090785b4bae0fa737ce311b5e7f06a2f70ef0c00fda4f76e7bfdef87fd",
+    "evaluation_v2/common.py": "3e48271bb95732049f97b1368d3ba6b2ab749cdb69a583ffea60dc82298438f1",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "training_v4_6/analyze.py": "7a83190e53b8e9a6df4c89b2df1328f4c71506e505ed1c167d3fb605de736d1c",
+    "training_v4_6/cache.py": "cadd854df150e03b8e53ce49961b82eafc1f988ea3dbec5c98a1527fcad5a34d",
+    "training_v4_6/data.py": "9a2f31d383625fdc298d650bcb9ffe77f3e8fc64fc49b29b9810700ddb887462",
+    "training_v4_6/protocol.py": "667e09f9e755c34b18485af45d556884472f2ea51ca6902df7629480b0cfdcbe",
+    "training_v4_6/test_data_cache_cpu.py": "b8afddeee32531a7ff7271bcf09005fc070bbc39557a26c898803bc4e726eae6",
+    "training_v4_6/train.py": "383dda12572d5c333e1229f11d0803919af496c766e5d3aef99fcb782ad94c99"
+  },
+  "source_hashes_unchanged_at_end": true,
+  "source_sha256": "383dda12572d5c333e1229f11d0803919af496c766e5d3aef99fcb782ad94c99",
+  "elapsed_s": 970.3280000000013,
+  "locked_development_generated": false,
+  "local_only": true,
+  "claim_limit": "Negative noisy 36-mother / two-noise exposure repair only. All positive and clean input IDs are unchanged. Newly generated positive/clean cases are not trained or cached by this contrast; no full-factorial-trained claim."
+}

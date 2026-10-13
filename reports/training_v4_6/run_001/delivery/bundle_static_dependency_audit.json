@@ -1,0 +1,285 @@
+{
+  "status": "STATIC_DEPENDENCY_AND_EXAMPLE_CHECK_PASSED",
+  "checked_at": "2026-10-13T04:34:34.580254+00:00",
+  "builder_sha256": "b7932564c472895d62fdaaedde2092997ec6875f58823abe205d90ab4dd253a3",
+  "execution_protocol_sha256": "4d49cd48853b20f62960754d07637a3cca3ae454e79e8e4ac67b8a2f7d78b807",
+  "expected_sources_sha256": {
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "evaluation_v2/__init__.py": "8e43e52fac04d7d295db8260d384e2e37927b5eba8a2a401bbe4e0c0fe4dd75f",
+    "evaluation_v2/common.py": "3e48271bb95732049f97b1368d3ba6b2ab749cdb69a583ffea60dc82298438f1",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "repair_v3/__init__.py": "2bec3f3d689e9e6e436099ebac4da7af7f7baafdefd5de13a7354a236716931e",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "training_v4/__init__.py": "a2d0eebeff72134db3da0203098916a9cd5f9b972004c24c6040c6e839817a11",
+    "training_v4/common.py": "96c6d495ec856f47dd3c8a2d5346d2364fd09316c7f2a88837aed2387d1520ae",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+    "training_v4_1/__init__.py": "9d74d3f14bf4babe7edef5cc8b12b48edc709105f7cc301ec0d13bd6a0ea80e3",
+    "training_v4_1/common.py": "362cadf9e2d129e20b0bee401b2350b4d8e139a04b06a10fdf403c8acd91ed0e",
+    "training_v4_3/__init__.py": "43749ac1df4d23d284172d03513403561a3a3054830c46f791c0fdd10575bab9",
+    "training_v4_3/residual_scaling.py": "014c34ccb1fffd4b0857453c4801f0e08a87d72b68ae106faed10decac877ab2",
+    "training_v4_4/__init__.py": "5f583108b866b98133db3e2f0e1a27e4774df3f4eabe6ddde73822f3d3c4b120",
+    "training_v4_4/infer.py": "62e671a3fcfa74fe164e37b020fb8c0a25f462bdaf590fa34c4854bd2a56ef56",
+    "training_v4_4/model.py": "f5d0f2b4b91b5e6717cf9021c707d90ce612e6a6fe2cf2ae5ce0101bfeedfe56"
+  },
+  "dependency_graph": {
+    "local_python_files": [
+      "config.py",
+      "evaluation_v2/__init__.py",
+      "evaluation_v2/common.py",
+      "physics.py",
+      "repair_v3/__init__.py",
+      "repair_v3/solver.py",
+      "runtime.py",
+      "solver.py",
+      "training_v4/__init__.py",
+      "training_v4/common.py",
+      "training_v4/model.py",
+      "training_v4/scalar_engine.py",
+      "training_v4_1/__init__.py",
+      "training_v4_1/common.py",
+      "training_v4_3/__init__.py",
+      "training_v4_3/residual_scaling.py",
+      "training_v4_4/__init__.py",
+      "training_v4_4/infer.py",
+      "training_v4_4/model.py"
+    ],
+    "local_import_edges": [
+      [
+        "config.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "evaluation_v2/common.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "physics.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "repair_v3/solver.py",
+        "solver",
+        "solver.py"
+      ],
+      [
+        "solver.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4/common.py",
+        "evaluation_v2.common",
+        "evaluation_v2/common.py"
+      ],
+      [
+        "training_v4/common.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4/model.py",
+        "config",
+        "config.py"
+      ],
+      [
+        "training_v4/model.py",
+        "physics",
+        "physics.py"
+      ],
+      [
+        "training_v4/model.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4/scalar_engine.py",
+        "repair_v3.solver",
+        "repair_v3/solver.py"
+      ],
+      [
+        "training_v4_1/common.py",
+        "evaluation_v2.common",
+        "evaluation_v2/common.py"
+      ],
+      [
+        "training_v4_1/common.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4_1/common.py",
+        "training_v4.common",
+        "training_v4/common.py"
+      ],
+      [
+        "training_v4_3/residual_scaling.py",
+        "evaluation_v2.common",
+        "evaluation_v2/common.py"
+      ],
+      [
+        "training_v4_3/residual_scaling.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4_3/residual_scaling.py",
+        "training_v4.common",
+        "training_v4/common.py"
+      ],
+      [
+        "training_v4_3/residual_scaling.py",
+        "training_v4.model",
+        "training_v4/model.py"
+      ],
+      [
+        "training_v4_3/residual_scaling.py",
+        "training_v4_1.common",
+        "training_v4_1/common.py"
+      ],
+      [
+        "training_v4_4/infer.py",
+        "evaluation_v2.common",
+        "evaluation_v2/common.py"
+      ],
+      [
+        "training_v4_4/infer.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4_4/infer.py",
+        "training_v4.model",
+        "training_v4/model.py"
+      ],
+      [
+        "training_v4_4/infer.py",
+        "training_v4.scalar_engine",
+        "training_v4/scalar_engine.py"
+      ],
+      [
+        "training_v4_4/infer.py",
+        "training_v4_4.model",
+        "training_v4_4/model.py"
+      ],
+      [
+        "training_v4_4/model.py",
+        "runtime",
+        "runtime.py"
+      ],
+      [
+        "training_v4_4/model.py",
+        "training_v4.model",
+        "training_v4/model.py"
+      ],
+      [
+        "training_v4_4/model.py",
+        "training_v4_3.residual_scaling",
+        "training_v4_3/residual_scaling.py"
+      ]
+    ],
+    "external_top_level_modules": [
+      "argparse",
+      "copy",
+      "dataclasses",
+      "datetime",
+      "hashlib",
+      "json",
+      "math",
+      "numpy",
+      "os",
+      "pathlib",
+      "sys",
+      "time",
+      "torch"
+    ],
+    "third_party_modules": [
+      "numpy",
+      "torch"
+    ],
+    "dynamic_imports_found": false,
+    "project_modules_imported": false
+  },
+  "compact_backbone_configuration_sha256": "e8a00514ef2b761d1dbd531adbda957d09d4f2883382574dc6a4f75ff35bf667",
+  "examples": [
+    {
+      "case_id": "v4_1_signed_validation_mother_0000_negative_normal_noise",
+      "condition": "negative_normal",
+      "input_kind": "noise",
+      "split": "validation",
+      "raw_path": "outputs/training_v4_1/run_001/raw/v4_1_signed_validation_mother_0000/negative_normal_noise.npz",
+      "raw_file_sha256": "6a63367dc5c0a3afab20e5a0bb2a4721f010334a33fd411a6c8da331bca6c0b2",
+      "raw_hash": "12b9b406a6a8c7e04c678b361543a9465d0444974d4ade5970b2a7c8376569a6",
+      "bundle_path": "examples/raw/negative_normal_noise.npz",
+      "dtype": "uint16",
+      "shape": [
+        256,
+        256
+      ],
+      "npz_members": [
+        "raw_dn.npy"
+      ],
+      "truth_or_state_members": 0,
+      "saturated_pixels": 0
+    },
+    {
+      "case_id": "v4_validation_mother_0000_weak_noise0",
+      "condition": "weak",
+      "input_kind": "noise",
+      "split": "validation",
+      "raw_path": "outputs/training_v4/run_001/raw/v4_validation_mother_0000/weak_noise0.npz",
+      "raw_file_sha256": "f2e5f244924b2c0ee2dae7c6d7f8565a0322f606b5c20294aff440977ba94944",
+      "raw_hash": "619c2120d59101707446711f1e86d7df734e36918bcd488af7c4fb7f7826b525",
+      "bundle_path": "examples/raw/weak_noise0.npz",
+      "dtype": "uint16",
+      "shape": [
+        256,
+        256
+      ],
+      "npz_members": [
+        "raw_dn.npy"
+      ],
+      "truth_or_state_members": 0,
+      "saturated_pixels": 0
+    },
+    {
+      "case_id": "v4_validation_mother_0000_blank_quantization",
+      "condition": "blank",
+      "input_kind": "quantization",
+      "split": "validation",
+      "raw_path": "outputs/training_v4_1/run_001/raw/v4_validation_mother_0000/blank_quantization.npz",
+      "raw_file_sha256": "b0d14d30528de5443b7a858937484390c2819f776751225d8246463cedcf9334",
+      "raw_hash": "20bc338b2d0221e154cc82b3e8c7d8b960c103345fcfb8a8ae6097e260065ec3",
+      "bundle_path": "examples/raw/blank_quantization.npz",
+      "dtype": "uint16",
+      "shape": [
+        256,
+        256
+      ],
+      "npz_members": [
+        "raw_dn.npy"
+      ],
+      "truth_or_state_members": 0,
+      "saturated_pixels": 0
+    }
+  ],
+  "checkpoint_policy": {
+    "path": "training_v4_6/checkpoints/negative_noisy_repair/update_0500.pt",
+    "optimizer_update": 500,
+    "role": "predetermined_diagnostic_endpoint",
+    "fallback_checkpoint_allowed": false,
+    "expected_file_sha256_source": "The native COMPLETE500 training receipt, checked at build time",
+    "checkpoint_not_opened_by_static_check": true
+  },
+  "bundle_built": false,
+  "model_inference_calls": 0,
+  "GPU_calls": 0,
+  "labels_opened": 0,
+  "development_state_caches_opened": 0,
+  "torch_numpy_runtime_imported": false
+}

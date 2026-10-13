@@ -1,0 +1,37 @@
+{
+  "status": "FAIL",
+  "time": "2026-10-13T04:21:28.090212+00:00",
+  "elapsed_s": 0.9069999999992433,
+  "auditor_sha256": "deeab450f4b18d501f1a05cfe00403dd4b52d54c3ef1c591d7b983625edba229",
+  "mode": "INDEPENDENT_CPU_READ_ONLY_ARRAY_AUDIT",
+  "checks": 4961,
+  "failed_checks": 0,
+  "exception": {
+    "type": "TypeError",
+    "message": "check() got multiple values for argument 'condition'",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\reports\\training_v4_6\\run_001\\data_audit\\audit_generated_train.py\", line 356, in main\n    outcome = run(args.generation_receipt_sha256)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\reports\\training_v4_6\\run_001\\data_audit\\audit_generated_train.py\", line 216, in run\n    check(Counter(r[\"input_kind\"] for r in group) == {\"continuous\": 1, \"quantization\": 1, \"noise\": 2},\nTypeError: check() got multiple values for argument 'condition'\n"
+  },
+  "array_files_opened": 0,
+  "audited_array_file_sha256_map": {},
+  "new_locked_development_arrays_opened": 0,
+  "inherited_development_arrays_opened": 0,
+  "final_test_arrays_or_results_opened": 0,
+  "old_raw_arrays_opened": 0,
+  "source_or_data_files_modified": false,
+  "seeds_redrawn": 0,
+  "gpu_calls": 0,
+  "torch_imported": false,
+  "numpy_threads": 1,
+  "limitations": [
+    "No physical forward or inverse is rerun.",
+    "No noise is regenerated; noise independence is supported by seed identity and distinct raw hashes only.",
+    "No statistical near-duplicate or experimental realism assessment is performed.",
+    "Inherited development/final arrays are not inspected; comparisons to them use frozen manifest hashes only."
+  ],
+  "detail_files_sha256": {
+    "array_audit_files.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "array_audit_checks.json": "4eacdf600e81f67f11efc1c251e7360478e6c3e72392f0d9459e20137e18a7d7",
+    "array_audit_sources.json": "f1d0860f84c9c2330603f54f64608c246103323358719f8158e5fd4c0d7db79c",
+    "two_noise_seed_records.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+  }
+}

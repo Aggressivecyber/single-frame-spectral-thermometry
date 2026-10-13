@@ -1,0 +1,105 @@
+{
+  "status": "STATIC_REVIEW_CHANGES_REQUESTED",
+  "reviewed_at": "2026-10-13T04:46:41.888587+00:00",
+  "reviewed_source_path": "reports/parallel_session_20261013_v44_v46/seal_results.py",
+  "reviewed_source_sha256": "d78240bb21e652be99ebbd25adc40ba05dfa22316af57ab1b054418f3ac7a7b9",
+  "reviewed_source_snapshot_path": "reports/training_v4_6/run_001/delivery/seal_results_reviewed_source.py.txt",
+  "review_sha256": "33d3df293ea2f29ab42ae4b33ffeac64aef11994203e47bc838130538d2ef3a0",
+  "findings": [
+    {
+      "id": "S1",
+      "priority": "P2",
+      "lines": [
+        53,
+        54,
+        82,
+        83
+      ],
+      "title": "native replay receipt paths omit execution directory"
+    },
+    {
+      "id": "S2",
+      "priority": "P2",
+      "lines": [
+        56,
+        61
+      ],
+      "title": "bundle receipt unused and portability not bound to endpoint"
+    },
+    {
+      "id": "S3",
+      "priority": "P2",
+      "lines": [
+        31,
+        47
+      ],
+      "title": "candidate and per-arm checkpoint inventories not cross-verified"
+    },
+    {
+      "id": "S4",
+      "priority": "P2",
+      "lines": [
+        69,
+        130
+      ],
+      "title": "completion report published before archive checks; partial writes block retry"
+    },
+    {
+      "id": "S5",
+      "priority": "P2",
+      "lines": [
+        124,
+        137
+      ],
+      "title": "ZIP compared with live files instead of frozen manifest hashes"
+    },
+    {
+      "id": "S6",
+      "priority": "P2",
+      "lines": [
+        110,
+        119
+      ],
+      "title": "historical-byte ZIP claim exceeds archive scope"
+    }
+  ],
+  "confirmed_metadata": {
+    "train_rows": 3008,
+    "train_mothers": 292,
+    "planned_batches": 500,
+    "planned_microbatches": 2000,
+    "planned_unique_cases": 971,
+    "planned_unique_mothers": 256,
+    "audited_file_metadata_records": 576,
+    "audited_array_metadata_records": 1152,
+    "metadata_numbers_are_not_runtime_result_acceptance": true
+  },
+  "static_ast_proof": {
+    "source_compiles": true,
+    "bundle_variable_loads_after_assignment": 0
+  },
+  "reference_files_sha256": {
+    "reports/training_v4_6/run_001/generation_receipt.json": "9da024964ba3514d4ae843fc312f5a00bd70e396367ca305afdee6ea06b53d70",
+    "reports/training_v4_6/run_001/cache_receipt.json": "773ba2515aa8dccad064c252f4d831ce77c3f7c3ba04092ac4bd3fed5b0baf92",
+    "reports/training_v4_6/run_001/data_manifest.json": "31e86e940f9ee0ec27dcfac796056193d7a80530db92147acd82aadc064f5859",
+    "reports/training_v4_6/run_001/sampling_sequence.json": "66ef4ed9e470ed9c0bd11fde0f21b1fa7dd5cb50ef7a7a1869c47840a6921263",
+    "reports/training_v4_6/run_001/data_audit/attempt_002/array_audit_receipt.json": "fa9848aa4a0d14ec102ed27dbbaca2d6da5cf0fe580918f752e8876cd93da1db",
+    "reports/training_v4_6/run_001/data_audit/attempt_002/array_audit_files.json": "4b4a34dde55fb60df87eb89c396d6ba8c4283c78d262581e41615eed08ec3397",
+    "reports/training_v4_6/run_001/native_replay/replay.py": "6c2d692a59a891b9f2d0166881eb60a8e8c578c9b8573cb99c1105d44aed658c",
+    "reports/training_v4_6/run_001/native_replay/protocol.json": "eec4314c15a898fa4eb751ec835afd115400109753cad8e4f57d482b84d4642c",
+    "reports/training_v4_6/run_001/delivery/verify_portability.py": "1a2924bcc4198577b44f61006e9d4ac22aa4abe2d69fb942c5b8ad92eb51650b",
+    "reports/training_v4_6/run_001/delivery/build_inference_bundle.py": "b7932564c472895d62fdaaedde2092997ec6875f58823abe205d90ab4dd253a3",
+    "training_v4_6/_test_runs/20261013T041311Z_f6bd0056/cpu_contract_test_receipt.json": "e27a0d603cd601fbcab5d13ecd0cc44c2eb53d0dee216447fb6c5e6aa9fc0528",
+    "reports/training_v4_4/run_001/zero_audit/receipt.json": "71f3a93620eb2d8466b5ac80e020d635b5159f4069566430de34ae0e9780cb7a",
+    "reports/training_v4_4/run_001/preserved_starting_files.json": "91f07db61a3955d9579019d7cb360cb4e9a5ea8ec0502b93b4175a1e48e4f0b5"
+  },
+  "original_source_modified_by_reviewer": false,
+  "frozen_files_modified_by_reviewer": false,
+  "seal_entrypoint_executions": 0,
+  "build_entrypoint_executions": 0,
+  "checkpoint_payloads_opened": 0,
+  "array_files_opened": 0,
+  "model_inference_calls": 0,
+  "GPU_calls": 0,
+  "formal_v46_final_results_reviewed": false
+}

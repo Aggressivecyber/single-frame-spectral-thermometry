@@ -1,0 +1,247 @@
+"""Seal the completed finite negative-result study without changing old files."""
+import argparse
+import hashlib
+import json
+import math
+import zipfile
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'reports/parallel_session_20261013_v44_v46'
+V46=ROOT/'reports/training_v4_6/run_001'
+DELIVERY=ROOT/'outputs/training_v4_6/run_001/delivery'
+
+
+def read(path):return json.loads(Path(path).read_text(encoding='utf-8-sig'))
+def sha(path):
+    h=hashlib.sha256()
+    with Path(path).open('rb') as f:
+        for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
+    return h.hexdigest()
+def rel(path):return str(Path(path).relative_to(ROOT)).replace('\\','/')
+def write(path,value):
+    with Path(path).open('x',encoding='utf-8',newline='\n') as f:json.dump(value,f,indent=2,ensure_ascii=False,allow_nan=False)
+
+
+def json_bytes(value):
+    return json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False).encode('utf-8')
+
+
+def run(bundle_receipt):
+    assert ROOT.drive.upper() in ('E:','D:')
+    assert not (OUT/'seal_receipt.json').exists(),'A sealed delivery must not be overwritten'
+    archive=DELIVERY/'v44_v46_code_results.zip'
+    generated_names=('original_files_preservation_receipt.json','study_evidence.json','FINAL_REPORT.md',
+                     'release_manifest.json','cpu_contract_test_receipt.json','seal_receipt.json')
+    assert not archive.exists(),'Never overwrite a previously attempted archive'
+    assert all(not (OUT/name).exists() for name in generated_names),'Never overwrite prepared or sealed reports'
+    prepared={}
+    checkpoints=[];stages=[]
+    for version,arm in [('v4_4','fixed_continuum'),('v4_5','balanced_fixed_continuum'),('v4_6','negative_noisy_repair')]:
+        folder=ROOT/f'reports/training_{version}/run_001'
+        status=read(folder/arm/'status.json')
+        assert status['stage']=='COMPLETE'
+        receipt=read(folder/arm/'training_receipt.json')
+        assert receipt['updates']==500 and receipt['microbatches']==2000
+        candidate=read(folder/'candidate_selection.json')
+        assert candidate['candidate_count']==0 and candidate['selected'] is None,'A candidate requires its registered confirmation before this negative-result closure'
+        assert len(receipt['checkpoints'])==6
+        assert {c['update'] for c in receipt['checkpoints']}==set(range(0,501,100))
+        for c in receipt['checkpoints']:
+            u=c['update']
+            assert c['Adam_steps']==([] if u==0 else [u])
+            assert sha(ROOT/c['path'])==c['sha256']
+            summary_u=read(folder/arm/f'validation_summary_{u:04d}.json')
+            science_u=read(folder/arm/f'science_summary_{u:04d}.json')
+            rows_path=folder/arm/f'validation_update_{u:04d}.jsonl'
+            rows_u=[json.loads(line) for line in rows_path.read_text(encoding='utf-8-sig').splitlines() if line]
+            assert len(rows_u)==776 and len({row['case_id'] for row in rows_u})==776
+            assert all(row['optimizer_update']==u for row in rows_u)
+            assert science_u['optimizer_update']==summary_u['optimizer_update']==u
+            assert science_u['validation_sha256']==sha(rows_path)
+            assert science_u['protocol_sha256']==sha(folder/'protocol.json')
+            assert science_u['validation_records']==776 and science_u['final_test_used'] is False
+            assert science_u['science_candidate']==(summary_u['eligible'] and science_u['new_development_screen_pass'])
+            assert science_u['old_eligible']==summary_u['eligible']
+            assert science_u['science_candidate'] is False
+            checkpoints.append({'version':version,**c})
+        summary=read(folder/arm/'validation_summary_0500.json')
+        science=read(folder/arm/'science_summary_0500.json')
+        stages.append({'version':version.replace('_','.'),'folder':rel(folder),'arm':arm,'summary':summary,
+            'science':science,'training_elapsed_s':receipt['elapsed_s'],
+            'receipt_sha256':sha(folder/arm/'training_receipt.json'),'candidate_count':0})
+    assert len(checkpoints)==18
+    generation=read(V46/'generation_receipt.json');cache=read(V46/'cache_receipt.json')
+    assert generation['stage']==cache['stage']=='COMPLETE'
+    assert generation['new_train_rows']==432 and cache['selected_case_count']==120
+    audit_path=V46/'data_audit/attempt_002/array_audit_receipt.json'
+    assert sha(audit_path)=='fa9848aa4a0d14ec102ed27dbbaca2d6da5cf0fe580918f752e8876cd93da1db'
+    replay=V46/'native_replay/execution'
+    native=read(replay/'receipt.json')
+    watchdog=read(replay/'watchdog_receipt.json')
+    assert native['status']=='SUCCESS' and native['passed'] and native['case_count']==3
+    assert watchdog['status']=='SUCCESS' and watchdog['passed']
+    assert watchdog['worker_receipt_sha256']==sha(replay/'receipt.json')
+    endpoint,=[c for c in checkpoints if c['version']=='v4_6' and c['update']==500]
+    assert all(r['passed'] and r['all_14_prediction_fields_exact'] and r['physical_state_and_beta_exact']
+               and r['checkpoint_sha256']==endpoint['sha256'] for r in native['records'])
+    bundle_receipt=Path(bundle_receipt).resolve()
+    assert bundle_receipt.is_relative_to(DELIVERY.resolve())
+    bundle=read(bundle_receipt)
+    assert bundle['status']=='COMPLETE_BUNDLE_BYTES_AND_ZIP_VERIFIED'
+    assert bundle['checkpoint_update']==500 and bundle['checkpoint_sha256']==endpoint['sha256']
+    assert bundle['checkpoint_role']=='predetermined_diagnostic_endpoint' and not bundle['checkpoint_auto_selected']
+    bundle_folder=Path(bundle['bundle_path']).resolve()
+    bundle_zip=Path(bundle['zip_path']).resolve()
+    assert bundle_folder.is_relative_to(DELIVERY.resolve()) and bundle_zip.is_relative_to(DELIVERY.resolve())
+    assert bundle_zip.stat().st_size==bundle['zip_bytes'] and sha(bundle_zip)==bundle['zip_sha256']
+    files=bundle['bundle_files_sha256_and_bytes']
+    assert bundle['bundle_file_count']==len(files)
+    assert {p.relative_to(bundle_folder).as_posix() for p in bundle_folder.rglob('*') if p.is_file()}==set(files)
+    with zipfile.ZipFile(bundle_zip) as z:
+        assert z.testzip() is None
+        assert len(z.namelist())==len(files) and set(z.namelist())=={'inference_bundle/'+name for name in files}
+        for name,item in files.items():
+            path=(bundle_folder/name).resolve()
+            assert path.is_relative_to(bundle_folder) and path.stat().st_size==item['bytes'] and sha(path)==item['sha256']
+            payload=z.read('inference_bundle/'+name)
+            assert len(payload)==item['bytes'] and hashlib.sha256(payload).hexdigest()==item['sha256']
+    # Portability is a separate root-issued receipt from an actual new process.
+    portability=read(DELIVERY/'portability_receipt.json')
+    assert portability['status']=='PASS' and portability['all_prediction_arrays_exact'] and portability['physical_state_and_beta_exact']
+    assert portability['build_receipt_sha256']==sha(bundle_receipt) and portability['zip_sha256']==sha(bundle_zip)
+    assert portability['raw_replay_receipt_sha256']==sha(replay/'receipt.json')
+    assert portability['raw_replay_watchdog_receipt_sha256']==sha(replay/'watchdog_receipt.json')
+    assert portability['bundle_payload_unchanged'] and portability['original_checkout_module_imports']==0
+    portable_receipt=Path(portability['inference_receipt_path']).resolve()
+    relocation=Path(portability['relocation_root']).resolve()
+    assert relocation.drive.upper() in ('E:','D:') and not relocation.is_relative_to(ROOT.resolve())
+    assert portable_receipt.is_relative_to(relocation) and sha(portable_receipt)==portability['inference_receipt_sha256']
+    portable_result=read(portable_receipt)
+    assert portable_result['status']=='SUCCESS' and portable_result['checkpoint_sha256']==endpoint['sha256']
+    reference,=[r for r in native['records'] if r['case_id']==portability['case_id']]
+    assert reference['raw_branch_receipt_sha256']==portability['reference_receipt_sha256']
+    reference_result=read(ROOT/reference['raw_branch_receipt'])
+    assert sha(ROOT/reference['raw_branch_receipt'])==reference['raw_branch_receipt_sha256']
+    for key in ('raw_hash','parameters_sha256','prediction_array_hashes','physical_inverse_array_hashes','source_hashes'):
+        assert portable_result[key]==reference_result[key]
+    cpu_path=ROOT/'training_v4_6/_test_runs/20261013T041311Z_f6bd0056/cpu_contract_test_receipt.json'
+    cpu=read(cpu_path)
+    assert cpu['status']=='PASS' and cpu['tests_run']==6 and cpu['failures']==cpu['errors']==0
+    assert all(sha(ROOT/'training_v4_6'/name)==digest for name,digest in cpu['source_sha256'].items())
+    prepared[OUT/'cpu_contract_test_receipt.json']=cpu_path.read_bytes()
+    original=read(ROOT/'reports/training_v4_4/run_001/preserved_starting_files.json')
+    preserved=[]
+    for item in original['files']:
+        path=ROOT/item['path']
+        assert path.is_file() and path.stat().st_size==item['bytes'] and sha(path)==item['sha256'],item['path']
+        preserved.append(item)
+    assert len(preserved)==1046
+    prepared[OUT/'original_files_preservation_receipt.json']=json_bytes({'status':'PASS','base_commit':original['base_commit'],
+        'verified_working_copy_files':1046,'bytes_verified':sum(x['bytes'] for x in preserved),'files':preserved,
+        'basis':'Original working-copy byte hashes; separate from Git line-ending normalization'})
+    sampling=read(V46/'sampling_sequence.json')
+    manifest=read(V46/'data_manifest.json');by={r['case_id']:r for r in manifest['rows']}
+    journal=[json.loads(line) for line in (V46/'negative_noisy_repair/training_curve.jsonl').read_text(encoding='utf-8-sig').splitlines() if line]
+    assert len(journal)==500 and [r['optimizer_update'] for r in journal]==list(range(1,501))
+    assert all(r['status']=='SUCCESS' and len(r['samples'])==4 for r in journal)
+    actual_draws=[[sample['case_id'] for sample in row['samples']] for row in journal]
+    assert actual_draws==sampling['draws']
+    used={c for b in actual_draws for c in b}
+    evidence={'stages':stages,'checkpoints':checkpoints,'training_optimizer_updates':1500,
+        'training_microbatches':6000,'old_development_records_in_three_training_arms':18*776,
+        'v44_zero_update_endpoint_development_records':2*776,
+        'new_generated_train_rows':432,'new_cached_and_trained_cases':120,
+        'v46_unique_training_cases':len(used),'v46_unique_training_mothers':len({by[c]['mother_id'] for c in used}),
+        'old_starting_files_preserved':1046,'data_generation_receipt_sha256':sha(V46/'generation_receipt.json'),
+        'cache_receipt_sha256':sha(V46/'cache_receipt.json'),'array_audit_receipt_sha256':sha(audit_path),
+        'raw_replay_receipt_sha256':sha(replay/'receipt.json'),
+        'raw_replay_watchdog_receipt_sha256':sha(replay/'watchdog_receipt.json'),
+        'inference_bundle_receipt_path':rel(bundle_receipt),'inference_bundle_receipt_sha256':sha(bundle_receipt),
+        'portability_receipt_sha256':sha(DELIVERY/'portability_receipt.json'),
+        'scientific_acceptance':False,'locked_development_opened':False,'final_test_opened':False,
+        'public_push_performed':False}
+    prepared[OUT/'study_evidence.json']=json_bytes(evidence)
+    report=['# 有限并行研究交付：v4.4—v4.6','',
+        '**三组500步对照、数据修复、原始输入回放和运行包验证均已完成；同一权重通过全部开发条件的候选数为0。算法的科学验收目标仍未达到。**','',
+        '现有12母体池上的继续调参及本次扩充数据对照均已收口。保留原始数据、全部失败、18个检查点及逐帧记录。新确认集与最终测试继续关闭。','',
+        '|500更新端点|主weak L2|主normal RMSE e|负weak L2|正weak L2|负normal RMSE e|负normal上限e|合格候选|',
+        '|---|---:|---:|---:|---:|---:|---:|---:|']
+    for stage in stages:
+        s=stage['summary'];groups={r['condition']:r for r in stage['science']['signed_noisy_conditions']}
+        n=groups['negative_normal']
+        report.append(f"|{stage['version']}|{s['weak_L2']:.6f}|{s['normal_RMSE_e']:.4f}|{groups['negative_weak']['template_L2']:.6f}|{groups['positive_weak']['template_L2']:.6f}|{n['template_RMSE_e']:.4f}|{math.sqrt(n['MSE_limit_e2']):.4f}|0|")
+    report+=['','表中每一行来自同一500步权重。完整0/100/200/300/400/500检查点也均未合格，详见各分支报告。温度等于物理反演的结果，是固定最终连续谱产生的恒等关系，不能计作学习收益。','',
+        'v4.4固定最终连续谱，复用原抽样；v4.5保留固定连续谱，精确复用旧负模板平衡抽样；v4.6沿用同一模型、初始化和优化设置，只对513个负含噪位置按预定母体/噪声序列重采样。11个位置恰好抽回旧case，因此实际ID变化502个，其余1487个位置原样保留。','',
+        'v4.6生成432条TRAIN输入，将signed池补到36个几何组合母体、每个条件两个噪声实现；本臂实际训练新增120条负含噪输入。每类负含噪样本覆盖36母体×2噪声，每个raw出现3或4次。新增正组及无噪/量化组的312条输入未被本臂训练。该干预同时改变母体覆盖和噪声重复，不能分别归因。','',
+        f"本次500步实际使用{len(used)}个不同TRAIN案例、{len({by[c]['mother_id'] for c in used})}个训练母体；可用TRAIN库为3008帧、292母体。原776条开发数据已被多次查看，不能充当独立确认。",'',
+        '执行证据：','',
+        '- 三臂累计1500次optimizer更新、6000次微批次；18个权重逐个重载并核对Adam更新数。三臂保存13968条开发记录，另保留v4.4两个零更新端点的1552条记录。',
+        '- 数据模块六项CPU mock测试通过；正式生成432条256×256输入后，独立复核576个文件、1152个数组、11580项检查，0失败。',
+        f"- 正式生成用时{generation['generation_seconds']:.3f}秒；120个新增物理缓存用时{cache['elapsed_s']:.3f}秒。反演只使用raw与固定配置，标签只用于TRAIN监督/评分。",
+        '- 三个旧DEV raw重新在线反演并通过同权重回放；另从独立目录的推理包启动新进程，运行其中一个负normal含噪示例，输出全部数组与参考逐值一致。此证据属于软件通路复现。',
+        '- 原有1046个文件按本阶段开始时的字节哈希重新核验，全部保持。所有新文件、权重、缓存、日志与包均保存在E盘。','',
+        '运行入口为`training_v4_4.infer`，显式加载v4.6的500步诊断权重；它不自动选择或宣称接受模型。推理包只包含必要Python源码、权重、固定配置和三个raw示例，不含truth或开发反演缓存，也不是完整训练数据包。','',
+        '推理仍依赖固定合成相机/光谱/PSF配置。模板为合成数值模板，温度为有效连续谱色温。此阶段未进行独立实测、硬件校准或10 kHz吞吐验收。软件交付完成与科学验收状态分别记录。','',
+        '本次新增源码、检查点和报告的原始字节由代码结果ZIP保存；其中不含原1046个基线文件，也不含完整训练raw/缓存。Git文本可能按仓库规则规范化换行；本次清单内的字节哈希可用交付ZIP复核。公开仓库未推送新结果。','',
+        '分支报告：',
+        '- [v4.4固定连续谱](../training_v4_4/run_001/V4_4_REPORT.md)',
+        '- [v4.5四格对照](../training_v4_5/run_001/V4_5_REPORT.md)',
+        '- [v4.6独立母场景训练对照](../training_v4_6/run_001/V4_6_REPORT.md)',
+        '- [正式数据独立审计](../training_v4_6/run_001/data_audit/attempt_002/ARRAY_AUDIT.md)','',
+        '下一步的科学目标需要另行建立可验证假设；本次未通过结果不支持继续把训练次数或此样本池扩容当作已证实的解决方案。']
+    prepared[OUT/'FINAL_REPORT.md']=('\n'.join(report)+'\n').encode('utf-8')
+    paths=[]
+    for name in ('training_v4_4','training_v4_5','training_v4_6','reports/training_v4_4','reports/training_v4_5','reports/training_v4_6',rel(OUT)):
+        for p in (ROOT/name).rglob('*'):
+            if p.is_file() and not any(x in p.parts for x in ('_test_runs','__pycache__')) and p.suffix not in ('.pyc','.tmp'):
+                paths.append(p)
+    paths=sorted(set(paths))
+    inventory=[{'path':rel(p),'bytes':p.stat().st_size,'sha256':sha(p)} for p in paths]
+    inventory.extend({'path':rel(p),'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()}
+                     for p,payload in prepared.items())
+    inventory.sort(key=lambda item:item['path'])
+    prepared[OUT/'release_manifest.json']=json_bytes({'baseline_commit':original['base_commit'],'scope':'New v4.4-v4.6 source, checkpoints and reports; original repository and full raw training data are separate',
+        'file_count':len(inventory),'files':inventory,'inference_bundle_separate':True,
+        'inventory_self_hash_in_external_seal_receipt':True})
+    expected={item['path']:item for item in inventory}
+    payload=prepared[OUT/'release_manifest.json']
+    expected[rel(OUT/'release_manifest.json')]={'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()}
+    paths+=list(prepared)
+    DELIVERY.mkdir(parents=True,exist_ok=True)
+    with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+        for p in paths:
+            payload=prepared[p] if p in prepared else p.read_bytes()
+            item=expected[rel(p)]
+            assert len(payload)==item['bytes'] and hashlib.sha256(payload).hexdigest()==item['sha256'],rel(p)
+            z.writestr(rel(p),payload)
+    reopened=[]
+    with zipfile.ZipFile(archive) as z:
+        assert z.testzip() is None
+        assert len(z.namelist())==len(paths)==len(set(z.namelist()))
+        for p in paths:
+            payload=z.read(rel(p));item=expected[rel(p)]
+            assert len(payload)==item['bytes'] and hashlib.sha256(payload).hexdigest()==item['sha256'],rel(p)
+            reopened.append(rel(p))
+    # Publish completion reports only after the immutable inventory and ZIP pass.
+    for p,payload in prepared.items():
+        with p.open('xb') as handle:handle.write(payload)
+        assert sha(p)==expected[rel(p)]['sha256']
+    final={'status':'SEALED_FINITE_STUDY_NO_ACCEPTED_MODEL','sealed_at':datetime.now(timezone.utc).isoformat(),
+        'baseline_commit':original['base_commit'],'original_files_preserved':1046,'training_updates':1500,
+        'checkpoints':18,'candidate_count':0,'scientific_acceptance':False,'report_sha256':sha(OUT/'FINAL_REPORT.md'),
+        'evidence_sha256':sha(OUT/'study_evidence.json'),'archive_path':rel(archive),'archive_bytes':archive.stat().st_size,
+        'release_manifest_sha256':sha(OUT/'release_manifest.json'),
+        'archive_sha256':sha(archive),'archive_entries_reopened_exactly':len(reopened),
+        'inference_bundle_receipt_sha256':sha(bundle_receipt),'portability_receipt_sha256':sha(DELIVERY/'portability_receipt.json'),
+        'locked_development_opened':False,'final_test_opened':False,'public_push_performed':False}
+    write(OUT/'seal_receipt.json',final)
+    print(json.dumps(final,ensure_ascii=False))
+    return final
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--inference-bundle-receipt',type=Path,required=True)
+    run(parser.parse_args().inference_bundle_receipt)

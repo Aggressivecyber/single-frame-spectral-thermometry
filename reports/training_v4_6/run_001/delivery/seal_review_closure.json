@@ -1,0 +1,77 @@
+{
+  "status": "PASS_STATIC_REVIEW_6_FINDINGS_CLOSED",
+  "checked_at": "2026-10-13T04:50:55.545849+00:00",
+  "reviewed_source_path": "reports/parallel_session_20261013_v44_v46/seal_results.py",
+  "reviewed_source_sha256": "d3992ec22c195ef9e0f3c050855e60960522d9b4f6e40f90c8ea274355562318",
+  "reviewed_source_snapshot_path": "reports/training_v4_6/run_001/delivery/seal_results_closed_source.py.txt",
+  "source_lines": 247,
+  "original_review_path": "reports/training_v4_6/run_001/delivery/SEALER_REVIEW.md",
+  "original_review_sha256": "33d3df293ea2f29ab42ae4b33ffeac64aef11994203e47bc838130538d2ef3a0",
+  "original_review_receipt_sha256": "a3a6d9f997e669abc143a33de59e0b77e0f79af07abd1e7d0bd16170339d6a7f",
+  "portability_source_schema_sha256": "2342233eb524e6a67359adf7657439e851618b3598fb24c29793f925bde31b98",
+  "findings": [
+    {
+      "id": "S1",
+      "status": "CLOSED_STATIC",
+      "basis": "Reads native_replay/execution receipts and binds watchdog worker SHA and same endpoint records."
+    },
+    {
+      "id": "S2",
+      "status": "CLOSED_STATIC",
+      "basis": "Requires successful exact-update500 builder receipt, folder and ZIP inventory hashes, and linked relocation/reference inference receipts for the same endpoint."
+    },
+    {
+      "id": "S3",
+      "status": "CLOSED_STATIC",
+      "basis": "Checks six unique updates and Adam steps per arm, all actual 776-record unique-ID journals, update/protocol/validation SHA and same-weight gate conjunction; all six science flags must be false."
+    },
+    {
+      "id": "S4",
+      "status": "CLOSED_STATIC",
+      "basis": "Preflights every generated report and ZIP, constructs report payloads in memory, and publishes reports only after ZIP bytes have been verified."
+    },
+    {
+      "id": "S5",
+      "status": "CLOSED_STATIC",
+      "basis": "Both writing and reopening compare every ZIP entry with the fixed inventory size and SHA; the release manifest itself is bound by the external seal receipt."
+    },
+    {
+      "id": "S6",
+      "status": "CLOSED_STATIC",
+      "basis": "Report explicitly restricts byte-preserving archive claim to the new release manifest and excludes the 1046 baseline files and full training raw/cache."
+    }
+  ],
+  "additional_closed_items": [
+    "Single old-DEV negative_normal/noise relocation scope stated explicitly.",
+    "Only the CPU mock success receipt is copied into the release inventory; fixture data remain excluded.",
+    "Actual 500x4 journal case IDs must equal frozen sampling before exposure is reported."
+  ],
+  "source_compiles": true,
+  "producer_schema_field_names_verified": true,
+  "existing_schema_readonly_check": {
+    "completed_arms": [
+      "v4.4",
+      "v4.5"
+    ],
+    "checkpoint_groups": 12,
+    "records": 9312,
+    "case_ids_unique_per_group": 776,
+    "record_updates_match": true,
+    "old_eligible_matches_summary": true,
+    "validation_file_hashes_match": true,
+    "v46_final_results_included": false
+  },
+  "limitations": [
+    "This is static and existing-schema review, not execution of the seal entrypoint.",
+    "The final v4.6 results, raw replay, bundle and relocation receipts are to be checked after root executes them.",
+    "Existing outputs and failed partial archives are refused, retained and never overwritten automatically."
+  ],
+  "original_review_modified": false,
+  "frozen_training_files_modified": false,
+  "seal_entrypoint_executions": 0,
+  "bundle_build_executions": 0,
+  "checkpoint_payloads_opened": 0,
+  "array_files_opened": 0,
+  "model_inference_calls": 0,
+  "GPU_calls": 0
+}

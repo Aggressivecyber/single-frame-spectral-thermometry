@@ -1,0 +1,92 @@
+{
+  "schema": "thermometry-v4.4-static-code-review-v1",
+  "review_mode": "read_only_source_review_plus_independent_CPU_input_hash_audit",
+  "reviewed_train_sha256": "25391d58b8237fd67ff10e3d282568f8f9a7e5b8c5549034e3d0b196d2dd545c",
+  "registered_protocol_sha256": "e01515d0030e4215cb9f9fca04842d6dd0cf12369d6ad3aa3a1da1ef7999a89f",
+  "run_protocol_sha256": "9c6f77c182d19c705dec2c138f4a2fc0381450758d4d046893f69191c4bb71cc",
+  "verdict": "successful_execution_path_matches_registered_numerical_control; one_P2_failure_receipt_bug",
+  "reviewer_model_inferences": 0,
+  "reviewer_optimizer_updates": 0,
+  "reviewer_final_test_accesses": 0,
+  "running_sources_modified_by_reviewer": false,
+  "findings": [
+    {
+      "id": "V44-CR-001",
+      "priority": "P2",
+      "title": "Reload-audit exception can save historical parameters with the final optimizer as an interrupted 500-update checkpoint",
+      "location": {
+        "path": "training_v4_4/train.py",
+        "primary_line": 130,
+        "supporting_lines": [103, 104, 105, 106, 107, 108, 129, 131]
+      },
+      "trigger": "An exception after model.load_cnn has loaded an earlier checkpoint during the post-training reload loop, before the loop restores the final model.",
+      "mechanism": "The model changes but optimizer remains at 500 updates and completed remains 500. The generic exception handler serializes all three together without checking that their checkpoint identities agree.",
+      "impact": "interrupted.pt can contain inconsistent model/Adam/update provenance and must not be used for recovery or reported as a valid 500-update model.",
+      "affects_successful_training_predictions": false,
+      "requires_interrupting_current_healthy_run": false,
+      "recommendation": "Separate the read-only reload audit from the mutable training model, or do not serialize a new interrupted checkpoint after entering audit. A recovery save requires model and optimizer from the same verified checkpoint and its actual update.",
+      "root_acknowledged": true,
+      "current_mitigation": "Do not hot-edit the running source. If reload audit fails, mark interrupted output INVALID and non-resumable. Preserve the start source_snapshot; apply a separately disclosed future failure-path fix after normal completion.",
+      "status_at_review": "OPEN_WITH_ACKNOWLEDGED_FAILURE_POLICY"
+    }
+  ],
+  "non_finding_delivery_requirements": [
+    {
+      "id": "V44-OBS-INPUTS",
+      "observation": "The runner records but does not explicitly recheck the full manifest/validation-ID hash at startup; inherited cache.load validates identities but does not rehash all label/cache file bytes per load.",
+      "actual_drift_detected": false,
+      "current_evidence": "An independent standard-library-only audit rehashed every file in the actual 500-draw plus 776-validation input set against both current declarations and the prior frozen input receipt.",
+      "future_hardening": "Add explicit startup checks in a later source version; do not claim the current runner already performed them.",
+      "status": "CURRENT_DISK_INPUTS_VERIFIED_INDEPENDENTLY"
+    },
+    {
+      "id": "V44-OBS-SELECTION",
+      "observation": "The registered ranking differs from the reviewer's earlier main-validation-loss suggestion and has not yet been executed by train/evaluate/protocol.",
+      "authoritative_rule": "Filter by old eligible and all new development screens; minimize main weak L2, then normal RMSE, then earlier checkpoint.",
+      "previous_review_rule_is_authoritative": false,
+      "required_before_final_test": "Create and freeze one selected checkpoint using the registered rule after all registered comparisons; retain the complete candidate ranking and all gate results.",
+      "status": "EXPECTED_POST_TRAINING_DELIVERY_STEP"
+    }
+  ],
+  "static_conformance": {
+    "final_continuum_only_intervention": true,
+    "internal_continuum_trainable_disclosed": true,
+    "raw_bands_and_validity_recomputed": true,
+    "same_initial_CNN_empty_Adam_original_draws": true,
+    "same_loss_optimizer_seed_and_500_update_budget": true,
+    "old_eligible_unchanged": true,
+    "new_signed_conditions_scored_separately": true,
+    "new_signed_weak_L2_scored_separately": true,
+    "all_776_unique_cases_and_zero_invalid_required": true,
+    "failed_frames_not_silently_removed": true,
+    "no_final_test_code_path_in_reviewed_run": true,
+    "six_registered_source_hashes_match": true,
+    "seven_start_source_hashes_and_snapshots_match": true,
+    "claim_limit": "Static conformance and disk integrity are not independent reruns or confirmation that the active training has finished."
+  },
+  "independent_input_audit": {
+    "status": "PASS",
+    "receipt_path": "reports/training_v4_4/run_001/science_review/input_integrity_receipt.json",
+    "receipt_sha256": "ab1f50159ce8c015e149ebc0ae2f8ee7373a47551b185f7b972892e73df6961d",
+    "script_path": "reports/training_v4_4/run_001/science_review/verify_inputs_readonly.py",
+    "script_sha256": "135ec7c1075776a09a2a3dacf3b29706ea47d2bc374b8b0725cc9c4d1b6ef504",
+    "optimizer_draw_positions": 2000,
+    "unique_training_cases": 1183,
+    "validation_cases": 776,
+    "unique_used_cases": 1959,
+    "raw_label_cache_metadata_unique_files": 6888,
+    "physical_score_files": 1959,
+    "manifest_files": 1,
+    "all_unique_files": 8848,
+    "bytes_rehashed": 3798057806,
+    "elapsed_seconds": 46.0940000000046,
+    "drift_count": 0,
+    "manifest_matches_registered_hash": true,
+    "validation_IDs_match_registered_hash": true,
+    "draws_match_registered_hash": true,
+    "physical_scores_match_prior_frozen_hashes": true,
+    "runtime_cache_location_matches_score_paths": true,
+    "receipt_reopened": true,
+    "timing": "Concurrent independent current-disk integrity audit; not a retrospective runner preflight claim."
+  }
+}

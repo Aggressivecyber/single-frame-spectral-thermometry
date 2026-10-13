@@ -1,0 +1,98 @@
+{
+  "status": "PASS_STATIC_AND_METADATA_ONLY",
+  "reviewed_at": "2026-10-13T04:12:53.636948+00:00",
+  "source_sha256": {
+    "training_v4_6/analyze.py": "7a83190e53b8e9a6df4c89b2df1328f4c71506e505ed1c167d3fb605de736d1c",
+    "training_v4_6/cache.py": "cadd854df150e03b8e53ce49961b82eafc1f988ea3dbec5c98a1527fcad5a34d",
+    "training_v4_6/data.py": "9a2f31d383625fdc298d650bcb9ffe77f3e8fc64fc49b29b9810700ddb887462",
+    "training_v4_6/protocol.py": "667e09f9e755c34b18485af45d556884472f2ea51ca6902df7629480b0cfdcbe",
+    "training_v4_6/train.py": "383dda12572d5c333e1229f11d0803919af496c766e5d3aef99fcb782ad94c99"
+  },
+  "source_stable_during_checks": true,
+  "AST_parsed_files": [
+    "training_v4_6/analyze.py",
+    "training_v4_6/cache.py",
+    "training_v4_6/data.py",
+    "training_v4_6/protocol.py",
+    "training_v4_6/train.py"
+  ],
+  "scope_fixture": {
+    "fixture_only": true,
+    "unchanged_identity_accepted": true,
+    "negative_noisy_replacement_accepted": true,
+    "prohibited_mutations_rejected": 5,
+    "torch_imported": false,
+    "runtime_imported": false,
+    "model_inference_calls": 0,
+    "files_written": 0,
+    "GPU_calls": 0,
+    "formal_execution_authorized": false
+  },
+  "metadata_registry": {
+    "status": "METADATA_ONLY_CHECK_PASSED",
+    "new_case_specs": 432,
+    "new_mothers": 24,
+    "new_noise": 240,
+    "merged_train_rows": 3008,
+    "old_development_rows": 776,
+    "merged_rows": 3784,
+    "array_access": 0,
+    "writes": 0,
+    "gpu_calls": 0,
+    "execution_authorized": false
+  },
+  "real_metadata_position_checks": {
+    "total_microbatches": 2000,
+    "signed_microbatches": 575,
+    "negative_noisy_intervention_positions": 513,
+    "other_exactly_preserved_positions": 1487,
+    "actually_different_case_ids": 502,
+    "all_condition_input_kind_positions_preserved": true,
+    "negative_exposure": [
+      {
+        "condition": "negative_normal",
+        "draws": 256,
+        "unique_cases": 72,
+        "mothers": 36,
+        "geometry_pairs": 36,
+        "minimum_draws_per_case": 3,
+        "noise_realizations_per_mother": 2
+      },
+      {
+        "condition": "negative_weak",
+        "draws": 257,
+        "unique_cases": 72,
+        "mothers": 36,
+        "geometry_pairs": 36,
+        "minimum_draws_per_case": 3,
+        "noise_realizations_per_mother": 2
+      }
+    ]
+  },
+  "selected_new_cache_count": 120,
+  "draw_sha256": "85faa97c4acabfb8464868d098e9fe26a0c8c04a95f9d7d2d2d99c795300660b",
+  "closed_findings": [
+    {
+      "id": "V46-REVIEW-001",
+      "priority": "P2",
+      "summary": "Bind analyzer checkpoint path/hash/update to completed training receipts and scores to matching protocols/updates",
+      "status": "FIXED_STATICALLY_VERIFIED"
+    },
+    {
+      "id": "V46-REVIEW-002",
+      "priority": "P2",
+      "summary": "Freeze top-level solver.py and config.py used by actual inversion/model construction",
+      "status": "FIXED_STATICALLY_VERIFIED"
+    }
+  ],
+  "open_findings": [],
+  "numpy_torch_runtime_imported": false,
+  "array_reads": 0,
+  "gpu_calls": 0,
+  "register_calls": 0,
+  "generator_calls": 0,
+  "cache_materialization_calls": 0,
+  "training_calls": 0,
+  "analysis_run_calls": 0,
+  "scope_limit": "Does not establish native generation, inversion, training, timing, resource use, or independent scientific validation."
+}
