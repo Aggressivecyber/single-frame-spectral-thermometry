@@ -1,6 +1,6 @@
 {
   "schema": "v5-root-task-completion-audit-v2",
-  "time": "2026-10-13T17:22:45.890576+00:00",
+  "time": "2026-10-13T18:31:40.860519+00:00",
   "origin": "Root review supersedes automatic file-presence draft archived in root_review_001/automatic_drafts",
   "task_spec_sha256": "ce8c7e7b0f0de81a8a3bb2e368b60a46ee8d7ad3858736c38862e31632c0519c",
   "protocol_sha256": "3fee043711f45ba36c289af45544d62ace8edc84fc1052ced22a5fc6d635fdf1",
@@ -335,15 +335,20 @@
     {
       "id": "DELIVERY",
       "requirement": "Runnable entrypoints, actual applicable science artifacts and GitHub delivery",
-      "status": "PENDING_GITHUB_UPLOAD",
+      "status": "COMPLETED",
       "scientific_acceptance_passed": null,
       "finding": "GitHub successful push and all release asset upload/publish exit codes required. No re-download verification requested.",
-      "evidence": []
+      "evidence": [
+        {
+          "path": "reports/research_v5/run_001/delivery_001/END.json",
+          "sha256": "59e3f5e130bb57da9d01c8086c3c67dc7b9508111e93de8ad9ddb4e972a49438"
+        }
+      ]
     }
   ],
   "all_applicable_scientific_work_accounted_for": true,
-  "all_applicable_delivery_complete": false,
-  "user_objective_complete": false,
+  "all_applicable_delivery_complete": true,
+  "user_objective_complete": true,
   "source_frozen_and_unchanged": true,
   "research_route_fully_audited": true,
   "estimator_scientific_acceptance_passed": false,
