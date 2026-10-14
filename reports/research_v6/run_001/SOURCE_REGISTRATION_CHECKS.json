@@ -1,0 +1,97 @@
+{
+  "all_passed": true,
+  "source_sha256": {
+    "research_v6/__init__.py": "3ca8e2e61fc8e19f6bf5feac76627bff0c914207be17f41e2b5a4f3ee8fb2755",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v6/decomposition.py": "842b2427b8e68ee119d7ea190911c58b3e9006e4412cfe3eb78b92d19f2bda0a",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/protocol.py": "93675d0231c13560517b1001c294d12489069777e6793f4ac8dc62a17128b4e1",
+    "research_v6/reports.py": "8ee65210d4bd8975e89476e3b41e7b22e33ebc7c269135cc8ec7651a37dd5a4e",
+    "research_v6/run.py": "57f01af51d6a85b28ee4477288b757c258d02a4eb258cf93108db6e592c13857",
+    "research_v6/scoring.py": "32b719322b4a35a24f289ee2b042fb8c26dd065a5ab69d6ccdf7c84d0b44f103",
+    "research_v6/stage_a.py": "6e2763c102da42e84f9c137fedfba66c1ae220242db8bd6173485292fcca0626",
+    "research_v6/tests_controls.py": "c6ca7da90e7ed27c550279e4e9e5504fe38f3d1354925bc69f53ee9767d12521",
+    "research_v6/tests_decomposition.py": "bffc254accd11032561956c22f01f2ddd35531fc6036116282b1008522575c7d",
+    "research_v6/tests_inputs.py": "1ec38a39bd09aeac15a3dd5d52bacefc750c97a858d532857167793dc1594a9b",
+    "research_v6/tests_native.py": "6c520a34b2f6b4e4406425c4c75261f74b1e804bd5c2a06361febbd1ef7a2399"
+  },
+  "accepted_current_source_checks": [
+    {
+      "path": "reports/research_v6/implementation_checks/decomposition/cpu_fixture_checks_20261014T053119862657Z.json",
+      "sha256": "e8daf6031fda79d16d99caaab77e60c76fc344d34036b5e81beac683b494f23b",
+      "source_coverage": [
+        "research_v6/decomposition.py",
+        "research_v6/tests_decomposition.py"
+      ],
+      "device": null,
+      "scientific_cohort_acceptance": false
+    },
+    {
+      "path": "reports/research_v6/implementation_checks/inputs/91155c0ac4784212aa632a3bd8f68ecf/test_receipt.json",
+      "sha256": "ea5b730f855273c96af85fbaefe3fcbb88973c5fb3a4f19fcf3eeb97d93e0f55",
+      "source_coverage": [
+        "research_v6/continuum_sources.py",
+        "research_v6/inputs.py",
+        "research_v6/tests_inputs.py"
+      ],
+      "device": null,
+      "scientific_cohort_acceptance": false
+    },
+    {
+      "path": "reports/research_v6/implementation_checks/inputs/metadata_input_audit.json",
+      "sha256": "c56a9299255e85b1da74a8231295c59a62ecafa70b71a2ddf1d0bf33c69b6431",
+      "source_coverage": [
+        "research_v6/continuum_sources.py",
+        "research_v6/inputs.py",
+        "research_v6/tests_inputs.py"
+      ],
+      "device": null,
+      "scientific_cohort_acceptance": false
+    },
+    {
+      "path": "reports/research_v6/implementation_checks/native/gpu_004.json",
+      "sha256": "3f97a94e02930a84b0fcbd6310667b3442d9dbbe9732d0afad92db9a9e013d23",
+      "source_coverage": [
+        "research_v6/common.py",
+        "research_v6/decomposition.py",
+        "research_v6/scoring.py",
+        "research_v6/stage_a.py",
+        "research_v6/tests_native.py"
+      ],
+      "device": "cuda",
+      "scientific_cohort_acceptance": false
+    },
+    {
+      "path": "reports/research_v6/implementation_checks/root/cpu_004.json",
+      "sha256": "6a10d23474472ba11bd41e3ca992ed636ebe8430f2da7bb097f1782a5244c33d",
+      "source_coverage": [
+        "research_v6/common.py",
+        "research_v6/protocol.py",
+        "research_v6/reports.py",
+        "research_v6/run.py",
+        "research_v6/scoring.py",
+        "research_v6/stage_a.py",
+        "research_v6/tests_controls.py"
+      ],
+      "device": "cpu",
+      "scientific_cohort_acceptance": false
+    }
+  ],
+  "native_resolution_controls": [
+    {
+      "path": "reports/research_v6/implementation_checks/native/gpu_004.json",
+      "sha256": "3f97a94e02930a84b0fcbd6310667b3442d9dbbe9732d0afad92db9a9e013d23",
+      "source_coverage": [
+        "research_v6/common.py",
+        "research_v6/decomposition.py",
+        "research_v6/scoring.py",
+        "research_v6/stage_a.py",
+        "research_v6/tests_native.py"
+      ],
+      "device": "cuda",
+      "scientific_cohort_acceptance": false
+    }
+  ],
+  "scientific_cohort_acceptance": false
+}

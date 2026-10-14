@@ -1,0 +1,137 @@
+{
+  "schema": "v6-inputs-native-read-audit-001",
+  "passed": true,
+  "counts": {
+    "development": 540,
+    "oracle": 180
+  },
+  "mothers": {
+    "development": 36,
+    "oracle": 12
+  },
+  "cached_sources": {
+    "C_v3": 3,
+    "C_v5": 540
+  },
+  "new_inference_required": {
+    "C_v3": 717,
+    "C_v5": 180
+  },
+  "reference_sha256": "6b283d4216f5c3b56697cf9913df26f4c50591eeccb0b9f0577b8f4ef2607f13",
+  "manifest_receipts": {
+    "development": {
+      "path": "outputs/research_v5/run_001/development/data_manifest.json",
+      "sha256": "5a7df07eb00bdfc0de0a17315c59761cc81562edac02c28da291c6d3650d4514",
+      "plan_sha256": "fce5b16a1f75d7792623bd482a507633ec744e9b0f8fe9a568ecb2d821c4dae5",
+      "rows": 540,
+      "mothers": 36
+    },
+    "oracle": {
+      "path": "outputs/research_v5/run_001/oracle_data/data_manifest.json",
+      "sha256": "8e31229a869a783384ae58b6af2f0d5569a0587bcd039a19ab29427a21f771b4",
+      "plan_sha256": "b0f47f0824c20712b0a2712708c7d7a3ce7975b885afcf86b5cf79d25d526969",
+      "rows": 180,
+      "mothers": 12
+    }
+  },
+  "raw_samples": [
+    {
+      "case_id": "v5_development_selection_mother_0000_blank_continuous",
+      "raw_shape": [
+        256,
+        256
+      ],
+      "raw_dtype": "float32",
+      "raw_array_sha256": "b77af7fd7f4209f1f9e7cd9394fdc6c2bbb20a63c1f168d8daea9547b8790bb4"
+    },
+    {
+      "case_id": "v4_validation_mother_0000_v5_blank_continuous",
+      "raw_shape": [
+        256,
+        256
+      ],
+      "raw_dtype": "float32",
+      "raw_array_sha256": "e68470494c76fdf099322207f165bbf83321f39b78306c7f27d157f27d5516ba"
+    }
+  ],
+  "cache_shape_samples": [
+    {
+      "case_id": "v5_development_selection_mother_0000_blank_continuous",
+      "source": "C_v5",
+      "path": "outputs/research_v5/run_001/development_grid_predictions/v5_development_selection_mother_0000_blank_continuous.npz",
+      "shapes": {
+        "continuum_latent": [
+          1,
+          7,
+          256,
+          256
+        ],
+        "continuum_postblur": [
+          1,
+          7,
+          256,
+          256
+        ],
+        "temperature_color_K": [
+          1,
+          256,
+          256
+        ],
+        "continuum_valid": [
+          1,
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "case_id": "v4_validation_mother_0000_v5_blank_continuous",
+      "source": "C_v3",
+      "path": "outputs/training_v4/run_001/cache/26/269c56eb505bf82ea615db381c57e47a6ab5adc7cc372029da52dd7da4c379ce.npz",
+      "shapes": {
+        "state": [
+          5,
+          256,
+          256
+        ],
+        "beta": [
+          3
+        ]
+      }
+    },
+    {
+      "case_id": "v4_validation_mother_0032_v5_blank_continuous",
+      "source": "C_v3",
+      "path": "outputs/training_v4/run_001/cache/ba/ba74798b255e5caa4346158811936df6d722727cab4b157279fa3799911f92b1.npz",
+      "shapes": {
+        "state": [
+          5,
+          256,
+          256
+        ],
+        "beta": [
+          3
+        ]
+      }
+    },
+    {
+      "case_id": "v4_validation_mother_0016_v5_blank_continuous",
+      "source": "C_v3",
+      "path": "outputs/training_v4/run_001/cache/eb/eb59f4f2318b6154524987cd75d3b5a7d1e4bbff498c3c9b8d2f0dbb4b86ca34.npz",
+      "shapes": {
+        "state": [
+          5,
+          256,
+          256
+        ],
+        "beta": [
+          3
+        ]
+      }
+    }
+  ],
+  "formal_scientific_inversions": 0,
+  "GPU_used": false,
+  "sealed_payloads_opened": false,
+  "regression16_reference_count": 16
+}

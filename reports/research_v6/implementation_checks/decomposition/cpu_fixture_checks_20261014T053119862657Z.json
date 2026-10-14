@@ -1,0 +1,459 @@
+{
+  "schema": "v6-decomposition-cpu-fixtures-001",
+  "timestamp": "2026-10-14T05:31:19.891862+00:00",
+  "scope": "bounded CPU synthetic fixtures; no formal arrays; not Stage A scientific evidence",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "fixed_beta_float32",
+      "passed": true,
+      "details": {
+        "mode": true,
+        "postblur_rms_gap_e": 0.0007951998456409274,
+        "relative_l2": 0.0007951998456409274,
+        "known_numerical_failure_correctly_detected": [
+          "normal_equation_algebra_passed"
+        ],
+        "max_component_iterations": 2,
+        "wall_s": 0.03631880000102683
+      },
+      "wall_s": 0.05510309999954188
+    },
+    {
+      "check": "estimated_beta_float32",
+      "passed": true,
+      "details": {
+        "mode": false,
+        "postblur_rms_gap_e": 0.26225141018181974,
+        "relative_l2": 0.190045316010762,
+        "known_numerical_failure_correctly_detected": [
+          "postblur_recomposition_passed"
+        ],
+        "max_component_iterations": 33,
+        "wall_s": 0.07765999999901396
+      },
+      "wall_s": 0.08401710000180174
+    },
+    {
+      "check": "fixed_beta_dense_reference",
+      "passed": true,
+      "details": {
+        "mode": true,
+        "dense_dimension": 256,
+        "postblur_dense_gap_e": 1.0550858136981573e-12
+      },
+      "wall_s": 0.08143329999802518
+    },
+    {
+      "check": "estimated_beta_dense_reference",
+      "passed": true,
+      "details": {
+        "mode": false,
+        "dense_dimension": 259,
+        "postblur_dense_gap_e": 1.8596690554932614e-12
+      },
+      "wall_s": 0.11850799999956507
+    },
+    {
+      "check": "shared_cache_fixed_W",
+      "passed": true,
+      "details": {
+        "cache_noise_bias_reused": true,
+        "C_true_leakage": "exact zero",
+        "W_hash": "90462c20e89b6b8cd10fa7828723521d12e567359685b3ac2ecf2c423f10fbba"
+      },
+      "wall_s": 0.12816550000206917
+    },
+    {
+      "check": "zero_terms_zero_OTF",
+      "passed": true,
+      "details": {
+        "zero_components_exact": true,
+        "zero_otf_bins": 251,
+        "unobservable_latent_error_rms_e": 60.0,
+        "observable_error_rms_e": 0.0
+      },
+      "wall_s": 0.050948000000062166
+    },
+    {
+      "check": "single_blur_signed_fields",
+      "passed": true,
+      "details": {
+        "single_object_blur_verified": true,
+        "signed_fields_preserved": true,
+        "signed_symmetry_max_gap_e": 0.0
+      },
+      "wall_s": 0.02465469999879133
+    },
+    {
+      "check": "scale_equivalent_beta_units",
+      "passed": true,
+      "details": {
+        "equivalent_beta_units_dense": true,
+        "uniform_W_scale_dense": true
+      },
+      "wall_s": 0.36541460000080406
+    },
+    {
+      "check": "visible_failure_optional64",
+      "passed": true,
+      "details": {
+        "failure_retained": true,
+        "double_only_after_failure": true,
+        "double_uses_primary_rhs": true,
+        "double_cannot_rescue": true,
+        "primary_gap_e": 0.26225141018181974,
+        "finite_solve_residual_diagnostic": {
+          "role": "same-budget inverse residual explanation; cannot rescue primary failure",
+          "negative_actual_residual_CG": {
+            "iterations": 9,
+            "relative_true_residual": 3.9779520193405915e-06,
+            "relative_residual": 3.9779520193405915e-06,
+            "equilibrated_relative_true_residual": 3.218573965568794e-06,
+            "true_residual_history": [
+              1.628922700881958,
+              0.7271766066551208,
+              0.6654486656188965,
+              3.185521364212036,
+              0.03358634188771248,
+              0.0030826188158243895,
+              0.006077317520976067,
+              0.0004461955395527184,
+              3.9779520193405915e-06
+            ],
+            "equilibrated_true_residual_history": [
+              2.568121910095215,
+              0.6587313413619995,
+              0.3391391634941101,
+              1.3554861545562744,
+              0.022108906880021095,
+              0.0023807636462152004,
+              0.0038300869055092335,
+              0.0011276532895863056,
+              3.218573965568794e-06
+            ],
+            "recursive_residual_history": [
+              1.6289207935333252,
+              0.7271682620048523,
+              0.6654538512229919,
+              3.1855270862579346,
+              0.03358657285571098,
+              0.003077991772443056,
+              0.006060840096324682,
+              0.00043343118159100413,
+              5.192811158849509e-07
+            ],
+            "residual_refreshes": [],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [],
+            "converged": true,
+            "rhs_norm_physical": 0.003006343962624669,
+            "rhs_norm_equilibrated": 0.0021735867485404015,
+            "rtol": 0.0001,
+            "max_iterations": 200,
+            "component": "negative_actual_estimate_residual",
+            "dtype": "torch.float32",
+            "all_finite": true,
+            "wall_s": 0.008416600001510233
+          },
+          "combined_normal_gap_CG": {
+            "iterations": 9,
+            "relative_true_residual": 7.477445615222678e-05,
+            "relative_residual": 7.477445615222678e-05,
+            "equilibrated_relative_true_residual": 6.317419320112094e-05,
+            "true_residual_history": [
+              2.6467254161834717,
+              0.6030934453010559,
+              0.8241909742355347,
+              4.202180862426758,
+              0.03490244597196579,
+              0.004598668776452541,
+              0.0031596634071320295,
+              5.390554724726826e-05,
+              7.477445615222678e-05
+            ],
+            "equilibrated_true_residual_history": [
+              2.4230458736419678,
+              0.7757691740989685,
+              0.29110291600227356,
+              1.9702255725860596,
+              0.021723443642258644,
+              0.003309710184112191,
+              0.0020202479790896177,
+              0.0008148055640049279,
+              6.317419320112094e-05
+            ],
+            "recursive_residual_history": [
+              2.646723985671997,
+              0.6030729413032532,
+              0.8241629004478455,
+              4.202225208282471,
+              0.034883659332990646,
+              0.004619081504642963,
+              0.0031411524396389723,
+              7.216496305773035e-05,
+              8.417453500442207e-05
+            ],
+            "residual_refreshes": [
+              8
+            ],
+            "stop": "RELATIVE_TRUE_RESIDUAL",
+            "objective_history": [],
+            "converged": true,
+            "rhs_norm_physical": 0.0027087312191724777,
+            "rhs_norm_equilibrated": 0.002250983379781246,
+            "rtol": 0.0001,
+            "max_iterations": 200,
+            "component": "recomposition_normal_gap",
+            "dtype": "torch.float32",
+            "all_finite": true,
+            "wall_s": 0.009400000002642628
+          },
+          "actual_residual_contribution_postblur": {
+            "rms": 0.26198043004483434,
+            "mean": 0.08206790771509986,
+            "max_abs": 0.553909182548523,
+            "all_finite": true,
+            "count": 256,
+            "finite_count": 256,
+            "domain": "complete fixed field"
+          },
+          "combined_normal_gap_contribution_postblur": {
+            "rms": 0.26227389439600307,
+            "mean": 0.08165325204026885,
+            "max_abs": 0.5544775724411011,
+            "all_finite": true,
+            "count": 256,
+            "finite_count": 256,
+            "domain": "complete fixed field"
+          },
+          "unexplained_after_actual_residual": {
+            "rms": 0.001035983675198586,
+            "mean": -0.0006060985178919509,
+            "max_abs": 0.0022369027137756348,
+            "all_finite": true,
+            "count": 256,
+            "finite_count": 256,
+            "domain": "complete fixed field"
+          },
+          "unexplained_after_combined_residual": {
+            "rms": 0.00020019647122388246,
+            "mean": -0.0001914428430609405,
+            "max_abs": 0.000293828547000885,
+            "all_finite": true,
+            "count": 256,
+            "finite_count": 256,
+            "domain": "complete fixed field"
+          }
+        }
+      },
+      "wall_s": 0.3357310999999754
+    }
+  ],
+  "default_identity_criteria": {
+    "postblur_rms_limit_e": 0.05,
+    "postblur_relative_l2_limit": 0.005,
+    "postblur_relative_l2_scale_floor_e": 1.0,
+    "normal_equation_algebra_rtol": 0.0001
+  },
+  "numeric_budget": {
+    "rtol": 0.0001,
+    "max_iterations": 200,
+    "threads": 2
+  },
+  "wall_s": 1.273546599997644,
+  "fixture_artifact": {
+    "path": "outputs/research_v6/fixtures/decomposition/cpu16_20261014T053119862657Z.npz",
+    "sha256": "19f246e7b10495c7891b4ac21e63af0e5310dd3fd5775ccea759927f44924ada",
+    "bytes": 9381
+  },
+  "fixture_physics_config": {
+    "schema": "parameter-unfold-v004",
+    "shape": [
+      16,
+      16
+    ],
+    "exposure_s": 2e-05,
+    "centers_nm": [
+      430,
+      450,
+      486,
+      513,
+      535,
+      700,
+      905
+    ],
+    "widths_nm": [
+      10,
+      10,
+      6,
+      10,
+      10,
+      10,
+      10
+    ],
+    "quantum_efficiencies": [
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.45,
+      0.5,
+      0.5
+    ],
+    "temperature_range_K": [
+      1200,
+      4500
+    ],
+    "temperature_lut_step_K": 5,
+    "reference_temperature_K": 3300,
+    "reference_905_e": 24000,
+    "carrier_bins_xy": [
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    "modulation_depth": [
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85
+    ],
+    "channel_gain": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "phase_rad": [
+      0.3,
+      -0.4,
+      0.2,
+      -0.1,
+      0.1,
+      -0.2,
+      0.35
+    ],
+    "object_cutoff_cpp": 0.075,
+    "decode_cutoff_cpp": 0.08,
+    "relay_psf_sigma_px": 0.35,
+    "read_noise_e": 3,
+    "full_well_e": 60000,
+    "adc_bits": 12,
+    "black_level_DN": 128,
+    "species_names": [
+      "CH",
+      "C2",
+      "AlO"
+    ],
+    "active_species": [
+      false,
+      false,
+      true
+    ],
+    "species_scale_e": 60,
+    "background_scale_e": 100,
+    "temperature_center_K": 3000,
+    "temperature_scale_K": 1000,
+    "template_response": [
+      [
+        1.0,
+        0.03,
+        0.08
+      ],
+      [
+        0.02,
+        0.05,
+        0.35
+      ],
+      [
+        0.01,
+        0.04,
+        1.0
+      ],
+      [
+        0.01,
+        1.0,
+        0.75
+      ],
+      [
+        0.01,
+        0.05,
+        0.22
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "background_response": [
+      0.9,
+      1.0,
+      0.9,
+      0.85,
+      0.82,
+      0,
+      0
+    ],
+    "response_provenance": {
+      "kind": "synthetic_engineering_fixture",
+      "matrix_is_measured": false,
+      "matrix_is_derived_from_real_line_list": false,
+      "QE_is_measured": false,
+      "filter_response_is_measured": false,
+      "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+    },
+    "steps": 6,
+    "CNN_width": 16,
+    "CG_steps_per_spectral_block": 4,
+    "GN_damping": 0.001,
+    "parameter_correction_bounds": [
+      0.025,
+      0.05,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "source_sha256": {
+    "research_v6/decomposition.py": "842b2427b8e68ee119d7ea190911c58b3e9006e4412cfe3eb78b92d19f2bda0a",
+    "research_v6/tests_decomposition.py": "bffc254accd11032561956c22f01f2ddd35531fc6036116282b1008522575c7d"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "v6-decomposition-cpu-fixtures-001",
+  "timestamp": "2026-10-14T05:27:05.615309+00:00",
+  "scope": "bounded CPU synthetic fixtures; no formal arrays; not Stage A scientific evidence",
+  "all_passed": false,
+  "checks": [
+    {
+      "check": "fixed_beta_float32",
+      "passed": false,
+      "error": "['normal_equation_algebra_passed']",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 272, in main\n    value = check()\n            ^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 258, in <lambda>\n    (\"fixed_beta_float32\", lambda: numerical_checks(True)),\n                                   ^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 65, in numerical_checks\n    assert summary[\"numerical_gate_passed\"], summary[\"failure_reasons\"]\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['normal_equation_algebra_passed']\n",
+      "wall_s": 0.12544009999692207
+    },
+    {
+      "check": "estimated_beta_float32",
+      "passed": false,
+      "error": "['postblur_recomposition_passed']",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 272, in main\n    value = check()\n            ^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 259, in <lambda>\n    (\"estimated_beta_float32\", lambda: numerical_checks(False)),\n                                       ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 65, in numerical_checks\n    assert summary[\"numerical_gate_passed\"], summary[\"failure_reasons\"]\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['postblur_recomposition_passed']\n",
+      "wall_s": 0.10658999999941443
+    },
+    {
+      "check": "fixed_beta_dense_reference",
+      "passed": true,
+      "details": {
+        "mode": true,
+        "dense_dimension": 256,
+        "postblur_dense_gap_e": 1.0550858136981573e-12
+      },
+      "wall_s": 0.12709430000177235
+    },
+    {
+      "check": "estimated_beta_dense_reference",
+      "passed": true,
+      "details": {
+        "mode": false,
+        "dense_dimension": 259,
+        "postblur_dense_gap_e": 1.8596690554932614e-12
+      },
+      "wall_s": 0.12863279999874067
+    },
+    {
+      "check": "shared_cache_fixed_W",
+      "passed": true,
+      "details": {
+        "cache_noise_bias_reused": true,
+        "C_true_leakage": "exact zero",
+        "W_hash": "90462c20e89b6b8cd10fa7828723521d12e567359685b3ac2ecf2c423f10fbba"
+      },
+      "wall_s": 0.138330900001165
+    },
+    {
+      "check": "zero_terms_zero_OTF",
+      "passed": true,
+      "details": {
+        "zero_components_exact": true,
+        "zero_otf_bins": 251,
+        "unobservable_latent_error_rms_e": 60.0,
+        "observable_error_rms_e": 0.0
+      },
+      "wall_s": 0.0588201000027766
+    },
+    {
+      "check": "single_blur_signed_fields",
+      "passed": true,
+      "details": {
+        "single_object_blur_verified": true,
+        "signed_fields_preserved": true,
+        "signed_symmetry_max_gap_e": 0.0
+      },
+      "wall_s": 0.03267730000152369
+    },
+    {
+      "check": "scale_equivalent_beta_units",
+      "passed": true,
+      "details": {
+        "equivalent_beta_units_dense": true,
+        "uniform_W_scale_dense": true
+      },
+      "wall_s": 0.4171295000014652
+    },
+    {
+      "check": "visible_failure_optional64",
+      "passed": false,
+      "error": "",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 272, in main\n    value = check()\n            ^^^^^^^\n  File \"E:\\CodexWork\\thermometry\\public_repository_001\\research_v6\\tests_decomposition.py\", line 218, in visible_failure_and_optional_reference\n    assert passed[\"summary\"][\"numerical_gate_passed\"]\n           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "wall_s": 0.08562549999987823
+    }
+  ],
+  "default_identity_criteria": {
+    "postblur_rms_limit_e": 0.05,
+    "postblur_relative_l2_limit": 0.005,
+    "postblur_relative_l2_scale_floor_e": 1.0,
+    "normal_equation_algebra_rtol": 0.0001
+  },
+  "numeric_budget": {
+    "rtol": 0.0001,
+    "max_iterations": 200,
+    "threads": 2
+  },
+  "wall_s": 1.2212132999993628,
+  "source_sha256": {
+    "research_v6/decomposition.py": "483c201a0300856f6e10143ea2b2bf59fdad317d93a94d8183fe2a53996e22d0",
+    "research_v6/tests_decomposition.py": "22b21247a2acdbf4c945005ebd1236e1065927967084a543455fb868a4d4bb6c"
+  }
+}
