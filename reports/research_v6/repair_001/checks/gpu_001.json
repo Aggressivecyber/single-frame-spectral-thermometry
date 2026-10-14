@@ -1,0 +1,1269 @@
+{
+  "schema": "v6-repair001-numerical-fixtures-001",
+  "time": "2026-10-14T11:26:16.339154+00:00",
+  "device": "cuda",
+  "shape": [
+    256,
+    256
+  ],
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "true_beta_C_true_identity",
+      "passed": true
+    },
+    {
+      "name": "true_beta_C_perturbed_identity",
+      "passed": true
+    },
+    {
+      "name": "estimated_beta_C_true_identity",
+      "passed": true
+    },
+    {
+      "name": "estimated_beta_C_perturbed_identity",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "beta_mode": "true_beta",
+      "source": "C_true",
+      "schema": "v6-repair001-decomposition-001",
+      "numeric_dtype": "torch.float64",
+      "numerical_gate_passed": true,
+      "full_actual_and_component_CG_converged": true,
+      "actual_accepted": true,
+      "component_CG": {
+        "leakage": {
+          "iterations": 0,
+          "relative_true_residual": 0.0,
+          "relative_residual": 0.0,
+          "equilibrated_relative_true_residual": 0.0,
+          "true_residual_history": [],
+          "equilibrated_true_residual_history": [],
+          "recursive_residual_history": [],
+          "residual_refreshes": [],
+          "objective_history": [],
+          "stop": "ZERO_RHS",
+          "converged": true,
+          "role": "continuum_leakage",
+          "wall_s": 0.00021740000374848023,
+          "numeric_dtype": "torch.float64"
+        },
+        "noise": {
+          "iterations": 5,
+          "relative_true_residual": 3.5584224130606286e-09,
+          "relative_residual": 3.5584224130606286e-09,
+          "equilibrated_relative_true_residual": 3.5584224130606286e-09,
+          "true_residual_history": [
+            0.018530472788043366,
+            0.00042833186606599296,
+            9.78395591409404e-06,
+            1.947357036591283e-07,
+            3.5584224130606286e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.018530472788043366,
+            0.00042833186606599307,
+            9.78395591409404e-06,
+            1.947357036591283e-07,
+            3.5584224130606286e-09
+          ],
+          "recursive_residual_history": [
+            0.018530472788042745,
+            0.00042833186606616345,
+            9.783955913415666e-06,
+            1.947357035424601e-07,
+            3.558421810991601e-09
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 0.0027761298739259715,
+          "rhs_norm_equilibrated": 2.29718342122696,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "noise",
+          "wall_s": 0.0941845999986981,
+          "numeric_dtype": "torch.float64"
+        },
+        "regularization_bias": {
+          "iterations": 5,
+          "relative_true_residual": 1.0811697329221834e-09,
+          "relative_residual": 1.0811697329221834e-09,
+          "equilibrated_relative_true_residual": 1.0811697329221832e-09,
+          "true_residual_history": [
+            0.021627983155107725,
+            0.00029794407265194465,
+            4.511256901998198e-06,
+            6.97163698830258e-08,
+            1.0811697329221834e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.021627983155107722,
+            0.0002979440726519446,
+            4.5112569019981976e-06,
+            6.971636988302579e-08,
+            1.0811697329221832e-09
+          ],
+          "recursive_residual_history": [
+            0.021627983155107722,
+            0.00029794407265182875,
+            4.511256902001076e-06,
+            6.971636988160801e-08,
+            1.0811697387984715e-09
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 3.7281413757473746e-06,
+          "rhs_norm_equilibrated": 0.0030849509746623312,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "regularization_bias",
+          "wall_s": 0.018180400002165698,
+          "numeric_dtype": "torch.float64"
+        }
+      },
+      "actual_CG": {
+        "iterations": 5,
+        "relative_true_residual": 7.737613980543077e-10,
+        "relative_residual": 7.737613980543077e-10,
+        "equilibrated_relative_true_residual": 7.737613980543077e-10,
+        "true_residual_history": [
+          0.016034661536387013,
+          0.00022281945872746763,
+          3.2154101242744146e-06,
+          4.957974748091106e-08,
+          7.737613980543077e-10
+        ],
+        "equilibrated_true_residual_history": [
+          0.01603466153638701,
+          0.00022281945872746766,
+          3.2154101242744146e-06,
+          4.957974748091106e-08,
+          7.737613980543077e-10
+        ],
+        "recursive_residual_history": [
+          0.01603466153638714,
+          0.00022281945872742347,
+          3.2154101242710192e-06,
+          4.957974746260864e-08,
+          7.73761408625052e-10
+        ],
+        "residual_refreshes": [],
+        "stop": "RELATIVE_TRUE_RESIDUAL",
+        "objective_history": [],
+        "converged": true,
+        "rhs_norm_physical": 3.798702402897494,
+        "rhs_norm_equilibrated": 3143.338596681171,
+        "rtol": 1e-08,
+        "max_iterations": 200,
+        "role": "actual_estimate",
+        "wall_s": 0.02797160000045551,
+        "numeric_dtype": "torch.float64"
+      },
+      "postblur_error": {
+        "rms": 1.5223494677552798,
+        "mean": -0.004729461812416957,
+        "max_abs": 2.2475050040714706,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_components": {
+        "leakage": {
+          "rms": 0.0,
+          "mean": 0.0,
+          "max_abs": 0.0,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "noise": {
+          "rms": 1.5223494685132135,
+          "mean": -0.004731328100299801,
+          "max_abs": 2.2476931241201594,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "regularization_bias": {
+          "rms": 0.00011513340907010702,
+          "mean": -1.2383701278132999e-06,
+          "max_abs": 0.00021765143654408652,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        }
+      },
+      "postblur_component_mse_e2": {
+        "leakage": 0.0,
+        "noise": 2.3175479042824634,
+        "regularization_bias": 1.3255701884104602e-08
+      },
+      "postblur_cross_terms": {
+        "leakage__noise": {
+          "twice_mean_product": 0.0,
+          "cosine": null,
+          "pearson": null,
+          "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+        },
+        "leakage__regularization_bias": {
+          "twice_mean_product": 0.0,
+          "cosine": null,
+          "pearson": null,
+          "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+        },
+        "noise__regularization_bias": {
+          "twice_mean_product": 9.666573429046723e-11,
+          "cosine": 2.7575718337088733e-07,
+          "pearson": -3.3154891626025557e-05,
+          "undefined_reason": null
+        }
+      },
+      "postblur_recomposition_residual": {
+        "rms": 6.2379171136492615e-06,
+        "mean": 3.104658010658323e-06,
+        "max_abs": 2.4891084751565984e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_recomposition_relative_l2": 4.097559230501217e-06,
+      "internal_operator_recomposition_residual": {
+        "rms": 1.0806584739982021e-07,
+        "mean": 4.023222520567952e-09,
+        "max_abs": 5.50393119747028e-07,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "stored_label_minus_internal_target": {
+        "rms": 6.233766147317357e-06,
+        "mean": 3.100634788137755e-06,
+        "max_abs": 2.47712274445977e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "normal_equation_algebra_relative_equilibrated": 2.221850195136014e-16,
+      "identity_criteria": {
+        "postblur_rms_limit_e": 0.05,
+        "postblur_relative_l2_limit": 0.005,
+        "postblur_relative_l2_scale_floor_e": 1.0,
+        "normal_equation_algebra_rtol": 0.0001
+      },
+      "accounted_MSE_e2": 2.317547917634831,
+      "error_leakage_correlation": {
+        "twice_mean_product": 0.0,
+        "cosine": null,
+        "pearson": null,
+        "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+      },
+      "physics_regularizer_and_weight_preserved": {
+        "calibration_buffers_promoted_exactly": true,
+        "original_G_coefficients_and_W_and_lambda_promoted_exactly": true,
+        "RHS_arithmetic": "coherent float64 G, continuum and regularizer actions",
+        "rtol": 1e-08,
+        "maximum_iterations": 200,
+        "alpha_g": 1.0,
+        "no_OTF_division": true
+      },
+      "failure_reasons": []
+    },
+    {
+      "beta_mode": "true_beta",
+      "source": "C_perturbed",
+      "schema": "v6-repair001-decomposition-001",
+      "numeric_dtype": "torch.float64",
+      "numerical_gate_passed": true,
+      "full_actual_and_component_CG_converged": true,
+      "actual_accepted": true,
+      "component_CG": {
+        "leakage": {
+          "iterations": 5,
+          "relative_true_residual": 9.355696805057787e-10,
+          "relative_residual": 9.355696805057787e-10,
+          "equilibrated_relative_true_residual": 9.355696805057789e-10,
+          "true_residual_history": [
+            0.024709211127044342,
+            0.00019804068314794023,
+            4.132989868319974e-06,
+            4.8795491952154986e-08,
+            9.355696805057787e-10
+          ],
+          "equilibrated_true_residual_history": [
+            0.02470921112704435,
+            0.00019804068314794026,
+            4.1329898683199745e-06,
+            4.879549195215499e-08,
+            9.355696805057789e-10
+          ],
+          "recursive_residual_history": [
+            0.024709211127044352,
+            0.00019804068314791066,
+            4.132989868327867e-06,
+            4.879549194395347e-08,
+            9.355696860923138e-10
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 1.6585556450534893,
+          "rhs_norm_equilibrated": 1372.416530935274,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "continuum_leakage",
+          "wall_s": 0.01415629999974044,
+          "numeric_dtype": "torch.float64"
+        },
+        "noise": {
+          "iterations": 5,
+          "relative_true_residual": 3.5584224130606286e-09,
+          "relative_residual": 3.5584224130606286e-09,
+          "equilibrated_relative_true_residual": 3.5584224130606286e-09,
+          "true_residual_history": [
+            0.018530472788043366,
+            0.00042833186606599296,
+            9.78395591409404e-06,
+            1.947357036591283e-07,
+            3.5584224130606286e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.018530472788043366,
+            0.00042833186606599307,
+            9.78395591409404e-06,
+            1.947357036591283e-07,
+            3.5584224130606286e-09
+          ],
+          "recursive_residual_history": [
+            0.018530472788042745,
+            0.00042833186606616345,
+            9.783955913415666e-06,
+            1.947357035424601e-07,
+            3.558421810991601e-09
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 0.0027761298739259715,
+          "rhs_norm_equilibrated": 2.29718342122696,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "noise",
+          "wall_s": 0.0941845999986981,
+          "numeric_dtype": "torch.float64"
+        },
+        "regularization_bias": {
+          "iterations": 5,
+          "relative_true_residual": 1.0811697329221834e-09,
+          "relative_residual": 1.0811697329221834e-09,
+          "equilibrated_relative_true_residual": 1.0811697329221832e-09,
+          "true_residual_history": [
+            0.021627983155107725,
+            0.00029794407265194465,
+            4.511256901998198e-06,
+            6.97163698830258e-08,
+            1.0811697329221834e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.021627983155107722,
+            0.0002979440726519446,
+            4.5112569019981976e-06,
+            6.971636988302579e-08,
+            1.0811697329221832e-09
+          ],
+          "recursive_residual_history": [
+            0.021627983155107722,
+            0.00029794407265182875,
+            4.511256902001076e-06,
+            6.971636988160801e-08,
+            1.0811697387984715e-09
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 3.7281413757473746e-06,
+          "rhs_norm_equilibrated": 0.0030849509746623312,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "regularization_bias",
+          "wall_s": 0.018180400002165698,
+          "numeric_dtype": "torch.float64"
+        }
+      },
+      "actual_CG": {
+        "iterations": 5,
+        "relative_true_residual": 8.483583632061967e-10,
+        "relative_residual": 8.483583632061967e-10,
+        "equilibrated_relative_true_residual": 8.483583632061966e-10,
+        "true_residual_history": [
+          0.01699296258113503,
+          0.0002377475046767766,
+          3.4981001145668613e-06,
+          5.44791347614452e-08,
+          8.483583632061967e-10
+        ],
+        "equilibrated_true_residual_history": [
+          0.01699296258113503,
+          0.0002377475046767765,
+          3.4981001145668605e-06,
+          5.447913476144519e-08,
+          8.483583632061966e-10
+        ],
+        "recursive_residual_history": [
+          0.016992962581135147,
+          0.00023774750467678855,
+          3.4981001145423635e-06,
+          5.4479134777325687e-08,
+          8.483583500898202e-10
+        ],
+        "residual_refreshes": [],
+        "stop": "RELATIVE_TRUE_RESIDUAL",
+        "objective_history": [],
+        "converged": true,
+        "rhs_norm_physical": 3.7190864270165043,
+        "rhs_norm_equilibrated": 3077.4582134986763,
+        "rtol": 1e-08,
+        "max_iterations": 200,
+        "role": "actual_estimate",
+        "wall_s": 0.01955449999513803,
+        "numeric_dtype": "torch.float64"
+      },
+      "postblur_error": {
+        "rms": 48.13785260832212,
+        "mean": -0.9884815414116307,
+        "max_abs": 78.7192225494072,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_components": {
+        "leakage": {
+          "rms": 48.11370709815737,
+          "mean": -0.9837520650919371,
+          "max_abs": 76.93223051557766,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "noise": {
+          "rms": 1.5223494685132135,
+          "mean": -0.004731328100299801,
+          "max_abs": 2.2476931241201594,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "regularization_bias": {
+          "rms": 0.00011513340907010702,
+          "mean": -1.2383701278132999e-06,
+          "max_abs": 0.00021765143654408652,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        }
+      },
+      "postblur_component_mse_e2": {
+        "leakage": 2314.9288107272787,
+        "noise": 2.3175479042824634,
+        "regularization_bias": 1.3255701884104602e-08
+      },
+      "postblur_cross_terms": {
+        "leakage__noise": {
+          "twice_mean_product": 0.0017124596010906232,
+          "cosine": 1.1689802106120594e-05,
+          "pearson": -5.186689960473943e-05,
+          "undefined_reason": null
+        },
+        "leakage__regularization_bias": {
+          "twice_mean_product": 0.005051471071701625,
+          "cosine": 0.45595049378768016,
+          "pearson": 0.4558522330093292,
+          "undefined_reason": null
+        },
+        "noise__regularization_bias": {
+          "twice_mean_product": 9.666573429046723e-11,
+          "cosine": 2.7575718337088733e-07,
+          "pearson": -3.3154891626025557e-05,
+          "undefined_reason": null
+        }
+      },
+      "postblur_recomposition_residual": {
+        "rms": 6.228773774398609e-06,
+        "mean": 3.0901507341188166e-06,
+        "max_abs": 2.4947792923057932e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_recomposition_relative_l2": 1.2939450841481392e-07,
+      "internal_operator_recomposition_residual": {
+        "rms": 1.2905196523473264e-07,
+        "mean": -1.0484056311755268e-08,
+        "max_abs": 8.578189181207563e-07,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "stored_label_minus_internal_target": {
+        "rms": 6.233766146972343e-06,
+        "mean": 3.1006347904305716e-06,
+        "max_abs": 2.477122745858651e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "normal_equation_algebra_relative_equilibrated": 7.420945705232691e-15,
+      "identity_criteria": {
+        "postblur_rms_limit_e": 0.05,
+        "postblur_relative_l2_limit": 0.005,
+        "postblur_relative_l2_scale_floor_e": 1.0,
+        "normal_equation_algebra_rtol": 0.0001
+      },
+      "accounted_MSE_e2": 2317.2531225755865,
+      "error_leakage_correlation": {
+        "twice_mean_product": 4629.864116561897,
+        "cosine": 0.9994998112423676,
+        "pearson": 0.9994996050204039,
+        "undefined_reason": null
+      },
+      "physics_regularizer_and_weight_preserved": {
+        "calibration_buffers_promoted_exactly": true,
+        "original_G_coefficients_and_W_and_lambda_promoted_exactly": true,
+        "RHS_arithmetic": "coherent float64 G, continuum and regularizer actions",
+        "rtol": 1e-08,
+        "maximum_iterations": 200,
+        "alpha_g": 1.0,
+        "no_OTF_division": true
+      },
+      "failure_reasons": []
+    },
+    {
+      "beta_mode": "estimated_beta",
+      "source": "C_true",
+      "schema": "v6-repair001-decomposition-001",
+      "numeric_dtype": "torch.float64",
+      "numerical_gate_passed": true,
+      "full_actual_and_component_CG_converged": true,
+      "actual_accepted": true,
+      "component_CG": {
+        "leakage": {
+          "iterations": 0,
+          "relative_true_residual": 0.0,
+          "relative_residual": 0.0,
+          "equilibrated_relative_true_residual": 0.0,
+          "true_residual_history": [],
+          "equilibrated_true_residual_history": [],
+          "recursive_residual_history": [],
+          "residual_refreshes": [],
+          "objective_history": [],
+          "stop": "ZERO_RHS",
+          "converged": true,
+          "role": "continuum_leakage",
+          "wall_s": 0.0003998000029241666,
+          "numeric_dtype": "torch.float64"
+        },
+        "noise": {
+          "iterations": 12,
+          "relative_true_residual": 1.183695303213442e-09,
+          "relative_residual": 1.183695303213442e-09,
+          "equilibrated_relative_true_residual": 5.657256970951347e-10,
+          "true_residual_history": [
+            1.1812288846495322,
+            0.6682301181583977,
+            0.005496745646753106,
+            0.005676805082312676,
+            0.015316189870955831,
+            0.0002577781116361684,
+            6.138409092960953e-05,
+            2.1520044547163278e-05,
+            9.629176846941912e-06,
+            6.349211898085956e-07,
+            1.2824007616200195e-09,
+            1.183695303213442e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.098644398743805,
+            0.054128911398761206,
+            0.0005153162633482299,
+            0.000481667438810726,
+            0.0022342254210400716,
+            8.280306300677555e-05,
+            1.2274544977232419e-05,
+            1.1637029068747603e-06,
+            1.9864402292806333e-06,
+            1.067044270917925e-06,
+            2.118436441902987e-08,
+            5.657256970951347e-10
+          ],
+          "recursive_residual_history": [
+            1.1812288846495316,
+            0.6682301181583922,
+            0.005496745646747502,
+            0.005676805082306891,
+            0.015316189870947699,
+            0.00025777811163593944,
+            6.138409093097516e-05,
+            2.1520044543433497e-05,
+            9.629176847310906e-06,
+            6.349211829885907e-07,
+            1.282392274522211e-09,
+            1.1836865916659843e-09
+          ],
+          "residual_refreshes": [
+            11
+          ],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 10.727814811332253,
+          "rhs_norm_equilibrated": 2.2972613950776095,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "noise",
+          "wall_s": 0.05740920000243932,
+          "numeric_dtype": "torch.float64"
+        },
+        "regularization_bias": {
+          "iterations": 13,
+          "relative_true_residual": 3.421609548173056e-11,
+          "relative_residual": 3.421609548173056e-11,
+          "equilibrated_relative_true_residual": 8.816668013170569e-09,
+          "true_residual_history": [
+            0.9091051280728671,
+            0.8940345163306385,
+            0.10895450223057641,
+            0.07960820546477117,
+            0.00492414740272075,
+            0.0009231466760325181,
+            0.003041926015240651,
+            0.0014842848406344505,
+            4.1584701364831655e-06,
+            3.3596892155616135e-06,
+            3.204970006897779e-06,
+            2.3792561373300085e-08,
+            3.421609548173056e-11
+          ],
+          "equilibrated_true_residual_history": [
+            0.2231216931750296,
+            0.40447749201011723,
+            0.6039910533910351,
+            0.023845855380927167,
+            0.004365038372868748,
+            0.0002862376110836952,
+            0.0013185294059423875,
+            0.0015154977481171333,
+            3.338897791461895e-05,
+            9.85304129375554e-07,
+            1.4561909990187893e-06,
+            5.69387408948573e-07,
+            8.816668013170569e-09
+          ],
+          "recursive_residual_history": [
+            0.9091051280728671,
+            0.8940345163306379,
+            0.10895450223057718,
+            0.07960820546477065,
+            0.0049241474027208534,
+            0.00092314667603343,
+            0.0030419260152437667,
+            0.0014842848406357546,
+            4.158470137302156e-06,
+            3.3596892024616865e-06,
+            3.2049700054684475e-06,
+            2.3792551799543386e-08,
+            3.421956177707295e-11
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 0.0397035251989303,
+          "rhs_norm_equilibrated": 0.0030857493419843536,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "regularization_bias",
+          "wall_s": 0.05923120000079507,
+          "numeric_dtype": "torch.float64"
+        }
+      },
+      "actual_CG": {
+        "iterations": 11,
+        "relative_true_residual": 7.047501136209461e-10,
+        "relative_residual": 7.047501136209461e-10,
+        "equilibrated_relative_true_residual": 2.1411170302893953e-09,
+        "true_residual_history": [
+          0.007987930515554843,
+          0.0005201698772279536,
+          0.00037398061323661307,
+          0.0003640001595579878,
+          9.420833490851317e-05,
+          8.300397467507183e-05,
+          4.952210351997058e-07,
+          3.751050890917755e-07,
+          1.5947004020654356e-07,
+          7.800214302620124e-10,
+          7.047501136209461e-10
+        ],
+        "equilibrated_true_residual_history": [
+          0.0887253512826862,
+          0.001437157984663666,
+          0.0007014640564614262,
+          0.00046390595996530486,
+          0.0007247765916058186,
+          0.0001617829154171741,
+          5.336803020125683e-06,
+          7.224209221835012e-07,
+          3.2359989472414803e-06,
+          8.330949453419984e-08,
+          2.1411170302893953e-09
+        ],
+        "recursive_residual_history": [
+          0.007987930515555373,
+          0.0005201698772282942,
+          0.00037398061323716856,
+          0.0003640001595584748,
+          9.420833490861559e-05,
+          8.300397467506232e-05,
+          4.952210352357985e-07,
+          3.7510508911292887e-07,
+          1.5947004022825844e-07,
+          7.800217292906128e-10,
+          7.047499861709784e-10
+        ],
+        "residual_refreshes": [
+          10
+        ],
+        "stop": "RELATIVE_TRUE_RESIDUAL",
+        "objective_history": [],
+        "converged": true,
+        "rhs_norm_physical": 329986.59582542354,
+        "rhs_norm_equilibrated": 5884.421934886501,
+        "rtol": 1e-08,
+        "max_iterations": 200,
+        "role": "actual_estimate",
+        "wall_s": 0.038333099997544196,
+        "numeric_dtype": "torch.float64"
+      },
+      "postblur_error": {
+        "rms": 1.5223435723425054,
+        "mean": 0.001279409981663059,
+        "max_abs": 2.2474190344473186,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_components": {
+        "leakage": {
+          "rms": 0.0,
+          "mean": 0.0,
+          "max_abs": 0.0,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "noise": {
+          "rms": 1.522342178892285,
+          "mean": 0.00042938378526244424,
+          "max_abs": 2.2440980654860923,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "regularization_bias": {
+          "rms": 0.0018133053227990092,
+          "mean": 0.0008550331180726231,
+          "max_abs": 0.0034582099398679203,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        }
+      },
+      "postblur_component_mse_e2": {
+        "leakage": 0.0,
+        "noise": 2.31752570963451,
+        "regularization_bias": 3.288076193691219e-06
+      },
+      "postblur_cross_terms": {
+        "leakage__noise": {
+          "twice_mean_product": 0.0,
+          "cosine": null,
+          "pearson": null,
+          "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+        },
+        "leakage__regularization_bias": {
+          "twice_mean_product": 0.0,
+          "cosine": null,
+          "pearson": null,
+          "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+        },
+        "noise__regularization_bias": {
+          "twice_mean_product": 9.420616847255203e-07,
+          "cosine": 0.00017063421869416853,
+          "pearson": 4.267869700579978e-05,
+          "undefined_reason": null
+        }
+      },
+      "postblur_recomposition_residual": {
+        "rms": 1.5616756747295572e-05,
+        "mean": -5.006921672008417e-06,
+        "max_abs": 4.260312392978527e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_recomposition_relative_l2": 1.025836547742327e-05,
+      "internal_operator_recomposition_residual": {
+        "rms": 1.5331494136332884e-05,
+        "mean": -8.107556460124926e-06,
+        "max_abs": 3.5288644649300593e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "stored_label_minus_internal_target": {
+        "rms": 6.233766146888919e-06,
+        "mean": 3.100634788116508e-06,
+        "max_abs": 2.4771227511433125e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "normal_equation_algebra_relative_equilibrated": 1.9619366040143706e-16,
+      "identity_criteria": {
+        "postblur_rms_limit_e": 0.05,
+        "postblur_relative_l2_limit": 0.005,
+        "postblur_relative_l2_scale_floor_e": 1.0,
+        "normal_equation_algebra_rtol": 0.0001
+      },
+      "accounted_MSE_e2": 2.3175299397723883,
+      "error_leakage_correlation": {
+        "twice_mean_product": 0.0,
+        "cosine": null,
+        "pearson": null,
+        "undefined_reason": "ZERO_RMS_OR_CONSTANT"
+      },
+      "physics_regularizer_and_weight_preserved": {
+        "calibration_buffers_promoted_exactly": true,
+        "original_G_coefficients_and_W_and_lambda_promoted_exactly": true,
+        "RHS_arithmetic": "coherent float64 G, continuum and regularizer actions",
+        "rtol": 1e-08,
+        "maximum_iterations": 200,
+        "alpha_g": 1.0,
+        "no_OTF_division": true
+      },
+      "failure_reasons": []
+    },
+    {
+      "beta_mode": "estimated_beta",
+      "source": "C_perturbed",
+      "schema": "v6-repair001-decomposition-001",
+      "numeric_dtype": "torch.float64",
+      "numerical_gate_passed": true,
+      "full_actual_and_component_CG_converged": true,
+      "actual_accepted": true,
+      "component_CG": {
+        "leakage": {
+          "iterations": 14,
+          "relative_true_residual": 8.11317699391765e-12,
+          "relative_residual": 8.11317699391765e-12,
+          "equilibrated_relative_true_residual": 1.0912474232956295e-10,
+          "true_residual_history": [
+            1.3179480583908312,
+            0.03281245350082616,
+            0.005812507606101446,
+            0.006383635230114262,
+            0.010128857056467645,
+            0.000759020512620585,
+            0.000535514605847969,
+            3.686764247026301e-05,
+            3.119010721131752e-05,
+            1.552090654724362e-07,
+            1.7444842207883595e-08,
+            1.7185004057671147e-08,
+            1.0627290551340981e-08,
+            8.11317699391765e-12
+          ],
+          "equilibrated_true_residual_history": [
+            0.04784479479444693,
+            0.006553979862704421,
+            0.0001823034055964974,
+            0.00043824310492847937,
+            0.0008257821881113268,
+            5.401068480188372e-05,
+            1.574548901378737e-05,
+            8.754648184541417e-07,
+            1.8245165594573704e-06,
+            4.2129361460125e-07,
+            6.350072035138292e-09,
+            7.468558601287557e-10,
+            2.7325232591359962e-09,
+            1.0912474232956295e-10
+          ],
+          "recursive_residual_history": [
+            1.3179480583908312,
+            0.032812453500826275,
+            0.00581250760610232,
+            0.006383635230114666,
+            0.010128857056467362,
+            0.0007590205126191837,
+            0.0005355146058486967,
+            3.6867642469801065e-05,
+            3.1190107210714784e-05,
+            1.552090650334748e-07,
+            1.7444841216831684e-08,
+            1.7185004029602577e-08,
+            1.0627290896939786e-08,
+            8.112255165843499e-12
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 1774.8874744287111,
+          "rhs_norm_equilibrated": 1372.4309798900847,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "continuum_leakage",
+          "wall_s": 0.05186949999915669,
+          "numeric_dtype": "torch.float64"
+        },
+        "noise": {
+          "iterations": 12,
+          "relative_true_residual": 1.183695303213442e-09,
+          "relative_residual": 1.183695303213442e-09,
+          "equilibrated_relative_true_residual": 5.657256970951347e-10,
+          "true_residual_history": [
+            1.1812288846495322,
+            0.6682301181583977,
+            0.005496745646753106,
+            0.005676805082312676,
+            0.015316189870955831,
+            0.0002577781116361684,
+            6.138409092960953e-05,
+            2.1520044547163278e-05,
+            9.629176846941912e-06,
+            6.349211898085956e-07,
+            1.2824007616200195e-09,
+            1.183695303213442e-09
+          ],
+          "equilibrated_true_residual_history": [
+            0.098644398743805,
+            0.054128911398761206,
+            0.0005153162633482299,
+            0.000481667438810726,
+            0.0022342254210400716,
+            8.280306300677555e-05,
+            1.2274544977232419e-05,
+            1.1637029068747603e-06,
+            1.9864402292806333e-06,
+            1.067044270917925e-06,
+            2.118436441902987e-08,
+            5.657256970951347e-10
+          ],
+          "recursive_residual_history": [
+            1.1812288846495316,
+            0.6682301181583922,
+            0.005496745646747502,
+            0.005676805082306891,
+            0.015316189870947699,
+            0.00025777811163593944,
+            6.138409093097516e-05,
+            2.1520044543433497e-05,
+            9.629176847310906e-06,
+            6.349211829885907e-07,
+            1.282392274522211e-09,
+            1.1836865916659843e-09
+          ],
+          "residual_refreshes": [
+            11
+          ],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 10.727814811332253,
+          "rhs_norm_equilibrated": 2.2972613950776095,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "noise",
+          "wall_s": 0.05740920000243932,
+          "numeric_dtype": "torch.float64"
+        },
+        "regularization_bias": {
+          "iterations": 13,
+          "relative_true_residual": 3.421609548173056e-11,
+          "relative_residual": 3.421609548173056e-11,
+          "equilibrated_relative_true_residual": 8.816668013170569e-09,
+          "true_residual_history": [
+            0.9091051280728671,
+            0.8940345163306385,
+            0.10895450223057641,
+            0.07960820546477117,
+            0.00492414740272075,
+            0.0009231466760325181,
+            0.003041926015240651,
+            0.0014842848406344505,
+            4.1584701364831655e-06,
+            3.3596892155616135e-06,
+            3.204970006897779e-06,
+            2.3792561373300085e-08,
+            3.421609548173056e-11
+          ],
+          "equilibrated_true_residual_history": [
+            0.2231216931750296,
+            0.40447749201011723,
+            0.6039910533910351,
+            0.023845855380927167,
+            0.004365038372868748,
+            0.0002862376110836952,
+            0.0013185294059423875,
+            0.0015154977481171333,
+            3.338897791461895e-05,
+            9.85304129375554e-07,
+            1.4561909990187893e-06,
+            5.69387408948573e-07,
+            8.816668013170569e-09
+          ],
+          "recursive_residual_history": [
+            0.9091051280728671,
+            0.8940345163306379,
+            0.10895450223057718,
+            0.07960820546477065,
+            0.0049241474027208534,
+            0.00092314667603343,
+            0.0030419260152437667,
+            0.0014842848406357546,
+            4.158470137302156e-06,
+            3.3596892024616865e-06,
+            3.2049700054684475e-06,
+            2.3792551799543386e-08,
+            3.421956177707295e-11
+          ],
+          "residual_refreshes": [],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 0.0397035251989303,
+          "rhs_norm_equilibrated": 0.0030857493419843536,
+          "rtol": 1e-08,
+          "max_iterations": 200,
+          "role": "regularization_bias",
+          "wall_s": 0.05923120000079507,
+          "numeric_dtype": "torch.float64"
+        }
+      },
+      "actual_CG": {
+        "iterations": 11,
+        "relative_true_residual": 2.9472547689289595e-10,
+        "relative_residual": 2.9472547689289595e-10,
+        "equilibrated_relative_true_residual": 8.143236924481813e-10,
+        "true_residual_history": [
+          0.0034032101570647478,
+          0.0005487696979410287,
+          0.0003529903713722799,
+          0.0003794821868949833,
+          0.0001070104512576919,
+          4.847171397430906e-05,
+          3.9879946100738004e-07,
+          3.7956350630670873e-07,
+          4.105922745413499e-08,
+          2.7386682941713773e-10,
+          2.9472547689289595e-10
+        ],
+        "equilibrated_true_residual_history": [
+          0.043594480624705424,
+          0.0008488462771597071,
+          0.0006288788092224609,
+          0.000808139419029342,
+          0.00036437239055283406,
+          0.00012255924665610275,
+          2.2133632217161674e-06,
+          7.504096536012934e-07,
+          1.983791837322144e-06,
+          3.185216507483486e-08,
+          8.143236924481813e-10
+        ],
+        "recursive_residual_history": [
+          0.003403210157064747,
+          0.0005487696979410458,
+          0.0003529903713723398,
+          0.0003794821868949279,
+          0.00010701045125774391,
+          4.847171397432307e-05,
+          3.9879946100505017e-07,
+          3.795635063558244e-07,
+          4.105922742404109e-08,
+          2.7386690269370224e-10,
+          2.9472553808860363e-10
+        ],
+        "residual_refreshes": [
+          10
+        ],
+        "stop": "RELATIVE_TRUE_RESIDUAL",
+        "objective_history": [],
+        "converged": true,
+        "rhs_norm_physical": 329871.89812448446,
+        "rhs_norm_equilibrated": 5860.639739393661,
+        "rtol": 1e-08,
+        "max_iterations": 200,
+        "role": "actual_estimate",
+        "wall_s": 0.04870149999624118,
+        "numeric_dtype": "torch.float64"
+      },
+      "postblur_error": {
+        "rms": 48.088108409026596,
+        "mean": -0.36122537903969465,
+        "max_abs": 78.76797818739742,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_components": {
+        "leakage": {
+          "rms": 48.064028319478645,
+          "mean": -0.36250938041210834,
+          "max_abs": 77.06429713557058,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "noise": {
+          "rms": 1.522342178892285,
+          "mean": 0.00042938378526244424,
+          "max_abs": 2.2440980654860923,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        },
+        "regularization_bias": {
+          "rms": 0.0018133053227990092,
+          "mean": 0.0008550331180726231,
+          "max_abs": 0.0034582099398679203,
+          "all_finite": true,
+          "count": 65536,
+          "finite_count": 65536,
+          "domain": "complete fixed field"
+        }
+      },
+      "postblur_component_mse_e2": {
+        "leakage": 2310.1508182956454,
+        "noise": 2.31752570963451,
+        "regularization_bias": 3.288076193691219e-06
+      },
+      "postblur_cross_terms": {
+        "leakage__noise": {
+          "twice_mean_product": -0.007619049699167377,
+          "cosine": -5.2064099781883394e-05,
+          "pearson": -4.993820402405957e-05,
+          "undefined_reason": null
+        },
+        "leakage__regularization_bias": {
+          "twice_mean_product": 0.005701889310114425,
+          "cosine": 0.03271129090166367,
+          "pearson": 0.04112807093847636,
+          "undefined_reason": null
+        },
+        "noise__regularization_bias": {
+          "twice_mean_product": 9.420616847255203e-07,
+          "cosine": 0.00017063421869416853,
+          "pearson": 4.267869700579978e-05,
+          "undefined_reason": null
+        }
+      },
+      "postblur_recomposition_residual": {
+        "rms": 7.890486981717615e-06,
+        "mean": -4.1553092166477377e-07,
+        "max_abs": 3.08666940966873e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "postblur_recomposition_relative_l2": 1.6408395428247902e-07,
+      "internal_operator_recomposition_residual": {
+        "rms": 6.22826888367563e-06,
+        "mean": -3.5161657014007324e-06,
+        "max_abs": 1.4922394754535162e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "stored_label_minus_internal_target": {
+        "rms": 6.233766144729919e-06,
+        "mean": 3.1006347797359586e-06,
+        "max_abs": 2.4771227472797364e-05,
+        "all_finite": true,
+        "count": 65536,
+        "finite_count": 65536,
+        "domain": "complete fixed field"
+      },
+      "normal_equation_algebra_relative_equilibrated": 3.992436379809534e-15,
+      "identity_criteria": {
+        "postblur_rms_limit_e": 0.05,
+        "postblur_relative_l2_limit": 0.005,
+        "postblur_relative_l2_scale_floor_e": 1.0,
+        "normal_equation_algebra_rtol": 0.0001
+      },
+      "accounted_MSE_e2": 2312.4664310750286,
+      "error_leakage_correlation": {
+        "twice_mean_product": 4620.299458695307,
+        "cosine": 0.9994987794999588,
+        "pearson": 0.999498751565878,
+        "undefined_reason": null
+      },
+      "physics_regularizer_and_weight_preserved": {
+        "calibration_buffers_promoted_exactly": true,
+        "original_G_coefficients_and_W_and_lambda_promoted_exactly": true,
+        "RHS_arithmetic": "coherent float64 G, continuum and regularizer actions",
+        "rtol": 1e-08,
+        "maximum_iterations": 200,
+        "alpha_g": 1.0,
+        "no_OTF_division": true
+      },
+      "failure_reasons": []
+    }
+  ],
+  "wall_s": 2.528327199994237,
+  "source_sha256": {
+    "research_v6/repair_001/__init__.py": "a876618f7ff9ea5ccfbd529ab2ccd314dad230f13bb5effb44913af0b43ebe65",
+    "research_v6/repair_001/diagnostics.py": "43eff8a894711de2dc072b3ff2e0f0ed16a85a19204a2a1ef01c3fc863860e47",
+    "research_v6/repair_001/solver.py": "76b88b017b630ffbc1c1556df24ae46fd399f61bb89af5af2d12650e2f43b384",
+    "research_v6/repair_001/storage.py": "4ae284fb4bc096ceec26e10d8e4d860fb6bd5eae62da6345b441d78de65591f3",
+    "research_v6/repair_001/tests.py": "651e419fa3c94ce13ac58841c73817688bccc1b87cefb09b929347b3984fc90b"
+  },
+  "scientific_acceptance": false,
+  "formal_or_sealed_inputs_read": false
+}
