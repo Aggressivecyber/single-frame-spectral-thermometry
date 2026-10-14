@@ -1,0 +1,74 @@
+{
+  "time": "2026-10-14T23:45:01.225132+00:00",
+  "development_result_sha256": "6031b948a67d745713a0d8f4d076dfe6540a6caa247b46dd40d49420a475ec5a",
+  "selected_method": "v3_physics",
+  "deployment_qualified": false,
+  "joint_combinations_screened": 9,
+  "joint_initializer_outputs": 18,
+  "joint_initializer_finite_outputs": 18,
+  "joint_initializer_numerically_certified": 1,
+  "both_initializer_qualified_combinations": 0,
+  "V3_qualified_cases_of60": 0,
+  "v3_reference_differences": {
+    "same_finite_float64": {
+      "template_RMS_difference_e": {
+        "median": 0.2514978125672151,
+        "maximum": 1.3436936381917188
+      },
+      "color_RMS_difference_K": {
+        "median": 0.2864085767354039,
+        "maximum": 1.6917847386463343
+      }
+    },
+    "tighter_linear_float64": {
+      "template_RMS_difference_e": {
+        "median": 0.6472919584543615,
+        "maximum": 2.316712614397925
+      },
+      "color_RMS_difference_K": {
+        "median": 1.06597879727114,
+        "maximum": 3.9111290256035898
+      }
+    }
+  },
+  "traditional": {
+    "time": "2026-10-14T19:09:13.379119+00:00",
+    "selected_regularization": 100.0,
+    "selection_mothers": 12,
+    "confirmation_mothers": 24,
+    "selection_rankings": [
+      {
+        "regularization": 100.0,
+        "loss": 1.743721398301188
+      },
+      {
+        "regularization": 10.0,
+        "loss": 4.158681674922034
+      },
+      {
+        "regularization": 1000.0,
+        "loss": 7.376646205525727
+      }
+    ],
+    "selection_numerically_finite": true,
+    "historical_regularization": 0.1,
+    "v4_1_preselected_regularization": 100.0,
+    "fallback_if_no_complete_configuration": "preselected100 retained as failed research comparator; other methods continue",
+    "all_results_kept": true,
+    "no_final_inputs_used": true,
+    "confirmation": {
+      "planned_or_attempted_cases": 120,
+      "finite_cases": 120,
+      "failed_or_unavailable_cases": 0,
+      "scoring_pixels": 7864320,
+      "template_RMSE_e": 13.364768510325566,
+      "temperature_RMSE_K": 20.850119800621698,
+      "all_cases_finite": true,
+      "conditional_aggregate_requires_explicit_failure_denominator": true
+    }
+  },
+  "new_complete_inverse_calls_before_science": 980,
+  "historical_results_changed": false,
+  "final_payloads_opened": false,
+  "continue_independent_and_final_evaluation": true
+}

@@ -56,7 +56,7 @@ def conditional_bootstrap(refit,estimate,cfg,*,seed,replicates=64,prior_samples=
     else: result.update(basic_CI95=None,width=None,bootstrap_bias=None,covariance=None)
     return result
 
-def whole_inverse_linearization(refit,estimate,cfg,*,seed,probes=8,epsilon=.001):
+def whole_inverse_linearization(refit,estimate,cfg,*,seed,probes=8,epsilon=.001,summarize=summary_statistics):
     """Matrix-free directional derivatives of the whole programmed estimator.
 
     This coarse directional covariance is a diagnostic, not a95% interval.
@@ -74,7 +74,7 @@ def whole_inverse_linearization(refit,estimate,cfg,*,seed,probes=8,epsilon=.001)
         def derivative(step):
             plus=(mu+step*direction)/adc+cfg['black_level_DN']
             minus=(mu-step*direction)/adc+cfg['black_level_DN']
-            return (summary_statistics(refit(plus))-summary_statistics(refit(minus)))/(2*step)
+            return (summarize(refit(plus))-summarize(refit(minus)))/(2*step)
         first=derivative(epsilon);second=derivative(epsilon/2)
         derivatives.append(second);errors.append(float(np.linalg.norm(first-second)/max(np.linalg.norm(second),1e-12)))
     a=np.asarray(derivatives)
