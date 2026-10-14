@@ -9,8 +9,8 @@ import time
 import traceback
 import torch
 
-def require_foundation():
-    reg=s.read(s.REPORTS/'FOUNDATION_REGISTRATION.json')
+def require_foundation(continuation=False):
+    reg=s.read(s.REPORTS/('FOUNDATION_CONTINUATION_REGISTRATION.json' if continuation else 'FOUNDATION_REGISTRATION.json'))
     for name,digest in reg['source_sha256'].items():
         assert s.sha(s.ROOT/name)==digest,'Registered foundation source changed: '+name
     assert s.sha(s.ROOT/'research_closeout/execution_spec.yaml')==reg['spec_sha256']
@@ -49,13 +49,19 @@ def representation_checks(device):
     s.write(s.REPORTS/'CONTINUUM_REPRESENTATION.json',result)
     return result
 
+def pilot_reference():
+    matches=[r for r in s.read(s.ROOT/'research_v6/input_inventory.json')['rows']
+        if r['cohort']=='development' and r['mother_id']=='v5_development_selection_mother_0000'
+        and r['condition']=='positive_normal' and r['input_kind']=='noise']
+    if len(matches)!=1: raise ValueError('Pilot reference must be unique in registered metadata')
+    return matches[0]
+
 def cost_pilot(device,grid):
     from .joint_estimator import infer
     from .source_study import sources_for
     from research_v6 import inputs
     s.frozen_bridge()
-    case_id='v5_development_selection_mother_0000_positive_normal_noise'
-    ref=next(r for r in s.read(s.ROOT/'research_v6/input_inventory.json')['rows'] if r['case_id']==case_id)
+    ref=pilot_reference();case_id=ref['case_id']
     p32=m.physics(device,dtype=torch.float32);p=m.physics(device)
     raw=inputs.load_raw(ref,p32);v3=sources_for(ref,raw,p32)['C_v3'];truth=inputs.load_diagnostic_truth(ref,p32)
     rows=[]
@@ -87,8 +93,8 @@ def cost_pilot(device,grid):
     s.write(s.REPORTS/'JOINT_COST_PILOT.json',result)
     return result
 
-def foundation(device):
-    require_foundation()
+def foundation(device,continuation=False):
+    require_foundation(continuation)
     from .source_study import run
     result={'time':s.now(),'phase':'foundation','status':'RUNNING','final_payloads_opened':False}
     try:
@@ -97,7 +103,13 @@ def foundation(device):
         result['source_study']={'status':'MODULE_REQUIRES_DIAGNOSIS','error_type':type(error).__name__,'error':str(error)}
         s.append(s.REPORTS/'failures.jsonl',{'phase':'source_study',**result['source_study']})
     try:
-        rep=representation_checks(device);result['representation_grid']=rep['selected_global_grid']
+        if continuation:
+            rep=s.read(s.REPORTS/'CONTINUUM_REPRESENTATION.json')
+            assert rep['cases']==60 and rep['mothers']==12
+            assert not rep['test_truth_used_for_selection'] and rep['selected_global_grid']==256
+            result['representation_reused_sha256']=s.sha(s.REPORTS/'CONTINUUM_REPRESENTATION.json')
+        else: rep=representation_checks(device)
+        result['representation_grid']=rep['selected_global_grid']
         result['joint_cost_pilot']=cost_pilot(device,rep['selected_global_grid'])
     except Exception as error:
         result['joint_cost_pilot']={'status':'MODULE_REQUIRES_DIAGNOSIS','error_type':type(error).__name__,'error':str(error)}
@@ -106,12 +118,12 @@ def foundation(device):
         still_required=['finite development selection and strong B1','production numerical comparisons',
             'independent renderer and boundaries','full-inverse uncertainty and null calibration',
             'freeze selected method and then final100 mothers','seven figure groups, Chinese manuscript and release'])
-    s.write(s.REPORTS/'FOUNDATION_RESULT.json',s.plain(result))
+    s.write(s.REPORTS/('FOUNDATION_CONTINUED_RESULT.json' if continuation else 'FOUNDATION_RESULT.json'),s.plain(result))
     return result
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase',choices=('register','foundation'),required=True)
+    parser.add_argument('--phase',choices=('register','foundation','continue-foundation'),required=True)
     parser.add_argument('--device',default='cuda');args=parser.parse_args()
     if args.phase=='register': result=registry.register()
     else:
@@ -119,7 +131,7 @@ def main():
         fd=os.open(active,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
         with os.fdopen(fd,'w',encoding='utf8') as f: json.dump({'pid':os.getpid(),'phase':args.phase,'time':s.now()},f)
         s.append(s.REPORTS/'progress.jsonl',{'time':s.now(),'phase':args.phase,'status':'STARTED','pid':os.getpid(),'device':args.device})
-        try: result=foundation(args.device)
+        try: result=foundation(args.device,continuation=args.phase=='continue-foundation')
         finally: active.unlink()
     print(json.dumps(s.plain(result),ensure_ascii=True),flush=True)
 

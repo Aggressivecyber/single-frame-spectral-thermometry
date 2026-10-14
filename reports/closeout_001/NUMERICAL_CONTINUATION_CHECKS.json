@@ -1,0 +1,127 @@
+{
+  "time": "2026-10-14T18:35:23.096901+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "native256_reference_known_observable_solution",
+      "error_RMS_e": 9.455290856951253e-10,
+      "limit_e": 1e-06,
+      "passed": true
+    },
+    {
+      "name": "frozen_API_200_cap_with_global_1000_budget",
+      "passed": true
+    },
+    {
+      "name": "pilot_registered_raw_identity",
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+      "passed": true
+    }
+  ],
+  "reference": {
+    "role": "propagated_numerical_residual_reference",
+    "converged": true,
+    "relative_residual_true": 6.825921284991552e-12,
+    "rtol": 1e-11,
+    "iterations": 16,
+    "maximum_iterations": 1000,
+    "frozen_API_call_cap": 200,
+    "actual_estimator_budget_unchanged": true,
+    "blocks": [
+      {
+        "requested_max_iterations": 200,
+        "local_rtol": 1e-11,
+        "global_true_relative_residual_after": 6.825921284991552e-12,
+        "CG": {
+          "iterations": 16,
+          "relative_true_residual": 8.525364550612349e-14,
+          "relative_residual": 8.525364550612349e-14,
+          "equilibrated_relative_true_residual": 6.825921284991552e-12,
+          "true_residual_history": [
+            0.006074494760854082,
+            0.006000999601514361,
+            0.010924141536339102,
+            0.009174283917344619,
+            2.4095903008535486e-05,
+            1.673409655625805e-06,
+            1.7497426065942638e-06,
+            2.545978836610563e-06,
+            7.669399265842365e-06,
+            5.0285810748768586e-08,
+            1.612117561197822e-09,
+            1.5402303052922973e-09,
+            1.4773525729645042e-09,
+            5.799362914503735e-11,
+            5.646479541696008e-13,
+            8.525364550612349e-14
+          ],
+          "equilibrated_true_residual_history": [
+            0.02933232574724242,
+            0.006607307236607096,
+            0.030393405508998644,
+            0.026578774602711287,
+            0.0013236038656674104,
+            4.281548113615164e-05,
+            3.346139200708584e-06,
+            7.45736166661447e-06,
+            1.6516295273793418e-05,
+            1.613770491333555e-06,
+            4.931705922133391e-08,
+            3.166560716828486e-09,
+            4.327540962138754e-09,
+            3.555609450863915e-09,
+            1.2432236773918606e-10,
+            6.825921284991552e-12
+          ],
+          "recursive_residual_history": [
+            0.006074494760854799,
+            0.006000999601512152,
+            0.010924141536338378,
+            0.009174283917344461,
+            2.4095903008521828e-05,
+            1.6734096555536734e-06,
+            1.74974260668216e-06,
+            2.5459788365779002e-06,
+            7.669399265959466e-06,
+            5.0285810864598396e-08,
+            1.6121173168032764e-09,
+            1.540230710924166e-09,
+            1.4773528296586923e-09,
+            5.7994126450118675e-11,
+            5.65352479127793e-13,
+            8.436884907138112e-14
+          ],
+          "residual_refreshes": [
+            15
+          ],
+          "stop": "RELATIVE_TRUE_RESIDUAL",
+          "objective_history": [],
+          "converged": true,
+          "rhs_norm_physical": 198308.53842742002,
+          "rhs_norm_equilibrated": 2434.8892497023394,
+          "rtol": 1e-11,
+          "max_iterations": 200
+        }
+      }
+    ]
+  },
+  "formal_or_sealed_raw_payloads_opened": false,
+  "original_estimator_rtol": 1e-08,
+  "original_estimator_max_iterations": 200,
+  "source_sha256": {
+    "research_closeout/error_accounting.py": "49253ef04a66647c8bbb7ec0fbbda427597643ba7f992318b22d124fa6b909e6",
+    "research_closeout/evaluate.py": "300ac3c7a97e2dbd3098d5cf1acdd32a8ca61a716149febcbf56abe761438ed1",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/joint_estimator.py": "465a4943324e8d60864d25b78683659d18152044a52f7d4067af61bef0aad002",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/source_study.py": "4cdb54beff79eb674ecfd099dee7ef141dd342f2db155354ccee6626c95aadd1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/__init__.py": "4d027a0413b7c61e4c8205955d3835309094ec6691ef6367cbabcf0537cf3dae",
+    "research_closeout/tests/continuation.py": "a7d3298342a6fe6a41e9c1cf46afdeb855ca64fcb1c37a22e5bb1ec67c565b40",
+    "research_closeout/tests/contracts.py": "b272d34f833e1358413a2fca06e40fe238a41615c771e8cd243c803d34f47e75",
+    "research_closeout/tests/__init__.py": "b72f601fdefdfdd54a65e9ad44a71476d0c4d2082d491e9b9588668b5539fcb4"
+  }
+}

@@ -2,7 +2,7 @@
 from . import storage as s
 from . import measurement as m
 from . import experiment_registry as registry
-from .error_accounting import summarize
+from .error_accounting import summarize,propagate_residual
 import importlib
 import sys
 import types
@@ -60,11 +60,9 @@ def run(device='cuda'):
     path=s.REPORTS/'source_accounting.jsonl'
     done={(r['case_id'],r['source'],r['beta_mode']) for r in s.rows(path)} if path.exists() else set()
     p=m.physics(device,dtype=torch.float32);options=s.read(s.LEGACY/'research_v6/protocol.json')['linear_options']
-    original_rtol,original_maxiter=old.RTOL,old.MAXITER
     def propagate(system,rhs):
-        old.RTOL=spec['source_residual_reference_rtol'];old.MAXITER=spec['source_residual_reference_maxiter']
-        try: return old.solve_rhs(system,rhs,'propagated_numerical_residual_reference')
-        finally: old.RTOL=original_rtol;old.MAXITER=original_maxiter
+        return propagate_residual(system,rhs,rtol=spec['source_residual_reference_rtol'],
+            max_iterations=spec['source_residual_reference_maxiter'])
     for index,ref in enumerate(refs):
         s.budget_guard();started=time.perf_counter()
         raw=inputs.load_raw(ref,p);raw_e=p.raw_to_electrons(raw)

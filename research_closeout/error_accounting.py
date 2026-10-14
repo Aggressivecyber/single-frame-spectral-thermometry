@@ -2,6 +2,39 @@
 from . import storage
 import torch
 
+@torch.no_grad()
+def propagate_residual(system,rhs,*,rtol=1e-11,max_iterations=1000,block_iterations=200):
+    """Diagnostic K inverse using bounded calls to the unchanged frozen PCG.
+
+    The old API caps each call at200. True-residual correction blocks share
+    the same K/preconditioner and a single global iteration budget. This
+    reference does not alter the actual estimator's200-iteration budget.
+    """
+    from . import storage as s
+    frozen=s.frozen_bridge().frozen_v5('signed_linear_solver')
+    if not 0<rtol<=1e-4 or not 1<=block_iterations<=200 or max_iterations<1:
+        raise ValueError('Invalid diagnostic residual reference budget')
+    x=torch.zeros_like(rhs);scale=system['residual_scale'].sqrt()
+    rhs_norm=float((rhs/scale).norm());blocks=[];used=0
+    relative=0. if rhs_norm==0 else 1.
+    while relative>rtol and used<max_iterations:
+        residual=rhs-system['matvec'](x)
+        remaining=min(block_iterations,max_iterations-used)
+        residual_norm=float((residual/scale).norm())
+        local_tolerance=min(1e-4,rtol*rhs_norm/max(residual_norm,1e-300))
+        correction,info=frozen.pcg_true_residual(system['matvec'],residual,system['precondition'],
+            residual_scale=system['residual_scale'],rtol=local_tolerance,
+            max_iterations=remaining,refresh_interval=25)
+        x=x+correction
+        iterations=int(info.get('iterations',remaining));used+=max(iterations,1)
+        relative=float(((rhs-system['matvec'](x))/scale).norm())/rhs_norm
+        blocks.append({'requested_max_iterations':remaining,'local_rtol':local_tolerance,
+            'global_true_relative_residual_after':relative,'CG':info})
+        if not torch.isfinite(x).all(): break
+    return x,{'role':'propagated_numerical_residual_reference','converged':bool(relative<=rtol and torch.isfinite(x).all()),
+        'relative_residual_true':relative,'rtol':rtol,'iterations':used,'maximum_iterations':max_iterations,
+        'frozen_API_call_cap':block_iterations,'actual_estimator_budget_unchanged':True,'blocks':blocks}
+
 def summarize(values):
     keys=tuple(values)
     return {'components':{k:{'RMS':float(v.square().mean().sqrt()),'bias':float(v.mean()),'MSE':float(v.square().mean())} for k,v in values.items()},
