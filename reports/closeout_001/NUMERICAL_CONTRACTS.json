@@ -1,0 +1,136 @@
+{
+  "schema": "closeout-numeric-contracts-001",
+  "time": "2026-10-14T13:00:47.900169+00:00",
+  "all_passed": true,
+  "native_grid": [
+    256,
+    256
+  ],
+  "finite_reference_real_template_modes": 25,
+  "unknowns_in_QR": 28,
+  "basis": {
+    "shape": [
+      256,
+      256
+    ],
+    "nonzero_frequency_grid_points": 1153,
+    "real_degrees_of_freedom": 1153,
+    "self_conjugate_modes": 1,
+    "conjugate_pairs": 576,
+    "exact_zero_grid_points": 64383,
+    "OTF_division": false,
+    "norm": "orthonormal FFT"
+  },
+  "tests": [
+    {
+      "check": "native256 U_transpose_U",
+      "error": 8.881784197001252e-16,
+      "limit": 1e-11,
+      "passed": true
+    },
+    {
+      "check": "native256 UU_transpose_support",
+      "error": 1.6653345369377348e-16,
+      "limit": 1e-11,
+      "passed": true
+    },
+    {
+      "check": "native256 norm_and_real",
+      "error": 4.973799150320701e-14,
+      "limit": 1e-11,
+      "passed": true
+    },
+    {
+      "check": "native256 physical_forward_adjoint",
+      "error": 9.112274275054058e-16,
+      "limit": 1e-11,
+      "passed": true
+    },
+    {
+      "check": "latent_to_postblur_single_H_equivalence",
+      "error": 5.759281940243e-16,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "check": "native256 augmented_LSMR_vs_same_QR",
+      "error": 2.264492289768751e-13,
+      "limit": 1e-07,
+      "passed": true
+    },
+    {
+      "check": "four_term_same_factor_native256",
+      "error": 2.791143278293361e-11,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "check": "component_residual_corrections_native256",
+      "error": 2.6529692388760416e-11,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "check": "profile_envelope_gradient_directional",
+      "error": 9.163801061068144e-12,
+      "limit": 1e-07,
+      "passed": true
+    },
+    {
+      "check": "native256_production_profile_gradient",
+      "error": 7.134337696619603e-07,
+      "limit": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "shared_raw_covariance_40000_MC",
+      "error": 0.005232242644086078,
+      "limit": 0.04,
+      "passed": true
+    }
+  ],
+  "LSMR": {
+    "solver": "column-scaled augmented LSMR",
+    "istop": 2,
+    "iterations": 10,
+    "norm_residual": 8.132429858618968,
+    "norm_normal_residual": 3.144644617902417e-12,
+    "condition_estimate": 11.135373713999888,
+    "actual_scaled_normal_relative": 1.2399720518432905e-11,
+    "tolerance": 1e-12,
+    "maxiter": 400,
+    "numerical_certified": true,
+    "wall_s": 0.09238059999916004,
+    "regularization": {
+      "postblur_prior_is_new_estimator": true,
+      "template_multiplier": 1.0,
+      "template_reference_sensitivity": 0.0008073852533775535,
+      "gradient_reference_laplacian": 0.07485695599877547,
+      "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+      "beta_penalty": "1e-6 times whitened beta column squared norm",
+      "columns_scaled": true,
+      "raw_objective_count": 1,
+      "template_object_blur_count": 0
+    }
+  },
+  "omitted_actual_numeric_term_RMS": 0.029231553018312668,
+  "four_term_corrected_RMS": 2.791143278293361e-11,
+  "wall_s": 1.2674669999978505,
+  "source_sha256": {
+    "research_closeout/error_accounting.py": "a3922fb60a708097a7b35f18a8d71950e236ea468e69871dc04beb1862635903",
+    "research_closeout/experiment_registry.py": "049e7f568714b8f55e66ecc9741826bf742bdf1bdff968ea4a9f5d20acd6a6be",
+    "research_closeout/joint_estimator.py": "465a4943324e8d60864d25b78683659d18152044a52f7d4067af61bef0aad002",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/source_study.py": "67fe019d9954a91685d8ba6b13e65969cefc6fb8a650e85f0babba751ae224b4",
+    "research_closeout/storage.py": "b2a29d31c3a418a90ec6358448a514b33931d047df9df3e0d50017e18be4e054",
+    "research_closeout/__init__.py": "4d027a0413b7c61e4c8205955d3835309094ec6691ef6367cbabcf0537cf3dae",
+    "research_closeout/tests/contracts.py": "b272d34f833e1358413a2fca06e40fe238a41615c771e8cd243c803d34f47e75",
+    "research_closeout/tests/__init__.py": "b72f601fdefdfdd54a65e9ad44a71476d0c4d2082d491e9b9588668b5539fcb4"
+  },
+  "formal_inputs_opened": false,
+  "sealed_inputs_opened": false,
+  "scientific_performance_verified": false,
+  "external_attached_test_script_available": false
+}
