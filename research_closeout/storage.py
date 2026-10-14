@@ -52,12 +52,12 @@ def write(path, value, *, replace=False):
     p = write_path(path); p.parent.mkdir(parents=True,exist_ok=True)
     if p.exists() and not replace: raise FileExistsError(str(p))
     tmp = p.with_suffix(p.suffix+'.tmp')
-    tmp.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf8')
+    tmp.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf8',newline='\n')
     tmp.replace(p)
     return p
 def append(path,value):
     p=write_path(path);p.parent.mkdir(parents=True,exist_ok=True)
-    with p.open('a',encoding='utf8') as f:
+    with p.open('a',encoding='utf8',newline='\n') as f:
         f.write(json.dumps(value,ensure_ascii=False,allow_nan=False)+'\n');f.flush()
 def rows(path):
     with Path(path).open(encoding='utf-8-sig') as f:

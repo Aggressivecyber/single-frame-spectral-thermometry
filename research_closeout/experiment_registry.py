@@ -83,6 +83,7 @@ def plan():
         'paper_language':'Chinese','figure_groups':7,'release_requires_success_receipt_no_redownload':True}
 
 def register():
+    assert not (s.REPORTS/'inverse_calls.jsonl').exists(),'Cannot refresh foundation registration after formal calls'
     value=plan();p=s.ROOT/'research_closeout/execution_spec.yaml'
     if p.exists(): assert s.read(p)==value
     else: s.write(p,value)  # JSON is a lossless YAML 1.2 subset.
@@ -92,7 +93,7 @@ def register():
         'numeric_check_sha256':s.sha(s.REPORTS/'NUMERICAL_CONTRACTS.json'),
         'source_sha256':source_hashes(),'raw_manifest_sha256':s.sha(s.ROOT/'research_v6/input_inventory.json'),
         'status':'FOUNDATION_REGISTERED','final_method_frozen':False,'sealed_payloads_opened':False}
-    s.write(s.REPORTS/'FOUNDATION_REGISTRATION.json',receipt)
+    s.write(s.REPORTS/'FOUNDATION_REGISTRATION.json',receipt,replace=True)
     return receipt
 
 def count_call(phase,method,case_id,*,reused=False):
