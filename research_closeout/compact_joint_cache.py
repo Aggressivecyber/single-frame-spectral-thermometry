@@ -29,8 +29,8 @@ import uuid
 import numpy as np
 
 
-SCHEMA = 'joint-float64-forward-lossless-cache-v001'
-REPORT_DIR = s.REPORTS/'repair_001/compact_cache_001'
+SCHEMA = 'joint-float64-forward-lossless-cache-v002-explicit-store'
+REPORT_DIR = s.REPORTS/'repair_001/compact_cache_002'
 GLOBAL_LIMIT_BYTES = 4*2**30
 FREE_FLOOR_BYTES = 2*2**30
 METADATA_ALLOWANCE_BYTES = 256*2**10
@@ -54,12 +54,14 @@ class CacheNotScoreable(RuntimeError):
         super().__init__(receipt.get('status', 'FAIL_CLOSED'))
 
 
-def format_contract():
+def format_contract(*, storage=None):
     """Prospective registration contract; no native/GPU qualification claim."""
-    return {'schema': SCHEMA, 'parameters': list(PARAMETER_KEYS), 'canonical_arrays': list(CANONICAL_KEYS),
+    contract = {'schema': SCHEMA, 'parameters': list(PARAMETER_KEYS), 'canonical_arrays': list(CANONICAL_KEYS),
             'parameter_dtype': 'float64', 'canonical_float_dtype': 'float64', 'mask_dtype': 'bool',
             'initial_readback': 'same p/device, exact dtype+shape+bytes SHA256 for every canonical array and C_latent',
             'initial_mismatch': 'save full original canonical fallback in dense owner reservation; FAIL_CLOSED',
+            'unexpected_storage_gate_failure': 'retain already durable state; explicitly report missing original fallback and stop; no new inverse ticket',
+            'storage_failure_receipt_may_be_memory_only': True,
             'later_mismatch': 'retain parameters/hashes and refuse scoring/refit; original fallback may not exist',
             'numeric_certification_is_separate': True, 'inverse_calls_by_cache': 0, 'truth_loaded_by_cache': False,
             'global_budget_roots': [str(s.DATA), str(s.REPORTS)], 'global_limit_bytes': GLOBAL_LIMIT_BYTES,
@@ -68,7 +70,20 @@ def format_contract():
             'new_D_root_writes_supported': False, 'storage_permission_source': 'research_closeout/storage.py:write_path',
             'caller_must_own_registered_serial_study_execution': True,
             'existing_v001_v002_migration_or_conversion_supported': False,
-            'native_GPU_byte_exact_qualification_performed': False}
+            'native_GPU_byte_exact_qualification_performed': False,
+            'algorithm_precision_and_default_E_write_whitelist_unchanged': True,
+            'explicit_storage_dependency_injection': True}
+    if storage is not None and storage is not s:
+        explicit = storage.contract()
+        contract.update(storage_contract=explicit,
+                        global_budget_roots=explicit['global_budget_roots'],
+                        new_D_root_writes_supported=True,
+                        report_root_and_data_root_configurable_within_existing_storage_whitelist=False,
+                        storage_permission_source='research_closeout/explicit_store.py:ExplicitDStore',
+                        free_floor_root=explicit['E_free_floor_root'],
+                        D_free_floor_bytes=explicit['D_free_floor_bytes'],
+                        D_project_limit_bytes=explicit['D_project_limit_bytes'])
+    return contract
 
 
 def array(value):
@@ -138,8 +153,10 @@ def _within(path, parent):
     return path
 
 
-def _write_once(path, value):
-    path = s.write_path(path)
+def _write_once(path, value, *, storage=s):
+    path = storage.write_path(path)
+    if storage is not s:
+        storage.budget().check(len(_text(value).encode('utf8'))+1024)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('x', encoding='utf8', newline='\n') as handle:
         handle.write(_text(value))
@@ -289,13 +306,24 @@ def forward_reconstruct(p, raw, parameters, info, *, grid):
 
 
 class CompactJointCache:
-    def __init__(self, report_root, data_root, *, p, identity, input_reference, calibration,
-                 config, source_sha256=None, budget=None):
-        self.report_root, self.data_root = (s.write_path(path) for path in (report_root, data_root))
+    def __init__(self, report_root=None, data_root=None, *, p, identity, input_reference, calibration,
+                 config, source_sha256=None, budget=None, storage=None):
+        self.storage = s if storage is None else storage
+        if self.storage is not s:
+            report_root = self.storage.report_root if report_root is None else report_root
+            data_root = self.storage.data_root if data_root is None else data_root
+        if report_root is None or data_root is None:
+            raise ValueError('Explicit roots are required with the unchanged default E storage')
+        self.report_root, self.data_root = (self.storage.write_path(path) for path in (report_root, data_root))
         self.p = p
         self.input_reference = _encode(input_reference)
         self.config = _encode(config)
         extra = dict(calibration.get('source_sha256', {}))
+        self.storage_contract = (None if self.storage is s else self.storage.contract())
+        for name, digest in (self.storage_contract or {}).get('source_sha256', {}).items():
+            if name in extra and extra[name] != digest:
+                raise CacheIntegrityError('Storage and calibration source digests conflict: '+name)
+            extra[name] = digest
         for name, digest in (source_sha256 or {}).items():
             if name in extra and extra[name] != digest:
                 raise CacheIntegrityError('Calibration and caller source digests conflict: '+name)
@@ -331,6 +359,7 @@ class CompactJointCache:
                         'source_sha256': self.sources, 'runtime': runtime_identity(p),
                         'physics': _physics_identity(p), 'frame_plan': self.plan,
                         'canonical_schema': list(CANONICAL_KEYS),
+                        'storage_contract': self.storage_contract,
                         'representation_verification_is_not_numeric_certification': True,
                         'later_mismatch_cannot_fabricate_original_fallback': True}
         self.fingerprint = s.canonical(self.context)
@@ -340,8 +369,27 @@ class CompactJointCache:
                                 'calibration': calibration['fingerprint'], 'config': self.config})
         self.report = self.report_root/'cells'/self.key
         self.data = self.data_root/'cells'/self.key
-        self.budget = budget or Budget((self.report_root, self.data_root))
+        self._storage_budget = (None if self.storage is s else
+                                self.storage.budget(instance_roots=(self.report_root, self.data_root)))
+        self.budget = budget or self._storage_budget or Budget((self.report_root, self.data_root))
         self.owner = None
+
+    def _budget_check(self, requested_bytes=0):
+        # Optional caller budgets may tighten an explicit store's limits,
+        # never replace its real independent E/D and global checks.
+        if self._storage_budget is not None and self.budget is not self._storage_budget:
+            self._storage_budget.check(requested_bytes)
+        return self.budget.check(requested_bytes)
+
+    def _write(self, path, value):
+        if self.storage is s:
+            return _write_once(path, value)
+        return _write_once(path, value, storage=self.storage)
+
+    def _replace(self, source, target):
+        if self.storage is s:
+            return s.write_path(source).replace(s.write_path(target))
+        return self.storage.replace(source, target)
 
     def _verify_context(self, raw):
         verify_sources(self.sources)
@@ -388,7 +436,7 @@ class CompactJointCache:
         previous = self.inspect()
         if previous['status'] != 'NEW':
             return {**previous, 'run_new_inverse': False}
-        before = self.budget.check(self.plan['initial_safe_reserve_bytes'])
+        before = self._budget_check(self.plan['initial_safe_reserve_bytes'])
         self.owner = {'pid': os.getpid(), 'token': uuid.uuid4().hex}
         reserve_path = self.data/('FALLBACK_RESERVED_'+self.owner['token']+'.bin')
         started = self._record(status='STARTED', owner=self.owner, context=self.context,
@@ -396,12 +444,14 @@ class CompactJointCache:
                                reserve_path=str(reserve_path), reserve_bytes=self.plan['fallback_zip_bound_bytes'],
                                run_new_inverse=False, score_allowed=False)
         try:
-            _write_once(self.report/'STARTED.json', started)
+            self._write(self.report/'STARTED.json', started)
         except FileExistsError:
             return {**self.inspect(), 'run_new_inverse': False}
-        reserve_path = s.write_path(reserve_path)
+        reserve_path = self.storage.write_path(reserve_path)
         reserve_path.parent.mkdir(parents=True, exist_ok=True)
         try:
+            if self.storage is not s:
+                self._budget_check(self.plan['fallback_zip_bound_bytes'])
             with reserve_path.open('xb') as handle:
                 remaining = self.plan['fallback_zip_bound_bytes']
                 block = bytes(64*2**10)
@@ -411,8 +461,8 @@ class CompactJointCache:
                     remaining -= size
                 handle.flush()
                 os.fsync(handle.fileno())
-            _write_once(self.report/'RESERVATION.json', self._record(owner=self.owner, reservation=file_ref(reserve_path)))
-            self.budget.check(0)
+            self._write(self.report/'RESERVATION.json', self._record(owner=self.owner, reservation=file_ref(reserve_path)))
+            self._budget_check(0)
         except Exception as error:
             self._fail('FAIL_CLOSED_RESERVATION', error=error, original_fallback_available=False)
             raise
@@ -435,7 +485,10 @@ class CompactJointCache:
         if result.get('status') != 'LOSSLESS_READY' or not result.get('lossless_representation_verified'):
             raise CacheIntegrityError('A byte-verified compact result is required before releasing its full fallback reserve')
         path = self._own_reservation(owner)
-        path.unlink()  # Only the newly allocated, hash-verified zero reservation.
+        if self.storage is s:
+            path.unlink()  # Only the newly allocated, hash-verified zero reservation.
+        else:
+            self.storage.release_reservation(path, owner=owner)
 
     def _canonical(self, out):
         result = {name: array(out[name]) for name in CANONICAL_KEYS}
@@ -466,24 +519,26 @@ class CompactJointCache:
                 if _text(previous[name]) != _text(prepared[name]):
                     raise CacheIntegrityError('Previously prepared original endpoint differs: '+name)
         else:
-            _write_once(self.report/'PREPARED.json', prepared)
-        path = s.write_path(self.data/'PARAMETERS.npz')
+            self._write(self.report/'PREPARED.json', prepared)
+        path = self.storage.write_path(self.data/'PARAMETERS.npz')
         path.parent.mkdir(parents=True, exist_ok=True)
         if path.exists():
             existing = s.arrays(path)
             if {k: descriptor(v) for k, v in existing.items()} != prepared['parameter_arrays']:
                 raise CacheIntegrityError('Never overwrite different compact joint parameters')
         else:
-            pending = path.with_name(path.name+'.pending.'+uuid.uuid4().hex)
+            pending = self.storage.write_path(path.with_name(path.name+'.pending.'+uuid.uuid4().hex))
+            if self.storage is not s:
+                self._budget_check(self.plan['parameter_zip_bound_bytes'])
             with pending.open('xb') as handle:
                 np.savez_compressed(handle, **values)
                 handle.flush()
                 os.fsync(handle.fileno())
             if pending.stat().st_size > self.plan['parameter_zip_bound_bytes']:
                 raise CacheIntegrityError('Parameter ZIP exceeds its reserved native-precision bound')
-            pending.replace(path)
+            self._replace(pending, path)
         if not (self.report/'PARAMETERS.json').exists():
-            _write_once(self.report/'PARAMETERS.json', self._record(parameter_cache=file_ref(path),
+            self._write(self.report/'PARAMETERS.json', self._record(parameter_cache=file_ref(path),
                         prepared=file_ref(self.report/'PREPARED.json')))
 
     def _load_parameters(self):
@@ -499,12 +554,12 @@ class CompactJointCache:
                 self._parameters(arrays)
                 if {name: descriptor(value) for name, value in arrays.items()} != prepared['parameter_arrays']:
                     raise CacheIntegrityError('Interrupted parameter archive differs from original bytes')
-                candidate.replace(path)
+                self._replace(candidate, path)
             arrays = s.arrays(path)
             self._parameters(arrays)
             if {name: descriptor(value) for name, value in arrays.items()} != prepared['parameter_arrays']:
                 raise CacheIntegrityError('Unreceipted parameter archive differs from original bytes')
-            _write_once(self.report/'PARAMETERS.json', self._record(parameter_cache=file_ref(path),
+            self._write(self.report/'PARAMETERS.json', self._record(parameter_cache=file_ref(path),
                         prepared=file_ref(self.report/'PREPARED.json'), recovered_receipt=True))
         receipt = self._read('PARAMETERS.json')
         verify_file(receipt['prepared'])
@@ -528,7 +583,7 @@ class CompactJointCache:
             'forward_only': True, 'complete_inverse_calls': 0, 'optimizer_calls': 0, 'linear_solver_calls': 0}
 
     def _fallback(self, arrays, owner):
-        path = self._own_reservation(owner)
+        path = self.storage.write_path(self._own_reservation(owner))
         with path.open('r+b') as handle:
             handle.seek(0)
             np.savez(handle, **arrays)
@@ -541,7 +596,7 @@ class CompactJointCache:
         final = self.data/'FALLBACK.npz'
         if final.exists():
             raise FileExistsError('Never overwrite a full fallback')
-        path.replace(final)
+        self._replace(path, final)
         recovered = s.arrays(final)
         if {name: descriptor(value) for name, value in recovered.items()} != {name: descriptor(value) for name, value in arrays.items()}:
             raise CacheIntegrityError('Full fallback read-back failed its original byte hashes')
@@ -555,7 +610,7 @@ class CompactJointCache:
         name = 'RECONSTRUCTION_FAILURE.json' if (self.report/'RESULT.json').exists() else 'FAILURE.json'
         if (self.report/name).exists():
             return self._read(name)
-        _write_once(self.report/name, receipt)
+        self._write(self.report/name, receipt)
         return receipt
 
     def persist(self, ticket, out, raw):
@@ -589,7 +644,7 @@ class CompactJointCache:
             if metadata_exceeded:
                 # Preserve the original info if the full global/floor bounds
                 # permit it; the declared representation envelope still fails.
-                self.budget.check(self.plan['parameter_zip_bound_bytes']+len(_text(prepared).encode('utf8'))+64*2**10)
+                self._budget_check(self.plan['parameter_zip_bound_bytes']+len(_text(prepared).encode('utf8'))+64*2**10)
             self._write_parameters(values, prepared)
             if metadata_exceeded:
                 fallback = self._fallback(canonical, started['owner'])
@@ -600,7 +655,7 @@ class CompactJointCache:
                 fallback = self._fallback(canonical, started['owner'])
                 return self._fail('FAIL_CLOSED_INITIAL_BYTE_MISMATCH', original_fallback_available=True,
                     fallback=fallback, verification=verification, original_canonical_arrays=prepared['canonical_arrays'])
-            self.budget.check(0)
+            self._budget_check(0)
             result = self._record(status='LOSSLESS_READY', run_new_inverse=False,
                 score_allowed=original['original_finite_canonical'], lossless_representation_verified=True,
                 numerical_certification=original['original_numerical_valid'],
@@ -609,11 +664,11 @@ class CompactJointCache:
                 write_read_same_physics_instance=True, verification=verification,
                 parameter_receipt=file_ref(self.report/'PARAMETERS.json'),
                 complete_inverse_calls_by_cache=0, native_GPU_qualification_claimed=False)
-            _write_once(self.report/'RESULT.json', result)
+            self._write(self.report/'RESULT.json', result)
             try:
                 self.release_reservation(started['owner'])
             except Exception as error:
-                _write_once(self.report/'RESERVATION_RELEASE_FAILURE.json', self._record(
+                self._write(self.report/'RESERVATION_RELEASE_FAILURE.json', self._record(
                     status='OWN_RESERVATION_NOT_RELEASED', error_type=type(error).__name__, error=str(error)))
                 result = {**result, 'reservation_release_error': str(error)}
             return result
@@ -623,10 +678,32 @@ class CompactJointCache:
                 self._write_parameters(original_parameters, prepared)
             except Exception as persistence_error:
                 parameter_error = {'error_type': type(persistence_error).__name__, 'error': str(persistence_error)}
-            if (self.data/'FALLBACK.npz').exists():
-                fallback = file_ref(self.data/'FALLBACK.npz')
-            else:
-                fallback = self._fallback(canonical, started['owner'])
+            try:
+                if (self.data/'FALLBACK.npz').exists():
+                    fallback = file_ref(self.data/'FALLBACK.npz')
+                    retained = s.arrays(fallback['path'])
+                    if {name: descriptor(value) for name, value in retained.items()} != prepared['canonical_arrays']:
+                        raise CacheIntegrityError('Retained original fallback failed its canonical byte hashes')
+                else:
+                    fallback = self._fallback(canonical, started['owner'])
+            except Exception as fallback_error:
+                failure = self._record(status='FAIL_CLOSED_ORIGINAL_PERSISTENCE_UNAVAILABLE',
+                    run_new_inverse=False, score_allowed=False, lossless_representation_verified=False,
+                    original_fallback_available=False, durable_failure_receipt_written=False,
+                    original_info=out['info'], original_canonical_arrays=prepared['canonical_arrays'],
+                    original_parameter_arrays=prepared['parameter_arrays'],
+                    original_parameter_persistence_error=parameter_error,
+                    error_type=type(error).__name__, error=str(error),
+                    fallback_error_type=type(fallback_error).__name__, fallback_error=str(fallback_error),
+                    caller_must_stop_and_log_this_receipt=True,
+                    already_durable_state_retained_and_no_inverse_retry=True)
+                try:
+                    durable = {**failure, 'durable_failure_receipt_written': True}
+                    self._write(self.report/'FAILURE.json', durable)
+                    return durable
+                except Exception as receipt_error:
+                    return {**failure, 'failure_receipt_error_type': type(receipt_error).__name__,
+                            'failure_receipt_error': str(receipt_error)}
             return self._fail('FAIL_CLOSED_INITIAL_PERSISTENCE_OR_FORWARD', error=error,
                 original_fallback_available=True, fallback=fallback,
                 original_parameter_persistence_error=parameter_error,
@@ -663,7 +740,7 @@ class CompactJointCache:
                     original_fallback_available=False, recovered_after_interruption=True,
                     verification=verification, complete_inverse_calls_by_cache=0,
                     native_GPU_qualification_claimed=False)
-                _write_once(self.report/'RESULT.json', result)
+                self._write(self.report/'RESULT.json', result)
                 owner = self._read('STARTED.json')['owner']
                 self.release_reservation(owner)
             return self._read('RESULT.json')
@@ -704,8 +781,8 @@ class CompactJointCache:
         case_ledger = tree_ledger((self.report, self.data))
         if case_ledger['by_kind_bytes']['other_data_meta_cache_log']+score_bytes > self.plan['metadata_bound_bytes']:
             raise CacheIntegrityError('External score exceeds the remaining per-frame metadata envelope; inverse cache retained')
-        self.budget.check(score_bytes)
-        _write_once(path, result)
+        self._budget_check(score_bytes)
+        self._write(path, result)
         return result
 
     def load_fallback(self):

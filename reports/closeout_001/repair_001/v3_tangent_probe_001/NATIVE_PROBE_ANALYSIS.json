@@ -1,0 +1,210 @@
+{
+  "schema": "v3-native-tangent-v1-root-analysis-v1",
+  "time": "2026-10-15T08:59:50.056579+00:00",
+  "checks": {
+    "registration_sha256_matches": true,
+    "all_11_sources_unchanged": true,
+    "registration_fingerprint_matches": true,
+    "four_cell_denominator_and_systems_match": true,
+    "two_actual_PCG_calls": true,
+    "two_converged_old_controls": true,
+    "two_new_build_failures_before_JVP": true,
+    "no_complete_inverse_truth_final": true,
+    "global_and_local_locks_absent": true,
+    "stderr_empty": true
+  },
+  "rows": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "route": "old_block_diagonal",
+      "attempted": true,
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "pcg_started": true,
+      "converged": true,
+      "iterations": 838,
+      "true_relative_residual": 7.83501814822105e-11,
+      "wall_s": 5.853560200004722,
+      "counts": {
+        "JVP": 841,
+        "VJP": 840,
+        "normal": 840,
+        "precondition": 838
+      },
+      "error": null
+    },
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "route": "coupled_fourier",
+      "attempted": true,
+      "status": "BUILD_FAILED",
+      "pcg_started": false,
+      "converged": false,
+      "iterations": 0,
+      "true_relative_residual": null,
+      "wall_s": 26.449609599992982,
+      "counts": {
+        "JVP": 0,
+        "VJP": 0,
+        "normal": 0,
+        "precondition": 0
+      },
+      "error": {
+        "type": "OutOfMemoryError",
+        "message": "CUDA out of memory. Tried to allocate 33.14 GiB. GPU 0 has a total capacity of 8.00 GiB of which 6.80 GiB is free. Of the allocated memory 65.25 MiB is allocated by PyTorch, and 10.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ("
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "route": "old_block_diagonal",
+      "attempted": true,
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "pcg_started": true,
+      "converged": true,
+      "iterations": 930,
+      "true_relative_residual": 8.050239538856371e-11,
+      "wall_s": 6.359383900009561,
+      "counts": {
+        "JVP": 933,
+        "VJP": 932,
+        "normal": 932,
+        "precondition": 930
+      },
+      "error": null
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "route": "coupled_fourier",
+      "attempted": true,
+      "status": "BUILD_FAILED",
+      "pcg_started": false,
+      "converged": false,
+      "iterations": 0,
+      "true_relative_residual": null,
+      "wall_s": 21.14506560000882,
+      "counts": {
+        "JVP": 0,
+        "VJP": 0,
+        "normal": 0,
+        "precondition": 0
+      },
+      "error": {
+        "type": "OutOfMemoryError",
+        "message": "CUDA out of memory. Tried to allocate 33.14 GiB. GPU 0 has a total capacity of 8.00 GiB of which 6.76 GiB is free. Of the allocated memory 89.99 MiB is allocated by PyTorch, and 22.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ("
+      }
+    }
+  ],
+  "terminal": {
+    "end": "2026-10-15T08:25:57.098802+00:00",
+    "status": "PROBE_COMPLETE_WITH_FAILURES",
+    "wall_s": 60.92817990000185,
+    "total_operator_counts": {
+      "JVP": 1774,
+      "VJP": 1774,
+      "normal": 1772,
+      "precondition": 1768
+    }
+  },
+  "cause_scope": "Both new routes failed during coupled-preconditioner construction before its low-mode JVPs;65535 batched3x3 matrices were presented to CUDA eigvalsh/factorization. The captured error requests33.14GiB on8GiB; no kernel traceback identifies a unique offending operation. Chunk eigvalsh, cholesky_ex and cholesky_solve in a new version; preserve the same mathematical symbol and6x6 coupling.",
+  "unavailable": "The old step arrays were deliberately not saved. No direct step or linear-output difference can be recovered without rerunning old controls; do not rerun them. A new same-system residual/spectral-lower-bound diagnostic must be explicitly labeled a bound.",
+  "scientific_inference": "No nonlinear qualification, production benefit or method selection follows from this probe.",
+  "global_actual_complete_inverse_calls": 5091,
+  "files": {
+    "CELL_00_coupled_fourier.json": {
+      "sha256": "a5423e4ef04842cec7a82d83cb6fbb8b035ed8eaa64cf1be805258d5263e611a",
+      "bytes": 1269
+    },
+    "CELL_00_old_block_diagonal.json": {
+      "sha256": "582a3fb2bbecb8862f19f1a9c980bffe3d505a1216591a943a64880fb0378906",
+      "bytes": 2971
+    },
+    "CELL_01_coupled_fourier.json": {
+      "sha256": "80c13d17958ac73f946e6907424483ac428f60837b552d8b14070459125e515e",
+      "bytes": 1268
+    },
+    "CELL_01_old_block_diagonal.json": {
+      "sha256": "6ca1558eb5c288c722f0256376c2b65fdc4f38cc6922ea117933e02252f748c6",
+      "bytes": 3053
+    },
+    "CPU_CONTRACTS.json": {
+      "sha256": "45f9271614278be21cf46261bb6ce6a512c49e9e8cf58baf65d9e31d453713e6",
+      "bytes": 8678
+    },
+    "CPU_CONTRACTS_ATTEMPT_001.json": {
+      "sha256": "166b4a9ec87ec2ac1051999ed30ed2ad3e98f2b0913256b3fbfb769c3741a34c",
+      "bytes": 8303
+    },
+    "CPU_CONTRACTS_ATTEMPT_002.json": {
+      "sha256": "e6a1c432f45f6210b916dbb7bebea69ddd215f8705ef582d1d965b02b4abfd38",
+      "bytes": 8545
+    },
+    "CPU_CONTRACTS_ATTEMPT_003.json": {
+      "sha256": "45f9271614278be21cf46261bb6ce6a512c49e9e8cf58baf65d9e31d453713e6",
+      "bytes": 8678
+    },
+    "PAIR_00.json": {
+      "sha256": "70bbd83cdb0f77983200b69bb940e24aa37ce7ae7795fbfcbbe18886b784e8f5",
+      "bytes": 409
+    },
+    "PAIR_01.json": {
+      "sha256": "8f6f9da2a1db280aa82168a914abe2c1e51e94c56102f9c2d633b171a1ce3961",
+      "bytes": 409
+    },
+    "probe_001.stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "probe_001.stdout.txt": {
+      "sha256": "3542e400094fc4603a6104dafe06e6f6c62fbf199d49d1fa7e3955e2e7e6bd3f",
+      "bytes": 256
+    },
+    "PROCESS.json": {
+      "sha256": "7c2571a15e8a6fabee116471d915509f419325f4a7db202dcca6f7ffb0d2418a",
+      "bytes": 1310
+    },
+    "REGISTRATION.json": {
+      "sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "bytes": 12919
+    },
+    "REGISTRATION_SHA256.json": {
+      "sha256": "193dc18c5da11d3aa213801720fe48e50eb1ff3649c0d931b4354d57541528d1",
+      "bytes": 213
+    },
+    "RESULT.json": {
+      "sha256": "1c3abd76d2be02c1e1c3e13ea5decedb53543fce6fd7462a9326880339c989a2",
+      "bytes": 13743
+    },
+    "RUN_STARTED.json": {
+      "sha256": "2e37a1e171384c0de6efa359f31d0349da049128318d635f07227aecafe4d0e1",
+      "bytes": 240
+    },
+    "STARTUP_VERIFICATION.json": {
+      "sha256": "fdcff16fa8d92046c75c32a73ff4a20f415df316bf037e330ec1acc6e99d640a",
+      "bytes": 1797
+    },
+    "SYSTEM_00.json": {
+      "sha256": "e53e66f63bddebb3d67f7b99fb56ba7e41be27ccf7532e53b069f0d1c467b564",
+      "bytes": 1191
+    },
+    "SYSTEM_01.json": {
+      "sha256": "fa23187b1028f6d972c78101c67bb78991b720c90e4d620a4dd918ea8c39bfe5",
+      "bytes": 1191
+    },
+    "WAKE_RECEIPT.json": {
+      "sha256": "63e6d1f12215b77a161116f8f60eddf09b043afd0a37e217eb64a659ec9589a9",
+      "bytes": 502
+    }
+  },
+  "observed_process_absence": {
+    "time": "2026-10-15T08:48:03.572599Z",
+    "launcher_pid": 49008,
+    "python_pid": 43884,
+    "both_absent": true,
+    "query": "System.Diagnostics.Process / Get-Process; separate from the cancelled hung read-only WMI observation"
+  },
+  "disk_snapshot": {
+    "E:/": 2056634368,
+    "D:/": 370692096
+  },
+  "E_floor_bytes": 2147483648,
+  "next_GPU_allowed_only_after_full_space_guard": true
+}

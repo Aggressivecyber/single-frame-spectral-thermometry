@@ -78,7 +78,10 @@ def original_fixture(p, raw):
 
 
 def run():
+    from ..runtime_entry import install_platform_fallback
+    runtime_entry = install_platform_fallback()
     torch.set_num_threads(2)
+    s.budget_guard()  # CPU fixtures also obey the live E floor; no synthetic bypass.
     token = uuid.uuid4().hex
     root = c.REPORT_DIR/'_cpu_fixtures'/token
     root.mkdir(parents=True, exist_ok=False)
@@ -363,6 +366,15 @@ def run():
               identity={'registration_sha256': 'fixture', 'method': 'fixture', 'case_id': 'D-root-denied'},
               input_reference=raw_ref, calibration={'fingerprint': 'a'*64, 'physical_objective_version': 'fixture'},
               config={'grid': 2}), ValueError))
+    from ..explicit_store import ExplicitDStore
+    proposed = ExplicitDStore('compact_contract_'+token)
+    check('schema_v002_explicit_store_is_opt_in_and_its_source_and_budget_are_declared',
+          c.SCHEMA == 'joint-float64-forward-lossless-cache-v002-explicit-store'
+          and c.format_contract()['new_D_root_writes_supported'] is False
+          and c.format_contract(storage=proposed)['new_D_root_writes_supported'] is True
+          and c.format_contract(storage=proposed)['algorithm_precision_and_default_E_write_whitelist_unchanged']
+          and len(proposed.contract()['global_budget_roots']) == 4
+          and proposed.contract()['D_project_limit_bytes'] == 256*2**20)
 
     tree = ast.parse((s.ROOT/'research_closeout/compact_joint_cache.py').read_text(encoding='utf8'))
     prohibited = {'minimize', 'lsmr', 'repaired_infer', 'refined_infer', 'load_diagnostic_truth', 'invert_single', 'initialize'}
@@ -385,7 +397,9 @@ def run():
           and native_plan['successful_compact_bound_bytes'] < 2**21)
     result = {'time': s.now(), 'all_passed': all(item['passed'] for item in checks), 'checks': checks,
               'source_sha256': {name: s.sha(s.ROOT/name) for name in
-                               ('research_closeout/compact_joint_cache.py', 'research_closeout/tests/compact_joint_cache.py')},
+                               ('research_closeout/compact_joint_cache.py', 'research_closeout/tests/compact_joint_cache.py',
+                                'research_closeout/explicit_store.py', 'research_closeout/runtime_entry.py')},
+              'runtime_entry': runtime_entry,
               'schema': c.SCHEMA, 'native_frame_conservative_plan': native_plan,
               'format_contract': c.format_contract(),
               'fixture_shape': [2, 2], 'formal_complete_inversions': 0, 'GPU_used': False,

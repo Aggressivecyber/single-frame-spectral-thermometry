@@ -1,0 +1,14 @@
+{
+  "schema": "CPU-environment-startup-failure-v1",
+  "status": "CANCELLED_DURING_TORCH_IMPORT",
+  "actual_python_pid": 51704,
+  "venv_launcher_pid": 58596,
+  "observed_CPU_seconds": 0.1875,
+  "observed_RSS_bytes": 29163520,
+  "scientific_fixture_entered": false,
+  "GPU_used": false,
+  "whole_inverse_calls": 0,
+  "cause_evidence": "Root identified torch.__init__ platform.machine -> Python3.13 platform._wmi_query(OS) with wbemprox/fastprox; WMI queries on the host were also stalled.",
+  "handling": "Cancelled only this import-stalled CPU process and its owned venv launcher after root authorization. Await explicit runtime_entry using the existing standard-library WMI fallback before one fresh CPU attempt.",
+  "numerical_result": null
+}

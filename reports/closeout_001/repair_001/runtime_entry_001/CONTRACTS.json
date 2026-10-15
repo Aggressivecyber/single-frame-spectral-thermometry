@@ -1,0 +1,51 @@
+{
+  "schema": "runtime-entry-metadata-contracts-v001",
+  "time": "2026-10-15T09:03:46.721658+00:00",
+  "checks": [
+    {
+      "name": "fallback_does_not_call_previous_WMI",
+      "passed": true
+    },
+    {
+      "name": "native_and_fallback_architecture_agree",
+      "passed": true
+    },
+    {
+      "name": "metadata_fallback_idempotent",
+      "passed": true
+    },
+    {
+      "name": "WMI_query_raises_only_OSError",
+      "passed": true
+    },
+    {
+      "name": "installed_files_and_science_are_not_edited",
+      "passed": true
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "evidence": {
+    "version": "windows-platform-wmi-fallback-v001",
+    "sys_platform": "win32",
+    "python_version": "3.12.14",
+    "installed_files_modified": false,
+    "scientific_algorithm_changed": false,
+    "WMI_disabled": true,
+    "native_machine": "AMD64",
+    "platform_machine": "AMD64",
+    "windows_version": [
+      "11",
+      "10.0.26200",
+      "SP0",
+      "Multiprocessor Free"
+    ]
+  },
+  "source_sha256": {
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517"
+  },
+  "wall_s": 0.11315900000045076,
+  "GPU_used": false,
+  "complete_inverse_calls": 0
+}

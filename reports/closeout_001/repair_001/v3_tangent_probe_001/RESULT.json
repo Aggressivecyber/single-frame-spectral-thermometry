@@ -1,0 +1,388 @@
+{
+  "schema": "v3-native-fixed-tangent-probe-v1-result",
+  "time": "2026-10-15T08:25:57.098802+00:00",
+  "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+  "status": "PROBE_COMPLETE_WITH_FAILURES",
+  "planned_cells": 4,
+  "returned_cells": 4,
+  "attempted_cells": 4,
+  "converged_cells": 2,
+  "failed_or_unattempted_cells": 2,
+  "rows": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "route": "old_block_diagonal",
+      "attempted": true,
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "converged": true,
+      "iterations": 838,
+      "maxiter": 2000,
+      "rtol": 1e-10,
+      "initial_rhs_norm": 3376.467653208225,
+      "true_residual_norm": 2.645468533976778e-07,
+      "true_relative_residual": 7.83501814822105e-11,
+      "true_residual_recomputed": true,
+      "residual_restarts": 0,
+      "sampled_recursive_history": [
+        {
+          "iteration": 1,
+          "recursive_relative_residual": 0.19714752806439986
+        },
+        {
+          "iteration": 2,
+          "recursive_relative_residual": 0.07268401381215142
+        },
+        {
+          "iteration": 3,
+          "recursive_relative_residual": 0.045203733555715116
+        },
+        {
+          "iteration": 4,
+          "recursive_relative_residual": 0.03595670269022343
+        },
+        {
+          "iteration": 5,
+          "recursive_relative_residual": 0.038677425383269314
+        },
+        {
+          "iteration": 6,
+          "recursive_relative_residual": 0.023600364762773465
+        },
+        {
+          "iteration": 7,
+          "recursive_relative_residual": 0.026012113573747362
+        },
+        {
+          "iteration": 8,
+          "recursive_relative_residual": 0.025286848409635434
+        },
+        {
+          "iteration": 100,
+          "recursive_relative_residual": 0.001493643168814335
+        },
+        {
+          "iteration": 200,
+          "recursive_relative_residual": 0.00018271963779730973
+        },
+        {
+          "iteration": 300,
+          "recursive_relative_residual": 1.8747321420559875e-05
+        },
+        {
+          "iteration": 400,
+          "recursive_relative_residual": 2.405804726454144e-06
+        },
+        {
+          "iteration": 500,
+          "recursive_relative_residual": 2.5188510097250375e-07
+        },
+        {
+          "iteration": 600,
+          "recursive_relative_residual": 2.1134031116459297e-08
+        },
+        {
+          "iteration": 700,
+          "recursive_relative_residual": 3.0706200237173587e-09
+        },
+        {
+          "iteration": 800,
+          "recursive_relative_residual": 3.3920321868988503e-10
+        }
+      ],
+      "error": null,
+      "audit_error": null,
+      "pcg_started": true,
+      "wall_s": 5.853560200004722,
+      "wall_limit_s": 120.0,
+      "counts": {
+        "JVP": 841,
+        "VJP": 840,
+        "normal": 840,
+        "precondition": 838
+      },
+      "preconditioner_metadata": {
+        "method": "original repair_v3.solver.block_preconditioner",
+        "approximation_only": true
+      },
+      "linear_outputs": {
+        "raw_linear_RMS_e": 2.1738152755946887,
+        "template_postblur_linear_RMS_e_ref": 0.32238702766630184,
+        "color_linear_RMS_K": 0.24476445962195964,
+        "color_linear_available_fraction": 1.0,
+        "latent_temperature_linear_RMS_K": 2.1500708740879837,
+        "beta_linear_L2": 0.004986560002235024
+      },
+      "step_array_sha256": "61ffa2dcd910cb5cf3a107baf3146ebe1d343e70eacd4b7dcbcdbb036e3ce7b3",
+      "step_saved": false,
+      "system_fingerprint": "379b5fb9aa5e959a05e9428a54b5e83974bca6d3f44419cbf047c16fe84785c8"
+    },
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "route": "coupled_fourier",
+      "attempted": true,
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "status": "BUILD_FAILED",
+      "converged": false,
+      "iterations": 0,
+      "pcg_started": false,
+      "rtol": 1e-10,
+      "maxiter": 2000,
+      "true_residual_norm": null,
+      "true_relative_residual": null,
+      "true_residual_recomputed": false,
+      "error": {
+        "type": "OutOfMemoryError",
+        "message": "CUDA out of memory. Tried to allocate 33.14 GiB. GPU 0 has a total capacity of 8.00 GiB of which 6.80 GiB is free. Of the allocated memory 65.25 MiB is allocated by PyTorch, and 10.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ("
+      },
+      "wall_s": 26.449609599992982,
+      "wall_limit_s": 120.0,
+      "counts": {
+        "JVP": 0,
+        "VJP": 0,
+        "normal": 0,
+        "precondition": 0
+      },
+      "preconditioner_metadata": null,
+      "linear_outputs": null,
+      "step_array_sha256": null,
+      "step_saved": false,
+      "system_fingerprint": "379b5fb9aa5e959a05e9428a54b5e83974bca6d3f44419cbf047c16fe84785c8"
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "route": "old_block_diagonal",
+      "attempted": true,
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "converged": true,
+      "iterations": 930,
+      "maxiter": 2000,
+      "rtol": 1e-10,
+      "initial_rhs_norm": 820.4827705684667,
+      "true_residual_norm": 6.60508284058069e-08,
+      "true_relative_residual": 8.050239538856371e-11,
+      "true_residual_recomputed": true,
+      "residual_restarts": 0,
+      "sampled_recursive_history": [
+        {
+          "iteration": 1,
+          "recursive_relative_residual": 0.7459861873266718
+        },
+        {
+          "iteration": 2,
+          "recursive_relative_residual": 0.3630420970684671
+        },
+        {
+          "iteration": 3,
+          "recursive_relative_residual": 0.2076181236955265
+        },
+        {
+          "iteration": 4,
+          "recursive_relative_residual": 0.12352037690907075
+        },
+        {
+          "iteration": 5,
+          "recursive_relative_residual": 0.16098586733880801
+        },
+        {
+          "iteration": 6,
+          "recursive_relative_residual": 0.1213941064625595
+        },
+        {
+          "iteration": 7,
+          "recursive_relative_residual": 0.08610878966936528
+        },
+        {
+          "iteration": 8,
+          "recursive_relative_residual": 0.08057220300421951
+        },
+        {
+          "iteration": 100,
+          "recursive_relative_residual": 0.00513160072038391
+        },
+        {
+          "iteration": 200,
+          "recursive_relative_residual": 0.000847602507056833
+        },
+        {
+          "iteration": 300,
+          "recursive_relative_residual": 4.927687638243432e-05
+        },
+        {
+          "iteration": 400,
+          "recursive_relative_residual": 1.3069649806259834e-05
+        },
+        {
+          "iteration": 500,
+          "recursive_relative_residual": 1.9723016015920095e-06
+        },
+        {
+          "iteration": 600,
+          "recursive_relative_residual": 6.165828636071903e-07
+        },
+        {
+          "iteration": 700,
+          "recursive_relative_residual": 5.1827075904807336e-08
+        },
+        {
+          "iteration": 800,
+          "recursive_relative_residual": 2.650449742576635e-09
+        },
+        {
+          "iteration": 900,
+          "recursive_relative_residual": 1.6447123666751277e-10
+        }
+      ],
+      "error": null,
+      "audit_error": null,
+      "pcg_started": true,
+      "wall_s": 6.359383900009561,
+      "wall_limit_s": 120.0,
+      "counts": {
+        "JVP": 933,
+        "VJP": 932,
+        "normal": 932,
+        "precondition": 930
+      },
+      "preconditioner_metadata": {
+        "method": "original repair_v3.solver.block_preconditioner",
+        "approximation_only": true
+      },
+      "linear_outputs": {
+        "raw_linear_RMS_e": 0.9074457606551916,
+        "template_postblur_linear_RMS_e_ref": 0.1788643283160686,
+        "color_linear_RMS_K": 0.18431362370756885,
+        "color_linear_available_fraction": 1.0,
+        "latent_temperature_linear_RMS_K": 2.0546409744649283,
+        "beta_linear_L2": 0.001624814800479636
+      },
+      "step_array_sha256": "689ed901b3fdd7eff9d65fdeaaa20aa54d6a83ed2badba4a2b34e3bad4dc66c3",
+      "step_saved": false,
+      "system_fingerprint": "39b8dcfc5bc186640799809db2ba85fa7ea0b0bd922d2aaf7f035e58f8085bf4"
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "route": "coupled_fourier",
+      "attempted": true,
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "status": "BUILD_FAILED",
+      "converged": false,
+      "iterations": 0,
+      "pcg_started": false,
+      "rtol": 1e-10,
+      "maxiter": 2000,
+      "true_residual_norm": null,
+      "true_relative_residual": null,
+      "true_residual_recomputed": false,
+      "error": {
+        "type": "OutOfMemoryError",
+        "message": "CUDA out of memory. Tried to allocate 33.14 GiB. GPU 0 has a total capacity of 8.00 GiB of which 6.76 GiB is free. Of the allocated memory 89.99 MiB is allocated by PyTorch, and 22.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  ("
+      },
+      "wall_s": 21.14506560000882,
+      "wall_limit_s": 120.0,
+      "counts": {
+        "JVP": 0,
+        "VJP": 0,
+        "normal": 0,
+        "precondition": 0
+      },
+      "preconditioner_metadata": null,
+      "linear_outputs": null,
+      "step_array_sha256": null,
+      "step_saved": false,
+      "system_fingerprint": "39b8dcfc5bc186640799809db2ba85fa7ea0b0bd922d2aaf7f035e58f8085bf4"
+    }
+  ],
+  "pairs": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "both_converged": false,
+      "solution_difference": null,
+      "linear_output_difference": null,
+      "comparison_is_truth_error": false,
+      "case_total_counts": {
+        "JVP": 841,
+        "VJP": 841,
+        "normal": 840,
+        "precondition": 838
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+      "both_converged": false,
+      "solution_difference": null,
+      "linear_output_difference": null,
+      "comparison_is_truth_error": false,
+      "case_total_counts": {
+        "JVP": 933,
+        "VJP": 933,
+        "normal": 932,
+        "precondition": 930
+      }
+    }
+  ],
+  "errors": [],
+  "full_denominator_preserved": true,
+  "route_wall_limit_s": 120.0,
+  "planned_total_route_wall_s": 480.0,
+  "wall_s_including_overhead": 60.92817990000185,
+  "whole_inverse_calls": 0,
+  "count_call_used": false,
+  "truth_used": false,
+  "final_payloads_opened": false,
+  "device": "cuda",
+  "step_arrays_saved": false,
+  "output_bytes_before_terminal": 62689,
+  "linear_error_scope": "differences of fixed-linearization outputs between the two steps; not truth error or nonlinear estimator accuracy",
+  "operator_counts_complete": true,
+  "total_operator_counts": {
+    "JVP": 1774,
+    "VJP": 1774,
+    "normal": 1772,
+    "precondition": 1768
+  },
+  "recorded_cell_operator_counts": {
+    "JVP": 1774,
+    "VJP": 1772,
+    "normal": 1772,
+    "precondition": 1768
+  },
+  "PCG_calls": 2,
+  "cell_file_refs": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_00_coupled_fourier.json",
+      "sha256": "a5423e4ef04842cec7a82d83cb6fbb8b035ed8eaa64cf1be805258d5263e611a"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_00_old_block_diagonal.json",
+      "sha256": "582a3fb2bbecb8862f19f1a9c980bffe3d505a1216591a943a64880fb0378906"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_01_coupled_fourier.json",
+      "sha256": "80c13d17958ac73f946e6907424483ac428f60837b552d8b14070459125e515e"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_01_old_block_diagonal.json",
+      "sha256": "6ca1558eb5c288c722f0256376c2b65fdc4f38cc6922ea117933e02252f748c6"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\PAIR_00.json",
+      "sha256": "70bbd83cdb0f77983200b69bb940e24aa37ce7ae7795fbfcbbe18886b784e8f5"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\PAIR_01.json",
+      "sha256": "8f6f9da2a1db280aa82168a914abe2c1e51e94c56102f9c2d633b171a1ce3961"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_00.json",
+      "sha256": "e53e66f63bddebb3d67f7b99fb56ba7e41be27ccf7532e53b069f0d1c467b564"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_01.json",
+      "sha256": "fa23187b1028f6d972c78101c67bb78991b720c90e4d620a4dd918ea8c39bfe5"
+    }
+  ]
+}

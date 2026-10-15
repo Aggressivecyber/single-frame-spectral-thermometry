@@ -1,0 +1,79 @@
+{
+  "schema": "v3-coupled-fourier-preconditioner-v2-batch64-CPU-contracts",
+  "time": "2026-10-15T09:10:55.253626+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "block_eigenvalues_Cholesky_and_solve_equal_dense_CPU_reference",
+      "passed": true,
+      "batch": 133
+    },
+    {
+      "name": "unbatched_six_or_three_block_shape_preserved",
+      "passed": true
+    },
+    {
+      "name": "native65535_fake_backends_never_receive_more_than64_blocks",
+      "passed": true,
+      "dispatch_counts": {
+        "eig": 1024,
+        "chol": 1024,
+        "solve": 1024
+      },
+      "maximum_backend_batch": 64,
+      "native_block_count": 65535,
+      "scope": "fake backend dispatch only; not native CUDA acceptance"
+    },
+    {
+      "name": "CPU32_v2_preconditioner_equals_immutable_v1_reference",
+      "passed": true,
+      "apply_relative_error": 1.3598102487906075e-16
+    },
+    {
+      "name": "frequency_symbol_prior_D_and_zero_beta6_block_unchanged",
+      "passed": true
+    },
+    {
+      "name": "active_subspace_positive_and_self_adjoint",
+      "passed": true,
+      "self_adjoint_relative_error": 1.5195159337654774e-16
+    },
+    {
+      "name": "free_mask_is_two_sided_and_positive",
+      "passed": true,
+      "self_adjoint_relative_error": 1.5188287281824497e-16
+    },
+    {
+      "name": "H_null_original_prior_scale_unchanged_without_damping",
+      "passed": true
+    },
+    {
+      "name": "all_v1_registered_dependencies_and_receipts_preserved",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002"
+  },
+  "v1_source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7"
+  },
+  "native_GPU_qualified": false,
+  "GPU_used": false,
+  "whole_inverse_calls": 0,
+  "scientific_data_read": false,
+  "batch_limit": 64,
+  "native_dispatch_fixture_blocks": 65535,
+  "CPU_wall_s": 1.2530688999977428
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "v3-tangent-probe-v2-CPU-preparation-v001",
+  "time": "2026-10-15T09:12:30.0283642+00:00",
+  "status": "PREPARED_CPU_ONLY_NOT_REGISTERED",
+  "source_sha256": {
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002",
+    "research_closeout/v3_tangent_probe_v2.py": "ca98e6dcc2ca952195a67d2472c789e4cda542f338082346ee91cc7b2f455680",
+    "research_closeout/tests/v3_tangent_probe_v2.py": "9eeefaf0ce5ab3f4ee71aae9d34323b7cd518aef6975f51b8518f1005cdf857d"
+  },
+  "helper_contract": {
+    "path": "reports/closeout_001/repair_001/v3_preconditioner_002/CONTRACTS.json",
+    "passed": 9,
+    "sha256": "8d1948e5f535c5f05a733853d8765ced72ce36f13d8a0e7824e3f65138cb697d",
+    "total": 9
+  },
+  "controller_contract": {
+    "path": "reports/closeout_001/repair_001/v3_tangent_probe_002/CPU_CONTRACTS.json",
+    "passed": 31,
+    "sha256": "4ac043e1b8303ca604dd3e8491b9d45a82a0ea686dbe7ea129faf59eea6e56bc",
+    "total": 31
+  },
+  "runtime_contract": {
+    "path": "reports/closeout_001/repair_001/runtime_entry_001/CONTRACTS.json",
+    "passed": 5,
+    "sha256": "befe104ec2bd62f01c87fb5a9471c11051819493127f2e1203f6db610ccc1037",
+    "total": 5
+  },
+  "v1_preserved": {
+    "step_arrays_available": false,
+    "OOM_scope": "large batched backend path before six low-mode JVPs; no specific eigen or Cholesky kernel proved",
+    "old_controls_reused": 2,
+    "old_controls_rerun": 0,
+    "failed_coupled_v1_repeated": 0,
+    "result_sha256": "1c3abd76d2be02c1e1c3e13ea5decedb53543fce6fd7462a9326880339c989a2",
+    "registered_dependencies": 11
+  },
+  "helper_change": "fixed at most64 backend batches for eigvalsh, cholesky_ex and cholesky_solve, including apply; unchanged Fourier symbol, original D, prior, bounds and exact zero-beta6 block; no ridge or clipping",
+  "new_registered_source_count": 17,
+  "new_routes_planned": 2,
+  "damping": 0.001,
+  "rtol": 1E-10,
+  "maxiter": 2000,
+  "per_route_wall_s": 120,
+  "total_new_route_wall_s": 240,
+  "report_output_cap_bytes": 1048576,
+  "free_floor_bytes": 2147483648,
+  "complete_registration_reserve_bytes": 1052672,
+  "E_free_bytes_at_receipt": 2054172672,
+  "registration_run_disk_gate_passes": false,
+  "CPU_native_GPU_qualification": false,
+  "GPU_used": false,
+  "whole_inverse_calls": 0,
+  "truth_arrays_read": false,
+  "scientific_probe_started": false,
+  "old_new_direct_step_difference": null,
+  "old_new_difference_evidence": "only analytic conditional residual/spectral bound and conservative same-map linear output triangle bound; no interval arithmetic or observed step difference",
+  "CPU_environment": "original stalled import canceled before fixtures; one subsequent runtime_entry CPU process completed exit0",
+  "API": "build(p,state,beta,W,strength,damping)->(precondition,original_D,metadata)",
+  "register_CLI": "python -u -B -m research_closeout.runtime_entry --module research_closeout.v3_tangent_probe_v2 register",
+  "run_CLI": "python -u -B -m research_closeout.runtime_entry --module research_closeout.v3_tangent_probe_v2 run --device cuda"
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "windows-WMI-startup-diagnostic-v001",
+  "time": "2026-10-15T09:05:23.009947+00:00",
+  "observations": {
+    "root_CIM_all_process_query_hung_and_cancelled": true,
+    "root_readonly_session_cancelled": 42370,
+    "unstarted_CPU_probe_process_observed": {
+      "pid": 51704,
+      "at": "2026-10-15T09:01:28Z",
+      "CPU_seconds": 0.1875,
+      "RSS_bytes": 29184000,
+      "main_thread_wait_reason": "Executive"
+    },
+    "another_unstarted_CPU_python_loaded_WBEM_modules": {
+      "pid": 22324,
+      "modules": [
+        "wbemprox.dll",
+        "wbemcomn.dll",
+        "wbemsvc.dll",
+        "fastprox.dll"
+      ]
+    },
+    "source_path_inspected": "torch.__init__ calls platform.machine(); CPython platform.uname uses win32_ver, whose _win32_ver queries WMI before an existing OSError fallback."
+  },
+  "cause_scope": "The source path and loaded modules are consistent with blocked WMI metadata during import. No live Python stack dump was captured; subsequent entry-point CPU completion is separate confirmation, not inferred here.",
+  "fallback": {
+    "source": "research_closeout/runtime_entry.py",
+    "sha256": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "scope": "process-local platform._wmi_query deliberately raises OSError; use existing CPython fallback and verify machine with IsWow64Process2; no installed files modified, no WMI service restarted",
+    "required_as_new_registered_execution_dependency": true,
+    "preexisting_registered_runs_changed": false
+  },
+  "metadata_contracts": {
+    "path": "reports/closeout_001/repair_001/runtime_entry_001/CONTRACTS.json",
+    "sha256": "befe104ec2bd62f01c87fb5a9471c11051819493127f2e1203f6db610ccc1037",
+    "passed": 5,
+    "total": 5
+  },
+  "installed_source_files": {
+    "platform.py": {
+      "path": "C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\platform.py",
+      "sha256": "f5ff83f15c841792be42709a6710dc8d7a9f72791c1ae4cad719b1fb0abe0a05"
+    },
+    "torch/__init__.py": {
+      "path": "E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "sha256": "b508de5a66ebc368fc8fa2161b1e0e88ae0034d9d9540e7c020460237a5464a9"
+    }
+  },
+  "whole_inverse_calls": 0,
+  "GPU_started": false,
+  "disk_snapshot": {
+    "E:/": 2056265728,
+    "D:/": 370692096
+  }
+}

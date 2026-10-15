@@ -1,0 +1,182 @@
+{
+  "schema": "v3-native-fixed-tangent-probe-v2-batch64-CPU-contracts",
+  "time": "2026-10-15T09:10:56.055815+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "owner_locks_release_only_owned_global_and_local_files",
+      "passed": true
+    },
+    {
+      "name": "foreign_local_lock_refuses_execution_and_releases_own_global",
+      "passed": true
+    },
+    {
+      "name": "replaced_owner_lock_is_preserved",
+      "passed": true
+    },
+    {
+      "name": "registration_requires_full1MiB_plus_lock_meta_above2GiB_floor",
+      "passed": true
+    },
+    {
+      "name": "oneMiB_output_cap_and_JSON_only_paths_are_enforced",
+      "passed": true
+    },
+    {
+      "name": "exactly_two_new_v2_routes_solve_dense3_with_true_residuals_and_old_controls_reused",
+      "passed": true
+    },
+    {
+      "name": "CPU_success_does_not_claim_CUDA_or_direct_step_difference",
+      "passed": true
+    },
+    {
+      "name": "terminal_repeat_returns_immutable_receipt_without_any_new_operator",
+      "passed": true
+    },
+    {
+      "name": "terminal_other_registration_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "modified_terminal_cell_hash_is_detected",
+      "passed": true
+    },
+    {
+      "name": "any_original_system_array_hash_mismatch_refuses_both_solves_before_build",
+      "passed": true
+    },
+    {
+      "name": "all_setup_failures_keep_two_new_and_two_reused_control_denominators",
+      "passed": true
+    },
+    {
+      "name": "build_failure_is_retained_with_zero_PCG_and_no_old_route_retry",
+      "passed": true
+    },
+    {
+      "name": "partial_attempt_preserves_completed_row_and_closes_remaining_denominator_without_rerun",
+      "passed": true
+    },
+    {
+      "name": "foreign_partial_registration_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "damaged_partial_JSON_retains_both_failed_cells_and_error",
+      "passed": true
+    },
+    {
+      "name": "low_disk_before_setup_keeps_full_failure_denominator_without_GPU",
+      "passed": true
+    },
+    {
+      "name": "launch_rejection_has_two_rows_without_overwriting_a_terminal",
+      "passed": true
+    },
+    {
+      "name": "total240second_route_budget_prevents_second_route_after_exhaustion",
+      "passed": true
+    },
+    {
+      "name": "residual_and_spectral_lower_bound_controls_step_difference_on_same_dense_SPD_system",
+      "passed": true,
+      "dense_dimension": 4,
+      "actual_step_L2": 0.7416198487095662,
+      "conditional_upper_bound": 3911.5321490279885
+    },
+    {
+      "name": "same_fixed_linear_output_triangle_bound_has_correct_RMS_units",
+      "passed": true
+    },
+    {
+      "name": "bounds_are_unavailable_without_positive_D_same_system_and_both_true_residuals",
+      "passed": true
+    },
+    {
+      "name": "native_v2_application_is_mask_P_mask_and_self_adjoint_on_free_subspace",
+      "passed": true
+    },
+    {
+      "name": "changed_original_damping_D_is_refused",
+      "passed": true
+    },
+    {
+      "name": "native_v2_refuses_old_routes",
+      "passed": true
+    },
+    {
+      "name": "registration_freezes_exact_dependencies_runtime5_and_old_contracts_without_rerun",
+      "passed": true,
+      "dependency_count": 17
+    },
+    {
+      "name": "frozen_input_or_upstream_receipt_byte_change_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "all_CPU_fixture_outputs_are_small_JSON_without_step_or_native_vector_caches",
+      "passed": true,
+      "fixture_bytes": 98651
+    },
+    {
+      "name": "all11_old_dependencies_and_v1_system_control_receipts_remain_byte_identical",
+      "passed": true
+    },
+    {
+      "name": "native_exact_system_rhs_mask_linear_outputs_objective_and_constraints_inherited_unchanged",
+      "passed": true
+    },
+    {
+      "name": "fixed_mu_rtol_iterations_budgets_and_full_inverse_truth_zero",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "research_closeout/v3_tangent_probe_v2.py": "ca98e6dcc2ca952195a67d2472c789e4cda542f338082346ee91cc7b2f455680",
+    "research_closeout/tests/v3_tangent_probe_v2.py": "9eeefaf0ce5ab3f4ee71aae9d34323b7cd518aef6975f51b8518f1005cdf857d"
+  },
+  "helper_source_sha256": {
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002"
+  },
+  "runtime_source_sha256": {
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517"
+  },
+  "runtime_contract": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\runtime_entry_001\\CONTRACTS.json",
+    "sha256": "befe104ec2bd62f01c87fb5a9471c11051819493127f2e1203f6db610ccc1037"
+  },
+  "v1_source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7"
+  },
+  "v1_receipt_sha256": {
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\REGISTRATION.json": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\REGISTRATION_SHA256.json": "193dc18c5da11d3aa213801720fe48e50eb1ff3649c0d931b4354d57541528d1",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\RESULT.json": "1c3abd76d2be02c1e1c3e13ea5decedb53543fce6fd7462a9326880339c989a2",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_00_old_block_diagonal.json": "582a3fb2bbecb8862f19f1a9c980bffe3d505a1216591a943a64880fb0378906",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_01_old_block_diagonal.json": "6ca1558eb5c288c722f0256376c2b65fdc4f38cc6922ea117933e02252f748c6",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_00.json": "e53e66f63bddebb3d67f7b99fb56ba7e41be27ccf7532e53b069f0d1c467b564",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_01.json": "fa23187b1028f6d972c78101c67bb78991b720c90e4d620a4dd918ea8c39bfe5"
+  },
+  "GPU_used": false,
+  "native_GPU_qualified": false,
+  "whole_inverse_calls": 0,
+  "truth_arrays_read": false,
+  "real_development_raw_or_parameter_arrays_opened": false,
+  "scientific_probe_started": false,
+  "fixture_max_dense_dimension": 4,
+  "CPU_wall_s": 0.80128159999731
+}
