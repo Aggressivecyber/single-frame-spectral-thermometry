@@ -1,0 +1,224 @@
+{
+  "time": "2026-10-15T06:31:02.994211+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "same_raw_two_initializers_share_physical_regularizer_objective_and_gradient",
+      "passed": true,
+      "absolute_objective_difference": 0.0,
+      "maximum_gradient_difference": 0.0,
+      "distinct_initial_states": true,
+      "real_template_modes": 21
+    },
+    {
+      "name": "changing_numerical_coordinates_preserves_physical_objective_and_chain_rule",
+      "passed": true,
+      "absolute_objective_difference": 0.0,
+      "gradient_chain_relative_error": 0.0
+    },
+    {
+      "name": "actual_physical_profile_gradient_matches_directional_differences_and_QR",
+      "passed": true,
+      "directions": [
+        {
+          "channel": 0,
+          "finite_difference": -0.8442993310875391,
+          "analytic": -0.844299354163315,
+          "relative_error": 2.307577595672683e-08
+        },
+        {
+          "channel": 1,
+          "finite_difference": -68.08089005488904,
+          "analytic": -68.0808900342033,
+          "relative_error": 3.03840508369418e-10
+        },
+        {
+          "channel": null,
+          "finite_difference": -21.986818991320824,
+          "analytic": -21.986818964623954,
+          "relative_error": 1.2142215995417255e-09
+        }
+      ],
+      "QR_gradient_relative_difference": 1.8281550539740096e-12,
+      "nonlinear_shape": [
+        4,
+        4
+      ],
+      "raw_shape": [
+        32,
+        32
+      ],
+      "linear_columns": 24
+    },
+    {
+      "name": "actual_CPU32_constant_fixture_requires_three_qualified_endpoints_and_two_tighter_plateaus",
+      "passed": true,
+      "returned_stage": 3,
+      "qualified": [
+        true,
+        true,
+        true
+      ],
+      "actual_projected_gradients": [
+        5.3290705182007514e-14,
+        5.3290705182007514e-14,
+        5.3290705182007514e-14
+      ],
+      "comparisons": [
+        {
+          "from_stage": 1,
+          "to_stage": 2,
+          "template_RMS_difference_e": 1.8663483025517873e-28,
+          "color_RMS_difference_K": 0.0,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": true,
+          "passed": true,
+          "consecutive_passed_comparisons": 1
+        },
+        {
+          "from_stage": 2,
+          "to_stage": 3,
+          "template_RMS_difference_e": 1.3138804893555387e-28,
+          "color_RMS_difference_K": 0.0,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": true,
+          "passed": true,
+          "consecutive_passed_comparisons": 2
+        }
+      ],
+      "wall_s": 0.07473619999655057
+    },
+    {
+      "name": "optimizer_success_cannot_replace_actual_stage_gradient",
+      "passed": true,
+      "actual_projected_gradients": [
+        23.487846409169375,
+        23.487846409169332,
+        23.487846409169325
+      ],
+      "requested_gtol": [
+        0.0001,
+        1e-05,
+        1e-06
+      ]
+    },
+    {
+      "name": "three_nonconsecutive_qualified_endpoints_do_not_certify",
+      "passed": true,
+      "qualified": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "comparisons": [
+        {
+          "from_stage": 1,
+          "to_stage": 2,
+          "template_RMS_difference_e": 1.8663483025517873e-28,
+          "color_RMS_difference_K": 0.0,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": false,
+          "passed": false,
+          "consecutive_passed_comparisons": 0
+        },
+        {
+          "from_stage": 2,
+          "to_stage": 3,
+          "template_RMS_difference_e": 1.3138804893555387e-28,
+          "color_RMS_difference_K": 0.0,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": false,
+          "passed": false,
+          "consecutive_passed_comparisons": 0
+        },
+        {
+          "from_stage": 3,
+          "to_stage": 4,
+          "template_RMS_difference_e": 1.1435120621907785e-28,
+          "color_RMS_difference_K": 0.0,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": true,
+          "passed": true,
+          "consecutive_passed_comparisons": 1
+        }
+      ]
+    },
+    {
+      "name": "returns_latest_tightened_endpoint_instead_of_original_base",
+      "passed": true,
+      "returned_stage": 3,
+      "maximum_error": 0.0
+    },
+    {
+      "name": "single_total_deadline_is_not_reset_between_stages_and_finite_endpoint_survives",
+      "passed": true,
+      "returned_stage": 2,
+      "timed_out": true,
+      "finite_output": true,
+      "errors": [
+        {
+          "stage": 3,
+          "type": "TimeoutError",
+          "message": "v2 profile total numerical budget reached"
+        }
+      ]
+    },
+    {
+      "name": "initializer_time_is_inside_total_deadline_and_finite_unsolved_state_is_retained",
+      "passed": true,
+      "timed_out": true,
+      "returned_result_role": "initializer_only",
+      "wall_s": 2.0
+    },
+    {
+      "name": "inner_failure_retains_last_finite_iterate_without_certification",
+      "passed": true,
+      "returned_result_role": "interrupted_stage_finite_iterate",
+      "finite_output": true,
+      "errors": [
+        {
+          "stage": 1,
+          "type": "ArithmeticError",
+          "message": "NUMERICAL_UNCERTIFIED v2 inner profile: {'solver': 'column-scaled augmented LSMR', 'istop': 2, 'iterations': 1, 'norm_residual': 34.09529872526936, 'norm_normal_residual': 4.70111261049147e-13, 'condition_estimate': 1.0, 'actual_scaled_normal_relative': 2.077178979634697e-15, 'tolerance': 1e-11, 'maxiter': 1200, 'numerical_certified': False, 'wall_s': 0.0023355000012088567, 'regularization': {'postblur_prior_is_new_estimator': True, 'template_multiplier': 1.0, 'template_reference_sensitivity': 8.072313630327186e-05, 'gradient_reference_laplacian': 0.15224093497742647, 'template_penalty': 'multiplier*sensitivity*(1e-6+0.01*lap/lap_median)', 'beta_penalty': '1e-6 times whitened beta column squared norm', 'columns_scaled': True, 'raw_objective_count': 1, 'template_object_blur_count': 0}, 'status': 'injected inner failure'}"
+        }
+      ]
+    },
+    {
+      "name": "registered_time_output_inner_and_outer_accuracy_contracts_cannot_be_relaxed",
+      "passed": true,
+      "rejected": 11,
+      "attempts": 11
+    },
+    {
+      "name": "historical_objective_and_inverse_function_bodies_preserved",
+      "passed": true,
+      "compared_definitions": 4
+    }
+  ],
+  "scope": "locally authored CPU32 synthetic physical-profile software contracts; no native256 inversion, registered raw, scientific selection, GPU or final payload access",
+  "raw_shape": [
+    32,
+    32
+  ],
+  "nonlinear_shape": [
+    4,
+    4
+  ],
+  "real_template_modes": 21,
+  "formal_inverse_calls": 0,
+  "bounded_synthetic_profile_invocations": 7,
+  "formal_raws_generated": false,
+  "scientific_validation": false,
+  "GPU_used": false,
+  "wall_s": 0.7211326999968151,
+  "source_sha256": {
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/tests/numerical_repair.py": "bb56e85c1e384fa1d191d5d4bc993580287ec6e5de7d189df8ee095096b57b1f",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7"
+  }
+}

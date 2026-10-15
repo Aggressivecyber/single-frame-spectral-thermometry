@@ -34,7 +34,7 @@ def run():
         return {'temperature_color_K':3000+.05*y,'template_postblur_e_ref':template,
             'predicted_raw_e':y,'numerical_valid':True}
     estimate=refit(mean/adc+cfg['black_level_DN'])
-    linear=u.whole_inverse_linearization(refit,estimate,cfg,seed=913003,probes=8)
+    linear=u.legacy_whole_inverse_linearization(refit,estimate,cfg,seed=913003,probes=8)
     expected=.01*(4000+cfg['read_noise_e']**2+adc**2/12)
     actual=linear['covariance'][6][6]
     check('whole_inverse_shared_raw_variance',abs(actual-expected)/expected<1e-7,actual=actual,reference=expected)

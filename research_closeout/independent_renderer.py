@@ -1,6 +1,12 @@
-"""Independent dense-band quadrature and finite spatial-convolution renderer.
+"""Independent dense-band quadrature and explicitly calibrated spatial rendering.
 
 No reconstruction/legacy physical forward or FFT-OTF core is imported here.
+The default relay implements the declared native-grid Gaussian transfer with
+real-space periodic convolution. Its discrete kernel is constructed here from
+calibration, not truth or reconstructed data. The historical sampled Gaussian
+with edge continuation remains a named model-mismatch stress. Object Airy
+truncation, object continuation and pixel integration remain independent assumed
+models; matching the relay does not equate the complete physical forwards.
 The supplied template/background spectral matrices are synthetic integrated
 electron responses. Within-band flat photon spectra are an explicit assumed
 extension for response-shape stress, not a measured molecular line list.
@@ -10,8 +16,14 @@ from functools import lru_cache
 import json
 import numpy as np
 from scipy.signal import fftconvolve
+from scipy.ndimage import convolve1d
 from scipy.special import j1
 from scipy.integrate import trapezoid
+
+MATCHED_RELAY = 'matched_bandlimited_periodic'
+LEGACY_RELAY_STRESS = 'sampled_finite_gaussian_edge_stress'
+RELAY_MODELS = (MATCHED_RELAY, LEGACY_RELAY_STRESS)
+RENDERER_SCHEMA = 'thermometry-independent-renderer-002-relay-calibrated'
 
 @lru_cache(maxsize=16)
 def _tables(config_text,tilt,wavelength_samples=321):
@@ -45,18 +57,125 @@ def airy_psf(cutoff,oversampling,radius_px):
     return psf/psf.sum()
 
 def _gaussian_psf(sigma):
+    """Historical sampled kernel, which differs from the calibrated Gaussian OTF."""
     if sigma==0: return np.ones((1,1))
     coordinate=np.arange(-max(1,int(np.ceil(5*sigma))),max(1,int(np.ceil(5*sigma)))+1)
     y,x=np.meshgrid(coordinate,coordinate,indexing='ij');kernel=np.exp(-(x*x+y*y)/(2*sigma*sigma))
     return kernel/kernel.sum()
 
+@lru_cache(maxsize=32)
+def _matched_relay_axis_kernel(length, sigma):
+    """Centered circular kernel of the calibrated native-pixel Gaussian relay.
+
+    The inverse DFT of the separable transfer samples is real but can contain
+    signed sidelobes. It is a calibrated discrete operator, not a claimed
+    nonnegative continuous intensity PSF. Forward application uses spatial
+    convolution; no core forward or core calibration buffer is imported.
+    """
+    length = int(length)
+    if length < 1 or not np.isfinite(sigma) or sigma < 0:
+        raise ValueError('Invalid relay grid or Gaussian width')
+    frequency = np.fft.fftfreq(length)
+    transfer = np.exp(-2 * np.pi**2 * float(sigma)**2 * frequency**2)
+    kernel = np.fft.fftshift(np.fft.ifft(transfer).real)
+    kernel.setflags(write=False)
+    return kernel
+
+
+def _relay_setup(cfg, relay_model):
+    if relay_model not in RELAY_MODELS:
+        raise ValueError('Undeclared relay model: ' + str(relay_model))
+    h, w = (int(v) for v in cfg['shape'])
+    sigma = float(cfg['relay_psf_sigma_px'])
+    if min(h, w) < 1 or not np.isfinite(sigma) or sigma < 0:
+        raise ValueError('Invalid relay shape or Gaussian width')
+    return h, w, sigma
+
+
+def apply_relay(coded, cfg, *, relay_model=MATCHED_RELAY):
+    """Apply a named relay to the already sampled coded image, without labels.
+
+    The matched path uses periodic native-grid boundaries, as specified by the
+    calibration. The stress path retains the historical finite sampled Gaussian
+    and edge continuation exactly. Neither path adds pixel integration.
+    """
+    h, w, sigma = _relay_setup(cfg, relay_model)
+    coded = np.asarray(coded, dtype=np.float64)
+    if coded.shape != (h, w) or not np.isfinite(coded).all():
+        raise ValueError('Relay input must be a finite native-grid image')
+    if relay_model == MATCHED_RELAY:
+        ky = _matched_relay_axis_kernel(h, sigma)
+        kx = _matched_relay_axis_kernel(w, sigma)
+        result = convolve1d(coded, ky, axis=0, mode='wrap', origin=0)
+        return convolve1d(result, kx, axis=1, mode='wrap', origin=0)
+    relay = _gaussian_psf(sigma)
+    pad = relay.shape[0] // 2
+    return fftconvolve(np.pad(coded, pad, mode='edge'), relay, mode='valid')
+
+
+def relay_contract(cfg, *, relay_model=MATCHED_RELAY):
+    """Record actual carrier transfer; the matched flag has relay-only scope.
+
+    For edge stress, carrier responses characterize its interior kernel; edge
+    continuation itself is not Fourier diagonal. This flag does not certify
+    object H, spectral perturbations or an experimentally calibrated instrument.
+    """
+    h, w, sigma = _relay_setup(cfg, relay_model)
+    matched = relay_model == MATCHED_RELAY
+    if matched:
+        ky = _matched_relay_axis_kernel(h, sigma)
+        kx = _matched_relay_axis_kernel(w, sigma)
+        ly = np.arange(h) - h // 2
+        lx = np.arange(w) - w // 2
+    else:
+        kernel = _gaussian_psf(sigma)
+        ky, kx = kernel.sum(1), kernel.sum(0)
+        ly = np.arange(len(ky)) - len(ky) // 2
+        lx = np.arange(len(kx)) - len(kx) // 2
+    carriers = []
+    for band, (bx, by) in zip(cfg['centers_nm'], cfg['carrier_bins_xy']):
+        fx, fy = float(bx) / w, float(by) / h
+        actual = (np.sum(kx * np.exp(-2j * np.pi * fx * lx))
+                  * np.sum(ky * np.exp(-2j * np.pi * fy * ly)))
+        nominal = float(np.exp(-2 * np.pi**2 * sigma**2 * (fx*fx + fy*fy)))
+        carriers.append({'band_nm': band, 'carrier_bins_xy': [bx, by],
+            'frequency_cpp': [fx, fy], 'actual_transfer_real': float(actual.real),
+            'actual_transfer_imag': float(actual.imag),
+            'nominal_transfer': nominal,
+            'actual_over_nominal': float(actual.real / nominal)})
+    return {'renderer_schema': RENDERER_SCHEMA,
+        'relay_contract_version': 2,
+        'relay_model': relay_model,
+        'historical_v1_default_relay_model': LEGACY_RELAY_STRESS,
+        'historical_v1_relay_replay': not matched,
+        'relay_boundary': ('periodic native pixel grid' if matched
+                           else 'edge continuation of coded field'),
+        'nominal_calibration_matched': matched,
+        'nominal_calibration_matched_scope': 'relay_transfer_only',
+        'full_forward_core_equivalent': False,
+        'relay_sigma_px': sigma,
+        'relay_kernel_construction': ('independent inverse DFT of analytic Gaussian calibration; separable real-space convolution'
+            if matched else 'historical finite Gaussian sampled on integer pixel centers'),
+        'relay_kernel_has_signed_coefficients': bool(np.any(kx < 0) or np.any(ky < 0)),
+        'relay_is_nonnegative_continuous_PSF_claimed': False,
+        'relay_DC_transfer': float(kx.sum() * ky.sum()),
+        'relay_carrier_responses': carriers,
+        'relay_carrier_response_scope': ('exact periodic operator' if matched
+                                        else 'interior kernel only; edge boundary is not Fourier diagonal')}
+
+
 def render(cfg,*,seed,geometry='hotspot_small',coefficient_e=0.,photon_ratio=1.,
-           normalization='fixed_peak',perturbation=None,oversampling=2,frame_fraction=0.,wavelength_samples=321):
+           normalization='fixed_peak',perturbation=None,oversampling=2,frame_fraction=0.,wavelength_samples=321,
+           relay_model=MATCHED_RELAY):
     """Return external measurement truth and expected electrons without saving data.
 
     Formal callers must preregister mother IDs/seeds and the factor matrix.
-    Target optical response is fixed nominal H; calibration perturbations
-    change the measurement, not the target. Template output is reference20us.
+    Target object response remains the independent finite nominal Airy H;
+    calibration perturbations change the measurement, not that target.
+    Template output is reference20us. The matched relay is the default; use
+    LEGACY_RELAY_STRESS explicitly to reproduce historical relay mismatch.
+    Historical plans with no relay field used that stress path (schema v1);
+    they must pass it explicitly instead of replaying against the new default.
     """
     perturbation=dict(perturbation or {});rng=np.random.default_rng(seed)
     h,w=cfg['shape'];radius=max(8,min(128,min(h,w)//2));pad=radius;os=int(oversampling)
@@ -114,10 +233,7 @@ def render(cfg,*,seed,geometry='hotspot_small',coefficient_e=0.,photon_ratio=1.,
     for k,((kx,ky),gain,depth,phase) in enumerate(zip(cfg['carrier_bins_xy'],cfg['channel_gain'],cfg['modulation_depth'],cfg['phase_rad'])):
         mask=gain*.5*(1+depth*np.cos(2*np.pi*(kx*(xn+registration[0])/w+ky*(yn+registration[1])/h)+phase))
         coded+=mask*bands[k]
-    relay=_gaussian_psf(cfg['relay_psf_sigma_px'])
-    # Relay also uses finite scene continuation rather than circular wrapping.
-    pad_relay=relay.shape[0]//2
-    expected=fftconvolve(np.pad(coded,pad_relay,mode='edge'),relay,mode='valid')
+    expected=apply_relay(coded,cfg,relay_model=relay_model)
     ratio=Ctarget[-2]/np.maximum(Ctarget[-1],1e-12)
     ratio_lut=reference_lut[:,-2]/reference_lut[:,-1]
     color=np.interp(ratio,ratio_lut,temperature_grid)
@@ -130,7 +246,8 @@ def render(cfg,*,seed,geometry='hotspot_small',coefficient_e=0.,photon_ratio=1.,
             'normalization':normalization,'reference_signal_area_px':reference_area,'photon_ratio':photon_ratio,
             'perturbation':perturbation,'oversampling':os,'wavelength_samples':wavelength_samples,
             'reference_temperature_table_step_K':1.,'finite_Airy_radius_px':radius,'boundary':'nonperiodic extended object and crop',
-            'relay_boundary':'edge continuation of coded field','target_optics_fixed':True,
+            **relay_contract(cfg,relay_model=relay_model),'target_optics_fixed':True,
+            'pixel_integration':'object postblur subpixels averaged before native-grid mask; coded product not area integrated',
             'finite_Airy_radius_is_declared_validation_model':True,
             'infinite_Airy_or_nominal_periodic_equivalence_claimed':False,
             'template_spectrum':'assumed uniform within band, not a measured molecular line list',

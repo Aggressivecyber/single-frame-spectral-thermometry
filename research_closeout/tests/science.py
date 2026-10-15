@@ -46,14 +46,14 @@ def run():
             records.append({'mother_id':f'fixture_mother{mother}','replicate':replicate,
                 'role':'interval_calibration' if mother<6 else 'interval_evaluation',
                 'statistics':rng.normal(size=12).tolist(),'truth_statistics':[0.]*12,'noise_feature':1.})
-    model=intervals.calibrate([r for r in records if r['role']=='interval_calibration'])
-    result=intervals.evaluate(records,model)
+    model=intervals.legacy_calibrate([r for r in records if r['role']=='interval_calibration'])
+    result=intervals.legacy_evaluate(records,model)
     check('intervals_calibrated_then_evaluated_on_different_mothers',model['independent_mothers']==6
         and result['evaluation_independent_mothers']==6 and not model['evaluation_labels_used']
         and all(v>0 for v in model['constants']) and not result['simultaneous_full_image_claimed'],
         empirical_fixture_coverage=result['pooled_evaluation_marginal_coverage'])
     rejected=False
-    try: intervals.calibrate(records)
+    try: intervals.legacy_calibrate(records)
     except ValueError: rejected=True
     check('evaluation_labels_rejected_by_interval_calibrator',rejected)
     # Same shared-raw derivative, now with persisted sufficient statistics.
@@ -62,7 +62,7 @@ def run():
     def stats_refit(dn): return {'statistics':np.full(12,np.asarray(dn)[0,0]*step)}
     # Match the configured shape; no formal inverse or scientific raw is used.
     small_cfg={**p.cfg,'shape':[16,16]}
-    local=u.whole_inverse_linearization(stats_refit,estimate,small_cfg,seed=81342,probes=8,
+    local=u.legacy_whole_inverse_linearization(stats_refit,estimate,small_cfg,seed=81342,probes=8,
         summarize=lambda out:out['statistics'])
     variance_reference=3000+p.extra_variance
     covariance_error=abs(local['covariance'][0][0]-variance_reference)/variance_reference
@@ -71,7 +71,7 @@ def run():
         covariance_relative_error=covariance_error)
     from ..deployment import FrozenPrototype
     parameters=set(inspect.signature(FrozenPrototype.infer).parameters)
-    check('deployment_boundary_has_no_truth_or_identity_parameters',parameters=={'self','raw_dn','method','photon_ratio'})
+    check('deployment_boundary_has_no_truth_or_identity_parameters',parameters=={'self','raw_dn','method','photon_ratio','detector','application_domain'})
     check('final_signed_factors_and_original_main_counts',len(plan['final_signed_metadata'])==180
         and len(plan['final_main_metadata'])==512 and not plan['sealed_payloads_opened'])
     result={'time':s.now(),'all_passed':all(c['passed'] for c in checks),'tests':checks,

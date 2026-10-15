@@ -1,0 +1,48 @@
+{
+  "time": "2026-10-15T06:21:37.906195+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "unchanged_v3_physical_objective",
+      "passed": true,
+      "absolute_difference": 0.0
+    },
+    {
+      "name": "actual_native256_analytic_gradient",
+      "passed": true,
+      "relative_error": 1.0245493868549884e-08,
+      "analytic": -0.06544403873050393,
+      "finite_difference": -0.06544403805999743
+    },
+    {
+      "name": "optimizer_success_is_not_output_convergence",
+      "passed": true
+    },
+    {
+      "name": "requires_two_tighter_output_comparisons",
+      "passed": true
+    },
+    {
+      "name": "failed_optimizer_cannot_certify_plateau",
+      "passed": true
+    },
+    {
+      "name": "shared_raw_calibration_scale_is_deterministic",
+      "passed": true
+    },
+    {
+      "name": "cannot_relax_registered_numerical_budget",
+      "passed": true
+    }
+  ],
+  "native_shape": [
+    256,
+    256
+  ],
+  "complete_inversions": 0,
+  "scientific_validation": false,
+  "source_sha256": {
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/tests/v3_repair.py": "8908d9d61132bb21890595d4937fd7b8a61adc6b3eeeda2d1adb2f1ede2df2e2"
+  }
+}

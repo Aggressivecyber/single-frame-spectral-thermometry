@@ -43,13 +43,19 @@ def render_core(row,p):
         'minimum_latent_band_e_ref':float(bands.min()),
         'metadata':{'engine':'original_nominal_forward','target':'original fixed object OTF',
             'photon_ratio':row['photon_ratio'],'ADC_read_units_fixed':True,
+            'actual_temperature_geometry':row['mother']['temperature_geometry'],
+            'actual_template_geometry':row['geometry'] if row['family']=='structure' else row['mother']['template_geometry'],
+            'geometry_source':'actual generator argument; generic display geometry does not override core mother fields',
             'negative_spectra_retained_as_numerical_stress_only':bool(bands.min()<0),**provenance}}
 
 def render(row,p):
     if row['engine']=='core': return render_core(row,p)
     kwargs={'seed':row['mother']['seed'],'geometry':row['geometry'],
         'coefficient_e':row['coefficient_e'],'photon_ratio':row['photon_ratio'],
-        'normalization':row['normalization'],'perturbation':row['perturbation']}
+        'normalization':row['normalization'],'perturbation':row['perturbation'],
+        # Existing registered plans predate the relay repair. Their old stress
+        # semantics must be reproducible even after the renderer default changes.
+        'relay_model':row.get('relay_model',independent.LEGACY_RELAY_STRESS)}
     if row['family']=='dynamic':
         value=independent.render_exposure(p.cfg,mid_fraction=row['mid_fraction'],
             width_fraction=row['width_fraction'],**kwargs)

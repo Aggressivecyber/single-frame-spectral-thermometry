@@ -1,7 +1,7 @@
 """External fixed-domain scoring, additional optical targets and structure metrics."""
 from . import storage as s
 from . import measurement as m
-from .uncertainty import matched_dictionary_score
+from .uncertainty import attach_frame_detection
 import numpy as np
 import torch
 
@@ -9,11 +9,27 @@ def canonical_for_score(out,raw,p):
     return {**out,'template_postblur_e':out['template_postblur_e_ref'],
         'expected_e':out['predicted_raw_e'],'raw_e':p.raw_to_electrons(m.raw_tensor(raw,p))}
 
-def score(out,truth,raw,p):
+LEGACY_DETECTION_FIELDS={
+    'threshold_e','z_threshold','sigma_valid_fraction','signed_detected_pixels',
+    'signed_recall','signed_recall_unconditional','signed_recall_rule',
+    'positive_detected_pixels','positive_recall','negative_detected_pixels','negative_recall',
+    'frame_detection_score','frame_detection_score_kind','frame_threshold','frame_detected',
+    'null_pixel_FP_count','null_pixel_FP','null_frame_FP','null_FOV_FPR_control_claimed'}
+
+def score(out,truth,raw,p,*,detector=None,method=None,application_domain=None):
     from research_v5.metrics import score_prediction
+    finite_output=True
+    for name in ('template_postblur_e_ref','temperature_color_K','predicted_raw_e'):
+        value=out[name]
+        if hasattr(value,'detach'): value=value.detach().cpu().numpy()
+        finite_output=finite_output and bool(np.isfinite(value).all())
     result=score_prediction(canonical_for_score(out,raw,p),truth,p)
     if result['metrics'] is not None:
-        result['metrics']['matched_dictionary_frame_score']=matched_dictionary_score(out['template_postblur_e_ref'])
+        for key in LEGACY_DETECTION_FIELDS:
+            if key in result['metrics']: result['metrics']['legacy_'+key]=result['metrics'].pop(key)
+        detected=attach_frame_detection(out,detector,method=method,application_domain=application_domain)
+        result['metrics']['frame_detection_v2']=detected['frame_detection_v2']
+        result['metrics']['matched_dictionary_frame_score']=detected['frame_detection_v2']['score']
         result['metrics']['predicted_measurement_nonnegative']=bool(out['predicted_raw_e'].min()>=0)
         dn=m.raw_tensor(raw,p);top=2**p.cfg['adc_bits']-1
         result['metrics']['raw_saturated_pixels']=int((dn>=top).sum())
@@ -21,6 +37,14 @@ def score(out,truth,raw,p):
         u=out['template_postblur_e_ref'].double();target=truth['template_postblur_e'].double()
         result['metrics']['structure']=structure(u,target)
     result['production_numerical_certified']=bool(out.get('numerical_valid',False))
+    result['legacy_metric_status']=result['status']
+    result['finite_scoring_passed']=bool(result.pop('numerical_execution_passed',False))
+    result['finite_scoring_definition']='all finite, within temperature bounds and not abstained; no solver convergence assertion'
+    result['finite_output']=finite_output
+    result['finite_output_definition']='all template, color-temperature and predicted-raw values finite; independent of scoring truth, bounds and abstention'
+    if result['status']=='SUCCESS':
+        result['status']='FINITE_NUMERICALLY_CERTIFIED' if result['production_numerical_certified'] else 'FINITE_NUMERICALLY_UNCERTIFIED'
+    result['metric_schema']='closeout-fixed-domain-explicit-status-v2'
     return s.plain(result)
 
 def structure(prediction,target):

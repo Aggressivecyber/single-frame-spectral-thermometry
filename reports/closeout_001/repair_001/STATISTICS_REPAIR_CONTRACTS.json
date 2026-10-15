@@ -1,0 +1,210 @@
+{
+  "time": "2026-10-15T06:32:30.753995+00:00",
+  "schema": "statistics-repair-contracts-v2",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "default_two_probes_three_steps_exact_twelve_callbacks",
+      "passed": true,
+      "actual_callbacks": 12,
+      "new_formal_inverse_calls": 0
+    },
+    {
+      "name": "linear_shared_raw_cross_covariance_exact_in_output_units",
+      "passed": true,
+      "maximum_absolute_covariance_error": 8.858478395268321e-10,
+      "cross_covariance_K_e": -624.4999999998893,
+      "analytic_cross_covariance_K_e": -624.5
+    },
+    {
+      "name": "low_probe_stable_diagnostic_never_becomes_interval_scale",
+      "passed": true
+    },
+    {
+      "name": "analytically_verified_linear_probe_budget_can_supply_output_scale",
+      "passed": true,
+      "callbacks": 192,
+      "analytic_covariance_error": 8.849383448250592e-10,
+      "convergence_evidence": "all probe second moments equal the analytic rank-one linear covariance"
+    },
+    {
+      "name": "large_K_statistics_cannot_hide_unstable_template_statistic",
+      "passed": true,
+      "per_pair_final_template_statistic_passed": [
+        false,
+        false
+      ]
+    },
+    {
+      "name": "zero_sensitivity_stable_without_division_by_zero_or_fake_scale",
+      "passed": true
+    },
+    {
+      "name": "finite_stable_uncertified_refits_never_supply_trusted_scale",
+      "passed": true
+    },
+    {
+      "name": "all_failed_directional_callbacks_keep_all_twelve_attempts",
+      "passed": true,
+      "attempted_callbacks": 12,
+      "failed_callbacks": 12
+    },
+    {
+      "name": "directional_call_budget_rejected_before_refitting",
+      "passed": true
+    },
+    {
+      "name": "bootstrap_scale_is_twelve_output_SDs_with_small_fixture_debug_status",
+      "passed": true
+    },
+    {
+      "name": "independent_scene_MC_scale_explicit_oracle_never_deployment_scale",
+      "passed": true
+    },
+    {
+      "name": "empirical_scale_missing_and_failed_draws_do_not_shrink_denominator",
+      "passed": true,
+      "missing_draws": 2,
+      "failed_draws": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "conditional_bootstrap_refits_whole_output_and_keeps_twelve_statistics",
+      "passed": true
+    },
+    {
+      "name": "bootstrap_failed_and_invalid_resumed_draws_remain_in_declared_denominator",
+      "passed": true
+    },
+    {
+      "name": "empirical_quantile_endpoints_include_exact_boundary_after_rounding",
+      "passed": true
+    },
+    {
+      "name": "held_out_intervals_keep_missing_draws_and_never_refit_model",
+      "passed": true,
+      "coverage_full_declared_denominator": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "declared_draws": 4,
+      "finite_draws": 2
+    },
+    {
+      "name": "declared_missing_calibration_draw_makes_model_unavailable",
+      "passed": true
+    },
+    {
+      "name": "evaluation_labels_cannot_calibrate",
+      "passed": true
+    },
+    {
+      "name": "calibration_mother_cannot_become_held_out_evaluation",
+      "passed": true
+    },
+    {
+      "name": "scalar_raw_brightness_rejected_as_temperature_or_template_scale",
+      "passed": true
+    },
+    {
+      "name": "actual_generated_geometries_required_and_consistent_per_mother",
+      "passed": true
+    },
+    {
+      "name": "all_failed_evaluation_and_calibration_preserve_denominators",
+      "passed": true
+    },
+    {
+      "name": "oracle_MC_scale_kept_explicit_in_calibration_result",
+      "passed": true
+    },
+    {
+      "name": "uncertified_local_diagnostic_cannot_be_reused_as_interval_scale",
+      "passed": true
+    },
+    {
+      "name": "replicate_id_outside_declared_range_rejected",
+      "passed": true
+    },
+    {
+      "name": "legacy_scalar_intervals_require_explicit_legacy_entrypoint",
+      "passed": true
+    },
+    {
+      "name": "no_frozen_threshold_has_no_detection_decision",
+      "passed": true
+    },
+    {
+      "name": "method_specific_threshold_rejects_different_method",
+      "passed": true
+    },
+    {
+      "name": "outside_calibration_domain_is_diagnostic_without_formal_detection",
+      "passed": true
+    },
+    {
+      "name": "dictionary_detection_uses_strict_greater_comparison",
+      "passed": true
+    },
+    {
+      "name": "old_dictionary_threshold_explicit_unbound_diagnostic_and_60e_rule_rejected",
+      "passed": true
+    },
+    {
+      "name": "null_calibration_must_use_distinct_mothers",
+      "passed": true
+    },
+    {
+      "name": "legacy_60e_detection_and_v2_dictionary_decision_remain_distinct",
+      "passed": true
+    },
+    {
+      "name": "finite_output_finite_scoring_and_production_certification_are_separate",
+      "passed": true
+    },
+    {
+      "name": "finite_output_does_not_require_valid_truth_domain_or_temperature_bounds",
+      "passed": true
+    },
+    {
+      "name": "certified_and_nonfinite_score_statuses_stay_explicit",
+      "passed": true
+    },
+    {
+      "name": "all_failed_score_aggregation_keeps_case_denominator",
+      "passed": true
+    }
+  ],
+  "fixture_shape": [
+    4,
+    4
+  ],
+  "device": "cpu",
+  "CUDA_VISIBLE_DEVICES": "",
+  "synthetic_fixture_callback_calls": 448,
+  "formal_inverse_calls": 0,
+  "formal_complete_inversions": 0,
+  "formal_raw_generated": false,
+  "formal_MC_rerun": false,
+  "GPU_used": false,
+  "sealed_payloads_opened": false,
+  "scientific_coverage_or_accuracy_claimed": false,
+  "source_sha256": {
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/tests/statistics_repair.py": "1fe1c708df025b6c5bd91f8d94387c031719b63f9c2008a9b41ddb2601e76150"
+  }
+}

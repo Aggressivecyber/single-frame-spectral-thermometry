@@ -2,6 +2,7 @@
 from . import storage as s
 from . import measurement as m
 from .baselines import FrozenBaselines
+from .uncertainty import attach_frame_detection
 from contextlib import contextmanager
 import argparse
 import copy
@@ -31,7 +32,7 @@ class FrozenPrototype:
         self.suite=FrozenBaselines(device);self.physics=self.suite.p
         self.qualified=bool(selected['deployment_qualified'])
     @torch.no_grad()
-    def infer(self,raw_dn,method='v3_physics',*,photon_ratio=1.):
+    def infer(self,raw_dn,method='v3_physics',*,photon_ratio=1.,detector=None,application_domain=None):
         # Only the observed raw and known calibration cross this boundary.
         # No case ID, condition, geometry, seed, label or truth argument exists.
         if method=='old_B4' and self.suite.old_model is None:
@@ -57,6 +58,10 @@ class FrozenPrototype:
             template_unit='electron coefficient at reference20us',research_baseline_only=True,
             production_qualified=self.qualified if method=='v3_physics' else False,
             checkpoint_or_estimator_reselected=False)
+        out=attach_frame_detection(out,detector,method=method,application_domain=application_domain)
+        out['detection_status']=out['frame_detection_v2']['status']
+        out['finite_output']=all(bool(torch.isfinite(out[k]).all()) for k in
+            ('temperature_color_K','template_postblur_e_ref','predicted_raw_e'))
         return out
 
 def main():
@@ -67,12 +72,14 @@ def main():
     nominal=m.selection()['physics_config']
     if cal['physics_config']!=nominal: raise ValueError('Unsupported unverified instrument calibration')
     raw=np.load(args.raw,allow_pickle=False);engine=FrozenPrototype(args.device)
-    out=engine.infer(raw,photon_ratio=float(cal.get('known_photon_ratio',1.)))
+    out=engine.infer(raw,photon_ratio=float(cal.get('known_photon_ratio',1.)),
+        detector=cal.get('frozen_frame_detector'),application_domain=cal.get('detector_application_domain'))
     path=s.write_path(args.output)
     receipt=s.save(path,**{k:out[k] for k in ('temperature_color_K','template_postblur_e_ref',
         'continuum_postblur_bands','predicted_raw_e','valid','low_signal')})
     s.write(path.with_suffix('.json'),{'result':receipt,'status':out['info'],
         'calibration_status':out['calibration_status'],'numerical_valid':out['numerical_valid'],
+        'finite_output':out['finite_output'],'frame_detection_v2':out['frame_detection_v2'],
         'uncertainty_status':out['uncertainty_status'],'real_experimental_validation':False})
     print(json.dumps(receipt),flush=True)
 

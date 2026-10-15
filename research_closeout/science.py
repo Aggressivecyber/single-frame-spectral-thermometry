@@ -181,7 +181,7 @@ def full_uncertainty(runner):
                 if value['statistics'] is None: raise ArithmeticError('A whole-inverse directional refit failed')
                 return value
             try:
-                local=u.whole_inverse_linearization(refit,estimate,runner.p.cfg,seed=row['linearization_seed'],
+                local=u.legacy_whole_inverse_linearization(refit,estimate,runner.p.cfg,seed=row['linearization_seed'],
                     probes=8,summarize=lambda v:np.asarray(v['statistics']))
                 local['step_size_check_passed']=all(e<=.2 for e in local['step_size_relative_discrepancies'])
                 local['status']='LOCAL_DIRECTIONAL_DIAGNOSTIC' if local['step_size_check_passed'] else 'NUMERICAL_LINEARIZATION_UNCERTIFIED'
@@ -205,9 +205,9 @@ def full_uncertainty(runner):
     model_path=s.REPORTS/'INTERVAL_CALIBRATION.json'
     if model_path.exists(): model=s.read(model_path)
     else:
-        model=intervals.calibrate([r for r in records if r['role']=='interval_calibration'])
+        model=intervals.legacy_calibrate([r for r in records if r['role']=='interval_calibration'])
         s.write(model_path,s.plain(model))
-    evaluation=intervals.evaluate(records,model)
+    evaluation=intervals.legacy_evaluate(records,model)
     stability=[]
     for row in cases:
         if row['MC']!=128: continue
