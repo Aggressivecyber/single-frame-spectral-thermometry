@@ -1,0 +1,48 @@
+{
+  "available": true,
+  "constants": [
+    0.6921449273649065,
+    0.6375917990395212,
+    0.5633235380396089,
+    0.6136558428090472,
+    0.7794108232593029,
+    0.06595634102615039,
+    0.4568697691426332,
+    0.43674427970504776,
+    0.4747835482118343,
+    0.4018326180691068,
+    0.433032665547215,
+    0.0657849508973429
+  ],
+  "statistics": [
+    "color_pixel_0_K",
+    "color_pixel_1_K",
+    "color_pixel_2_K",
+    "color_pixel_3_K",
+    "color_pixel_4_K",
+    "color_central_ROI_mean_K",
+    "template_pixel_0_e_ref",
+    "template_pixel_1_e_ref",
+    "template_pixel_2_e_ref",
+    "template_pixel_3_e_ref",
+    "template_pixel_4_e_ref",
+    "template_central_ROI_mean_e_ref"
+  ],
+  "calibration_mothers": [
+    "closeout_uncertainty_mother_0000",
+    "closeout_uncertainty_mother_0001",
+    "closeout_uncertainty_mother_0002",
+    "closeout_uncertainty_mother_0003",
+    "closeout_uncertainty_mother_0004",
+    "closeout_uncertainty_mother_0005"
+  ],
+  "independent_mothers": 6,
+  "draws_per_mother": 64,
+  "total_draws": 384,
+  "formula": "center +/- constant[stat] * sqrt(fitted raw mean + read variance + ADC variance)",
+  "assumption": "empirical nominal synthetic scene and noise distribution; not measured calibration",
+  "distribution_free95_guaranteed": false,
+  "nominal_level": 0.95,
+  "coverage_unit": "marginal statistic; mother clusters; not simultaneous full-image coverage",
+  "evaluation_labels_used": false
+}
