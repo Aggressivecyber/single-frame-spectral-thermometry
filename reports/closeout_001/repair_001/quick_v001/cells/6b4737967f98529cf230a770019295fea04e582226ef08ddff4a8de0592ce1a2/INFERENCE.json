@@ -1,0 +1,257 @@
+{
+  "registration_sha256": "15b03a28b863264ff85aca032d3b29d1e6d052c8c64b56eecd5dec80dc37dd9d",
+  "method": "v3_objective_refined_v2__same_raw_cached_v3",
+  "raw_sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823",
+  "cache_key": "6b4737967f98529cf230a770019295fea04e582226ef08ddff4a8de0592ce1a2",
+  "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+  "info": {
+    "method": "v3_objective_refined_v2",
+    "status": "FINITE_NUMERICAL_UNCERTIFIED",
+    "numerical_certified": false,
+    "objective_version": "unchanged_frozen_v3_weighted_raw_plus_latent_prior",
+    "solver_version": "v3_objective_refined_v2",
+    "solver": "float64 analytic-gradient bounded L-BFGS-B",
+    "same_original_regularization": [
+      1e-05,
+      1e-05,
+      0.0,
+      0.0,
+      0.1
+    ],
+    "initializer": "hash_verified_same_raw_frozen_v3",
+    "CG_directions_used": false,
+    "coordinate_anchor": {
+      "T_K": 3300,
+      "amplitude": 0.5
+    },
+    "options": {
+      "cost_limit_s": 180.0,
+      "numeric_color_budget_K": 0.2,
+      "numeric_template_budget_e": 0.17,
+      "minimum_stable_comparisons": 2,
+      "stages": [
+        {
+          "gtol": 0.0001,
+          "ftol": 1e-11,
+          "maxiter": 400,
+          "maxfun": 850
+        },
+        {
+          "gtol": 1e-06,
+          "ftol": 1e-13,
+          "maxiter": 600,
+          "maxfun": 1250
+        },
+        {
+          "gtol": 1e-08,
+          "ftol": 5e-15,
+          "maxiter": 800,
+          "maxfun": 1650
+        },
+        {
+          "gtol": 1e-10,
+          "ftol": 1e-15,
+          "maxiter": 1000,
+          "maxfun": 2050
+        }
+      ]
+    },
+    "stages": [
+      {
+        "configuration": {
+          "gtol": 0.0001,
+          "ftol": 1e-11,
+          "maxiter": 400,
+          "maxfun": 850
+        },
+        "optimizer_success": false,
+        "optimizer_reported_success": false,
+        "projected_gradient_tolerance_passed": false,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+        "iterations": 400,
+        "objective": 31219.327139224726,
+        "physical_gradient_l2": 55.834834066291165,
+        "scaled_projected_gradient_inf": 0.06977484626381593
+      },
+      {
+        "configuration": {
+          "gtol": 1e-06,
+          "ftol": 1e-13,
+          "maxiter": 600,
+          "maxfun": 1250
+        },
+        "optimizer_success": false,
+        "optimizer_reported_success": false,
+        "projected_gradient_tolerance_passed": false,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+        "iterations": 600,
+        "objective": 31192.581756902113,
+        "physical_gradient_l2": 38.53584304127019,
+        "scaled_projected_gradient_inf": 0.03751255398305603
+      },
+      {
+        "configuration": {
+          "gtol": 1e-08,
+          "ftol": 5e-15,
+          "maxiter": 800,
+          "maxfun": 1650
+        },
+        "optimizer_success": false,
+        "optimizer_reported_success": false,
+        "projected_gradient_tolerance_passed": false,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+        "iterations": 800,
+        "objective": 31152.485524556658,
+        "physical_gradient_l2": 64.57777599960653,
+        "scaled_projected_gradient_inf": 0.09274324272088932
+      }
+    ],
+    "output_comparisons": [
+      {
+        "color_RMS_K": 4.141594581387303,
+        "template_RMS_e": 2.2272803275330735,
+        "both_optimizer_success": false
+      },
+      {
+        "color_RMS_K": 5.600562795233049,
+        "template_RMS_e": 3.1855983931934393,
+        "both_optimizer_success": false
+      }
+    ],
+    "errors": [
+      "Bounded v3 objective refinement reached its wall budget"
+    ],
+    "returned_endpoint": "latest_finite_evaluated_iterate",
+    "finite_output": true,
+    "nonnegative_predicted_measurement": true,
+    "truth_used": false,
+    "wall_s": 180.086418699997,
+    "objective_evaluations": 2372,
+    "objective_history_summary": {
+      "first": {
+        "evaluation": 1,
+        "objective": 31253.64159012097,
+        "gradient_l2": 820.8638558883787
+      },
+      "last": {
+        "evaluation": 2372,
+        "objective": 31136.42185059428,
+        "gradient_l2": 22.86323911028187
+      }
+    },
+    "certification_scope": "bounded numerical output stability; no global optimum or scientific accuracy claim"
+  },
+  "finite_output": true,
+  "production_numerical_certified": false,
+  "predicted_measurement_nonnegative": true,
+  "calibration_status": "calibration_assumed_not_verified",
+  "array_sha256": {
+    "T": "0cb329c1ea11c402ca59ff5019ed3204e277d4e89c235070e15cd0738f3d0878",
+    "u": "4f73bcd94f19a810221028d171c098676feb96a645ebb42f4f299c543951f5ee",
+    "C": "cb44f213a83bf8c9e31acc7236d0a4b017db2343efb4a422f90b4d6a7de5b221",
+    "predicted_raw_e": "eba7957f88f8a187d6dfb11ac70f53f609183b768729d0e266dfe94c6086d964",
+    "valid": "ab012fb0013c78c3c8e97f5692844c9e6bb81f7265ace8e5c2154c8a7aa6da96",
+    "low_signal": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+  },
+  "array_shapes": {
+    "T": [
+      1,
+      256,
+      256
+    ],
+    "u": [
+      1,
+      256,
+      256
+    ],
+    "C": [
+      1,
+      7,
+      256,
+      256
+    ],
+    "predicted_raw_e": [
+      1,
+      256,
+      256
+    ],
+    "valid": [
+      1,
+      256,
+      256
+    ],
+    "low_signal": [
+      1,
+      256,
+      256
+    ]
+  },
+  "canonical_dtype": "float64",
+  "truth_loaded_before_persisting": false,
+  "output_cache": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v001\\6b4737967f98529cf230a770019295fea04e582226ef08ddff4a8de0592ce1a2.npz",
+    "sha256": "c41c614a5fb3a07914c5a5b129bfa5a31fee7c0ebd92b2787d7965fd2f6a8291"
+  },
+  "output_bytes": 4896243,
+  "output_metadata": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v001\\6b4737967f98529cf230a770019295fea04e582226ef08ddff4a8de0592ce1a2.output.json",
+    "sha256": "3839bd99b8f3ecd38019736880353c31e939f864f9802ea1616e92e3cd1e9ce3"
+  },
+  "total_output_bytes": 29214787,
+  "inference_status": "RETURNED",
+  "inference_attempted": true,
+  "time": "2026-10-15T06:45:51.297084+00:00",
+  "wall_s": 180.6178307999944,
+  "initializer_provenance": {
+    "kind": "same_raw_frozen_v3_state_beta",
+    "new_complete_inverse_calls": 0,
+    "raw_file_sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823",
+    "raw_array_sha256": "a5f989b27047b8ae1c75d9caa841dba6c74dc6ed50a76dba8e16b934399477c3",
+    "original_raw_dtype": "uint16",
+    "inference_input_array_sha256": "a7a314d54ae0ea24bb8bab1352b123deec9c1da34aa82d448a1d9fc44897c47f",
+    "source_input_dtype": "torch.float32",
+    "array_hash_scope": "original camera dtype and source floating dtype are recorded separately",
+    "truth_or_identity_used": false,
+    "state_cache": {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0013_negative_normal_noise0.npz",
+      "sha256": "d921a0facb9ca9dce412041cd35531de01303d3423080380db3092395743af77",
+      "bytes": 706818
+    },
+    "receipt_journal": {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\research_v6\\repair_001\\source_inference_receipts.jsonl",
+      "sha256": "2f15576808e1241cfc47937db6314ccbd133e1bd9ed789dec7f6ed90443c57ec",
+      "line": 401
+    },
+    "source_metadata": {
+      "source": "C_v3",
+      "mode": "new_frozen_inference",
+      "wall_s": 4.4975420999981,
+      "raw_array_sha256": "a7a314d54ae0ea24bb8bab1352b123deec9c1da34aa82d448a1d9fc44897c47f",
+      "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "truth_or_identity_used": false,
+      "optimizer_updates": 0,
+      "continuum_domain": "latent; postblur formed once",
+      "peak_CPU_RSS_MiB": null,
+      "CPU_peak_scope": "process lifetime high-water mark",
+      "peak_GPU_allocated_MiB": 88.66064453125,
+      "GPU_peak_scope": "process counter since most recent reset",
+      "engine_seconds": 4.48505170000135,
+      "source_sha256": {
+        "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+        "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+        "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+        "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+        "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+      },
+      "consumed_selection_sha256": "e8a00514ef2b761d1dbd531adbda957d09d4f2883382574dc6a4f75ff35bf667",
+      "solver_config_sha256": "6b1da0b81507afa9e68bcec97fcef95ab9c454371473a1b2681cbfa75766d961",
+      "method": "old_init__joint_update_v3",
+      "backbone_selection_sha256": "d4f6cb17450308717623821995c7d2ab10d487d560c87c3f8979418708b64f71"
+    },
+    "original_dtype_roundtrip_verified": true,
+    "source_dtype_roundtrip_verified": true,
+    "source_input_array_hash_verified": true
+  }
+}
