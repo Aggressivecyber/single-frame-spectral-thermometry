@@ -1,3 +1,17 @@
+# Current23:00 Singapore wake: blank shard completed; next weak shard prepared
+
+At2026-10-15T15:00:50Z both owned processes28812/42132 and both locks were absent. Blank terminal14:45:18Z reports18/18 finite/certified,2reused+16new; charged5131 (5671ledgerrows incl540reused), fullmatrix44/1080,1036unexecuted. Root native reconstruction/main26-score audit passed18/18,0inverse/optimizer/inner, wall26.757s; SHA84a2235ee29101fa48b683564a229d93bedd7d587d68c36fef48f8fb59f4a8f5. Independent CPU18chains/54stages/36platforms and two fixed extreme endpoints passed actual1e-6; tighter cold/warm template change<=4.808e-9e,1033 protected objects unchanged. No1e-7 or scientific selection claim. New core1319.467s; firstnewticket-to-terminal3115.416s. See BLANK_SHARD_COMPLETION_VERIFICATION.json and c1_blank_analysis_001/FINAL_REVIEW_RECEIPT.json.
+
+Runtime cost study selection_runtime_analysis_001 found52.51min launch-to-summary=21.99min core+30.52min outside, including20.09min nonoverlapping receipt-to-sidecar windows. Budget tree walks are a plausible cost; no profiler uniquely attributes all overhead. Keep42 numerical/controller sources frozen and continue the planned small shards. Six completed tiny CPU fixture directories were removed under prior explicit cleanup authorization:476 files/4,464,998B. File hashes/fault summaries/contracts retained inCPU_FIXTURE_CLEANUP_MANIFEST.json, all4123 other protected objects unchanged. ROOT_FIXTURE_CLEANUP_AFTER.json andCPU夹具清理简报.md are authoritative. This does not prove a speed gain.
+
+Figure1 SYSTEM_TARGETS_001.png now shows the actual seven synthetic bands/common raw and sigma0/2/4 optical targets, with PNG visualQA. Figure2 remains visually checked. PDFs onlystructuralchecks; seven figure groups and full Chinese paper remain unfinished.
+
+Next explicit root-owned shard is v5_development_selection_mother_0000_positive_weak_noise0 only:18new+0reused, native256/180seach/3240s plus controller overhead, charged5131 to max5149, wholematrix44 to atmost62 of1080. It is already in the same immutable registration f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74, not a new method/grid. PWEAK_SHARD_PLAN_REVIEW.json checked all42source AST/index/bytes,661references/no prior same-method/raw attempts and96MiB reserve. It has not been launched in this preparation snapshot; the next startup section will supersede this text.
+
+Human cumulative16000 approval/storage4GiB/Efloor2GiB/D256MiB/Dfloor128MiB unchanged. This controller uses stricter12000 plus semanticdevelopment3400; currentdevelopment490, nextmax508. Same method/raw failed/interrupted/uncertified results reuse; score-only never reinfers. Final payload closed. Next full scientific/UQ/null/matched/final/paper work described below remains required.
+
+## Prior startup snapshots
+
 # Closeout 001 current continuation: verified blank-shard startup
 
 Latest direct human approval raises the **cumulative** new complete-inverse cap from12000 to16000; it does not add16000 on top. See repair_001/INVERSE_BUDGET_EXTENSION_16000.json. Original study/spec/registrations remain byte-unchanged. This first-stage controller deliberately keeps the stricter12000 guard; it fits that guard. Future formal science needs a new explicit cap/phase adapter, not a silent edit to old registered sources. Storage remains4GiB across the four E/D data/report roots, E floor2GiB; D project256MiB and D floor128MiB independently.

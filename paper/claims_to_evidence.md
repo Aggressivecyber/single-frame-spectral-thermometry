@@ -4,6 +4,7 @@
 
 | 正文声明 | 输入与完整分母 | 直接证据 | 适用范围/未完成项 |
 |---|---|---|---|
+| 图1固定共同编码和三个光学目标 | 七个固定合成波段，256×256，20 μs参考曝光，附加σ=0/2/4像素 | [绘图配置与来源](../reports/closeout_001/repair_001/SYSTEM_TARGETS_FIGURE_001.json) | 模板已处于postblur尺度；色温由先平滑的连续谱比值计算；图不意味着实测光谱标定 |
 | 连续谱来源替换降低当前模板误差 | 36开发母场景，正常含噪正/负模板，同raw同线性配置 | [A复用比较](../reports/closeout_001/A_REUSED_COMPARISON.json) | 约64 e至18 e；未优于完整v3；各RMSE之差不是方差项 |
 | 四项分解包含实际及分量求解残差 | 90输入、6母场景、540来源/背景组合 | [来源汇总](../reports/closeout_001/SOURCE_STUDY_SUMMARY.json)、[终态](../reports/closeout_001/FOUNDATION_CONTINUED_RESULT.json) | 闭合和数值项描述固定线性目标，不等于相机精度 |
 | 图2保留Oracle条件、父场景统计与交叉贡献 | (a)36开发父场景×正负正常raw，4路线；(b,c)6参考父场景×12份正常raw，2来源 | [绘图及统计记录](../reports/closeout_001/repair_001/SOURCE_MECHANISM_FIGURE_002.json) | 10000次配对父场景bootstrap为描述区间；RMS分量不可按独立方差相加；不同面板不拼成同场景比较 |
@@ -18,6 +19,7 @@
 | C1两初值共享物理正则 | 同上述4格，逐raw比较共同anchor合同 | [全域重评分及初值比较](../reports/closeout_001/repair_001/quick_v002/NATIVE_C1_ANALYSIS.json) | 版本内目标相同；不把新C1与旧PLUT称同一物理目标 |
 | C1小面板十二格数值合格，精度存在取舍 | 6开发raw（5父场景）×双初值；4复用+8新增；各65536像素 | [终态精确归档](../reports/closeout_001/repair_001/quick_v003/PANEL_RESULT.json)、[原生重建与重评分](../reports/closeout_001/repair_001/quick_v003/NATIVE_PANEL_ANALYSIS.json)、[独立CPU审阅](../reports/closeout_001/repair_001/quick_v003_analysis/FINAL_REVIEW_RECEIPT.json) | 实际终阈1e-6；色温9.859K/模板21.968e，正常模板相对v3约1.339，c1s1不能据此选型；基线指标精确复用 |
 | C1九组数值预筛全部通过 | 同1个raw/母场景×9组×双初值=18格，2复用+16新增；54阶段/36平台，各65536像素 | [预筛终态](../reports/closeout_001/repair_001/c1_development_001/PRESCREEN_RESULT.json)、[原生哈希与重评分](../reports/closeout_001/repair_001/c1_development_001/NATIVE_PRESCREEN_ANALYSIS.json)、[独立CPU审阅](../reports/closeout_001/repair_001/c1_prescreen_analysis_001/FINAL_REVIEW_RECEIPT.json) | 实际终阈1e-6；两个极端正则端点紧内解最大模板变化8.46e-9 e；只是单raw诊断，不选择最终方法 |
+| 首个空白开发分片通过数值核验 | 1raw×九组×双初值=18格，2复用+16新增；完整开发矩阵覆盖44/1080格 | [分片终态](../reports/closeout_001/repair_001/c1_selection_001/shards/465abeba9ad35f2075ef7ba2dc0a6f6dadb3de5addcdccb89bbfcfb2d628141d/RUN_3f3182eb954a430690f3ea0bb94e104f.json)、[原生哈希与26项全域重评分](../reports/closeout_001/repair_001/c1_selection_001/analysis/465abeba9ad35f2075ef7ba2dc0a6f6dadb3de5addcdccb89bbfcfb2d628141d/NATIVE_ANALYSIS.json)、[独立CPU复核](../reports/closeout_001/repair_001/c1_blank_analysis_001/FINAL_REVIEW_RECEIPT.json) | 真实终阈1e-6，更紧内解模板变化≤4.81e-9 e；无新阈值，不能由blank输出宣称已控制帧误报率；1036格尚未执行 |
 | compact缓存通过四个原生端点字节资格 | 4端点×6组原canonical；0优化、0内层、0完整逆 | [原生资格精确归档](../reports/closeout_001/repair_001/quick_v003/NATIVE_COMPACT_QUALIFICATION.json)、[根级复核](../reports/closeout_001/repair_001/quick_v003/ROOT_QUALIFICATION_REVIEW.json) | 新潜连续谱仅作自身持久化重建校验；原latent未存不能直接比较；嵌套空间释放错误另留账 |
 | relay响应差异造成平场色温偏差 | 平坦3100 K无噪反例与各载频响应 | [根因报告](../reports/closeout_001/root_cause_team_001/ROOT_CAUSE_REPORT.zh-CN.md) | 旧nominal按已登记失配压力解释；新匹配24母场景未执行 |
 | 原MC记录保留，区间方案需更正 | 12母场景/896完整MC，原几何角色混杂 | [科学终态](../reports/closeout_001/SCIENCE_RESULT.json)、[更正协议](../reports/closeout_001/repair_001/REPAIRED_SCIENTIFIC_PROTOCOL.json) | 条件bootstrap不是独立覆盖，oracle回顾诊断不是部署区间 |

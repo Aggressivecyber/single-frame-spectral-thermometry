@@ -1,0 +1,255 @@
+{
+  "schema": "selection-runtime-findings-v001",
+  "time": "2026-10-15T15:18:19.592568+00:00",
+  "all_checks_passed": true,
+  "checks": {
+    "42_registered_sources_byte_verified": true,
+    "protected_old_344_files_unchanged": true,
+    "single_blank_shard16_new_plus2_old": true,
+    "all16_new_finite_certified_scored": true,
+    "full1080_with44_finite_certified_and1036_future": true,
+    "exactly3_CPU_tree_ledger_snapshots": true,
+    "next_positive_weak0_reuse18_new": true,
+    "current_and_prior_registration_zero_direct_fixture_read_dependency": true,
+    "all_six_fixture_runs_completed_CPU_zero_inverse": true
+  },
+  "evidence_report": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\selection_runtime_analysis_001\\READONLY_RUNTIME_ANALYSIS.json",
+    "sha256": "ec2128225d13a06b049a472086de6d032600289d128694262706fdc12b5274c4"
+  },
+  "CPU_fixture_manifest": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\selection_runtime_analysis_001\\CPU_FIXTURE_CLEANUP_MANIFEST.json",
+    "sha256": "77c1ea6b402ca667583a7e8ac8666eb30b3284e0503e3bb8accf0b81a392e172",
+    "bytes": 236165
+  },
+  "observed_non_overlapping_total_partition_s": {
+    "launch_to_summary_mtime": 3150.490048646927,
+    "recorded_numerical_engine": 1319.4668498000538,
+    "metadata_record_to_sha_sidecar_windows": 1205.3300201892853,
+    "remaining_unallocated": 625.6931786575879
+  },
+  "receipt_record_to_sha_sidecar_by_kind": {
+    "started": {
+      "n": 16,
+      "sum_s": 50.58945178985596,
+      "median_s": 3.360713481903076,
+      "min_s": 1.1744918823242188,
+      "max_s": 3.9071009159088135
+    },
+    "reservation": {
+      "n": 16,
+      "sum_s": 48.82202339172363,
+      "median_s": 3.296583890914917,
+      "min_s": 1.1868770122528076,
+      "max_s": 3.8087451457977295
+    },
+    "call": {
+      "n": 16,
+      "sum_s": 247.89971828460693,
+      "median_s": 17.270271062850952,
+      "min_s": 6.120036840438843,
+      "max_s": 18.840914011001587
+    },
+    "prepared": {
+      "n": 16,
+      "sum_s": 114.26123380661011,
+      "median_s": 7.6813119649887085,
+      "min_s": 2.4873030185699463,
+      "max_s": 8.741652011871338
+    },
+    "parameters": {
+      "n": 16,
+      "sum_s": 54.47671961784363,
+      "median_s": 3.8081659078598022,
+      "min_s": 1.196307897567749,
+      "max_s": 4.114567041397095
+    },
+    "result": {
+      "n": 16,
+      "sum_s": 54.0654730796814,
+      "median_s": 3.6398454904556274,
+      "min_s": 1.2387762069702148,
+      "max_s": 3.9400391578674316
+    },
+    "cache_score": {
+      "n": 16,
+      "sum_s": 108.40594577789307,
+      "median_s": 7.471984505653381,
+      "min_s": 2.265976905822754,
+      "max_s": 7.979568958282471
+    },
+    "score_success": {
+      "n": 16,
+      "sum_s": 264.84805178642273,
+      "median_s": 18.292352080345154,
+      "min_s": 5.804725170135498,
+      "max_s": 19.20053791999817
+    },
+    "case_state": {
+      "n": 16,
+      "sum_s": 261.9614026546478,
+      "median_s": 17.930456042289734,
+      "min_s": 5.830198049545288,
+      "max_s": 19.12673282623291
+    }
+  },
+  "call_sidecar_to_prepared_minus_engine": {
+    "n": 16,
+    "sum_s": 1.1099267044628505,
+    "median_s": 0.06486169691197574,
+    "min_s": 0.054642673465423286,
+    "max_s": 0.10686863333103247
+  },
+  "result_sidecar_to_cache_score_record_upper_envelope_for_external_score_plus_forward_readback": {
+    "n": 16,
+    "sum_s": 14.293937921524048,
+    "median_s": 0.9301329851150513,
+    "min_s": 0.5918660163879395,
+    "max_s": 1.018183946609497
+  },
+  "comparison_same_terminal_file_mtime_boundary": {
+    "prescreen_s": 1136.2133445739746,
+    "blank_s": 3150.490048646927,
+    "prescreen_core_s": 647.8621433999506,
+    "blank_core_s": 1319.4668498000538,
+    "core_ratio": 2.036647554178043,
+    "prescreen_outside_engine_s": 488.351201174024,
+    "blank_outside_engine_s": 1831.0231988468731,
+    "additional_total_s": 2014.2767040729523,
+    "additional_core_s": 671.6047064001032,
+    "additional_outside_engine_s": 1342.671997672849,
+    "blank_evaluations": 5740,
+    "positive_normal_evaluations": 5650,
+    "evaluation_count_ratio": 1.015929203539823
+  },
+  "source_derived_fresh_success_path_model_not_runtime_instrumentation": {
+    "selection_budget_checks_per_new_cell": 32,
+    "prescreen_budget_checks_per_new_cell": 27,
+    "selection_global_tree_walks": 32,
+    "selection_instance_tree_walks": 32,
+    "extra_tiny_case_tree_walks": 1,
+    "selection_breakdown": {
+      "verify_registration_read": 1,
+      "pre_begin_guard": 1,
+      "compact_begin": 4,
+      "sealed_CALL": 5,
+      "compact_parameter_persist": 4,
+      "compact_result_persist": 2,
+      "compact_score_persist": 2,
+      "sealed_SCORE_SUCCESS": 5,
+      "case_evidence_reads": 3,
+      "sealed_CASE_STATE": 5
+    },
+    "basis": [
+      "EStudyStore.write_path has one budget.check; write calls write_path plus one payload check.",
+      "panel.seal calls write_path once plus two store.write calls, giving five budget checks.",
+      "Each Budget.check calls ledger with independent instance and global tree_ledger walks; no memoization.",
+      "Actual dynamic counts can differ on resume/failure; no profiler was attached."
+    ],
+    "median_current_global_scan_only_32_calls_s": 62.44261119980365,
+    "current_global_scan_32_calls_range_s": [
+      29.100038399919868,
+      100.78671040013433
+    ],
+    "not_a_causal_runtime_allocation": true
+  },
+  "fixture_cleanup": {
+    "eligible_run_count": 6,
+    "files": 476,
+    "bytes": 4464998,
+    "global_file_fraction": 0.10468440730151748,
+    "global_byte_fraction": 0.010514698019009283,
+    "current_registration_direct_refs": 0,
+    "prescreen_registration_direct_refs": 0,
+    "may_reduce_traversal_work_but_not_proven_primary_cause": true,
+    "already_deleted": false
+  },
+  "recommendation": {
+    "change_current42_sources_now": false,
+    "continue_qualified_small_shards_without_scientific_scope_change": true,
+    "priority1": "Root may clean only the six completed small synthetic run directories after retaining contracts/source/this manifest; no real cache/ledger deletion.",
+    "priority2": "After any authorized cleanup, use a separate read-only CPU audit to compare metadata scan timings under similar host load; these three snapshots already show substantial variability.",
+    "priority3": "If bookkeeping remains material, first instrument CPU mocks or a new registered bookkeeping-only wrapper at budget/source/seal/forward/score boundaries. Do not monkeypatch the shared frozen store or retrofit incremental accounting into this registration.",
+    "future_optimization_candidates": [
+      "Remove duplicate budget scans within one owner-controlled metadata transaction while checking exact reserved bytes and all four roots at durable boundaries; prove concurrency/crash/floor/global-cap cases first.",
+      "Parse the immutable6.3MB registration once per owned shard while continuing registered source/input/hash guards at defined safe boundaries; measure first.",
+      "Keep every parameter-first persist, full byte verification, source identity, once-only ticket, strict reserve ownership and complete1080 denominator unchanged."
+    ],
+    "disallowed": [
+      "skip expensive candidates",
+      "truth pruning",
+      "weaken certification",
+      "silently widen cap or storage",
+      "drop failed cells",
+      "rewrite42 frozen sources or old evidence"
+    ]
+  },
+  "call_budget": {
+    "true_ledger": {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\inverse_calls.jsonl",
+      "sha256": "52a1bbc31eada313359d204b4329b8d0f551f49ace589a2b6b9a638673c8a8fd",
+      "bytes": 1186417,
+      "mtime_utc": "2026-10-15T14:40:25.518639+00:00",
+      "mtime_ns": 1792075225518638600
+    },
+    "rows": 5671,
+    "charged": 5131,
+    "human16000_remaining": 10869,
+    "legacy12000_enforced_remaining": 6869,
+    "semantic_development_phases": [
+      "development",
+      "repair_quick",
+      "C1v3_small_panel_v003",
+      "C1v3_development_prescreen_v001",
+      "C1v3_selection_first_stage_v001"
+    ],
+    "semantic_development_used": 490,
+    "semantic_development3400_remaining": 2910,
+    "selection_phase_used": 16,
+    "selection1052_remaining": 1036,
+    "raw_phase_counts": {
+      "source": 540,
+      "development": 440,
+      "null": 1600,
+      "independent": 438,
+      "noise_structure_strength_calibration_dynamic": 771,
+      "uncertainty": 1292,
+      "repair_quick": 10,
+      "C1v3_small_panel_v003": 8,
+      "C1v3_development_prescreen_v001": 16,
+      "C1v3_selection_first_stage_v001": 16
+    },
+    "remaining1036_if_all_new_global_charged": 6167,
+    "remaining1036_if_all_new_development_used": 1526
+  },
+  "next_input": {
+    "case_id": "v5_development_selection_mother_0000_positive_weak_noise0",
+    "planned_cells": 18,
+    "reuse": 0,
+    "new": 18,
+    "after_successfully_attempting_all18_charged": 5149,
+    "after_all18_selection_observed_cells": 62,
+    "remaining_matrix_new_after18": 1018
+  },
+  "limits": [
+    "Internal JSON time is record-construction time, not completion; mtime and SHA-sidecar mtime bracket later writes but are wall-clock filesystem observations.",
+    "Numerical engine wall_s is a perf_counter interval of its function; it includes host/device work and waits and is not CUDA-kernel profiling.",
+    "Outside-engine gaps bundle source/input hashing, parsing, budget walks, reserve/fsync/compression, forward byte verification, external scoring and host scheduling; these traces do not uniquely allocate their cost.",
+    "The three current ledger snapshots are current CPU metadata timings, not historical runtime profiles; overlapping tree roots are counted once by resolved path.",
+    "Prescreen and blank shard use different raws and different controller metadata workloads; timing ratios cannot identify a numerical or I/O cause.",
+    "Low-level disk I/O, antivirus, OS scheduling, filesystem cache and host/device work are not separately profiled.",
+    "Similar outer evaluation counts do not prove identical inner linear work per evaluation.",
+    "The ~14.29s score envelope includes readback/source checks/forward work and is not an isolated score-kernel timer."
+  ],
+  "execution_scope": {
+    "GPU": 0,
+    "inverse": 0,
+    "inner_solve": 0,
+    "forward": 0,
+    "truth_load": 0,
+    "NPZ_payload_loads": 0,
+    "formal_controller_entry_points": 0,
+    "tree_ledger_CPU_snapshots": 3
+  },
+  "no_deletion_or_frozen_source_edits": true
+}
