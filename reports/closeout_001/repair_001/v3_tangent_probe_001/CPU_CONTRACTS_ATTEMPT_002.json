@@ -1,0 +1,212 @@
+{
+  "schema": "v3-native-fixed-tangent-probe-v1-CPU-contracts",
+  "time": "2026-10-15T08:16:28.606563+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "owner_locks_acquire_and_remove_only_their_own_files",
+      "passed": true
+    },
+    {
+      "name": "partial_lock_failure_preserves_foreign_owner_and_releases_own_global",
+      "passed": true
+    },
+    {
+      "name": "replaced_lock_not_deleted_by_old_owner",
+      "passed": true
+    },
+    {
+      "name": "complete_report_and_lock_meta_reserve_enforced",
+      "passed": true
+    },
+    {
+      "name": "oversized_write_refused_before_creating_a_payload",
+      "passed": true
+    },
+    {
+      "name": "non_JSON_payload_and_escape_are_rejected",
+      "passed": true
+    },
+    {
+      "name": "bounded_PCG_matches_dense3_and_recomputes_actual_residual",
+      "passed": true,
+      "PCG": {
+        "status": "CONVERGED_TRUE_RESIDUAL",
+        "converged": true,
+        "iterations": 3,
+        "maxiter": 2000,
+        "rtol": 1e-10,
+        "initial_rhs_norm": 3.7416573867739413,
+        "true_residual_norm": 5.551115123125783e-16,
+        "true_relative_residual": 1.4835979218054372e-16,
+        "true_residual_recomputed": true,
+        "residual_restarts": 0,
+        "sampled_recursive_history": [
+          {
+            "iteration": 1,
+            "recursive_relative_residual": 0.3944274116245959
+          },
+          {
+            "iteration": 2,
+            "recursive_relative_residual": 0.05231496970043271
+          },
+          {
+            "iteration": 3,
+            "recursive_relative_residual": 4.651055822951025e-17
+          }
+        ],
+        "error": null,
+        "audit_error": null
+      }
+    },
+    {
+      "name": "zero_rhs_is_explicit_and_still_true_residual_checked",
+      "passed": true
+    },
+    {
+      "name": "nonpositive_curvature_retains_failed_linear_denominator",
+      "passed": true
+    },
+    {
+      "name": "work_timeout_reserves_final_true_residual_audit",
+      "passed": true,
+      "PCG": {
+        "status": "TIMEOUT",
+        "converged": false,
+        "iterations": 0,
+        "maxiter": 2000,
+        "rtol": 1e-10,
+        "initial_rhs_norm": 3.7416573867739413,
+        "true_residual_norm": 3.7416573867739413,
+        "true_relative_residual": 1.0,
+        "true_residual_recomputed": true,
+        "residual_restarts": 0,
+        "sampled_recursive_history": [],
+        "error": {
+          "type": "TimeoutError",
+          "message": "Fixed route wall budget exhausted"
+        },
+        "audit_error": null
+      }
+    },
+    {
+      "name": "iteration_cap_is_not_relabelled_as_convergence",
+      "passed": true
+    },
+    {
+      "name": "full_two_raw_two_route_denominator_and_same_system_kept",
+      "passed": true
+    },
+    {
+      "name": "immutable_terminal_repeat_performs_no_more_linear_work",
+      "passed": true
+    },
+    {
+      "name": "terminal_repeat_detects_modified_cell_receipt",
+      "passed": true
+    },
+    {
+      "name": "preconditioner_failure_does_not_remove_cells_or_other_route",
+      "passed": true
+    },
+    {
+      "name": "all_setup_failures_retain_four_planned_cells",
+      "passed": true
+    },
+    {
+      "name": "partial_attempt_is_closed_without_rerun_or_hidden_extra_budget",
+      "passed": true
+    },
+    {
+      "name": "partial_attempt_from_another_registration_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "low_disk_failure_still_delivers_all_four_failure_rows",
+      "passed": true
+    },
+    {
+      "name": "launch_rejection_keeps_four_not_started_cells_without_terminal_overwrite",
+      "passed": true
+    },
+    {
+      "name": "damaged_partial_receipt_is_quarantined_without_dropping_denominator",
+      "passed": true
+    },
+    {
+      "name": "actual_CPU32_exact_masked_tangent_is_positive_and_self_adjoint",
+      "passed": true,
+      "self_adjoint_relative_error": 3.785840592271637e-16,
+      "packed_dimension": 5123,
+      "full_inverse_calls": 0
+    },
+    {
+      "name": "fixed_free_bound_mask_uses_outward_gradient_sign_and_active_fields",
+      "passed": true
+    },
+    {
+      "name": "coupled_application_is_mask_P_mask_not_one_sided_mask",
+      "passed": true
+    },
+    {
+      "name": "no_step_array_payloads_written_and_fixture_reports_small",
+      "passed": true
+    },
+    {
+      "name": "upstream_frozen_sources_and_coupled_helper_unchanged",
+      "passed": true
+    },
+    {
+      "name": "formal_protocol_constants_remain_fixed",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "c2c0e7ece814e8be9b5a60d1b93617496ed25735694cff96204753b0703c4867"
+  },
+  "helper_source_sha256": {
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1"
+  },
+  "upstream_source_sha256": {
+    "research_closeout/quick_validation.py": "19c3562e03ff0aa7b1aa917ef864d425e1537da08eab413cefcf6870e14b21f7",
+    "research_closeout/tests/quick_validation.py": "8a408c02747d9f349eda3db7515015d159e08653a78a9e5dd461f982de1a60b8",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/independent_renderer.py": "922db2a22244c975ac2c69d26ae2e6b0858840187d18ea58631c00d6aad42d21",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "research_closeout/calibration_quick.py": "6bdf0c25292043fe3da43f8318a4573ade697addbc3a7ef7c40e23744db7356e",
+    "research_closeout/tests/calibration_quick.py": "49f13e7ebc7e8dcc0cee2943223ba1eb651d253fdf472c1af9ed7903442231ae",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799"
+  },
+  "GPU_used": false,
+  "whole_inverse_calls": 0,
+  "real_development_raw_or_parameter_arrays_read": false,
+  "truth_arrays_read": false,
+  "scientific_probe_started": false,
+  "fixture_max_native_side": 32,
+  "fixture_dense_reference_dimension": 3,
+  "CPU_wall_s": 0.674137999987579
+}

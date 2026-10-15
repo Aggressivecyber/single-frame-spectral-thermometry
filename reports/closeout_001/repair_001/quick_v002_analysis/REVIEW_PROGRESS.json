@@ -1,0 +1,3822 @@
+{
+  "time": "2026-10-15T08:06:35.536743+00:00",
+  "completed_cells": 4,
+  "planned_cells": 4,
+  "rows": [
+    {
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "initializer": "v3",
+      "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+      "cache_key": "e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264",
+      "review_status": "PASSED",
+      "reported_numerical_certified": true,
+      "independent_final_endpoint_passed": true,
+      "integrity_passed": true,
+      "raw_and_parameter_hashes_verified": true,
+      "parameter_dtype": "float64",
+      "parameter_shapes": {
+        "z_grid": [
+          1,
+          2,
+          256,
+          256
+        ],
+        "xi": [
+          1153
+        ],
+        "beta": [
+          1,
+          3
+        ]
+      },
+      "canonical_array_hashes_verified": true,
+      "canonical_CPU_reconstruction": {
+        "T": {
+          "RMS": 7.045668104853353e-13,
+          "maximum_absolute": 3.183231456205249e-12
+        },
+        "u": {
+          "RMS": 9.260285497630969e-15,
+          "maximum_absolute": 8.526512829121202e-14
+        },
+        "C": {
+          "RMS": 6.11768637468501e-13,
+          "maximum_absolute": 5.4569682106375694e-12
+        },
+        "predicted_raw_e": {
+          "RMS": 2.3531076617830623e-12,
+          "maximum_absolute": 1.1823431123048067e-11
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "canonical_CPU_reconstruction_passed": true,
+      "recorded_stage_contract": {
+        "passed": true,
+        "stages": [
+          {
+            "stage": 1,
+            "configuration": {
+              "maxiter": 280,
+              "maxfun": 700,
+              "ftol": 1e-12,
+              "gtol": 0.0001
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 108,
+              "function_evaluations": 113,
+              "objective": 31984.425307402074
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.6169134098439178,
+              "physical_linf": 0.01099778130360387,
+              "scaled_projected_linf": 6.468046294116903e-05
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 251.73771327534934,
+              "norm_normal_residual": 1.2661471293452746e-09,
+              "condition_estimate": 1.0805490575810943,
+              "actual_scaled_normal_relative": 2.7572990168287365e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.011354699992807582,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 251.7377132753495,
+              "norm_normal_residual": 2.2121874561644346e-10,
+              "condition_estimate": 3.782068710438601,
+              "actual_scaled_normal_relative": 4.817582897234578e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.016579799994360656,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 8.337608707971974e-09,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 2,
+            "configuration": {
+              "maxiter": 200,
+              "maxfun": 500,
+              "ftol": 1e-13,
+              "gtol": 1e-05
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 42,
+              "function_evaluations": 45,
+              "objective": 31984.418167712232
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.09937424378157197,
+              "physical_linf": 0.0018365093569924495,
+              "scaled_projected_linf": 9.320359769304787e-06
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 1,
+              "norm_residual": 251.73782322146576,
+              "norm_normal_residual": 1.615125183540286e-09,
+              "condition_estimate": 1.0,
+              "actual_scaled_normal_relative": 3.516607866282257e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.010755900002550334,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 251.73782322146585,
+              "norm_normal_residual": 1.537780394410268e-10,
+              "condition_estimate": 1.1096029311698001,
+              "actual_scaled_normal_relative": 3.3482194711429854e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.01212469999154564,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 3.6693671826034177e-10,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 3,
+            "configuration": {
+              "maxiter": 160,
+              "maxfun": 400,
+              "ftol": 1e-14,
+              "gtol": 1e-06
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 49,
+              "function_evaluations": 52,
+              "objective": 31984.418051861172
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.0072499127315611474,
+              "physical_linf": 0.00016704159100561222,
+              "scaled_projected_linf": 8.477428750097715e-07
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 4,
+              "norm_residual": 251.73773784869798,
+              "norm_normal_residual": 3.4482071077750845e-09,
+              "condition_estimate": 2.743723320809329,
+              "actual_scaled_normal_relative": 7.507222301664998e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.020028800005093217,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 6,
+              "norm_residual": 251.7377378486981,
+              "norm_normal_residual": 3.9936159472990695e-10,
+              "condition_estimate": 3.2152094169040413,
+              "actual_scaled_normal_relative": 8.694497722655562e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.019082699989667162,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 2.3267855586791786e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": true,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          }
+        ],
+        "output_platforms": [
+          {
+            "from_stage": 1,
+            "to_stage": 2,
+            "template_RMS_difference_e": 0.05401922276140217,
+            "color_RMS_difference_K": 0.0642445380296533,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 1,
+            "recomputed_contract_passed": true
+          },
+          {
+            "from_stage": 2,
+            "to_stage": 3,
+            "template_RMS_difference_e": 0.005527268941782161,
+            "color_RMS_difference_K": 0.009734018998319308,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 2,
+            "recomputed_contract_passed": true
+          }
+        ],
+        "independently_replayed_stage_parameters": 1,
+        "earlier_stage_parameters_not_saved": 2,
+        "platform_output_arrays_not_saved": true,
+        "scope": "logical/receipt verification of all recorded stages and two comparisons; endpoint physics independently verified only for saved final parameters"
+      },
+      "independent_final_endpoint": {
+        "objective": 31984.418051861165,
+        "data_objective": 31670.85697184153,
+        "linear_regularizer_objective": 15.087356748368727,
+        "continuum_regularizer_objective": 298.473723271264,
+        "AD_vs_explicit_maximum_absolute_error": 2.063682558173241e-12,
+        "AD_vs_explicit_normalized_l2_error": 1.948274976567922e-11,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.0072499127403148405,
+          "physical_linf": 0.0001670415890207,
+          "scaled_projected_linf": 8.477428679043442e-07,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "final_stage_requested_gtol": 1e-06,
+      "final_stage_independent_gtol_passed": true,
+      "logged_vs_recomputed_objective_difference": -7.275957614183426e-12,
+      "logged_vs_recomputed_gradient_differences": {
+        "physical_l2": 8.753693082896863e-12,
+        "physical_linf": -1.984912234576086e-12,
+        "scaled_projected_linf": -7.105427357601002e-15
+      },
+      "saved_conditional_normal": {
+        "actual_scaled_normal_relative": 8.650608962466132e-13,
+        "scaled_normal_l2": 3.973385671635962e-10
+      },
+      "tighter_inner": {
+        "tolerance": 1e-13,
+        "maxiter": 4800,
+        "warm_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 6,
+            "norm_residual": 251.73773784869806,
+            "norm_normal_residual": 5.7010715012131926e-11,
+            "condition_estimate": 3.5031080384128295,
+            "actual_scaled_normal_relative": 1.2410726180228635e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.04163059999700636,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383645,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 1.7899376209475958e-09,
+            "beta_maximum_absolute_difference": 1.9304630810568213e-11,
+            "predicted_raw_RMS_difference_e": 3.646712364449912e-10,
+            "objective_difference": 3.637978807091713e-12,
+            "gradient_difference_physical_l2": 3.7874044301507776e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.0072499123587490485,
+              "physical_linf": 0.00016704137459505608,
+              "scaled_projected_linf": 8.477417772212448e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "cold_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 32,
+            "norm_residual": 251.73773784869795,
+            "norm_normal_residual": 1.16680349767498e-10,
+            "condition_estimate": 4.145806765429308,
+            "actual_scaled_normal_relative": 2.539921600989985e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.16719389999343548,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383645,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 2.1474358315025314e-09,
+            "beta_maximum_absolute_difference": 2.2450730510770178e-11,
+            "predicted_raw_RMS_difference_e": 4.3418036701852797e-10,
+            "objective_difference": 3.637978807091713e-12,
+            "gradient_difference_physical_l2": 4.046707426067367e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.007249912386869045,
+              "physical_linf": 0.00016704141219373025,
+              "scaled_projected_linf": 8.477419690677834e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "warm_vs_cold_template_RMS_e": 5.476182162916433e-10,
+        "outer_parameters_changed": false,
+        "passed": true
+      },
+      "same_final_parameters_original_PLUT": {
+        "objective": 31985.140119730342,
+        "data_objective": 31670.85697570101,
+        "linear_regularizer_objective": 15.087356748368727,
+        "continuum_regularizer_objective": 299.1957872809641,
+        "AD_vs_explicit_maximum_absolute_error": 9.992007221626409e-16,
+        "AD_vs_explicit_normalized_l2_error": 3.9281336591104177e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.38128483147438824,
+          "physical_linf": 0.007519839782074489,
+          "scaled_projected_linf": 3.8044062897313324e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_final_parameters_original_PLUT_with_fixed_C1_prior": {
+        "objective": 31984.418055720642,
+        "data_objective": 31670.85697570101,
+        "linear_regularizer_objective": 15.087356748368727,
+        "continuum_regularizer_objective": 298.473723271264,
+        "AD_vs_explicit_maximum_absolute_error": 1.0547118733938987e-15,
+        "AD_vs_explicit_normalized_l2_error": 3.9216362015552993e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.08993474419980496,
+          "physical_linf": 0.0056204737467030405,
+          "scaled_projected_linf": 2.8434868688975712e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_z_original_PLUT_conditional_profile": {
+        "inner": {
+          "solver": "column-scaled augmented LSMR",
+          "istop": 2,
+          "iterations": 23,
+          "norm_residual": 251.737737863725,
+          "norm_normal_residual": 6.002976299069381e-11,
+          "condition_estimate": 3.630225931380582,
+          "actual_scaled_normal_relative": 1.306960999330366e-13,
+          "tolerance": 1e-13,
+          "maxiter": 4800,
+          "numerical_certified": true,
+          "wall_s": 0.10890120000112802,
+          "regularization": {
+            "postblur_prior_is_new_estimator": true,
+            "template_multiplier": 1.0,
+            "template_reference_sensitivity": 0.00013287997033383645,
+            "gradient_reference_laplacian": 0.10853323353385491,
+            "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+            "beta_penalty": "1e-6 times whitened beta column squared norm",
+            "columns_scaled": true,
+            "raw_objective_count": 1,
+            "template_object_blur_count": 0
+          }
+        },
+        "original_prior": {
+          "objective": 31985.140119653694,
+          "data_objective": 31670.856976476243,
+          "linear_regularizer_objective": 15.087355896485391,
+          "continuum_regularizer_objective": 299.1957872809641,
+          "AD_vs_explicit_maximum_absolute_error": 1.1379786002407855e-15,
+          "AD_vs_explicit_normalized_l2_error": 3.918748669457023e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.371493874726423,
+            "physical_linf": 0.007261293432588745,
+            "scaled_projected_linf": 3.673603588794094e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "fixed_C1_prior": {
+          "objective": 31984.418055643993,
+          "data_objective": 31670.856976476243,
+          "linear_regularizer_objective": 15.087355896485391,
+          "continuum_regularizer_objective": 298.473723271264,
+          "AD_vs_explicit_maximum_absolute_error": 1.1379786002407855e-15,
+          "AD_vs_explicit_normalized_l2_error": 3.915581141073297e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.04698627646956382,
+            "physical_linf": 0.005372821409681733,
+            "scaled_projected_linf": 2.7181956212984915e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "template_RMS_shift_from_C1_e": 2.0972604946535165e-05
+      },
+      "same_parameter_calibration_output_differences": {
+        "T": {
+          "RMS": 1.681644880302597e-05,
+          "maximum_absolute": 2.7387877707951702e-05
+        },
+        "u": {
+          "RMS": 0.0,
+          "maximum_absolute": 0.0
+        },
+        "C": {
+          "RMS": 4.0035563733188255e-05,
+          "maximum_absolute": 0.00012088758285244694
+        },
+        "predicted_raw_e": {
+          "RMS": 0.00013012369534440708,
+          "maximum_absolute": 0.00035301464595249854
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "anchor_scale_change": {
+        "original_PLUT_regscale": [
+          390.6999837070597,
+          130.03532403423523
+        ],
+        "C1_regscale": [
+          388.2584689937924,
+          130.03532403423523
+        ],
+        "C1_over_original_ratio": [
+          0.993750921896383,
+          1.0
+        ],
+        "original_coordinate_channel_scale": [
+          0.005059158705842456,
+          0.00876938885017846
+        ],
+        "C1_coordinate_channel_scale": [
+          0.005075040719631215,
+          0.00876938885017846
+        ],
+        "calibration_anchor_temperature_K": 3300.0,
+        "interpretation": "knot values are identical at3300K; changed temperature derivative changes the temperature prior scale and coordinate metric. The log-amplitude anchor scale stays unchanged."
+      },
+      "same_parameter_gradient_decomposition": {
+        "path": "C1/C1prior minus PLUT/C1prior, then PLUT/C1prior minus PLUT/PLUTprior; x,z fixed throughout",
+        "calibration_values_and_derivatives_only": {
+          "physical_l2": 0.089631187994797,
+          "physical_linf": 0.005635385109543749,
+          "C1_scaled_l2": 0.0005100406742956934,
+          "C1_scaled_linf": 2.8599808901737942e-05,
+          "temperature_channel_l2": 0.08362490975444814,
+          "loga_channel_l2": 0.032258709365364215
+        },
+        "anchor_regularizer_only": {
+          "physical_l2": 0.36876839900262487,
+          "physical_linf": 0.006000715900240761,
+          "C1_scaled_l2": 0.0018715146410515332,
+          "C1_scaled_linf": 3.0453877540660345e-05,
+          "temperature_channel_l2": 0.36876839900262487,
+          "loga_channel_l2": 0.0
+        },
+        "total": {
+          "physical_l2": 0.38140894215803633,
+          "physical_linf": 0.007501128118891809,
+          "C1_scaled_l2": 0.0019493656517552164,
+          "C1_scaled_linf": 3.806853064654663e-05,
+          "temperature_channel_l2": 0.3800423092606843,
+          "loga_channel_l2": 0.032258709365364215
+        },
+        "closure_physical_l2": 0.0,
+        "objective_calibration_only": -3.859477146761492e-06,
+        "objective_anchor_regularizer_only": -0.7220640097002615
+      },
+      "knot_and_window_statistics": {
+        "latent_pixels": 65536,
+        "latent_temperature_quantiles_K": {
+          "0": 2872.888904050145,
+          "0.01": 2885.3085856209473,
+          "0.05": 2898.1531513690047,
+          "0.25": 2939.8878715616356,
+          "0.5": 3167.6712503736944,
+          "0.75": 3188.1363217722715,
+          "0.95": 3203.339169873165,
+          "0.99": 3211.12540092487,
+          "1": 3224.138840204327
+        },
+        "nearest_5K_knot_distance_quantiles_K": {
+          "0": 1.8911264760390623e-05,
+          "0.01": 0.02551190067604239,
+          "0.05": 0.12391839868450916,
+          "0.25": 0.62285113786902,
+          "0.5": 1.2454213115249786,
+          "0.75": 1.874824367945621,
+          "0.95": 2.3722749225553343,
+          "0.99": 2.4744701307935886,
+          "1": 2.499955358498937
+        },
+        "internal_knot_denominator": 65536,
+        "distance_counts": {
+          "1e-08": 0,
+          "1e-06": 0,
+          "0.0001": 3,
+          "0.001": 27,
+          "0.01": 287,
+          "0.05": 1300,
+          "0.1": 2654,
+          "0.25": 6568,
+          "0.5": 13088,
+          "1.0": 26393,
+          "2.5": 65536
+        },
+        "within_fixed_C1_half_window_pixels": 6568,
+        "within_fixed_C1_half_window_fraction": 0.1002197265625,
+        "left_of_knot_inside_window": 3247,
+        "right_of_knot_inside_window": 3321,
+        "exact_float_knot_inside_window": 0,
+        "most_populated_window_knots": [
+          {
+            "temperature_K": 3185.0,
+            "pixels": 570
+          },
+          {
+            "temperature_K": 3190.0,
+            "pixels": 543
+          },
+          {
+            "temperature_K": 3180.0,
+            "pixels": 509
+          },
+          {
+            "temperature_K": 3195.0,
+            "pixels": 449
+          },
+          {
+            "temperature_K": 3200.0,
+            "pixels": 292
+          },
+          {
+            "temperature_K": 3175.0,
+            "pixels": 281
+          },
+          {
+            "temperature_K": 2915.0,
+            "pixels": 232
+          },
+          {
+            "temperature_K": 3170.0,
+            "pixels": 229
+          },
+          {
+            "temperature_K": 3205.0,
+            "pixels": 220
+          },
+          {
+            "temperature_K": 2925.0,
+            "pixels": 192
+          },
+          {
+            "temperature_K": 3165.0,
+            "pixels": 191
+          },
+          {
+            "temperature_K": 2905.0,
+            "pixels": 184
+          }
+        ],
+        "calibration_only_gradient_difference_L2_energy_fraction_in_windows": 0.34667551153123527,
+        "top20_calibration_gradient_difference_locations": [
+          {
+            "y": 113,
+            "x": 171,
+            "latent_temperature_K": 3200.000445365868,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 0.0004453658680176886,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.005635385109543749,
+            "calibration_gradient_difference_loga": -0.0001906632405770936
+          },
+          {
+            "y": 119,
+            "x": 173,
+            "latent_temperature_K": 3204.998869898382,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.0011301016179459111,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.004980355574893923,
+            "calibration_gradient_difference_loga": -0.00019511448716302837
+          },
+          {
+            "y": 197,
+            "x": 54,
+            "latent_temperature_K": 2880.0000559276164,
+            "nearest_knot_K": 2880.0,
+            "distance_K": 5.592761635853094e-05,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00458583757243225,
+            "calibration_gradient_difference_loga": -0.00010963125509613758
+          },
+          {
+            "y": 190,
+            "x": 240,
+            "latent_temperature_K": 3204.9974867533465,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.0025132466535069398,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0040524083510290465,
+            "calibration_gradient_difference_loga": -0.00012799400247998083
+          },
+          {
+            "y": 30,
+            "x": 151,
+            "latent_temperature_K": 3165.0055582715413,
+            "nearest_knot_K": 3165.0,
+            "distance_K": 0.005558271541303839,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.004025017490342231,
+            "calibration_gradient_difference_loga": -0.0001272705957950926
+          },
+          {
+            "y": 188,
+            "x": 240,
+            "latent_temperature_K": 3204.99652617186,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.00347382814015873,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003920671684952803,
+            "calibration_gradient_difference_loga": -0.00012986665983838463
+          },
+          {
+            "y": 112,
+            "x": 205,
+            "latent_temperature_K": 3200.0078412905173,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 0.007841290517262678,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0035880684112263583,
+            "calibration_gradient_difference_loga": -0.00019442112785580945
+          },
+          {
+            "y": 103,
+            "x": 211,
+            "latent_temperature_K": 3189.994613100672,
+            "nearest_knot_K": 3190.0,
+            "distance_K": 0.005386899328186701,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.0034934029770963826,
+            "calibration_gradient_difference_loga": -0.0002028806796947058
+          },
+          {
+            "y": 6,
+            "x": 29,
+            "latent_temperature_K": 2934.9938049700786,
+            "nearest_knot_K": 2935.0,
+            "distance_K": 0.006195029921400419,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0033051603150424103,
+            "calibration_gradient_difference_loga": -7.871867320308895e-05
+          },
+          {
+            "y": 97,
+            "x": 168,
+            "latent_temperature_K": 3194.986459916393,
+            "nearest_knot_K": 3195.0,
+            "distance_K": 0.013540083607040287,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0033039843756421106,
+            "calibration_gradient_difference_loga": -0.00012097682560702205
+          },
+          {
+            "y": 179,
+            "x": 99,
+            "latent_temperature_K": 2985.0124743070746,
+            "nearest_knot_K": 2985.0,
+            "distance_K": 0.012474307074626267,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0032974500963395825,
+            "calibration_gradient_difference_loga": -0.00014109898291404105
+          },
+          {
+            "y": 11,
+            "x": 146,
+            "latent_temperature_K": 3160.0085593039894,
+            "nearest_knot_K": 3160.0,
+            "distance_K": 0.008559303989386535,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0032815919104994817,
+            "calibration_gradient_difference_loga": -0.0001309634250350744
+          },
+          {
+            "y": 2,
+            "x": 119,
+            "latent_temperature_K": 3194.9911488040934,
+            "nearest_knot_K": 3195.0,
+            "distance_K": 0.008851195906572684,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0032181353527968026,
+            "calibration_gradient_difference_loga": -0.00012117803903495539
+          },
+          {
+            "y": 24,
+            "x": 170,
+            "latent_temperature_K": 3209.997337723086,
+            "nearest_knot_K": 3210.0,
+            "distance_K": 0.002662276914179529,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0032163355666166016,
+            "calibration_gradient_difference_loga": -0.00011827819557622132
+          },
+          {
+            "y": 224,
+            "x": 71,
+            "latent_temperature_K": 2920.0215112755845,
+            "nearest_knot_K": 2920.0,
+            "distance_K": 0.02151127558454391,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003188447423846552,
+            "calibration_gradient_difference_loga": -0.00010645423123644554
+          },
+          {
+            "y": 160,
+            "x": 92,
+            "latent_temperature_K": 2980.001040560022,
+            "nearest_knot_K": 2980.0,
+            "distance_K": 0.0010405600219201006,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0031831017802952943,
+            "calibration_gradient_difference_loga": -0.0001232133919490258
+          },
+          {
+            "y": 190,
+            "x": 19,
+            "latent_temperature_K": 2909.993574861735,
+            "nearest_knot_K": 2910.0,
+            "distance_K": 0.0064251382650581945,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.0031383375149079684,
+            "calibration_gradient_difference_loga": -9.217966604030403e-05
+          },
+          {
+            "y": 13,
+            "x": 134,
+            "latent_temperature_K": 3189.9972128979134,
+            "nearest_knot_K": 3190.0,
+            "distance_K": 0.0027871020865859464,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003001097787469542,
+            "calibration_gradient_difference_loga": -0.0001446570011444659
+          },
+          {
+            "y": 135,
+            "x": 51,
+            "latent_temperature_K": 2925.0096662566434,
+            "nearest_knot_K": 2925.0,
+            "distance_K": 0.009666256643413362,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0029986516376350747,
+            "calibration_gradient_difference_loga": -0.0001152953222522679
+          },
+          {
+            "y": 166,
+            "x": 198,
+            "latent_temperature_K": 3199.9862220734144,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 0.01377792658558974,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0029845944628721366,
+            "calibration_gradient_difference_loga": -0.00013297035483630926
+          }
+        ]
+      },
+      "v001_to_v002_output_differences": {
+        "T": {
+          "RMS": 0.012477569514818796,
+          "maximum_absolute": 0.04526021288393167
+        },
+        "u": {
+          "RMS": 0.02144114004336629,
+          "maximum_absolute": 0.08194722549735278
+        },
+        "C": {
+          "RMS": 0.012969560249272982,
+          "maximum_absolute": 0.08439314329280023
+        },
+        "predicted_raw_e": {
+          "RMS": 0.007047570805310648,
+          "maximum_absolute": 0.05912452738084539
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "external_scientific_metrics": {
+        "domain_pixels": 65536,
+        "raw_pixels": 65536,
+        "valid_fraction": 1.0,
+        "full_FOV_valid_fraction": 1.0,
+        "template_RMSE_e": 24.492650883620918,
+        "template_bias_e": 0.24465053407220685,
+        "template_relative_L2": 0.9834762496681939,
+        "temperature_reference_color_RMSE_K": 7.773303808399088,
+        "temperature_reference_color_bias_K": 0.8831520026139072,
+        "temperature_reference_color_comparison_pixels": 65536,
+        "temperature_latent_truth_RMSE_K": 28.51356111850989,
+        "temperature_latent_truth_comparison_pixels": 65536,
+        "raw_RMSE_e": 80.84419135776622,
+        "raw_weighted_RMSE": 0.9831163979528951,
+        "support_pixels": 5632,
+        "sign_recall": 0.9794034090909091
+      },
+      "scientific_metrics_scope": "copied from SHA-verified external scoring receipt; diagnostic truth not reopened in this audit",
+      "independent_raw_RMSE_e": 80.84419135776622,
+      "scientific_acceptance_assessed": false,
+      "wall_s": 1.2823977999942144
+    },
+    {
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "initializer": "smooth_demod",
+      "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+      "cache_key": "69b0fa0a5c9d6a29992abc06f631a0851ff2bb4ff1958015441bce7bc0760da2",
+      "review_status": "PASSED",
+      "reported_numerical_certified": true,
+      "independent_final_endpoint_passed": true,
+      "integrity_passed": true,
+      "raw_and_parameter_hashes_verified": true,
+      "parameter_dtype": "float64",
+      "parameter_shapes": {
+        "z_grid": [
+          1,
+          2,
+          256,
+          256
+        ],
+        "xi": [
+          1153
+        ],
+        "beta": [
+          1,
+          3
+        ]
+      },
+      "canonical_array_hashes_verified": true,
+      "canonical_CPU_reconstruction": {
+        "T": {
+          "RMS": 6.796114692378732e-13,
+          "maximum_absolute": 3.183231456205249e-12
+        },
+        "u": {
+          "RMS": 9.078720941455971e-15,
+          "maximum_absolute": 5.684341886080802e-14
+        },
+        "C": {
+          "RMS": 7.132813779137275e-13,
+          "maximum_absolute": 6.366462912410498e-12
+        },
+        "predicted_raw_e": {
+          "RMS": 2.3409734631433933e-12,
+          "maximum_absolute": 1.1823431123048067e-11
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "canonical_CPU_reconstruction_passed": true,
+      "recorded_stage_contract": {
+        "passed": true,
+        "stages": [
+          {
+            "stage": 1,
+            "configuration": {
+              "maxiter": 280,
+              "maxfun": 700,
+              "ftol": 1e-12,
+              "gtol": 0.0001
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 95,
+              "function_evaluations": 96,
+              "objective": 31984.429891473024
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 1.070859854322792,
+              "physical_linf": 0.01608536362573898,
+              "scaled_projected_linf": 8.163387538928646e-05
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 1,
+              "norm_residual": 251.7378075522571,
+              "norm_normal_residual": 3.205408043505865e-09,
+              "condition_estimate": 1.0,
+              "actual_scaled_normal_relative": 6.9801610716544355e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.008564699994167313,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 251.73780755225704,
+              "norm_normal_residual": 1.5263759194981431e-10,
+              "condition_estimate": 1.0849558549846914,
+              "actual_scaled_normal_relative": 3.3238435352211246e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.013269800008856691,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 7.283575676913422e-10,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 2,
+            "configuration": {
+              "maxiter": 200,
+              "maxfun": 500,
+              "ftol": 1e-13,
+              "gtol": 1e-05
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 46,
+              "function_evaluations": 48,
+              "objective": 31984.418169910277
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.10657154141686098,
+              "physical_linf": 0.0016442091220886107,
+              "scaled_projected_linf": 8.344428245266045e-06
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 251.7377931411816,
+              "norm_normal_residual": 2.369778782275746e-09,
+              "condition_estimate": 1.2745057483766264,
+              "actual_scaled_normal_relative": 5.159530155329905e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.010467000000062399,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 251.73779314118156,
+              "norm_normal_residual": 1.8075099018321723e-10,
+              "condition_estimate": 2.61224491499566,
+              "actual_scaled_normal_relative": 3.9353211870136517e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.024104700001771562,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 2.5076229508808035e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 3,
+            "configuration": {
+              "maxiter": 160,
+              "maxfun": 400,
+              "ftol": 1e-14,
+              "gtol": 1e-06
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 44,
+              "function_evaluations": 47,
+              "objective": 31984.418053670262
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.011049027113642185,
+              "physical_linf": 0.0001604160108819308,
+              "scaled_projected_linf": 8.297045042127138e-07
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 251.73772960850812,
+              "norm_normal_residual": 2.554996694390484e-09,
+              "condition_estimate": 1.6037482883915812,
+              "actual_scaled_normal_relative": 5.5625886733761876e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.01112089998787269,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 251.73772960850823,
+              "norm_normal_residual": 3.005244992015895e-10,
+              "condition_estimate": 2.5192207694485527,
+              "actual_scaled_normal_relative": 6.542830108175741e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.0253688999946462,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00013287997033383642,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 2.563006141953374e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": true,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          }
+        ],
+        "output_platforms": [
+          {
+            "from_stage": 1,
+            "to_stage": 2,
+            "template_RMS_difference_e": 0.07393625594862538,
+            "color_RMS_difference_K": 0.07882965680909919,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 1,
+            "recomputed_contract_passed": true
+          },
+          {
+            "from_stage": 2,
+            "to_stage": 3,
+            "template_RMS_difference_e": 0.0076040400832871535,
+            "color_RMS_difference_K": 0.0075351136932913015,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 2,
+            "recomputed_contract_passed": true
+          }
+        ],
+        "independently_replayed_stage_parameters": 1,
+        "earlier_stage_parameters_not_saved": 2,
+        "platform_output_arrays_not_saved": true,
+        "scope": "logical/receipt verification of all recorded stages and two comparisons; endpoint physics independently verified only for saved final parameters"
+      },
+      "independent_final_endpoint": {
+        "objective": 31984.418053670284,
+        "data_objective": 31670.854799508303,
+        "linear_regularizer_objective": 15.087454714892054,
+        "continuum_regularizer_objective": 298.47579944708866,
+        "AD_vs_explicit_maximum_absolute_error": 1.5188406088384454e-12,
+        "AD_vs_explicit_normalized_l2_error": 1.965078994673626e-11,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.011049027112780307,
+          "physical_linf": 0.00016041601114200055,
+          "scaled_projected_linf": 8.297045042127138e-07,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "final_stage_requested_gtol": 1e-06,
+      "final_stage_independent_gtol_passed": true,
+      "logged_vs_recomputed_objective_difference": 1.8189894035458565e-11,
+      "logged_vs_recomputed_gradient_differences": {
+        "physical_l2": -8.618782770808409e-13,
+        "physical_linf": 2.600697435184429e-13,
+        "scaled_projected_linf": 0.0
+      },
+      "saved_conditional_normal": {
+        "actual_scaled_normal_relative": 6.541764714884934e-13,
+        "scaled_normal_l2": 3.0047502492933e-10
+      },
+      "tighter_inner": {
+        "tolerance": 1e-13,
+        "maxiter": 4800,
+        "warm_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 6,
+            "norm_residual": 251.7377296085084,
+            "norm_normal_residual": 5.029028338703175e-11,
+            "condition_estimate": 2.9368157397438583,
+            "actual_scaled_normal_relative": 1.0946921252383358e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.03340669999306556,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383645,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 3.052593953269271e-09,
+            "beta_maximum_absolute_difference": 2.704951367060726e-11,
+            "predicted_raw_RMS_difference_e": 6.027207656393938e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 3.2123672942355314e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.011049028853387972,
+              "physical_linf": 0.00016041586612594583,
+              "scaled_projected_linf": 8.297041915739101e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "cold_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 32,
+            "norm_residual": 251.73772960850826,
+            "norm_normal_residual": 1.1772235940255877e-10,
+            "condition_estimate": 4.14579382919193,
+            "actual_scaled_normal_relative": 2.56278232727078e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.13634589999855962,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383645,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 3.3160908592032894e-09,
+            "beta_maximum_absolute_difference": 2.915144688142579e-11,
+            "predicted_raw_RMS_difference_e": 6.552605765194307e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 3.5518168626943415e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.011049029176794473,
+              "physical_linf": 0.00016041581539491534,
+              "scaled_projected_linf": 8.297042199956195e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "warm_vs_cold_template_RMS_e": 6.338022822785192e-10,
+        "outer_parameters_changed": false,
+        "passed": true
+      },
+      "same_final_parameters_original_PLUT": {
+        "objective": 31985.140124094913,
+        "data_objective": 31670.854803526552,
+        "linear_regularizer_objective": 15.087454714892054,
+        "continuum_regularizer_objective": 299.1978658534667,
+        "AD_vs_explicit_maximum_absolute_error": 1.0824674490095276e-15,
+        "AD_vs_explicit_normalized_l2_error": 3.93157124582369e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.3822444735212774,
+          "physical_linf": 0.0073797273108776595,
+          "scaled_projected_linf": 3.733521167248455e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_final_parameters_original_PLUT_with_fixed_C1_prior": {
+        "objective": 31984.418057688534,
+        "data_objective": 31670.854803526552,
+        "linear_regularizer_objective": 15.087454714892054,
+        "continuum_regularizer_objective": 298.47579944708866,
+        "AD_vs_explicit_maximum_absolute_error": 1.0547118733938987e-15,
+        "AD_vs_explicit_normalized_l2_error": 3.936205205454478e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.09006969704602327,
+          "physical_linf": 0.005610176734258107,
+          "scaled_projected_linf": 2.838277446670645e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_z_original_PLUT_conditional_profile": {
+        "inner": {
+          "solver": "column-scaled augmented LSMR",
+          "istop": 2,
+          "iterations": 23,
+          "norm_residual": 251.73772962416555,
+          "norm_normal_residual": 6.004941480276175e-11,
+          "condition_estimate": 3.6345334181656797,
+          "actual_scaled_normal_relative": 1.307317214614597e-13,
+          "tolerance": 1e-13,
+          "maxiter": 4800,
+          "numerical_certified": true,
+          "wall_s": 0.1025965000008,
+          "regularization": {
+            "postblur_prior_is_new_estimator": true,
+            "template_multiplier": 1.0,
+            "template_reference_sensitivity": 0.00013287997033383645,
+            "gradient_reference_laplacian": 0.10853323353385491,
+            "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+            "beta_penalty": "1e-6 times whitened beta column squared norm",
+            "columns_scaled": true,
+            "raw_objective_count": 1,
+            "template_object_blur_count": 0
+          }
+        },
+        "original_prior": {
+          "objective": 31985.140124018173,
+          "data_objective": 31670.854804310966,
+          "linear_regularizer_objective": 15.087453853740662,
+          "continuum_regularizer_objective": 299.1978658534667,
+          "AD_vs_explicit_maximum_absolute_error": 1.0824674490095276e-15,
+          "AD_vs_explicit_normalized_l2_error": 3.9325580313123855e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.3725283720591969,
+            "physical_linf": 0.007491508032159477,
+            "scaled_projected_linf": 3.7900728081297075e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "fixed_C1_prior": {
+          "objective": 31984.418057611794,
+          "data_objective": 31670.854804310966,
+          "linear_regularizer_objective": 15.087453853740662,
+          "continuum_regularizer_objective": 298.47579944708866,
+          "AD_vs_explicit_maximum_absolute_error": 1.1379786002407855e-15,
+          "AD_vs_explicit_normalized_l2_error": 3.9386152739623585e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.04764006806659542,
+            "physical_linf": 0.005409091035901793,
+            "scaled_projected_linf": 2.736545000203705e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "template_RMS_shift_from_C1_e": 2.0942799735969217e-05
+      },
+      "same_parameter_calibration_output_differences": {
+        "T": {
+          "RMS": 1.682674566996259e-05,
+          "maximum_absolute": 2.7420167953096097e-05
+        },
+        "u": {
+          "RMS": 0.0,
+          "maximum_absolute": 0.0
+        },
+        "C": {
+          "RMS": 4.005700548810201e-05,
+          "maximum_absolute": 0.0001209495812872774
+        },
+        "predicted_raw_e": {
+          "RMS": 0.00013019196210774491,
+          "maximum_absolute": 0.0003531962174747605
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "anchor_scale_change": {
+        "original_PLUT_regscale": [
+          390.6999837070597,
+          130.03532403423523
+        ],
+        "C1_regscale": [
+          388.2584689937924,
+          130.03532403423523
+        ],
+        "C1_over_original_ratio": [
+          0.993750921896383,
+          1.0
+        ],
+        "original_coordinate_channel_scale": [
+          0.005059158705842456,
+          0.00876938885017846
+        ],
+        "C1_coordinate_channel_scale": [
+          0.005075040719631215,
+          0.00876938885017846
+        ],
+        "calibration_anchor_temperature_K": 3300.0,
+        "interpretation": "knot values are identical at3300K; changed temperature derivative changes the temperature prior scale and coordinate metric. The log-amplitude anchor scale stays unchanged."
+      },
+      "same_parameter_gradient_decomposition": {
+        "path": "C1/C1prior minus PLUT/C1prior, then PLUT/C1prior minus PLUT/PLUTprior; x,z fixed throughout",
+        "calibration_values_and_derivatives_only": {
+          "physical_l2": 0.0896257134386728,
+          "physical_linf": 0.005665416453248459,
+          "C1_scaled_l2": 0.0005100739124958511,
+          "C1_scaled_linf": 2.8752219193904586e-05,
+          "temperature_channel_l2": 0.08361212264890333,
+          "loga_channel_l2": 0.03227663947092133
+        },
+        "anchor_regularizer_only": {
+          "physical_l2": 0.3687718692611831,
+          "physical_linf": 0.006000632586073196,
+          "C1_scaled_l2": 0.001871532252755024,
+          "C1_scaled_linf": 3.045345471786743e-05,
+          "temperature_channel_l2": 0.3687718692611831,
+          "loga_channel_l2": 0.0
+        },
+        "total": {
+          "physical_l2": 0.3814323175441988,
+          "physical_linf": 0.007388577878678859,
+          "C1_scaled_l2": 0.0019494986280927367,
+          "C1_scaled_linf": 3.7497333594461635e-05,
+          "temperature_channel_l2": 0.3800642464263155,
+          "loga_channel_l2": 0.03227663947092133
+        },
+        "closure_physical_l2": 2.710505431213761e-20,
+        "objective_calibration_only": -4.0182494558393955e-06,
+        "objective_anchor_regularizer_only": -0.7220664063788718
+      },
+      "knot_and_window_statistics": {
+        "latent_pixels": 65536,
+        "latent_temperature_quantiles_K": {
+          "0": 2872.8917943547735,
+          "0.01": 2885.3057253292377,
+          "0.05": 2898.154136810816,
+          "0.25": 2939.8889227640298,
+          "0.5": 3167.671293303516,
+          "0.75": 3188.1364171059213,
+          "0.95": 3203.3388282714272,
+          "0.99": 3211.1259703524192,
+          "1": 3224.142411996043
+        },
+        "nearest_5K_knot_distance_quantiles_K": {
+          "0": 1.8301685031474335e-05,
+          "0.01": 0.025330592603381774,
+          "0.05": 0.12395175729409402,
+          "0.25": 0.622472208468821,
+          "0.5": 1.2452919131765157,
+          "0.75": 1.8743049463367925,
+          "0.95": 2.3725122447027616,
+          "0.99": 2.474642599283379,
+          "1": 2.4999671996815778
+        },
+        "internal_knot_denominator": 65536,
+        "distance_counts": {
+          "1e-08": 0,
+          "1e-06": 0,
+          "0.0001": 3,
+          "0.001": 24,
+          "0.01": 286,
+          "0.05": 1294,
+          "0.1": 2659,
+          "0.25": 6562,
+          "0.5": 13081,
+          "1.0": 26386,
+          "2.5": 65536
+        },
+        "within_fixed_C1_half_window_pixels": 6562,
+        "within_fixed_C1_half_window_fraction": 0.100128173828125,
+        "left_of_knot_inside_window": 3242,
+        "right_of_knot_inside_window": 3320,
+        "exact_float_knot_inside_window": 0,
+        "most_populated_window_knots": [
+          {
+            "temperature_K": 3185.0,
+            "pixels": 570
+          },
+          {
+            "temperature_K": 3190.0,
+            "pixels": 545
+          },
+          {
+            "temperature_K": 3180.0,
+            "pixels": 509
+          },
+          {
+            "temperature_K": 3195.0,
+            "pixels": 449
+          },
+          {
+            "temperature_K": 3200.0,
+            "pixels": 292
+          },
+          {
+            "temperature_K": 3175.0,
+            "pixels": 279
+          },
+          {
+            "temperature_K": 2915.0,
+            "pixels": 230
+          },
+          {
+            "temperature_K": 3170.0,
+            "pixels": 229
+          },
+          {
+            "temperature_K": 3205.0,
+            "pixels": 220
+          },
+          {
+            "temperature_K": 2925.0,
+            "pixels": 191
+          },
+          {
+            "temperature_K": 3165.0,
+            "pixels": 191
+          },
+          {
+            "temperature_K": 2910.0,
+            "pixels": 185
+          }
+        ],
+        "calibration_only_gradient_difference_L2_energy_fraction_in_windows": 0.3458255653522105,
+        "top20_calibration_gradient_difference_locations": [
+          {
+            "y": 113,
+            "x": 171,
+            "latent_temperature_K": 3200.0000909735186,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 9.097351858144975e-05,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.005665416453248459,
+            "calibration_gradient_difference_loga": -0.00019081171901413896
+          },
+          {
+            "y": 119,
+            "x": 173,
+            "latent_temperature_K": 3204.998900265429,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.0010997345711984963,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.004982677548270344,
+            "calibration_gradient_difference_loga": -0.0001952073685436151
+          },
+          {
+            "y": 30,
+            "x": 151,
+            "latent_temperature_K": 3165.004676232577,
+            "nearest_knot_K": 3165.0,
+            "distance_K": 0.004676232576912298,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.004080922922066965,
+            "calibration_gradient_difference_loga": -0.00012709036990951605
+          },
+          {
+            "y": 197,
+            "x": 54,
+            "latent_temperature_K": 2879.9998548335248,
+            "nearest_knot_K": 2880.0,
+            "distance_K": 0.00014516647524942528,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.003990635206943316,
+            "calibration_gradient_difference_loga": -0.00010965185208761108
+          },
+          {
+            "y": 190,
+            "x": 240,
+            "latent_temperature_K": 3204.995388272996,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.00461172700397583,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003923822675310107,
+            "calibration_gradient_difference_loga": -0.00012844126990033122
+          },
+          {
+            "y": 188,
+            "x": 240,
+            "latent_temperature_K": 3204.9946516963846,
+            "nearest_knot_K": 3205.0,
+            "distance_K": 0.005348303615392069,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0038089269845323903,
+            "calibration_gradient_difference_loga": -0.0001303336494568319
+          },
+          {
+            "y": 112,
+            "x": 205,
+            "latent_temperature_K": 3200.0079053377744,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 0.007905337774445798,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00358483643791907,
+            "calibration_gradient_difference_loga": -0.00019456846354434787
+          },
+          {
+            "y": 103,
+            "x": 211,
+            "latent_temperature_K": 3189.9934283851862,
+            "nearest_knot_K": 3190.0,
+            "distance_K": 0.006571614813765336,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.0034151339840748918,
+            "calibration_gradient_difference_loga": -0.00020298559067899458
+          },
+          {
+            "y": 11,
+            "x": 146,
+            "latent_temperature_K": 3160.006808627441,
+            "nearest_knot_K": 3160.0,
+            "distance_K": 0.006808627440932469,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003373385376185589,
+            "calibration_gradient_difference_loga": -0.00013061491259952485
+          },
+          {
+            "y": 97,
+            "x": 168,
+            "latent_temperature_K": 3194.9869027366694,
+            "nearest_knot_K": 3195.0,
+            "distance_K": 0.013097263330564601,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0033287585150417742,
+            "calibration_gradient_difference_loga": -0.00012082079374309274
+          },
+          {
+            "y": 6,
+            "x": 33,
+            "latent_temperature_K": 2935.0123040081653,
+            "nearest_knot_K": 2935.0,
+            "distance_K": 0.012304008165301639,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.0033217884489489258,
+            "calibration_gradient_difference_loga": -8.07527209829538e-05
+          },
+          {
+            "y": 179,
+            "x": 99,
+            "latent_temperature_K": 2985.0123698231982,
+            "nearest_knot_K": 2985.0,
+            "distance_K": 0.012369823198241647,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003303052652967542,
+            "calibration_gradient_difference_loga": -0.00014104830431364151
+          },
+          {
+            "y": 2,
+            "x": 119,
+            "latent_temperature_K": 3194.992732923254,
+            "nearest_knot_K": 3195.0,
+            "distance_K": 0.007267076745847589,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003300510805616663,
+            "calibration_gradient_difference_loga": -0.00012084152120955816
+          },
+          {
+            "y": 24,
+            "x": 170,
+            "latent_temperature_K": 3209.9980330722246,
+            "nearest_knot_K": 3210.0,
+            "distance_K": 0.001966927775356453,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0032505455392721205,
+            "calibration_gradient_difference_loga": -0.00011837080410589951
+          },
+          {
+            "y": 190,
+            "x": 19,
+            "latent_temperature_K": 2909.9953304494993,
+            "nearest_knot_K": 2910.0,
+            "distance_K": 0.004669550500693731,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.003240214137301467,
+            "calibration_gradient_difference_loga": -9.208392917084418e-05
+          },
+          {
+            "y": 160,
+            "x": 92,
+            "latent_temperature_K": 2980.001699756628,
+            "nearest_knot_K": 2980.0,
+            "distance_K": 0.0016997566281133913,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003152398757579833,
+            "calibration_gradient_difference_loga": -0.00012318669129396387
+          },
+          {
+            "y": 224,
+            "x": 71,
+            "latent_temperature_K": 2920.0234939669363,
+            "nearest_knot_K": 2920.0,
+            "distance_K": 0.023493966936257493,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0030701223871296146,
+            "calibration_gradient_difference_loga": -0.00010660088980236904
+          },
+          {
+            "y": 166,
+            "x": 198,
+            "latent_temperature_K": 3199.987881868474,
+            "nearest_knot_K": 3200.0,
+            "distance_K": 0.012118131526221987,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003068312995994027,
+            "calibration_gradient_difference_loga": -0.000132782363967604
+          },
+          {
+            "y": 190,
+            "x": 230,
+            "latent_temperature_K": 3185.004460025069,
+            "nearest_knot_K": 3185.0,
+            "distance_K": 0.004460025068965479,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.0030542153056694055,
+            "calibration_gradient_difference_loga": -0.00012493404978874967
+          },
+          {
+            "y": 135,
+            "x": 51,
+            "latent_temperature_K": 2925.0087029528686,
+            "nearest_knot_K": 2925.0,
+            "distance_K": 0.008702952868588909,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.003045673945217986,
+            "calibration_gradient_difference_loga": -0.00011542446930963568
+          }
+        ]
+      },
+      "v001_to_v002_output_differences": {
+        "T": {
+          "RMS": 0.012368028070694776,
+          "maximum_absolute": 0.04463230453666256
+        },
+        "u": {
+          "RMS": 0.02148323616005352,
+          "maximum_absolute": 0.0829318117229203
+        },
+        "C": {
+          "RMS": 0.012935236060483246,
+          "maximum_absolute": 0.0839312125235665
+        },
+        "predicted_raw_e": {
+          "RMS": 0.007047527536597381,
+          "maximum_absolute": 0.060028452244296204
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "external_scientific_metrics": {
+        "domain_pixels": 65536,
+        "raw_pixels": 65536,
+        "valid_fraction": 1.0,
+        "full_FOV_valid_fraction": 1.0,
+        "template_RMSE_e": 24.49273244748692,
+        "template_bias_e": 0.24464501034082342,
+        "template_relative_L2": 0.9834795247781614,
+        "temperature_reference_color_RMSE_K": 7.773211331499037,
+        "temperature_reference_color_bias_K": 0.8831457339145721,
+        "temperature_reference_color_comparison_pixels": 65536,
+        "temperature_latent_truth_RMSE_K": 28.513664605243548,
+        "temperature_latent_truth_comparison_pixels": 65536,
+        "raw_RMSE_e": 80.84418855602239,
+        "raw_weighted_RMSE": 0.983116364236465,
+        "support_pixels": 5632,
+        "sign_recall": 0.9794034090909091
+      },
+      "scientific_metrics_scope": "copied from SHA-verified external scoring receipt; diagnostic truth not reopened in this audit",
+      "independent_raw_RMSE_e": 80.84418855602237,
+      "scientific_acceptance_assessed": false,
+      "wall_s": 1.1144589000032283
+    },
+    {
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "initializer": "v3",
+      "raw_sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823",
+      "cache_key": "050d2d184364ce748cc6614b1f077ca7bed21951525ca8d0781a453ee9f7aca0",
+      "review_status": "PASSED",
+      "reported_numerical_certified": true,
+      "independent_final_endpoint_passed": true,
+      "integrity_passed": true,
+      "raw_and_parameter_hashes_verified": true,
+      "parameter_dtype": "float64",
+      "parameter_shapes": {
+        "z_grid": [
+          1,
+          2,
+          256,
+          256
+        ],
+        "xi": [
+          1153
+        ],
+        "beta": [
+          1,
+          3
+        ]
+      },
+      "canonical_array_hashes_verified": true,
+      "canonical_CPU_reconstruction": {
+        "T": {
+          "RMS": 6.60840556932405e-13,
+          "maximum_absolute": 3.637978807091713e-12
+        },
+        "u": {
+          "RMS": 1.4170166047408421e-14,
+          "maximum_absolute": 8.526512829121202e-14
+        },
+        "C": {
+          "RMS": 3.795912262242675e-13,
+          "maximum_absolute": 3.637978807091713e-12
+        },
+        "predicted_raw_e": {
+          "RMS": 1.4315141113389625e-12,
+          "maximum_absolute": 7.275957614183426e-12
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "canonical_CPU_reconstruction_passed": true,
+      "recorded_stage_contract": {
+        "passed": true,
+        "stages": [
+          {
+            "stage": 1,
+            "configuration": {
+              "maxiter": 280,
+              "maxfun": 700,
+              "ftol": 1e-12,
+              "gtol": 0.0001
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 141,
+              "function_evaluations": 147,
+              "objective": 34170.21646756602
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 1.3780812477137703,
+              "physical_linf": 0.02522902541723271,
+              "scaled_projected_linf": 8.887929629963764e-05
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 252.20643750114863,
+              "norm_normal_residual": 2.4177981202307494e-09,
+              "condition_estimate": 1.2107704408350317,
+              "actual_scaled_normal_relative": 5.456563629255544e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.011038099997676909,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 6,
+              "norm_residual": 252.20643750114854,
+              "norm_normal_residual": 3.3938759323871037e-10,
+              "condition_estimate": 2.6582887551110495,
+              "actual_scaled_normal_relative": 7.659386374021984e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.023272699996596202,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 1.3220382841481728e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 2,
+            "configuration": {
+              "maxiter": 200,
+              "maxfun": 500,
+              "ftol": 1e-13,
+              "gtol": 1e-05
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 68,
+              "function_evaluations": 70,
+              "objective": 34170.19136552748
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.13105315748506832,
+              "physical_linf": 0.0028324749577755826,
+              "scaled_projected_linf": 9.978521831044418e-06
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 252.20851909996261,
+              "norm_normal_residual": 3.1329032117532323e-09,
+              "condition_estimate": 2.49951487284327,
+              "actual_scaled_normal_relative": 7.066804797705427e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.020323900011135265,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 6,
+              "norm_residual": 252.20851909996287,
+              "norm_normal_residual": 6.121358052367648e-10,
+              "condition_estimate": 3.255390906726604,
+              "actual_scaled_normal_relative": 1.3807678497184322e-12,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.01759789999050554,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 6.249991415269217e-09,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 3,
+            "configuration": {
+              "maxiter": 160,
+              "maxfun": 400,
+              "ftol": 1e-14,
+              "gtol": 1e-06
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 82,
+              "function_evaluations": 86,
+              "objective": 34170.1911228207
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.012743368852974918,
+              "physical_linf": 0.0002624476329773362,
+              "scaled_projected_linf": 9.341171676169324e-07
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 3,
+              "norm_residual": 252.2086980054902,
+              "norm_normal_residual": 4.535743288998871e-09,
+              "condition_estimate": 4.427960358427963,
+              "actual_scaled_normal_relative": 1.0230943951654299e-11,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.015488400007598102,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 252.2086980054903,
+              "norm_normal_residual": 3.729418775288438e-10,
+              "condition_estimate": 2.589017718246149,
+              "actual_scaled_normal_relative": 8.41164304965002e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.022338599999784492,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 3.491992541887517e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": true,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          }
+        ],
+        "output_platforms": [
+          {
+            "from_stage": 1,
+            "to_stage": 2,
+            "template_RMS_difference_e": 0.07441336649535925,
+            "color_RMS_difference_K": 0.13342131345597344,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 1,
+            "recomputed_contract_passed": true
+          },
+          {
+            "from_stage": 2,
+            "to_stage": 3,
+            "template_RMS_difference_e": 0.006230944686464342,
+            "color_RMS_difference_K": 0.015783537464883247,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 2,
+            "recomputed_contract_passed": true
+          }
+        ],
+        "independently_replayed_stage_parameters": 1,
+        "earlier_stage_parameters_not_saved": 2,
+        "platform_output_arrays_not_saved": true,
+        "scope": "logical/receipt verification of all recorded stages and two comparisons; endpoint physics independently verified only for saved final parameters"
+      },
+      "independent_final_endpoint": {
+        "objective": 34170.1911228207,
+        "data_objective": 31789.799495565225,
+        "linear_regularizer_objective": 14.814179247075373,
+        "continuum_regularizer_objective": 2365.577448008404,
+        "AD_vs_explicit_maximum_absolute_error": 2.5905944056603403e-12,
+        "AD_vs_explicit_normalized_l2_error": 2.660320948355621e-11,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.012743368856336576,
+          "physical_linf": 0.00026244763475369304,
+          "scaled_projected_linf": 9.341171676169324e-07,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "final_stage_requested_gtol": 1e-06,
+      "final_stage_independent_gtol_passed": true,
+      "logged_vs_recomputed_objective_difference": 0.0,
+      "logged_vs_recomputed_gradient_differences": {
+        "physical_l2": 3.3616581740503193e-12,
+        "physical_linf": 1.7763568394002505e-12,
+        "scaled_projected_linf": 0.0
+      },
+      "saved_conditional_normal": {
+        "actual_scaled_normal_relative": 8.438724240866991e-13,
+        "scaled_normal_l2": 3.741187848211442e-10
+      },
+      "tighter_inner": {
+        "tolerance": 1e-13,
+        "maxiter": 4800,
+        "warm_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 7,
+            "norm_residual": 252.20869800549028,
+            "norm_normal_residual": 4.0034849277937427e-11,
+            "condition_estimate": 2.6618891949601884,
+            "actual_scaled_normal_relative": 9.031518287911911e-14,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.03784550000273157,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.0002757644753386297,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 1.844093064512824e-09,
+            "beta_maximum_absolute_difference": 1.8987630912015163e-11,
+            "predicted_raw_RMS_difference_e": 3.7032093499688913e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 2.8057616910649303e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.012743368588140612,
+              "physical_linf": 0.00026244757269222596,
+              "scaled_projected_linf": 9.341170539300947e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "cold_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 39,
+            "norm_residual": 252.20869800549013,
+            "norm_normal_residual": 7.608696494519895e-11,
+            "condition_estimate": 3.1625666835083495,
+            "actual_scaled_normal_relative": 1.7164634195592642e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.17498159999377094,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.0002757644753386297,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 1.910374520779732e-09,
+            "beta_maximum_absolute_difference": 1.9314688737281926e-11,
+            "predicted_raw_RMS_difference_e": 3.832936547239343e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 2.8298899279269342e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.012743368584680819,
+              "physical_linf": 0.0002624475826842332,
+              "scaled_projected_linf": 9.341170823518041e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "warm_vs_cold_template_RMS_e": 1.138984302915649e-10,
+        "outer_parameters_changed": false,
+        "passed": true
+      },
+      "same_final_parameters_original_PLUT": {
+        "objective": 34183.46275064125,
+        "data_objective": 31789.799538548818,
+        "linear_regularizer_objective": 14.814179247075373,
+        "continuum_regularizer_objective": 2378.849032845357,
+        "AD_vs_explicit_maximum_absolute_error": 2.4424906541753444e-15,
+        "AD_vs_explicit_normalized_l2_error": 8.6649372397873e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 1.1322889107608913,
+          "physical_linf": 0.021196892968006864,
+          "scaled_projected_linf": 7.444081380469925e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_final_parameters_original_PLUT_with_fixed_C1_prior": {
+        "objective": 34170.191165804295,
+        "data_objective": 31789.799538548818,
+        "linear_regularizer_objective": 14.814179247075373,
+        "continuum_regularizer_objective": 2365.577448008404,
+        "AD_vs_explicit_maximum_absolute_error": 2.55351295663786e-15,
+        "AD_vs_explicit_normalized_l2_error": 9.794842387204509e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.1518910311341787,
+          "physical_linf": 0.010362912862432738,
+          "scaled_projected_linf": 3.639324253867926e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_z_original_PLUT_conditional_profile": {
+        "inner": {
+          "solver": "column-scaled augmented LSMR",
+          "istop": 2,
+          "iterations": 27,
+          "norm_residual": 252.20869817563187,
+          "norm_normal_residual": 1.5189172623959093e-10,
+          "condition_estimate": 3.367388070547197,
+          "actual_scaled_normal_relative": 3.426060097472774e-13,
+          "tolerance": 1e-13,
+          "maxiter": 4800,
+          "numerical_certified": true,
+          "wall_s": 0.1471421000023838,
+          "regularization": {
+            "postblur_prior_is_new_estimator": true,
+            "template_multiplier": 1.0,
+            "template_reference_sensitivity": 0.0002757644753386297,
+            "gradient_reference_laplacian": 0.10853323353385491,
+            "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+            "beta_penalty": "1e-6 times whitened beta column squared norm",
+            "columns_scaled": true,
+            "raw_objective_count": 1,
+            "template_object_blur_count": 0
+          }
+        },
+        "original_prior": {
+          "objective": 34183.46275056879,
+          "data_objective": 31789.799540496853,
+          "linear_regularizer_objective": 14.81417722658087,
+          "continuum_regularizer_objective": 2378.849032845357,
+          "AD_vs_explicit_maximum_absolute_error": 2.4424906541753444e-15,
+          "AD_vs_explicit_normalized_l2_error": 8.7518772196579e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 1.1219755478594675,
+            "physical_linf": 0.02087933909191042,
+            "scaled_projected_linf": 7.332560465656002e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "fixed_C1_prior": {
+          "objective": 34170.19116573184,
+          "data_objective": 31789.799540496853,
+          "linear_regularizer_objective": 14.81417722658087,
+          "continuum_regularizer_objective": 2365.577448008404,
+          "AD_vs_explicit_maximum_absolute_error": 2.4424906541753444e-15,
+          "AD_vs_explicit_normalized_l2_error": 9.838459524593316e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.13892756338478252,
+            "physical_linf": 0.010121241957779858,
+            "scaled_projected_linf": 3.554452481324688e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "template_RMS_shift_from_C1_e": 1.9905230693648155e-05
+      },
+      "same_parameter_calibration_output_differences": {
+        "T": {
+          "RMS": 2.109295956588085e-05,
+          "maximum_absolute": 5.183258463148377e-05
+        },
+        "u": {
+          "RMS": 0.0,
+          "maximum_absolute": 0.0
+        },
+        "C": {
+          "RMS": 3.0254857401019946e-05,
+          "maximum_absolute": 0.00010158409031646443
+        },
+        "predicted_raw_e": {
+          "RMS": 9.161379360920425e-05,
+          "maximum_absolute": 0.00027228943508816883
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "anchor_scale_change": {
+        "original_PLUT_regscale": [
+          810.8157741991408,
+          269.8610092830405
+        ],
+        "C1_regscale": [
+          805.748923098526,
+          269.8610092830405
+        ],
+        "C1_over_original_ratio": [
+          0.9937509218963834,
+          1.0
+        ],
+        "original_coordinate_channel_scale": [
+          0.003511873835311303,
+          0.006087373226510406
+        ],
+        "C1_coordinate_channel_scale": [
+          0.0035228985198329375,
+          0.006087373226510406
+        ],
+        "calibration_anchor_temperature_K": 3300.0,
+        "interpretation": "knot values are identical at3300K; changed temperature derivative changes the temperature prior scale and coordinate metric. The log-amplitude anchor scale stays unchanged."
+      },
+      "same_parameter_gradient_decomposition": {
+        "path": "C1/C1prior minus PLUT/C1prior, then PLUT/C1prior minus PLUT/PLUTprior; x,z fixed throughout",
+        "calibration_values_and_derivatives_only": {
+          "physical_l2": 0.15135974320953738,
+          "physical_linf": 0.010408238603188513,
+          "C1_scaled_l2": 0.0005457348984944941,
+          "C1_scaled_linf": 3.666716836924085e-05,
+          "temperature_channel_l2": 0.14953960979851127,
+          "loga_channel_l2": 0.023402499135051987
+        },
+        "anchor_regularizer_only": {
+          "physical_l2": 1.1127372983244266,
+          "physical_linf": 0.015921392245093813,
+          "C1_scaled_l2": 0.003920060581230021,
+          "C1_scaled_linf": 5.6089449173920604e-05,
+          "temperature_channel_l2": 1.1127372983244266,
+          "loga_channel_l2": 0.0
+        },
+        "total": {
+          "physical_l2": 1.1330107195951789,
+          "physical_linf": 0.02120019411030416,
+          "C1_scaled_l2": 0.003993172237527831,
+          "C1_scaled_linf": 7.468613245136149e-05,
+          "temperature_channel_l2": 1.132769002820885,
+          "loga_channel_l2": 0.023402499135051987
+        },
+        "closure_physical_l2": 0.0,
+        "objective_calibration_only": -4.298359272070229e-05,
+        "objective_anchor_regularizer_only": -13.271584836955299
+      },
+      "knot_and_window_statistics": {
+        "latent_pixels": 65536,
+        "latent_temperature_quantiles_K": {
+          "0": 2600.330251843086,
+          "0.01": 2624.1735572348052,
+          "0.05": 2634.174082519329,
+          "0.25": 2653.386837270543,
+          "0.5": 2707.4563480809393,
+          "0.75": 2919.562365342872,
+          "0.95": 3087.3096049627147,
+          "0.99": 3101.897348200671,
+          "1": 3115.3731287589253
+        },
+        "nearest_5K_knot_distance_quantiles_K": {
+          "0": 3.885655769408913e-05,
+          "0.01": 0.024686456693984837,
+          "0.05": 0.12509830470060024,
+          "0.25": 0.624140327982218,
+          "0.5": 1.2409917564282296,
+          "0.75": 1.8686593305441193,
+          "0.95": 2.375432851616324,
+          "0.99": 2.4746662433844224,
+          "1": 2.499995115850652
+        },
+        "internal_knot_denominator": 65536,
+        "distance_counts": {
+          "1e-08": 0,
+          "1e-06": 0,
+          "0.0001": 1,
+          "0.001": 22,
+          "0.01": 252,
+          "0.05": 1304,
+          "0.1": 2637,
+          "0.25": 6638,
+          "0.5": 13136,
+          "1.0": 26440,
+          "2.5": 65536
+        },
+        "within_fixed_C1_half_window_pixels": 6638,
+        "within_fixed_C1_half_window_fraction": 0.101287841796875,
+        "left_of_knot_inside_window": 3378,
+        "right_of_knot_inside_window": 3260,
+        "exact_float_knot_inside_window": 0,
+        "most_populated_window_knots": [
+          {
+            "temperature_K": 2650.0,
+            "pixels": 447
+          },
+          {
+            "temperature_K": 2645.0,
+            "pixels": 372
+          },
+          {
+            "temperature_K": 2655.0,
+            "pixels": 356
+          },
+          {
+            "temperature_K": 2640.0,
+            "pixels": 329
+          },
+          {
+            "temperature_K": 2660.0,
+            "pixels": 285
+          },
+          {
+            "temperature_K": 2665.0,
+            "pixels": 202
+          },
+          {
+            "temperature_K": 2635.0,
+            "pixels": 187
+          },
+          {
+            "temperature_K": 2675.0,
+            "pixels": 161
+          },
+          {
+            "temperature_K": 2630.0,
+            "pixels": 145
+          },
+          {
+            "temperature_K": 2670.0,
+            "pixels": 144
+          },
+          {
+            "temperature_K": 2680.0,
+            "pixels": 141
+          },
+          {
+            "temperature_K": 2685.0,
+            "pixels": 102
+          }
+        ],
+        "calibration_only_gradient_difference_L2_energy_fraction_in_windows": 0.8511459606403339,
+        "top20_calibration_gradient_difference_locations": [
+          {
+            "y": 194,
+            "x": 30,
+            "latent_temperature_K": 3099.9937577789374,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.006242221062620956,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010408238603188513,
+            "calibration_gradient_difference_loga": -0.00014048145836331738
+          },
+          {
+            "y": 62,
+            "x": 173,
+            "latent_temperature_K": 3089.9961163050257,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.003883694974319951,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010377692226551272,
+            "calibration_gradient_difference_loga": -0.00013816519491463564
+          },
+          {
+            "y": 154,
+            "x": 177,
+            "latent_temperature_K": 3099.9822071680455,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.017792831954466237,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010205589781297597,
+            "calibration_gradient_difference_loga": -0.00013462793304089282
+          },
+          {
+            "y": 141,
+            "x": 183,
+            "latent_temperature_K": 3094.996362980312,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.0036370196880852745,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010193352088728291,
+            "calibration_gradient_difference_loga": -0.00015181587074325487
+          },
+          {
+            "y": 20,
+            "x": 47,
+            "latent_temperature_K": 3100.003155767392,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.003155767391945119,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009859023072583462,
+            "calibration_gradient_difference_loga": -0.00014318493366693996
+          },
+          {
+            "y": 19,
+            "x": 41,
+            "latent_temperature_K": 3099.996631148124,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.003368851876075496,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009846132011823494,
+            "calibration_gradient_difference_loga": -0.00014234493385373304
+          },
+          {
+            "y": 72,
+            "x": 185,
+            "latent_temperature_K": 3079.9980760161798,
+            "nearest_knot_K": 3080.0,
+            "distance_K": 0.0019239838202338433,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00968519583758809,
+            "calibration_gradient_difference_loga": -0.00012676409643352926
+          },
+          {
+            "y": 104,
+            "x": 188,
+            "latent_temperature_K": 3094.9915605719684,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.008439428031579155,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009669144843360566,
+            "calibration_gradient_difference_loga": -0.00015764187862296608
+          },
+          {
+            "y": 160,
+            "x": 177,
+            "latent_temperature_K": 3089.9983521516824,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.001647848317588796,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00950064595401412,
+            "calibration_gradient_difference_loga": -0.00013924697557343713
+          },
+          {
+            "y": 207,
+            "x": 111,
+            "latent_temperature_K": 3115.0124291736997,
+            "nearest_knot_K": 3115.0,
+            "distance_K": 0.01242917369972929,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009495432172182294,
+            "calibration_gradient_difference_loga": -0.0001743026434492534
+          },
+          {
+            "y": 198,
+            "x": 54,
+            "latent_temperature_K": 3075.0070139707536,
+            "nearest_knot_K": 3075.0,
+            "distance_K": 0.007013970753632748,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009363561471674275,
+            "calibration_gradient_difference_loga": -0.00013284533150093036
+          },
+          {
+            "y": 32,
+            "x": 152,
+            "latent_temperature_K": 3085.004869803533,
+            "nearest_knot_K": 3085.0,
+            "distance_K": 0.0048698035329834966,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009354362217823153,
+            "calibration_gradient_difference_loga": -0.00013263351741688023
+          },
+          {
+            "y": 70,
+            "x": 180,
+            "latent_temperature_K": 3094.9961983639523,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.0038016360476831323,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009174900944576292,
+            "calibration_gradient_difference_loga": -0.00013055512417275983
+          },
+          {
+            "y": 23,
+            "x": 44,
+            "latent_temperature_K": 3090.0001992704815,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.000199270481516578,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009124989953403606,
+            "calibration_gradient_difference_loga": -0.0001367311656730319
+          },
+          {
+            "y": 197,
+            "x": 21,
+            "latent_temperature_K": 3029.9959164264064,
+            "nearest_knot_K": 3030.0,
+            "distance_K": 0.004083573593561596,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009074930728658392,
+            "calibration_gradient_difference_loga": -0.00010974930308663144
+          },
+          {
+            "y": 157,
+            "x": 171,
+            "latent_temperature_K": 3085.010674792398,
+            "nearest_knot_K": 3085.0,
+            "distance_K": 0.010674792397821875,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009061671845540964,
+            "calibration_gradient_difference_loga": -0.00012799620189662964
+          },
+          {
+            "y": 144,
+            "x": 183,
+            "latent_temperature_K": 3095.0148710309104,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.014871030910398986,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009042868735924747,
+            "calibration_gradient_difference_loga": -0.00014773412122687235
+          },
+          {
+            "y": 181,
+            "x": 162,
+            "latent_temperature_K": 3089.9788917093997,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.02110829060029573,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.008964795354351907,
+            "calibration_gradient_difference_loga": -0.00015228075166406896
+          },
+          {
+            "y": 117,
+            "x": 182,
+            "latent_temperature_K": 3069.986105633921,
+            "nearest_knot_K": 3070.0,
+            "distance_K": 0.013894366079057363,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.008763240453004473,
+            "calibration_gradient_difference_loga": -0.00014752163049949751
+          },
+          {
+            "y": 114,
+            "x": 185,
+            "latent_temperature_K": 3090.0161674624105,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.016167462410521694,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.00867794908531705,
+            "calibration_gradient_difference_loga": -0.00015031615120147945
+          }
+        ]
+      },
+      "v001_to_v002_output_differences": {
+        "T": {
+          "RMS": 0.09322026962464092,
+          "maximum_absolute": 0.22877958365688755
+        },
+        "u": {
+          "RMS": 0.08786669141593104,
+          "maximum_absolute": 0.2929112348375469
+        },
+        "C": {
+          "RMS": 0.0618649694885118,
+          "maximum_absolute": 0.32990584683466295
+        },
+        "predicted_raw_e": {
+          "RMS": 0.029633986421055226,
+          "maximum_absolute": 0.20424304196330922
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "external_scientific_metrics": {
+        "domain_pixels": 65536,
+        "raw_pixels": 65536,
+        "valid_fraction": 1.0,
+        "full_FOV_valid_fraction": 1.0,
+        "template_RMSE_e": 21.338907926235333,
+        "template_bias_e": 2.4123284426956175,
+        "template_relative_L2": 0.3881384173204218,
+        "temperature_reference_color_RMSE_K": 18.259085693862186,
+        "temperature_reference_color_bias_K": 5.466163818118357,
+        "temperature_reference_color_comparison_pixels": 65536,
+        "temperature_latent_truth_RMSE_K": 61.34853260317891,
+        "temperature_latent_truth_comparison_pixels": 65536,
+        "raw_RMSE_e": 58.49533305933574,
+        "raw_weighted_RMSE": 0.9849607554029741,
+        "support_pixels": 29440,
+        "sign_recall": 0.9614130434782608
+      },
+      "scientific_metrics_scope": "copied from SHA-verified external scoring receipt; diagnostic truth not reopened in this audit",
+      "independent_raw_RMSE_e": 58.495333059335735,
+      "scientific_acceptance_assessed": false,
+      "wall_s": 1.2170542000094429
+    },
+    {
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "initializer": "smooth_demod",
+      "raw_sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823",
+      "cache_key": "4d763c9de0f697d529f1eddf478bef9dda8d9db68b166f26766477ddc5cb5a04",
+      "review_status": "PASSED",
+      "reported_numerical_certified": true,
+      "independent_final_endpoint_passed": true,
+      "integrity_passed": true,
+      "raw_and_parameter_hashes_verified": true,
+      "parameter_dtype": "float64",
+      "parameter_shapes": {
+        "z_grid": [
+          1,
+          2,
+          256,
+          256
+        ],
+        "xi": [
+          1153
+        ],
+        "beta": [
+          1,
+          3
+        ]
+      },
+      "canonical_array_hashes_verified": true,
+      "canonical_CPU_reconstruction": {
+        "T": {
+          "RMS": 6.697548463860746e-13,
+          "maximum_absolute": 3.183231456205249e-12
+        },
+        "u": {
+          "RMS": 1.4113947331134007e-14,
+          "maximum_absolute": 1.1368683772161603e-13
+        },
+        "C": {
+          "RMS": 4.0078479062510514e-13,
+          "maximum_absolute": 4.547473508864641e-12
+        },
+        "predicted_raw_e": {
+          "RMS": 1.4296218725838129e-12,
+          "maximum_absolute": 8.185452315956354e-12
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "canonical_CPU_reconstruction_passed": true,
+      "recorded_stage_contract": {
+        "passed": true,
+        "stages": [
+          {
+            "stage": 1,
+            "configuration": {
+              "maxiter": 280,
+              "maxfun": 700,
+              "ftol": 1e-12,
+              "gtol": 0.0001
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 146,
+              "function_evaluations": 152,
+              "objective": 34170.207736550154
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 1.3850712979244317,
+              "physical_linf": 0.02385156553946277,
+              "scaled_projected_linf": 8.4026644934454e-05
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 2,
+              "norm_residual": 252.20764088234955,
+              "norm_normal_residual": 3.2528281793837107e-09,
+              "condition_estimate": 1.3601464572648778,
+              "actual_scaled_normal_relative": 7.334081672162915e-12,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.009396599998581223,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 6,
+              "norm_residual": 252.20764088234932,
+              "norm_normal_residual": 3.0167730238836227e-10,
+              "condition_estimate": 2.8801815362851886,
+              "actual_scaled_normal_relative": 6.801966614809809e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.017934300005435944,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 2.382805589257289e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 2,
+            "configuration": {
+              "maxiter": 200,
+              "maxfun": 500,
+              "ftol": 1e-13,
+              "gtol": 1e-05
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 58,
+              "function_evaluations": 62,
+              "objective": 34170.1915387386
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.1732949833092522,
+              "physical_linf": 0.0027585790983815084,
+              "scaled_projected_linf": 9.718194222685383e-06
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 4,
+              "norm_residual": 252.20872801601251,
+              "norm_normal_residual": 5.078138508916134e-09,
+              "condition_estimate": 7.1712098188605475,
+              "actual_scaled_normal_relative": 1.145297725002776e-11,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.016105799993965775,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 6,
+              "norm_residual": 252.20872801601232,
+              "norm_normal_residual": 3.335945900950673e-10,
+              "condition_estimate": 2.143106379077133,
+              "actual_scaled_normal_relative": 7.523749740425167e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.034479099995223805,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 4.0375647560837866e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": false,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          },
+          {
+            "stage": 3,
+            "configuration": {
+              "maxiter": 160,
+              "maxfun": 400,
+              "ftol": 1e-14,
+              "gtol": 1e-06
+            },
+            "optimizer": {
+              "success": true,
+              "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+              "iterations": 71,
+              "function_evaluations": 74,
+              "objective": 34170.19112493003
+            },
+            "recorded_gradient": {
+              "finite": true,
+              "physical_l2": 0.017334863188261045,
+              "physical_linf": 0.0002756795881127122,
+              "scaled_projected_linf": 9.71191212784106e-07
+            },
+            "calculated_gtol_passed": true,
+            "inner": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 3,
+              "norm_residual": 252.2086496750879,
+              "norm_normal_residual": 4.723162369761089e-09,
+              "condition_estimate": 3.5346858790586393,
+              "actual_scaled_normal_relative": 1.0653689387615034e-11,
+              "tolerance": 1e-11,
+              "maxiter": 1200,
+              "numerical_certified": true,
+              "wall_s": 0.014949899996281601,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "tighter_inner_reference": {
+              "solver": "column-scaled augmented LSMR",
+              "istop": 2,
+              "iterations": 5,
+              "norm_residual": 252.20864967508786,
+              "norm_normal_residual": 4.3443481195439477e-10,
+              "condition_estimate": 2.0752056032915447,
+              "actual_scaled_normal_relative": 9.799317093524522e-13,
+              "tolerance": 1e-12,
+              "maxiter": 2400,
+              "numerical_certified": true,
+              "wall_s": 0.020979200009605847,
+              "regularization": {
+                "postblur_prior_is_new_estimator": true,
+                "template_multiplier": 1.0,
+                "template_reference_sensitivity": 0.00027576447533862974,
+                "gradient_reference_laplacian": 0.10853323353385491,
+                "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+                "beta_penalty": "1e-6 times whitened beta column squared norm",
+                "columns_scaled": true,
+                "raw_objective_count": 1,
+                "template_object_blur_count": 0
+              }
+            },
+            "template_inner_difference_RMS_e": 3.7516877181775674e-08,
+            "qualification_logic_recomputed": true,
+            "record_contract_passed": true,
+            "parameter_cache_available": true,
+            "evidence_scope": "final stage independently recomputed below; earlier-stage gradients are frozen log evidence only"
+          }
+        ],
+        "output_platforms": [
+          {
+            "from_stage": 1,
+            "to_stage": 2,
+            "template_RMS_difference_e": 0.053676044571411785,
+            "color_RMS_difference_K": 0.12485007229404417,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 1,
+            "recomputed_contract_passed": true
+          },
+          {
+            "from_stage": 2,
+            "to_stage": 3,
+            "template_RMS_difference_e": 0.007553844321762627,
+            "color_RMS_difference_K": 0.02037883824350217,
+            "within_output_budgets": true,
+            "both_endpoints_qualified": true,
+            "passed": true,
+            "consecutive_passed_comparisons": 2,
+            "recomputed_contract_passed": true
+          }
+        ],
+        "independently_replayed_stage_parameters": 1,
+        "earlier_stage_parameters_not_saved": 2,
+        "platform_output_arrays_not_saved": true,
+        "scope": "logical/receipt verification of all recorded stages and two comparisons; endpoint physics independently verified only for saved final parameters"
+      },
+      "independent_final_endpoint": {
+        "objective": 34170.19112493003,
+        "data_objective": 31789.787388199526,
+        "linear_regularizer_objective": 14.814097266039376,
+        "continuum_regularizer_objective": 2365.5896394644647,
+        "AD_vs_explicit_maximum_absolute_error": 2.985167668612121e-12,
+        "AD_vs_explicit_normalized_l2_error": 2.6297467886128008e-11,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.01733486314930408,
+          "physical_linf": 0.0002756795855359054,
+          "scaled_projected_linf": 9.711911985732513e-07,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "final_stage_requested_gtol": 1e-06,
+      "final_stage_independent_gtol_passed": true,
+      "logged_vs_recomputed_objective_difference": -7.275957614183426e-12,
+      "logged_vs_recomputed_gradient_differences": {
+        "physical_l2": -3.8956966125214265e-11,
+        "physical_linf": -2.5768068234732766e-12,
+        "scaled_projected_linf": -1.4210854715202004e-14
+      },
+      "saved_conditional_normal": {
+        "actual_scaled_normal_relative": 9.795212573771111e-13,
+        "scaled_normal_l2": 4.342569540681495e-10
+      },
+      "tighter_inner": {
+        "tolerance": 1e-13,
+        "maxiter": 4800,
+        "warm_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 7,
+            "norm_residual": 252.2086496750878,
+            "norm_normal_residual": 5.292114524939498e-11,
+            "condition_estimate": 2.1286047281873604,
+            "actual_scaled_normal_relative": 1.1940565975900965e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.042472600005567074,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.0002757644753386297,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 1.6552435178738583e-09,
+            "beta_maximum_absolute_difference": 8.764891590296031e-12,
+            "predicted_raw_RMS_difference_e": 3.4360604411768343e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 3.8621054116420744e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.017334862056406452,
+              "physical_linf": 0.0002756794950307742,
+              "scaled_projected_linf": 9.711908859344476e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "cold_start": {
+          "solver": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 39,
+            "norm_residual": 252.20864967508786,
+            "norm_normal_residual": 7.710225722596738e-11,
+            "condition_estimate": 3.162571040801349,
+            "actual_scaled_normal_relative": 1.7384816593173473e-13,
+            "tolerance": 1e-13,
+            "maxiter": 4800,
+            "numerical_certified": true,
+            "wall_s": 0.1686176999937743,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.0002757644753386297,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "comparison": {
+            "template_RMS_difference_e": 1.7718726131766594e-09,
+            "beta_maximum_absolute_difference": 1.0026202090784864e-11,
+            "predicted_raw_RMS_difference_e": 3.674170578048376e-10,
+            "objective_difference": 0.0,
+            "gradient_difference_physical_l2": 4.114955537583129e-08,
+            "actual_gradient": {
+              "finite": true,
+              "physical_l2": 0.017334861937705167,
+              "physical_linf": 0.00027567948596928654,
+              "scaled_projected_linf": 9.711908575127381e-07,
+              "active_lower_coordinates": 0,
+              "active_upper_coordinates": 0
+            },
+            "final_stage_gtol_passed": true
+          }
+        },
+        "warm_vs_cold_template_RMS_e": 1.4904897788223312e-10,
+        "outer_parameters_changed": false,
+        "passed": true
+      },
+      "same_final_parameters_original_PLUT": {
+        "objective": 34183.46284777292,
+        "data_objective": 31789.787431573845,
+        "linear_regularizer_objective": 14.814097266039376,
+        "continuum_regularizer_objective": 2378.861318933038,
+        "AD_vs_explicit_maximum_absolute_error": 1.9984014443252818e-15,
+        "AD_vs_explicit_normalized_l2_error": 8.694498470543614e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 1.1331371916613415,
+          "physical_linf": 0.02141519347033327,
+          "scaled_projected_linf": 7.52074576269024e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_final_parameters_original_PLUT_with_fixed_C1_prior": {
+        "objective": 34170.19116830435,
+        "data_objective": 31789.787431573845,
+        "linear_regularizer_objective": 14.814097266039376,
+        "continuum_regularizer_objective": 2365.5896394644647,
+        "AD_vs_explicit_maximum_absolute_error": 2.220446049250313e-15,
+        "AD_vs_explicit_normalized_l2_error": 9.854212196318272e-14,
+        "record": {
+          "finite": true,
+          "physical_l2": 0.15276404255378467,
+          "physical_linf": 0.010718531467038162,
+          "scaled_projected_linf": 3.7642130212844904e-05,
+          "active_lower_coordinates": 0,
+          "active_upper_coordinates": 0
+        }
+      },
+      "same_z_original_PLUT_conditional_profile": {
+        "inner": {
+          "solver": "column-scaled augmented LSMR",
+          "istop": 2,
+          "iterations": 27,
+          "norm_residual": 252.20864984677831,
+          "norm_normal_residual": 1.521180282899332e-10,
+          "condition_estimate": 3.3666283900042178,
+          "actual_scaled_normal_relative": 3.431233808026226e-13,
+          "tolerance": 1e-13,
+          "maxiter": 4800,
+          "numerical_certified": true,
+          "wall_s": 0.12054610000632238,
+          "regularization": {
+            "postblur_prior_is_new_estimator": true,
+            "template_multiplier": 1.0,
+            "template_reference_sensitivity": 0.0002757644753386297,
+            "gradient_reference_laplacian": 0.10853323353385491,
+            "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+            "beta_penalty": "1e-6 times whitened beta column squared norm",
+            "columns_scaled": true,
+            "raw_objective_count": 1,
+            "template_object_blur_count": 0
+          }
+        },
+        "original_prior": {
+          "objective": 34183.46284770045,
+          "data_objective": 31789.78743351601,
+          "linear_regularizer_objective": 14.814095251404908,
+          "continuum_regularizer_objective": 2378.861318933038,
+          "AD_vs_explicit_maximum_absolute_error": 2.1094237467877974e-15,
+          "AD_vs_explicit_normalized_l2_error": 8.767269858036297e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 1.1227881170036305,
+            "physical_linf": 0.021136744655009254,
+            "scaled_projected_linf": 7.422958051606088e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "fixed_C1_prior": {
+          "objective": 34170.191168231875,
+          "data_objective": 31789.78743351601,
+          "linear_regularizer_objective": 14.814095251404908,
+          "continuum_regularizer_objective": 2365.5896394644647,
+          "AD_vs_explicit_maximum_absolute_error": 2.4424906541753444e-15,
+          "AD_vs_explicit_normalized_l2_error": 9.834538732863896e-14,
+          "record": {
+            "finite": true,
+            "physical_l2": 0.13940854265610567,
+            "physical_linf": 0.010431776155929384,
+            "scaled_projected_linf": 3.663508173801233e-05,
+            "active_lower_coordinates": 0,
+            "active_upper_coordinates": 0
+          }
+        },
+        "template_RMS_shift_from_C1_e": 1.9890589426358658e-05
+      },
+      "same_parameter_calibration_output_differences": {
+        "T": {
+          "RMS": 2.1096015261040843e-05,
+          "maximum_absolute": 5.173999034013832e-05
+        },
+        "u": {
+          "RMS": 0.0,
+          "maximum_absolute": 0.0
+        },
+        "C": {
+          "RMS": 3.025660085679438e-05,
+          "maximum_absolute": 0.00010140249833057169
+        },
+        "predicted_raw_e": {
+          "RMS": 9.161805232395416e-05,
+          "maximum_absolute": 0.00027294955725665204
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "anchor_scale_change": {
+        "original_PLUT_regscale": [
+          810.8157741991408,
+          269.8610092830405
+        ],
+        "C1_regscale": [
+          805.748923098526,
+          269.8610092830405
+        ],
+        "C1_over_original_ratio": [
+          0.9937509218963834,
+          1.0
+        ],
+        "original_coordinate_channel_scale": [
+          0.003511873835311303,
+          0.006087373226510406
+        ],
+        "C1_coordinate_channel_scale": [
+          0.0035228985198329375,
+          0.006087373226510406
+        ],
+        "calibration_anchor_temperature_K": 3300.0,
+        "interpretation": "knot values are identical at3300K; changed temperature derivative changes the temperature prior scale and coordinate metric. The log-amplitude anchor scale stays unchanged."
+      },
+      "same_parameter_gradient_decomposition": {
+        "path": "C1/C1prior minus PLUT/C1prior, then PLUT/C1prior minus PLUT/PLUTprior; x,z fixed throughout",
+        "calibration_values_and_derivatives_only": {
+          "physical_l2": 0.15144336266540723,
+          "physical_linf": 0.01070973867654712,
+          "C1_scaled_l2": 0.0005460234712640889,
+          "C1_scaled_linf": 3.7729322531405417e-05,
+          "temperature_channel_l2": 0.14962413703214647,
+          "loga_channel_l2": 0.023403198772635143
+        },
+        "anchor_regularizer_only": {
+          "physical_l2": 1.1127425331336345,
+          "physical_linf": 0.01592086601310072,
+          "C1_scaled_l2": 0.003920079022931635,
+          "C1_scaled_linf": 5.608759531201105e-05,
+          "temperature_channel_l2": 1.1127425331336345,
+          "loga_channel_l2": 0.0
+        },
+        "total": {
+          "physical_l2": 1.1332032728620205,
+          "physical_linf": 0.0214288089457777,
+          "C1_scaled_l2": 0.0039938503970656,
+          "C1_scaled_linf": 7.549151931686307e-05,
+          "temperature_channel_l2": 1.1329615827169086,
+          "loga_channel_l2": 0.023403198772635143
+        },
+        "closure_physical_l2": 0.0,
+        "objective_calibration_only": -4.3374318920541555e-05,
+        "objective_anchor_regularizer_only": -13.271679468569346
+      },
+      "knot_and_window_statistics": {
+        "latent_pixels": 65536,
+        "latent_temperature_quantiles_K": {
+          "0": 2600.3314282682363,
+          "0.01": 2624.17485564575,
+          "0.05": 2634.1780830179327,
+          "0.25": 2653.3881652540967,
+          "0.5": 2707.4560541020555,
+          "0.75": 2919.561746356748,
+          "0.95": 3087.3100664729886,
+          "0.99": 3101.8980950931664,
+          "1": 3115.373846890666
+        },
+        "nearest_5K_knot_distance_quantiles_K": {
+          "0": 1.865343892859528e-05,
+          "0.01": 0.02524292306447933,
+          "0.05": 0.12524606796296212,
+          "0.25": 0.6241631722500642,
+          "0.5": 1.2410664214701228,
+          "0.75": 1.8685798527571933,
+          "0.95": 2.375690826941195,
+          "0.99": 2.475035982596296,
+          "1": 2.49997549157888
+        },
+        "internal_knot_denominator": 65536,
+        "distance_counts": {
+          "1e-08": 0,
+          "1e-06": 0,
+          "0.0001": 3,
+          "0.001": 27,
+          "0.01": 256,
+          "0.05": 1308,
+          "0.1": 2631,
+          "0.25": 6642,
+          "0.5": 13138,
+          "1.0": 26438,
+          "2.5": 65536
+        },
+        "within_fixed_C1_half_window_pixels": 6642,
+        "within_fixed_C1_half_window_fraction": 0.101348876953125,
+        "left_of_knot_inside_window": 3381,
+        "right_of_knot_inside_window": 3261,
+        "exact_float_knot_inside_window": 0,
+        "most_populated_window_knots": [
+          {
+            "temperature_K": 2650.0,
+            "pixels": 446
+          },
+          {
+            "temperature_K": 2645.0,
+            "pixels": 372
+          },
+          {
+            "temperature_K": 2655.0,
+            "pixels": 357
+          },
+          {
+            "temperature_K": 2640.0,
+            "pixels": 331
+          },
+          {
+            "temperature_K": 2660.0,
+            "pixels": 285
+          },
+          {
+            "temperature_K": 2665.0,
+            "pixels": 202
+          },
+          {
+            "temperature_K": 2635.0,
+            "pixels": 187
+          },
+          {
+            "temperature_K": 2675.0,
+            "pixels": 160
+          },
+          {
+            "temperature_K": 2630.0,
+            "pixels": 145
+          },
+          {
+            "temperature_K": 2670.0,
+            "pixels": 144
+          },
+          {
+            "temperature_K": 2680.0,
+            "pixels": 141
+          },
+          {
+            "temperature_K": 2685.0,
+            "pixels": 103
+          }
+        ],
+        "calibration_only_gradient_difference_L2_energy_fraction_in_windows": 0.8513125093612777,
+        "top20_calibration_gradient_difference_locations": [
+          {
+            "y": 154,
+            "x": 177,
+            "latent_temperature_K": 3099.984785394274,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.015214605726214359,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.01070973867654712,
+            "calibration_gradient_difference_loga": -0.00013463892405732314
+          },
+          {
+            "y": 62,
+            "x": 173,
+            "latent_temperature_K": 3089.997751172881,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.002248827118819463,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010653369232488163,
+            "calibration_gradient_difference_loga": -0.00013821781028725
+          },
+          {
+            "y": 194,
+            "x": 30,
+            "latent_temperature_K": 3099.9943899375107,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.005610062489267875,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010517391544411892,
+            "calibration_gradient_difference_loga": -0.00014046706622231064
+          },
+          {
+            "y": 141,
+            "x": 183,
+            "latent_temperature_K": 3094.9982369647933,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.0017630352067499189,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010500284311527608,
+            "calibration_gradient_difference_loga": -0.0001511434819417845
+          },
+          {
+            "y": 19,
+            "x": 41,
+            "latent_temperature_K": 3099.998498204007,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.0015017959931356017,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.010141382013305167,
+            "calibration_gradient_difference_loga": -0.000141833479015252
+          },
+          {
+            "y": 104,
+            "x": 188,
+            "latent_temperature_K": 3094.993071235221,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.006928764778876939,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009915286972645765,
+            "calibration_gradient_difference_loga": -0.00015709672990130152
+          },
+          {
+            "y": 72,
+            "x": 185,
+            "latent_temperature_K": 3079.9988401374553,
+            "nearest_knot_K": 3080.0,
+            "distance_K": 0.0011598625446822552,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009802377133159679,
+            "calibration_gradient_difference_loga": -0.00012670076128812324
+          },
+          {
+            "y": 160,
+            "x": 177,
+            "latent_temperature_K": 3089.9999337532627,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 6.624673733313102e-05,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009738307133763113,
+            "calibration_gradient_difference_loga": -0.00013925372303580374
+          },
+          {
+            "y": 20,
+            "x": 47,
+            "latent_temperature_K": 3100.0043904248664,
+            "nearest_knot_K": 3100.0,
+            "distance_K": 0.004390424866414833,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009652821218923968,
+            "calibration_gradient_difference_loga": -0.00014285912630640496
+          },
+          {
+            "y": 181,
+            "x": 162,
+            "latent_temperature_K": 3089.9813350876625,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.018664912337499118,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00939865150227881,
+            "calibration_gradient_difference_loga": -0.00015201022829802735
+          },
+          {
+            "y": 70,
+            "x": 180,
+            "latent_temperature_K": 3094.996916799589,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.0030832004108560795,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.00928067927451992,
+            "calibration_gradient_difference_loga": -0.00013032461893119907
+          },
+          {
+            "y": 198,
+            "x": 54,
+            "latent_temperature_K": 3075.0077144376805,
+            "nearest_knot_K": 3075.0,
+            "distance_K": 0.007714437680533592,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009246874614372791,
+            "calibration_gradient_difference_loga": -0.00013300461636822636
+          },
+          {
+            "y": 32,
+            "x": 152,
+            "latent_temperature_K": 3085.005533865041,
+            "nearest_knot_K": 3085.0,
+            "distance_K": 0.005533865040888486,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009246828944093233,
+            "calibration_gradient_difference_loga": -0.00013261806308306756
+          },
+          {
+            "y": 117,
+            "x": 182,
+            "latent_temperature_K": 3069.988198949524,
+            "nearest_knot_K": 3070.0,
+            "distance_K": 0.011801050476151431,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.009094735304568946,
+            "calibration_gradient_difference_loga": -0.0001476195603205832
+          },
+          {
+            "y": 207,
+            "x": 111,
+            "latent_temperature_K": 3115.0147414952053,
+            "nearest_knot_K": 3115.0,
+            "distance_K": 0.014741495205271349,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.009077974814262646,
+            "calibration_gradient_difference_loga": -0.00017529082286998898
+          },
+          {
+            "y": 197,
+            "x": 21,
+            "latent_temperature_K": 3029.995191070128,
+            "nearest_knot_K": 3030.0,
+            "distance_K": 0.0048089298720697116,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.008968585770535498,
+            "calibration_gradient_difference_loga": -0.00010987368619536086
+          },
+          {
+            "y": 23,
+            "x": 44,
+            "latent_temperature_K": 3090.001430867304,
+            "nearest_knot_K": 3090.0,
+            "distance_K": 0.0014308673039522546,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.008940249641774534,
+            "calibration_gradient_difference_loga": -0.00013634458180999953
+          },
+          {
+            "y": 206,
+            "x": 119,
+            "latent_temperature_K": 3109.9786519779427,
+            "nearest_knot_K": 3110.0,
+            "distance_K": 0.021348022057281923,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": -0.008923138634122418,
+            "calibration_gradient_difference_loga": -0.00015246783930816799
+          },
+          {
+            "y": 144,
+            "x": 183,
+            "latent_temperature_K": 3095.016712154654,
+            "nearest_knot_K": 3095.0,
+            "distance_K": 0.016712154654214828,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.008720378010247831,
+            "calibration_gradient_difference_loga": -0.00014727138910269888
+          },
+          {
+            "y": 157,
+            "x": 171,
+            "latent_temperature_K": 3085.012818159462,
+            "nearest_knot_K": 3085.0,
+            "distance_K": 0.012818159461858158,
+            "inside_C1_window": true,
+            "calibration_gradient_difference_temperature": 0.008704061128594898,
+            "calibration_gradient_difference_loga": -0.00012820424514070616
+          }
+        ]
+      },
+      "v001_to_v002_output_differences": {
+        "T": {
+          "RMS": 0.0933795665497899,
+          "maximum_absolute": 0.23077431601586795
+        },
+        "u": {
+          "RMS": 0.08793149597384571,
+          "maximum_absolute": 0.29334556366619324
+        },
+        "C": {
+          "RMS": 0.06194090003462219,
+          "maximum_absolute": 0.32996074856419
+        },
+        "predicted_raw_e": {
+          "RMS": 0.029667025720832872,
+          "maximum_absolute": 0.20432671592243423
+        },
+        "valid": {
+          "different_pixels": 0,
+          "exact_equal": true
+        },
+        "low_signal": {
+          "different_pixels": 0,
+          "exact_equal": true
+        }
+      },
+      "external_scientific_metrics": {
+        "domain_pixels": 65536,
+        "raw_pixels": 65536,
+        "valid_fraction": 1.0,
+        "full_FOV_valid_fraction": 1.0,
+        "template_RMSE_e": 21.338714578868714,
+        "template_bias_e": 2.412263555420921,
+        "template_relative_L2": 0.3881349004796757,
+        "temperature_reference_color_RMSE_K": 18.258862998136344,
+        "temperature_reference_color_bias_K": 5.466566338854074,
+        "temperature_reference_color_comparison_pixels": 65536,
+        "temperature_latent_truth_RMSE_K": 61.34855579076358,
+        "temperature_latent_truth_comparison_pixels": 65536,
+        "raw_RMSE_e": 58.49531879914036,
+        "raw_weighted_RMSE": 0.9849605678383876,
+        "support_pixels": 29440,
+        "sign_recall": 0.9614130434782608
+      },
+      "scientific_metrics_scope": "copied from SHA-verified external scoring receipt; diagnostic truth not reopened in this audit",
+      "independent_raw_RMSE_e": 58.495318799140364,
+      "scientific_acceptance_assessed": false,
+      "wall_s": 1.1840265000064392
+    }
+  ],
+  "counters": {
+    "formal_inverse_calls": 0,
+    "outer_optimizer_calls": 0,
+    "conditional_linear_solves": 12,
+    "fixed_parameter_gradient_evaluations": 28,
+    "unique_final_nonlinear_endpoints": 4
+  }
+}

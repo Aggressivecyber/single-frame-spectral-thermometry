@@ -1,0 +1,227 @@
+{
+  "schema": "v3-native-fixed-tangent-probe-v1-registration",
+  "time": "2026-10-15T08:22:26.854844+00:00",
+  "config": {
+    "version": "v3-native-fixed-tangent-probe-v1",
+    "calibration": "original promoted float32 piecewise-linear LUT; measurement.physics",
+    "damping": 0.001,
+    "rtol": 1e-10,
+    "maxiter": 2000,
+    "route_wall_s": 120.0,
+    "total_route_wall_s": 480.0,
+    "audit_reserve_s": 2.0,
+    "routes": [
+      "old_block_diagonal",
+      "coupled_fourier"
+    ],
+    "raws": 2,
+    "planned_cells": 4,
+    "output_cap_bytes": 1048576,
+    "terminal_reserve_bytes": 65536,
+    "lock_meta_reserve_bytes": 4096,
+    "free_floor_bytes": 2147483648,
+    "whole_inverse_calls": 0,
+    "truth_used": false,
+    "raw_or_state_arrays_written": false,
+    "preconditioner_is_exact_Hessian_inverse": false,
+    "rhs": "negative original weighted-raw-plus-latent-prior gradient, restricted to one fixed free-bound mask",
+    "system": "F*(J^T W J+Lambda*periodic_laplacian+1e-3*D)*F; D is original p.preconditioner_diagonal",
+    "free_mask": "active fields/beta except exact-bound outward-gradient coordinates; native-bound tolerance1e-12",
+    "partial_recovery": "preserve completed cell receipts and terminate remaining cells; never rerun a partial attempt"
+  },
+  "source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7"
+  },
+  "cases": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "mother_id": "v5_development_selection_mother_0000",
+      "raw_file": {
+        "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v5\\run_001\\development\\raw\\v5_development_selection_mother_0000\\v5_development_selection_mother_0000_positive_normal_noise0.npz",
+        "sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60"
+      },
+      "raw_array_sha256": "0acf0af9b56133945572b8c95c267ce8c59a4896128e18339765fa6d0f279c85",
+      "state_file": {
+        "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0000_positive_normal_noise0.npz",
+        "sha256": "40f1dcf30b1dde076eb38d4b273b1de846414433b557f5cd5654980d4028d269",
+        "bytes": 710903
+      },
+      "provenance": {
+        "kind": "same_raw_frozen_v3_state_beta",
+        "new_complete_inverse_calls": 0,
+        "raw_file_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+        "raw_array_sha256": "0acf0af9b56133945572b8c95c267ce8c59a4896128e18339765fa6d0f279c85",
+        "original_raw_dtype": "uint16",
+        "inference_input_array_sha256": "532dd44e1b7644ae2037dfbd800274893085b58a899bbf20758644ee06583468",
+        "source_input_dtype": "torch.float32",
+        "array_hash_scope": "original camera dtype and source floating dtype are recorded separately",
+        "truth_or_identity_used": false,
+        "state_cache": {
+          "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0000_positive_normal_noise0.npz",
+          "sha256": "40f1dcf30b1dde076eb38d4b273b1de846414433b557f5cd5654980d4028d269",
+          "bytes": 710903
+        },
+        "receipt_journal": {
+          "path": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\research_v6\\repair_001\\source_inference_receipts.jsonl",
+          "sha256": "2f15576808e1241cfc47937db6314ccbd133e1bd9ed789dec7f6ed90443c57ec",
+          "line": 23
+        },
+        "source_metadata": {
+          "source": "C_v3",
+          "mode": "new_frozen_inference",
+          "wall_s": 3.6781585999997333,
+          "raw_array_sha256": "532dd44e1b7644ae2037dfbd800274893085b58a899bbf20758644ee06583468",
+          "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "truth_or_identity_used": false,
+          "optimizer_updates": 0,
+          "continuum_domain": "latent; postblur formed once",
+          "peak_CPU_RSS_MiB": null,
+          "CPU_peak_scope": "process lifetime high-water mark",
+          "peak_GPU_allocated_MiB": 80.15576171875,
+          "GPU_peak_scope": "process counter since most recent reset",
+          "engine_seconds": 3.66357550000248,
+          "source_sha256": {
+            "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+            "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+            "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+            "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+            "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+          },
+          "consumed_selection_sha256": "e8a00514ef2b761d1dbd531adbda957d09d4f2883382574dc6a4f75ff35bf667",
+          "solver_config_sha256": "6b1da0b81507afa9e68bcec97fcef95ab9c454371473a1b2681cbfa75766d961",
+          "method": "old_init__joint_update_v3",
+          "backbone_selection_sha256": "d4f6cb17450308717623821995c7d2ab10d487d560c87c3f8979418708b64f71"
+        },
+        "original_dtype_roundtrip_verified": true,
+        "source_dtype_roundtrip_verified": true,
+        "source_input_array_hash_verified": true
+      },
+      "array_sha256": {
+        "raw": "0acf0af9b56133945572b8c95c267ce8c59a4896128e18339765fa6d0f279c85",
+        "state": "f261b9df05c40f16aa11fbd7b3a2810802ea3b24492b430415202b79e03472e0",
+        "beta": "ff30af639e1ac096fb7620ba9006c12fa6d21523ce961bea42472a8841dd9741"
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "mother_id": "v5_development_selection_mother_0013",
+      "raw_file": {
+        "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v5\\run_001\\development\\raw\\v5_development_selection_mother_0013\\v5_development_selection_mother_0013_negative_normal_noise0.npz",
+        "sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823"
+      },
+      "raw_array_sha256": "a5f989b27047b8ae1c75d9caa841dba6c74dc6ed50a76dba8e16b934399477c3",
+      "state_file": {
+        "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0013_negative_normal_noise0.npz",
+        "sha256": "d921a0facb9ca9dce412041cd35531de01303d3423080380db3092395743af77",
+        "bytes": 706818
+      },
+      "provenance": {
+        "kind": "same_raw_frozen_v3_state_beta",
+        "new_complete_inverse_calls": 0,
+        "raw_file_sha256": "f5a4611f856a2417381ae44aed07a76413cd3f9e9795695ab40138bd7ff34823",
+        "raw_array_sha256": "a5f989b27047b8ae1c75d9caa841dba6c74dc6ed50a76dba8e16b934399477c3",
+        "original_raw_dtype": "uint16",
+        "inference_input_array_sha256": "a7a314d54ae0ea24bb8bab1352b123deec9c1da34aa82d448a1d9fc44897c47f",
+        "source_input_dtype": "torch.float32",
+        "array_hash_scope": "original camera dtype and source floating dtype are recorded separately",
+        "truth_or_identity_used": false,
+        "state_cache": {
+          "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0013_negative_normal_noise0.npz",
+          "sha256": "d921a0facb9ca9dce412041cd35531de01303d3423080380db3092395743af77",
+          "bytes": 706818
+        },
+        "receipt_journal": {
+          "path": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\research_v6\\repair_001\\source_inference_receipts.jsonl",
+          "sha256": "2f15576808e1241cfc47937db6314ccbd133e1bd9ed789dec7f6ed90443c57ec",
+          "line": 401
+        },
+        "source_metadata": {
+          "source": "C_v3",
+          "mode": "new_frozen_inference",
+          "wall_s": 4.4975420999981,
+          "raw_array_sha256": "a7a314d54ae0ea24bb8bab1352b123deec9c1da34aa82d448a1d9fc44897c47f",
+          "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "truth_or_identity_used": false,
+          "optimizer_updates": 0,
+          "continuum_domain": "latent; postblur formed once",
+          "peak_CPU_RSS_MiB": null,
+          "CPU_peak_scope": "process lifetime high-water mark",
+          "peak_GPU_allocated_MiB": 88.66064453125,
+          "GPU_peak_scope": "process counter since most recent reset",
+          "engine_seconds": 4.48505170000135,
+          "source_sha256": {
+            "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+            "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+            "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+            "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+            "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+          },
+          "consumed_selection_sha256": "e8a00514ef2b761d1dbd531adbda957d09d4f2883382574dc6a4f75ff35bf667",
+          "solver_config_sha256": "6b1da0b81507afa9e68bcec97fcef95ab9c454371473a1b2681cbfa75766d961",
+          "method": "old_init__joint_update_v3",
+          "backbone_selection_sha256": "d4f6cb17450308717623821995c7d2ab10d487d560c87c3f8979418708b64f71"
+        },
+        "original_dtype_roundtrip_verified": true,
+        "source_dtype_roundtrip_verified": true,
+        "source_input_array_hash_verified": true
+      },
+      "array_sha256": {
+        "raw": "a5f989b27047b8ae1c75d9caa841dba6c74dc6ed50a76dba8e16b934399477c3",
+        "state": "0e02cc37099f0ddcc6d1806403a6b2f355c8e6a9236e93f3de096a150843da6f",
+        "beta": "c98d3ea00035216b93806861bd94c5b3598ff049a2eab2230d35d2d420126f75"
+      }
+    }
+  ],
+  "contracts": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_preconditioner_001\\CONTRACTS.json",
+      "sha256": "8cb37ff0131cdc8a43d9ab18bcbfdae00a85aed1eb8a1fc753588c8c153060db"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CPU_CONTRACTS.json",
+      "sha256": "45f9271614278be21cf46261bb6ce6a512c49e9e8cf58baf65d9e31d453713e6"
+    }
+  ],
+  "upstream_files": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v002\\QUICK_REGISTRATION.json",
+      "sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v002\\QUICK_REGISTRATION_SHA256.json",
+      "sha256": "6a8ada9d0ced512bb10398bb5653f05a85686cc94491c4edc4267f17307cedc2"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v002\\QUICK_RESULT.json",
+      "sha256": "e82bc7204d4d0416c02205c8c51416c2535e90fb2be079d384061260f2e5eb79"
+    }
+  ],
+  "selection": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\training_v4\\run_001\\backbone_selection.json",
+    "sha256": "d4f6cb17450308717623821995c7d2ab10d487d560c87c3f8979418708b64f71"
+  },
+  "space_reserve": {
+    "free_bytes": 2157436928,
+    "reserved_bytes": 1052672,
+    "floor_bytes": 2147483648
+  },
+  "new_complete_inverse_calls": 0,
+  "truth_loaded": false,
+  "GPU_started": false,
+  "final_payloads_opened": false,
+  "fingerprint": "c281989e542dc1dfbcce49403d91904d1e1436bf2033261727490e3b50b1439e"
+}
