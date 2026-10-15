@@ -1,0 +1,179 @@
+E:\CodexWork\thermometry\closeout_001\research_closeout\tests\smooth_calibration_exposure.py:31: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
+  return float((actual-expected).abs().max()/expected.abs().max().clamp_min(1.))
+{
+  "time": "2026-10-15T07:22:30.819240+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "legacy_exposure_helper_C1_window_inconsistency_is_reproduced",
+      "passed": true,
+      "ratio": 2.0,
+      "continuum_value_maximum_absolute_e": 1.3082370676420396,
+      "analytic_derivative_maximum_absolute_e_per_K": 35.32248518038922,
+      "encoded_full_raw_maximum_absolute_e": 1.1214843003690476,
+      "slope_buffer_was_unscaled": true,
+      "scope": "forward-only synthetic calibration-window fixture; no registered raw"
+    },
+    {
+      "name": "all_components_C1_values_derivatives_and_actual_raw_VJP_scale_at_ratio_0.25",
+      "passed": true,
+      "ratio": 0.25,
+      "maximum_normalized_error": 0.0,
+      "errors": {
+        "continuum": 0.0,
+        "analytic_continuum_derivative": 0.0,
+        "actual_continuum_autograd": 0.0,
+        "full_encoded_raw": 0.0,
+        "actual_forward_state_VJP": 0.0,
+        "actual_forward_background_VJP": 0.0,
+        "component_continuum": 0.0,
+        "component_species": 0.0,
+        "component_background": 0.0,
+        "component_temperature_Jacobian": 0.0,
+        "encoded_continuum": 0.0,
+        "encoded_species": 0.0,
+        "encoded_background": 0.0
+      },
+      "ADC_read_and_optics_unchanged": true,
+      "exposure_metadata_scaled": true,
+      "same_buffer_and_config_objects_restored": true
+    },
+    {
+      "name": "all_components_C1_values_derivatives_and_actual_raw_VJP_scale_at_ratio_1",
+      "passed": true,
+      "ratio": 1.0,
+      "maximum_normalized_error": 0.0,
+      "errors": {
+        "continuum": 0.0,
+        "analytic_continuum_derivative": 0.0,
+        "actual_continuum_autograd": 0.0,
+        "full_encoded_raw": 0.0,
+        "actual_forward_state_VJP": 0.0,
+        "actual_forward_background_VJP": 0.0,
+        "component_continuum": 0.0,
+        "component_species": 0.0,
+        "component_background": 0.0,
+        "component_temperature_Jacobian": 0.0,
+        "encoded_continuum": 0.0,
+        "encoded_species": 0.0,
+        "encoded_background": 0.0
+      },
+      "ADC_read_and_optics_unchanged": true,
+      "exposure_metadata_scaled": true,
+      "same_buffer_and_config_objects_restored": true
+    },
+    {
+      "name": "all_components_C1_values_derivatives_and_actual_raw_VJP_scale_at_ratio_2",
+      "passed": true,
+      "ratio": 2.0,
+      "maximum_normalized_error": 0.0,
+      "errors": {
+        "continuum": 0.0,
+        "analytic_continuum_derivative": 0.0,
+        "actual_continuum_autograd": 0.0,
+        "full_encoded_raw": 0.0,
+        "actual_forward_state_VJP": 0.0,
+        "actual_forward_background_VJP": 0.0,
+        "component_continuum": 0.0,
+        "component_species": 0.0,
+        "component_background": 0.0,
+        "component_temperature_Jacobian": 0.0,
+        "encoded_continuum": 0.0,
+        "encoded_species": 0.0,
+        "encoded_background": 0.0
+      },
+      "ADC_read_and_optics_unchanged": true,
+      "exposure_metadata_scaled": true,
+      "same_buffer_and_config_objects_restored": true
+    },
+    {
+      "name": "nested_contexts_compose_ratios_and_restore_each_previous_buffer_object",
+      "passed": true,
+      "ratios": [
+        0.25,
+        2.0
+      ],
+      "effective_ratio": 0.5,
+      "maximum_normalized_error": 0.0,
+      "inner_restored_outer_objects": true,
+      "outer_restored_original_objects": true
+    },
+    {
+      "name": "exceptions_restore_inner_and_outer_context_objects_and_bytes",
+      "passed": true,
+      "inner_exception_observed": true,
+      "outer_exception_observed": true,
+      "inner_restored_outer_objects": true,
+      "all_original_objects_restored": true
+    },
+    {
+      "name": "nonfinite_nonpositive_and_invalid_ratios_are_rejected_before_any_mutation",
+      "passed": true,
+      "attempts": 7,
+      "rejected_and_unchanged": 7
+    },
+    {
+      "name": "frozen_C1_core_v001_sources_and_v002_controller_are_untouched_and_unintegrated",
+      "passed": true,
+      "C1_core_dependency_hashes_verified": 6,
+      "v001_source_hashes_verified": 26,
+      "v002_imports_exposure_helper": false
+    }
+  ],
+  "scope": "locally authored CPU32 forward-only future exposure helper contracts; no native inversion, GPU, registered raw, scientific thresholds or final payloads",
+  "exposure_contract": {
+    "exposure_adapter_version": "c1-calibration-known-exposure-v001",
+    "calibration_version": "continuum-c1-local-hermite-v003",
+    "known_ratio_rule": "finite positive scalar; nested contexts multiply",
+    "electron_domain_scaled": [
+      "continuum_lut",
+      "c1_shared_slopes",
+      "Sscale",
+      "Bscale"
+    ],
+    "fixed_units": [
+      "adc_step",
+      "extra_variance",
+      "read_noise_e",
+      "full_well_e",
+      "adc_bits",
+      "black_level_DN"
+    ],
+    "restoration": "same buffer/config object identities at each nesting level, including exceptions",
+    "v002_integration": false,
+    "formal_inverse_calls": 0,
+    "truth_used": false,
+    "source_sha256": {
+      "research_closeout/smooth_calibration_exposure.py": "04c6398912d44671204ddf6ae29294a39509ad08fa9a02f95075892721b0f668",
+      "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+      "research_closeout/deployment.py": "591c0f35bcdba8718bf3dd2eae3b041e3d128580965f8f05e5597d0e5903cb75"
+    },
+    "fingerprint": "f9443c5dc1cec8a7a99db6359931502df2ff2b1f796f720a229b687cec0adb89"
+  },
+  "ratios": [
+    0.25,
+    1.0,
+    2.0
+  ],
+  "legacy_helper_defect": {
+    "continuum_value_maximum_absolute_e": 1.3082370676420396,
+    "analytic_derivative_maximum_absolute_e_per_K": 35.32248518038922,
+    "encoded_full_raw_maximum_absolute_e": 1.1214843003690476,
+    "slope_buffer_was_unscaled": true
+  },
+  "formal_inverse_calls": 0,
+  "native256_inverse_calls": 0,
+  "GPU_used": false,
+  "formal_raws_generated": false,
+  "v002_integration": false,
+  "scientific_validation": false,
+  "actual_gradient_scope": "VJP of encoded raw against a fixed probe; electron-domain Jacobian scales once with known exposure",
+  "source_sha256": {
+    "research_closeout/smooth_calibration_exposure.py": "04c6398912d44671204ddf6ae29294a39509ad08fa9a02f95075892721b0f668",
+    "research_closeout/tests/smooth_calibration_exposure.py": "83b1dc101204ad3a469ecf706d377b23ea8281c6d045ebf390ca6c3026b94aa1",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/deployment.py": "591c0f35bcdba8718bf3dd2eae3b041e3d128580965f8f05e5597d0e5903cb75"
+  },
+  "wall_s": 0.17800590000115335
+}

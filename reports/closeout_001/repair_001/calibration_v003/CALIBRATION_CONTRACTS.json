@@ -1,0 +1,284 @@
+{
+  "time": "2026-10-15T07:16:22.493883+00:00",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "all_original_optical_and_calibration_buffers_and_cfg_are_byte_identical",
+      "passed": true,
+      "original_buffers": 13,
+      "common_color_lookup_unchanged": true,
+      "adapter_only_buffer_names": [
+        "c1_shared_slopes"
+      ]
+    },
+    {
+      "name": "all_calibration_knots_are_preserved_bit_for_bit",
+      "passed": true,
+      "knots": 661,
+      "bands": 7
+    },
+    {
+      "name": "dense_full_range_is_monotone_and_has_no_overshoot",
+      "passed": true,
+      "dense_temperature_points": 48769,
+      "bands": 7,
+      "minimum_derivative_e_per_K": 9.837625401440353e-07,
+      "half_window_subdivisions": 32,
+      "temperature_range_K": [
+        1200.0,
+        4500.0
+      ]
+    },
+    {
+      "name": "analytic_all_temperature_monotonicity_and_frozen_calibration_raw_error_bound",
+      "passed": true,
+      "analytic_minimum_derivative_e_per_K": 9.837451467929728e-07,
+      "formula": "max |Hermite-line|=(4/27)*0.25K*|shared_slope-secant|; raw infinity norm <= sum band_bound*max(abs(relay(pattern)))",
+      "per_band_absolute_bound_e": [
+        0.005681240486178014,
+        0.005963242826179861,
+        0.0036842281490452647,
+        0.006177895173642603,
+        0.006104605740620488,
+        0.0049846375188809374,
+        0.0029566500155345497
+      ],
+      "analytic_raw_maximum_absolute_bound_e": 0.029719793606866225,
+      "analytic_raw_bound_over_admissible_flat_amplitude_e": 0.040117525159569366,
+      "dense_raw_maximum_absolute_upper_bound_e": 0.0291850968260137,
+      "budget_e": 0.17,
+      "scope": "all uniform-temperature flat fields over the closed calibration range at unit amplitude; incremental change relative to frozen LUT"
+    },
+    {
+      "name": "outside_fixed_windows_original_straight_line_is_retained",
+      "passed": true,
+      "maximum_absolute_difference_e": 2.9103830456733704e-11,
+      "points": 3298
+    },
+    {
+      "name": "unchanged_common_color_reporting_stays_within_registered_incremental_budget",
+      "passed": true,
+      "maximum_absolute_difference_K": 0.0022492485920793115,
+      "budget_K": 0.2,
+      "denominator": 48769,
+      "includes_all_finite_low_signal_temperatures": true
+    },
+    {
+      "name": "out_of_range_guard_has_no_extrapolation_and_value_derivative_are_consistent",
+      "passed": true,
+      "extension": "constant endpoint count; zero analytic and autograd derivative outside range",
+      "nonfinite_temperatures_rejected": true,
+      "no_C1_claim_across_outer_range_boundaries": true
+    },
+    {
+      "name": "calibration_fingerprint_and_CPU_derived_slopes_are_deterministic",
+      "passed": true,
+      "fingerprint": "acecf3ee9f3166c3e6c808173657382dfc42356a0ca5d145679a658fbc27700c",
+      "derived_slope_sha256": "b4ad2294126d611ae84b19e1815fe73bcd2eb77c47b30eeada1b0893eaf96c11",
+      "GPU_executed": false,
+      "scope": "CPU deterministic construction; transfer preserves payload bytes, no device arithmetic defines slopes"
+    },
+    {
+      "name": "standard_full_interval_PCHIP_negative_result_is_preserved_and_disabled",
+      "passed": true,
+      "status": "REJECTED_CALIBRATION_CHANGE_EXCEEDS_FROZEN_RAW_BUDGET",
+      "dense_points": 10561,
+      "maximum_band_absolute_change_e": 0.20825588730804157,
+      "selected_temperature_K": 4497.5,
+      "selected_raw_maximum_absolute_change_e": 0.9760919130046587,
+      "selected_raw_RMS_change_e": 0.5975941886668932,
+      "budget_e": 0.17,
+      "enabled": false,
+      "reason": "full-interval smoothing changes the frozen calibration beyond the registered incremental budget"
+    },
+    {
+      "name": "independent_true_Planck_integral_is_finite_positive_monotone_and_numerically_converged",
+      "passed": true,
+      "definition": "independent float64 Planck photon integral with supplied synthetic rectangular band/QE; Gauss-Legendre128",
+      "calibration_is_measured": false,
+      "quadrature64_vs128_maximum_absolute_count_difference_e": 5.820766091346741e-11,
+      "old_LUT_per_band_maximum_absolute_bias_e": [
+        0.10406027456338052,
+        0.19527065587317338,
+        0.0765883764179307,
+        0.19915354387194384,
+        0.19985616952908458,
+        0.16707031286205165,
+        0.10065463061619084
+      ],
+      "C1_per_band_maximum_absolute_bias_e": [
+        0.10406027456338052,
+        0.19527065587317338,
+        0.0765883764179307,
+        0.19915354387194384,
+        0.19985616952908458,
+        0.16707031286205165,
+        0.10065463061619084
+      ],
+      "old_LUT_raw_flat_absolute_bias_upper_bound_e": 0.8472105745570397,
+      "C1_raw_flat_absolute_bias_upper_bound_e": 0.8472105745570397,
+      "old_LUT_common_color_maximum_absolute_bias_K": 0.07368188351688332,
+      "C1_common_color_maximum_absolute_bias_K": 0.07368188351688332,
+      "scope": "absolute synthetic-Planck approximation diagnostic; this adapter retains most original PLUT intervals and does not claim to remove their absolute bias",
+      "acceptance_budget_scope": "0.17e and0.2K constrain incremental change relative to the frozen calibration, not absolute recovery of Planck physics"
+    },
+    {
+      "name": "same_function_analytic_autograd_central_and_one_sided_derivatives_connect_across_all_knots",
+      "passed": true,
+      "seams": 1977,
+      "autograd_maximum_absolute_error_e_per_K": 5.768185928900493e-11,
+      "finite_difference_errors": {
+        "central": 2.3931952194577814e-06,
+        "left_second_order": 8.199502324882826e-09,
+        "right_second_order": 9.638441802556504e-09
+      },
+      "old_maximum_slope_jump_e_per_K": 0.33281250000000284,
+      "C1_slope_difference_over_2e_minus7_K_e_per_K": 5.324990297594923e-07
+    },
+    {
+      "name": "controlled_actual_coded_raw_scalar_fixture_reproduces_PLUT_cusp_and_C1_stationary_solution",
+      "passed": true,
+      "raw_shape": [
+        32,
+        32
+      ],
+      "fixture_source": "constructed finite positive scalar calibration fixture, not a registered raw or scientific scene",
+      "PLUT_left_derivative": -0.001000000000001812,
+      "PLUT_right_derivative": 0.000999999999998176,
+      "PLUT_returned_derivative_at_knot": 0.0010000000000494496,
+      "C1_stationary_temperature_K": 3300.000000065968,
+      "C1_actual_gradient_absolute": 1.530697790741442e-11,
+      "scope": "demonstrates that a nonsmooth calibration cusp can defeat a smooth gradient criterion; does not identify the cause of v001 endpoints"
+    },
+    {
+      "name": "actual_CPU32_grid4_profile_gradient_connects_through_calibration_knots",
+      "passed": true,
+      "directional_derivatives": {
+        "analytic": 0.01875653444796721,
+        "central": 0.018757490135746655,
+        "left_second_order": 0.018754629635830567,
+        "right_second_order": 0.01875461893590709
+      },
+      "maximum_normalized_error": 1.915512060121638e-06,
+      "linear_modes": 21,
+      "formal_inverse_calls": 0,
+      "profile_evaluations": 5
+    },
+    {
+      "name": "all_v001_registered_source_bytes_remain_unchanged",
+      "passed": true,
+      "files": 26,
+      "mismatches": []
+    }
+  ],
+  "scope": "locally authored CPU calibration and derivative contracts; no GPU, registered raw inversion, scientific candidate selection or final payload access",
+  "calibration_contract": {
+    "calibration_version": "continuum-c1-local-hermite-v003",
+    "physical_objective_version": "joint-profile-v003-shared-anchor-c1-calibration",
+    "physical_objective_changed": true,
+    "historical_v3_precision_upgrade": false,
+    "original_buffers_byte_identical": true,
+    "original_buffer_sha256": {
+      "temperatures": "263ea171d8a9a1eee213310110989b4742b1f238fc4bfb61c6018decbdf91619",
+      "continuum_lut": "48c0df3e48a35805c5c8687bde1f9cf25eae9f4fb706dd7d3cd824affb246ebb",
+      "color_ratio_lut": "0982da73cf0e6032ec5feaaf2372ca63e44f0bacd233f01e1038fb205371c335",
+      "M": "9f38314c69530aa519b0f1e5020673b3caf952417bd04fb6c1000cb1946629d3",
+      "q": "b92331b2ae345299e87fc7764dd2bf0054f729cc45597c18dda740308745228a",
+      "background_basis": "deffcbde23b9eacc0480066f23cfc5f1ea1b5e901b7d02eb571d913fc4f2d18c",
+      "active": "aae09aacb3cc845fb3d09a399cb8db6fa0b3e6b8002a01c1f04e09163745bdd9",
+      "op.patterns": "f7e94e3a441bf83b78be4101603ccffc9a3bfab353f8de2ed20df73adf9b0e54",
+      "op.object_otf": "13abb4dda9c996f880772d4423f504b3e12d3515bf9541e3bc7c27e2f3ae1279",
+      "op.relay_otf": "bd92d57071639b581bcf91daa13a7b3c0e756ca973bf5ad9cb3850c1fbec5318",
+      "op.decode_window": "cd8ccd884632dd6d7a2937930dc581ca161199d6f3e953e981b4a440f5e69825",
+      "op.decode_transfers": "b1a4c3855dc8d60bfad4fb875a1074387f4728833673768174c9d2ad90f0762a",
+      "op.pattern_energy": "6ff232596fb260178e6619be8326d4e93ca8519d5b77fce38192b7ce1f512d36"
+    },
+    "derived_slope_sha256": "b4ad2294126d611ae84b19e1815fe73bcd2eb77c47b30eeada1b0893eaf96c11",
+    "derived_slope_compute_device": "cpu float64, then exact device transfer",
+    "config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+    "original_config_unchanged": true,
+    "common_color_lookup_unchanged": true,
+    "interpolation": "fixed-window monotone cubic Hermite; original straight line elsewhere",
+    "internal_shared_derivative": "weighted harmonic mean of adjacent secants (PCHIP rule)",
+    "half_window_K": 0.25,
+    "window_selection": "fixed before any new real-raw inverse; calibration-only bound",
+    "extrapolation": "constant clamp outside calibration; derivative zero outside",
+    "C1_scope": "all internal knots and window seams within the closed calibrated temperature range",
+    "error_bound_per_band": "(4/27)*half_window_K*abs(shared_slope-segment_slope)",
+    "calibration_provenance": {
+      "kind": "synthetic_engineering_fixture",
+      "matrix_is_measured": false,
+      "matrix_is_derived_from_real_line_list": false,
+      "QE_is_measured": false,
+      "filter_response_is_measured": false,
+      "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+    },
+    "algorithm_reference": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.PchipInterpolator.html",
+    "source_sha256": {
+      "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+      "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+      "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+    },
+    "truth_used": false,
+    "fingerprint": "acecf3ee9f3166c3e6c808173657382dfc42356a0ca5d145679a658fbc27700c"
+  },
+  "enable_for_bounded_quick": true,
+  "standard_PCHIP_negative_result": {
+    "status": "REJECTED_CALIBRATION_CHANGE_EXCEEDS_FROZEN_RAW_BUDGET",
+    "dense_points": 10561,
+    "maximum_band_absolute_change_e": 0.20825588730804157,
+    "selected_temperature_K": 4497.5,
+    "selected_raw_maximum_absolute_change_e": 0.9760919130046587,
+    "selected_raw_RMS_change_e": 0.5975941886668932,
+    "budget_e": 0.17,
+    "enabled": false,
+    "reason": "full-interval smoothing changes the frozen calibration beyond the registered incremental budget"
+  },
+  "independent_Planck_diagnostic": {
+    "definition": "independent float64 Planck photon integral with supplied synthetic rectangular band/QE; Gauss-Legendre128",
+    "calibration_is_measured": false,
+    "quadrature64_vs128_maximum_absolute_count_difference_e": 5.820766091346741e-11,
+    "old_LUT_per_band_maximum_absolute_bias_e": [
+      0.10406027456338052,
+      0.19527065587317338,
+      0.0765883764179307,
+      0.19915354387194384,
+      0.19985616952908458,
+      0.16707031286205165,
+      0.10065463061619084
+    ],
+    "C1_per_band_maximum_absolute_bias_e": [
+      0.10406027456338052,
+      0.19527065587317338,
+      0.0765883764179307,
+      0.19915354387194384,
+      0.19985616952908458,
+      0.16707031286205165,
+      0.10065463061619084
+    ],
+    "old_LUT_raw_flat_absolute_bias_upper_bound_e": 0.8472105745570397,
+    "C1_raw_flat_absolute_bias_upper_bound_e": 0.8472105745570397,
+    "old_LUT_common_color_maximum_absolute_bias_K": 0.07368188351688332,
+    "C1_common_color_maximum_absolute_bias_K": 0.07368188351688332,
+    "scope": "absolute synthetic-Planck approximation diagnostic; this adapter retains most original PLUT intervals and does not claim to remove their absolute bias",
+    "acceptance_budget_scope": "0.17e and0.2K constrain incremental change relative to the frozen calibration, not absolute recovery of Planck physics"
+  },
+  "root_cause_conclusion": "PLUT derivative discontinuities and a controlled cusp mechanism are established; contribution to native v001 failures remains unconfirmed until parameter-cache diagnostics",
+  "formal_inverse_calls": 0,
+  "native256_inverse_calls": 0,
+  "GPU_used": false,
+  "synthetic_scalar_fixture_count": 1,
+  "small_profile_evaluations": 5,
+  "scientific_validation": false,
+  "thresholds_relaxed": false,
+  "historical_results_reinterpreted": false,
+  "wall_s": 1.7398591000091983,
+  "source_sha256": {
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+  }
+}
