@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-15T10:31:59.025324+00:00",
+  "time": "2026-10-15T10:37:47.794957+00:00",
   "schema": "root-integrated-repair-status-v001",
   "scope": "implemented repairs and bounded diagnostic preparation",
   "future_execution_model": "gpt-6.1-sol",
@@ -49,10 +49,10 @@
     }
   ],
   "total_passed_checks": 108,
-  "quick_registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
-  "quick_initial_raws": 2,
+  "quick_registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
+  "quick_initial_raws": 6,
   "quick_initial_routes": 2,
-  "quick_max_new_inverse_calls": 4,
+  "quick_max_new_inverse_calls": 8,
   "native_shape": [
     256,
     256
@@ -67,12 +67,12 @@
   "final_method_selected_by_quick": false,
   "scientific_repair_acceptance": "C1v3 fixed c1s1 four-cell numerical contract passed and independently reproduced; scientific comparison/selection pending",
   "whole_closeout_complete": false,
-  "quick_phase": "native_compact_qualified_pending_small_panel",
-  "launcher_pid": null,
-  "actual_python_pid": null,
-  "startup_verified_utc": null,
-  "next_wake_local": null,
-  "registered_source_commit": "e9219076f886eea419123154ba4f08a993abb6ef",
+  "quick_phase": "C1_small_panel_v003_startup_verified",
+  "launcher_pid": 58276,
+  "actual_python_pid": 23104,
+  "startup_verified_utc": "2026-10-15T10:34:29.420187+00:00",
+  "next_wake_local": "2026-10-15 19:15 Asia/Singapore",
+  "registered_source_commit": "ad2f062920d93d07e411195c9bbf8c37176f7c96",
   "registered_source_commit_remote_verified": true,
   "science_result_for_repaired_methods": "pending",
   "no_continuous_monitoring": true,
@@ -85,7 +85,27 @@
     "evidence_commit": "2a3be4e",
     "full_panel_auto_started": false
   },
-  "current_job": null,
+  "current_job": {
+    "phase": "C1v3-small-regression-panel-v003-run",
+    "launcher_pid": 58276,
+    "actual_python_pid": 23104,
+    "command": "python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_small_panel run --device cuda",
+    "start_utc": "2026-10-15T10:33:20.9609504Z",
+    "startup_verified_utc": "2026-10-15T10:34:29.420187+00:00",
+    "source_commit": "ad2f062920d93d07e411195c9bbf8c37176f7c96",
+    "registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
+    "state_at_startup": "first new blank/v3 STARTED; matching owner locks; stderr0; no terminal",
+    "new_inverse_calls_before_panel": 5091,
+    "charged_calls_at_startup_snapshot": 5092,
+    "new_inverse_calls_this_panel_maximum": 8,
+    "charged_count_after_full_panel_maximum": 5099,
+    "full_panel_denominator": 12,
+    "reused_v002_cells": 4,
+    "native_device": "cuda:0",
+    "dtype": "float64",
+    "runtime_cache_E_only": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v003\\runtime_cache",
+    "terminal": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\PANEL_RESULT.json"
+  },
   "quick_v002": {
     "raws": 2,
     "routes": 2,
@@ -178,7 +198,7 @@
     "root_analysis": "reports/closeout_001/repair_001/v3_tangent_probe_001/NATIVE_PROBE_ANALYSIS.json",
     "root_analysis_sha256": "b8eb0505260b55c06719b88b3c2278a98a7adbf614a9a29f039ecefd2d089023"
   },
-  "current_registration_sha256": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+  "current_registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
   "compact_cache": {
     "status": "NATIVE_GPU_OUTPUT_BYTES_QUALIFIED_WITH_RESERVATION_BOOKKEEPING_ERROR",
     "CPU_checks": 30,
@@ -242,10 +262,14 @@
     "registered": true,
     "registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
     "native_GPU_qualification_performed": true,
-    "new_inverse_calls": 0,
+    "new_inverse_calls": 1,
     "qualification_passed": 4,
     "native_GPU_qualification_new_inverse_calls": 0,
-    "gpu_started": false
+    "gpu_started": true,
+    "new_inverse_calls_scope": "startup snapshot; do not treat as current live count",
+    "maximum_new_inverse_calls": 8,
+    "started_new_case": "mother0000_blank/v3",
+    "whole_panel_96MiB_space_gate_passed": true
   },
   "runtime_entry": {
     "version": "windows-platform-wmi-fallback-v001",

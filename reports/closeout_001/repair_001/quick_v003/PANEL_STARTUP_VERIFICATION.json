@@ -1,0 +1,78 @@
+{
+  "schema": "C1-small-panel-startup-observation-v001",
+  "time": "2026-10-15T10:34:29.420187+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "startup_verified": true,
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "commands_match": true,
+    "parent_child_matches": true,
+    "matching_owner_locks": true,
+    "registered_owner": true,
+    "stderr_empty": true,
+    "no_terminal_at_observation": true,
+    "charged_calls_not_exceed_5099": true
+  },
+  "launcher": {
+    "pid": 58276,
+    "available": true,
+    "actual_pid": 58276,
+    "parent_pid": 44656,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_small_panel run --device cuda"
+  },
+  "actual_python": {
+    "pid": 23104,
+    "available": true,
+    "actual_pid": 23104,
+    "parent_pid": 58276,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_small_panel run --device cuda"
+  },
+  "owner_locks": {
+    "pid": 23104,
+    "owner_token": "c789a8519c7e49e38a7623a582ef9508",
+    "phase": "C1v3-small-regression-panel-v003-run",
+    "registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
+    "time": "2026-10-15T10:33:35.028219+00:00"
+  },
+  "new_cell_started_receipts": [
+    {
+      "path": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\inference\\cells\\37d84e6d48af828089006fdb74da107bc38cd2053ee224ccd815ddb20271aa07\\STARTED.json",
+      "owner": {
+        "pid": 23104,
+        "token": "c9e190f28dc847b9ad1e68ab2ae95157"
+      },
+      "status": "STARTED",
+      "identity": {
+        "case_id": "v5_development_selection_mother_0000_blank_noise0",
+        "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+        "panel_version": "C1v3-small-regression-panel-v003",
+        "raw_sha256": "f533e700cd07b3f0a134a6c9f7cf35e5c9558acaf275abd426353db411f74605",
+        "registration_sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d"
+      },
+      "runtime": {
+        "deterministic_algorithms": false,
+        "device": "cuda:0",
+        "device_properties": {
+          "major": 8,
+          "minor": 9,
+          "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+          "uuid": "0f92c824-c40d-1faa-1c7d-e8df96c5282c"
+        },
+        "dtype": "torch.float64",
+        "machine": "AMD64",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "threads": 2,
+        "torch": "2.12.0+cu130",
+        "torch_cuda_build": "13.0"
+      }
+    }
+  ],
+  "global_charged_calls_at_observation": 5092,
+  "new_inverse_maximum_this_panel": 8,
+  "full_denominator": 12,
+  "stdout_bytes": 344,
+  "stderr_bytes": 0,
+  "reconstruction_preflight_may_still_be_running": false
+}
