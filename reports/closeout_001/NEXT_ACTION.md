@@ -4,6 +4,16 @@ The full user request is USER_EXECUTION_REQUEST.txt. Read it with research_close
 
 Workspace E:/CodexWork/thermometry/closeout_001; branch research/closeout-001; base6f6c4f19e08e83d1ac0cd49e0c85c1c67dc56b51. Original inputs/weights/reports remain under E:/CodexWork/thermometry/public_repository_001 by hash reference. New files/logs/temp/cache stay on E/D. New output budget4GiB, free floor2GiB. No CNN training or proactive subagent delegation.
 
+## Active native v3 tangent probe: startup verified; wake16:45 Singapore
+
+Root launched2026-10-15T08:24:53.2550117Z, launcher49008, actual childPython43884, command `python -u -B -m research_closeout.v3_tangent_probe run --device cuda`. Registered source commit72eb1de1f7c9e2c9e0af620e75d0018e19427683 was pushed and exact remote SHA verified. Registration SHA9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35. See v3_tangent_probe_001/PROCESS.json and STARTUP_VERIFICATION.json.
+
+At08:25:24Z actual commands/parent-child relation and owner locks matchedpid43884; RUN_STARTED andSYSTEM_00 existed, stderr0, no terminal. Empty stdout during work is expected; only terminal prints. Nativev6-a one wake2026-10-15 16:45 Asia/Singapore was tool-updated and config-readback verified in WAKE_RECEIPT.json. On wake inspect actualPID/command/child and RESULT.json or LAUNCH_FAILURE_*.json. If still running, schedule one later wake and finish. Do not keep polling, edit its11 frozen sources, restart based on timeout observations, or launch a secondGPU.
+
+Only4 fixed linear solves on2raw, old diagonal vs coupled at commonmu1e-3,rtol1e-10,max2000;120s each/480s total route wall plus setup. No complete inverse or truth; global actual inverse count remains5091. JSON report cap1MiB and2GiB E floor. All failed/unattempted cells remain in the four-cell denominator. Linear output differences are not nonlinear scientific errors. Analyse the terminal before any outer solver or new small panel.
+
+compact_joint_cache.py/tests are now frozen with30 passed CPU checks; root verified their finalSHA/AST. They remain unregistered and native GPU byte equivalence is untested. Success budget1,385,504B/frame, initial peak7,873,568B including original-full-output fallback. Original30-source final delivery shell failed before Python on memory startup; it did not invalidate the completed CPU receipt and does not constitute an extra delivered check. D output is still rejected by existingstorage.write_path; user allowsE/D but a D adapter needs explicit new source/storage registration. All3 Sol61 followup agents completed and stopped. Original v001/v002 caches were not migrated or removed.
+
 ## v002 completed:4/4 numerical certification; native v3 tangent registered
 
 The15:55 Singapore wake found launcher59720/child56000 absent, global/local locks absent and stderr0. QUICK_RESULT.json ended2026-10-15T07:32:14.849540Z,141.96s total,128.46s inverse internal,4/4 finite and4/4 numerically certified. All four stop at executed stage3 gtol1e-6 under the preregistered three-qualified-endpoint/two-platform rule; stage4 gtol1e-7 was not executed. Root re-scored all4x65536 pixels, verified sources/caches and paired initializers without new inversions. Global actual new complete inverse count5091. Evidence commit e4e8090. Do not rerun these4 frozen results.
