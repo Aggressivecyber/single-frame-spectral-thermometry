@@ -1,0 +1,988 @@
+{
+  "schema": "read-only-scientific-matrix-budget-reconciliation-v001",
+  "time": "2026-10-15T11:47:24.988465+00:00",
+  "scope": "read-only metadata/source/ledger audit; no protocol amendment or new execution registration",
+  "executed_by_this_audit": {
+    "new_complete_inverse_calls": 0,
+    "GPU_calls": 0,
+    "MC_refits": 0,
+    "forward_calls": 0,
+    "raw_or_final_array_payloads_opened": 0,
+    "existing_source_or_result_files_modified": 0
+  },
+  "ledger": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\inverse_calls.jsonl",
+    "snapshot_sha256": "eb2675a9073e8d5eaccd8f1675f154604b0badf331aa581df1d47e06539e4471",
+    "snapshot_bytes": 1178057,
+    "rows": 5639,
+    "new_calls": 5099,
+    "reused_rows": 540,
+    "count_definition": "sum(not row.reused), never JSONL line count",
+    "last_new_call_number": 5099,
+    "cap": 12000,
+    "remaining_at_snapshot": 6901,
+    "anchor_after_quick_v003": 5099,
+    "post_anchor_charged_calls": 0,
+    "new_by_phase": {
+      "source": 540,
+      "development": 440,
+      "null": 1600,
+      "independent": 438,
+      "noise_structure_strength_calibration_dynamic": 771,
+      "uncertainty": 1292,
+      "repair_quick": 10,
+      "C1v3_small_panel_v003": 8
+    },
+    "prescreen16_cumulative_ceiling_from_anchor": 5115,
+    "prescreen16_within_cap": true,
+    "past_failed_or_diagnostic_calls_are_not_refunded": true,
+    "last_row_time": "2026-10-15T10:40:32.480099+00:00"
+  },
+  "current_panel": {
+    "terminal": {
+      "path": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\PANEL_RESULT.json",
+      "sha256": "fba4067e12463b33f636aa75864bc77f49ae33d03b5b8d1000c3b7d2edddf88f",
+      "bytes": 400134
+    },
+    "status": "C1V3_SMALL_PANEL_COMPLETE",
+    "raws": 6,
+    "actual_mothers": 5,
+    "rows": 12,
+    "certified_rows": 12,
+    "new_calls_in_this_panel": 8,
+    "reused_v002_rows": 4,
+    "all12_in_first_selection_stage": true,
+    "cache_reuse_requires": "same raw bytes, physical/calibration/objective/prior, initializer and numerical program fingerprints; no conversion of old PL candidate failures into C1 successes"
+  },
+  "development": {
+    "declared_candidate_grid": [
+      {
+        "id": "joint_c0.1_s0.1",
+        "continuum_multiplier": 0.1,
+        "template_multiplier": 0.1
+      },
+      {
+        "id": "joint_c0.1_s1",
+        "continuum_multiplier": 0.1,
+        "template_multiplier": 1.0
+      },
+      {
+        "id": "joint_c0.1_s10",
+        "continuum_multiplier": 0.1,
+        "template_multiplier": 10.0
+      },
+      {
+        "id": "joint_c1_s0.1",
+        "continuum_multiplier": 1.0,
+        "template_multiplier": 0.1
+      },
+      {
+        "id": "joint_c1_s1",
+        "continuum_multiplier": 1.0,
+        "template_multiplier": 1.0
+      },
+      {
+        "id": "joint_c1_s10",
+        "continuum_multiplier": 1.0,
+        "template_multiplier": 10.0
+      },
+      {
+        "id": "joint_c10_s0.1",
+        "continuum_multiplier": 10.0,
+        "template_multiplier": 0.1
+      },
+      {
+        "id": "joint_c10_s1",
+        "continuum_multiplier": 10.0,
+        "template_multiplier": 1.0
+      },
+      {
+        "id": "joint_c10_s10",
+        "continuum_multiplier": 10.0,
+        "template_multiplier": 10.0
+      }
+    ],
+    "max_candidates": 9,
+    "prescreen_required_rows": 18,
+    "prescreen_new": 16,
+    "prescreen_reused_C1s1": 2,
+    "selection_mothers": 12,
+    "selection_raws": 60,
+    "initializers": 2,
+    "per_qualified_candidate_first_stage_rows": 120,
+    "Q_definition": "number passing both initializer prescreen numerical gates; C1s1 pilot is already certified, so Q>=1 under exact reuse",
+    "F_definition": "min(2, number with a complete numerically qualified first stage), before confirmation; F<=min(2,Q)",
+    "post_prescreen_first_stage_new_formula": "118*Q-10 (ten other panel cells plus two pilot cells reused for C1s1)",
+    "confirmation_mothers": 24,
+    "confirmation_raws": 120,
+    "confirmation_rows_per_finalist": 240,
+    "confirmation_new_formula": "240*F",
+    "from5099_total_new_formula": "16+(118*Q-10)+240*F = 6+118*Q+240*F",
+    "no_repeat_prescreen_in_first_stage": true,
+    "no_cached_confirmation_joint_rows": true,
+    "artificial_budget_pruning_allowed": false,
+    "failed_prescreen_candidate_unexecuted_rows_formula": "118*(9-Q); retain all1080 planned first-stage row states",
+    "traditional_selection_already_done": {
+      "grid": [
+        10,
+        100,
+        1000
+      ],
+      "selected_lambda": 100,
+      "first_stage_calls": 180,
+      "confirmation_calls": 120,
+      "future_new_calls_for_unchanged_selection": 0
+    },
+    "legacy_v3_initializer_cache": {
+      "development_raws": 180,
+      "matching_receipt_raw_hashes": 180,
+      "state_files_exist": 180,
+      "new_initializer_inverse_calls_for_development": 0,
+      "NPZ_payloads_or_state_file_SHA_not_reopened_in_this_audit": true,
+      "full_byte_hash_verification_required_before_execution": true
+    }
+  },
+  "scientific_matrix": {
+    "legacy_non_null_non_UQ": [
+      {
+        "family": "independent",
+        "raws": 146,
+        "distinct_mothers": 24,
+        "primary_methods": 4,
+        "required_method_rows": 584,
+        "existing_baseline_rows_reusable_with_same_target_and_method": 438,
+        "new_selected_joint_calls": 146,
+        "three_resolution_score_rows": 1752,
+        "renderer_scope": "archived legacy finite-relay stress; cannot become matched nominal by relabeling"
+      },
+      {
+        "family": "structure",
+        "raws": 110,
+        "distinct_mothers": 1,
+        "primary_methods": 4,
+        "required_method_rows": 440,
+        "existing_baseline_rows_reusable_with_same_target_and_method": 330,
+        "new_selected_joint_calls": 110,
+        "three_resolution_score_rows": 1320,
+        "renderer_scope": "frozen original core"
+      },
+      {
+        "family": "photons",
+        "raws": 90,
+        "distinct_mothers": 6,
+        "primary_methods": 4,
+        "required_method_rows": 360,
+        "existing_baseline_rows_reusable_with_same_target_and_method": 270,
+        "new_selected_joint_calls": 90,
+        "three_resolution_score_rows": 1080,
+        "renderer_scope": "frozen original core"
+      },
+      {
+        "family": "calibration",
+        "raws": 45,
+        "distinct_mothers": 3,
+        "primary_methods": 4,
+        "required_method_rows": 180,
+        "existing_baseline_rows_reusable_with_same_target_and_method": 135,
+        "new_selected_joint_calls": 45,
+        "three_resolution_score_rows": 540,
+        "renderer_scope": "archived legacy finite-relay stress; cannot become matched nominal by relabeling"
+      },
+      {
+        "family": "dynamic",
+        "raws": 12,
+        "distinct_mothers": 2,
+        "primary_methods": 4,
+        "required_method_rows": 48,
+        "existing_baseline_rows_reusable_with_same_target_and_method": 36,
+        "new_selected_joint_calls": 12,
+        "three_resolution_score_rows": 144,
+        "renderer_scope": "archived legacy finite-relay stress; cannot become matched nominal by relabeling"
+      }
+    ],
+    "total_legacy_raws": 403,
+    "four_method_rows": 1612,
+    "old_three_baseline_rows": 1209,
+    "new_selected_joint_calls": 403,
+    "additional_matched_independent": {
+      "mothers": 24,
+      "raws": 24,
+      "methods": 4,
+      "method_rows_and_new_calls": 96,
+      "three_resolution_score_rows": 288,
+      "reuse_of_old146_as_new_matched_nominal": false,
+      "old146_results_preserved_as_registered_relay_stress": true
+    },
+    "resolution": {
+      "targets_sigma_px": [
+        0,
+        2,
+        4
+      ],
+      "new_full_inverse_multiplier": 1,
+      "score_multiplier": 3,
+      "temperature_rule": "smooth continuum bands then compute ratio; no average-temperature substitution",
+      "existing_baseline_resolution_scores": 3627,
+      "new_joint_resolution_scores_for403_raws": 1209
+    },
+    "photons": {
+      "mothers": 6,
+      "ratios": [
+        0.25,
+        1,
+        2
+      ],
+      "conditions": 5,
+      "raws": 90,
+      "four_method_rows": 360,
+      "three_resolution_score_rows": 1080,
+      "new_selected_joint_calls": 90,
+      "not810_full_inverses": true
+    },
+    "structure_strength": {
+      "geometries": 5,
+      "normalizations": 2,
+      "levels": [
+        0,
+        15,
+        -15,
+        30,
+        -30,
+        45,
+        -45,
+        90,
+        -90,
+        180,
+        -180
+      ],
+      "raws": 110,
+      "four_method_rows": 440,
+      "new_selected_joint_calls": 110,
+      "zero_levels_with_distinct_noise_seeds_cannot_be_collapsed_retroactively": true
+    },
+    "calibration": {
+      "mothers": 3,
+      "perturbation_families": 5,
+      "levels_each": 3,
+      "raws": 45,
+      "four_method_rows": 180,
+      "new_selected_joint_calls": 45,
+      "domain": "declared simulation with legacy relay mismatch; not measured calibration"
+    },
+    "dynamic": {
+      "sequences": 2,
+      "frames_each": 6,
+      "raws": 12,
+      "four_method_rows": 48,
+      "new_selected_joint_calls": 12,
+      "each_frame_requires_an_independent_inverse": true
+    },
+    "all2821_old_rows_finite_and_raw_available": true,
+    "all2821_old_production_numerical_certified": false,
+    "reuse_status": "archived finite research-baseline metrics; does not retroactively certify v3/B4/B1 or replace target labels",
+    "reuse_conditions": [
+      "exact estimator/calibration/weights/config/checkpoint",
+      "same raw file and array hashes",
+      "same20us template and original postblur truth/domain hashes",
+      "same declared exposure/photon normalization",
+      "retain numerical failure and low-signal/calibration/detection states"
+    ]
+  },
+  "null_detection": {
+    "hard_units_per_method": {
+      "calibration_independent_mothers": 200,
+      "evaluation_independent_mothers": 200
+    },
+    "primary_distinct_methods_if_new_joint_selected": 4,
+    "primary_method_rows": 1600,
+    "old_primary_baseline_rows": 1200,
+    "new_selected_joint_calls": 400,
+    "historical_lambda0_1_rows_already_retained": 400,
+    "existing_methods": [
+      {
+        "method": "v3_physics",
+        "calibration_mothers": 200,
+        "evaluation_mothers": 200,
+        "method_rows": 400,
+        "order191_reproduces_archived_threshold": true,
+        "new_inverse_calls_if_exact_frozen_method_and_domain": 0,
+        "old_threshold_has_bound_method": false,
+        "old_threshold_has_bound_domain": false
+      },
+      {
+        "method": "old_B4",
+        "calibration_mothers": 200,
+        "evaluation_mothers": 200,
+        "method_rows": 400,
+        "order191_reproduces_archived_threshold": true,
+        "new_inverse_calls_if_exact_frozen_method_and_domain": 0,
+        "old_threshold_has_bound_method": false,
+        "old_threshold_has_bound_domain": false
+      },
+      {
+        "method": "B1_lambda100",
+        "calibration_mothers": 200,
+        "evaluation_mothers": 200,
+        "method_rows": 400,
+        "order191_reproduces_archived_threshold": true,
+        "new_inverse_calls_if_exact_frozen_method_and_domain": 0,
+        "old_threshold_has_bound_method": false,
+        "old_threshold_has_bound_domain": false
+      },
+      {
+        "method": "B1_lambda0.1",
+        "calibration_mothers": 200,
+        "evaluation_mothers": 200,
+        "method_rows": 400,
+        "order191_reproduces_archived_threshold": true,
+        "new_inverse_calls_if_exact_frozen_method_and_domain": 0,
+        "old_threshold_has_bound_method": false,
+        "old_threshold_has_bound_domain": false
+      }
+    ],
+    "old1600_scores_reusable_but_old_unbound_threshold_not_deployment_ready": true,
+    "fresh_metadata_registration_required": "bind dictionary ID, complete method+initializer+calibration/numerics fingerprint, photon/exposure/optics/resolution/generator domain,200 calibration IDs and disjoint200 evaluation IDs; thresholds from calibration scores only",
+    "no_same_threshold_transfer_to_C1_or_other_photon_domains": true,
+    "outside_domain_policy": "diagnostic crossing only; no nominal5percent FPR claim",
+    "extra_domain_cost_if_claiming5percent_at_both_other_photon_ratios": {
+      "additional_null_raws": 800,
+      "four_method_new_calls": 3200,
+      "not_in_current_fixed400_nominal_domain_plan": true
+    },
+    "resolution_specific_null_scores_can_share_one_inverse": true
+  },
+  "uncertainty": {
+    "external_user_hard_requirement": "representative complete inverse MC for both main and v3; source USER_EXECUTION_REQUEST lines118-122,145; not every legacy network checkpoint",
+    "repaired_protocol_scope": "locally authored unexecuted single-estimator interval/diagnostic recipe; it does not specify a method list and is not an externally mandated1820 for every comparator",
+    "new_mothers": 12,
+    "calibration_mothers": 6,
+    "evaluation_mothers": 6,
+    "all_six_actual_temperature_template_strata_in_both_roles": true,
+    "independent_MC_per_estimator": 896,
+    "MC_recipe": "12*64+2*64 extension;32/64 are prefixes of the two128 streams, not additional draws",
+    "MC_per_role": 448,
+    "first64_calibration_draws": 384,
+    "first64_evaluation_draws": 384,
+    "statistics_per_refit": 12,
+    "main_deployment_recipe": {
+      "base": 12,
+      "independent_MC": 896,
+      "fitted_mean_bootstrap": 768,
+      "whole_inverse_FD_diagnostic": 144,
+      "total": 1820
+    },
+    "A_full_recipe_for_both": {
+      "main": 1820,
+      "v3": 1820,
+      "total_new_calls": 3640,
+      "interpretation": "conservative expanded scope, not an extra external-user hard requirement"
+    },
+    "B_minimum_keeping_the_main_repaired_recipe": {
+      "main": 1820,
+      "v3_independent_MC_only": 896,
+      "total_new_calls": 2716,
+      "main_MC_retained": 896,
+      "v3_MC_retained": 896,
+      "v3_extra_base_bootstrap_probe_calls": 0,
+      "v3_scope": "finite frozen research estimator bias/variance/empirical output distribution only; no trusted deployed interval or inherited main coverage claim"
+    },
+    "scope_reduction_from_A_to_B": 924,
+    "optional_prospective_amendment_not_executed": {
+      "main_whole_inverse_FD_diagnostic_is_not_external_hard_count": 144,
+      "possible_free_layer1_replacement": "numerically audited matrix-free fitted-point JVP/VJP/linear solves including all coupled components; cannot label those as144 whole-inverse FD refits",
+      "main_call_count_without_optional_FD": 1676,
+      "v3_MC": 896,
+      "combined": 2572,
+      "requires_fresh_explicit_registration_and_numeric_validity_record": true,
+      "both896_MC_and768_main_bootstrap_preserved": true
+    },
+    "old896_MC": {
+      "rows": 896,
+      "finite": 896,
+      "production_numerical_valid": 0,
+      "new_repaired_mother_overlap": 0,
+      "retained_role": "historical research evidence; cannot substitute for fresh repaired-geometry paired MC or calibrated widths"
+    },
+    "no_MC_nested_bootstrap": true,
+    "bootstrap_rule": "64 per12 base fitted means, shared within scene as explicitly declared; not64 for every MC draw",
+    "MC_raws_shared_between_methods_but_two_different_inverse_outputs_both_charged": true,
+    "conditional_bootstrap_means_are_method_specific_and_not_independent_MC": true,
+    "failures_missing_draws_keep_full_denominators": true,
+    "two_probe_FD_not_trusted_covariance": true
+  },
+  "final": {
+    "main_mothers": 64,
+    "main_raws": 512,
+    "signed_mothers": 36,
+    "signed_raws": 180,
+    "raws": 692,
+    "original_metadata_hash": "9ddaa33be19237098b612bc3dd15bb79013921e9258eb0843d7c9125bb1e4519",
+    "new_main_wins": {
+      "distinct_methods": [
+        "selected_joint_one_global_initializer",
+        "frozen_v3",
+        "old_B4",
+        "strong_B1_lambda100"
+      ],
+      "distinct_methods_count": 4,
+      "method_rows_and_new_calls": 2768
+    },
+    "fallback_main_is_same_v3": {
+      "report_slots": 4,
+      "distinct_methods": [
+        "frozen_v3",
+        "old_B4",
+        "strong_B1_lambda100"
+      ],
+      "distinct_methods_count": 3,
+      "distinct_method_rows_and_new_calls": 2076,
+      "selected_main_alias_rows_reused": 692,
+      "no_double_count_main_v3": true
+    },
+    "historical_B1_lambda0_1": "keep existing historical/dev/null comparisons; not an external requirement for a fifth final method",
+    "optional_fifth_final_extra_calls": 692,
+    "payloads_opened": false,
+    "method_freeze_exists": false,
+    "must_freeze_before_payload": "source, method/global initializer/prior/calibration/target, method-domain thresholds, statistics and full failure denominators; no final-driven changes"
+  },
+  "budget": {
+    "anchor_new_calls": 5099,
+    "remaining_from_anchor": 6901,
+    "old_baselines_reused_and_smooth_initializer_assumed_for_base_table": true,
+    "fixed_other_calls_if_new_joint_wins": 3667,
+    "fixed_detail": {
+      "selected_joint_on403_old_science_raws": 403,
+      "24_matched_raws_times4": 96,
+      "new_joint_null200_plus200": 400,
+      "final692_times4": 2768
+    },
+    "A_full_UQ_both_formula": "7313+118*Q+240*F + I_missing",
+    "B_main_full_v3_MC_only_formula": "6389+118*Q+240*F + I_missing",
+    "fallback_main_equals_v3_formula": "3974+118*Q+240*F; one1820 UQ recipe,72 matched independent calls,2076 final calls, old science/null reused",
+    "Q_F_table": [
+      {
+        "Q": 1,
+        "F_if_all_passing_stage1_complete": 1,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 108,
+        "confirmation_calls": 240,
+        "development_new_calls": 364,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 136,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 944,
+        "A_full_UQ_both_new_calls": 7671,
+        "A_cumulative": 12770,
+        "A_gap_to12000": 770,
+        "B_main1820_v3MC896_new_calls": 6747,
+        "B_cumulative": 11846,
+        "B_gap_to12000": 0,
+        "B_headroom": 154,
+        "fallback_v3_main_alias_new_calls": 4332,
+        "fallback_cumulative": 9431,
+        "fallback_headroom": 2569
+      },
+      {
+        "Q": 2,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 226,
+        "confirmation_calls": 480,
+        "development_new_calls": 722,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 254,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 826,
+        "A_full_UQ_both_new_calls": 8029,
+        "A_cumulative": 13128,
+        "A_gap_to12000": 1128,
+        "B_main1820_v3MC896_new_calls": 7105,
+        "B_cumulative": 12204,
+        "B_gap_to12000": 204,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 4690,
+        "fallback_cumulative": 9789,
+        "fallback_headroom": 2211
+      },
+      {
+        "Q": 3,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 344,
+        "confirmation_calls": 480,
+        "development_new_calls": 840,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 372,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 708,
+        "A_full_UQ_both_new_calls": 8147,
+        "A_cumulative": 13246,
+        "A_gap_to12000": 1246,
+        "B_main1820_v3MC896_new_calls": 7223,
+        "B_cumulative": 12322,
+        "B_gap_to12000": 322,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 4808,
+        "fallback_cumulative": 9907,
+        "fallback_headroom": 2093
+      },
+      {
+        "Q": 4,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 462,
+        "confirmation_calls": 480,
+        "development_new_calls": 958,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 490,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 590,
+        "A_full_UQ_both_new_calls": 8265,
+        "A_cumulative": 13364,
+        "A_gap_to12000": 1364,
+        "B_main1820_v3MC896_new_calls": 7341,
+        "B_cumulative": 12440,
+        "B_gap_to12000": 440,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 4926,
+        "fallback_cumulative": 10025,
+        "fallback_headroom": 1975
+      },
+      {
+        "Q": 5,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 580,
+        "confirmation_calls": 480,
+        "development_new_calls": 1076,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 608,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 472,
+        "A_full_UQ_both_new_calls": 8383,
+        "A_cumulative": 13482,
+        "A_gap_to12000": 1482,
+        "B_main1820_v3MC896_new_calls": 7459,
+        "B_cumulative": 12558,
+        "B_gap_to12000": 558,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 5044,
+        "fallback_cumulative": 10143,
+        "fallback_headroom": 1857
+      },
+      {
+        "Q": 6,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 698,
+        "confirmation_calls": 480,
+        "development_new_calls": 1194,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 726,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 354,
+        "A_full_UQ_both_new_calls": 8501,
+        "A_cumulative": 13600,
+        "A_gap_to12000": 1600,
+        "B_main1820_v3MC896_new_calls": 7577,
+        "B_cumulative": 12676,
+        "B_gap_to12000": 676,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 5162,
+        "fallback_cumulative": 10261,
+        "fallback_headroom": 1739
+      },
+      {
+        "Q": 7,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 816,
+        "confirmation_calls": 480,
+        "development_new_calls": 1312,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 844,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 236,
+        "A_full_UQ_both_new_calls": 8619,
+        "A_cumulative": 13718,
+        "A_gap_to12000": 1718,
+        "B_main1820_v3MC896_new_calls": 7695,
+        "B_cumulative": 12794,
+        "B_gap_to12000": 794,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 5280,
+        "fallback_cumulative": 10379,
+        "fallback_headroom": 1621
+      },
+      {
+        "Q": 8,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 934,
+        "confirmation_calls": 480,
+        "development_new_calls": 1430,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 962,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 118,
+        "A_full_UQ_both_new_calls": 8737,
+        "A_cumulative": 13836,
+        "A_gap_to12000": 1836,
+        "B_main1820_v3MC896_new_calls": 7813,
+        "B_cumulative": 12912,
+        "B_gap_to12000": 912,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 5398,
+        "fallback_cumulative": 10497,
+        "fallback_headroom": 1503
+      },
+      {
+        "Q": 9,
+        "F_if_all_passing_stage1_complete": 2,
+        "new_prescreen_calls": 16,
+        "additional_first_stage_calls": 1052,
+        "confirmation_calls": 480,
+        "development_new_calls": 1548,
+        "first_stage_planned_rows_all9": 1080,
+        "first_stage_executed_rows_including_failed_pilots": 1080,
+        "first_stage_explicit_unexecuted_after_actual_prescreen_failure": 0,
+        "A_full_UQ_both_new_calls": 8855,
+        "A_cumulative": 13954,
+        "A_gap_to12000": 1954,
+        "B_main1820_v3MC896_new_calls": 7931,
+        "B_cumulative": 13030,
+        "B_gap_to12000": 1030,
+        "B_headroom": 0,
+        "fallback_v3_main_alias_new_calls": 5516,
+        "fallback_cumulative": 10615,
+        "fallback_headroom": 1385
+      }
+    ],
+    "Q2_F1_B": {
+      "new_calls": 6865,
+      "cumulative": 11964,
+      "headroom": 36
+    },
+    "Q9_F2_smooth_initializer": {
+      "A_new_calls": 8855,
+      "A_cumulative": 13954,
+      "A_gap": 1954,
+      "B_new_calls": 7931,
+      "B_cumulative": 13030,
+      "B_gap": 1030
+    },
+    "Q9_F2_fallback": {
+      "new_calls": 5516,
+      "cumulative": 10615,
+      "headroom": 1385
+    },
+    "I_missing": {
+      "smooth_demod": 0,
+      "development_same_raw_v3_cache": 0,
+      "new_joint_full_calls_outside_development": 3339,
+      "possible_v3_init_calls_avoided_by_streaming_exact_paired_v3_state_B": 1612,
+      "B_max_extra_after_sharing_all_new_paired_baselines": 1727,
+      "B_breakdown": {
+        "old403_science_states_not_saved": 403,
+        "old400_null_states_not_saved": 400,
+        "main12_base_no_v3_base_in_MC_only_scope": 12,
+        "main768_bootstrap_different_from_true_MC": 768,
+        "main144_FD_around_main_fit": 144
+      },
+      "A_max_extra_after_sharing": 1715,
+      "A_avoids12_more_v3_base_calls_already_in_its_full_recipe": true,
+      "all180_dev_cached_states_exist_but_old_science_predictions_only_canonical_not_full_latent_state": true,
+      "reuse_requires_exact_same_initializer_program_and_known_calibration_not_just_same_caseID": true,
+      "avoid_unnecessary_full_v3_init_rerun": "run each required new v3 baseline first and pass its exact state/hash receipt into main; never recompute it invisibly inside initialize",
+      "never_use_main_fitted_mean_bootstrap_v3_initializers_as_true_mean_independent_v3_MC": true
+    },
+    "Q9_F2_v3_initializer_with_exact_sharing": {
+      "A_cumulative": 15669,
+      "A_gap_to12000": 3669,
+      "B_cumulative": 14757,
+      "B_gap_to12000": 2757
+    },
+    "no_automatic_cap_increase": true,
+    "budget_dependent_rejection_of_qualified_candidates": false,
+    "cannot_guarantee_full_distinct_joint_matrix_under12000_when_Q_ge2_and_F2": true,
+    "original_phase_caps": {
+      "source": 540,
+      "development": 3400,
+      "noise_structure_strength_calibration_dynamic": 950,
+      "uncertainty": 2100,
+      "null": 1600,
+      "independent": 480,
+      "sealed": 2768
+    },
+    "phase_caps_sum": 11838,
+    "counter_checks_global_cap_only": "experiment_registry.count_call reads global12000; phase maxima remain protocol obligations and need prospective reconciliation, not retroactive relabeling",
+    "new_main_B_phase_totals_at_Q9_F2_before_I": {
+      "source": 540,
+      "development": 1988,
+      "null": 2000,
+      "independent": 680,
+      "noise_structure_strength_calibration_dynamic": 1028,
+      "uncertainty": 4008,
+      "sealed": 2768,
+      "already_charged_repair_phases": 18
+    }
+  },
+  "valid_recovery_and_reuse_checklist": [
+    "Proceed with the already bounded16 new prescreen calls; no budget permission is needed for that phase within12000.",
+    "After actualQ, run every qualified candidate on the complete12x5x2 matrix; record each actually failed candidate and every explicit unexecuted slot; do not manufacture exclusions for budget.",
+    "Credit12 exact C1s1 cells once; do not separately repeat the18 pilot rows inside first-stage or confirmation bookkeeping.",
+    "Reuse unchanged strongB1 selection and180 same-raw baseline rows per method; preserve historicallambda0.1 naming and all prior failed C1/PL results.",
+    "Freeze one global production initializer after development; if smooth_demod wins, initializer complete-inverse cost is0; ifv3 wins, share exact same-raw baseline state and account every missing full initializer call.",
+    "Reuse1209 old science baseline rows and1600 old null rows only at their original truth/domain/estimator definition; metadata recalculate and bind thresholds, never overwrite old artifacts.",
+    "One inverse serves all three output-resolution scores and all12 pixel/ROI statistics; prefix32/64/128 stability reuses existing draws.",
+    "For distinct new main keep its1820 recipe and v3 fresh896 independent MC, explicitly register v3 as research bias/variance baseline without deployed intervals; this saves924 versus unrequired full-v3 recipe.",
+    "If scientific selection returns unchangedv3, alias main/v3 outputs, UQ and final slots exactly; never double charge the same estimator under two labels.",
+    "If actualQ/F and chosen initializer still exceed12000, present the exact remaining matrix/gap before larger scientific execution; exact reuse already credited cannot remove theQ9/F2 B deficit1030.",
+    "Keep all512+180 raw metadata, all36 signed mothers, every failed/unavailable row and the final payload seal. No budget-driven shrinking of MC, mothers or final methods.",
+    "Disk, output and runtime budgets remain independent:4GiB global outputs, E2GiB floor, explicit D256MiB project and128MiB floor; reserve/release zero placeholders per validated owned phase, without repeated inverse or forward."
+  ],
+  "additional_scope_risks_not_silently_added_as_hard_requirements": {
+    "legacy_independent_calibration_dynamic_raws": 203,
+    "old_mean_or_labels_cannot_be_recreated_with_new_C1_or_matched_relay_and_called_same_input": true,
+    "fresh_matched_calibration45_and_dynamic12_if_later_required": {
+      "raws": 57,
+      "new_full_four_method_calls_if_keeping_all_old_comparisons": 228,
+      "if_replacing_only_unexecuted_C1_old57_with_new_matched57_extra_vs_base": 171,
+      "requires_explicit_new_registration_not_an_automatic_external_count": true
+    },
+    "extra_photon_or_renderer_FPR_domains_require_their_own_nulls": "base400 is only one declared null domain; do not claim5percent outside it",
+    "real_calibration_available": false,
+    "calibration_distribution": "assumed simulation; no real temperature/concentration/hardware throughput validation"
+  },
+  "evidence_files": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\USER_EXECUTION_REQUEST.txt",
+      "sha256": "2b4c6bd493065b54b29e501e0fdaadf9230ff797c5bce529626e1ff53437ca7e",
+      "bytes": 30937
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\execution_spec.yaml",
+      "sha256": "6882b3cd2ef65104e15c487b71cd6dc53c343538033c509da7132bbf46aadad1",
+      "bytes": 15607
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\STUDY_PROTOCOL.yaml",
+      "sha256": "6882b3cd2ef65104e15c487b71cd6dc53c343538033c509da7132bbf46aadad1",
+      "bytes": 15607
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\REPAIRED_SCIENTIFIC_PROTOCOL.json",
+      "sha256": "27d1f468252c3e6fd9060271939428949ffe7f6438578fe89ccae7c7bc3e2a55",
+      "bytes": 66276
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\SCIENCE_RESULT.json",
+      "sha256": "27fbeb00b142eedb99594a8f13d4e24912b646face52b153fd918d2661e16c86",
+      "bytes": 1078
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\SCIENTIFIC_PLAN.json",
+      "sha256": "9ddaa33be19237098b612bc3dd15bb79013921e9258eb0843d7c9125bb1e4519",
+      "bytes": 1649351
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\DEVELOPMENT_REGISTRATION.json",
+      "sha256": "794e3c02931392d251ad3f3fa3f52307326d1c063e829d3dada76363f9c9d0d2",
+      "bytes": 8034
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\development_results.jsonl",
+      "sha256": "95d4c298af07f6539396609d7ee771c32021d02d830cf4f44e1dd6f63bb49e2f",
+      "bytes": 1322642
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\development_baseline_reuse.jsonl",
+      "sha256": "77cd52ad5da04e11daf87636fbab43635e9516a20e0ce7a531595615aeb15aa2",
+      "bytes": 1683062
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\TRADITIONAL_SELECTION.json",
+      "sha256": "12e3b78f99f65994d4f1ec69b45c5b6464e28f884e60482ff5faac45f446b847",
+      "bytes": 1053
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\selected_method.json",
+      "sha256": "593f4993d1891d7dd486706c93e610a096ed398cd91ca83074cc98c5182ebcca",
+      "bytes": 3203
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\per_case.jsonl",
+      "sha256": "5fb00139183f04de9023ce984d8f06d829cdd29ea51605210d7bddf938d2965e",
+      "bytes": 41426622
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\new_raw_manifest.jsonl",
+      "sha256": "8812084b56814908061c21488fb503699db87c153de0b13fcfc4282684c033f9",
+      "bytes": 1511770
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\full_inverse_MC.jsonl",
+      "sha256": "b13bbdd34b114885bde7b920118901c6d887e6e7c76442d7a629adba4a3937c9",
+      "bytes": 1279169
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\whole_inverse_statistics.jsonl",
+      "sha256": "04641c8b67177edae887ca7f9c08d3376c692e5abbc39f169ac58ea800654aad",
+      "bytes": 759695
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\DETECTOR_THRESHOLDS.json",
+      "sha256": "2b80c2d0dc428d0134040c4f94209440311ed9562a177c42dd7f76d7eac74dfc",
+      "bytes": 2000
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\NULL_EVALUATION.json",
+      "sha256": "4325e96e0e3cd1c49037c1f966f7cc245bed377a9f87f62094865ce928484c4f",
+      "bytes": 1457
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_v6\\input_inventory.json",
+      "sha256": "cbe35b77a4a36f1706b8d44cc263c7f5c55f07ff3ff556a49f86ffeb4e0ded71",
+      "bytes": 1998477
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_v5\\family_plans.json",
+      "sha256": "23f2bf9d4c45c5ace4a7a74ae7a4c474beaa94ef891a022690d6a968cba1695e",
+      "bytes": 2536516
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\research_v6\\repair_001\\source_inference_receipts.jsonl",
+      "sha256": "2f15576808e1241cfc47937db6314ccbd133e1bd9ed789dec7f6ed90443c57ec",
+      "bytes": 2390849
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v003\\PANEL_REGISTRATION.json",
+      "sha256": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
+      "bytes": 249204
+    },
+    {
+      "path": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\PANEL_RESULT.json",
+      "sha256": "fba4067e12463b33f636aa75864bc77f49ae33d03b5b8d1000c3b7d2edddf88f",
+      "bytes": 400134
+    },
+    {
+      "path": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\PANEL_RESULT.json.sha256.json",
+      "sha256": "35edb54fa19bbc327e03bf00cba991978a15d42feca3a54d0535a0fc9480787e",
+      "bytes": 208
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\experiment_registry.py",
+      "sha256": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+      "bytes": 9697
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\scientific_plan.py",
+      "sha256": "f7a46888f535a1aae7da9b798ef0d3dce670ef5acf99d6b7965961bc7c538841",
+      "bytes": 11055
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\repair_protocol.py",
+      "sha256": "67dac7d3b1104abb30dcb844fb1349ce0dd447873c8e177c3ece6f50c874cb3f",
+      "bytes": 8577
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\science.py",
+      "sha256": "95b55e4353f391f534790f09d0a7c825e8267266d3d19bc24e8f20935e77297a",
+      "bytes": 18083
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\joint_estimator.py",
+      "sha256": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+      "bytes": 14590
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\scenarios.py",
+      "sha256": "b3a956059c7469ea55b5a07764352af7e148543c774f4b547a376155a3933a82",
+      "bytes": 4447
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\research_closeout\\uncertainty.py",
+      "sha256": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+      "bytes": 22942
+    }
+  ],
+  "frozen_source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "research_closeout/v3_tangent_probe_v2.py": "ca98e6dcc2ca952195a67d2472c789e4cda542f338082346ee91cc7b2f455680",
+    "research_closeout/tests/v3_tangent_probe_v2.py": "9eeefaf0ce5ab3f4ee71aae9d34323b7cd518aef6975f51b8518f1005cdf857d",
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002",
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517",
+    "research_closeout/quick_validation.py": "19c3562e03ff0aa7b1aa917ef864d425e1537da08eab413cefcf6870e14b21f7",
+    "research_closeout/tests/quick_validation.py": "8a408c02747d9f349eda3db7515015d159e08653a78a9e5dd461f982de1a60b8",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/independent_renderer.py": "922db2a22244c975ac2c69d26ae2e6b0858840187d18ea58631c00d6aad42d21",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "research_closeout/calibration_quick.py": "6bdf0c25292043fe3da43f8318a4573ade697addbc3a7ef7c40e23744db7356e",
+    "research_closeout/tests/calibration_quick.py": "49f13e7ebc7e8dcc0cee2943223ba1eb651d253fdf472c1af9ed7903442231ae",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799",
+    "research_closeout/c1_small_panel.py": "931f9b1fcf3f1f69bcbe0d4be0309fea21eecfb0ed6d8052b918e2d0cf65df7c",
+    "research_closeout/tests/c1_small_panel.py": "b19c08839bff74a54363fa01b2b278cb9a960d4a3869b4334918580059a60df5",
+    "research_closeout/compact_joint_cache.py": "8e65ea2762757dbeb2716926c0889ac46d6f0668c07d99f0dc38e01cda8494d4",
+    "research_closeout/tests/compact_joint_cache.py": "e7d8e740fc951925c54f3d12078ba358e3bc5960ea2ce0409d9e2d02015a3170",
+    "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd",
+    "research_closeout/tests/explicit_store.py": "0f52c279770705ab48a95060c9ff16c600c7377b0041dc0b8bceffeb4b0c1c61"
+  },
+  "frozen_sources_unchanged_after_audit": true,
+  "storage": {
+    "independent_constraint": "The 4GiB new-study E/D output cap is separate from the 12000 complete-inverse cap, disk floors, and per-instance reservations. Passing one cap does not pass the others.",
+    "new_output_budget_bytes": 4294967296,
+    "per_state_uncompressed_native256_float64_z_loga_xi_bytes": 1572864,
+    "compression_size_not_guaranteed": true,
+    "stress_example_scope": "Q9,F2,distinct new main,its1820 UQ recipe,smooth_demod,no duplicate baseline-state initialization cache",
+    "future_main_output_cells_if_every_call_retains_full_state": {
+      "development_Q9_F2_new_after_reuse": 1548,
+      "old_science_selected_main": 403,
+      "matched24_selected_main": 24,
+      "main_UQ_recipe": 1820,
+      "selected_main_null": 400,
+      "selected_main_final": 692
+    },
+    "future_main_output_cells_total": 4887,
+    "at_illustrative_1MiB_each_bytes": 5124390912,
+    "at_illustrative_1MiB_each_GiB": 4.7724609375,
+    "three_float64_fields_uncompressed_bytes": 7686586368,
+    "three_float64_fields_uncompressed_GiB": 7.15869140625,
+    "these_are_conditional_storage_estimates_not_measured_compressed_sizes_or_new_outputs": true,
+    "excluded_from_estimate": [
+      "existing roughly400MB scientific outputs (parent-observed approximation)",
+      "other baseline outputs",
+      "input raw data",
+      "metadata/hash/metrics/receipt/log overhead"
+    ],
+    "avoid_raw_count_double_count": "Old815 science-plan raw cases already contain400 null and12 UQ baseline cases. Use403 non-null/non-UQ old science plus separate null/UQ rows; do not add815+400+1820 as disjoint raw cases.",
+    "required_main_output_scope": "Where prospective reuse, published maps, fitted-mean bootstrap, initialization, or exact parameter recovery require full native fields/latent parameters, preserve the explicitly committed full-precision outputs and hashes.",
+    "UQ_statistics_scope": "A preregistered UQ-only draw may persist its12 declared statistics, full-domain metrics, status/failure denominator, raw/parameter/algorithm identities and hashes instead of unpromised maps. Specify this before execution; unpublished MC maps cannot later support new scientific figures or unrecorded spatial claims.",
+    "no_delete_or_precision_reduction_recommendation": true,
+    "before_scale_up": "Register a concrete per-stage storage matrix: count of persistent full native states/maps, statistic-only draws, exact reusable caches, inputs, receipts/logs, conservative byte reservations, retention promises and E/D/global floors, together with the inverse-call plan. Do not infer future storage from historical average bytes per inverse.",
+    "current16_prescreen_parent_status": {
+      "approximately_new_bytes": 20971520,
+      "instance_budget_bytes": 201326592,
+      "source": "root message, not independently measured by this read-only audit",
+      "within_reported_instance_budget": true
+    }
+  }
+}

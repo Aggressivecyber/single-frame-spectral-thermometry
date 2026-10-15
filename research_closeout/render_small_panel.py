@@ -5,7 +5,7 @@ import os
 import hashlib
 
 
-def run():
+def run(revision=1):
     from . import storage as s
     folder=s.ROOT/'paper/figures/supplement_quick_v003'
     folder.mkdir(parents=True,exist_ok=True)
@@ -41,28 +41,35 @@ def run():
         for index,method in enumerate(methods):
             individual=[row[field] for row in per_method[method]]
             ax.scatter(index+np.linspace(-.19,.19,6),individual,s=19,c='black',zorder=3)
-            ax.text(index,values[index]+.8,f'{values[index]:.2f}',ha='center',va='bottom',fontsize=10)
-        ax.set_xticks(range(4),names,rotation=12,ha='right')
+        ax.set_xticks(range(4),[f'{name}\n{value:.2f}' for name,value in zip(names,values)],rotation=0)
         ax.set_ylabel(label);ax.set_title(title,loc='left')
         ax.grid(axis='y',alpha=.2,zorder=0)
         ax.set_ylim(0,max(max(row[field] for rows in per_method.values() for row in rows),max(values))*1.18)
     fig.suptitle('Development diagnostic: 6 raw cases, 5 parent scenes; fixed c1s1',y=.98,fontsize=12)
-    fig.text(.04,.02,'Bars: pooled full-FOV RMSE. Dots: individual raw cases, not confidence intervals.\n'
+    fig.text(.04,.02,'Bars and tick values: pooled full-FOV RMSE. Dots: individual raw cases.\n'
         'Baselines: frozen cached metrics. C1: native byte reconstruction and rescoring; no method selected.',fontsize=9)
     fig.tight_layout(rect=(0,.12,1,.94))
     outputs=[]
     for suffix in ('png','pdf'):
-        path=folder/('C1_DEVELOPMENT_TRADEOFF.'+suffix)
+        stem='C1_DEVELOPMENT_TRADEOFF'+('' if revision==1 else f'_{revision:03d}')
+        path=folder/(stem+'.'+suffix)
         assert not path.exists(),'Retain the first rendered diagnostic'
         fig.savefig(path,bbox_inches='tight')
         outputs.append({'path':str(path),'sha256':s.sha(path),'bytes':path.stat().st_size})
     plt.close(fig)
     receipt={'time':s.now(),'source':{'path':str(source),'sha256':s.sha(source)},
         'plot_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        'outputs':outputs,'visual_QA':'pending','supplement_only':True,
+        'outputs':outputs,'revision':revision,'visual_QA':'pending','supplement_only':True,
         'seven_final_figure_groups_completed':False,'complete_inverse_calls':0}
-    s.write(s.REPORTS/'repair_001/quick_v003/TRADEOFF_FIGURE.json',receipt)
+    receipt_name='TRADEOFF_FIGURE'+('' if revision==1 else f'_{revision:03d}')+'.json'
+    s.write(s.REPORTS/'repair_001/quick_v003'/receipt_name,receipt)
     print(json.dumps({'rendered':len(outputs),'supplement_only':True}),flush=True)
 
 
-if __name__=='__main__': run()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--revision',type=int,default=1)
+    args=parser.parse_args()
+    if not 1<=args.revision<=999: parser.error('Use a retained revision between1 and999')
+    run(args.revision)
