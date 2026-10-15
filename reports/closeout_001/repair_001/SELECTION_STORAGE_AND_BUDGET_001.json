@@ -1,0 +1,1035 @@
+{
+  "schema": "selection-storage-and-budget-readonly-v001",
+  "time": "2026-10-15T13:24:42.355655+00:00",
+  "status": "AUDIT_AND_PROSPECTIVE_PLAN_ONLY",
+  "execution_by_this_audit": {
+    "GPU": 0,
+    "forward": 0,
+    "complete_inverse": 0,
+    "MC": 0,
+    "optimizer": 0,
+    "final_payload": 0,
+    "array_payload_loaded": 0,
+    "existing_development_NPZ_headers_inspected": true
+  },
+  "old_source_protocol_data_ledger_modified": false,
+  "new_reports_only": 2,
+  "ledger": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\inverse_calls.jsonl",
+    "prefix_bytes": 1182317,
+    "prefix_sha256": "5d4458bf28ded5efb371a5821cb01608f1076459f9828b5fb0843ebcd0f7a1e5",
+    "rows": 5655,
+    "charged_sum_not_reused": 5115,
+    "reused_rows": 540,
+    "cap": 12000,
+    "remaining": 6885,
+    "raw_phase_counts": {
+      "source": 540,
+      "development": 440,
+      "null": 1600,
+      "independent": 438,
+      "noise_structure_strength_calibration_dynamic": 771,
+      "uncertainty": 1292,
+      "repair_quick": 10,
+      "C1v3_small_panel_v003": 8,
+      "C1v3_development_prescreen_v001": 16
+    }
+  },
+  "selection": {
+    "Q": 9,
+    "prescreen_certified": 18,
+    "prescreen_charged_new": 16,
+    "first_stage_planned": 1080,
+    "exact_reuse_unique_case_method_raw": 28,
+    "reuse_rule": "12 prior C1s1 panel +18 prescreen -2 duplicate pilot =28; keep existing files and references, no copy and no refund",
+    "new_first_stage": 1052,
+    "confirmation_per_actual_F": 240,
+    "F": "actual fully qualified/ranked finalist count0..2,not a budget knob",
+    "all28_certified": true,
+    "raws": 6,
+    "actual_mothers": 5
+  },
+  "phase_budget": {
+    "semantic_development_components": {
+      "development": 440,
+      "repair_quick": 10,
+      "C1v3_small_panel_v003": 8,
+      "C1v3_development_prescreen_v001": 16
+    },
+    "include_all10_quick_repairs_conservatively": true,
+    "semantic_development_used": 474,
+    "remaining": 2926,
+    "after1052": {
+      "used": 1526,
+      "remaining": 1874,
+      "global_charged": 6167
+    },
+    "after1052_plus480": {
+      "used": 2006,
+      "remaining": 1394,
+      "global_charged": 6647
+    },
+    "all_original_phase_caps": [
+      {
+        "phase": "source",
+        "original_cap": 540,
+        "semantic_used": 540,
+        "remaining": 0,
+        "new_main_B_F2_future": 0,
+        "B_final": 540,
+        "B_phase_gap": 0
+      },
+      {
+        "phase": "development",
+        "original_cap": 3400,
+        "semantic_used": 474,
+        "remaining": 2926,
+        "new_main_B_F2_future": 1532,
+        "B_final": 2006,
+        "B_phase_gap": 0
+      },
+      {
+        "phase": "noise_structure_strength_calibration_dynamic",
+        "original_cap": 950,
+        "semantic_used": 771,
+        "remaining": 179,
+        "new_main_B_F2_future": 257,
+        "B_final": 1028,
+        "B_phase_gap": 78
+      },
+      {
+        "phase": "uncertainty",
+        "original_cap": 2100,
+        "semantic_used": 1292,
+        "remaining": 808,
+        "new_main_B_F2_future": 2716,
+        "B_final": 4008,
+        "B_phase_gap": 1908
+      },
+      {
+        "phase": "null",
+        "original_cap": 1600,
+        "semantic_used": 1600,
+        "remaining": 0,
+        "new_main_B_F2_future": 400,
+        "B_final": 2000,
+        "B_phase_gap": 400
+      },
+      {
+        "phase": "independent",
+        "original_cap": 480,
+        "semantic_used": 438,
+        "remaining": 42,
+        "new_main_B_F2_future": 242,
+        "B_final": 680,
+        "B_phase_gap": 200
+      },
+      {
+        "phase": "sealed",
+        "original_cap": 2768,
+        "semantic_used": 0,
+        "remaining": 2768,
+        "new_main_B_F2_future": 2768,
+        "B_final": 2768,
+        "B_phase_gap": 0
+      }
+    ],
+    "phase_renaming_must_not_avoid_caps": true,
+    "ledger_rows_not_reclassified": true,
+    "global_counter_does_not_automatically_enforce_phase_maxima": true
+  },
+  "whole_study_calls": {
+    "current": 5115,
+    "future_development": "1052+240*F",
+    "new_main_B_future": "7435+240*F+I_missing",
+    "both_full_UQ_A_future": "8359+240*F+I_missing",
+    "fallback_same_v3_future": "5020+240*F",
+    "actual_F_rows": [
+      {
+        "F": 0,
+        "development_future": 1052,
+        "development_phase_final": 1526,
+        "development_phase_remaining": 1874,
+        "global_after_development": 6167,
+        "fallback": {
+          "future": 5020,
+          "cumulative": 10135,
+          "headroom": 1865
+        }
+      },
+      {
+        "F": 1,
+        "development_future": 1292,
+        "development_phase_final": 1766,
+        "development_phase_remaining": 1634,
+        "global_after_development": 6407,
+        "fallback": {
+          "future": 5260,
+          "cumulative": 10375,
+          "headroom": 1625
+        },
+        "B_main1820_v3MC896": {
+          "future_smooth": 7675,
+          "cumulative_smooth": 12790,
+          "gap_smooth": 790,
+          "extra_v3_init_after_exact_sharing": 1727,
+          "cumulative_v3_init": 14517,
+          "gap_v3_init": 2517
+        },
+        "A_both1820_conservative": {
+          "future_smooth": 8599,
+          "cumulative_smooth": 13714,
+          "gap_smooth": 1714,
+          "extra_v3_init_after_exact_sharing": 1715,
+          "cumulative_v3_init": 15429,
+          "gap_v3_init": 3429
+        }
+      },
+      {
+        "F": 2,
+        "development_future": 1532,
+        "development_phase_final": 2006,
+        "development_phase_remaining": 1394,
+        "global_after_development": 6647,
+        "fallback": {
+          "future": 5500,
+          "cumulative": 10615,
+          "headroom": 1385
+        },
+        "B_main1820_v3MC896": {
+          "future_smooth": 7915,
+          "cumulative_smooth": 13030,
+          "gap_smooth": 1030,
+          "extra_v3_init_after_exact_sharing": 1727,
+          "cumulative_v3_init": 14757,
+          "gap_v3_init": 2757
+        },
+        "A_both1820_conservative": {
+          "future_smooth": 8839,
+          "cumulative_smooth": 13954,
+          "gap_smooth": 1954,
+          "extra_v3_init_after_exact_sharing": 1715,
+          "cumulative_v3_init": 15669,
+          "gap_v3_init": 3669
+        }
+      }
+    ],
+    "B_UQ": {
+      "main": 1820,
+      "v3_independent_MC": 896,
+      "total": 2716,
+      "v3_extra_bootstrap_probe_base_not_external_hard_requirement": true,
+      "uncertified_v3_no_trusted_deployment_interval": true
+    },
+    "A_UQ": {
+      "each_method": 1820,
+      "total": 3640,
+      "conservative_local_expansion": true
+    },
+    "fallback": {
+      "one_UQ_recipe": 1820,
+      "main_v3_same_method": true,
+      "final_distinct_methods": 3,
+      "final_calls": 2076
+    },
+    "initializer_missing_B": {
+      "smooth_demod": 0,
+      "development_same_raw_cache": 0,
+      "v3_max_extra_after_exact_paired_reuse": 1727,
+      "breakdown": {
+        "old_science": 403,
+        "null": 400,
+        "base": 12,
+        "bootstrap": 768,
+        "probe": 144
+      }
+    },
+    "initializer_missing_A": 1715,
+    "initializer_scope": "Required paired v3 baseline first, then immediate same-raw/state/hash main initialization in RAM. Never rerun it invisibly, never treat hash/statistic-only receipt as recoverable state, never replace independent MC by fitted-mean bootstrap. Reuse requires exact raw/program/calibration identities.",
+    "12000_unchanged": true,
+    "16000_not_approved_or_applied": true,
+    "scientific_selection_not_for_budget": true
+  },
+  "storage_snapshot": {
+    "started": "2026-10-15T13:04:01.094731+00:00",
+    "ended": "2026-10-15T13:04:01.160123+00:00",
+    "roots": [
+      {
+        "root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "bytes": 297642450,
+        "files": 1848,
+        "by_kind_bytes": {
+          "other_data_meta_cache_log": 278102985,
+          "parameters": 19539465
+        },
+        "errors": [],
+        "reparse_not_followed": []
+      },
+      {
+        "root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "bytes": 75846801,
+        "files": 1548,
+        "by_kind_bytes": {
+          "other_data_meta_cache_log": 75322947,
+          "parameters": 29395,
+          "fallback": 33751,
+          "reserve": 460651,
+          "pending": 57
+        },
+        "errors": [],
+        "reparse_not_followed": []
+      },
+      {
+        "root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "bytes": 11764996,
+        "files": 59,
+        "by_kind_bytes": {
+          "other_data_meta_cache_log": 7671,
+          "reserve": 67865,
+          "parameters": 11686997,
+          "fallback": 2444,
+          "pending": 19
+        },
+        "errors": [],
+        "reparse_not_followed": []
+      },
+      {
+        "root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001",
+        "bytes": 2405857,
+        "files": 424,
+        "by_kind_bytes": {
+          "other_data_meta_cache_log": 2405857
+        },
+        "errors": [],
+        "reparse_not_followed": []
+      }
+    ],
+    "global_bytes": 387660104,
+    "global_files": 3879,
+    "free_bytes": {
+      "E": 12108562432,
+      "D": 329981952
+    },
+    "protected_source_count": 46,
+    "protected_mismatch": []
+  },
+  "native_sizes": {
+    "C1_parameter_arrays": {
+      "beta": {
+        "dtype": "float64",
+        "nbytes": 24,
+        "sha256": "7a357d4659dad114403325f3ef2912d9a5c8697bf79564db8bdb1fe956eb7495",
+        "shape": [
+          1,
+          3
+        ]
+      },
+      "xi": {
+        "dtype": "float64",
+        "nbytes": 9224,
+        "sha256": "6bed756ea395654c2c9e7342517d8aeb283145ec408b39caaddecc66b6738984",
+        "shape": [
+          1153
+        ]
+      },
+      "z_grid": {
+        "dtype": "float64",
+        "nbytes": 1048576,
+        "sha256": "b40dd2b5a35ce191d4f6073e6645d336584cb70c80d38f3331c9a5b64801b337",
+        "shape": [
+          1,
+          2,
+          256,
+          256
+        ]
+      }
+    },
+    "parameter_payload_bytes": 1057824,
+    "parameter_archive_bound": 1123360,
+    "per_cache_metadata_bound": 262144,
+    "success_bound_S": 1385504,
+    "canonical_payload": 6422528,
+    "fallback_archive_bound_F": 6488064,
+    "initial_safe_reserve_P": 7873568,
+    "example_signal_archive_actual_bytes": 986715,
+    "single_compression_ratio_not_generalized": true,
+    "not_three_full256_fields": true,
+    "v3_original_header_evidence": [
+      {
+        "name": "state.npy",
+        "shape": [
+          1,
+          5,
+          256,
+          256
+        ],
+        "dtype": "<f4",
+        "npy_bytes": 1310848
+      },
+      {
+        "name": "beta.npy",
+        "shape": [
+          1,
+          3
+        ],
+        "dtype": "<f4",
+        "npy_bytes": 140
+      }
+    ],
+    "v3_original_parameter_payload": 1310732,
+    "v3_original_dtype": "float32",
+    "v3_not_C1_xi_codec": true,
+    "v3_prospective_parameter_archive_plus256KiB_metadata_bound": 1638412,
+    "v3_native_preservation_qualification_not_performed": true
+  },
+  "first_stage_2GiB": {
+    "reuse28_reference_only_already_in_snapshot": true,
+    "all1052_success_bytes": 1457550208,
+    "all1052_success_plus_one_active_reserve": 1464038272,
+    "standalone_outer_example": 134217728,
+    "success_peak_with128MiB_outer": 1598256000,
+    "headroom_in2GiB": 549227648,
+    "all1052_full_fallback_bytes": 8282993536,
+    "all_fallback_does_not_fit2or4GiB": true,
+    "max_fallback_count_with_completion_and128MiB_outer_algebra_only": 85,
+    "algebra_not_permission_to_retry_integrity_failures": true,
+    "phase1_plus480_confirmation_success_peak_global_with128MiB_each_and_one_active": 2785175752,
+    "per_ticket_required": "instance_used+P<=2GiB AND four_root_used+P<=4GiB AND E_free-P>=2GiB; outer/terminal receipt reserve included before counting",
+    "stop_rule": "Respect integrity stop. Before a new ticket,fail closed on storage: retain all already computed original/fallback/failure evidence; remaining planned rows NOT_EXECUTED_STORAGE_BUDGET. Do not label unexecuted as numerical failure or claim full first-stage/selection completion."
+  },
+  "prospective_B_storage": {
+    "not_yet_implemented_or_registered_sink": true,
+    "full_C1_rows": [
+      {
+        "stage": "first_stage_new",
+        "count": 1052,
+        "parameter_payload_bytes": 1112830848,
+        "successful_compact_bound_bytes": 1457550208
+      },
+      {
+        "stage": "confirmation_F2",
+        "count": 480,
+        "parameter_payload_bytes": 507755520,
+        "successful_compact_bound_bytes": 665041920
+      },
+      {
+        "stage": "final_selected_main",
+        "count": 692,
+        "parameter_payload_bytes": 732014208,
+        "successful_compact_bound_bytes": 958768768
+      },
+      {
+        "stage": "matched24_selected_main",
+        "count": 24,
+        "parameter_payload_bytes": 25387776,
+        "successful_compact_bound_bytes": 33252096
+      },
+      {
+        "stage": "fitted_mean_base12",
+        "count": 12,
+        "parameter_payload_bytes": 12693888,
+        "successful_compact_bound_bytes": 16626048
+      },
+      {
+        "stage": "fixed_science_representatives",
+        "count": 32,
+        "parameter_payload_bytes": 33850368,
+        "successful_compact_bound_bytes": 44336128
+      }
+    ],
+    "new_full_C1_count": 2292,
+    "full_C1_bytes_bound": 3175575168,
+    "statistic_rows": [
+      {
+        "stage": "science403_except32",
+        "count": 371,
+        "per_record_bound": 32768,
+        "bytes": 12156928
+      },
+      {
+        "stage": "main_null",
+        "count": 400,
+        "per_record_bound": 32768,
+        "bytes": 13107200
+      },
+      {
+        "stage": "main_independent_MC",
+        "count": 896,
+        "per_record_bound": 16384,
+        "bytes": 14680064
+      },
+      {
+        "stage": "main_bootstrap",
+        "count": 768,
+        "per_record_bound": 16384,
+        "bytes": 12582912
+      },
+      {
+        "stage": "main_local_probe",
+        "count": 144,
+        "per_record_bound": 16384,
+        "bytes": 2359296
+      },
+      {
+        "stage": "v3_independent_MC",
+        "count": 896,
+        "per_record_bound": 16384,
+        "bytes": 14680064
+      },
+      {
+        "stage": "other3_baselines_on_matched24_and_final692",
+        "count": 2148,
+        "per_record_bound": 32768,
+        "bytes": 70385664
+      }
+    ],
+    "statistics_bytes_bound": 139952128,
+    "403_complete_scientific_output_scope": "All full-FOV metrics,all3 resolution scores,dictionary detection score,signed projection/orthogonal/structure metrics,12 original-precision statistics,finite versus numerical certification evidence,all raw/parameter/canonical hashes and all failures remain for every science row.32 fixed representatives additionally keep original full native parameters.",
+    "fixed32_manifest_proposal": [
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame00",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame00",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame01",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame01",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame02",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame02",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame03",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame03",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame04",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame04",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0000_dynamic_frame05",
+        "mother_id": "closeout_dynamic_mother_0000",
+        "family": "dynamic",
+        "condition": "frame05",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame00",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame00",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame01",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame01",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame02",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame02",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame03",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame03",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame04",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame04",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_dynamic_mother_0001_dynamic_frame05",
+        "mother_id": "closeout_dynamic_mother_0001",
+        "family": "dynamic",
+        "condition": "frame05",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_hotspot_small_fixed_peak_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "hotspot_small_fixed_peak_+180",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_hotspot_small_fixed_total_signal_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "hotspot_small_fixed_total_signal_+180",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_total_signal"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_hotspot_large_fixed_peak_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "hotspot_large_fixed_peak_+180",
+        "geometry": "hotspot_large",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_hotspot_large_fixed_total_signal_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "hotspot_large_fixed_total_signal_+180",
+        "geometry": "hotspot_large",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_total_signal"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_double_hotspot_fixed_peak_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "double_hotspot_fixed_peak_+180",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_double_hotspot_fixed_total_signal_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "double_hotspot_fixed_total_signal_+180",
+        "geometry": "double_hotspot",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_total_signal"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_edge_fixed_peak_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "edge_fixed_peak_+180",
+        "geometry": "edge",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_edge_fixed_total_signal_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "edge_fixed_total_signal_+180",
+        "geometry": "edge",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_total_signal"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_filament_fixed_peak_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "filament_fixed_peak_+180",
+        "geometry": "filament",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_structure_mother_0000_structure_filament_fixed_total_signal_+180",
+        "mother_id": "closeout_structure_mother_0000",
+        "family": "structure",
+        "condition": "filament_fixed_total_signal_+180",
+        "geometry": "filament",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_total_signal"
+      },
+      {
+        "case_id": "closeout_photons_mother_0000_photons_positive_normal_budget0.25",
+        "mother_id": "closeout_photons_mother_0000",
+        "family": "photons",
+        "condition": "positive_normal_budget0.25",
+        "geometry": "hotspot_small",
+        "photon_ratio": 0.25,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_photons_mother_0000_photons_positive_normal_budget1",
+        "mother_id": "closeout_photons_mother_0000",
+        "family": "photons",
+        "condition": "positive_normal_budget1",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_photons_mother_0000_photons_positive_normal_budget2",
+        "mother_id": "closeout_photons_mother_0000",
+        "family": "photons",
+        "condition": "positive_normal_budget2",
+        "geometry": "hotspot_small",
+        "photon_ratio": 2.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_calibration_mother_0000_calibration_gain_0.02",
+        "mother_id": "closeout_calibration_mother_0000",
+        "family": "calibration",
+        "condition": "gain_0.02",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_calibration_mother_0000_calibration_response_0.25",
+        "mother_id": "closeout_calibration_mother_0000",
+        "family": "calibration",
+        "condition": "response_0.25",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_calibration_mother_0000_calibration_PSF_0.1",
+        "mother_id": "closeout_calibration_mother_0000",
+        "family": "calibration",
+        "condition": "PSF_0.1",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_calibration_mother_0000_calibration_registration_0.25",
+        "mother_id": "closeout_calibration_mother_0000",
+        "family": "calibration",
+        "condition": "registration_0.25",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_calibration_mother_0000_calibration_emissivity_0.02",
+        "mother_id": "closeout_calibration_mother_0000",
+        "family": "calibration",
+        "condition": "emissivity_0.02",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_independent_mother_0000_independent_nominal",
+        "mother_id": "closeout_independent_mother_0000",
+        "family": "independent",
+        "condition": "nominal",
+        "geometry": "hotspot_small",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      },
+      {
+        "case_id": "closeout_independent_mother_0003_independent_nominal",
+        "mother_id": "closeout_independent_mother_0003",
+        "family": "independent",
+        "condition": "nominal",
+        "geometry": "edge",
+        "photon_ratio": 1.0,
+        "normalization": "fixed_peak"
+      }
+    ],
+    "fixed32_factor_rule": "12 dynamic;5 geometries*2 normalizations at+180;mother0000 photons at+180*3 budgets;mother0000 middle calibration*5 effects;independent nominal mothers0000/0003. Contains old3 representative bank cases. Freeze against seven-figure/claim inventory before new execution;never choose by result.",
+    "full_field_claim_override": "Any already committed full-field/precise-reuse claim keeps its full parameters.32 is a prospective proposal,not permission to remove promised outputs. Recompute bytes if more maps/representatives are scientifically needed.",
+    "UQ_null_statistics_scope": "Persist lossless12 float64 statistics(e.g.96-byte binary payload plus metadata),predeclared full-domain metrics,dictionary score where relevant,seed/role/mother/replicate,raw/parameter/all-canonical hashes,returned numerical and plateau evidence,all errors/missing states.16KiB draw/32KiB ordinary-record envelopes require CPU size/error/roundtrip contracts,not assumed current capability.",
+    "base12_full_native_for_fitted_mean": true,
+    "dev_confirm_final_matched24_all_full_native": true,
+    "null_MC_bootstrap_probe_full_native_only_fixed_representatives": true,
+    "no_reinverse_later_for_unsaved_maps_or_new_spatial_claims": true,
+    "hash_does_not_reconstruct_state": true,
+    "raw": {
+      "new_uint16_single_array_files": 2392,
+      "uint16_payload_each": 131072,
+      "new_float64_FD_single_array_files": 144,
+      "float64_payload_each": 524288,
+      "proposed_NPY_header_file_allowance_each": 1024,
+      "uint16_bytes_bound": 315973632,
+      "float64_bytes_bound": 75644928,
+      "total_bound": 391618560,
+      "all_original_dtype_precision_and_hashes": true,
+      "one_exact_raw_shared_across_methods": true,
+      "no_old_NPZ_conversion_or_deletion": true,
+      "seed_does_not_replace_committed_raw": true,
+      "fixed_shape_NPY_bound_requires_CPU_contract": true,
+      "generic64KiB_zip_raw_bound": 555220992,
+      "generic_envelope_additional_bytes": 163602432
+    },
+    "outer_registration_index_log_envelope": 67108864,
+    "outer_mechanism": "Store local evidence once; outer tables reference immutable path/hash instead of duplicating full nested records.64MiB is a prospective enforced envelope requiring size/crash/overflow/terminal tests,not measured future usage.",
+    "fixed_baseline_original_precision_map_and_figure_bank": 50331648,
+    "bank_manifest_required_before_execution": true,
+    "one_active_original_parameter_canonical_reserve": 7873568,
+    "conditional_success_peak_smooth": 4220120040,
+    "headroom_smooth": 74847256,
+    "v3_init_extra_record_count": 1727,
+    "v3_init_per_record_bound": 16384,
+    "v3_init_extra_record_bytes": 28295168,
+    "conditional_success_peak_v3_init": 4248415208,
+    "headroom_v3_init": 46552088,
+    "init_state_scope": "Use paired v3 endpoint immediately in RAM;persist required statistics and all identity hashes. An unpromised permanent initializer cache is not created. If its permanent state is promised,add its exact bytes before execution.",
+    "if_all403_science_keep_full_native_additional_bytes": 514021984,
+    "all403_full_scope_peak": 4734142024,
+    "all403_full_scope_not_proved4GiB": true,
+    "A_second_full_UQ_extra_bytes": 211697808,
+    "A_conditional_peak_smooth": 4431817848,
+    "A_gap4GiB_smooth": 136850552,
+    "critical_conditions": "Conditional compact-success matrix with new per-record/raw/outer/bank contracts and one active full fallback. Accumulated fallbacks,unknown metadata overflows,extra committed figures,duplicate raw/state copies or external root growth debit actual capacity. Stop before next ticket;do not promise all failure patterns finish within4GiB."
+  },
+  "fallback_storage": {
+    "new_full_main_v3": 728,
+    "breakdown": {
+      "matched": 24,
+      "final": 692,
+      "fitted_mean_base": 12
+    },
+    "v3_UQ_stat_draws": 1808,
+    "other2_baseline_new_stat_rows": 1432,
+    "raw_bound_same": 391618560,
+    "outer_envelope": 67108864,
+    "new_fixed_figure_bank": 33554432,
+    "smaller_bank_reason": "Old frozen-v3 representative maps are already preserved;no new C1 science map bank is needed. Exact old/new figure inventory must still satisfy every promise.",
+    "conditional_rows": [
+      {
+        "F": 0,
+        "future_C1_dev_full": 1052,
+        "future_v3_full": 728,
+        "conditional_peak": 3614675720,
+        "headroom4GiB": 680291576,
+        "native_v3_persistence_qualified": false
+      },
+      {
+        "F": 1,
+        "future_C1_dev_full": 1292,
+        "future_v3_full": 728,
+        "conditional_peak": 3947196680,
+        "headroom4GiB": 347770616,
+        "native_v3_persistence_qualified": false
+      },
+      {
+        "F": 2,
+        "future_C1_dev_full": 1532,
+        "future_v3_full": 728,
+        "conditional_peak": 4279717640,
+        "headroom4GiB": 15249656,
+        "native_v3_persistence_qualified": false
+      }
+    ],
+    "F2_with128MiB_outer_gap": 51859208,
+    "qualification_limit": "V=1638412B is original five-field float32 state+beta archive+metadata arithmetic,not native output preservation qualification. Qualify original outputs,precision,error sizing before this plan. If no exact qualified envelope is obtained,4GiB completion is unproved. Keep all previous C1 development evidence;never reinvert old403/null just to fabricate a missing state."
+  },
+  "old_science_semantics": {
+    "source": "research_closeout/science.py:94-101,114-130",
+    "all_rows": "metrics,resolution_scores(3),statistics12,status,noise_feature",
+    "prediction_cache": "3 fixed representatives(independent0003 nominal,double_hotspot+180 fixed_peak,dynamic0000 frame02)plus12 UQ bases",
+    "MC": "statistics and failures,not every full MC image",
+    "new_scope_prospective_not_deleting_previous_full_fields": true
+  },
+  "pre_execution_contracts_required": [
+    "semantic phase grouping including all old development/repair/panel/prescreen;unchanged global cap until user decision",
+    "full-field/figure/reuse manifest with32 factor/motherID representatives and any required additional full outputs;no post-result selection",
+    "statistics sink original float64 roundtrip and all full-domain/3-resolution/structure metrics,identities,numerical evidence,failed/missing denominators,cal/eval role separation;no truth in inference",
+    "new single-array raw original-dtype NPY1KiB header envelope and exact one-raw shared references;no conversion of old data",
+    "per-record,outer,bank size bounds and injected overflow/crash/terminal tests;reserve original active endpoint/fallback before counting",
+    "native v3 original-precision/output persistence qualification if fallback;no C1 codec claim",
+    "per-ticket4root/instance/Efloor/source/lock checks;storage stops explicitly retain unexecuted denominators;no future inverse to add unsaved maps"
+  ],
+  "evidence": [
+    {
+      "path": "research_closeout/AGENTS.md",
+      "bytes": 2623,
+      "sha256": "7c4e886ff76ce402360034e10fd2f75ed3d92a6737ca65fa56ae796ad975f825"
+    },
+    {
+      "path": "reports/closeout_001/USER_EXECUTION_REQUEST.txt",
+      "bytes": 30937,
+      "sha256": "2b4c6bd493065b54b29e501e0fdaadf9230ff797c5bce529626e1ff53437ca7e"
+    },
+    {
+      "path": "research_closeout/execution_spec.yaml",
+      "bytes": 15607,
+      "sha256": "6882b3cd2ef65104e15c487b71cd6dc53c343538033c509da7132bbf46aadad1"
+    },
+    {
+      "path": "reports/closeout_001/STUDY_PROTOCOL.yaml",
+      "bytes": 15607,
+      "sha256": "6882b3cd2ef65104e15c487b71cd6dc53c343538033c509da7132bbf46aadad1"
+    },
+    {
+      "path": "reports/closeout_001/SCIENTIFIC_PLAN.json",
+      "bytes": 1649351,
+      "sha256": "9ddaa33be19237098b612bc3dd15bb79013921e9258eb0843d7c9125bb1e4519"
+    },
+    {
+      "path": "reports/closeout_001/SCIENCE_RESULT.json",
+      "bytes": 1078,
+      "sha256": "27fbeb00b142eedb99594a8f13d4e24912b646face52b153fd918d2661e16c86"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/REPAIRED_SCIENTIFIC_PROTOCOL.json",
+      "bytes": 66276,
+      "sha256": "27d1f468252c3e6fd9060271939428949ffe7f6438578fe89ccae7c7bc3e2a55"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/BUDGET_RECONCILIATION_001.json",
+      "bytes": 45988,
+      "sha256": "3a6a315f1ce3e6156007bae44cdc0f0de1266c731c810b236f3248042c01dab0"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/BUDGET_RECONCILIATION_001.md",
+      "bytes": 8472,
+      "sha256": "bf268e31a5f23cb151da2aada02056c4e9bfc7ed6ceec13a398f65a64f3110fd"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/BUDGET_ROOT_SCOPE_REVIEW.json",
+      "bytes": 1359,
+      "sha256": "25b6d66b2fbcb34735b38a3afba67ef7aa95e9b5e82d813985b35692bf234a8c"
+    },
+    {
+      "path": "research_closeout/compact_joint_cache.py",
+      "bytes": 45066,
+      "sha256": "8e65ea2762757dbeb2716926c0889ac46d6f0668c07d99f0dc38e01cda8494d4"
+    },
+    {
+      "path": "research_closeout/c1_development.py",
+      "bytes": 46833,
+      "sha256": "c7573b65884e4ca13460ec3308c112ec9a851cc761f16757310092fad75cc93d"
+    },
+    {
+      "path": "research_closeout/experiment_registry.py",
+      "bytes": 9697,
+      "sha256": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978"
+    },
+    {
+      "path": "research_closeout/science.py",
+      "bytes": 18083,
+      "sha256": "95b55e4353f391f534790f09d0a7c825e8267266d3d19bc24e8f20935e77297a"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/c1_development_001/PRESCREEN_REGISTRATION.json",
+      "bytes": 678376,
+      "sha256": "a03f326859fd46de4b1cb1b47d6683d9b8e271d35faa7eef9a2093ab1dbf1032"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/c1_development_001/PRESCREEN_RESULT.json",
+      "bytes": 611789,
+      "sha256": "7a529ed4d699db9adc9113fb774e6974c9d93783422ce1c0a046b2e9e8c74514"
+    },
+    {
+      "path": "reports/closeout_001/repair_001/c1_development_001/NATIVE_E_COMPACT_QUALIFICATION.json",
+      "bytes": 33245,
+      "sha256": "aef4e25dafb6ba1e53e0f54aa3447dbf121f04493dc2dcdb1374aed4451245b7"
+    },
+    {
+      "path": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\quick_v003\\PANEL_RESULT.json",
+      "bytes": 400134,
+      "sha256": "fba4067e12463b33f636aa75864bc77f49ae33d03b5b8d1000c3b7d2edddf88f"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001\\inference\\cells\\3443fb002b55f93dae09930f4a03fff476a8d53b5d7c537db494f38cdb8b68e6\\PARAMETERS.npz",
+      "bytes": 986715,
+      "sha256": "f2646a4e2a7f216b009ac1db83afe2b00c418a74a00a24bbeac9117a6191e840"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0000_positive_normal_noise0.npz",
+      "bytes": 710903,
+      "sha256": "40f1dcf30b1dde076eb38d4b273b1de846414433b557f5cd5654980d4028d269"
+    }
+  ],
+  "protected_source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "research_closeout/v3_tangent_probe_v2.py": "ca98e6dcc2ca952195a67d2472c789e4cda542f338082346ee91cc7b2f455680",
+    "research_closeout/tests/v3_tangent_probe_v2.py": "9eeefaf0ce5ab3f4ee71aae9d34323b7cd518aef6975f51b8518f1005cdf857d",
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002",
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517",
+    "research_closeout/quick_validation.py": "19c3562e03ff0aa7b1aa917ef864d425e1537da08eab413cefcf6870e14b21f7",
+    "research_closeout/tests/quick_validation.py": "8a408c02747d9f349eda3db7515015d159e08653a78a9e5dd461f982de1a60b8",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/independent_renderer.py": "922db2a22244c975ac2c69d26ae2e6b0858840187d18ea58631c00d6aad42d21",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "research_closeout/calibration_quick.py": "6bdf0c25292043fe3da43f8318a4573ade697addbc3a7ef7c40e23744db7356e",
+    "research_closeout/tests/calibration_quick.py": "49f13e7ebc7e8dcc0cee2943223ba1eb651d253fdf472c1af9ed7903442231ae",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799",
+    "research_closeout/c1_small_panel.py": "931f9b1fcf3f1f69bcbe0d4be0309fea21eecfb0ed6d8052b918e2d0cf65df7c",
+    "research_closeout/tests/c1_small_panel.py": "b19c08839bff74a54363fa01b2b278cb9a960d4a3869b4334918580059a60df5",
+    "research_closeout/compact_joint_cache.py": "8e65ea2762757dbeb2716926c0889ac46d6f0668c07d99f0dc38e01cda8494d4",
+    "research_closeout/tests/compact_joint_cache.py": "e7d8e740fc951925c54f3d12078ba358e3bc5960ea2ce0409d9e2d02015a3170",
+    "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd",
+    "research_closeout/tests/explicit_store.py": "0f52c279770705ab48a95060c9ff16c600c7377b0041dc0b8bceffeb4b0c1c61"
+  },
+  "all46_sources_unchanged_after": true,
+  "ledger_same_at_final_check": true,
+  "all_evidence_hashes_unchanged_after": true
+}

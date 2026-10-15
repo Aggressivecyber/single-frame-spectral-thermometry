@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\CodexWork\thermometry\closeout_001\reports\closeout_001\repair_001\c1_prescreen_analysis_001\review_prescreen.py", line 309, in <module>
+    args=parser.parse_args();value=metadata() if args.phase=='metadata' else endpoints()
+                                   ^^^^^^^^^^
+  File "E:\CodexWork\thermometry\closeout_001\reports\closeout_001\repair_001\c1_prescreen_analysis_001\review_prescreen.py", line 205, in metadata
+    new=[c for c in cells if c['execution_role']=='NEW_INVERSE'];platforms=[p for c in cells for p in c['numerical_certificate']['output_platforms']]
+                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'output_platforms'
