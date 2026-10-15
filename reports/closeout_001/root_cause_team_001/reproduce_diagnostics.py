@@ -109,7 +109,7 @@ def main():
                                 "mean_width": np.mean([r["mean_interval_width"] for r in evaluation], axis=0).tolist()},
     }
     assert result["registered_source_unchanged"]
-    (HERE / "ROOT_DIAGNOSTIC_RECEIPT.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (HERE / "ROOT_DIAGNOSTIC_RECEIPT.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"written": str(HERE / "ROOT_DIAGNOSTIC_RECEIPT.json"), "joint": result["joint"],
                       "relay_bias_K": result["relay"]["color_bias_K"], "source_unchanged": True}, ensure_ascii=False))
 
