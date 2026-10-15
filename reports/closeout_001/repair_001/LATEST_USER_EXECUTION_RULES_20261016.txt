@@ -1,0 +1,8 @@
+Latest direct user AGENTS.md instructions, received during the 2026-10-16 01:30 Singapore continuation. These replace all previously supplied AGENTS.md instructions; the scientific requests and approved study budget remain in force.
+
+默认文件存储在E或者D盘上，禁止在C盘存放数据文件；如果运行长时间仿真或者长时间重度计算任务只需要确保正确启动之后设置定时苏醒，不需要持续监控;
+#行为规则:不要假设。不要隐藏困惑。主动暴露权衡取舍。
+只写解决当前问题的最小代码，不做任何推测性功能。
+只修改必须改的地方，只清理自己产生的问题。
+明确定义成功标准，验证通过前持续迭代。
+## 反过度工程/反防御性编程:信任内部代码和框架保证。只在系统边界(用户输入、外部 API、网络)做校验。禁止为「不可能发生」的场景添加错误处理、回退、空值检查或验证;绝不吞掉错误(禁止rescue nil/宽泛捕获/静默默认值)。;禁止为一次性操作创建辅助函数、工具类或抽象;优先快速失败，而不是掩盖问题。

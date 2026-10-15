@@ -1,0 +1,164 @@
+{
+  "case_id": "v5_development_selection_mother_0000_positive_weak_noise0",
+  "initializer": "v3",
+  "passed": true,
+  "device": "cpu",
+  "native_shape": [
+    256,
+    256
+  ],
+  "fixed_nonlinear_parameters_unchanged": true,
+  "original_shared_anchor_regscale_used_exactly": true,
+  "original_coordinate_scale_used_exactly": true,
+  "CPU_vs_GPU_reduction_roundoff_before_freezing_recorded_scales": [
+    {
+      "field": "physical/continuum_regscale/0",
+      "CPU": 38.84800347290148,
+      "original_GPU": 38.848003472901475,
+      "absolute_difference": 7.105427357601002e-15
+    }
+  ],
+  "executed_final_gtol": 1e-06,
+  "saved_endpoint": {
+    "objective": 31907.79806994883,
+    "data_objective": 31719.666188354422,
+    "linear_regularizer_objective": 97.03062427685128,
+    "continuum_regularizer_objective": 91.10125731755306,
+    "gradient": {
+      "finite": true,
+      "physical_l2": 0.010516938603769423,
+      "physical_linf": 0.00019446659399842414,
+      "scaled_projected_linf": 9.86644401734793e-07
+    },
+    "AD_vs_explicit_maximum_absolute_error": 1.1850381786970843e-12,
+    "AD_vs_explicit_normalized_l2_error": 1.323749455522261e-11
+  },
+  "saved_linear_actual_normal_relative": 1.3469932127723865e-12,
+  "objective_difference_from_original_GPU_log": 0.0,
+  "gradient_difference_from_original_GPU_log": {
+    "physical_l2": -6.974076004195862e-11,
+    "physical_linf": 5.312417172831374e-14,
+    "scaled_projected_linf": 0.0
+  },
+  "raw_forward_aggregates": {
+    "raw_weighted_SSE": 63439.332376708844,
+    "raw_RMSE_e": 80.7356580673211,
+    "valid_pixels": 65536,
+    "low_signal_pixels": 0,
+    "domain_pixels": 65536
+  },
+  "raw_forward_metric_difference_from_original_GPU_receipt": {
+    "raw_weighted_SSE": 7.275957614183426e-12,
+    "raw_RMSE_e": 1.4210854715202004e-14
+  },
+  "tighter_conditional_linear_references": [
+    {
+      "start": "warm_saved_linear_state",
+      "passed": true,
+      "linear_info": {
+        "solver": "column-scaled augmented LSMR",
+        "istop": 2,
+        "iterations": 7,
+        "norm_residual": 252.25660273868462,
+        "norm_normal_residual": 7.017301073848827e-11,
+        "condition_estimate": 3.201421266578814,
+        "actual_scaled_normal_relative": 1.6009416358885954e-13,
+        "tolerance": 1e-13,
+        "maxiter": 1200,
+        "numerical_certified": true,
+        "wall_s": 0.0799307000124827,
+        "regularization": {
+          "postblur_prior_is_new_estimator": true,
+          "template_multiplier": 10.0,
+          "template_reference_sensitivity": 0.00013295580035603696,
+          "gradient_reference_laplacian": 0.10853323353385491,
+          "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+          "beta_penalty": "1e-6 times whitened beta column squared norm",
+          "columns_scaled": true,
+          "raw_objective_count": 1,
+          "template_object_blur_count": 0
+        }
+      },
+      "fixed_endpoint": {
+        "objective": 31907.798069948825,
+        "data_objective": 31719.666188354495,
+        "linear_regularizer_objective": 97.03062427677563,
+        "continuum_regularizer_objective": 91.10125731755306,
+        "gradient": {
+          "finite": true,
+          "physical_l2": 0.010516931869685763,
+          "physical_linf": 0.00019446659114588996,
+          "scaled_projected_linf": 9.866443875239383e-07
+        },
+        "AD_vs_explicit_maximum_absolute_error": 1.476915811871038e-12,
+        "AD_vs_explicit_normalized_l2_error": 1.3158298408145443e-11
+      },
+      "difference_from_saved_linear_solution": {
+        "template_RMS_e": 5.912723609867238e-09,
+        "beta_maximum_absolute": 4.68086056026884e-11,
+        "predicted_raw_RMS_e": 1.1707049765588221e-09,
+        "objective": -3.637978807091713e-12
+      },
+      "actual_normal_relative_independently_recomputed": 1.6009416358885954e-13
+    },
+    {
+      "start": "cold_zero_linear_state",
+      "passed": true,
+      "linear_info": {
+        "solver": "column-scaled augmented LSMR",
+        "istop": 2,
+        "iterations": 32,
+        "norm_residual": 252.25660273868462,
+        "norm_normal_residual": 8.940265198541407e-11,
+        "condition_estimate": 4.058729717935075,
+        "actual_scaled_normal_relative": 2.039538814597451e-13,
+        "tolerance": 1e-13,
+        "maxiter": 1200,
+        "numerical_certified": true,
+        "wall_s": 0.27066469998680986,
+        "regularization": {
+          "postblur_prior_is_new_estimator": true,
+          "template_multiplier": 10.0,
+          "template_reference_sensitivity": 0.00013295580035603696,
+          "gradient_reference_laplacian": 0.10853323353385491,
+          "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+          "beta_penalty": "1e-6 times whitened beta column squared norm",
+          "columns_scaled": true,
+          "raw_objective_count": 1,
+          "template_object_blur_count": 0
+        }
+      },
+      "fixed_endpoint": {
+        "objective": 31907.79806994883,
+        "data_objective": 31719.66618835451,
+        "linear_regularizer_objective": 97.03062427676448,
+        "continuum_regularizer_objective": 91.10125731755306,
+        "gradient": {
+          "finite": true,
+          "physical_l2": 0.010516931768370092,
+          "physical_linf": 0.00019446656922375571,
+          "scaled_projected_linf": 9.866442773898143e-07
+        },
+        "AD_vs_explicit_maximum_absolute_error": 1.7933571294648232e-12,
+        "AD_vs_explicit_normalized_l2_error": 1.3349538364711355e-11
+      },
+      "difference_from_saved_linear_solution": {
+        "template_RMS_e": 6.232981309004389e-09,
+        "beta_maximum_absolute": 4.8345199371579994e-11,
+        "predicted_raw_RMS_e": 1.2333645386923339e-09,
+        "objective": 0.0
+      },
+      "actual_normal_relative_independently_recomputed": 2.039538814597451e-13
+    }
+  ],
+  "latent_temperature_near_5K_knots": {
+    "pixels": 65536,
+    "within_0p25K": 6716,
+    "within_1e_minus4K": 0
+  },
+  "full_canonical_GPU_byte_equality_claimed": false,
+  "wall_s": 1.6858325000212062,
+  "complete_inverse_calls": 0,
+  "outer_optimizer_calls": 0,
+  "candidate_id": "joint_c0.1_s10"
+}
