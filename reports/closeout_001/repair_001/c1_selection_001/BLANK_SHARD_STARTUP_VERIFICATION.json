@@ -1,0 +1,46 @@
+{
+  "schema": "C1-one-raw-first-stage-startup-observation-v001",
+  "time": "2026-10-15T13:53:18.153869+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "startup_verified": false,
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "commands_match": true,
+    "parent_child_matches": true,
+    "owner_locks_match": true,
+    "owner_registration_matches": true,
+    "stderr_empty": true,
+    "charged_within_shard_cap": true,
+    "first_new_ticket_present": false,
+    "native_float64_tickets": false,
+    "registered42_sources": false
+  },
+  "launcher": {
+    "pid": 28812,
+    "available": true,
+    "actual_pid": 28812,
+    "parent_pid": 50840,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0000_blank_noise0"
+  },
+  "actual_python": {
+    "pid": 42132,
+    "available": true,
+    "actual_pid": 42132,
+    "parent_pid": 28812,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0000_blank_noise0"
+  },
+  "owner_locks": {
+    "pid": 42132,
+    "owner_token": "ca8d1d3fca204214aaf9f5c4f12d9b5d",
+    "phase": "C1v3-first-stage-1080-v001-shard",
+    "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+    "time": "2026-10-15T13:52:59.341387+00:00"
+  },
+  "started_cells": [],
+  "global_charged_calls_at_observation": 5115,
+  "one_raw_denominator": 18,
+  "maximum_new_inverse_calls": 16,
+  "full_first_stage_denominator": 1080,
+  "truth_permitted_only_in_external_scoring": true
+}

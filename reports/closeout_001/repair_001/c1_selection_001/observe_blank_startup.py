@@ -1,11 +1,17 @@
 """Single native startup observation, reading the true nested ticket context."""
 from pathlib import Path
+import argparse
 import datetime
 import importlib.util
 import json
 
 ROOT = Path(__file__).resolve().parents[4]
 folder = Path(__file__).resolve().parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--receipt', default='BLANK_SHARD_STARTUP_VERIFICATION.json')
+args = parser.parse_args()
+if Path(args.receipt).name != args.receipt or not args.receipt.endswith('.json'):
+    raise ValueError('A local immutable receipt name is required')
 reader = ROOT/'reports/closeout_001/repair_001/v3_tangent_probe_002/startup_observer.py'
 spec = importlib.util.spec_from_file_location('owned_nt_reader', reader)
 nt = importlib.util.module_from_spec(spec)
@@ -25,7 +31,7 @@ for path in (folder/'inference/cells').glob('*/STARTED.json'):
     started.append({'path': str(path), 'cache_key': value['cache_key'], 'owner': value.get('owner'),
                     'identity': context['identity'], 'runtime': context['runtime'],
                     'source_hashes_count': len(context['source_sha256']),
-                    'registration_sha256': context.get('registration_sha256')})
+                    'registration_sha256': context['identity'].get('registration_sha256')})
 checks = {'launcher_available': launcher.get('available') is True,
           'child_available': child.get('available') is True,
           'commands_match': all(expected in value.get('command_line', '') for value in (launcher, child)),
@@ -44,7 +50,7 @@ value = {'schema': 'C1-one-raw-first-stage-startup-observation-v001',
          'started_cells': started, 'global_charged_calls_at_observation': charged,
          'one_raw_denominator': 18, 'maximum_new_inverse_calls': 16,
          'full_first_stage_denominator': 1080, 'truth_permitted_only_in_external_scoring': True}
-with (folder/'BLANK_SHARD_STARTUP_VERIFICATION.json').open('x', encoding='utf-8', newline='\n') as handle:
+with (folder/args.receipt).open('x', encoding='utf-8', newline='\n') as handle:
     handle.write(json.dumps(value, indent=2)+'\n')
 print(json.dumps(value, indent=2), flush=True)
 assert value['startup_verified'], checks
