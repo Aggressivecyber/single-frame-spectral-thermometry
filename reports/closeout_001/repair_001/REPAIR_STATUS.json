@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-15T07:28:44.966471+00:00",
+  "time": "2026-10-15T07:32:00.021988+00:00",
   "schema": "root-integrated-repair-status-v001",
   "scope": "implemented repairs and bounded diagnostic preparation",
   "future_execution_model": "gpt-6.1-sol",
@@ -49,11 +49,10 @@
     }
   ],
   "total_passed_checks": 108,
-  "new_formal_inverse_calls_so_far": 6,
-  "quick_registration_sha256": "15b03a28b863264ff85aca032d3b29d1e6d052c8c64b56eecd5dec80dc37dd9d",
+  "quick_registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
   "quick_initial_raws": 2,
-  "quick_initial_routes": 3,
-  "quick_max_new_inverse_calls": 6,
+  "quick_initial_routes": 2,
+  "quick_max_new_inverse_calls": 4,
   "native_shape": [
     256,
     256
@@ -68,16 +67,15 @@
   "final_method_selected_by_quick": false,
   "scientific_repair_acceptance": "not qualified: v001 six finite, zero certified; v002 C1 objective native test pending",
   "whole_closeout_complete": false,
-  "quick_phase": "V002_REGISTERED_NOT_STARTED",
-  "launcher_pid": null,
-  "actual_python_pid": null,
-  "startup_verified_utc": "2026-10-15T06:37:18Z",
-  "next_wake_local": null,
-  "registered_source_commit": "3d89fbef5bc7a29630db4026748115113cc5c552",
+  "quick_phase": "V002_STARTUP_VERIFIED_RUNNING_AT_LAST_CHECK",
+  "launcher_pid": 59720,
+  "actual_python_pid": 56000,
+  "startup_verified_utc": "2026-10-15T07:30:16.4886211+00:00",
+  "next_wake_local": "2026-10-15 15:55:00 Asia/Singapore",
+  "registered_source_commit": "0f38f6112fccf931e5ad4a646fd454b4392aeffd",
   "registered_source_commit_remote_verified": true,
   "science_result_for_repaired_methods": "pending",
   "no_continuous_monitoring": true,
-  "global_actual_new_inverse_calls": 5087,
   "quick_v001": {
     "completed_utc": "2026-10-15T06:45:51.885921+00:00",
     "finite": 6,
@@ -87,7 +85,15 @@
     "evidence_commit": "2a3be4e",
     "full_panel_auto_started": false
   },
-  "current_job": null,
+  "current_job": {
+    "launcher_pid": 59720,
+    "actual_python_pid": 56000,
+    "command": "python -u -B -m research_closeout.calibration_quick run --device cuda",
+    "start_utc": "2026-10-15T07:29:52.8902115+00:00",
+    "startup_verified_utc": "2026-10-15T07:30:16.4886211+00:00",
+    "stderr_bytes_at_startup": 0,
+    "first_raw_BEGIN_verified": true
+  },
   "quick_v002": {
     "raws": 2,
     "routes": 2,
@@ -97,10 +103,11 @@
     "objective_version": "joint-profile-v003-shared-anchor-c1-calibration",
     "v3_refined_rerun": false,
     "registration": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v002\\QUICK_REGISTRATION.json",
-    "gpu_started": false,
+    "gpu_started": true,
     "registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
     "registered_sources": 30,
-    "objective_fingerprint": "2b425cec5f4b7c69ef7ca3b2d6d9c859e15d6da558b82dc9903cb608043c3758"
+    "objective_fingerprint": "2b425cec5f4b7c69ef7ca3b2d6d9c859e15d6da558b82dc9903cb608043c3758",
+    "startup_verified": true
   },
   "supplementary_contracts": [
     {
@@ -131,5 +138,7 @@
   "v3_coupled_preconditioner": "15 CPU fixtures passed; exact projected native linear probe and outer integration not executed",
   "C1_photon_matrix": "future C1 exposure study must use smooth_calibration_exposure.known_exposure to scale added slopes; v002 ratio1 only",
   "retrospective_interval_diagnostic": "existing MC reuse only; oracle scale, previously seen labels and geometric role confounding prohibit new deployment coverage or superiority claims",
-  "old_registered_sources_unchanged": true
+  "old_registered_sources_unchanged": true,
+  "completed_v001_new_formal_inverse_calls": 6,
+  "global_actual_new_inverse_count_before_v002": 5087
 }
