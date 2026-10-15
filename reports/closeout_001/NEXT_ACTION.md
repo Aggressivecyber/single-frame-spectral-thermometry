@@ -4,6 +4,12 @@ The full user request is USER_EXECUTION_REQUEST.txt. Read it with research_close
 
 Workspace E:/CodexWork/thermometry/closeout_001; branch research/closeout-001; base6f6c4f19e08e83d1ac0cd49e0c85c1c67dc56b51. Original inputs/weights/reports remain under E:/CodexWork/thermometry/public_repository_001 by hash reference. New files/logs/temp/cache stay on E/D. New output budget4GiB, free floor2GiB. No CNN training or proactive subagent delegation.
 
+## Active quick job: startup verified, one wake at15:00 Singapore
+
+Root launched the registered smoke2026-10-15T06:36:51Z: launcher57732, actual Python child56128, command `python -u -B -m research_closeout.quick_validation run --tier smoke --device cuda`. At06:37:18Z both exact commands and global owner lock were verified, stdout had BEGIN for first raw, stderr0, no terminal. Read repair_001/quick_v001/QUICK_PROCESS.json and QUICK_STARTUP_VERIFICATION.json. Source commit3d89fbef5bc7a29630db4026748115113cc5c552 and remote SHA match; registration15b03a28b863264ff85aca032d3b29d1e6d052c8c64b56eecd5dec80dc37dd9d.108 software/forward checks passed before launch; native256 result is pending.
+
+On wake check actual PID/command/children plus QUICK_RESULT.json or QUICK_FAILURE.json in that directory. If still running, only schedule one later wake and finish; no continuous monitoring, source edits, duplicate inversions or second GPU phase. Native v6-a was updated and config-verified for one wake2026-10-15 15:00 Asia/Singapore; WAKE_RECEIPT.json is additive. PHASE_ACTIVE.json and current logs/ledger may be uncommitted because this run is active. Do not revert or overwrite them.
+
 ## Latest steering: repair every identified fault, small validation, GPT-6.1 Sol Max
 
 The user subsequently requested all faults be repaired and a smaller validation set for fast iteration, then specified GPT-6.1 Sol with max reasoning for subsequent execution. New follow-up agents use that exact model/effort; old Astra review history is preserved. Read repair_001/EXECUTION_POLICY.json and the additive repair receipts.
