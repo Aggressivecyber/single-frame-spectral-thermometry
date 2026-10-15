@@ -16,10 +16,11 @@ SEED_NAME = 'closeout-source-figure-parent-bootstrap-v001-20261015'
 BOOTSTRAP_DRAWS = 10000
 
 
-def run():
+def run(revision=1):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
     comparison = s.REPORTS/'A_REUSED_COMPARISON.json'
     summary_path = s.REPORTS/'SOURCE_STUDY_SUMMARY.json'
     comparison_data, summary = s.read(comparison), s.read(summary_path)
@@ -63,8 +64,9 @@ def run():
     component_rms, cross_contributions = np.asarray(component_rms), np.asarray(cross_contributions)
     folder = s.ROOT/'paper/figures/F02_source_mechanism'
     folder.mkdir(parents=True, exist_ok=True)
-    png, pdf = folder/'SOURCE_MECHANISM.png', folder/'SOURCE_MECHANISM.pdf'
-    receipt = s.REPORTS/'repair_001/SOURCE_MECHANISM_FIGURE.json'
+    suffix = '' if revision == 1 else '_002'
+    png, pdf = folder/f'SOURCE_MECHANISM{suffix}.png', folder/f'SOURCE_MECHANISM{suffix}.pdf'
+    receipt = s.REPORTS/f'repair_001/SOURCE_MECHANISM_FIGURE{suffix}.json'
     assert not any(p.exists() for p in (png, pdf, receipt))
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12})
     fig = plt.figure(figsize=(13.5, 10.8))
@@ -80,9 +82,10 @@ def run():
     a.set_xticks(x, ('Oracle C\n(extra information)', 'C_v5 + fixed linear solve',
                     'C_v3 + same linear solve', 'Complete v3\n(finite research baseline)'))
     a.set_ylabel('Template RMSE (e)')
-    a.set_title('(a) Same-raw source intervention:36 development mothers', loc='left', fontsize=15, pad=12)
-    a.legend(frameon=False, ncol=2, loc='upper right')
-    a.text(.01, .96, '95% paired-mother bootstrap intervals; normal +/- cases', transform=a.transAxes, va='top', fontsize=11)
+    a.set_title('(a) Same-raw source intervention:36 development mothers\n95% paired-mother bootstrap intervals', loc='left', fontsize=14, pad=12)
+    a.legend(handles=[Patch(facecolor='#24668d', label='Negative normal'),
+                      Patch(facecolor='#df923f', label='Positive normal')],
+             frameon=False, ncol=2, loc='upper right')
     a.grid(axis='y', alpha=.18)
     a.set_axisbelow(True)
     colors = ('#9b5056', '#24668d')
@@ -95,7 +98,8 @@ def run():
     b.set_ylabel('Component RMS (e); magnitudes are not additive')
     b.set_title('(b) Four finite propagated components\n6 reference mothers,12 normal noisy raws', loc='left', fontsize=13, pad=12)
     b.legend(frameon=False, ncol=2)
-    c.set_yscale('symlog', linthresh=1e-4)
+    c.set_yscale('symlog', linthresh=1e-8)
+    c.set_yticks((-100, -1, -1e-2, -1e-4, -1e-6, 0, 1e-6, 1e-4, 1e-2, 1))
     c.axhline(0, color='#555555', linewidth=.8)
     c.set_xticks(range(6), ('L,N', 'L,B', 'L,E', 'N,B', 'N,E', 'B,E'))
     c.set_ylabel('Signed cross contribution (e squared)')
@@ -109,7 +113,7 @@ def run():
     fig.savefig(png, dpi=180)
     fig.savefig(pdf)
     plt.close(fig)
-    result = {'schema': 'source-mechanism-figure-and-statistics-v001', 'time': s.now(),
+    result = {'schema': 'source-mechanism-figure-and-statistics-v001', 'time': s.now(), 'visual_revision': revision,
         'renderer': {'path': str(Path(__file__)), 'sha256': s.sha(Path(__file__))},
         'sources': [{'path': str(p), 'sha256': s.sha(p)} for p in (comparison, summary_path, journal, accounting)],
         'panel_a': {'methods': list(METHODS), 'mothers': mothers, 'unique_raws': 72, 'cells': 288,
@@ -132,4 +136,7 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--revision', choices=(1, 2), type=int, default=1)
+    run(parser.parse_args().revision)

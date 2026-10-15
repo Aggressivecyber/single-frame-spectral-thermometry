@@ -6,6 +6,7 @@
 |---|---|---|---|
 | 连续谱来源替换降低当前模板误差 | 36开发母场景，正常含噪正/负模板，同raw同线性配置 | [A复用比较](../reports/closeout_001/A_REUSED_COMPARISON.json) | 约64 e至18 e；未优于完整v3；各RMSE之差不是方差项 |
 | 四项分解包含实际及分量求解残差 | 90输入、6母场景、540来源/背景组合 | [来源汇总](../reports/closeout_001/SOURCE_STUDY_SUMMARY.json)、[终态](../reports/closeout_001/FOUNDATION_CONTINUED_RESULT.json) | 闭合和数值项描述固定线性目标，不等于相机精度 |
+| 图2保留Oracle条件、父场景统计与交叉贡献 | (a)36开发父场景×正负正常raw，4路线；(b,c)6参考父场景×12份正常raw，2来源 | [绘图及统计记录](../reports/closeout_001/repair_001/SOURCE_MECHANISM_FIGURE_002.json) | 10000次配对父场景bootstrap为描述区间；RMS分量不可按独立方差相加；不同面板不拼成同场景比较 |
 | 强传统基线有限选参选择100 | 12母场景选参，24母场景/120含噪输入确认 | [开发科学汇总](../reports/closeout_001/DEVELOPMENT_SCIENTIFIC_SUMMARY.json) | 历史0.1与预选100分别命名；保留结构/投影取舍 |
 | 原九组未完成12+24科学比较 | 9组合×2初值，同1个开发raw，18有限输出 | [开发终态](../reports/closeout_001/DEVELOPMENT_RESULT.json) | 两初值共同数值合格的组合为0；历史排除不等于科学无效 |
 | v3生产精度尚未认证 | 60输入，固定12外层、float64/线性设置对照 | [开发科学汇总](../reports/closeout_001/DEVELOPMENT_SCIENTIFIC_SUMMARY.json) | 是有限估计器敏感性对照，非非线性最优参考 |
