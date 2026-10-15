@@ -1,0 +1,238 @@
+{
+  "time": "2026-10-15T17:59:05.471511+00:00",
+  "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+  "sequence": 1,
+  "content_sha256": "a990b0406e84ad6ffaa9a2ec2cc39d7b1bdb0f850ab57ef1e73c763ec760c84d",
+  "row": {
+    "case_id": "v5_development_selection_mother_0000_negative_weak_noise0",
+    "mother_id": "v5_development_selection_mother_0000",
+    "condition": "negative_weak",
+    "input_kind": "noise",
+    "quick_geometry": {
+      "temperature_geometry": "front",
+      "template_geometry": "blob",
+      "temperature_geometry_source": "research_v6/input_inventory.json:geometry",
+      "template_geometry_source": "research_v6/input_inventory.json:template_geometry",
+      "temperature_geometry_fallback_declared": true
+    },
+    "raw_sha256": "44d2b9a4d267b8b19593022f96d414c311a5334267017254fccec99f2527c873",
+    "candidate_id": "joint_c1_s0.1",
+    "family": "joint_C1v3",
+    "method": "joint_profile_C1v3_c1_s0.1_numerics_v2__smooth_demod",
+    "initializer": "smooth_demod",
+    "physical_options": {
+      "grid": 256,
+      "continuum_multiplier": 1.0,
+      "template_multiplier": 0.1
+    },
+    "reuse_key": "1dccd5892c70aeb658c9ebe0a2e5d21782a068e5828b6403ace47a3909a08887",
+    "execution_role": "NEW_INVERSE",
+    "status": "FINITE_NUMERICALLY_CERTIFIED",
+    "finite_output": true,
+    "production_numerical_certified": true,
+    "score_status": "SCORED",
+    "metrics": {
+      "domain_pixels": 65536,
+      "accepted_pixels": 65536,
+      "valid_fraction": 1.0,
+      "full_FOV_valid_fraction": 1.0,
+      "nonfinite_domain_pixels": 0,
+      "nonfinite_output_pixels": 0,
+      "temperature_out_of_bounds_pixels": 0,
+      "template_SSE": 39605181.8025782,
+      "template_truth_energy": 2540409.799633511,
+      "template_error_sum": 262605.6871778422,
+      "template_RMSE_e": 24.583065612480155,
+      "template_bias_e": 4.007044787259555,
+      "template_relative_L2": 3.948427026341526,
+      "temperature_SSE_K2": 3639136.1073701684,
+      "temperature_error_sum_K": -73643.29886249203,
+      "temperature_RMSE_K": 7.451765578176004,
+      "temperature_bias_K": -1.123707563209412,
+      "temperature_truth_role": "postblur continuum color temperature",
+      "conditional_template_RMSE_e": 24.583065612480155,
+      "conditional_temperature_RMSE_K": 7.451765578176004,
+      "support_fraction_of_absolute_peak": 0.2,
+      "signed_projection": 0.6979706105513204,
+      "signed_projection_numerator": 1773131.3789007592,
+      "orthogonal_template_RMSE_e": 24.511039012495857,
+      "support_pixels": 5632,
+      "sign_correct_pixels": 3517,
+      "sign_recall": 0.6244673295454546,
+      "positive_support_pixels": 0,
+      "negative_support_pixels": 5632,
+      "raw_pixels": 65536,
+      "raw_weighted_SSE": 63652.463532081405,
+      "raw_weighted_RMSE": 0.9855249942769102,
+      "raw_RMSE_e": 80.90254403935445,
+      "raw_residual_target": "same observed raw, fixed variance from observed raw",
+      "temperature_reference_color_RMSE_K": 7.451765578176004,
+      "temperature_reference_color_bias_K": -1.123707563209412,
+      "temperature_reference_color_comparison_pixels": 65536,
+      "temperature_latent_truth_RMSE_K": 27.697488974598794,
+      "temperature_latent_truth_bias_K": 3.7438676091254974,
+      "temperature_latent_truth_comparison_pixels": 65536,
+      "legacy_positive_recall": null,
+      "legacy_null_pixel_FP_count": null,
+      "legacy_threshold_e": 60.0,
+      "legacy_null_FOV_FPR_control_claimed": false,
+      "legacy_negative_recall": 0.09268465909090909,
+      "legacy_frame_detection_score": 70.52003276319613,
+      "legacy_negative_detected_pixels": 522,
+      "legacy_null_pixel_FP": null,
+      "legacy_frame_detected": true,
+      "legacy_z_threshold": null,
+      "legacy_signed_recall_rule": "correct sign and threshold crossed and valid; denominator is fixed truth support",
+      "legacy_signed_recall_unconditional": 0.09268465909090909,
+      "legacy_signed_recall": 0.09268465909090909,
+      "legacy_signed_detected_pixels": 522,
+      "legacy_frame_detection_score_kind": "full_FOV_99th_percentile_absolute_template_e",
+      "legacy_frame_threshold": 60.0,
+      "legacy_null_frame_FP": null,
+      "legacy_positive_detected_pixels": 0,
+      "frame_detection_v2": {
+        "schema": "frame-dictionary-decision-v2",
+        "dictionary_id": "gaussian-9centers-3scales-absolute-L2-v1",
+        "method": "joint_profile_C1v3_c1_s0.1_numerics_v2__smooth_demod",
+        "score": 1253.2986981742654,
+        "detected": null,
+        "threshold_crossed": null,
+        "threshold": null,
+        "status": "THRESHOLD_NOT_ATTACHED",
+        "inference_reads_truth": false,
+        "calibration_applicability": "UNVERIFIED",
+        "false_positive_rate_guaranteed": false
+      },
+      "matched_dictionary_frame_score": 1253.2986981742654,
+      "predicted_measurement_nonnegative": true,
+      "raw_saturated_pixels": 0,
+      "raw_lower_clipped_pixels": 0,
+      "structure": {
+        "prediction": {
+          "absolute_peak_e": 114.99177670345858,
+          "signed_integral_e_px": 122042.12481478383,
+          "absolute_integral_e_px": 1248373.7017364877,
+          "absolute_mass_RMS_radius_px": 99.19570212012192,
+          "absolute_mass_centroid_xy_px": [
+            139.57078705907008,
+            129.32866645239332
+          ]
+        },
+        "target": {
+          "absolute_peak_e": 38.22671890258789,
+          "signed_integral_e_px": -140563.56236305833,
+          "absolute_integral_e_px": 140563.56236305833,
+          "absolute_mass_RMS_radius_px": 39.6973730986577,
+          "absolute_mass_centroid_xy_px": [
+            137.726577389104,
+            124.03270551234247
+          ]
+        },
+        "width_definition": "absolute-mass radial RMS; noise outside structure contributes and is retained"
+      }
+    },
+    "numerical_evidence": {
+      "passed": true,
+      "original_inference_certified_flag": true,
+      "three_qualified_endpoints": true,
+      "two_successive_output_plateaus": true,
+      "returned_stage": 3,
+      "actual_requested_endpoint_gtol": 1e-06,
+      "returned_scaled_projected_linf": 9.13035378857785e-07,
+      "truth_metrics_used": false,
+      "criterion": "audit of the unchanged frozen numerical engine contract; no universal 1e-7 requirement"
+    },
+    "new_inverse_calls_selection_total": 1,
+    "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9",
+    "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9",
+    "case_state_durable": true,
+    "evidence_files": [
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\PARAMETERS.json",
+        "sha256": "94d2bcda071ad971c03dabdc2baa696554fc9cdb88412402dd3f8c49200b724a",
+        "bytes": 899
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\PARAMETERS.json.sha256.json",
+        "sha256": "f1a279754e18493f248c1f30a81d0d795fc040ef596f40685af4ef71703596f1",
+        "bytes": 294
+      },
+      {
+        "bytes": 975560,
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\PARAMETERS.npz",
+        "sha256": "158c7cee110ba140202085516950e089670373645cb3a80d1006b12de44fad75"
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\PREPARED.json",
+        "sha256": "78243cf57ea0e9e7d42f8cd5aebb294da4241d77bda56dcef8ce947516e05a0f",
+        "bytes": 33337
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\PREPARED.json.sha256.json",
+        "sha256": "75749ab779049fe6bb014af2bd5259801879ef6a9adff0c2c7599d12152c37fd",
+        "bytes": 294
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\RESERVATION.json",
+        "sha256": "4c0bbd98b9a988c0014d04c58f989a3bacc05b4918686e1cf125298d1bde66e6",
+        "bytes": 696
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\RESERVATION.json.sha256.json",
+        "sha256": "a327e2e921b6d1642ed4aaedf94b114bf0a0f39fa1b61bef064e1e30aa2567df",
+        "bytes": 295
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\RESULT.json",
+        "sha256": "d519fe9c79c2eeb8b6d03919b061cfeae27d1b1562d3c42de75f17c49a1c7bb7",
+        "bytes": 2824
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\RESULT.json.sha256.json",
+        "sha256": "5d21bb75b0b8f4a699ad64a2f7a3bd950ebc7a6cfd03f7335203169869f7f8d0",
+        "bytes": 291
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\SCORE_panel_external_v001.json",
+        "sha256": "941b93e76da303b29852faf84d6624f2e41054740a53e1ed061eb54b56d8504d",
+        "bytes": 4444
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\SCORE_panel_external_v001.json.sha256.json",
+        "sha256": "da5a5e12c230ca2e94e515cb4679f52ef7af0900b25251e70899b3bdaba034fa",
+        "bytes": 310
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\STARTED.json",
+        "sha256": "b9df575f4c2ece7349a0b9c374884f8ce6c715c8384aa05ed61f336835175f20",
+        "bytes": 14668
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9256dfba7e7a99f86eb47c5e48a2ad485567cbff3171f246d154517685332fe9\\STARTED.json.sha256.json",
+        "sha256": "4b9465e610126e86e37d85c124bfe6e41dfd204691ecef1316aa177c31e0ffa4",
+        "bytes": 293
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\cell_receipts\\90fddc0cc398d3fcb9aa58a8c43d794aee48020b2d5c99908bcde134e96d8e16\\CALL_RECORDED.json",
+        "sha256": "9bbb70dea027e979f1a9809981f51dc96aed4e5524ae269c4d7499730e522a1b",
+        "bytes": 542
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\cell_receipts\\90fddc0cc398d3fcb9aa58a8c43d794aee48020b2d5c99908bcde134e96d8e16\\CALL_RECORDED.json.sha256.json",
+        "sha256": "171d8ac4dcc4935aff6ab45bf1ec8114728ebb455e794ada14615a089ef1e78f",
+        "bytes": 307
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\cell_receipts\\90fddc0cc398d3fcb9aa58a8c43d794aee48020b2d5c99908bcde134e96d8e16\\SCORE_SUCCESS.json",
+        "sha256": "64089b8b8316924affd5d50c1448b485f116b1b10aadde4bdbf24a6e845bd4ec",
+        "bytes": 22139
+      },
+      {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\cell_receipts\\90fddc0cc398d3fcb9aa58a8c43d794aee48020b2d5c99908bcde134e96d8e16\\SCORE_SUCCESS.json.sha256.json",
+        "sha256": "e9a7454e53354cd4bb7c2ca5305fc9f87bfbd887d427b452597099bab5da735b",
+        "bytes": 309
+      }
+    ],
+    "prior_result_reused": false
+  }
+}
