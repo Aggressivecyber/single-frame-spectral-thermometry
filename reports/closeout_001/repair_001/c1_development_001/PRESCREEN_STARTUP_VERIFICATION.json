@@ -1,0 +1,56 @@
+{
+  "schema": "C1-nine-pair-startup-observation-v001",
+  "time": "2026-10-15T11:58:42.004794+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "startup_verified": true,
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "commands_match": true,
+    "parent_child_matches": true,
+    "owner_locks_match": true,
+    "registered_owner": true,
+    "stderr_empty": true,
+    "no_terminal_at_observation": true,
+    "charged_call_cap": true
+  },
+  "launcher": {
+    "pid": 49240,
+    "available": true,
+    "actual_pid": 49240,
+    "parent_pid": 54852,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_development prescreen --device cuda"
+  },
+  "actual_python": {
+    "pid": 53992,
+    "available": true,
+    "actual_pid": 53992,
+    "parent_pid": 49240,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_development prescreen --device cuda"
+  },
+  "owner_locks": {
+    "pid": 53992,
+    "owner_token": "e77bf98233c640e78cd258de479e9490",
+    "phase": "C1v3-finite-development-prescreen-v001-prescreen",
+    "registration_sha256": "a03f326859fd46de4b1cb1b47d6683d9b8e271d35faa7eef9a2093ab1dbf1032",
+    "time": "2026-10-15T11:58:26.920173+00:00"
+  },
+  "started_cells": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\inference\\cells\\3443fb002b55f93dae09930f4a03fff476a8d53b5d7c537db494f38cdb8b68e6\\STARTED.json",
+      "owner": {
+        "pid": 53992,
+        "token": "0947199992644a11be55520c12bf7ef2"
+      },
+      "identity": null,
+      "runtime": null
+    }
+  ],
+  "global_charged_calls_at_observation": 5100,
+  "full_denominator": 18,
+  "maximum_new_inverse_calls": 16,
+  "stdout_bytes": 466,
+  "stderr_bytes": 0,
+  "first_ticket_seen": true,
+  "four_saved_state_readback_may_still_be_running": false
+}

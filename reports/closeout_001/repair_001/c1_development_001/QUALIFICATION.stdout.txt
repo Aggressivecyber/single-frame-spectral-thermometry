@@ -1,0 +1,820 @@
+[runtime-entry] {"WMI_disabled": true, "installed_files_modified": false, "native_machine": "AMD64", "platform_machine": "AMD64", "python_version": "3.12.14", "scientific_algorithm_changed": false, "sys_platform": "win32", "version": "windows-platform-wmi-fallback-v001", "windows_version": ["11", "10.0.26200", "SP0", "Multiprocessor Free"]}
+{
+  "planned_existing_endpoints": 4,
+  "audited_existing_endpoints": 4,
+  "passed_existing_endpoints": 4,
+  "all_passed": true,
+  "cells": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+      "passed": true,
+      "status": "QUALIFIED",
+      "original_canonical_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_readback_original_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_result": {
+        "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+        "cache_key": "138ac56e3015449dd81492def049773c785ebeb1d4783c8947ba8ee53d5f7675",
+        "context_fingerprint": "98476154bb15c01c704d73e0be43999d278080fc3ebd7b263b3e080bd1fce285",
+        "time": "2026-10-15T11:54:52.958833+00:00",
+        "status": "LOSSLESS_READY",
+        "run_new_inverse": false,
+        "score_allowed": true,
+        "lossless_representation_verified": true,
+        "numerical_certification": true,
+        "original_fallback_available": false,
+        "fallback_retained": false,
+        "representation_scope": "same registered runtime/device; each future load must independently pass all byte hashes",
+        "write_read_same_physics_instance": true,
+        "verification": {
+          "per_array_byte_identical": {
+            "continuum_postblur_bands": true,
+            "low_signal": true,
+            "predicted_raw_DN": true,
+            "predicted_raw_e": true,
+            "standardized_residual": true,
+            "temperature_color_K": true,
+            "template_postblur_e_ref": true,
+            "valid": true,
+            "continuum_latent": true
+          },
+          "all_byte_identical": true,
+          "reconstructed_canonical_arrays": {
+            "temperature_color_K": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "44c9a1b4f2e88318e99e96b39efbc2b275ef39475718902a037a387cbd29a82f"
+            },
+            "template_postblur_e_ref": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "942b6949a826e291267c8aabcd98767ea305ce6b18608f9786c15678dd9ee49c"
+            },
+            "continuum_postblur_bands": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                7,
+                256,
+                256
+              ],
+              "nbytes": 3670016,
+              "sha256": "bb624d6bdfa931f3a419f84ef2bdc23371d23f2eb987c821dce33362d0627c10"
+            },
+            "predicted_raw_e": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "61810a732facdbdacff8f99a3232c2fe8659ff2e13153b6032a8bfe849022499"
+            },
+            "predicted_raw_DN": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "a74048c5ed815dba3c5dad66628f7b8118ce680fa6143c7c8a0c34e1645b45ba"
+            },
+            "standardized_residual": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "e183fc8f1e1d29b405f5f5a96ca1a91b1e80b8e664eb498e4fba8c494ababea1"
+            },
+            "valid": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03"
+            },
+            "low_signal": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+            }
+          },
+          "reconstructed_continuum_latent": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              7,
+              256,
+              256
+            ],
+            "nbytes": 3670016,
+            "sha256": "cc221a0f4aebad4fc8b77934cafb8aca864f48ab048e45c7cc044e0a470ffe2f"
+          },
+          "forward_only": true,
+          "complete_inverse_calls": 0,
+          "optimizer_calls": 0,
+          "linear_solver_calls": 0
+        },
+        "parameter_receipt": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\138ac56e3015449dd81492def049773c785ebeb1d4783c8947ba8ee53d5f7675\\PARAMETERS.json",
+          "sha256": "b4e45fcfe0fb329c589c6a42a41a22f9167728b242972a3cbfc01343c8ac9094",
+          "bytes": 911
+        },
+        "complete_inverse_calls_by_cache": 0,
+        "native_GPU_qualification_claimed": false
+      },
+      "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\138ac56e3015449dd81492def049773c785ebeb1d4783c8947ba8ee53d5f7675",
+      "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\138ac56e3015449dd81492def049773c785ebeb1d4783c8947ba8ee53d5f7675",
+      "complete_inverse_calls": 0,
+      "old_cache_converted_or_deleted": false
+    },
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+      "passed": true,
+      "status": "QUALIFIED",
+      "original_canonical_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_readback_original_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_result": {
+        "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+        "cache_key": "5173a1b6c882b52e577999f6ae3a053ac4e0dfeca2edf678d6cb7f2835a0b137",
+        "context_fingerprint": "07545230a9dbc9e08da2485dd3cfeb6619f7d4000cf443e98e5f7ca1b456711f",
+        "time": "2026-10-15T11:55:04.288752+00:00",
+        "status": "LOSSLESS_READY",
+        "run_new_inverse": false,
+        "score_allowed": true,
+        "lossless_representation_verified": true,
+        "numerical_certification": true,
+        "original_fallback_available": false,
+        "fallback_retained": false,
+        "representation_scope": "same registered runtime/device; each future load must independently pass all byte hashes",
+        "write_read_same_physics_instance": true,
+        "verification": {
+          "per_array_byte_identical": {
+            "continuum_postblur_bands": true,
+            "low_signal": true,
+            "predicted_raw_DN": true,
+            "predicted_raw_e": true,
+            "standardized_residual": true,
+            "temperature_color_K": true,
+            "template_postblur_e_ref": true,
+            "valid": true,
+            "continuum_latent": true
+          },
+          "all_byte_identical": true,
+          "reconstructed_canonical_arrays": {
+            "temperature_color_K": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "125d52fd6700678dbf97a0d9dd578d750647d724f12c297e3db3209b993c0603"
+            },
+            "template_postblur_e_ref": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "8576c8a48eb17f413a6c2aa20c0e6fe55a4026c7ab3f74f50413c69e4c619282"
+            },
+            "continuum_postblur_bands": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                7,
+                256,
+                256
+              ],
+              "nbytes": 3670016,
+              "sha256": "a0763ada876da27c9b59e8fb8de70350d0d55900aecaa1550de60bb0e7da1489"
+            },
+            "predicted_raw_e": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "017145edb1a78963a81575297b4ac1effab9a7ba97933eff867ce4259dfd445a"
+            },
+            "predicted_raw_DN": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "c2532a8d65455f97bd8ad63449be036fc0a8aa7f681504839a19c0bda7a4b6b7"
+            },
+            "standardized_residual": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "b976de04902e360156c2a85c7e925c97f4d9e548b8115c0fe52193cbc7ee87d2"
+            },
+            "valid": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03"
+            },
+            "low_signal": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+            }
+          },
+          "reconstructed_continuum_latent": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              7,
+              256,
+              256
+            ],
+            "nbytes": 3670016,
+            "sha256": "3ce6a6a3d3e86dc5524dd0f74b17898b9ee576a7ee1a0e038e3f88e6f1b7ea5f"
+          },
+          "forward_only": true,
+          "complete_inverse_calls": 0,
+          "optimizer_calls": 0,
+          "linear_solver_calls": 0
+        },
+        "parameter_receipt": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5173a1b6c882b52e577999f6ae3a053ac4e0dfeca2edf678d6cb7f2835a0b137\\PARAMETERS.json",
+          "sha256": "341e150a6f10908765686a9ef2eadf3c61117ab6fea33dac33549d9ebf259f31",
+          "bytes": 911
+        },
+        "complete_inverse_calls_by_cache": 0,
+        "native_GPU_qualification_claimed": false
+      },
+      "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5173a1b6c882b52e577999f6ae3a053ac4e0dfeca2edf678d6cb7f2835a0b137",
+      "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5173a1b6c882b52e577999f6ae3a053ac4e0dfeca2edf678d6cb7f2835a0b137",
+      "complete_inverse_calls": 0,
+      "old_cache_converted_or_deleted": false
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+      "passed": true,
+      "status": "QUALIFIED",
+      "original_canonical_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_readback_original_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_result": {
+        "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+        "cache_key": "d5dc977c210a2fd99e06adf107ebec1428ec46c5ddf90228118baa5c4c0f2e44",
+        "context_fingerprint": "b701e7f773a13163a1538efcb0afed745b8d37c04b8db32e34bce29af8a41ef6",
+        "time": "2026-10-15T11:55:15.096463+00:00",
+        "status": "LOSSLESS_READY",
+        "run_new_inverse": false,
+        "score_allowed": true,
+        "lossless_representation_verified": true,
+        "numerical_certification": true,
+        "original_fallback_available": false,
+        "fallback_retained": false,
+        "representation_scope": "same registered runtime/device; each future load must independently pass all byte hashes",
+        "write_read_same_physics_instance": true,
+        "verification": {
+          "per_array_byte_identical": {
+            "continuum_postblur_bands": true,
+            "low_signal": true,
+            "predicted_raw_DN": true,
+            "predicted_raw_e": true,
+            "standardized_residual": true,
+            "temperature_color_K": true,
+            "template_postblur_e_ref": true,
+            "valid": true,
+            "continuum_latent": true
+          },
+          "all_byte_identical": true,
+          "reconstructed_canonical_arrays": {
+            "temperature_color_K": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "672a136c66ea0cf0f04c12081f3240220a4cebe3139dbef0d36d76f83d66a675"
+            },
+            "template_postblur_e_ref": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "d413e529e2749e446c534ce8e02c10b470582a9ca1d7563767631200cfc0a254"
+            },
+            "continuum_postblur_bands": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                7,
+                256,
+                256
+              ],
+              "nbytes": 3670016,
+              "sha256": "78562de3eedd08536b1c333c699f20241ab83d2f0aa2c3e60659d28fb5159c1f"
+            },
+            "predicted_raw_e": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "cf26bccaca9e76a030718ac04a982bb7de47c050fbd0f5066e968522a2aa1437"
+            },
+            "predicted_raw_DN": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "b9eebede9dd699f08d16ac542059104bb1b31b47eddf0b8a4e718e1549cf284e"
+            },
+            "standardized_residual": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "687f4976579930791e0671182337c2327a62f1fd8624240c932fa683f27f8ba5"
+            },
+            "valid": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03"
+            },
+            "low_signal": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+            }
+          },
+          "reconstructed_continuum_latent": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              7,
+              256,
+              256
+            ],
+            "nbytes": 3670016,
+            "sha256": "425cfdd785bab752bfd12997d5590f4d3aa2846aa4ff96f5474b1da494cf4951"
+          },
+          "forward_only": true,
+          "complete_inverse_calls": 0,
+          "optimizer_calls": 0,
+          "linear_solver_calls": 0
+        },
+        "parameter_receipt": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\d5dc977c210a2fd99e06adf107ebec1428ec46c5ddf90228118baa5c4c0f2e44\\PARAMETERS.json",
+          "sha256": "a705a536b69f9bcb025f555e518811327ebb4385714d0144962d24d3e3fca7a1",
+          "bytes": 911
+        },
+        "complete_inverse_calls_by_cache": 0,
+        "native_GPU_qualification_claimed": false
+      },
+      "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\d5dc977c210a2fd99e06adf107ebec1428ec46c5ddf90228118baa5c4c0f2e44",
+      "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\d5dc977c210a2fd99e06adf107ebec1428ec46c5ddf90228118baa5c4c0f2e44",
+      "complete_inverse_calls": 0,
+      "old_cache_converted_or_deleted": false
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+      "passed": true,
+      "status": "QUALIFIED",
+      "original_canonical_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_readback_original_byte_matches": {
+        "T": true,
+        "u": true,
+        "C": true,
+        "predicted_raw_e": true,
+        "valid": true,
+        "low_signal": true
+      },
+      "compact_result": {
+        "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+        "cache_key": "5a89355c241a491089b838b9b2e5ea24875f63203bc363871d2e1bbf5de91f90",
+        "context_fingerprint": "d1fc30bfd2d592a555fb96b97f85d5b9fbb6f50508a29b07adebd3fbe6fa346f",
+        "time": "2026-10-15T11:55:26.056211+00:00",
+        "status": "LOSSLESS_READY",
+        "run_new_inverse": false,
+        "score_allowed": true,
+        "lossless_representation_verified": true,
+        "numerical_certification": true,
+        "original_fallback_available": false,
+        "fallback_retained": false,
+        "representation_scope": "same registered runtime/device; each future load must independently pass all byte hashes",
+        "write_read_same_physics_instance": true,
+        "verification": {
+          "per_array_byte_identical": {
+            "continuum_postblur_bands": true,
+            "low_signal": true,
+            "predicted_raw_DN": true,
+            "predicted_raw_e": true,
+            "standardized_residual": true,
+            "temperature_color_K": true,
+            "template_postblur_e_ref": true,
+            "valid": true,
+            "continuum_latent": true
+          },
+          "all_byte_identical": true,
+          "reconstructed_canonical_arrays": {
+            "temperature_color_K": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "ac0ff23f298f5201a49265697724eb22476660f9b2289481018b7a708140021c"
+            },
+            "template_postblur_e_ref": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "75606764ef545d22f30d54d0cf22b5e1cfcc8aa8a663470e75e0566303b2aa06"
+            },
+            "continuum_postblur_bands": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                7,
+                256,
+                256
+              ],
+              "nbytes": 3670016,
+              "sha256": "f519fe741bf0d5e65ce35c448d20e3bf59385bcb0e15d3fde62b20d463a247a6"
+            },
+            "predicted_raw_e": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "1d708f96df610c1edfac452dd23d30bcfeed7ef900d61e2ba35fbd50247481a9"
+            },
+            "predicted_raw_DN": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "5ff9f551de5866b1c3bc1f51b365e8cb68c9ed0d9b7bcf45f0debd8eff54277c"
+            },
+            "standardized_residual": {
+              "dtype": "float64",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 524288,
+              "sha256": "27e0ccc13b115db0464842df4752de30d31227ae67a2dc64e73fad8a6326bf38"
+            },
+            "valid": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03"
+            },
+            "low_signal": {
+              "dtype": "bool",
+              "shape": [
+                1,
+                256,
+                256
+              ],
+              "nbytes": 65536,
+              "sha256": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+            }
+          },
+          "reconstructed_continuum_latent": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              7,
+              256,
+              256
+            ],
+            "nbytes": 3670016,
+            "sha256": "ab355cdb1caa9477425dd72685bedba6fc4c4627a4c1be772437eb2998ed6bae"
+          },
+          "forward_only": true,
+          "complete_inverse_calls": 0,
+          "optimizer_calls": 0,
+          "linear_solver_calls": 0
+        },
+        "parameter_receipt": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5a89355c241a491089b838b9b2e5ea24875f63203bc363871d2e1bbf5de91f90\\PARAMETERS.json",
+          "sha256": "3f2cbd6fa4a8093d23cdafaf99287779c7177a87ee83b4bf7fe0a66b81934972",
+          "bytes": 911
+        },
+        "complete_inverse_calls_by_cache": 0,
+        "native_GPU_qualification_claimed": false
+      },
+      "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5a89355c241a491089b838b9b2e5ea24875f63203bc363871d2e1bbf5de91f90",
+      "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001\\qualification\\cells\\5a89355c241a491089b838b9b2e5ea24875f63203bc363871d2e1bbf5de91f90",
+      "complete_inverse_calls": 0,
+      "old_cache_converted_or_deleted": false
+    }
+  ],
+  "complete_inverse_calls": 0,
+  "optimizer_calls": 0,
+  "inner_solver_calls": 0,
+  "truth_loaded": false,
+  "time": "2026-10-15T11:55:27.313833+00:00",
+  "registration_sha256": "a03f326859fd46de4b1cb1b47d6683d9b8e271d35faa7eef9a2093ab1dbf1032",
+  "native_GPU": true,
+  "runtime": {
+    "device": "cuda:0",
+    "dtype": "torch.float64",
+    "torch": "2.12.0+cu130",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "threads": 2,
+    "torch_cuda_build": "13.0",
+    "deterministic_algorithms": false,
+    "device_properties": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "major": 8,
+      "minor": 9,
+      "uuid": "0f92c824-c40d-1faa-1c7d-e8df96c5282c"
+    }
+  },
+  "source_sha256": {
+    "research_closeout/quick_validation.py": "19c3562e03ff0aa7b1aa917ef864d425e1537da08eab413cefcf6870e14b21f7",
+    "research_closeout/tests/quick_validation.py": "8a408c02747d9f349eda3db7515015d159e08653a78a9e5dd461f982de1a60b8",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/independent_renderer.py": "922db2a22244c975ac2c69d26ae2e6b0858840187d18ea58631c00d6aad42d21",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "research_closeout/calibration_quick.py": "6bdf0c25292043fe3da43f8318a4573ade697addbc3a7ef7c40e23744db7356e",
+    "research_closeout/tests/calibration_quick.py": "49f13e7ebc7e8dcc0cee2943223ba1eb651d253fdf472c1af9ed7903442231ae",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799",
+    "research_closeout/c1_small_panel.py": "931f9b1fcf3f1f69bcbe0d4be0309fea21eecfb0ed6d8052b918e2d0cf65df7c",
+    "research_closeout/tests/c1_small_panel.py": "b19c08839bff74a54363fa01b2b278cb9a960d4a3869b4334918580059a60df5",
+    "research_closeout/compact_joint_cache.py": "8e65ea2762757dbeb2716926c0889ac46d6f0668c07d99f0dc38e01cda8494d4",
+    "research_closeout/tests/compact_joint_cache.py": "e7d8e740fc951925c54f3d12078ba358e3bc5960ea2ce0409d9e2d02015a3170",
+    "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd",
+    "research_closeout/tests/explicit_store.py": "0f52c279770705ab48a95060c9ff16c600c7377b0041dc0b8bceffeb4b0c1c61",
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517",
+    "research_closeout/c1_development.py": "c7573b65884e4ca13460ec3308c112ec9a851cc761f16757310092fad75cc93d",
+    "research_closeout/tests/c1_development.py": "ee2cf66abacd5d271bfb51349c173fb503ea2b25df7edf1439e36244850a37ef"
+  },
+  "format_contract": {
+    "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+    "parameters": [
+      "z_grid",
+      "xi",
+      "beta"
+    ],
+    "canonical_arrays": [
+      "temperature_color_K",
+      "template_postblur_e_ref",
+      "continuum_postblur_bands",
+      "predicted_raw_e",
+      "predicted_raw_DN",
+      "standardized_residual",
+      "valid",
+      "low_signal"
+    ],
+    "parameter_dtype": "float64",
+    "canonical_float_dtype": "float64",
+    "mask_dtype": "bool",
+    "initial_readback": "same p/device, exact dtype+shape+bytes SHA256 for every canonical array and C_latent",
+    "initial_mismatch": "save full original canonical fallback in dense owner reservation; FAIL_CLOSED",
+    "unexpected_storage_gate_failure": "retain already durable state; explicitly report missing original fallback and stop; no new inverse ticket",
+    "storage_failure_receipt_may_be_memory_only": true,
+    "later_mismatch": "retain parameters/hashes and refuse scoring/refit; original fallback may not exist",
+    "numeric_certification_is_separate": true,
+    "inverse_calls_by_cache": 0,
+    "truth_loaded_by_cache": false,
+    "global_budget_roots": [
+      "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+      "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+      "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+      "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+    ],
+    "global_limit_bytes": 4294967296,
+    "free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+    "free_floor_bytes": 2147483648,
+    "report_root_and_data_root_configurable_within_existing_storage_whitelist": true,
+    "new_D_root_writes_supported": false,
+    "storage_permission_source": "research_closeout/storage.py:write_path",
+    "caller_must_own_registered_serial_study_execution": true,
+    "existing_v001_v002_migration_or_conversion_supported": false,
+    "native_GPU_byte_exact_qualification_performed": false,
+    "algorithm_precision_and_default_E_write_whitelist_unchanged": true,
+    "explicit_storage_dependency_injection": true,
+    "execution_format_version": "C1v3-finite-development-prescreen-v001-default-E-four-root-accounting",
+    "default_module_budget_roots_before_override": [
+      "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+      "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001"
+    ],
+    "registered_budget_override_required": true,
+    "default_E_owner_release_unchanged": true,
+    "cache_accounting_guard": "research_closeout.c1_development.ECompactCache"
+  },
+  "store_contract": {
+    "version": "C1v3-finite-development-prescreen-v001-E-accounting",
+    "storage_backend": "default_E",
+    "report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_development_001",
+    "data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_development_001",
+    "global_budget_roots": [
+      "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+      "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+      "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+      "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+    ],
+    "global_limit_bytes": 4294967296,
+    "E_free_floor_bytes": 2147483648,
+    "instance_limit_bytes": 201326592,
+    "D_writes_supported": false,
+    "default_storage_whitelist_unchanged": true,
+    "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+    "existing_D_qualification_is_read_only_evidence": true
+  },
+  "storage_ledger": {
+    "instance": {
+      "bytes": 5715399,
+      "files": 286,
+      "by_kind_bytes": {
+        "parameters": 3912225,
+        "fallback": 9632,
+        "reserve": 263200,
+        "pending": 0,
+        "other_data_meta_cache_log": 1530342
+      },
+      "all_file_kinds_counted": true,
+      "JSON_references_not_dereferenced_or_copied": true
+    },
+    "global_new_study": {
+      "bytes": 369090520,
+      "files": 3592,
+      "by_kind_bytes": {
+        "parameters": 15621285,
+        "fallback": 36195,
+        "reserve": 528516,
+        "pending": 76,
+        "other_data_meta_cache_log": 352904448
+      },
+      "all_file_kinds_counted": true,
+      "JSON_references_not_dereferenced_or_copied": true
+    },
+    "instance_limit_bytes": 201326592,
+    "global_limit_bytes": 4294967296,
+    "free_floor_bytes": 2147483648
+  },
+  "old_D_qualification_not_relabelled_as_E": true
+}
