@@ -1,0 +1,83 @@
+{
+  "schema": "explicit-selection-shard-startup-observation-v001",
+  "time": "2026-10-15T22:09:09.444282+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "startup_verified": true,
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "commands_match": true,
+    "parent_child_matches": true,
+    "owner_locks_match": true,
+    "owner_registration_matches": true,
+    "stderr_empty": true,
+    "charged_within_shard_cap": true,
+    "first_new_ticket_present": true,
+    "native_float64": true,
+    "42_registered_sources": true,
+    "ticket_actual_registration": true
+  },
+  "launcher": {
+    "pid": 37944,
+    "available": true,
+    "actual_pid": 37944,
+    "parent_pid": 20360,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0005_blank_noise0 --raw v5_development_selection_mother_0005_positive_weak_noise0"
+  },
+  "actual_python": {
+    "pid": 40128,
+    "available": true,
+    "actual_pid": 40128,
+    "parent_pid": 37944,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0005_blank_noise0 --raw v5_development_selection_mother_0005_positive_weak_noise0"
+  },
+  "owner_locks": {
+    "pid": 40128,
+    "owner_token": "fe03f67b601f4300b7d9f111701714f7",
+    "phase": "C1v3-first-stage-1080-v001-shard",
+    "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+    "time": "2026-10-15T22:08:50.103420+00:00"
+  },
+  "started_cells": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\42a591abf7dc8228e3b9141182bf937dc8ebc3d44b49fef8f458bae9eb621b3e\\STARTED.json",
+      "identity": {
+        "case_id": "v5_development_selection_mother_0005_blank_noise0",
+        "controller_version": "C1v3-first-stage-1080-v001",
+        "method": "joint_profile_C1v3_c0.1_s0.1_numerics_v2__v3",
+        "raw_sha256": "2a174cc4397f825d741533b97dc063d6cfcd6c56d053e3cb130072b8dc3b352a",
+        "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74"
+      },
+      "runtime": {
+        "deterministic_algorithms": false,
+        "device": "cuda:0",
+        "device_properties": {
+          "major": 8,
+          "minor": 9,
+          "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+          "uuid": "0f92c824-c40d-1faa-1c7d-e8df96c5282c"
+        },
+        "dtype": "torch.float64",
+        "machine": "AMD64",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "threads": 2,
+        "torch": "2.12.0+cu130",
+        "torch_cuda_build": "13.0"
+      },
+      "source_hashes_count": 42,
+      "owner": {
+        "pid": 40128,
+        "token": "82b133b572a341e89e5450d3f01e25cd"
+      }
+    }
+  ],
+  "global_charged_calls_at_observation": 5186,
+  "one_raw_denominator": 36,
+  "maximum_new_inverse_calls": 34,
+  "full_first_stage_denominator": 1080,
+  "raw_ids": [
+    "v5_development_selection_mother_0005_blank_noise0",
+    "v5_development_selection_mother_0005_positive_weak_noise0"
+  ]
+}
