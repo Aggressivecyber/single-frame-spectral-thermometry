@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-15T15:24:11.496890+00:00",
+  "time": "2026-10-15T15:27:59.461454+00:00",
   "schema": "root-integrated-repair-status-v001",
   "scope": "implemented repairs and bounded diagnostic preparation",
   "future_execution_model": "gpt-6.1-sol",
@@ -65,14 +65,14 @@
   "old_independent_raw_exact_replay": true,
   "final_payloads_opened": false,
   "final_method_selected_by_quick": false,
-  "scientific_repair_acceptance": "44/1080 frozen C1 first-stage cells finite/numerically certified; no method selection",
+  "scientific_repair_acceptance": "44/1080 cells completed and certified before current18new weak-input shard; full scientific selection pending",
   "whole_closeout_complete": false,
-  "quick_phase": "blank_shard_complete_positive_weak_prepared",
-  "launcher_pid": 28812,
-  "actual_python_pid": 42132,
-  "startup_verified_utc": "2026-10-15T13:55:12.526943+00:00",
-  "next_wake_local": "2026-10-15T23:00:00+08:00",
-  "registered_source_commit": "a524fe3b2d349e65a2d5970f9030c94ee468c408",
+  "quick_phase": "positive_weak_single_raw_running_at_verified_startup",
+  "launcher_pid": 27240,
+  "actual_python_pid": 57640,
+  "startup_verified_utc": "2026-10-15T15:25:50.151568+00:00",
+  "next_wake_local": "2026-10-16T01:30:00+08:00",
+  "registered_source_commit": "90775719cb53e06ab3e7f3fc0b058e04524cb7c7",
   "registered_source_commit_remote_verified": true,
   "science_result_for_repaired_methods": "pending",
   "no_continuous_monitoring": true,
@@ -86,11 +86,41 @@
     "full_panel_auto_started": false
   },
   "current_job": {
-    "status": "no active GPU at completed blank wake audit; positive_weak prepared, not launched",
-    "charged_new_calls": 5131,
-    "full_stage_finite": 44,
+    "phase": "C1v3_selection_first_stage_v001_positive_weak_single_raw",
+    "status_scope": "Native running verified once at startup; no continuous monitoring",
+    "launcher_pid": 27240,
+    "actual_python_pid": 57640,
+    "owner_token": "80517ac66915446187f5bfcf3efc74bb",
+    "start_utc": "2026-10-15T15:25:02.6774736Z",
+    "startup_utc": "2026-10-15T15:25:50.151568+00:00",
+    "raw_ids": [
+      "v5_development_selection_mother_0000_positive_weak_noise0"
+    ],
+    "planned_cells": 18,
+    "reused_cells": 0,
+    "maximum_new_inverse_calls": 18,
+    "maximum_inverse_wall_s_excluding_overhead": 3240,
+    "charged_before": 5131,
+    "charged_at_startup": 5132,
+    "charged_maximum_after": 5149,
+    "full_stage_completed_before": 44,
     "full_stage_planned": 1080,
-    "unexecuted": 1036
+    "full_stage_unexecuted_before": 1036,
+    "maximum_finite_after_this_shard": 62,
+    "source_commit": "90775719cb53e06ab3e7f3fc0b058e04524cb7c7",
+    "source_commit_remote_verified": true,
+    "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+    "registered_sources": 42,
+    "CPU_contracts": 45,
+    "read_dependencies": 661,
+    "human_cumulative_cap": 16000,
+    "current_stricter_legacy_guard": 12000,
+    "semantic_development_cap": 3400,
+    "semantic_development_before": 490,
+    "semantic_development_max_after": 508,
+    "next_wake_local": "2026-10-16T01:30:00+08:00",
+    "final_payloads_opened": false,
+    "no_automatic_next_shard": true
   },
   "quick_v002": {
     "raws": 2,
@@ -427,6 +457,13 @@
       "next_wake_local": "2026-10-15T23:00:00+08:00",
       "automatic_next_shard_or_confirmation": false,
       "final_payloads_opened": false
+    },
+    {
+      "status": "no active GPU at completed blank wake audit; positive_weak prepared, not launched",
+      "charged_new_calls": 5131,
+      "full_stage_finite": 44,
+      "full_stage_planned": 1080,
+      "unexecuted": 1036
     }
   ],
   "global_inverse_budget": {
@@ -453,5 +490,6 @@
     "PNG_visual_QA_passed": true,
     "PDF_visual_render_QA_performed": false,
     "seven_groups_complete": false
-  }
+  },
+  "selection_registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74"
 }
