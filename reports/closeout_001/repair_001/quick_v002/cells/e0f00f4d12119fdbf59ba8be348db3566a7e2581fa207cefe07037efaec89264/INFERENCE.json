@@ -1,0 +1,695 @@
+{
+  "registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
+  "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+  "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+  "cache_key": "e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264",
+  "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+  "info": {
+    "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+    "status": "NUMERICAL_CERTIFIED_V2",
+    "physical_objective_version": "joint-profile-v003-shared-anchor-c1-calibration",
+    "core_reported_physical_objective_version": "joint-profile-v2-shared-calibration-anchor",
+    "core_method_label_scope": "unchanged v2 numerical implementation; effective calibrated objective is C1v3",
+    "calibration_contract": {
+      "calibration_version": "continuum-c1-local-hermite-v003",
+      "physical_objective_version": "joint-profile-v003-shared-anchor-c1-calibration",
+      "physical_objective_changed": true,
+      "historical_v3_precision_upgrade": false,
+      "original_buffers_byte_identical": true,
+      "original_buffer_sha256": {
+        "temperatures": "263ea171d8a9a1eee213310110989b4742b1f238fc4bfb61c6018decbdf91619",
+        "continuum_lut": "48c0df3e48a35805c5c8687bde1f9cf25eae9f4fb706dd7d3cd824affb246ebb",
+        "color_ratio_lut": "0982da73cf0e6032ec5feaaf2372ca63e44f0bacd233f01e1038fb205371c335",
+        "M": "9f38314c69530aa519b0f1e5020673b3caf952417bd04fb6c1000cb1946629d3",
+        "q": "b92331b2ae345299e87fc7764dd2bf0054f729cc45597c18dda740308745228a",
+        "background_basis": "deffcbde23b9eacc0480066f23cfc5f1ea1b5e901b7d02eb571d913fc4f2d18c",
+        "active": "aae09aacb3cc845fb3d09a399cb8db6fa0b3e6b8002a01c1f04e09163745bdd9",
+        "op.patterns": "f7e94e3a441bf83b78be4101603ccffc9a3bfab353f8de2ed20df73adf9b0e54",
+        "op.object_otf": "13abb4dda9c996f880772d4423f504b3e12d3515bf9541e3bc7c27e2f3ae1279",
+        "op.relay_otf": "bd92d57071639b581bcf91daa13a7b3c0e756ca973bf5ad9cb3850c1fbec5318",
+        "op.decode_window": "cd8ccd884632dd6d7a2937930dc581ca161199d6f3e953e981b4a440f5e69825",
+        "op.decode_transfers": "b1a4c3855dc8d60bfad4fb875a1074387f4728833673768174c9d2ad90f0762a",
+        "op.pattern_energy": "6ff232596fb260178e6619be8326d4e93ca8519d5b77fce38192b7ce1f512d36"
+      },
+      "derived_slope_sha256": "b4ad2294126d611ae84b19e1815fe73bcd2eb77c47b30eeada1b0893eaf96c11",
+      "derived_slope_compute_device": "cpu float64, then exact device transfer",
+      "config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+      "original_config_unchanged": true,
+      "common_color_lookup_unchanged": true,
+      "interpolation": "fixed-window monotone cubic Hermite; original straight line elsewhere",
+      "internal_shared_derivative": "weighted harmonic mean of adjacent secants (PCHIP rule)",
+      "half_window_K": 0.25,
+      "window_selection": "fixed before any new real-raw inverse; calibration-only bound",
+      "extrapolation": "constant clamp outside calibration; derivative zero outside",
+      "C1_scope": "all internal knots and window seams within the closed calibrated temperature range",
+      "error_bound_per_band": "(4/27)*half_window_K*abs(shared_slope-segment_slope)",
+      "calibration_provenance": {
+        "kind": "synthetic_engineering_fixture",
+        "matrix_is_measured": false,
+        "matrix_is_derived_from_real_line_list": false,
+        "QE_is_measured": false,
+        "filter_response_is_measured": false,
+        "warning": "All matrix numbers and flat-QE band responses are software fixtures, not physical CH/C2/AlO calibration."
+      },
+      "algorithm_reference": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.PchipInterpolator.html",
+      "source_sha256": {
+        "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+        "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+        "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+      },
+      "truth_used": false,
+      "fingerprint": "acecf3ee9f3166c3e6c808173657382dfc42356a0ca5d145679a658fbc27700c"
+    },
+    "C1v3_adapter_fingerprint": "acecf3ee9f3166c3e6c808173657382dfc42356a0ca5d145679a658fbc27700c",
+    "objective_fingerprint": "2b425cec5f4b7c69ef7ca3b2d6d9c859e15d6da558b82dc9903cb608043c3758",
+    "config_fingerprint": "093a522004b0d2650af7fc78af867bbdf2fe8f7348916da3fac0f1437481cf71",
+    "anchor_regscale_contract": {
+      "version": "joint-profile-v2-shared-calibration-anchor",
+      "parameters": {
+        "grid": 256,
+        "continuum_multiplier": 1.0,
+        "template_multiplier": 1.0,
+        "anchor_temperature_K": 3300.0,
+        "anchor_amplitude": 0.5
+      },
+      "anchor_source": "fixed calibration reference; independent of initializer and labels",
+      "weight_rule": "reciprocal(max(raw_e,0)+read_noise_squared+ADC_variance)",
+      "weight_mean": 0.000165367511435882,
+      "continuum_regscale": [
+        388.25846899379235,
+        130.03532403423523
+      ],
+      "template_regularization": {
+        "postblur_prior_is_new_estimator": true,
+        "template_multiplier": 1.0,
+        "template_reference_sensitivity": 0.00013287997033383642,
+        "gradient_reference_laplacian": 0.10853323353385491,
+        "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+        "beta_penalty": "1e-6 times whitened beta column squared norm",
+        "columns_scaled": true,
+        "raw_objective_count": 1,
+        "template_object_blur_count": 0
+      },
+      "initializer_changes_physical_objective": false,
+      "regularizer_fingerprint": "9e30b839378c5b54d536708e957d21723406e53d54db28190ff4e54d944778c1"
+    },
+    "numerical_engine": {
+      "method": "joint_profile_repaired_v2",
+      "physical_objective_version": "joint-profile-v2-shared-calibration-anchor",
+      "numerical_solver_version": "joint-profile-numerics-v2-two-output-plateaus",
+      "status": "NUMERICAL_CERTIFIED_V2",
+      "numerical_certified": true,
+      "failure_reasons": [],
+      "errors": [],
+      "timed_out": false,
+      "initializer": "v3",
+      "initializer_source": "provided_cached_v3_state",
+      "cached_initializer_performed_new_inverse": false,
+      "physical_objective": {
+        "version": "joint-profile-v2-shared-calibration-anchor",
+        "parameters": {
+          "grid": 256,
+          "continuum_multiplier": 1.0,
+          "template_multiplier": 1.0,
+          "anchor_temperature_K": 3300.0,
+          "anchor_amplitude": 0.5
+        },
+        "anchor_source": "fixed calibration reference; independent of initializer and labels",
+        "weight_rule": "reciprocal(max(raw_e,0)+read_noise_squared+ADC_variance)",
+        "weight_mean": 0.000165367511435882,
+        "continuum_regscale": [
+          388.25846899379235,
+          130.03532403423523
+        ],
+        "template_regularization": {
+          "postblur_prior_is_new_estimator": true,
+          "template_multiplier": 1.0,
+          "template_reference_sensitivity": 0.00013287997033383642,
+          "gradient_reference_laplacian": 0.10853323353385491,
+          "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+          "beta_penalty": "1e-6 times whitened beta column squared norm",
+          "columns_scaled": true,
+          "raw_objective_count": 1,
+          "template_object_blur_count": 0
+        },
+        "initializer_changes_physical_objective": false,
+        "regularizer_fingerprint": "9e30b839378c5b54d536708e957d21723406e53d54db28190ff4e54d944778c1"
+      },
+      "numerical_coordinates": {
+        "version": "shared-calibration-anchor-diagonal-v2",
+        "channel_scale": [
+          0.005075040719631216,
+          0.00876938885017846
+        ],
+        "depends_on_initializer": false,
+        "depends_on_regularization_multipliers": false,
+        "changes_physical_objective": false
+      },
+      "numerical_options": {
+        "cost_limit_s": 180.0,
+        "inner_tolerance": 1e-11,
+        "reference_inner_tolerance": 1e-12,
+        "inner_maxiter": 1200,
+        "numeric_template_budget_e": 0.17,
+        "numeric_color_budget_K": 0.2,
+        "required_stable_comparisons": 2,
+        "maxls": 20,
+        "maxcor": 20,
+        "retain_evaluation_history": false,
+        "stages": [
+          {
+            "maxiter": 280,
+            "maxfun": 700,
+            "ftol": 1e-12,
+            "gtol": 0.0001
+          },
+          {
+            "maxiter": 200,
+            "maxfun": 500,
+            "ftol": 1e-13,
+            "gtol": 1e-05
+          },
+          {
+            "maxiter": 160,
+            "maxfun": 400,
+            "ftol": 1e-14,
+            "gtol": 1e-06
+          },
+          {
+            "maxiter": 160,
+            "maxfun": 400,
+            "ftol": 2e-15,
+            "gtol": 1e-07
+          }
+        ]
+      },
+      "stages": [
+        {
+          "stage": 1,
+          "complete": true,
+          "configuration": {
+            "maxiter": 280,
+            "maxfun": 700,
+            "ftol": 1e-12,
+            "gtol": 0.0001
+          },
+          "optimizer": {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "iterations": 108,
+            "function_evaluations": 113,
+            "objective": 31984.425307402074
+          },
+          "returned_endpoint_objective": 31984.425307402078,
+          "gradient": {
+            "finite": true,
+            "physical_l2": 0.6169134098439178,
+            "physical_linf": 0.01099778130360387,
+            "scaled_projected_linf": 6.468046294116903e-05
+          },
+          "requested_projected_gradient_passed": true,
+          "inner": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 2,
+            "norm_residual": 251.73771327534934,
+            "norm_normal_residual": 1.2661471293452746e-09,
+            "condition_estimate": 1.0805490575810943,
+            "actual_scaled_normal_relative": 2.7572990168287365e-12,
+            "tolerance": 1e-11,
+            "maxiter": 1200,
+            "numerical_certified": true,
+            "wall_s": 0.011354699992807582,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "tighter_inner_reference": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 5,
+            "norm_residual": 251.7377132753495,
+            "norm_normal_residual": 2.2121874561644346e-10,
+            "condition_estimate": 3.782068710438601,
+            "actual_scaled_normal_relative": 4.817582897234578e-13,
+            "tolerance": 1e-12,
+            "maxiter": 2400,
+            "numerical_certified": true,
+            "wall_s": 0.016579799994360656,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "template_inner_difference_RMS_e": 8.337608707971974e-09,
+          "finite_output": true,
+          "nonnegative_predicted_measurement": true,
+          "qualified_endpoint": true,
+          "wall_s": 14.063480800003163
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "configuration": {
+            "maxiter": 200,
+            "maxfun": 500,
+            "ftol": 1e-13,
+            "gtol": 1e-05
+          },
+          "optimizer": {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "iterations": 42,
+            "function_evaluations": 45,
+            "objective": 31984.418167712232
+          },
+          "returned_endpoint_objective": 31984.41816771223,
+          "gradient": {
+            "finite": true,
+            "physical_l2": 0.09937424378157197,
+            "physical_linf": 0.0018365093569924495,
+            "scaled_projected_linf": 9.320359769304787e-06
+          },
+          "requested_projected_gradient_passed": true,
+          "inner": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 1,
+            "norm_residual": 251.73782322146576,
+            "norm_normal_residual": 1.615125183540286e-09,
+            "condition_estimate": 1.0,
+            "actual_scaled_normal_relative": 3.516607866282257e-12,
+            "tolerance": 1e-11,
+            "maxiter": 1200,
+            "numerical_certified": true,
+            "wall_s": 0.010755900002550334,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "tighter_inner_reference": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 2,
+            "norm_residual": 251.73782322146585,
+            "norm_normal_residual": 1.537780394410268e-10,
+            "condition_estimate": 1.1096029311698001,
+            "actual_scaled_normal_relative": 3.3482194711429854e-13,
+            "tolerance": 1e-12,
+            "maxiter": 2400,
+            "numerical_certified": true,
+            "wall_s": 0.01212469999154564,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "template_inner_difference_RMS_e": 3.6693671826034177e-10,
+          "finite_output": true,
+          "nonnegative_predicted_measurement": true,
+          "qualified_endpoint": true,
+          "wall_s": 5.61892930000613
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "configuration": {
+            "maxiter": 160,
+            "maxfun": 400,
+            "ftol": 1e-14,
+            "gtol": 1e-06
+          },
+          "optimizer": {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "iterations": 49,
+            "function_evaluations": 52,
+            "objective": 31984.418051861172
+          },
+          "returned_endpoint_objective": 31984.418051861172,
+          "gradient": {
+            "finite": true,
+            "physical_l2": 0.0072499127315611474,
+            "physical_linf": 0.00016704159100561222,
+            "scaled_projected_linf": 8.477428750097715e-07
+          },
+          "requested_projected_gradient_passed": true,
+          "inner": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 4,
+            "norm_residual": 251.73773784869798,
+            "norm_normal_residual": 3.4482071077750845e-09,
+            "condition_estimate": 2.743723320809329,
+            "actual_scaled_normal_relative": 7.507222301664998e-12,
+            "tolerance": 1e-11,
+            "maxiter": 1200,
+            "numerical_certified": true,
+            "wall_s": 0.020028800005093217,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "tighter_inner_reference": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 6,
+            "norm_residual": 251.7377378486981,
+            "norm_normal_residual": 3.9936159472990695e-10,
+            "condition_estimate": 3.2152094169040413,
+            "actual_scaled_normal_relative": 8.694497722655562e-13,
+            "tolerance": 1e-12,
+            "maxiter": 2400,
+            "numerical_certified": true,
+            "wall_s": 0.019082699989667162,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          },
+          "template_inner_difference_RMS_e": 2.3267855586791786e-08,
+          "finite_output": true,
+          "nonnegative_predicted_measurement": true,
+          "qualified_endpoint": true,
+          "wall_s": 5.871454599997378
+        }
+      ],
+      "output_comparisons": [
+        {
+          "from_stage": 1,
+          "to_stage": 2,
+          "template_RMS_difference_e": 0.05401922276140217,
+          "color_RMS_difference_K": 0.0642445380296533,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": true,
+          "passed": true,
+          "consecutive_passed_comparisons": 1
+        },
+        {
+          "from_stage": 2,
+          "to_stage": 3,
+          "template_RMS_difference_e": 0.005527268941782161,
+          "color_RMS_difference_K": 0.009734018998319308,
+          "within_output_budgets": true,
+          "both_endpoints_qualified": true,
+          "passed": true,
+          "consecutive_passed_comparisons": 2
+        }
+      ],
+      "required_stable_comparisons": 2,
+      "observed_consecutive_stable_comparisons": 2,
+      "returned_stage": 3,
+      "returned_result_role": "tightest_certified_endpoint",
+      "returned_endpoint_objective": 31984.418051861172,
+      "returned_gradient": {
+        "finite": true,
+        "physical_l2": 0.0072499127315611474,
+        "physical_linf": 0.00016704159100561222,
+        "scaled_projected_linf": 8.477428750097715e-07
+      },
+      "outer_gradient_norm": 0.0072499127315611474,
+      "inner": {
+        "solver": "column-scaled augmented LSMR",
+        "istop": 2,
+        "iterations": 6,
+        "norm_residual": 251.7377378486981,
+        "norm_normal_residual": 3.9936159472990695e-10,
+        "condition_estimate": 3.2152094169040413,
+        "actual_scaled_normal_relative": 8.694497722655562e-13,
+        "tolerance": 1e-12,
+        "maxiter": 2400,
+        "numerical_certified": true,
+        "wall_s": 0.019082699989667162,
+        "regularization": {
+          "postblur_prior_is_new_estimator": true,
+          "template_multiplier": 1.0,
+          "template_reference_sensitivity": 0.00013287997033383642,
+          "gradient_reference_laplacian": 0.10853323353385491,
+          "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+          "beta_penalty": "1e-6 times whitened beta column squared norm",
+          "columns_scaled": true,
+          "raw_objective_count": 1,
+          "template_object_blur_count": 0
+        }
+      },
+      "template_inner_difference_RMS_e": 2.3267855586791786e-08,
+      "template_outer_difference_RMS_e": 0.005527268941782161,
+      "color_outer_difference_RMS_K": 0.009734018998319308,
+      "outer_history_summary": {
+        "evaluations": 213,
+        "first": {
+          "evaluation": 1,
+          "objective": 196351.4127342486,
+          "gradient_norm": 5427.762760798182,
+          "inner": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 29,
+            "norm_residual": 250.34805653809465,
+            "norm_normal_residual": 4.393144212563733e-09,
+            "condition_estimate": 4.0909995290504515,
+            "actual_scaled_normal_relative": 1.2903978962166148e-11,
+            "tolerance": 1e-11,
+            "maxiter": 1200,
+            "numerical_certified": true,
+            "wall_s": 0.11785290000261739,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          }
+        },
+        "last": {
+          "evaluation": 213,
+          "objective": 31984.418051861172,
+          "gradient_norm": 0.007249907268713532,
+          "inner": {
+            "solver": "column-scaled augmented LSMR",
+            "istop": 2,
+            "iterations": 4,
+            "norm_residual": 251.73773784869798,
+            "norm_normal_residual": 3.4482071077750845e-09,
+            "condition_estimate": 2.743723320809329,
+            "actual_scaled_normal_relative": 7.507222301664998e-12,
+            "tolerance": 1e-11,
+            "maxiter": 1200,
+            "numerical_certified": true,
+            "wall_s": 0.020028800005093217,
+            "regularization": {
+              "postblur_prior_is_new_estimator": true,
+              "template_multiplier": 1.0,
+              "template_reference_sensitivity": 0.00013287997033383642,
+              "gradient_reference_laplacian": 0.10853323353385491,
+              "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+              "beta_penalty": "1e-6 times whitened beta column squared norm",
+              "columns_scaled": true,
+              "raw_objective_count": 1,
+              "template_object_blur_count": 0
+            }
+          }
+        },
+        "minimum_recorded_objective": 31984.418051861172
+      },
+      "outer_history": [],
+      "objective_evaluations": 213,
+      "finite_output": true,
+      "nonnegative_predicted_measurement": true,
+      "truth_used": false,
+      "fixed_weight": true,
+      "raw_objective_count": 1,
+      "regularizer_frozen_during_all_stages": true,
+      "certification_scope": "two successive tighter-output plateaus and endpoint checks; not a global-optimum proof",
+      "historical_results_reinterpreted": false,
+      "wall_s": 26.05163360000006
+    },
+    "numerical_certified": true,
+    "truth_used": false,
+    "old_results_relabelled": false,
+    "continuum_latent_cache_rule": "reconstruct from z_grid with frozen measurement.continuum and C1v3 physics; no inverse",
+    "parameter_cache_receipt": {
+      "registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__v3",
+      "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "cache_key": "e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264",
+      "parameter_cache": {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v002\\parameters\\e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264.npz",
+        "sha256": "57c2174bc07ca2a0feffa4a7c1ecf9e0df9e103986bac75aef0448f1c2dd16c3"
+      },
+      "parameter_metadata": {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v002\\parameters\\e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264.metadata.json",
+        "sha256": "f6a5e6e6c982748225ca745d63e5911a4c7e1f96d0505f73cec5b8ac58c3f367"
+      },
+      "parameter_bytes": 975907,
+      "parameters_finite": true,
+      "C1v3_adapter_fingerprint": "acecf3ee9f3166c3e6c808173657382dfc42356a0ca5d145679a658fbc27700c",
+      "config_fingerprint": "093a522004b0d2650af7fc78af867bbdf2fe8f7348916da3fac0f1437481cf71",
+      "objective_fingerprint": "2b425cec5f4b7c69ef7ca3b2d6d9c859e15d6da558b82dc9903cb608043c3758"
+    }
+  },
+  "finite_output": true,
+  "production_numerical_certified": true,
+  "predicted_measurement_nonnegative": true,
+  "calibration_status": "calibration_assumed_not_verified",
+  "array_sha256": {
+    "T": "44c9a1b4f2e88318e99e96b39efbc2b275ef39475718902a037a387cbd29a82f",
+    "u": "942b6949a826e291267c8aabcd98767ea305ce6b18608f9786c15678dd9ee49c",
+    "C": "bb624d6bdfa931f3a419f84ef2bdc23371d23f2eb987c821dce33362d0627c10",
+    "predicted_raw_e": "61810a732facdbdacff8f99a3232c2fe8659ff2e13153b6032a8bfe849022499",
+    "valid": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03",
+    "low_signal": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+  },
+  "array_shapes": {
+    "T": [
+      1,
+      256,
+      256
+    ],
+    "u": [
+      1,
+      256,
+      256
+    ],
+    "C": [
+      1,
+      7,
+      256,
+      256
+    ],
+    "predicted_raw_e": [
+      1,
+      256,
+      256
+    ],
+    "valid": [
+      1,
+      256,
+      256
+    ],
+    "low_signal": [
+      1,
+      256,
+      256
+    ]
+  },
+  "canonical_dtype": "float64",
+  "truth_loaded_before_persisting": false,
+  "output_cache": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v002\\e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264.npz",
+    "sha256": "9bdf1a4c5f49e06228fdeaae9469c7b55ea237eebe13992297a815fb38a4e033"
+  },
+  "output_bytes": 4839866,
+  "output_metadata": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v002\\e0f00f4d12119fdbf59ba8be348db3566a7e2581fa207cefe07037efaec89264.output.json",
+    "sha256": "ca1eac8686d63f1f0f40944fd741ec90b500119d8ceecb2b58e0d799686037f8"
+  },
+  "total_output_bytes": 5824805,
+  "inference_status": "RETURNED",
+  "inference_attempted": true,
+  "time": "2026-10-15T07:30:24.604356+00:00",
+  "wall_s": 26.589300299994648,
+  "initializer_provenance": {
+    "kind": "same_raw_frozen_v3_state_beta",
+    "new_complete_inverse_calls": 0,
+    "raw_file_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+    "raw_array_sha256": "0acf0af9b56133945572b8c95c267ce8c59a4896128e18339765fa6d0f279c85",
+    "original_raw_dtype": "uint16",
+    "inference_input_array_sha256": "532dd44e1b7644ae2037dfbd800274893085b58a899bbf20758644ee06583468",
+    "source_input_dtype": "torch.float32",
+    "array_hash_scope": "original camera dtype and source floating dtype are recorded separately",
+    "truth_or_identity_used": false,
+    "state_cache": {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\outputs\\research_v6\\repair_001\\stage_a\\source_states\\C_v3\\v5_development_selection_mother_0000_positive_normal_noise0.npz",
+      "sha256": "40f1dcf30b1dde076eb38d4b273b1de846414433b557f5cd5654980d4028d269",
+      "bytes": 710903
+    },
+    "receipt_journal": {
+      "path": "E:\\CodexWork\\thermometry\\public_repository_001\\reports\\research_v6\\repair_001\\source_inference_receipts.jsonl",
+      "sha256": "2f15576808e1241cfc47937db6314ccbd133e1bd9ed789dec7f6ed90443c57ec",
+      "line": 23
+    },
+    "source_metadata": {
+      "source": "C_v3",
+      "mode": "new_frozen_inference",
+      "wall_s": 3.6781585999997333,
+      "raw_array_sha256": "532dd44e1b7644ae2037dfbd800274893085b58a899bbf20758644ee06583468",
+      "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d",
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "truth_or_identity_used": false,
+      "optimizer_updates": 0,
+      "continuum_domain": "latent; postblur formed once",
+      "peak_CPU_RSS_MiB": null,
+      "CPU_peak_scope": "process lifetime high-water mark",
+      "peak_GPU_allocated_MiB": 80.15576171875,
+      "GPU_peak_scope": "process counter since most recent reset",
+      "engine_seconds": 3.66357550000248,
+      "source_sha256": {
+        "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+        "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+        "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+        "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+        "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a"
+      },
+      "consumed_selection_sha256": "e8a00514ef2b761d1dbd531adbda957d09d4f2883382574dc6a4f75ff35bf667",
+      "solver_config_sha256": "6b1da0b81507afa9e68bcec97fcef95ab9c454371473a1b2681cbfa75766d961",
+      "method": "old_init__joint_update_v3",
+      "backbone_selection_sha256": "d4f6cb17450308717623821995c7d2ab10d487d560c87c3f8979418708b64f71"
+    },
+    "original_dtype_roundtrip_verified": true,
+    "source_dtype_roundtrip_verified": true,
+    "source_input_array_hash_verified": true
+  }
+}

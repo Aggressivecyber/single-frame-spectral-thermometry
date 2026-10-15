@@ -1,0 +1,144 @@
+{
+  "metric_schema": "closeout-fixed-domain-explicit-status-v2",
+  "status": "FINITE_NUMERICALLY_CERTIFIED",
+  "metrics": {
+    "domain_pixels": 65536,
+    "accepted_pixels": 65536,
+    "valid_fraction": 1.0,
+    "full_FOV_valid_fraction": 1.0,
+    "nonfinite_domain_pixels": 0,
+    "nonfinite_output_pixels": 0,
+    "temperature_out_of_bounds_pixels": 0,
+    "template_SSE": 39314649.43168248,
+    "template_truth_energy": 40646556.794136174,
+    "template_error_sum": 16033.055397696204,
+    "template_RMSE_e": 24.49273244748692,
+    "template_bias_e": 0.24464501034082342,
+    "template_relative_L2": 0.9834795247781614,
+    "temperature_SSE_K2": 3959869.5647900486,
+    "temperature_error_sum_K": 57877.838817825395,
+    "temperature_RMSE_K": 7.773211331499037,
+    "temperature_bias_K": 0.8831457339145721,
+    "temperature_truth_role": "postblur continuum color temperature",
+    "conditional_template_RMSE_e": 24.49273244748692,
+    "conditional_temperature_RMSE_K": 7.773211331499037,
+    "support_fraction_of_absolute_peak": 0.2,
+    "signed_projection": 1.0051655342309271,
+    "signed_projection_numerator": 40856517.97462561,
+    "orthogonal_template_RMSE_e": 24.492394608255584,
+    "support_pixels": 5632,
+    "sign_correct_pixels": 5516,
+    "sign_recall": 0.9794034090909091,
+    "positive_support_pixels": 5632,
+    "negative_support_pixels": 0,
+    "raw_pixels": 65536,
+    "raw_weighted_SSE": 63341.70959901659,
+    "raw_weighted_RMSE": 0.983116364236465,
+    "raw_RMSE_e": 80.84418855602239,
+    "raw_residual_target": "same observed raw, fixed variance from observed raw",
+    "temperature_reference_color_RMSE_K": 7.773211331499037,
+    "temperature_reference_color_bias_K": 0.8831457339145721,
+    "temperature_reference_color_comparison_pixels": 65536,
+    "temperature_latent_truth_RMSE_K": 28.513664605243548,
+    "temperature_latent_truth_bias_K": 5.750720906249482,
+    "temperature_latent_truth_comparison_pixels": 65536,
+    "legacy_positive_detected_pixels": 3308,
+    "legacy_null_pixel_FP_count": null,
+    "legacy_threshold_e": 60.0,
+    "legacy_frame_detected": true,
+    "legacy_signed_detected_pixels": 3308,
+    "legacy_negative_detected_pixels": 0,
+    "legacy_frame_threshold": 60.0,
+    "legacy_z_threshold": null,
+    "legacy_positive_recall": 0.5873579545454546,
+    "legacy_signed_recall_unconditional": 0.5873579545454546,
+    "legacy_frame_detection_score_kind": "full_FOV_99th_percentile_absolute_template_e",
+    "legacy_null_pixel_FP": null,
+    "legacy_null_FOV_FPR_control_claimed": false,
+    "legacy_null_frame_FP": null,
+    "legacy_signed_recall_rule": "correct sign and threshold crossed and valid; denominator is fixed truth support",
+    "legacy_frame_detection_score": 132.67346854377732,
+    "legacy_negative_recall": null,
+    "legacy_signed_recall": 0.5873579545454546,
+    "frame_detection_v2": {
+      "schema": "frame-dictionary-decision-v2",
+      "dictionary_id": "gaussian-9centers-3scales-absolute-L2-v1",
+      "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+      "score": 6100.518491416759,
+      "detected": null,
+      "threshold_crossed": null,
+      "threshold": null,
+      "status": "THRESHOLD_NOT_ATTACHED",
+      "inference_reads_truth": false,
+      "calibration_applicability": "UNVERIFIED",
+      "false_positive_rate_guaranteed": false
+    },
+    "matched_dictionary_frame_score": 6100.518491416759,
+    "predicted_measurement_nonnegative": true,
+    "raw_saturated_pixels": 0,
+    "raw_lower_clipped_pixels": 0,
+    "structure": {
+      "prediction": {
+        "absolute_peak_e": 200.69709020088936,
+        "signed_integral_e_px": 578287.3048499295,
+        "absolute_integral_e_px": 1585386.8930006714,
+        "absolute_mass_RMS_radius_px": 90.60538320021521,
+        "absolute_mass_centroid_xy_px": [
+          138.67357602255512,
+          123.93893356098725
+        ]
+      },
+      "target": {
+        "absolute_peak_e": 152.90687561035156,
+        "signed_integral_e_px": 562254.2494522333,
+        "absolute_integral_e_px": 562254.2494522333,
+        "absolute_mass_RMS_radius_px": 39.6973730986577,
+        "absolute_mass_centroid_xy_px": [
+          137.726577389104,
+          124.03270551234247
+        ]
+      },
+      "width_definition": "absolute-mass radial RMS; noise outside structure contributes and is retained"
+    }
+  },
+  "production_numerical_certified": true,
+  "legacy_metric_status": "SUCCESS",
+  "finite_scoring_passed": true,
+  "finite_scoring_definition": "all finite, within temperature bounds and not abstained; no solver convergence assertion",
+  "finite_output": true,
+  "finite_output_definition": "all template, color-temperature and predicted-raw values finite; independent of scoring truth, bounds and abstention",
+  "v001_output_comparison": {
+    "old_method": "joint_c1_s1_repaired_v2__smooth_demod",
+    "old_output_cache": {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\quick_v001\\b0cf68c2d6ffbbb3c7fa2ec4e68d691441538179132f39b8aa17d80e5e448233.npz",
+      "sha256": "1beb3a35479c70db73d81be512f4fa95b89e587b5dd30f4ed2a65b42a0aea199"
+    },
+    "differences": {
+      "T": {
+        "RMS": 0.012368028070736616,
+        "maximum_absolute": 0.04463230453438882
+      },
+      "u": {
+        "RMS": 0.0214832361600533,
+        "maximum_absolute": 0.08293181172290431
+      },
+      "C": {
+        "RMS": 0.01293523606048396,
+        "maximum_absolute": 0.0839312125235665
+      },
+      "predicted_raw_e": {
+        "RMS": 0.007047527536579368,
+        "maximum_absolute": 0.06002845224702469
+      }
+    },
+    "truth_used_for_comparison": false,
+    "old_numerical_certification": false
+  },
+  "registration_sha256": "ca38b8b37448ef3dd809531ba2a9bdcacf5ae7208c24292883e51d0b625eac97",
+  "method": "joint_profile_C1v3_c1_s1_numerics_v2__smooth_demod",
+  "raw_sha256": "12e984c3bafe8f04ca389abf55b64e4932b5c034ed6d895740e25b78a0775d60",
+  "cache_key": "69b0fa0a5c9d6a29992abc06f631a0851ff2bb4ff1958015441bce7bc0760da2",
+  "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+  "time": "2026-10-15T07:30:52.612456+00:00",
+  "truth_loaded_after_inference": true
+}
