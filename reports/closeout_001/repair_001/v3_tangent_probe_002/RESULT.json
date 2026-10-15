@@ -1,0 +1,981 @@
+{
+  "schema": "v3-native-fixed-tangent-probe-v2-batch64-result",
+  "time": "2026-10-15T09:41:40.424689+00:00",
+  "registration_sha256": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+  "status": "PROBE_COMPLETE",
+  "planned_new_cells": 2,
+  "returned_new_cells": 2,
+  "attempted_new_cells": 2,
+  "converged_new_cells": 2,
+  "failed_or_unattempted_new_cells": 0,
+  "rows": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "route": "coupled_fourier_v2_batch64",
+      "registration_sha256": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+      "attempted": true,
+      "converged": true,
+      "iterations": 544,
+      "pcg_started": true,
+      "counts": {
+        "JVP": 553,
+        "VJP": 546,
+        "normal": 546,
+        "precondition": 544
+      },
+      "whole_inverse_calls": 0,
+      "reused_old_control": {
+        "cell": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_00_old_block_diagonal.json",
+          "sha256": "582a3fb2bbecb8862f19f1a9c980bffe3d505a1216591a943a64880fb0378906"
+        },
+        "system": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_00.json",
+          "sha256": "e53e66f63bddebb3d67f7b99fb56ba7e41be27ccf7532e53b069f0d1c467b564"
+        }
+      },
+      "direct_solution_difference": null,
+      "system_identity_match": true,
+      "system_fingerprint": "379b5fb9aa5e959a05e9428a54b5e83974bca6d3f44419cbf047c16fe84785c8",
+      "setup_counts": {
+        "JVP": 0,
+        "VJP": 1,
+        "normal": 0,
+        "precondition": 0
+      },
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "maxiter": 2000,
+      "rtol": 1e-10,
+      "initial_rhs_norm": 3376.467653208225,
+      "true_residual_norm": 3.3432213703461545e-07,
+      "true_relative_residual": 9.901535313597686e-11,
+      "true_residual_recomputed": true,
+      "residual_restarts": 0,
+      "sampled_recursive_history": [
+        {
+          "iteration": 1,
+          "recursive_relative_residual": 0.32192578258441
+        },
+        {
+          "iteration": 2,
+          "recursive_relative_residual": 0.0448403724995089
+        },
+        {
+          "iteration": 3,
+          "recursive_relative_residual": 0.033000697334707105
+        },
+        {
+          "iteration": 4,
+          "recursive_relative_residual": 0.024238367272939
+        },
+        {
+          "iteration": 5,
+          "recursive_relative_residual": 0.028431102385040798
+        },
+        {
+          "iteration": 6,
+          "recursive_relative_residual": 0.02507823160536202
+        },
+        {
+          "iteration": 7,
+          "recursive_relative_residual": 0.023003852392406765
+        },
+        {
+          "iteration": 8,
+          "recursive_relative_residual": 0.018234331558036374
+        },
+        {
+          "iteration": 100,
+          "recursive_relative_residual": 0.0009140151807936405
+        },
+        {
+          "iteration": 200,
+          "recursive_relative_residual": 3.061078574055248e-05
+        },
+        {
+          "iteration": 300,
+          "recursive_relative_residual": 1.8510801484910273e-06
+        },
+        {
+          "iteration": 400,
+          "recursive_relative_residual": 4.6938441124391386e-08
+        },
+        {
+          "iteration": 500,
+          "recursive_relative_residual": 6.578679458069591e-10
+        }
+      ],
+      "error": null,
+      "audit_error": null,
+      "wall_s": 86.29615019998164,
+      "wall_limit_s": 120.0,
+      "preconditioner_metadata": {
+        "schema": "v3-coupled-fourier-preconditioner-v2-batch64",
+        "backend_batch_limit": 64,
+        "same_frequency_symbol_as_v1": true,
+        "GPU_qualification": "requires separate native CUDA receipt",
+        "active_field_indices": [
+          0,
+          1,
+          4
+        ],
+        "packed_field_count": 5,
+        "beta_count": 3,
+        "shape": [
+          256,
+          256
+        ],
+        "dtype": "torch.float64",
+        "device": "cuda:0",
+        "mean_spectral_jacobian": [
+          [
+            1285.5042957419182,
+            1644.3582157045912,
+            1429.5457217725398,
+            2992.8026980756813,
+            3510.2248879453355,
+            7830.468394110401,
+            9878.414039671943
+          ],
+          [
+            383.05003475566394,
+            511.22632778984007,
+            477.61102703806273,
+            1052.073454907622,
+            1283.6846569960321,
+            3690.500711379516,
+            5926.349013364974
+          ],
+          [
+            4.799999892711639,
+            20.99999964237213,
+            60.0,
+            45.0,
+            13.199999928474426,
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_raw_weight": 0.000165367511435882,
+        "field_damping_diagonal_mean": [
+          11087.73495805708,
+          3125.5724921923984,
+          0.35247629437175537
+        ],
+        "beta_damping_diagonal": [
+          148075.33893894556,
+          49745.57029760424,
+          49745.57029760424
+        ],
+        "original_prior_coefficients": [
+          1e-05,
+          1e-05,
+          0.0,
+          0.0,
+          0.1
+        ],
+        "numerical_damping": 0.001,
+        "scaling_definition": "original p.preconditioner_diagonal, packed without changing the prior or adding damping",
+        "frequency_symbol": "mean(W)*|H(k)|^2*(|R(k)|^2*c_DC*c_DC^T + sum_band(gain*depth/4)^2*(|R(k+carrier)|^2+|R(k-carrier)|^2)*j_band*j_band^T) + Lambda*L(k) + damping*mean(D)",
+        "shared_data_DC_cross_band_terms_retained": true,
+        "relay_shifts_on_native_torus": true,
+        "FFT_norm": "ortho",
+        "frequency_even_pairing_max_original_difference": 0.0,
+        "nonzero_frequency_block_eigenvalue_min": 0.013461882187135421,
+        "nonzero_frequency_block_eigenvalue_max": 37179.18239806217,
+        "object_OTF_zero_frequency_count": 64383,
+        "low_mode_basis": "three orthonormal constant fields (1/sqrt(HW)), then three original beta coordinate vectors",
+        "low_mode_jvp_columns": 6,
+        "low_mode_undamped_Gram": [
+          [
+            30360.66443139419,
+            14099.359171903236,
+            155.47838792096707,
+            123588.2682452319,
+            -2753.956257986975,
+            244.28044676259586
+          ],
+          [
+            14099.359171903236,
+            6576.693047089054,
+            70.99033095935003,
+            56415.28899231341,
+            68.06459511013385,
+            -14.831803666869176
+          ],
+          [
+            155.47838792096704,
+            70.99033095935003,
+            0.8964995055045002,
+            695.1388838248686,
+            -77.21869971407688,
+            3.2089018477311884
+          ],
+          [
+            123588.2682452319,
+            56415.288992313406,
+            695.1388838248686,
+            553450.2039269891,
+            -61406.521305469665,
+            2607.009776943658
+          ],
+          [
+            -2753.956257986975,
+            68.0645951101339,
+            -77.21869971407688,
+            -61406.52130546967,
+            147322.90966006182,
+            485.96710646198676
+          ],
+          [
+            244.2804467625904,
+            -14.831803666869174,
+            3.2089018477311884,
+            2607.009776943658,
+            485.9671064619897,
+            144059.54037527245
+          ]
+        ],
+        "low_mode_block": [
+          [
+            30371.75216635225,
+            14099.359171903236,
+            155.47838792096707,
+            123588.2682452319,
+            -2753.956257986975,
+            244.28044676259313
+          ],
+          [
+            14099.359171903236,
+            6579.818619581246,
+            70.99033095935003,
+            56415.288992313406,
+            68.06459511013387,
+            -14.831803666869174
+          ],
+          [
+            155.47838792096707,
+            70.99033095935003,
+            0.8968519817988719,
+            695.1388838248686,
+            -77.21869971407688,
+            3.2089018477311884
+          ],
+          [
+            123588.2682452319,
+            56415.288992313406,
+            695.1388838248686,
+            553598.2792659281,
+            -61406.521305469665,
+            2607.009776943658
+          ],
+          [
+            -2753.956257986975,
+            68.06459511013387,
+            -77.21869971407688,
+            -61406.521305469665,
+            147372.65523035944,
+            485.96710646198824
+          ],
+          [
+            244.28044676259313,
+            -14.831803666869174,
+            3.2089018477311884,
+            2607.009776943658,
+            485.96710646198824,
+            144109.28594557007
+          ]
+        ],
+        "low_mode_equilibrated_eigenvalues": [
+          0.0009669739990368001,
+          0.012542015882648874,
+          0.07489263436513317,
+          0.9997925813207696,
+          1.0238620970273102,
+          3.887943697405102
+        ],
+        "factorization": "per-block diagonal equilibration and Cholesky; no added ridge or eigenvalue clipping",
+        "self_adjoint_positive_scope": "three active fields and all three beta coordinates; inactive field vectors map to zero",
+        "bound_active_mask": "caller must restrict the exact step system and preconditioner to free variables",
+        "exact_Hessian_inverse_claimed": false,
+        "original_objective_changed": false,
+        "physical_constraints_changed": false,
+        "inference_reads_truth": false,
+        "complete_inverse_calls": 0,
+        "full_parameter_linearization_frozen_at_build": true,
+        "input_sha256": {
+          "state": "48cda18dc55ddbf2764440ddeb5095d955b92370662942385fd6619340beaf01",
+          "beta": "7a312ffed9ecf8604ca5cc11783f3cd74f78b3767caaccc86a4406be20ed098f",
+          "W": "bae207d42826871f5d41c1e18b583fa1a73d9fe40edd41b6fd050cd5be9ba7ea",
+          "strength": "737be9f3c3a66c2c82980c81b4f99b396afc2cf3fa356190f9cd0b620064a1c1",
+          "mean_spectral_jacobian": "beabc628009652d06a69154ee0a9f80b24695355554cc625615f7fc4d98b4e0d"
+        },
+        "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d"
+      },
+      "linear_outputs": {
+        "raw_linear_RMS_e": 2.173815275784086,
+        "template_postblur_linear_RMS_e_ref": 0.3223870280725507,
+        "color_linear_RMS_K": 0.24476445979260136,
+        "color_linear_available_fraction": 1.0,
+        "latent_temperature_linear_RMS_K": 2.150070873939712,
+        "beta_linear_L2": 0.00498656000922379
+      },
+      "step_array_sha256": "3bb8810c5688e8dc8e710102bec99e958949c2a0e1f322271cb3310916c41f03",
+      "step_saved": false,
+      "comparison": {
+        "direct_solution_difference": null,
+        "direct_linear_output_difference": null,
+        "old_step_array_available": false,
+        "analytic_condition": "same exact symmetric system A_F; recorded recomputed residual estimates represent its true residuals; finite-precision FFT/reduction roundoff is not enclosed",
+        "interval_arithmetic_certified": false,
+        "step_L2_upper_bound": 0.0016990333818043045,
+        "linear_output_RMS_upper_bounds": {
+          "raw_linear_RMS_e": 4.347630551378774,
+          "template_postblur_linear_RMS_e_ref": 0.6447740557388526,
+          "color_linear_RMS_K": 0.489528919414561,
+          "latent_temperature_linear_RMS_K": 4.300141748027696,
+          "beta_linear_L2": 0.009973120011458815
+        },
+        "proof": "A_F=F(J^T W J+Lambda L+mu D)F >= mu*min(D_free) I. A_F(x_old-x_new)=r_new-r_old, so norm(step_difference)<= (norm(r_old)+norm(r_new))/(mu*min(D_free)). For the same fixed linear output map L, RMS(L step_difference)<=RMS(L x_old)+RMS(L x_new) by the triangle inequality.",
+        "bound_is_nonlinear_accuracy_or_uncertainty": false,
+        "both_stopping_tests_passed": true,
+        "spectral_lower_bound": 0.0003524762943717555,
+        "minimum_free_D": 0.3524762943717555,
+        "linear_bound_kind": "conservative same-map triangle bound; not an observed difference or a sensitivity-tightened bound"
+      },
+      "case_total_counts": {
+        "JVP": 553,
+        "VJP": 547,
+        "normal": 546,
+        "precondition": 544
+      },
+      "native_GPU_qualified": true
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "route": "coupled_fourier_v2_batch64",
+      "registration_sha256": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+      "attempted": true,
+      "converged": true,
+      "iterations": 689,
+      "pcg_started": true,
+      "counts": {
+        "JVP": 698,
+        "VJP": 691,
+        "normal": 691,
+        "precondition": 689
+      },
+      "whole_inverse_calls": 0,
+      "reused_old_control": {
+        "cell": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_01_old_block_diagonal.json",
+          "sha256": "6ca1558eb5c288c722f0256376c2b65fdc4f38cc6922ea117933e02252f748c6"
+        },
+        "system": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_01.json",
+          "sha256": "fa23187b1028f6d972c78101c67bb78991b720c90e4d620a4dd918ea8c39bfe5"
+        }
+      },
+      "direct_solution_difference": null,
+      "system_identity_match": true,
+      "system_fingerprint": "39b8dcfc5bc186640799809db2ba85fa7ea0b0bd922d2aaf7f035e58f8085bf4",
+      "setup_counts": {
+        "JVP": 0,
+        "VJP": 1,
+        "normal": 0,
+        "precondition": 0
+      },
+      "status": "CONVERGED_TRUE_RESIDUAL",
+      "maxiter": 2000,
+      "rtol": 1e-10,
+      "initial_rhs_norm": 820.4827705684667,
+      "true_residual_norm": 8.182118737770597e-08,
+      "true_relative_residual": 9.972322431708912e-11,
+      "true_residual_recomputed": true,
+      "residual_restarts": 0,
+      "sampled_recursive_history": [
+        {
+          "iteration": 1,
+          "recursive_relative_residual": 0.9592887992451687
+        },
+        {
+          "iteration": 2,
+          "recursive_relative_residual": 0.20854427059098726
+        },
+        {
+          "iteration": 3,
+          "recursive_relative_residual": 0.06333093672712861
+        },
+        {
+          "iteration": 4,
+          "recursive_relative_residual": 0.12742711340583818
+        },
+        {
+          "iteration": 5,
+          "recursive_relative_residual": 0.15740437508872943
+        },
+        {
+          "iteration": 6,
+          "recursive_relative_residual": 0.10603934341299115
+        },
+        {
+          "iteration": 7,
+          "recursive_relative_residual": 0.07420362179907455
+        },
+        {
+          "iteration": 8,
+          "recursive_relative_residual": 0.18132065550489382
+        },
+        {
+          "iteration": 100,
+          "recursive_relative_residual": 0.0027700755471627993
+        },
+        {
+          "iteration": 200,
+          "recursive_relative_residual": 0.00013892918564752785
+        },
+        {
+          "iteration": 300,
+          "recursive_relative_residual": 8.191155007327735e-06
+        },
+        {
+          "iteration": 400,
+          "recursive_relative_residual": 9.297799618474457e-07
+        },
+        {
+          "iteration": 500,
+          "recursive_relative_residual": 2.6788175932952857e-08
+        },
+        {
+          "iteration": 600,
+          "recursive_relative_residual": 2.301696338088476e-09
+        }
+      ],
+      "error": null,
+      "audit_error": null,
+      "wall_s": 108.00024399999529,
+      "wall_limit_s": 120.0,
+      "preconditioner_metadata": {
+        "schema": "v3-coupled-fourier-preconditioner-v2-batch64",
+        "backend_batch_limit": 64,
+        "same_frequency_symbol_as_v1": true,
+        "GPU_qualification": "requires separate native CUDA receipt",
+        "active_field_indices": [
+          0,
+          1,
+          4
+        ],
+        "packed_field_count": 5,
+        "beta_count": 3,
+        "shape": [
+          256,
+          256
+        ],
+        "dtype": "torch.float64",
+        "device": "cuda:0",
+        "mean_spectral_jacobian": [
+          [
+            552.6505914020094,
+            734.6072056873084,
+            680.1716643129312,
+            1486.3632872518772,
+            1800.7101195198356,
+            4850.067751641625,
+            7097.274442339371
+          ],
+          [
+            142.24615061168436,
+            196.69070214738377,
+            194.73080426464045,
+            446.21766647149263,
+            560.9053639079323,
+            1918.2177764943476,
+            3536.660442461288
+          ],
+          [
+            4.799999892711639,
+            20.99999964237213,
+            60.0,
+            45.0,
+            13.199999928474426,
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_raw_weight": 0.00034318554492902896,
+        "field_damping_diagonal_mean": [
+          10550.260714654363,
+          2351.520955319892,
+          0.7314905334681615
+        ],
+        "beta_damping_diagonal": [
+          307299.2720460458,
+          103236.48522102811,
+          103236.48522102811
+        ],
+        "original_prior_coefficients": [
+          1e-05,
+          1e-05,
+          0.0,
+          0.0,
+          0.1
+        ],
+        "numerical_damping": 0.001,
+        "scaling_definition": "original p.preconditioner_diagonal, packed without changing the prior or adding damping",
+        "frequency_symbol": "mean(W)*|H(k)|^2*(|R(k)|^2*c_DC*c_DC^T + sum_band(gain*depth/4)^2*(|R(k+carrier)|^2+|R(k-carrier)|^2)*j_band*j_band^T) + Lambda*L(k) + damping*mean(D)",
+        "shared_data_DC_cross_band_terms_retained": true,
+        "relay_shifts_on_native_torus": true,
+        "FFT_norm": "ortho",
+        "frequency_even_pairing_max_original_difference": 0.0,
+        "nonzero_frequency_block_eigenvalue_min": 0.016825804471482027,
+        "nonzero_frequency_block_eigenvalue_max": 26908.337079484245,
+        "object_OTF_zero_frequency_count": 64383,
+        "low_mode_basis": "three orthonormal constant fields (1/sqrt(HW)), then three original beta coordinate vectors",
+        "low_mode_jvp_columns": 6,
+        "low_mode_undamped_Gram": [
+          [
+            21222.048761173894,
+            8550.374752394086,
+            183.46183623505877,
+            145734.24336666794,
+            1708.5329163238164,
+            1249.4871805191262
+          ],
+          [
+            8550.374752394086,
+            3477.2910050359665,
+            71.58908975480755,
+            56862.95421045241,
+            186.41789317897155,
+            261.4523597043813
+          ],
+          [
+            183.46183623505877,
+            71.58908975480755,
+            1.8731588884894728,
+            1451.8803078844835,
+            44.35051113009245,
+            20.54450234561708
+          ],
+          [
+            145734.24336666794,
+            56862.95421045241,
+            1451.8803078844835,
+            1155626.3334301459,
+            35500.46143669991,
+            16353.106887869666
+          ],
+          [
+            1708.5329163238166,
+            186.41789317897155,
+            44.350511130092436,
+            35500.46143669991,
+            298225.8229475383,
+            3059.3761166150584
+          ],
+          [
+            1249.487180519126,
+            261.4523597043812,
+            20.54450234561714,
+            16353.106887869666,
+            3059.3761166150575,
+            272602.14947853494
+          ]
+        ],
+        "low_mode_block": [
+          [
+            21232.59902188855,
+            8550.374752394086,
+            183.46183623505877,
+            145734.24336666794,
+            1708.5329163238166,
+            1249.487180519126
+          ],
+          [
+            8550.374752394086,
+            3479.642525991286,
+            71.58908975480755,
+            56862.95421045241,
+            186.41789317897155,
+            261.45235970438125
+          ],
+          [
+            183.46183623505877,
+            71.58908975480755,
+            1.8738903790229409,
+            1451.8803078844835,
+            44.35051113009244,
+            20.54450234561711
+          ],
+          [
+            145734.24336666794,
+            56862.95421045241,
+            1451.8803078844835,
+            1155933.6327021918,
+            35500.46143669991,
+            16353.106887869666
+          ],
+          [
+            1708.5329163238166,
+            186.41789317897155,
+            44.35051113009244,
+            35500.46143669991,
+            298329.0594327593,
+            3059.376116615058
+          ],
+          [
+            1249.487180519126,
+            261.45235970438125,
+            20.54450234561711,
+            16353.106887869666,
+            3059.376116615058,
+            272705.38596375595
+          ]
+        ],
+        "low_mode_equilibrated_eigenvalues": [
+          0.0017056093349749832,
+          0.013291364571579723,
+          0.1745649928512168,
+          0.9896408535525337,
+          1.0108947571914233,
+          3.809902422498271
+        ],
+        "factorization": "per-block diagonal equilibration and Cholesky; no added ridge or eigenvalue clipping",
+        "self_adjoint_positive_scope": "three active fields and all three beta coordinates; inactive field vectors map to zero",
+        "bound_active_mask": "caller must restrict the exact step system and preconditioner to free variables",
+        "exact_Hessian_inverse_claimed": false,
+        "original_objective_changed": false,
+        "physical_constraints_changed": false,
+        "inference_reads_truth": false,
+        "complete_inverse_calls": 0,
+        "full_parameter_linearization_frozen_at_build": true,
+        "input_sha256": {
+          "state": "eb5dc5f12f9302ffc3dd298ffd8bc360d19f3090f52d3a96b044c80e0b15283c",
+          "beta": "7db8ddc82d9e70aea2b5ec085412f39c5d1808e1cc83715402f93a26c518b11e",
+          "W": "47879a9659f77dc9cf39e940d06aa8b1a90eacc709ea35036fb455fd6bc125f3",
+          "strength": "737be9f3c3a66c2c82980c81b4f99b396afc2cf3fa356190f9cd0b620064a1c1",
+          "mean_spectral_jacobian": "e33b9cdb15964657ff03fd4cfd216f9175ffa94bd0c5070f8f92b824bd9423b2"
+        },
+        "physics_config_sha256": "94d0ce3a7c8da91fac54afd17e22a8f56724608ac472fa5d3cb5e253fea1102d"
+      },
+      "linear_outputs": {
+        "raw_linear_RMS_e": 0.9074457606732537,
+        "template_postblur_linear_RMS_e_ref": 0.17886432823202045,
+        "color_linear_RMS_K": 0.18431362346177496,
+        "color_linear_available_fraction": 1.0,
+        "latent_temperature_linear_RMS_K": 2.0546409744956016,
+        "beta_linear_L2": 0.0016248148010368313
+      },
+      "step_array_sha256": "c2639c423d96f5f56b8ddda921a6a2ceada715df9b88fd3c0411fac0d29edd16",
+      "step_saved": false,
+      "comparison": {
+        "direct_solution_difference": null,
+        "direct_linear_output_difference": null,
+        "old_step_array_available": false,
+        "analytic_condition": "same exact symmetric system A_F; recorded recomputed residual estimates represent its true residuals; finite-precision FFT/reduction roundoff is not enclosed",
+        "interval_arithmetic_certified": false,
+        "step_L2_upper_bound": 0.0002021516465598238,
+        "linear_output_RMS_upper_bounds": {
+          "raw_linear_RMS_e": 1.8148915213284451,
+          "template_postblur_linear_RMS_e_ref": 0.35772865654808905,
+          "color_linear_RMS_K": 0.3686272471693438,
+          "latent_temperature_linear_RMS_K": 4.10928194896053,
+          "beta_linear_L2": 0.0032496296015164673
+        },
+        "proof": "A_F=F(J^T W J+Lambda L+mu D)F >= mu*min(D_free) I. A_F(x_old-x_new)=r_new-r_old, so norm(step_difference)<= (norm(r_old)+norm(r_new))/(mu*min(D_free)). For the same fixed linear output map L, RMS(L step_difference)<=RMS(L x_old)+RMS(L x_new) by the triangle inequality.",
+        "bound_is_nonlinear_accuracy_or_uncertainty": false,
+        "both_stopping_tests_passed": true,
+        "spectral_lower_bound": 0.0007314905334681621,
+        "minimum_free_D": 0.7314905334681621,
+        "linear_bound_kind": "conservative same-map triangle bound; not an observed difference or a sensitivity-tightened bound"
+      },
+      "case_total_counts": {
+        "JVP": 698,
+        "VJP": 692,
+        "normal": 691,
+        "precondition": 689
+      },
+      "native_GPU_qualified": true
+    }
+  ],
+  "reused_old_block_controls": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "old_row": {
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "route": "old_block_diagonal",
+        "attempted": true,
+        "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+        "status": "CONVERGED_TRUE_RESIDUAL",
+        "converged": true,
+        "iterations": 838,
+        "maxiter": 2000,
+        "rtol": 1e-10,
+        "initial_rhs_norm": 3376.467653208225,
+        "true_residual_norm": 2.645468533976778e-07,
+        "true_relative_residual": 7.83501814822105e-11,
+        "true_residual_recomputed": true,
+        "residual_restarts": 0,
+        "sampled_recursive_history": [
+          {
+            "iteration": 1,
+            "recursive_relative_residual": 0.19714752806439986
+          },
+          {
+            "iteration": 2,
+            "recursive_relative_residual": 0.07268401381215142
+          },
+          {
+            "iteration": 3,
+            "recursive_relative_residual": 0.045203733555715116
+          },
+          {
+            "iteration": 4,
+            "recursive_relative_residual": 0.03595670269022343
+          },
+          {
+            "iteration": 5,
+            "recursive_relative_residual": 0.038677425383269314
+          },
+          {
+            "iteration": 6,
+            "recursive_relative_residual": 0.023600364762773465
+          },
+          {
+            "iteration": 7,
+            "recursive_relative_residual": 0.026012113573747362
+          },
+          {
+            "iteration": 8,
+            "recursive_relative_residual": 0.025286848409635434
+          },
+          {
+            "iteration": 100,
+            "recursive_relative_residual": 0.001493643168814335
+          },
+          {
+            "iteration": 200,
+            "recursive_relative_residual": 0.00018271963779730973
+          },
+          {
+            "iteration": 300,
+            "recursive_relative_residual": 1.8747321420559875e-05
+          },
+          {
+            "iteration": 400,
+            "recursive_relative_residual": 2.405804726454144e-06
+          },
+          {
+            "iteration": 500,
+            "recursive_relative_residual": 2.5188510097250375e-07
+          },
+          {
+            "iteration": 600,
+            "recursive_relative_residual": 2.1134031116459297e-08
+          },
+          {
+            "iteration": 700,
+            "recursive_relative_residual": 3.0706200237173587e-09
+          },
+          {
+            "iteration": 800,
+            "recursive_relative_residual": 3.3920321868988503e-10
+          }
+        ],
+        "error": null,
+        "audit_error": null,
+        "pcg_started": true,
+        "wall_s": 5.853560200004722,
+        "wall_limit_s": 120.0,
+        "counts": {
+          "JVP": 841,
+          "VJP": 840,
+          "normal": 840,
+          "precondition": 838
+        },
+        "preconditioner_metadata": {
+          "method": "original repair_v3.solver.block_preconditioner",
+          "approximation_only": true
+        },
+        "linear_outputs": {
+          "raw_linear_RMS_e": 2.1738152755946887,
+          "template_postblur_linear_RMS_e_ref": 0.32238702766630184,
+          "color_linear_RMS_K": 0.24476445962195964,
+          "color_linear_available_fraction": 1.0,
+          "latent_temperature_linear_RMS_K": 2.1500708740879837,
+          "beta_linear_L2": 0.004986560002235024
+        },
+        "step_array_sha256": "61ffa2dcd910cb5cf3a107baf3146ebe1d343e70eacd4b7dcbcdbb036e3ce7b3",
+        "step_saved": false,
+        "system_fingerprint": "379b5fb9aa5e959a05e9428a54b5e83974bca6d3f44419cbf047c16fe84785c8"
+      },
+      "files": {
+        "cell": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_00_old_block_diagonal.json",
+          "sha256": "582a3fb2bbecb8862f19f1a9c980bffe3d505a1216591a943a64880fb0378906"
+        },
+        "system": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_00.json",
+          "sha256": "e53e66f63bddebb3d67f7b99fb56ba7e41be27ccf7532e53b069f0d1c467b564"
+        }
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "old_row": {
+        "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+        "route": "old_block_diagonal",
+        "attempted": true,
+        "registration_sha256": "9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35",
+        "status": "CONVERGED_TRUE_RESIDUAL",
+        "converged": true,
+        "iterations": 930,
+        "maxiter": 2000,
+        "rtol": 1e-10,
+        "initial_rhs_norm": 820.4827705684667,
+        "true_residual_norm": 6.60508284058069e-08,
+        "true_relative_residual": 8.050239538856371e-11,
+        "true_residual_recomputed": true,
+        "residual_restarts": 0,
+        "sampled_recursive_history": [
+          {
+            "iteration": 1,
+            "recursive_relative_residual": 0.7459861873266718
+          },
+          {
+            "iteration": 2,
+            "recursive_relative_residual": 0.3630420970684671
+          },
+          {
+            "iteration": 3,
+            "recursive_relative_residual": 0.2076181236955265
+          },
+          {
+            "iteration": 4,
+            "recursive_relative_residual": 0.12352037690907075
+          },
+          {
+            "iteration": 5,
+            "recursive_relative_residual": 0.16098586733880801
+          },
+          {
+            "iteration": 6,
+            "recursive_relative_residual": 0.1213941064625595
+          },
+          {
+            "iteration": 7,
+            "recursive_relative_residual": 0.08610878966936528
+          },
+          {
+            "iteration": 8,
+            "recursive_relative_residual": 0.08057220300421951
+          },
+          {
+            "iteration": 100,
+            "recursive_relative_residual": 0.00513160072038391
+          },
+          {
+            "iteration": 200,
+            "recursive_relative_residual": 0.000847602507056833
+          },
+          {
+            "iteration": 300,
+            "recursive_relative_residual": 4.927687638243432e-05
+          },
+          {
+            "iteration": 400,
+            "recursive_relative_residual": 1.3069649806259834e-05
+          },
+          {
+            "iteration": 500,
+            "recursive_relative_residual": 1.9723016015920095e-06
+          },
+          {
+            "iteration": 600,
+            "recursive_relative_residual": 6.165828636071903e-07
+          },
+          {
+            "iteration": 700,
+            "recursive_relative_residual": 5.1827075904807336e-08
+          },
+          {
+            "iteration": 800,
+            "recursive_relative_residual": 2.650449742576635e-09
+          },
+          {
+            "iteration": 900,
+            "recursive_relative_residual": 1.6447123666751277e-10
+          }
+        ],
+        "error": null,
+        "audit_error": null,
+        "pcg_started": true,
+        "wall_s": 6.359383900009561,
+        "wall_limit_s": 120.0,
+        "counts": {
+          "JVP": 933,
+          "VJP": 932,
+          "normal": 932,
+          "precondition": 930
+        },
+        "preconditioner_metadata": {
+          "method": "original repair_v3.solver.block_preconditioner",
+          "approximation_only": true
+        },
+        "linear_outputs": {
+          "raw_linear_RMS_e": 0.9074457606551916,
+          "template_postblur_linear_RMS_e_ref": 0.1788643283160686,
+          "color_linear_RMS_K": 0.18431362370756885,
+          "color_linear_available_fraction": 1.0,
+          "latent_temperature_linear_RMS_K": 2.0546409744649283,
+          "beta_linear_L2": 0.001624814800479636
+        },
+        "step_array_sha256": "689ed901b3fdd7eff9d65fdeaaa20aa54d6a83ed2badba4a2b34e3bad4dc66c3",
+        "step_saved": false,
+        "system_fingerprint": "39b8dcfc5bc186640799809db2ba85fa7ea0b0bd922d2aaf7f035e58f8085bf4"
+      },
+      "files": {
+        "cell": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\CELL_01_old_block_diagonal.json",
+          "sha256": "6ca1558eb5c288c722f0256376c2b65fdc4f38cc6922ea117933e02252f748c6"
+        },
+        "system": {
+          "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_001\\SYSTEM_01.json",
+          "sha256": "fa23187b1028f6d972c78101c67bb78991b720c90e4d620a4dd918ea8c39bfe5"
+        }
+      }
+    }
+  ],
+  "reused_old_routes_executed_this_run": 0,
+  "v1_failed_coupled_rows_repeated": 0,
+  "direct_step_difference_available": false,
+  "PCG_calls": 2,
+  "full_new_denominator_preserved": true,
+  "errors": [],
+  "route_wall_limit_s": 120.0,
+  "planned_total_new_route_wall_s": 240.0,
+  "wall_s_including_overhead": 195.38172049997956,
+  "whole_inverse_calls": 0,
+  "count_call_used": false,
+  "truth_used": false,
+  "final_payloads_opened": false,
+  "step_arrays_saved": false,
+  "device": "cuda",
+  "recorded_new_operator_counts": {
+    "JVP": 1251,
+    "VJP": 1239,
+    "normal": 1237,
+    "precondition": 1233
+  },
+  "operator_counts_complete": true,
+  "cell_file_refs": [
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_002\\CELL_00.json",
+      "sha256": "aab5383b9bd5bd1941bd705f91f2d60f40f6a0122678a268fd6256ce18f57be2"
+    },
+    {
+      "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_002\\CELL_01.json",
+      "sha256": "d4670003bd690c705d0ac6d91c3cd8c5001e0cf1caca9085f75e410642fb7d47"
+    }
+  ]
+}

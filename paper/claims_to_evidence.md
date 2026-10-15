@@ -10,9 +10,12 @@
 | 原九组未完成12+24科学比较 | 9组合×2初值，同1个开发raw，18有限输出 | [开发终态](../reports/closeout_001/DEVELOPMENT_RESULT.json) | 两初值共同数值合格的组合为0；历史排除不等于科学无效 |
 | v3生产精度尚未认证 | 60输入，固定12外层、float64/线性设置对照 | [开发科学汇总](../reports/closeout_001/DEVELOPMENT_SCIENTIFIC_SUMMARY.json) | 是有限估计器敏感性对照，非非线性最优参考 |
 | 原生耦合预条件构建存在批量显存失败 | 同2raw、4登记格；2旧PCG收敛、2新构建OOM、0完整逆 | [原终态](../reports/closeout_001/repair_001/v3_tangent_probe_001/RESULT.json)、[逐格复核](../reports/closeout_001/repair_001/v3_tangent_probe_001/NATIVE_PROBE_ANALYSIS.json) | 33.14 GiB请求超过8 GiB；确切底层内核未定位；旧步未存，直接解差不可得；不作生产收益结论 |
+| 分块v2解决两例显存失败，但代价上升 | 同2raw、2条新路线与2条复用旧控制；0完整逆 | [v2终态](../reports/closeout_001/repair_001/v3_tangent_probe_002/RESULT.json)、[根级复核](../reports/closeout_001/repair_001/v3_tangent_probe_002/ROOT_NATIVE_REVIEW.json) | 544/689步、残差均小于1e-10；耗时为旧控制14.74/16.98倍；不接入外层，直接解差不可得 |
+| 逐元素三角求解保持CPU固定预条件作用 | 25项CPU合同，含32侧完整apply与病态3×3固定因子 | [v3预条件CPU合同](../reports/closeout_001/repair_001/v3_preconditioner_003/CONTRACTS.json) | 完整apply与v2相对差2.00e-16；没有原生GPU速度或非线性认证 |
 | 新C1标定有明确增量预算 | 661×7节点；48769温度点及解析平场界 | [14项标定合同](../reports/closeout_001/repair_001/calibration_v003/CALIBRATION_CONTRACTS.json) | 改变插值及anchor导数，显式新目标；绝对LUT误差另报 |
 | C1四格通过登记数值判据 | 2开发raw×2初值，4完整逆，4×65536评分像素 | [原终态](../reports/closeout_001/repair_001/quick_v002/QUICK_RESULT.json)、[独立全域重评分](../reports/closeout_001/repair_001/quick_v002/NATIVE_C1_ANALYSIS.json)、[独立端点复算](../reports/closeout_001/repair_001/quick_v002_analysis/FINAL_REVIEW_RECEIPT.json) | 三阶段/两平台；最终gtol1e-6，未执行1e-7；原stage1/2只作日志核验；不作最终选型 |
 | C1两初值共享物理正则 | 同上述4格，逐raw比较共同anchor合同 | [全域重评分及初值比较](../reports/closeout_001/repair_001/quick_v002/NATIVE_C1_ANALYSIS.json) | 版本内目标相同；不把新C1与旧PLUT称同一物理目标 |
+| compact缓存通过四个原生端点字节资格 | 4端点×6组原canonical；0优化、0内层、0完整逆 | [原生资格精确归档](../reports/closeout_001/repair_001/quick_v003/NATIVE_COMPACT_QUALIFICATION.json)、[根级复核](../reports/closeout_001/repair_001/quick_v003/ROOT_QUALIFICATION_REVIEW.json) | 新潜连续谱仅作自身持久化重建校验；原latent未存不能直接比较；嵌套空间释放错误另留账 |
 | relay响应差异造成平场色温偏差 | 平坦3100 K无噪反例与各载频响应 | [根因报告](../reports/closeout_001/root_cause_team_001/ROOT_CAUSE_REPORT.zh-CN.md) | 旧nominal按已登记失配压力解释；新匹配24母场景未执行 |
 | 原MC记录保留，区间方案需更正 | 12母场景/896完整MC，原几何角色混杂 | [科学终态](../reports/closeout_001/SCIENCE_RESULT.json)、[更正协议](../reports/closeout_001/repair_001/REPAIRED_SCIENTIFIC_PROTOCOL.json) | 条件bootstrap不是独立覆盖，oracle回顾诊断不是部署区间 |
 | 新方法检测效能尚待独立校准 | 计划200-null校准+200-null评价 | [研究协议](../reports/closeout_001/STUDY_PROTOCOL.yaml) | 四格未附新阈值；不采用legacy阈值得出检出结论 |

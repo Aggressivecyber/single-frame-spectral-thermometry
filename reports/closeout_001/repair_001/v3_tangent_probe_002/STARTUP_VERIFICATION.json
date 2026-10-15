@@ -1,0 +1,38 @@
+{
+  "schema": "native-tangent-v2-startup-observation-v001",
+  "time": "2026-10-15T09:38:44.452855+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "both_actual_commands_match": true,
+    "parent_child_matches": true,
+    "both_owner_locks_match": true,
+    "owner_lock_registration_matches": true,
+    "run_started_exists": true,
+    "stderr_empty": true
+  },
+  "startup_verified": true,
+  "launcher": {
+    "pid": 57448,
+    "available": true,
+    "actual_pid": 57448,
+    "parent_pid": 56748,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.v3_tangent_probe_v2 run --device cuda"
+  },
+  "actual_python": {
+    "pid": 11532,
+    "available": true,
+    "actual_pid": 11532,
+    "parent_pid": 57448,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.v3_tangent_probe_v2 run --device cuda"
+  },
+  "owner_locks": {
+    "pid": 11532,
+    "owner_token": "a38d6932afef4d9baa0aed42c3fe24b1",
+    "phase": "v3-native-fixed-tangent-probe-v2-batch64",
+    "registration_sha256": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+    "time": "2026-10-15T09:38:22.650012+00:00"
+  },
+  "RESULT_exists_at_observation": false
+}

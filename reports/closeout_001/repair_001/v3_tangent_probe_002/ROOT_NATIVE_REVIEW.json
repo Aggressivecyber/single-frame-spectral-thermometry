@@ -1,0 +1,68 @@
+{
+  "schema": "native-tangent-v2-root-review-v001",
+  "time": "2026-10-15T10:06:31.556547+00:00",
+  "terminal_time": "2026-10-15T09:41:40.424689+00:00",
+  "checks": {
+    "registration_sha256": true,
+    "17_frozen_sources": true,
+    "both_old_processes_absent_observed": true,
+    "global_and_local_locks_absent": true,
+    "stderr_empty": true,
+    "complete_two_cell_denominator": true,
+    "no_complete_inverse_or_truth": true,
+    "per_cell_receipts_sources_and_bounds_validated": true,
+    "new_call_count_5091_unchanged": true
+  },
+  "rows": [
+    {
+      "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+      "iterations_new": 544,
+      "iterations_old": 838,
+      "iteration_fraction": 0.649164677804296,
+      "wall_s_new": 86.29615019998164,
+      "wall_s_old": 5.853560200004722,
+      "time_ratio_new_over_old": 14.742506654311342,
+      "true_relative_residual": 9.901535313597686e-11,
+      "reported_same_system_fingerprint": "379b5fb9aa5e959a05e9428a54b5e83974bca6d3f44419cbf047c16fe84785c8",
+      "conditional_step_L2_bound": 0.0016990333818043045,
+      "direct_difference_available": false,
+      "new_operator_counts": {
+        "JVP": 553,
+        "VJP": 547,
+        "normal": 546,
+        "precondition": 544
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0013_negative_normal_noise0",
+      "iterations_new": 689,
+      "iterations_old": 930,
+      "iteration_fraction": 0.7408602150537634,
+      "wall_s_new": 108.00024399999529,
+      "wall_s_old": 6.359383900009561,
+      "time_ratio_new_over_old": 16.982815583728623,
+      "true_relative_residual": 9.972322431708912e-11,
+      "reported_same_system_fingerprint": "39b8dcfc5bc186640799809db2ba85fa7ea0b0bd922d2aaf7f035e58f8085bf4",
+      "conditional_step_L2_bound": 0.0002021516465598238,
+      "direct_difference_available": false,
+      "new_operator_counts": {
+        "JVP": 698,
+        "VJP": 692,
+        "normal": 691,
+        "precondition": 689
+      }
+    }
+  ],
+  "wall_s_total": 195.38172049997956,
+  "PCG_calls": 2,
+  "new_complete_inverse_calls": 0,
+  "old_control_recomputed": false,
+  "memory_failure_fixed_on_two_registered_native_cases": true,
+  "production_speed_benefit_demonstrated": false,
+  "outer_integration_of_v2_as_is": false,
+  "performance_interpretation": "Static frozen source dispatches1024 field cholesky_solve batches per native apply plus one6x6 low solve. It suggests dispatch/application overhead; no GPU profiler was run and construction/apply timings were not separated. Fewer iterations did not yield a wall-time gain.",
+  "precision_scope": "Residuals are controller-recomputed float64 estimates, hash/logic reviewed here; step arrays were not saved, so no independent residual rebuild or direct old-new step/output difference is claimed. Conditional spectral bounds do not include roundoff enclosures or nonlinear/statistical error.",
+  "source_commit": "e9219076f886eea419123154ba4f08a993abb6ef",
+  "terminal_sha256": "9a21f4afd97f20af2f99d79adb7d22342e048c643a57935593d4387e8e5ee93a",
+  "global_inverse_journal_sha256": "394ec58d8ac985a82aed7406cff95f8e63c3c51ff9348ea7fa34f568ed3fa1e9"
+}

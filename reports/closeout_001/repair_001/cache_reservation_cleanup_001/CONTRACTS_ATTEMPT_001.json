@@ -1,0 +1,502 @@
+{
+  "schema": "owned-namespace-zero-reserve-cleanup-v001-CPU-contracts",
+  "time": "2026-10-15T10:28:37.263871+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "qualification_frozen_registered_release_still_rejects_namespace",
+      "passed": true
+    },
+    {
+      "name": "qualification_plan_is_durable_and_zero_reserve_still_exists_before_release",
+      "passed": true
+    },
+    {
+      "name": "qualification_single_zero_reserve_removed_and_every_other_D_byte_unchanged",
+      "passed": true
+    },
+    {
+      "name": "qualification_repeat_reuses_same_success_without_new_writes_or_any_unlink",
+      "passed": true
+    },
+    {
+      "name": "inference_frozen_registered_release_still_rejects_namespace",
+      "passed": true
+    },
+    {
+      "name": "inference_plan_is_durable_and_zero_reserve_still_exists_before_release",
+      "passed": true
+    },
+    {
+      "name": "inference_single_zero_reserve_removed_and_every_other_D_byte_unchanged",
+      "passed": true
+    },
+    {
+      "name": "inference_repeat_reuses_same_success_without_new_writes_or_any_unlink",
+      "passed": true
+    },
+    {
+      "name": "wrong_namespace_key_owner_filename_fallback_and_other_task_are_rejected",
+      "passed": true
+    },
+    {
+      "name": "different_started_reserved_owner_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "explicit_different_RESULT_owner_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "mismatched_sealed_key_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "mismatched_sealed_context_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "non_ready_result_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "unverified_result_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "one_failed_original_array_byte_match_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "different_parameter_receipt_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_body_with_original_seal_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "nonzero_reservation_is_rejected_without_deletion",
+      "passed": true
+    },
+    {
+      "name": "sealed_but_wrong_reservation_hash_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "actual_fallback_sibling_keeps_entire_instance_untouched",
+      "passed": true
+    },
+    {
+      "name": "nonterminal_or_failed_namespace_phase_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "active_owned_task_phase_is_rejected",
+      "passed": true
+    },
+    {
+      "name": "reserve_change_after_plan_is_rejected_before_unlink",
+      "passed": true
+    },
+    {
+      "name": "interrupted_attempt_is_not_retried_or_inferred_successful",
+      "passed": true
+    },
+    {
+      "name": "unlink_failure_keeps_placeholder_and_does_not_publish_success",
+      "passed": true
+    },
+    {
+      "name": "unlink_failure_has_durable_plan_attempt_but_no_success_receipt",
+      "passed": true
+    },
+    {
+      "name": "helper_has_only_one_explicit_unlink_and_no_recursive_glob_solver_or_array_loader",
+      "passed": true
+    },
+    {
+      "name": "all46_frozen_sources_and_prior_receipt_bytes_remain_unchanged",
+      "passed": true
+    },
+    {
+      "name": "fixtures_are_small_billed_D_files_and_never_production_tasks",
+      "passed": true,
+      "fixture_bytes": 157466
+    }
+  ],
+  "source_sha256": {
+    "research_closeout/cache_reservation_cleanup.py": "2c125df420ec76c2d04f19a2e2e462f6baa053c222a35cb11ab17f8be20ee42f",
+    "research_closeout/tests/cache_reservation_cleanup.py": "388f706fd2cd3a8548af20cdd087a24020c661c2578933c2a4b886116af69b42"
+  },
+  "frozen_source_sha256": {
+    "research_closeout/v3_tangent_probe.py": "b7078ad9fb21a77a315817e4d9569e355720fb7e401775c8f83fc6225a585f7b",
+    "research_closeout/tests/v3_tangent_probe.py": "3b1cdd40db075c6f2810af3a3b310efd8b16cc577e15ebd1a6f9b896bbbea018",
+    "research_closeout/coupled_preconditioner.py": "882d07fd8a554d7efca31f2208e71109724e997b799106655b71a5acba5e3cdc",
+    "research_closeout/tests/coupled_preconditioner.py": "1753760d1dcc9d762a068d786bcb92ac193085d27b85cd98692a50416d1fe7c1",
+    "research_closeout/storage.py": "1cb1482c4eb9e360e7b77ee0510131724f7ddb45748d9be793ee21d3f766f5c4",
+    "research_closeout/measurement.py": "4d0d4876a6efb378d1c1a84392458229e221cef4cbfe86b499d7632d26e5b375",
+    "physics.py": "536654ce52dff3de99490182320859aa25a96e29737cf169c9ec1b7a0f7d109a",
+    "solver.py": "2c6eb39c24ea4aa4ef07c3ad6423edcdccb869b24592fad49624b86cd54e8a2c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "config.py": "9fcf349c020aa6dc9e82d1aea4b868ee9ecbd1e03bfdda3bf890614cc2bfc3c7",
+    "research_closeout/v3_tangent_probe_v2.py": "ca98e6dcc2ca952195a67d2472c789e4cda542f338082346ee91cc7b2f455680",
+    "research_closeout/tests/v3_tangent_probe_v2.py": "9eeefaf0ce5ab3f4ee71aae9d34323b7cd518aef6975f51b8518f1005cdf857d",
+    "research_closeout/coupled_preconditioner_v2.py": "f245041e296b4d2072a31e8eb64cb81f3458cfb82135eed6e6017eff93c1fd52",
+    "research_closeout/tests/coupled_preconditioner_v2.py": "74c867b294bda1563b7a9838439a561885af8cdb5a70a41bddd7251a32dcb002",
+    "research_closeout/runtime_entry.py": "d8262f3e516f5ad481a4b1f7cc4aeee1f1c30d2d46a070dba8f4ae593bb3589a",
+    "research_closeout/tests/runtime_entry.py": "dd22e5056e9fad1292e48ba9cbbaa413367df9941cba872a7e731296ac015517",
+    "research_closeout/quick_validation.py": "19c3562e03ff0aa7b1aa917ef864d425e1537da08eab413cefcf6870e14b21f7",
+    "research_closeout/tests/quick_validation.py": "8a408c02747d9f349eda3db7515015d159e08653a78a9e5dd461f982de1a60b8",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/experiment_registry.py": "1a00d6d7eb9f026cb19f937fc3d55da8111d567f78eb6b11cbb2eb5fd2038978",
+    "research_closeout/numerical_strategy.py": "014e1e618a0fc40001941ec78bfd98a36497a399eedcf23035ab642f4085827f",
+    "research_closeout/joint_estimator.py": "7e50ccc2e35e88e3c76b40dc61d3df8c8e11b3888550e649573288fc604b5a38",
+    "research_closeout/linear_profile.py": "50058f3c6a4c6e380df1d612a61aa5e1898eba82434b5d7234bcc287f40aaa6b",
+    "research_closeout/observable_basis.py": "5aa8995ee8d9ac731a3811cc37bf286b724bc92d0f39cd38dbd4a453353ed0fd",
+    "research_closeout/reliable_v3.py": "c5c2d2f239d40fd22182e75f5db1469e7c8ba72c023239843041d0a2db818cb0",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_closeout/metrics.py": "9b09130e0a2e001eb9c8ad33d6b3d433bfd8e586861615d48a3be69c4c1def14",
+    "research_closeout/uncertainty.py": "6a627045b1fe54a022a0ba3dd034803224c77603a59428fa712a3a362f525482",
+    "research_closeout/independent_renderer.py": "922db2a22244c975ac2c69d26ae2e6b0858840187d18ea58631c00d6aad42d21",
+    "research_closeout/intervals.py": "1302b6c734ebc5299240b5ba9c068033c481c56d4e9d8181ee47dee40ea56812",
+    "research_v6/inputs.py": "644db96e59b86d91cd961147257789f0dec9a6e23480edff4bcb197feef3ec25",
+    "research_v6/common.py": "8f73ce2a700d7d9d7a0f3aae652657793beb49549cba374a598c1e9f66b9921d",
+    "research_v6/continuum_sources.py": "a776fc3fd4cd9f57789d02445278f7756cf55985420a41b5cb5803e8558657cb",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/model.py": "627ef9ffb216ad28389a60fd0040a706a8ab36aad677bcf20807a838b1a33100",
+    "research_closeout/calibration_quick.py": "6bdf0c25292043fe3da43f8318a4573ade697addbc3a7ef7c40e23744db7356e",
+    "research_closeout/tests/calibration_quick.py": "49f13e7ebc7e8dcc0cee2943223ba1eb651d253fdf472c1af9ed7903442231ae",
+    "research_closeout/smooth_calibration.py": "99b7cffe00e45e157ec328adf6918b41c8056de4a4c39fe61489bc2d094828d0",
+    "research_closeout/tests/smooth_calibration.py": "b9fe8b94a77e8f1de0f4600e3b5ab108bc0c62cd79a7cb6d9c408259d326a799",
+    "research_closeout/c1_small_panel.py": "931f9b1fcf3f1f69bcbe0d4be0309fea21eecfb0ed6d8052b918e2d0cf65df7c",
+    "research_closeout/tests/c1_small_panel.py": "b19c08839bff74a54363fa01b2b278cb9a960d4a3869b4334918580059a60df5",
+    "research_closeout/compact_joint_cache.py": "8e65ea2762757dbeb2716926c0889ac46d6f0668c07d99f0dc38e01cda8494d4",
+    "research_closeout/tests/compact_joint_cache.py": "e7d8e740fc951925c54f3d12078ba358e3bc5960ea2ce0409d9e2d02015a3170",
+    "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd",
+    "research_closeout/tests/explicit_store.py": "0f52c279770705ab48a95060c9ff16c600c7377b0041dc0b8bceffeb4b0c1c61"
+  },
+  "prior_receipt_sha256": {
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_002\\REGISTRATION.json": "f4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\quick_v003\\PANEL_REGISTRATION.json": "f9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_tangent_probe_002\\RESULT.json": "9a21f4afd97f20af2f99d79adb7d22342e048c643a57935593d4387e8e5ee93a",
+    "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\v3_preconditioner_003\\CONTRACTS.json": "5ef1ebc5318df15757d0814fa571f8098c7edc86be8daf1b2095aaa9be1e98b5"
+  },
+  "fixture_bytes": 157466,
+  "fixture_stores": [
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_9d5f5cb50cdf45018893d6a3d9228d5e",
+      "owner_token": "9d5f5cb50cdf45018893d6a3d9228d5e",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_9d5f5cb50cdf45018893d6a3d9228d5e",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_9d5f5cb50cdf45018893d6a3d9228d5e",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_59f63737fa5949538f30d4254af0c89d",
+      "owner_token": "59f63737fa5949538f30d4254af0c89d",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_59f63737fa5949538f30d4254af0c89d",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_59f63737fa5949538f30d4254af0c89d",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_a3742c1d4f794ae99b32593d5dc98f4d",
+      "owner_token": "a3742c1d4f794ae99b32593d5dc98f4d",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_a3742c1d4f794ae99b32593d5dc98f4d",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_a3742c1d4f794ae99b32593d5dc98f4d",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_a2f87b32ded547d58e5e432c7ff9a592",
+      "owner_token": "a2f87b32ded547d58e5e432c7ff9a592",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_a2f87b32ded547d58e5e432c7ff9a592",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_a2f87b32ded547d58e5e432c7ff9a592",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_2a91a9236b2f4385b03e61bee4f886d5",
+      "owner_token": "2a91a9236b2f4385b03e61bee4f886d5",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_2a91a9236b2f4385b03e61bee4f886d5",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_2a91a9236b2f4385b03e61bee4f886d5",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_66431b38cfe344bb89201511400dd622",
+      "owner_token": "66431b38cfe344bb89201511400dd622",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_66431b38cfe344bb89201511400dd622",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_66431b38cfe344bb89201511400dd622",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_abd73d9c209645e3840062a3f701bb8e",
+      "owner_token": "abd73d9c209645e3840062a3f701bb8e",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_abd73d9c209645e3840062a3f701bb8e",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_abd73d9c209645e3840062a3f701bb8e",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_db7e49590e144051b466f39c13575bca",
+      "owner_token": "db7e49590e144051b466f39c13575bca",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_db7e49590e144051b466f39c13575bca",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_db7e49590e144051b466f39c13575bca",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    },
+    {
+      "schema": "explicit-D-repair-store-v001",
+      "task_name": "reserve_cleanup_cpu_4b58055f3dee4dbf894dba3e520a61be",
+      "owner_token": "4b58055f3dee4dbf894dba3e520a61be",
+      "data_root": "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001\\reserve_cleanup_cpu_4b58055f3dee4dbf894dba3e520a61be",
+      "report_root": "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001\\reserve_cleanup_cpu_4b58055f3dee4dbf894dba3e520a61be",
+      "source_sha256": {
+        "research_closeout/explicit_store.py": "92f3c4556c13fbc9ed169239a72a5ffa60f41eb2c00eec07d2f935b63d263dcd"
+      },
+      "fixed_D_project_roots": [
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_budget_roots": [
+        "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001",
+        "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\outputs\\repair_001",
+        "D:\\CodexWork\\thermometry\\closeout_001\\reports\\repair_001"
+      ],
+      "global_limit_bytes": 4294967296,
+      "D_project_limit_bytes": 268435456,
+      "D_free_floor_bytes": 134217728,
+      "E_free_floor_bytes": 2147483648,
+      "E_free_floor_root": "E:\\CodexWork\\thermometry\\closeout_001",
+      "D_free_floor_root": "D:\\",
+      "default_E_whitelist_unchanged": true,
+      "storage_mode": "explicit-D-repair",
+      "owner_markers_required": true,
+      "migration_cleanup_or_conversion_supported": false,
+      "preexisting_dense_reserve_does_not_bypass_live_E_or_D_floor": true,
+      "unexpected_floor_drop_requires_stop_and_explicit_missing_persistence_receipt": true,
+      "all_data_meta_fallback_pending_reserve_cache_log_bytes_counted": true,
+      "constructor_is_read_only": true
+    }
+  ],
+  "formal_cache_cleanup_performed": false,
+  "GPU_used": false,
+  "forward_calls": 0,
+  "whole_inverse_calls": 0,
+  "truth_used": false,
+  "fixture_parameter_payload_is_opaque_metadata_standin": true,
+  "CPU_wall_s": 53.457961399981286
+}
