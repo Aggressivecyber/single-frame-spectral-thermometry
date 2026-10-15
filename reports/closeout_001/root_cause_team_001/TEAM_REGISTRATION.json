@@ -1,0 +1,30 @@
+{
+  "time_utc": "2026-10-15T05:40:49.105220+00:00",
+  "user_authorization": "Use Astra Max agent team to investigate root causes",
+  "agents": [
+    {
+      "name": "astra_numeric_rootcause",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "max",
+      "scope": "joint/v3 numerical reliability"
+    },
+    {
+      "name": "astra_physics_rootcause",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "max",
+      "scope": "continuum propagation/independent physical models"
+    },
+    {
+      "name": "astra_protocol_rootcause",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "max",
+      "scope": "selection/detection/uncertainty protocol"
+    }
+  ],
+  "scope": "read-only evidence review plus bounded CPU algebra; reports are additive",
+  "registered_source_all_unchanged": true,
+  "source_files_checked": 28,
+  "science_terminal": "2026-10-15T03:24:36.117235+00:00",
+  "final_payloads_opened": false,
+  "new_full_inverse_calls": 0
+}

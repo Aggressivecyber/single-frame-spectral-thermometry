@@ -1,0 +1,192 @@
+{
+  "scope": "Existing result aggregation and analytic transfer check; no new full inversions or sealed payload reads",
+  "source_files_checked": 28,
+  "registered_source_unchanged": true,
+  "input_sha256": {
+    "SCIENCE_RESULT.json": "27fbeb00b142eedb99594a8f13d4e24912b646face52b153fd918d2661e16c86",
+    "SCIENCE_REGISTRATION.json": "8911d1a51d65bf59e7d1b7c385ca3a17e654baca00067ef5aef9e324dba2cd2a",
+    "per_case.jsonl": "5fb00139183f04de9023ce984d8f06d829cdd29ea51605210d7bddf938d2965e",
+    "development_results.jsonl": "95d4c298af07f6539396609d7ee771c32021d02d830cf4f44e1dd6f63bb49e2f",
+    "DETECTOR_THRESHOLDS.json": "2b80c2d0dc428d0134040c4f94209440311ed9562a177c42dd7f76d7eac74dfc",
+    "UNCERTAINTY_RESULT.json": "88f94e175789a7d47048a783a2453a563f34ba9d3ae7a210706202b70adebe62"
+  },
+  "science_case_method_rows": 2821,
+  "science_unique_frames": 815,
+  "joint": {
+    "candidate_count": 9,
+    "initializer_outputs": 18,
+    "unique_raw_inputs": 1,
+    "numerically_certified": 1,
+    "base_stops": {
+      "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL": 18
+    },
+    "tighter_stops": {
+      "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT": 6,
+      "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH": 12
+    },
+    "color_difference_over_0p2K": 17,
+    "template_difference_over_0p17e": 15,
+    "maximum_inner_difference_e": 7.493186590117397e-10,
+    "time_range_s": [
+      31.944958400010364,
+      91.21555999999691
+    ]
+  },
+  "relay": {
+    "sigma_px": 0.35,
+    "carrier_transfers": [
+      {
+        "carrier": [
+          51,
+          0
+        ],
+        "core_analytic": 0.90849312607854,
+        "independent_sampled": 0.9775864419549113,
+        "ratio": 1.0760526567488833
+      },
+      {
+        "carrier": [
+          0,
+          51
+        ],
+        "core_analytic": 0.90849312607854,
+        "independent_sampled": 0.9775864419549113,
+        "ratio": 1.0760526567488833
+      },
+      {
+        "carrier": [
+          51,
+          51
+        ],
+        "core_analytic": 0.825359760131958,
+        "independent_sampled": 0.9556752514940636,
+        "ratio": 1.157889320096331
+      },
+      {
+        "carrier": [
+          -51,
+          51
+        ],
+        "core_analytic": 0.825359760131958,
+        "independent_sampled": 0.9556752514940635,
+        "ratio": 1.1578893200963307
+      },
+      {
+        "carrier": [
+          102,
+          0
+        ],
+        "core_analytic": 0.6812187336450832,
+        "independent_sampled": 0.941112068782835,
+        "ratio": 1.381512313595822
+      },
+      {
+        "carrier": [
+          0,
+          102
+        ],
+        "core_analytic": 0.6812187336450832,
+        "independent_sampled": 0.9411120687828349,
+        "ratio": 1.381512313595822
+      },
+      {
+        "carrier": [
+          102,
+          51
+        ],
+        "core_analytic": 0.618882536872486,
+        "independent_sampled": 0.9200183988022377,
+        "ratio": 1.4865799953760814
+      }
+    ],
+    "700_over_905_response_ratio_factor": 0.9293225510184006,
+    "flat_continuum_true_K": 3100.0,
+    "apparent_color_K": 2953.9184934746136,
+    "color_bias_K": -146.08150652538643,
+    "scope": "Constant-field carrier algebra; exact sampled kernel versus analytic Gaussian; no full inverse"
+  },
+  "independent_nominal": {
+    "v3_physics": {
+      "rows": 24,
+      "independent_mothers": 24,
+      "color_RMSE_K": 199.22553486571562,
+      "template_RMSE_e": 334.35130022612054,
+      "color_bias_K": -197.22370378222936,
+      "template_bias_e": -302.44215045261654,
+      "blank_denominator": 5,
+      "blank_over_calibrated_threshold": 5
+    },
+    "old_B4": {
+      "rows": 24,
+      "independent_mothers": 24,
+      "color_RMSE_K": 239.98403070401295,
+      "template_RMSE_e": 270.42692741781883,
+      "color_bias_K": -238.44608940416947,
+      "template_bias_e": -254.6824651529971,
+      "blank_denominator": 5,
+      "blank_over_calibrated_threshold": 5
+    },
+    "B1_lambda100": {
+      "rows": 24,
+      "independent_mothers": 24,
+      "color_RMSE_K": 141.23402169417525,
+      "template_RMSE_e": 132.60292321754693,
+      "color_bias_K": -140.46548968506977,
+      "template_bias_e": -125.75026969024975,
+      "blank_denominator": 5,
+      "blank_over_calibrated_threshold": 5
+    }
+  },
+  "local_linearization": {
+    "cases": 12,
+    "statuses": {
+      "NUMERICAL_LINEARIZATION_UNCERTIFIED": 12
+    },
+    "largest_step_discrepancy": 5.594382349585688
+  },
+  "interval_evaluation": {
+    "mothers": 6,
+    "statistics": [
+      "color_pixel_0_K",
+      "color_pixel_1_K",
+      "color_pixel_2_K",
+      "color_pixel_3_K",
+      "color_pixel_4_K",
+      "color_central_ROI_mean_K",
+      "template_pixel_0_e_ref",
+      "template_pixel_1_e_ref",
+      "template_pixel_2_e_ref",
+      "template_pixel_3_e_ref",
+      "template_pixel_4_e_ref",
+      "template_central_ROI_mean_e_ref"
+    ],
+    "pooled_coverage": [
+      0.9947916666666666,
+      0.9895833333333334,
+      0.9791666666666666,
+      0.9947916666666666,
+      0.9947916666666666,
+      0.9921875,
+      0.9765625,
+      0.9505208333333334,
+      0.9713541666666666,
+      0.953125,
+      0.953125,
+      0.9348958333333334
+    ],
+    "mean_width": [
+      120.97639343904929,
+      111.44133733346094,
+      98.46037625502692,
+      107.2576966770135,
+      136.22914317128243,
+      11.528164039513335,
+      79.85387851158463,
+      76.33624942539883,
+      82.98493430492333,
+      70.23422260023669,
+      75.68751579043396,
+      11.498207654897284
+    ]
+  }
+}

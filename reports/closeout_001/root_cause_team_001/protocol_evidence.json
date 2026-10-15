@@ -1,0 +1,3043 @@
+{
+  "schema": "root-cause-protocol-review-001",
+  "created_utc": "2026-10-15T05:46:28.184164+00:00",
+  "scope": {
+    "new_inverse_calls": 0,
+    "new_simulations": 0,
+    "GPU_used": false,
+    "source_modified": false,
+    "sealed_payloads_opened": false,
+    "read_prediction_caches": "12 declared uncertainty base predictions only",
+    "artifact_owner": "astra_protocol_rootcause"
+  },
+  "source_sha256": {
+    "research_closeout/science.py": "6fb91097df34fb7bfb67a87bb7c664c4ba4cbf944c0b552f7638f589a2b1bd94",
+    "research_closeout/uncertainty.py": "91fdd2c7e3cd97e9c01c6559ab904019cc7d2ca382f19a60baaca9b5dee9afe3",
+    "research_closeout/intervals.py": "d25eacff71a574ddddc1eb55c49d3132ca481deec928effe3239e3dc8434a20d",
+    "research_closeout/scientific_plan.py": "f7a46888f535a1aae7da9b798ef0d3dce670ef5acf99d6b7965961bc7c538841",
+    "research_closeout/scenarios.py": "ddcf4ab9bb4da8d78570272fa408aa01f953d1fb7fd56318fc52a7197321f079",
+    "research_closeout/development.py": "e3c572328dfbfd860a8d5b70938faf52c350c062d7e9681cca3d44c8edc52849",
+    "research_closeout/numerical_strategy.py": "f8e92ee3c1e9b62fca2202dc59c4e1710394ab328ed52867192cf83d1a003b70",
+    "research_closeout/metrics.py": "1946aeba70158047aaab68e24be4576c025d1518cf069eac8e8cd5ae5291ee8b",
+    "research_closeout/deployment.py": "8d094f83c4b5d515f43ed5ecc220a830fd1cf7e0cd563da8797eaca75e6032e9",
+    "research_closeout/baselines.py": "c73211d0349354c07698e9a9697d301dd4d9c8282ab0a1679b4ed745cc7eb2cc",
+    "research_v5/metrics.py": "d6babbca8789a6167cc1e38641fb0e979b12c6f1dfc74e4416e6ec00f8584c92",
+    "training_v4/data.py": "024966de1cce79080af50f1eeb3b0f9a22d3177e14b58f4b66651d2402155ba5",
+    "training_v4/scalar_engine.py": "e6f9436dbd2bf890e1b27e6e0d4a8e4feb4f3e470cc338510da1772eb772ca8c",
+    "repair_v3/solver.py": "f10f26e5eab130363ddb0e32ffce7511f6bc8f449bf2dbeb484ede49b5fb659e",
+    "reports/closeout_001/SCIENCE_RESULT.json": "27fbeb00b142eedb99594a8f13d4e24912b646face52b153fd918d2661e16c86",
+    "reports/closeout_001/SCIENTIFIC_PLAN.json": "9ddaa33be19237098b612bc3dd15bb79013921e9258eb0843d7c9125bb1e4519",
+    "reports/closeout_001/full_inverse_MC.jsonl": "b13bbdd34b114885bde7b920118901c6d887e6e7c76442d7a629adba4a3937c9",
+    "reports/closeout_001/whole_inverse_statistics.jsonl": "04641c8b67177edae887ca7f9c08d3376c692e5abbc39f169ac58ea800654aad",
+    "reports/closeout_001/per_case.jsonl": "5fb00139183f04de9023ce984d8f06d829cdd29ea51605210d7bddf938d2965e",
+    "reports/closeout_001/INTERVAL_CALIBRATION.json": "787c9276f00df554a29321e63e5634de725a354afb14d33650e27e8306678d09",
+    "reports/closeout_001/UNCERTAINTY_RESULT.json": "88f94e175789a7d47048a783a2453a563f34ba9d3ae7a210706202b70adebe62",
+    "reports/closeout_001/NULL_EVALUATION.json": "4325e96e0e3cd1c49037c1f966f7cc245bed377a9f87f62094865ce928484c4f",
+    "reports/closeout_001/DETECTOR_THRESHOLDS.json": "2b80c2d0dc428d0134040c4f94209440311ed9562a177c42dd7f76d7eac74dfc",
+    "reports/closeout_001/development_results.jsonl": "95d4c298af07f6539396609d7ee771c32021d02d830cf4f44e1dd6f63bb49e2f",
+    "reports/closeout_001/v3_production_numerics.jsonl": "fd82deb85f83645031c9057deeb40c9403d36b6e4cc502c96b570c72c009c9f5",
+    "reports/closeout_001/TRADITIONAL_SELECTION.json": "12e3b78f99f65994d4f1ec69b45c5b6464e28f884e60482ff5faac45f446b847"
+  },
+  "matrix": {
+    "case_method_rows": 2821,
+    "family_frames": {
+      "calibration": 45,
+      "dynamic": 12,
+      "independent": 146,
+      "null_calibration": 200,
+      "null_evaluation": 200,
+      "photons": 90,
+      "structure": 110,
+      "uncertainty": 12
+    },
+    "family_independent_mothers": {
+      "calibration": 3,
+      "dynamic": 2,
+      "independent": 24,
+      "null_calibration": 200,
+      "null_evaluation": 200,
+      "photons": 6,
+      "structure": 1,
+      "uncertainty": 12
+    }
+  },
+  "intervals": {
+    "statistic_names": [
+      "color_pixel_0_K",
+      "color_pixel_1_K",
+      "color_pixel_2_K",
+      "color_pixel_3_K",
+      "color_pixel_4_K",
+      "color_central_ROI_mean_K",
+      "template_pixel_0_e_ref",
+      "template_pixel_1_e_ref",
+      "template_pixel_2_e_ref",
+      "template_pixel_3_e_ref",
+      "template_pixel_4_e_ref",
+      "template_central_ROI_mean_e_ref"
+    ],
+    "constants": [
+      0.6921449273649065,
+      0.6375917990395212,
+      0.5633235380396089,
+      0.6136558428090472,
+      0.7794108232593029,
+      0.06595634102615039,
+      0.4568697691426332,
+      0.43674427970504776,
+      0.4747835482118343,
+      0.4018326180691068,
+      0.433032665547215,
+      0.0657849508973429
+    ],
+    "MC_records": 896,
+    "unique_MC_mothers": 12,
+    "calibration_mothers": 6,
+    "evaluation_mothers": 6,
+    "first64_calibration_draws": 384,
+    "first64_evaluation_draws": 384,
+    "geometry_calibration": {
+      "blob": 6
+    },
+    "geometry_evaluation": {
+      "multipeak": 6
+    },
+    "calibration_noise_feature_mean": 72.65486402280526,
+    "evaluation_noise_feature_mean": 87.39238608568837,
+    "pearson_feature_color_sd": -0.9655981703113902,
+    "pearson_feature_template_sd": 0.9808988894611719,
+    "evaluation_mean_coverage_by_stat": [
+      0.9947916666666666,
+      0.9895833333333334,
+      0.9791666666666666,
+      0.9947916666666666,
+      0.9947916666666666,
+      0.9921875,
+      0.9765625,
+      0.9505208333333334,
+      0.9713541666666666,
+      0.953125,
+      0.953125,
+      0.9348958333333334
+    ],
+    "evaluation_mean_width_by_stat": [
+      120.97639343904929,
+      111.44133733346094,
+      98.46037625502693,
+      107.25769667701348,
+      136.22914317128246,
+      11.528164039513326,
+      79.85387851158464,
+      76.33624942539882,
+      82.98493430492334,
+      70.23422260023668,
+      75.68751579043395,
+      11.498207654897286
+    ],
+    "records": [
+      {
+        "case_id": "closeout_uncertainty_mother_0000_uncertainty_blank",
+        "mother_id": "closeout_uncertainty_mother_0000",
+        "role": "interval_calibration",
+        "condition": "blank",
+        "ignored_plan_geometry": "hotspot_small",
+        "actual_temperature_geometry": "front",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          1,
+          64
+        ],
+        "noise_feature_mean": 104.81565636150232,
+        "truth_statistics": [
+          2958.03271484375,
+          3081.843994140625,
+          3035.510498046875,
+          2957.18359375,
+          3106.32080078125,
+          3030.2822265625,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bias_first64": [
+          -0.5591049194335938,
+          -2.2056045532226562,
+          1.1486167907714844,
+          -2.761138916015625,
+          -2.8087806701660156,
+          -0.4311180114746094,
+          1.1331710331141949,
+          5.345737284980714,
+          -0.53990089148283,
+          4.6369513757526875,
+          5.485667698085308,
+          1.51513781119138
+        ],
+        "empirical_sd_first64": [
+          11.178409862078976,
+          10.807323309936312,
+          11.975846860801118,
+          12.213080710811495,
+          11.582842011545495,
+          1.0615391450324412,
+          19.93711539756048,
+          18.895904993221677,
+          21.561857139844523,
+          17.053214659568425,
+          22.90772080583274,
+          3.5296538590505064
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.96875,
+          0.984375,
+          1.0,
+          1.0,
+          0.96875,
+          0.953125
+        ],
+        "mean_width_first64": [
+          145.09524971807406,
+          133.659205814077,
+          118.09025276701065,
+          128.64147988820235,
+          163.3889140303654,
+          13.826514351718073,
+          95.77420944882628,
+          91.55527667883227,
+          99.5294984709328,
+          84.23669922074862,
+          90.7772061306045,
+          13.790585614028394
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 137.77502044354588,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 13.826514351718073,
+          "template_5points_mean_coverage": 0.984375,
+          "template_5points_mean_width_e": 92.3745779899889,
+          "template_ROI_coverage": 0.953125,
+          "template_ROI_width_e": 13.790585614028394
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0000_uncertainty_blank.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          1.225951357457919,
+          0.3138026761010204,
+          0.30042436702061853,
+          0.9626028601568579,
+          0.3789476550781659,
+          0.228617424342635,
+          0.2973299405398196,
+          0.5092957742660126
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          2.9814207160977357,
+          1.487875806223161,
+          2.1727683482495093,
+          1.4962888751974237,
+          0.8965803411224057,
+          2.507548278036926,
+          0.9403286968582953,
+          2.5985188437470805,
+          2.130372798326951,
+          4.096056187642702,
+          1.3739146374804123,
+          9.17546071922736
+        ],
+        "epsilon_e_min_med_max": [
+          0.07016371935606003,
+          0.10342128947377205,
+          0.1427297294139862
+        ],
+        "epsilon_DN_min_med_max": [
+          0.004638991318643093,
+          0.006837870692834258,
+          0.009436814114451408
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0113525390625,
+          0.0859375
+        ],
+        "linear_template_delta_med_max_e": [
+          0.02422475814819336,
+          0.09006500244140625
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0001_uncertainty_positive_weak",
+        "mother_id": "closeout_uncertainty_mother_0001",
+        "role": "interval_calibration",
+        "condition": "positive_weak",
+        "ignored_plan_geometry": "hotspot_large",
+        "actual_temperature_geometry": "multipeak",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          129,
+          192
+        ],
+        "noise_feature_mean": 61.48705511218432,
+        "truth_statistics": [
+          2843.447509765625,
+          2844.73779296875,
+          3043.46044921875,
+          2844.424560546875,
+          2847.61962890625,
+          2899.397705078125,
+          0.09702706336975098,
+          12.630784034729004,
+          0.16162952780723572,
+          0.045622944831848145,
+          0.057720959186553955,
+          2.0472638607025146
+        ],
+        "bias_first64": [
+          -3.137470245361328,
+          0.17106246948242188,
+          -3.266368865966797,
+          -1.4420127868652344,
+          1.4748077392578125,
+          -1.0795097351074219,
+          4.263009721413255,
+          -2.2473138328641653,
+          4.353115173056722,
+          4.18038000841625,
+          0.10660757590085268,
+          1.0004712846130133
+        ],
+        "empirical_sd_first64": [
+          22.010918788737555,
+          21.849281710401197,
+          16.261820281578405,
+          17.51300108560172,
+          23.923463794926345,
+          1.6958113101393533,
+          14.121329633903112,
+          13.901957502084816,
+          17.668106500705573,
+          12.218600770873229,
+          14.547147722051939,
+          1.6764430551868061
+        ],
+        "coverage_first64": [
+          0.9375,
+          0.9375,
+          0.953125,
+          0.96875,
+          0.953125,
+          0.953125,
+          0.921875,
+          0.953125,
+          0.890625,
+          0.96875,
+          0.90625,
+          0.96875
+        ],
+        "mean_width_first64": [
+          85.11590658900964,
+          78.40728417323959,
+          69.27421085886418,
+          75.4637812534276,
+          95.84735248955542,
+          8.110922351345865,
+          56.183153348728034,
+          53.708239192311034,
+          58.38608439051896,
+          49.415008666176966,
+          53.251806743755374,
+          8.089845802754525
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.95,
+          "color_5points_mean_width_K": 80.8217070728193,
+          "color_ROI_coverage": 0.953125,
+          "color_ROI_width_K": 8.110922351345865,
+          "template_5points_mean_coverage": 0.928125,
+          "template_5points_mean_width_e": 54.18885846829808,
+          "template_ROI_coverage": 0.96875,
+          "template_ROI_width_e": 8.089845802754525
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0001_uncertainty_positive_weak.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.3131730890232046,
+          0.07141562213669897,
+          0.18459895732336135,
+          0.15780127721798023,
+          0.17899388886852902,
+          0.1176940252028438,
+          0.23626731667377507,
+          0.3660312991491602
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          1.6201902522282956,
+          1.0749642771743788,
+          0.6409432178327831,
+          1.2820083453978066,
+          0.9918362175661735,
+          1.6104029959438868,
+          1.033458257750388,
+          0.5224227397651475,
+          0.8418604157980926,
+          1.0221937345013277,
+          0.8983355955403365,
+          1.8525040452347266
+        ],
+        "epsilon_e_min_med_max": [
+          0.04162219539284706,
+          0.06120126321911812,
+          0.08762013912200928
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0027519208379089832,
+          0.004046423360705376,
+          0.005793151445686817
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0234375,
+          0.11328125
+        ],
+        "linear_template_delta_med_max_e": [
+          0.01299893856048584,
+          0.056542396545410156
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0002_uncertainty_negative_weak",
+        "mother_id": "closeout_uncertainty_mother_0002",
+        "role": "interval_calibration",
+        "condition": "negative_weak",
+        "ignored_plan_geometry": "double_hotspot",
+        "actual_temperature_geometry": "ring",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          193,
+          256
+        ],
+        "noise_feature_mean": 75.29879715654744,
+        "truth_statistics": [
+          2748.81298828125,
+          2784.600341796875,
+          2748.60302734375,
+          2760.49169921875,
+          2748.64697265625,
+          2794.96484375,
+          -0.9158973693847656,
+          -0.032363489270210266,
+          -0.02944110333919525,
+          -0.025534668937325478,
+          -0.01709875650703907,
+          -0.13284261524677277
+        ],
+        "bias_first64": [
+          0.6136054992675781,
+          -0.65740966796875,
+          3.0481033325195312,
+          1.9546356201171875,
+          -6.2611846923828125,
+          -0.09966278076171875,
+          -2.6932318727485836,
+          1.6978486701846123,
+          0.6063990672118962,
+          -2.4296382050961256,
+          1.8653718624264002,
+          0.8078870396129787
+        ],
+        "empirical_sd_first64": [
+          15.154775375797007,
+          14.899534564204844,
+          12.112001012251215,
+          16.072062781156934,
+          18.61321864587679,
+          1.2667971491746264,
+          18.98155507159004,
+          17.73242817218642,
+          14.369352288646208,
+          17.45885552128469,
+          16.877548352899797,
+          2.242490156056282
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.921875,
+          0.96875,
+          1.0,
+          0.921875,
+          0.953125,
+          0.9375
+        ],
+        "mean_width_first64": [
+          104.2353609771667,
+          96.01979108911013,
+          84.83516964870628,
+          92.4150936632172,
+          117.37739496443979,
+          9.932866288232331,
+          68.80348814725959,
+          65.77263785358562,
+          71.50126018013755,
+          60.51502559774014,
+          65.21367769039757,
+          9.907055347144913
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 98.97656206852803,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 9.932866288232331,
+          "template_5points_mean_coverage": 0.953125,
+          "template_5points_mean_width_e": 66.36121789382409,
+          "template_ROI_coverage": 0.9375,
+          "template_ROI_width_e": 9.907055347144913
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0002_uncertainty_negative_weak.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.5129069404408269,
+          0.44452996728487837,
+          0.9283006112046384,
+          0.6540270074100965,
+          0.38502395984414894,
+          1.5171883472703138,
+          5.594382349585688,
+          0.7308682488311087
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          4.384545147077313,
+          4.420091177385206,
+          7.976733064324107,
+          5.740845636523851,
+          4.932591397134295,
+          2.685181887446379,
+          5.714982425107494,
+          2.250247710255217,
+          10.006250161557222,
+          8.276990894776176,
+          6.250334007337625,
+          33.238068783426975
+        ],
+        "epsilon_e_min_med_max": [
+          0.051908399909734726,
+          0.07511239871382713,
+          0.10468374192714691
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0034320103004574776,
+          0.00496618147008121,
+          0.006921339780092239
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0697021484375,
+          0.17041015625
+        ],
+        "linear_template_delta_med_max_e": [
+          0.11031723022460938,
+          0.23102331161499023
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0003_uncertainty_positive_normal",
+        "mother_id": "closeout_uncertainty_mother_0003",
+        "role": "interval_calibration",
+        "condition": "positive_normal",
+        "ignored_plan_geometry": "edge",
+        "actual_temperature_geometry": "stripe",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          257,
+          320
+        ],
+        "noise_feature_mean": 51.08433172826501,
+        "truth_statistics": [
+          2655.568115234375,
+          2679.046875,
+          2957.075439453125,
+          2751.330322265625,
+          2653.531005859375,
+          2758.60888671875,
+          10.720745086669922,
+          3.5248196125030518,
+          23.16861915588379,
+          0.8032451868057251,
+          0.2681771218776703,
+          24.693069458007812
+        ],
+        "bias_first64": [
+          -0.5410499572753906,
+          0.11439132690429688,
+          -4.8170928955078125,
+          -1.4727058410644531,
+          -6.791313171386719,
+          -1.5060462951660156,
+          -0.49622146040201187,
+          -2.1741274800151587,
+          2.321277841925621,
+          1.9518583472818136,
+          1.9098902828991413,
+          0.6826686263084412
+        ],
+        "empirical_sd_first64": [
+          26.028753736431916,
+          26.812506711990885,
+          17.703543480254314,
+          23.100124555749627,
+          28.259225028203847,
+          2.1817794060461155,
+          10.654125839876787,
+          11.83186952888165,
+          14.392570268252015,
+          11.206973644769487,
+          11.212951855721078,
+          1.6606920054442498
+        ],
+        "coverage_first64": [
+          0.796875,
+          0.796875,
+          0.90625,
+          0.84375,
+          0.859375,
+          0.828125,
+          0.96875,
+          0.96875,
+          0.890625,
+          0.9375,
+          0.96875,
+          0.921875
+        ],
+        "mean_width_first64": [
+          70.71552214708956,
+          65.14190193871237,
+          57.55401297511059,
+          62.696397282090835,
+          79.63136209595672,
+          6.738671209124884,
+          46.67777368699626,
+          44.62157932974964,
+          48.5080005519521,
+          41.05470152135894,
+          44.24236867197753,
+          6.72116050873498
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.840625,
+          "color_5points_mean_width_K": 67.14783928779202,
+          "color_ROI_coverage": 0.828125,
+          "color_ROI_width_K": 6.738671209124884,
+          "template_5points_mean_coverage": 0.946875,
+          "template_5points_mean_width_e": 45.02088475240689,
+          "template_ROI_coverage": 0.921875,
+          "template_ROI_width_e": 6.72116050873498
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0003_uncertainty_positive_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.2634115205639515,
+          0.23129306949839945,
+          0.13033615425406017,
+          0.6824745664663114,
+          0.04145233439738069,
+          0.19098066480227077,
+          0.3440909327968116,
+          0.18426137449704347
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          1.0682821273671357,
+          0.981508393531195,
+          0.9984546832702175,
+          1.0462045615353959,
+          0.9969393446169492,
+          1.1749476392508476,
+          1.6764679222301042,
+          0.9143599609215027,
+          1.4464306173896295,
+          0.8293876085024627,
+          1.6146040794845482,
+          1.4275348233480833
+        ],
+        "epsilon_e_min_med_max": [
+          0.03511728346347809,
+          0.04998081736266613,
+          0.08270969241857529
+        ],
+        "epsilon_DN_min_med_max": [
+          0.002321837702766061,
+          0.003304564976133406,
+          0.00546848913654685
+        ],
+        "linear_color_delta_med_max_K": [
+          0.02294921875,
+          0.124267578125
+        ],
+        "linear_template_delta_med_max_e": [
+          0.017057418823242188,
+          0.08156394958496094
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0004_uncertainty_negative_normal",
+        "mother_id": "closeout_uncertainty_mother_0004",
+        "role": "interval_calibration",
+        "condition": "negative_normal",
+        "ignored_plan_geometry": "filament",
+        "actual_temperature_geometry": "flat",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          321,
+          384
+        ],
+        "noise_feature_mean": 87.19827557710752,
+        "truth_statistics": [
+          2875.759033203125,
+          2875.759033203125,
+          2875.7587890625,
+          2875.7587890625,
+          2875.759033203125,
+          2875.7587890625,
+          -0.06674381345510483,
+          -0.05241067707538605,
+          -0.1566217839717865,
+          -0.025363540276885033,
+          -0.012867854908108711,
+          -1.42133629322052
+        ],
+        "bias_first64": [
+          -0.12488937377929688,
+          0.015533447265625,
+          -1.5028877258300781,
+          1.2101097106933594,
+          1.5745048522949219,
+          -0.4560356140136719,
+          2.172446882352233,
+          -2.69604017958045,
+          1.7229058891534805,
+          3.6520504746586084,
+          -4.261663192883134,
+          0.5134377679787576
+        ],
+        "empirical_sd_first64": [
+          13.76513521275808,
+          16.431443831277825,
+          14.69330993643606,
+          12.539563331821432,
+          13.932208501777563,
+          1.2264053042710428,
+          18.411046493043525,
+          19.018437610371617,
+          19.42550754828158,
+          15.94262918715239,
+          17.758860149033186,
+          2.636654161507939
+        ],
+        "coverage_first64": [
+          1.0,
+          0.984375,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.984375,
+          0.90625,
+          0.984375,
+          0.984375,
+          0.953125,
+          0.96875
+        ],
+        "mean_width_first64": [
+          120.70768823132438,
+          111.19381079670387,
+          98.24168221809806,
+          107.01946258153095,
+          135.92655950868988,
+          11.50255840171189,
+          79.67651206509765,
+          76.16669611689217,
+          82.80061335290489,
+          70.07822273252114,
+          75.51940340855097,
+          11.472668554345987
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.996875,
+          "color_5points_mean_width_K": 114.6178406672694,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 11.50255840171189,
+          "template_5points_mean_coverage": 0.9625,
+          "template_5points_mean_width_e": 76.84828953519336,
+          "template_ROI_coverage": 0.96875,
+          "template_ROI_width_e": 11.472668554345987
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0004_uncertainty_negative_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.19503669089326786,
+          0.21213195706421853,
+          0.32052286521612217,
+          0.16225061523575493,
+          0.21404701667501413,
+          0.19943506035299194,
+          0.24313923947457797,
+          0.3311625865918597
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          1.2208031477790804,
+          0.7324322561066109,
+          0.9782158415392482,
+          1.2361680220423303,
+          1.3920408253606442,
+          1.7008556691003665,
+          1.0222963903812083,
+          0.987832209074684,
+          0.7415578132884465,
+          1.1772261954927008,
+          1.0144159801855124,
+          1.3438215684450867
+        ],
+        "epsilon_e_min_med_max": [
+          0.062425605952739716,
+          0.08727725967764854,
+          0.11407563090324402
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0041273729875683784,
+          0.005770481424406171,
+          0.007542300503700972
+        ],
+        "linear_color_delta_med_max_K": [
+          0.01806640625,
+          0.0712890625
+        ],
+        "linear_template_delta_med_max_e": [
+          0.025029659271240234,
+          0.0785064697265625
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0005_uncertainty_positive_normal",
+        "mother_id": "closeout_uncertainty_mother_0005",
+        "role": "interval_calibration",
+        "condition": "positive_normal",
+        "ignored_plan_geometry": "hotspot_small",
+        "actual_temperature_geometry": "smooth_random",
+        "actual_template_geometry": "blob",
+        "first64_source_lines": [
+          385,
+          448
+        ],
+        "noise_feature_mean": 56.04506820122491,
+        "truth_statistics": [
+          2864.408203125,
+          2834.723876953125,
+          2835.970703125,
+          2814.71875,
+          2795.88671875,
+          2848.6005859375,
+          0.12125147879123688,
+          0.5699924230575562,
+          10.253175735473633,
+          0.10147283971309662,
+          0.2072571963071823,
+          10.474081039428711
+        ],
+        "bias_first64": [
+          -2.9508323669433594,
+          -1.8446693420410156,
+          -3.2282752990722656,
+          -1.9355278015136719,
+          -0.9780006408691406,
+          -1.2708473205566406,
+          -0.011308750603348017,
+          1.7950522489845753,
+          1.3533998914062977,
+          -0.5161706618964672,
+          2.819895587861538,
+          0.9731243699789047
+        ],
+        "empirical_sd_first64": [
+          24.16695845254821,
+          18.673890243759605,
+          24.908787407523103,
+          21.984976305152273,
+          26.34439497018891,
+          1.9526116324955471,
+          13.809257773573838,
+          14.176630830020526,
+          14.87517890372368,
+          14.031820512792109,
+          12.385570850662745,
+          1.7560803564113874
+        ],
+        "coverage_first64": [
+          0.953125,
+          0.96875,
+          0.828125,
+          0.875,
+          0.875,
+          0.90625,
+          0.921875,
+          0.90625,
+          0.921875,
+          0.875,
+          0.9375,
+          0.9375
+        ],
+        "mean_width_first64": [
+          77.58261931859609,
+          71.4677517234233,
+          63.14301221757039,
+          68.7847671246264,
+          87.36426549268097,
+          7.393055262227694,
+          51.21059474135352,
+          48.9547258851285,
+          53.21855268070362,
+          45.0414729703197,
+          48.538690547903755,
+          7.373844119311629
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.9,
+          "color_5points_mean_width_K": 73.66848317537942,
+          "color_ROI_coverage": 0.90625,
+          "color_ROI_width_K": 7.393055262227694,
+          "template_5points_mean_coverage": 0.9125,
+          "template_5points_mean_width_e": 49.39280736508182,
+          "template_ROI_coverage": 0.9375,
+          "template_ROI_width_e": 7.373844119311629
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0005_uncertainty_positive_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.09991819392764405,
+          0.38918700774990317,
+          0.41759864717500556,
+          0.2622848434748496,
+          0.20296019277823213,
+          0.23098809828625405,
+          0.4812053675899775,
+          0.11062525982259526
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          0.9751744692578811,
+          2.312695424635042,
+          1.2663194578528656,
+          1.2604961251509457,
+          1.578278276290998,
+          0.9251587092502052,
+          1.551085214794992,
+          1.0968786695841206,
+          0.6681667049678394,
+          0.8037274060841745,
+          1.020092544190396,
+          1.1050377153487767
+        ],
+        "epsilon_e_min_med_max": [
+          0.037846360355615616,
+          0.055766770616173744,
+          0.07645809650421143
+        ],
+        "epsilon_DN_min_med_max": [
+          0.002502275165170431,
+          0.0036871129414066672,
+          0.005055154208093882
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0311279296875,
+          0.14697265625
+        ],
+        "linear_template_delta_med_max_e": [
+          0.013422489166259766,
+          0.09903430938720703
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0006_uncertainty_blank",
+        "mother_id": "closeout_uncertainty_mother_0006",
+        "role": "interval_evaluation",
+        "condition": "blank",
+        "ignored_plan_geometry": "hotspot_large",
+        "actual_temperature_geometry": "front",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          449,
+          512
+        ],
+        "noise_feature_mean": 94.1121063896695,
+        "truth_statistics": [
+          3041.218994140625,
+          3272.458251953125,
+          2897.484619140625,
+          2783.5830078125,
+          3258.64501953125,
+          3016.0341796875,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bias_first64": [
+          1.5218925476074219,
+          2.4640731811523438,
+          1.9409294128417969,
+          -3.3357505798339844,
+          -0.3064765930175781,
+          -0.7004051208496094,
+          -1.784929171204567,
+          -0.7728402726352215,
+          -0.3170601427555084,
+          0.9861005768179893,
+          2.299820229411125,
+          0.44619316747412086
+        ],
+        "empirical_sd_first64": [
+          15.75737712304699,
+          11.136668077144614,
+          14.640566996494556,
+          19.859937389536793,
+          11.240696271425566,
+          1.39597002732465,
+          18.05992418764362,
+          24.088865568994894,
+          15.553552291583774,
+          16.639554128887973,
+          21.04360188203881,
+          3.253954913572437
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.984375,
+          0.890625,
+          0.984375,
+          0.984375,
+          0.953125,
+          0.921875
+        ],
+        "mean_width_first64": [
+          130.2784340824723,
+          120.01021444877641,
+          106.03112948757742,
+          115.5048879301747,
+          146.7039886396788,
+          12.414580367452778,
+          85.99395263955049,
+          82.20584823336206,
+          89.36575960275387,
+          75.63462820511843,
+          81.50723258036334,
+          12.38232059537984
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 123.70573091773595,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 12.414580367452778,
+          "template_5points_mean_coverage": 0.959375,
+          "template_5points_mean_width_e": 82.94148425222963,
+          "template_ROI_coverage": 0.921875,
+          "template_ROI_width_e": 12.38232059537984
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0006_uncertainty_blank.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.16079130291823196,
+          1.296056277347287,
+          0.3681553505321189,
+          0.28649463600325675,
+          0.07367016309525785,
+          0.17889862745625482,
+          1.0140825614713862,
+          0.18758256607514184
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          3.3840202410475695,
+          2.4720658533019675,
+          1.0023424801141463,
+          6.174225670209359,
+          0.8706046715207462,
+          8.399253476459384,
+          1.7326991290391849,
+          1.0232585049552358,
+          1.2978470973684983,
+          2.459161519978277,
+          2.365198029487947,
+          0.7733746460024282
+        ],
+        "epsilon_e_min_med_max": [
+          0.05002490431070328,
+          0.09147468209266663,
+          0.1420583426952362
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0033074798993766308,
+          0.006048001116141677,
+          0.009392423555254936
+        ],
+        "linear_color_delta_med_max_K": [
+          0.02099609375,
+          0.17333984375
+        ],
+        "linear_template_delta_med_max_e": [
+          0.021880626678466797,
+          0.08696174621582031
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0007_uncertainty_positive_weak",
+        "mother_id": "closeout_uncertainty_mother_0007",
+        "role": "interval_evaluation",
+        "condition": "positive_weak",
+        "ignored_plan_geometry": "double_hotspot",
+        "actual_temperature_geometry": "multipeak",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          513,
+          576
+        ],
+        "noise_feature_mean": 89.9506816649207,
+        "truth_statistics": [
+          2838.44873046875,
+          2839.347412109375,
+          2856.298583984375,
+          2838.470947265625,
+          2844.804443359375,
+          2857.69775390625,
+          0.528900146484375,
+          10.052769660949707,
+          5.63238000869751,
+          0.2729862928390503,
+          3.9733028411865234,
+          8.477662086486816
+        ],
+        "bias_first64": [
+          2.1780776977539062,
+          -1.3316459655761719,
+          -1.7943572998046875,
+          -3.9123611450195312,
+          -1.3191642761230469,
+          -0.2591705322265625,
+          -4.1794873140752316,
+          0.23923533409833908,
+          1.1808314435184002,
+          3.214220268651843,
+          3.177044639363885,
+          0.019033707678318024
+        ],
+        "empirical_sd_first64": [
+          15.171524863941562,
+          12.936626567759701,
+          13.235457088736654,
+          12.378044962289643,
+          13.287842850446554,
+          1.3100852232614855,
+          21.691478850345767,
+          16.024083383004466,
+          18.441397029604413,
+          18.040723035865728,
+          16.498270559410635,
+          2.9792673167219714
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9375,
+          0.984375,
+          0.984375,
+          0.921875,
+          0.984375,
+          0.96875
+        ],
+        "mean_width_first64": [
+          124.51781605478072,
+          114.70363389513612,
+          101.3426724891154,
+          110.39752273667042,
+          140.21706969838263,
+          11.865635670852404,
+          82.19149433294962,
+          78.57089134544766,
+          85.41420760988848,
+          72.29023582103177,
+          77.9031668982992,
+          11.834802353018661
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 118.23574297481704,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 11.865635670852404,
+          "template_5points_mean_coverage": 0.9625,
+          "template_5points_mean_width_e": 79.27399920152335,
+          "template_ROI_coverage": 0.96875,
+          "template_ROI_width_e": 11.834802353018661
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0007_uncertainty_positive_weak.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.32655776073254855,
+          0.2302605050052058,
+          0.11894442046999015,
+          0.32880802720188546,
+          0.217244880801265,
+          0.6288653367729904,
+          0.13999967333218905,
+          0.19815727843990244
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          1.0511680213131895,
+          1.3197789339179091,
+          0.8472598089523332,
+          0.8978067612140316,
+          1.0343819817723354,
+          1.0207070894442085,
+          1.0711228364791907,
+          1.9148783470204864,
+          0.9122968738240603,
+          0.7059964347077805,
+          0.8400086938674948,
+          0.9814561521792454
+        ],
+        "epsilon_e_min_med_max": [
+          0.06408948451280594,
+          0.08998936042189598,
+          0.11762470006942749
+        ],
+        "epsilon_DN_min_med_max": [
+          0.004237383138388395,
+          0.005949796410277486,
+          0.007776952814310789
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0152587890625,
+          0.067138671875
+        ],
+        "linear_template_delta_med_max_e": [
+          0.019149422645568848,
+          0.12404727935791016
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0008_uncertainty_negative_weak",
+        "mother_id": "closeout_uncertainty_mother_0008",
+        "role": "interval_evaluation",
+        "condition": "negative_weak",
+        "ignored_plan_geometry": "edge",
+        "actual_temperature_geometry": "ring",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          577,
+          640
+        ],
+        "noise_feature_mean": 59.90261703769221,
+        "truth_statistics": [
+          2677.948974609375,
+          2684.701416015625,
+          2750.45849609375,
+          2811.56494140625,
+          2675.009521484375,
+          2774.112060546875,
+          -10.251611709594727,
+          -4.891797065734863,
+          -21.14968490600586,
+          -1.400274634361267,
+          -3.5093908309936523,
+          -11.942654609680176
+        ],
+        "bias_first64": [
+          1.7327232360839844,
+          -0.9582748413085938,
+          2.3901901245117188,
+          -1.8435401916503906,
+          -7.5274505615234375,
+          -0.3485298156738281,
+          -2.4854082111269236,
+          -3.6234840532415546,
+          -0.25699620973318815,
+          0.4334785006940365,
+          2.71522518619895,
+          0.5824996754527092
+        ],
+        "empirical_sd_first64": [
+          19.10057791292454,
+          24.058978022528485,
+          20.091195201973527,
+          16.413807791703075,
+          19.338688200910532,
+          1.6457803583182966,
+          13.628364243106235,
+          13.922284208812727,
+          15.014861720229232,
+          12.930376967462012,
+          14.136206037620576,
+          2.0055917618655843
+        ],
+        "coverage_first64": [
+          0.96875,
+          0.9375,
+          0.890625,
+          0.96875,
+          0.96875,
+          0.953125,
+          0.96875,
+          0.921875,
+          0.9375,
+          0.953125,
+          0.9375,
+          0.921875
+        ],
+        "mean_width_first64": [
+          82.92258503704257,
+          76.3868347284753,
+          67.48910833500906,
+          73.5191818894652,
+          93.37749612146885,
+          7.901914875393828,
+          54.73538963410002,
+          52.32425066114841,
+          56.881554128660376,
+          48.14165086689389,
+          51.879579858171745,
+          7.881381440893837
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.946875,
+          "color_5points_mean_width_K": 78.73904122229219,
+          "color_ROI_coverage": 0.953125,
+          "color_ROI_width_K": 7.901914875393828,
+          "template_5points_mean_coverage": 0.94375,
+          "template_5points_mean_width_e": 52.79248502979489,
+          "template_ROI_coverage": 0.921875,
+          "template_ROI_width_e": 7.881381440893837
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0008_uncertainty_negative_weak.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.1431230942307458,
+          0.2058298834557938,
+          0.24953300727877675,
+          0.3718026029850944,
+          0.40178342723621924,
+          0.20469940141760692,
+          0.2743848494644358,
+          0.20375670104530813
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          0.6004746960860047,
+          0.8668248036532428,
+          0.7656245618901664,
+          0.8052989606994265,
+          1.2103285654966585,
+          0.9159528183706261,
+          0.8190585128145956,
+          1.1895621749001695,
+          1.1887611001051168,
+          1.3290474540963866,
+          1.1970347985152168,
+          0.8930077878038194
+        ],
+        "epsilon_e_min_med_max": [
+          0.04063998907804489,
+          0.05913939140737057,
+          0.0921388790011406
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0026869806461036205,
+          0.003910099389031529,
+          0.006091915536671877
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0145263671875,
+          0.09521484375
+        ],
+        "linear_template_delta_med_max_e": [
+          0.02070438861846924,
+          0.05956077575683594
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0009_uncertainty_positive_normal",
+        "mother_id": "closeout_uncertainty_mother_0009",
+        "role": "interval_evaluation",
+        "condition": "positive_normal",
+        "ignored_plan_geometry": "filament",
+        "actual_temperature_geometry": "stripe",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          705,
+          768
+        ],
+        "noise_feature_mean": 73.22223323753093,
+        "truth_statistics": [
+          2807.058349609375,
+          2951.765380859375,
+          2802.51953125,
+          3021.438232421875,
+          2758.66162109375,
+          2904.73095703125,
+          102.70934295654297,
+          109.68731689453125,
+          113.23109436035156,
+          38.31788635253906,
+          4.9208221435546875,
+          72.16739654541016
+        ],
+        "bias_first64": [
+          -2.5371017456054688,
+          0.8378372192382812,
+          -2.7634506225585938,
+          -0.613128662109375,
+          2.0234146118164062,
+          -0.18651962280273438,
+          3.4365131855010986,
+          0.5117699503898621,
+          -0.630378007888794,
+          3.741915874183178,
+          -0.35994383692741394,
+          0.762487530708313
+        ],
+        "empirical_sd_first64": [
+          16.838260491917296,
+          13.6925877694968,
+          19.382609951909263,
+          14.166016614415755,
+          19.263904119914784,
+          1.3604562169415733,
+          14.101725040333866,
+          18.05302701512044,
+          16.096011395576358,
+          19.004225242679038,
+          16.212025715392198,
+          2.1288009664916365
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          0.984375,
+          1.0,
+          1.0,
+          1.0,
+          0.984375,
+          0.921875,
+          0.953125,
+          0.890625,
+          0.9375,
+          0.96875
+        ],
+        "mean_width_first64": [
+          101.36079461137417,
+          93.37179083921754,
+          82.49561498105474,
+          89.86650249947533,
+          114.14040217709734,
+          9.658941172221828,
+          66.9060495906776,
+          63.95878302744091,
+          69.52942340901889,
+          58.84616336540765,
+          63.4152376723358,
+          9.633842036249524
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 0.996875,
+          "color_5points_mean_width_K": 96.24702102164383,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 9.658941172221828,
+          "template_5points_mean_coverage": 0.9375,
+          "template_5points_mean_width_e": 64.53113141297618,
+          "template_ROI_coverage": 0.96875,
+          "template_ROI_width_e": 9.633842036249524
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0009_uncertainty_positive_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.2523063406020749,
+          0.10503368400813269,
+          0.2429223059138331,
+          0.27394842037390715,
+          0.138163444289137,
+          0.11372990844647914,
+          0.2955469175808678,
+          0.03512464055813591
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          0.9841688360826443,
+          1.258114391026456,
+          0.824680151422271,
+          0.7328355530809113,
+          1.1272004221180876,
+          0.9517036786125911,
+          1.7930623944673636,
+          0.9916039602943968,
+          0.9725916610554902,
+          1.0863830213568542,
+          1.169764375793763,
+          1.4628375433486005
+        ],
+        "epsilon_e_min_med_max": [
+          0.048804592341184616,
+          0.06987899914383888,
+          0.12533940374851227
+        ],
+        "epsilon_DN_min_med_max": [
+          0.0032267968636006117,
+          0.004620166262611747,
+          0.00828702375292778
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0179443359375,
+          0.062744140625
+        ],
+        "linear_template_delta_med_max_e": [
+          0.0205230712890625,
+          0.08704376220703125
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0010_uncertainty_negative_normal",
+        "mother_id": "closeout_uncertainty_mother_0010",
+        "role": "interval_evaluation",
+        "condition": "negative_normal",
+        "ignored_plan_geometry": "hotspot_small",
+        "actual_temperature_geometry": "flat",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          769,
+          832
+        ],
+        "noise_feature_mean": 103.33464564081032,
+        "truth_statistics": [
+          3042.634033203125,
+          3042.634033203125,
+          3042.634033203125,
+          3042.634033203125,
+          3042.634033203125,
+          3042.6337890625,
+          -3.9405906200408936,
+          -9.681275367736816,
+          -9.864335060119629,
+          -0.6775856018066406,
+          -63.002132415771484,
+          -18.42168426513672
+        ],
+        "bias_first64": [
+          -0.7064170837402344,
+          -0.6504554748535156,
+          -0.2452850341796875,
+          -1.1939506530761719,
+          0.6810646057128906,
+          -0.4612693786621094,
+          3.0541394352912903,
+          3.028115935623646,
+          5.773320835083723,
+          3.6338675022125244,
+          -0.13746937364339828,
+          2.216395750641823
+        ],
+        "empirical_sd_first64": [
+          13.095533328433035,
+          11.182437236793866,
+          10.730339228176765,
+          12.833714992513755,
+          11.289535311536868,
+          1.3588856642081244,
+          21.577165128944376,
+          18.302389732110115,
+          19.739640315260658,
+          18.889388519006065,
+          23.285915089534615,
+          3.3733365537591427
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.984375,
+          0.984375,
+          0.984375,
+          0.984375,
+          0.953125,
+          0.90625
+        ],
+        "mean_width_first64": [
+          143.04510160267404,
+          131.77064523447135,
+          116.42167636890103,
+          126.82381812417138,
+          161.08028246022462,
+          13.63115025540338,
+          94.42095139670565,
+          90.26163075794412,
+          98.12317942111297,
+          83.04646239018045,
+          89.49455409043398,
+          13.595729178950071
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 135.8283047580885,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 13.63115025540338,
+          "template_5points_mean_coverage": 0.978125,
+          "template_5points_mean_width_e": 91.06935561127543,
+          "template_ROI_coverage": 0.90625,
+          "template_ROI_width_e": 13.595729178950071
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0010_uncertainty_negative_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.5216243619689481,
+          0.2926161950688876,
+          0.27384431821930905,
+          0.31137375999639455,
+          0.4077653686989553,
+          0.3082855637260126,
+          0.3318442135479107,
+          0.2402918074185541
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          0.9155282517795302,
+          0.7626547700100452,
+          1.4061211822151263,
+          1.0722505287511477,
+          0.7825583632072474,
+          1.0379293006433972,
+          1.0435326886142677,
+          0.7814356004030684,
+          1.5163559455899955,
+          1.199154616591875,
+          0.8364285121055721,
+          1.1312691336179475
+        ],
+        "epsilon_e_min_med_max": [
+          0.0748344287276268,
+          0.10338641330599785,
+          0.12988166511058807
+        ],
+        "epsilon_DN_min_med_max": [
+          0.004947802983224392,
+          0.00683556473813951,
+          0.00858734268695116
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0113525390625,
+          0.07421875
+        ],
+        "linear_template_delta_med_max_e": [
+          0.024750709533691406,
+          0.11173629760742188
+        ]
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0011_uncertainty_positive_normal",
+        "mother_id": "closeout_uncertainty_mother_0011",
+        "role": "interval_evaluation",
+        "condition": "positive_normal",
+        "ignored_plan_geometry": "hotspot_large",
+        "actual_temperature_geometry": "smooth_random",
+        "actual_template_geometry": "multipeak",
+        "first64_source_lines": [
+          833,
+          896
+        ],
+        "noise_feature_mean": 103.8320325435066,
+        "truth_statistics": [
+          2957.547607421875,
+          2971.1064453125,
+          2966.748046875,
+          2872.2431640625,
+          2957.20166015625,
+          2955.027099609375,
+          0.5516268014907837,
+          5.983767509460449,
+          37.743988037109375,
+          0.7569370269775391,
+          9.715372085571289,
+          37.27827835083008
+        ],
+        "bias_first64": [
+          -0.06281661987304688,
+          1.08984375,
+          -1.692138671875,
+          0.38339996337890625,
+          3.1052627563476562,
+          -0.3638153076171875,
+          -0.24224324338138103,
+          2.9218865670263767,
+          5.814749702811241,
+          1.7255514152348042,
+          -3.022150445729494,
+          0.9001147747039795
+        ],
+        "empirical_sd_first64": [
+          12.48850341398649,
+          9.837333431435207,
+          10.876287215283257,
+          11.670530883903291,
+          12.684111970084071,
+          1.0889032083554493,
+          21.122437848097363,
+          19.53761640649177,
+          17.49459407018791,
+          19.138828106074026,
+          19.939159172530292,
+          3.4715713356343616
+        ],
+        "coverage_first64": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.984375,
+          0.984375,
+          0.953125,
+          0.921875
+        ],
+        "mean_width_first64": [
+          143.73362924595196,
+          132.40490485468897,
+          116.98205586850389,
+          127.43426688212391,
+          161.8556199308424,
+          13.696761895755733,
+          94.87543347552447,
+          90.69609252704973,
+          98.59548165810543,
+          83.4461949527879,
+          89.92532364299967,
+          13.661170324891785
+        ],
+        "summary": {
+          "color_5points_mean_coverage": 1.0,
+          "color_5points_mean_width_K": 136.48209535642223,
+          "color_ROI_coverage": 1.0,
+          "color_ROI_width_K": 13.696761895755733,
+          "template_5points_mean_coverage": 0.984375,
+          "template_5points_mean_width_e": 91.50770525129344,
+          "template_ROI_coverage": 0.921875,
+          "template_ROI_width_e": 13.661170324891785
+        },
+        "linearization_file": "reports\\closeout_001\\linearization\\closeout_uncertainty_mother_0011_uncertainty_positive_normal.json",
+        "linear_status": "NUMERICAL_LINEARIZATION_UNCERTIFIED",
+        "step_discrepancies": [
+          0.36307847180289843,
+          0.1404287713233719,
+          0.050857596300624454,
+          0.09236065308556642,
+          0.2053493065568061,
+          0.15538091833046508,
+          0.20726133079012035,
+          0.12810262347677256
+        ],
+        "covariance_rank": 8,
+        "linear_sd_over_MC_sd": [
+          0.9019962585504651,
+          1.4949227226596735,
+          0.9341522322043017,
+          1.0104042733538632,
+          1.1046305756737127,
+          1.0694031896447047,
+          0.9677383436959522,
+          1.1747951857016146,
+          1.5709449050083073,
+          1.2262291394066587,
+          0.7331481981878338,
+          0.8149190871410068
+        ],
+        "epsilon_e_min_med_max": [
+          0.06645452976226807,
+          0.10288139060139656,
+          0.14970070123672485
+        ],
+        "epsilon_DN_min_med_max": [
+          0.004393751733005047,
+          0.006802174495533109,
+          0.009897710755467415
+        ],
+        "linear_color_delta_med_max_K": [
+          0.0123291015625,
+          0.053955078125
+        ],
+        "linear_template_delta_med_max_e": [
+          0.022434234619140625,
+          0.11256217956542969
+        ]
+      }
+    ],
+    "stability": [
+      {
+        "case_id": "closeout_uncertainty_mother_0000_uncertainty_blank",
+        "mother_id": "closeout_uncertainty_mother_0000",
+        "prefixes": [
+          {
+            "count": 32,
+            "finite": 32,
+            "empirical_standard_deviation": [
+              9.705307030733493,
+              12.511706133594522,
+              10.49602701380943,
+              12.597172745633486,
+              11.155075322903322,
+              1.0564184870291613,
+              17.621896800542025,
+              14.401818528100888,
+              21.718070361444273,
+              15.072626650888955,
+              21.728746098143233,
+              3.8175611668734617
+            ],
+            "empirical_quantiles025975": [
+              [
+                2937.539617919922,
+                3053.354736328125,
+                3021.3288696289064,
+                2936.0140625,
+                3083.373400878906,
+                3028.2285400390624,
+                -23.589574337005615,
+                -16.72244522571564,
+                -35.59551973342896,
+                -25.489433383941652,
+                -35.189489936828615,
+                -5.358277821540833
+              ],
+              [
+                2973.3418518066405,
+                3096.4073486328125,
+                3055.1417602539063,
+                2977.0139770507812,
+                3121.7240478515623,
+                3031.7991455078127,
+                33.996838378906226,
+                32.17159976959228,
+                39.47327365875244,
+                21.600042295455932,
+                38.480144786834714,
+                7.285705542564387
+              ]
+            ]
+          },
+          {
+            "count": 64,
+            "finite": 64,
+            "empirical_standard_deviation": [
+              11.178409862078976,
+              10.807323309936312,
+              11.975846860801118,
+              12.213080710811495,
+              11.582842011545495,
+              1.0615391450324412,
+              19.93711539756048,
+              18.895904993221677,
+              21.561857139844523,
+              17.053214659568425,
+              22.90772080583274,
+              3.5296538590505064
+            ],
+            "empirical_quantiles025975": [
+              [
+                2933.612841796875,
+                3054.9749755859375,
+                3013.7637451171877,
+                2930.4310791015623,
+                3078.99013671875,
+                3027.716516113281,
+                -32.956781196594235,
+                -36.75927019119263,
+                -42.97310562133789,
+                -25.124700832366944,
+                -35.84222583770752,
+                -5.157212221622467
+              ],
+              [
+                2976.634411621094,
+                3095.626287841797,
+                3059.513952636719,
+                2978.714074707031,
+                3121.9146728515625,
+                3031.718713378906,
+                37.90180101394651,
+                33.81761093139648,
+                39.62722415924072,
+                37.28066883087158,
+                41.52579689025878,
+                7.872129678726191
+              ]
+            ]
+          },
+          {
+            "count": 128,
+            "finite": 128,
+            "empirical_standard_deviation": [
+              11.548055748894237,
+              10.959394005867297,
+              12.185302555889907,
+              11.58554402786542,
+              11.798619045515597,
+              1.1735779534284718,
+              19.62817992098658,
+              19.46564413051214,
+              21.536901296809408,
+              17.951232463375177,
+              21.370406236724076,
+              3.3529292217833215
+            ],
+            "empirical_quantiles025975": [
+              [
+                2934.2861328125,
+                3055.8479125976564,
+                3011.836767578125,
+                2933.8938842773437,
+                3080.7053955078127,
+                3027.6772644042967,
+                -35.432475090026855,
+                -31.462822198867798,
+                -44.52934341430664,
+                -29.913523721694943,
+                -37.14769763946533,
+                -5.0221226811409
+              ],
+              [
+                2979.845593261719,
+                3096.911651611328,
+                3056.604522705078,
+                2979.1166381835938,
+                3126.95830078125,
+                3032.3503540039064,
+                39.23193626403809,
+                42.1505439758301,
+                39.02129993438721,
+                37.50860157012939,
+                40.192021465301515,
+                7.5427318096160905
+              ]
+            ]
+          }
+        ],
+        "same_first64_draws_reused": true,
+        "interval_model_not_recalibrated_with128_or_evaluation": true
+      },
+      {
+        "case_id": "closeout_uncertainty_mother_0008_uncertainty_negative_weak",
+        "mother_id": "closeout_uncertainty_mother_0008",
+        "prefixes": [
+          {
+            "count": 32,
+            "finite": 32,
+            "empirical_standard_deviation": [
+              19.65731805363775,
+              20.350665354503654,
+              18.349476153537754,
+              15.10548690455842,
+              19.819957436130423,
+              1.5271228860020682,
+              14.704166705433522,
+              12.33887099679518,
+              15.531672731996638,
+              13.21379071765844,
+              14.83948956671898,
+              2.054504815421105
+            ],
+            "empirical_quantiles025975": [
+              [
+                2642.0867431640627,
+                2652.264483642578,
+                2725.2659118652346,
+                2790.2642211914062,
+                2626.1564208984373,
+                2771.1175537109375,
+                -40.09282350540161,
+                -25.67838320732117,
+                -51.87075996398926,
+                -26.819721841812132,
+                -21.82681245803833,
+                -14.658219194412231
+              ],
+              [
+                2713.5681762695312,
+                2716.546740722656,
+                2796.430596923828,
+                2841.2511352539063,
+                2694.0270080566406,
+                2776.377197265625,
+                8.582046961784354,
+                15.943559694290148,
+                6.052254593372345,
+                18.529796648025506,
+                27.624931478500358,
+                -7.7123149037361145
+              ]
+            ]
+          },
+          {
+            "count": 64,
+            "finite": 64,
+            "empirical_standard_deviation": [
+              19.10057791292454,
+              24.058978022528485,
+              20.091195201973527,
+              16.413807791703075,
+              19.338688200910532,
+              1.6457803583182966,
+              13.628364243106235,
+              13.922284208812727,
+              15.014861720229232,
+              12.930376967462012,
+              14.136206037620576,
+              2.0055917618655843
+            ],
+            "empirical_quantiles025975": [
+              [
+                2643.8499389648437,
+                2650.1366577148438,
+                2721.7141845703127,
+                2783.4531127929686,
+                2628.5438842773438,
+                2770.8646240234375,
+                -39.757187366485596,
+                -39.67359495162964,
+                -50.83697319030762,
+                -25.03198285102844,
+                -22.190805530548097,
+                -14.288923120498657
+              ],
+              [
+                2713.9026489257812,
+                2729.347204589844,
+                2798.0117004394533,
+                2840.429022216797,
+                2703.364611816406,
+                2776.964569091797,
+                11.284910869598384,
+                13.442656469345087,
+                6.121748554706572,
+                20.05300860404968,
+                24.710807991027824,
+                -7.57048180103302
+              ]
+            ]
+          },
+          {
+            "count": 128,
+            "finite": 128,
+            "empirical_standard_deviation": [
+              19.63659565955551,
+              22.386495925854575,
+              19.428106577719888,
+              17.202822447919683,
+              17.204347502249558,
+              1.6193784324908802,
+              13.92331867265022,
+              13.212002218198407,
+              15.127702004032535,
+              15.577612163127052,
+              13.528885261298937,
+              1.8235482573549626
+            ],
+            "empirical_quantiles025975": [
+              [
+                2643.391149902344,
+                2645.3947570800783,
+                2720.4872314453123,
+                2779.2470153808595,
+                2636.0455322265625,
+                2770.7662353515625,
+                -40.37373924255371,
+                -38.0272741317749,
+                -50.94790458679199,
+                -27.208161115646362,
+                -22.649516153335572,
+                -14.437331295013427
+              ],
+              [
+                2718.2494567871095,
+                2725.190087890625,
+                2794.190673828125,
+                2847.1835205078123,
+                2702.8007385253904,
+                2777.056018066406,
+                13.260177826881412,
+                18.526164484024047,
+                5.957135832309723,
+                33.3379493713379,
+                24.349438953399662,
+                -7.612621128559112
+              ]
+            ]
+          }
+        ],
+        "same_first64_draws_reused": true,
+        "interval_model_not_recalibrated_with128_or_evaluation": true
+      }
+    ]
+  },
+  "linearization": {
+    "cases": 12,
+    "failed_step_checks": 12,
+    "directions": 96,
+    "direction_step_passes": 31,
+    "discrepancy_min_med_max": [
+      0.03512464055813591,
+      0.24633612337667737,
+      5.594382349585688
+    ],
+    "epsilon_sigma_units": 0.001,
+    "epsilon_half_sigma_units": 0.0005,
+    "probes": 8,
+    "ADC_step_e": 15.124779430299975,
+    "linear_sd_over_MC_sd_minmax": [
+      0.5224227397651475,
+      33.238068783426975
+    ]
+  },
+  "joint_prescreen": {
+    "single_raw_cases": 1,
+    "candidate_count": 9,
+    "outputs": 18,
+    "base_success": 18,
+    "tighter_success": 12,
+    "timeouts": 0,
+    "inner_certified": 18,
+    "production_certified": 1,
+    "planned_first_stage_cells": 1080,
+    "executed_first_stage_cells": 18,
+    "scientific_confirmation_candidates": 0,
+    "records": [
+      {
+        "source_line": 301,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s0.1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 66.80514539999422,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 156,
+          "objective": 31405.263698555475
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31404.67609092748
+        },
+        "template_inner_difference_RMS_e": 1.361357208003576e-10,
+        "template_outer_difference_RMS_e": 0.4326167019179172,
+        "color_outer_difference_RMS_K": 0.337106755643546,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 32.69057264076857,
+        "temperature_RMSE_K": 13.590235675423816
+      },
+      {
+        "source_line": 302,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s0.1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 91.50190699999803,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 99,
+          "objective": 31404.85450684225
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31402.4830730037
+        },
+        "template_inner_difference_RMS_e": 1.4387452486389054e-10,
+        "template_outer_difference_RMS_e": 1.1061582726887553,
+        "color_outer_difference_RMS_K": 0.8960840298576157,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 32.769814491479195,
+        "temperature_RMSE_K": 13.638970550346897
+      },
+      {
+        "source_line": 303,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 58.31406169998809,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 156,
+          "objective": 31434.048061141966
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31433.43613982905
+        },
+        "template_inner_difference_RMS_e": 4.870412403598082e-10,
+        "template_outer_difference_RMS_e": 0.40895055278826803,
+        "color_outer_difference_RMS_K": 0.34165656047317583,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 30.784025466826435,
+        "temperature_RMSE_K": 13.369411184648026
+      },
+      {
+        "source_line": 304,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 50.44120840000687,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 100,
+          "objective": 31433.517202393323
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31431.357148893283
+        },
+        "template_inner_difference_RMS_e": 7.493186590117397e-10,
+        "template_outer_difference_RMS_e": 0.9989232625013873,
+        "color_outer_difference_RMS_K": 0.8604660263325099,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 30.845460237684726,
+        "temperature_RMSE_K": 13.43658516038038
+      },
+      {
+        "source_line": 305,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s10",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 63.176660700002685,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 161,
+          "objective": 31593.403603356695
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31592.979637250868
+        },
+        "template_inner_difference_RMS_e": 2.632068394069253e-10,
+        "template_outer_difference_RMS_e": 0.22095594439026311,
+        "color_outer_difference_RMS_K": 0.25945715608317677,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 20.96766985460333,
+        "temperature_RMSE_K": 12.200473710701875
+      },
+      {
+        "source_line": 306,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c0.1_s10",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 50.505023599995184,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 97,
+          "objective": 31593.532454551263
+        },
+        "tighter_outer": {
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "iterations": 300,
+          "objective": 31591.291625665534
+        },
+        "template_inner_difference_RMS_e": 4.676101083255699e-10,
+        "template_outer_difference_RMS_e": 0.7413034144842239,
+        "color_outer_difference_RMS_K": 0.8286438808130329,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 20.956230970769433,
+        "temperature_RMSE_K": 12.227050817377258
+      },
+      {
+        "source_line": 307,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s0.1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": true,
+        "wall_s": 36.11817499999597,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 109,
+          "objective": 31675.536403091504
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 160,
+          "objective": 31675.44369071983
+        },
+        "template_inner_difference_RMS_e": 6.783938502594738e-10,
+        "template_outer_difference_RMS_e": 0.16196541840093245,
+        "color_outer_difference_RMS_K": 0.18212596442116344,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 27.874830862536623,
+        "temperature_RMSE_K": 8.787867701766077
+      },
+      {
+        "source_line": 308,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s0.1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 34.256210399995325,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 82,
+          "objective": 31672.42494666498
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 147,
+          "objective": 31671.950228541144
+        },
+        "template_inner_difference_RMS_e": 1.7257622336191076e-10,
+        "template_outer_difference_RMS_e": 0.5310289417507146,
+        "color_outer_difference_RMS_K": 0.4011327186693065,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 27.953480538284555,
+        "temperature_RMSE_K": 8.854427673424091
+      },
+      {
+        "source_line": 309,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 33.31133120000595,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 103,
+          "objective": 31694.596857892295
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 161,
+          "objective": 31694.43805013831
+        },
+        "template_inner_difference_RMS_e": 1.453816423377163e-10,
+        "template_outer_difference_RMS_e": 0.20974156254953583,
+        "color_outer_difference_RMS_K": 0.2409463021088308,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 26.6904984954343,
+        "temperature_RMSE_K": 8.70645624881714
+      },
+      {
+        "source_line": 310,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 32.2253003000078,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 87,
+          "objective": 31691.358897687005
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 149,
+          "objective": 31691.04599058247
+        },
+        "template_inner_difference_RMS_e": 3.3807044202290276e-10,
+        "template_outer_difference_RMS_e": 0.3781203304044407,
+        "color_outer_difference_RMS_K": 0.33277129082571477,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 26.765896089371672,
+        "temperature_RMSE_K": 8.765296309494436
+      },
+      {
+        "source_line": 311,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s10",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 42.972189699998125,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 103,
+          "objective": 31815.757156126867
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 163,
+          "objective": 31815.624930271515
+        },
+        "template_inner_difference_RMS_e": 5.223245558103178e-10,
+        "template_outer_difference_RMS_e": 0.16146465480830985,
+        "color_outer_difference_RMS_K": 0.2142280133369817,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 19.703988428571805,
+        "temperature_RMSE_K": 8.203953231647404
+      },
+      {
+        "source_line": 312,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c1_s10",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 38.70684739999706,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 85,
+          "objective": 31812.973878366527
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 151,
+          "objective": 31812.681022795292
+        },
+        "template_inner_difference_RMS_e": 5.867330781776278e-10,
+        "template_outer_difference_RMS_e": 0.30364209055125135,
+        "color_outer_difference_RMS_K": 0.308311607328986,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 19.736445265910092,
+        "temperature_RMSE_K": 8.247349275806759
+      },
+      {
+        "source_line": 313,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s0.1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 34.25034620000224,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 102,
+          "objective": 32366.937699592225
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 155,
+          "objective": 32366.6978850876
+        },
+        "template_inner_difference_RMS_e": 3.510080918200744e-10,
+        "template_outer_difference_RMS_e": 0.17902840446361032,
+        "color_outer_difference_RMS_K": 0.5337861372399219,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 23.47169537667523,
+        "temperature_RMSE_K": 9.089354198773686
+      },
+      {
+        "source_line": 314,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s0.1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 58.854853900003945,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 103,
+          "objective": 32353.984009564396
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 156,
+          "objective": 32353.79939346371
+        },
+        "template_inner_difference_RMS_e": 1.6217906701565004e-10,
+        "template_outer_difference_RMS_e": 0.24615243261517292,
+        "color_outer_difference_RMS_K": 0.37316908099803486,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 23.526567643706773,
+        "temperature_RMSE_K": 8.989764660225282
+      },
+      {
+        "source_line": 315,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s1",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 35.17185299999255,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 101,
+          "objective": 32377.748217718417
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 158,
+          "objective": 32377.494386823437
+        },
+        "template_inner_difference_RMS_e": 3.1882903736770557e-10,
+        "template_outer_difference_RMS_e": 0.18402688637261652,
+        "color_outer_difference_RMS_K": 0.5415018775007692,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 22.878519164218382,
+        "temperature_RMSE_K": 9.068779594671067
+      },
+      {
+        "source_line": 316,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s1",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 36.05857470000046,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 111,
+          "objective": 32364.76927452674
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 153,
+          "objective": 32364.675948185566
+        },
+        "template_inner_difference_RMS_e": 2.581620797657481e-10,
+        "template_outer_difference_RMS_e": 0.19208499260005868,
+        "color_outer_difference_RMS_K": 0.2576305518700759,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 22.919810751351104,
+        "temperature_RMSE_K": 8.92806802684066
+      },
+      {
+        "source_line": 317,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s10",
+        "initializer": "v3",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 35.02642229999765,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 103,
+          "objective": 32458.85032625722
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 151,
+          "objective": 32458.646191992808
+        },
+        "template_inner_difference_RMS_e": 1.7580533703723742e-10,
+        "template_outer_difference_RMS_e": 0.14336825787650073,
+        "color_outer_difference_RMS_K": 0.4967803218680827,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 18.74651647721212,
+        "temperature_RMSE_K": 8.850434670560283
+      },
+      {
+        "source_line": 318,
+        "case_id": "v5_development_selection_mother_0000_positive_normal_noise0",
+        "method": "joint_c10_s10",
+        "initializer": "smooth_demod",
+        "status": "SUCCESS",
+        "production_numerical_certified": false,
+        "wall_s": 36.38528159999987,
+        "base_outer": {
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 99,
+          "objective": 32446.536449960582
+        },
+        "tighter_outer": {
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 158,
+          "objective": 32446.273708836434
+        },
+        "template_inner_difference_RMS_e": 1.695812624382203e-10,
+        "template_outer_difference_RMS_e": 0.2658222871074006,
+        "color_outer_difference_RMS_K": 0.4605189083986483,
+        "errors": [],
+        "inner_certified": true,
+        "inner_ref_certified": true,
+        "template_RMSE_e": 18.7761534027276,
+        "temperature_RMSE_K": 8.78529751189838
+      }
+    ]
+  },
+  "v3_numerical_sensitivity": {
+    "same_finite_float64": {
+      "n": 60,
+      "within_budget": 18,
+      "color_delta_K_min_med_p90_max": [
+        0.07456347098373016,
+        0.2864085767354039,
+        0.789071452509989,
+        1.6917847386463343
+      ],
+      "template_delta_e_min_med_p90_max": [
+        0.05434690280724751,
+        0.2514978125672151,
+        0.6498935183402762,
+        1.3436936381917188
+      ],
+      "last_CG_converged": 0,
+      "last_CG_stops": {
+        "MAX_ITERATIONS": 60
+      }
+    },
+    "tighter_linear_float64": {
+      "n": 60,
+      "within_budget": 0,
+      "color_delta_K_min_med_p90_max": [
+        0.49636621214214205,
+        1.06597879727114,
+        1.7966661803151145,
+        3.9111290256035898
+      ],
+      "template_delta_e_min_med_p90_max": [
+        0.3716469427130273,
+        0.6472919584543615,
+        1.3577165716464317,
+        2.316712614397925
+      ],
+      "last_CG_converged": 2,
+      "last_CG_stops": {
+        "RELATIVE_TRUE_RESIDUAL": 2,
+        "MAX_ITERATIONS": 58
+      }
+    }
+  },
+  "traditional_selection": {
+    "time": "2026-10-14T19:09:13.379119+00:00",
+    "selected_regularization": 100.0,
+    "selection_mothers": 12,
+    "confirmation_mothers": 24,
+    "selection_rankings": [
+      {
+        "regularization": 100.0,
+        "loss": 1.743721398301188
+      },
+      {
+        "regularization": 10.0,
+        "loss": 4.158681674922034
+      },
+      {
+        "regularization": 1000.0,
+        "loss": 7.376646205525727
+      }
+    ],
+    "selection_numerically_finite": true,
+    "historical_regularization": 0.1,
+    "v4_1_preselected_regularization": 100.0,
+    "fallback_if_no_complete_configuration": "preselected100 retained as failed research comparator; other methods continue",
+    "all_results_kept": true,
+    "no_final_inputs_used": true,
+    "confirmation": {
+      "planned_or_attempted_cases": 120,
+      "finite_cases": 120,
+      "failed_or_unavailable_cases": 0,
+      "scoring_pixels": 7864320,
+      "template_RMSE_e": 13.364768510325566,
+      "temperature_RMSE_K": 20.850119800621698,
+      "all_cases_finite": true,
+      "conditional_aggregate_requires_explicit_failure_denominator": true
+    }
+  },
+  "detector": {
+    "v3_physics": {
+      "threshold": {
+        "threshold": 1065.5026338678122,
+        "order_statistic": 191,
+        "mothers": 200,
+        "alpha_target": 0.05,
+        "calibration_false_positive_fraction": 0.045,
+        "task": "max absolute27-dictionary matched-filter score per frame",
+        "rule": "strictly greater than threshold",
+        "multiple_comparisons": "all positions/scales/signs calibrated together in null score",
+        "available": true
+      },
+      "null_evaluation": {
+        "estimate": 0.045,
+        "CI95": [
+          0.020780422227004353,
+          0.08370268807585404
+        ],
+        "successes": 9,
+        "independent_units": 200,
+        "method": "Clopper-Pearson",
+        "unit": "mother scenario for frame detection; noise replicates are not new mothers"
+      },
+      "legacy_frame_detected_count": 0,
+      "legacy_new_disagreements": 9,
+      "independent_nominal_blank": {
+        "rows": 5,
+        "mothers": 5,
+        "exceedances": 5,
+        "score_median": 48210.32131523358,
+        "source_lines": [
+          1601,
+          1697,
+          1787,
+          1877,
+          1967
+        ]
+      },
+      "photon_blank_by_ratio": [
+        {
+          "ratio": 0.25,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 3,
+          "source_lines": [
+            2369,
+            2414,
+            2459,
+            2504,
+            2549,
+            2594
+          ]
+        },
+        {
+          "ratio": 1.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 0,
+          "source_lines": [
+            2384,
+            2429,
+            2474,
+            2519,
+            2564,
+            2609
+          ]
+        },
+        {
+          "ratio": 2.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 0,
+          "source_lines": [
+            2399,
+            2444,
+            2489,
+            2534,
+            2579,
+            2624
+          ]
+        }
+      ]
+    },
+    "old_B4": {
+      "threshold": {
+        "threshold": 1916.7466347637442,
+        "order_statistic": 191,
+        "mothers": 200,
+        "alpha_target": 0.05,
+        "calibration_false_positive_fraction": 0.045,
+        "task": "max absolute27-dictionary matched-filter score per frame",
+        "rule": "strictly greater than threshold",
+        "multiple_comparisons": "all positions/scales/signs calibrated together in null score",
+        "available": true
+      },
+      "null_evaluation": {
+        "estimate": 0.08,
+        "CI95": [
+          0.04641760839982258,
+          0.1266648560220817
+        ],
+        "successes": 16,
+        "independent_units": 200,
+        "method": "Clopper-Pearson",
+        "unit": "mother scenario for frame detection; noise replicates are not new mothers"
+      },
+      "legacy_frame_detected_count": 31,
+      "legacy_new_disagreements": 17,
+      "independent_nominal_blank": {
+        "rows": 5,
+        "mothers": 5,
+        "exceedances": 5,
+        "score_median": 31004.142537719235,
+        "source_lines": [
+          1602,
+          1698,
+          1788,
+          1878,
+          1968
+        ]
+      },
+      "photon_blank_by_ratio": [
+        {
+          "ratio": 0.25,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 2,
+          "source_lines": [
+            2370,
+            2415,
+            2460,
+            2505,
+            2550,
+            2595
+          ]
+        },
+        {
+          "ratio": 1.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 1,
+          "source_lines": [
+            2385,
+            2430,
+            2475,
+            2520,
+            2565,
+            2610
+          ]
+        },
+        {
+          "ratio": 2.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 1,
+          "source_lines": [
+            2400,
+            2445,
+            2490,
+            2535,
+            2580,
+            2625
+          ]
+        }
+      ]
+    },
+    "B1_lambda100": {
+      "threshold": {
+        "threshold": 1122.532793050107,
+        "order_statistic": 191,
+        "mothers": 200,
+        "alpha_target": 0.05,
+        "calibration_false_positive_fraction": 0.045,
+        "task": "max absolute27-dictionary matched-filter score per frame",
+        "rule": "strictly greater than threshold",
+        "multiple_comparisons": "all positions/scales/signs calibrated together in null score",
+        "available": true
+      },
+      "null_evaluation": {
+        "estimate": 0.055,
+        "CI95": [
+          0.027772254552006544,
+          0.09627764443391293
+        ],
+        "successes": 11,
+        "independent_units": 200,
+        "method": "Clopper-Pearson",
+        "unit": "mother scenario for frame detection; noise replicates are not new mothers"
+      },
+      "legacy_frame_detected_count": 0,
+      "legacy_new_disagreements": 11,
+      "independent_nominal_blank": {
+        "rows": 5,
+        "mothers": 5,
+        "exceedances": 5,
+        "score_median": 15361.87060027103,
+        "source_lines": [
+          1603,
+          1699,
+          1789,
+          1879,
+          1969
+        ]
+      },
+      "photon_blank_by_ratio": [
+        {
+          "ratio": 0.25,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 2,
+          "source_lines": [
+            2371,
+            2416,
+            2461,
+            2506,
+            2551,
+            2596
+          ]
+        },
+        {
+          "ratio": 1.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 0,
+          "source_lines": [
+            2386,
+            2431,
+            2476,
+            2521,
+            2566,
+            2611
+          ]
+        },
+        {
+          "ratio": 2.0,
+          "mothers": 6,
+          "frames": 6,
+          "exceedances": 0,
+          "source_lines": [
+            2401,
+            2446,
+            2491,
+            2536,
+            2581,
+            2626
+          ]
+        }
+      ]
+    },
+    "B1_lambda0.1": {
+      "threshold": {
+        "threshold": 1372.7562609941724,
+        "order_statistic": 191,
+        "mothers": 200,
+        "alpha_target": 0.05,
+        "calibration_false_positive_fraction": 0.045,
+        "task": "max absolute27-dictionary matched-filter score per frame",
+        "rule": "strictly greater than threshold",
+        "multiple_comparisons": "all positions/scales/signs calibrated together in null score",
+        "available": true
+      },
+      "null_evaluation": {
+        "estimate": 0.05,
+        "CI95": [
+          0.024234165472108552,
+          0.0900275377013513
+        ],
+        "successes": 10,
+        "independent_units": 200,
+        "method": "Clopper-Pearson",
+        "unit": "mother scenario for frame detection; noise replicates are not new mothers"
+      },
+      "legacy_frame_detected_count": 200,
+      "legacy_new_disagreements": 190,
+      "independent_nominal_blank": {
+        "rows": 0,
+        "mothers": 0,
+        "exceedances": 0,
+        "score_median": null,
+        "source_lines": []
+      },
+      "photon_blank_by_ratio": []
+    }
+  },
+  "contract_risk": {
+    "all_top_level_status": {
+      "SUCCESS": 2821
+    },
+    "numerical_execution_passed_true": 2821,
+    "production_numerical_certified_true": 0,
+    "current_selection_uses_production_field": true,
+    "this_risk_caused_current_exclusion": false
+  }
+}
