@@ -1,7 +1,7 @@
 {
-  "time": "2026-10-16T18:13:50.260395+00:00",
+  "time": "2026-10-16T19:25:34.059872+00:00",
   "schema": "root-integrated-repair-status-v001",
-  "scope": "Preserved C1 scientific record and completed bounded hybrid diagnostics",
+  "scope": "Preserved original C1 and final seals; signed-response control study closed negative",
   "future_execution_model": "gpt-6.1-sol",
   "reasoning_effort": "max",
   "contracts": [
@@ -745,16 +745,21 @@
     }
   ],
   "global_inverse_budget": {
-    "human_authorized_cumulative": 16000,
+    "human_authorized_cumulative": null,
     "charged_before_current_readonly": 5309,
     "charged_at_readonly_startup": 5309,
     "legacy_registered_guard_unchanged": 12000,
     "extension_receipt": "repair_001/INVERSE_BUDGET_EXTENSION_16000.json",
     "current_read_only_phase_new_inverse_cap": 0,
     "counter_snapshot_scope": "Last closed scientific shard; all current read-only checks0 new complete inverses",
-    "charged_at_latest_merge": 6489,
+    "charged_at_latest_merge": 6933,
     "pending_unmerged_remote_calls": 0,
-    "latest_scope": "All attempted hybrid generation, training and diagnostic forwards merged; old snapshots retained as historical"
+    "latest_scope": "User removed cumulative call budget; all attempted training/evaluation/replay calls remain charged",
+    "budget_enforced": false,
+    "historical_human_authorized_cumulative": 16000,
+    "active_cumulative_call_cap": null,
+    "legacy_guard_applies_to": "Historical frozen C1 source only; not the active hybrid005 execution",
+    "budget_override": "Latest direct user: 不考虑预算问题"
   },
   "prescreen_completed": {
     "cells": 18,
@@ -1042,13 +1047,15 @@
     "evidence_commit": "05f10038cb69f4f8bff6537b71f3bc1a2548933f"
   },
   "hybrid_execution": {
-    "status": "COMPLETED_NOT_ACCEPTED_NO_ACTIVE_JOB",
-    "latest_review": "../../hybrid_cached_003/RUN_REVIEW.json",
-    "cumulative_calls": 6489,
-    "weak_RMSE_improvement_fraction": 0.07230139366591715,
-    "weak_signed_gain": 0.8528560555653141,
-    "larger_signed_gain": 0.8336586912771318,
-    "timer_deleted": true,
+    "status": "CLOSED_CONTROLLED_NEGATIVE_RESULT_NO_ACTIVE_JOB",
+    "latest_review": "../../hybrid_response_005/RUN_REVIEW.json",
+    "cumulative_calls": 6933,
+    "weak_signed_gain": 0.9520306010166708,
+    "weak_RMSE_e": 15.266025719736126,
+    "null_RMSE_e": 15.174204741105816,
+    "candidate_accepted": false,
+    "global_call_budget_active": false,
+    "timer_active": false,
     "final_payloads_opened": false
   }
 }

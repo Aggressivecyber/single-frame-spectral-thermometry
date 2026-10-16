@@ -1,0 +1,21 @@
+{
+  "registered_at": "2026-10-16T19:17:11.054828+00:00",
+  "scope": "Engineering candidate screen; all gates are conjunctive; validation is development only",
+  "signed_gain_definition": "sum(prediction*truth)/sum(truth^2), pooled across the two continuum variants within each mother and signed peak; eight non-null groups, each two frames/131072 pixels",
+  "signed_gain_interval": [
+    0.9,
+    1.1
+  ],
+  "weak_RMSE_limit_e": 14.447200888292379,
+  "null_RMSE_limit_e": 14.279817580170588,
+  "weak_group_RMSE": "each mother x +/-30 group no worse than hybrid003 at the same group",
+  "null_frame_RMSE": "each of four null frames no worse than hybrid003 on that frame",
+  "numerical_tolerance_relative": 1e-08,
+  "temperature": "bitwise identical to previous cached temperature on all20validationframes",
+  "reference_roundoff_tolerance_e": 1e-06,
+  "success": "Every gate passes. Retain only an engineering candidate; no scientific acceptance or detector false-positive claim.",
+  "failure_stop": "Retain both arms and failures. Diagnose gain/error/null tradeoffs and choose the next evidence-based bounded stage; no stopping solely on old call caps.",
+  "null_meaning": "Null template RMS is an uncalibrated residual proxy, not detector false-positive rate.",
+  "matched_control": "Same signed/null schedule,80updates,warm-start,learningrate,mu,seed; only response_weight0 versus1. No bestcheckpoint selection.",
+  "additional_causal_readout": "Report signed-gain absolute bias against control, not just against the old75updatecheckpoint. Candidate screen remains all original gates conjunctively."
+}

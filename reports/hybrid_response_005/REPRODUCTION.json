@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-16T19:28:07.538050+00:00",
+  "runtime_receipt": "replay/CHECKPOINT_REPLAY.json",
+  "source_root": "/home/rylan/projects/thermometry-neural-20261011/hybrid_residual_002",
+  "previous_checkpoint_root": "/home/rylan/projects/thermometry-neural-20261011/hybrid_cached_003",
+  "procedure": [
+    "Create a new empty study output directory on the registered server; preserve existing runs.",
+    "Copy each arm source,config,gates and registration into a separate new subdirectory. Keep source,seed,schedule,learning_rate,mu,loss weights and warm-start checkpoint unchanged.",
+    "Assign new phase identifiers and current call-number offsets; update only the resulting config hashes in the new registration. Register both arms before executing.",
+    "In each new arm directory execute: python3 -B signed_response_pilot.py. Run arms serially with2CPUthreads and the same CUDA deterministic configuration supplied by the entrypoint.",
+    "Evaluate only the final80updatecheckpoint with the frozen gates; retain every result and failed gate."
+  ],
+  "inference_replay": "The saved replay source reproduced the null and negative60e frame for each completed checkpoint without labels; all4 maps were bitwise identical. This verifies checkpoint inference repeatability; the80-update training was not run a second time.",
+  "scope": "Development fixture only; independent experimental/hardware validation not performed."
+}
