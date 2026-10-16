@@ -1,3 +1,11 @@
+# Current continuation: joint temperature and characteristic-emission pilot (2026-10-17)
+
+用户补充完整目标：若干波长测温，其余特征波长用于CH*、C2*、AlO发光探测；滤光通道图像为中间结果，先进传统算法与神经网络融合为研究方向。六通道小试验已登记于 `../../research_joint_imaging/protocol.json`，说明见该目录README。当前已通过短时CPU数值检查，正在准备服务器执行，尚无新训练结果。
+
+新数据44个母场景按24/6/6/8划分，1056幅含噪raw；传统FFT/加权最小二乘/TV、关闭网络的等步骤物理对照、CNN后处理与混合重建共同评价。两类网络各3种子、每次300更新；先冻结选择和标定阈值，再读留出评价。源码、完整哈希与资源预算已保存于 `../joint_imaging_001/REGISTRATION.json`。重计算仅服务器；实际启动后更新回执并设一次苏醒。旧数据和封存测试保持原状。
+
+下列内容为历史记录。
+
 # Current continuation: three-channel image baseline verified (2026-10-17)
 
 用户明确目标：滤光片确定波长，算法恢复通道完整图像。当前为431.5、486、516.5nm三个可见通道，共同视场、同一传感器区域重叠编码；OH*310nm为待确认紫外响应的扩展。不再延续旧温度/化学模板反演方向。

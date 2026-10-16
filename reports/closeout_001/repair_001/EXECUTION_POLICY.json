@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-16T20:07:51.330790+00:00",
+  "time": "2026-10-16T21:13:55.291561+00:00",
   "user_request": "后续执行换成6.1solmax",
   "future_execution_model": "gpt-6.1-sol",
   "reasoning_effort": "max",
@@ -7,13 +7,13 @@
   "active_followup_agents": [],
   "historical_astra_reviews_preserved": true,
   "new_data_logs_caches": "E/D only",
-  "current_scope": "Three-channel total-image decoder baseline established; all runs complete. Further work targets weak-channel image error at fixed bandwidth.",
+  "current_scope": "Several filter channels are for thermometry; others for CH*, C2* and AlO characteristic-emission detection. Filter wavelength is given. Traditional algorithms combined with neural networks remain the research direction.",
   "last_completed_followup_agents": [
     "sol61_numeric_finish"
   ],
   "human_authorized_cumulative_inverse_cap": null,
   "current_stricter_registered_code_guard": null,
-  "storage_global_limit_bytes": 4294967296,
+  "storage_global_limit_bytes": 8589934592,
   "next_wake_local": null,
   "latest_direct_user_rules": "repair_001/LATEST_USER_EXECUTION_RULES_20261016.txt",
   "minimal_current_problem_code_only": true,
@@ -44,16 +44,18 @@
     "former_running_guard": 12000,
     "reason": "latest direct user instruction"
   },
-  "registered_next_run": null,
+  "registered_next_run": "joint_imaging_001",
   "call_count_semantics": "Per-stage fixed execution counts for reproducibility, no cumulative budget restriction",
   "no_cumulative_call_cap": true,
   "legacy_forecast_fields_superseded": true,
   "filter_decode_source": "research_filter_decode/REGISTRATION.json",
   "filter_decode_legacy_spectral_model_used": false,
-  "current_neural_training_enabled": false,
+  "current_neural_training_enabled": true,
   "latest_filter_decode_review": "reports/filter_decode_003/RUN_REVIEW.json",
   "filter_decode_server_calls": 2736,
   "filter_decode_local_contract_replay_calls": 24,
   "current_filter_decode_baseline": "filter_decode_003",
-  "current_filter_decode_hardware_accepted": false
+  "current_filter_decode_hardware_accepted": false,
+  "storage_allocation_reason": "Existing parent uses about 4.25 GB; new joint pilot allows at most 2 GiB with more than 77 GiB server space available. No old artifacts deleted.",
+  "joint_registration": "research_joint_imaging/REGISTRATION.json"
 }

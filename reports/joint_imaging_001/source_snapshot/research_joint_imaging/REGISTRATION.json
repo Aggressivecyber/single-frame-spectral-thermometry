@@ -1,0 +1,63 @@
+{
+  "time": "2026-10-16T21:13:55.177880+00:00",
+  "run_id": "joint_imaging_001",
+  "base_commit": "481eae02d5f658a604812fe72ebca04b69c500f4",
+  "source_sha256": {
+    "research_joint_imaging/AGENTS.md": "2bed9e2124a4a6d5d2a3d87ef6c1692db7331be04ba4e98df7d793f6ceaa67bc",
+    "research_joint_imaging/README.md": "dee60cd59272c3b8647a2bb05d6e869bfed896156ad9ab58255a052960e8347f",
+    "research_joint_imaging/check_contracts.py": "08f08b4c909fe09a82b902891b2771de9efaca9ca04e667caa03a07a217e004f",
+    "research_joint_imaging/check_cuda.py": "e8decabec768ef714806d6e833b752cbdbbc3ca8d9eb8f65524b9126adf23487",
+    "research_joint_imaging/core.py": "6db1eec36651f3b94396cbf43b5b40e8d0f4dfd7558589d663764600b8af26d6",
+    "research_joint_imaging/data.py": "39d8245f5d571dfc9a803d5e16bffc55b643b9356edb58cc9767de2815253e4f",
+    "research_joint_imaging/physical_controls.py": "35bc2204b3a3df5c94639228b9572c7b784e79cf293bfc59372b068b65b1f449",
+    "research_joint_imaging/protocol.json": "030871de3b2810820888de164af0c47fa3b9409061ac95fd5bdcc2cc91829e43",
+    "research_joint_imaging/run.py": "3cd1f479ee756933026cb4033a100fc4c06b6926dddc4d55efb4cf9ba631f1d1",
+    "research_joint_imaging/supervise.py": "641992358f5d9abed925b194e9432d38d007c28bc037ac93d07a20e39409ba1f",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "research_filter_decode/operator.py": "4784ebb879fa68179f8189659eb9cdcdcc4ef0a1e2e368df98558f0cddd125aa"
+  },
+  "resources": {
+    "server": "rylan@100.82.231.102",
+    "server_directory": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_001",
+    "cpu_threads": 2,
+    "maximum_wall_seconds": 1800,
+    "maximum_gpu_memory_MiB": 5000,
+    "maximum_new_artifact_bytes": 2147483648,
+    "cumulative_call_cap": null,
+    "long_job_rule": "verify first optimizer progress, set one wake, do not poll continuously"
+  },
+  "local_CPU_contracts": {
+    "time": "2026-10-16T21:12:44.707312+00:00",
+    "device": "cpu",
+    "dtype": "float64",
+    "geometry": {
+      "minimum_center_separation_cpp": 0.27085837223999554,
+      "required_separation_cpp": 0.26,
+      "carrier_count": 6,
+      "includes_conjugates_and_DC": true
+    },
+    "noiseless_relative_L2": 4.672320157316081e-15,
+    "adjoint_relative_error": 2.525246549273326e-16,
+    "spatial_gradient_adjoint_relative_error": 2.3222069310812616e-13,
+    "normal_preconditioner_relative_error": 1.7521053041031922e-14,
+    "weighted_PCG_relative_error": 1.4924821010712162e-12,
+    "data_proximal_directional_derivative_relative_error": 5.341006092343679e-10,
+    "uniform_temperature_errors_K": [
+      9.094947017729282e-13,
+      0.0,
+      4.547473508864641e-13,
+      0.0
+    ],
+    "zero_initialized_hybrid_noiseless_relative_L2": 4.241909359955143e-15,
+    "network_backward_finite": true,
+    "network_parameters": 10422,
+    "complete_decode_observations": 4,
+    "wall_seconds": 1.6409999999741558,
+    "passed": true
+  },
+  "training_started": false,
+  "legacy_sealed_tests_accessed": false,
+  "source_evidence": "research_joint_imaging/README.md",
+  "local_contract_passes": 3,
+  "local_complete_decode_observations": 12
+}

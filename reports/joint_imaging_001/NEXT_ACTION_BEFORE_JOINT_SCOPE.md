@@ -1,0 +1,542 @@
+# Current continuation: three-channel image baseline verified (2026-10-17)
+
+用户明确目标：滤光片确定波长，算法恢复通道完整图像。当前为431.5、486、516.5nm三个可见通道，共同视场、同一传感器区域重叠编码；OH*310nm为待确认紫外响应的扩展。不再延续旧温度/化学模板反演方向。
+
+已完成三组独立图像解码开发试验，2304帧含噪观测、2736次服务器完整解码，另24次本地短时合同/重放。8个母场景在三组之间复用；没有训练，没有开启旧封存数据，旧6933次账本保留。所有原始ADC帧、图像目标、源码包和失败几何保留且已核验。
+
+003为当前均衡亮度开发基线：每通道平均4000电子时，三路平均相对图像误差1.82–1.85%，95分位均低于1.93%；均值偏差与去均值细节误差也通过原始门槛。光学造成的图像L2差异从14.33%降至9.75%，减少31.95%。宽带002的516.5nm细节误差95分位11.06%超10%，保留失败。003的20倍暗弱通道仍约30%误差，未验收；窄带001的弱通道误差较低但图像更平滑。不能省略这一权衡。
+
+完整回执 `../filter_decode_003/RUN_REVIEW.json`；人读报告 `../filter_decode_003/RESULTS_zh.md`。源码入口 `../../research_filter_decode/README.md`；003的冻结协议在 `../filter_decode_003/source_snapshot/research_filter_decode/protocol.json`。图像统计的精确定义与随机数措辞说明均已保留。
+
+下一步保持003目标空间带宽，对同一批保存raw比较频域解调与使用raw噪声方差的独立三通道图像重建，同时检查强度偏差、空间细节和弱通道误差。若推进算法选择，先冻结新母场景验证集。硬件尚未明确，先按已登记假设仿真；真实滤片响应、相机和空间编码标定到位后再做实测验证。当前无运行作业、无定时；下一实验尚未启动。
+
+以下均为历史任务，不代表当前要继续的方向。
+
+# Historical continuation: signed-response control study closed negative (2026-10-17)
+
+用户最新明确“不考虑预算问题”。原累计12000/16000次调用限制和63次余量已被覆盖，不再作为研究停止原因；实际调用继续逐次登记。累计6933次已全部并账。原C1及必要实验计划保留，封存最终测试未打开。
+
+已完成 hybrid_response_005 双分支对照：同一hybrid003权重、同一80步顺序、同一优化器重置/学习率/网络/物理近端/空白损失，仅幅值响应损失权重0与1不同。每分支200次训练前向、20次验证，共440次；补充4次检查点原生GPU重放全部逐元素一致。训练仅8个母场景，开发验证2个母场景20帧；不能推断总体泛化或实测性能。
+
+| 开发验证结果 | hybrid003 | 同步无幅值约束对照 | 幅值约束分支 |
+|---|---:|---:|---:|
+| 弱模板RMSE，电子 | 14.4472 | 12.9282 | 15.2660 |
+| 弱模板有符号增益 | 0.85286 | 0.62276 | 0.95203 |
+| 空白模板RMSE，电子 | 14.2798 | 12.1543 | 15.1742 |
+
+幅值约束作用得到同设置对照支持，但候选未通过联合门槛：弱/空白RMSE较hybrid003分别上升5.67%/6.26%，母场景008的负60电子分组增益0.86933低于0.90。40帧结果均已重新打开并验证数值与固定温度；两分支最终检查点、数据来源、源码和全部失败结果保留。回执：`../hybrid_response_005/RUN_REVIEW.json`。
+
+正负注入对误差分解逐对验证恒等式。弱模板的幅值偏差项由3.04285降到1.50722电子平方，但正交差分误差与共同误差之和由205.67876升至231.54432电子平方。两项可能混合噪声、固定连续谱误差和模型误差，不能仅凭该分解称为散粒噪声或不可消除误差。
+
+下一轮优先固定结构、连续谱、近端权重及幅值损失，仅增加同一物理状态的独立噪声重复，并与相同规模的单噪声训练对照。此举用于判断残差上升能否通过学习噪声不变性降低；不再只调大幅值损失。先冻结新的开发验证母场景，衍生样本不跨划分，继续同时检查有符号幅值、弱模板误差和实际空白帧。当前无运行作业，无定时任务。此前60次调用的hybrid_response_004方案在启动前被替代，未运行、未产生调用。
+
+# Historical continuation: hybrid003 before the matched response study (2026-10-17)
+
+用户最新明确：只有真实作业运行时才设置定时，否则直接推进或给出建议。旧定时任务 `automation` 已删除，本轮及补充试验均已结束，不等待定时苏醒。
+
+已完成首轮、同参数跳连优化诊断、近端权重诊断及完整缓存数据重训。工程链路通过，当前候选不采用：2个验证母场景、20帧中，弱模板8帧/524288像素的RMSE由v3的15.57316降至14.44720电子（降低7.23%），但弱/较强有符号响应增益分别0.85286/0.83366，存在约15%/17%的幅值低估。色温RMSE仍23.95587K，20帧温度逐元素未变。检测阈值和不确定度尚未校准，封存测试未打开。完整回执 `../hybrid_cached_003/RUN_REVIEW.json`。
+
+学习停滞具有分层证据：原串联DSConv主要学到全图偏置；同参数跳连恢复空间变化但单训练对中心化MSE仅降0.7–0.8%；近端权重由0.05改为1倍模板敏感度后，同训练对降46–47%，随后全训练/验证小试验出现上述误差—幅值权衡。所有训练对诊断均未读取验证/最终标签，完整小试验仍只具有开发诊断意义。
+
+下一步建议优先给同连续谱的正/负模板注入对加入显式响应幅值损失，并同时核对空白模板；不据较低像素RMSE宣布成功。新完整训练尚未启动。累计6489次已全部并账；完整必要B方案（主方法UQ1820、v3独立MC896）剩9448次，预测总量15937，余量63。可选双方法完整UQ扩展不在该必要方案中。此前15473/15987最坏预测重复减去了已完成C1调用，已由 `../hybrid_optimization_probe_001/BUDGET_RECONCILIATION.json` 纠正，不得继续用于预算决策。任何扩展必须先落实调用预算，原完整科学工作不静默删减。
+
+# Historical continuation: hybrid server startup before completion (2026-10-17)
+
+用户已要求新建分支开始推进，并随后明确要求按规范持续全自动推进。当前分支 `research/hybrid-residual-001`，有效源码提交 `938a7cff7929c59868f118081f28372a9134b24b`。实现位于 `research_hybrid`，首个有效试验为 `hybrid_002`，服务器目录 `/home/rylan/projects/thermometry-neural-20261011/hybrid_residual_002`。原C1选择未恢复，原科学结果及封存测试未变动。
+
+第一轮 `hybrid_001` 检出负180电子条件下部分总波段光子期望为负，已停止并隔离，104次尝试全部并入总账，累计5413；所有源码、报告和远端输出保留。修订轮统一使用0/正负30/正负60电子，不按场景裁剪或排除。全部100场景通过逐波段非负与raw期望检查，最小总波段期望9.02718电子。CPU伴随、导数、有限维QR、隐式梯度及GPU前向/反向检查均通过。
+
+修订轮为8个训练母场景、2个验证母场景，每母场景5个有符号条件和2个连续谱变体，共100帧；固定纯物理v3连续谱，学习可观测空间模板残差后施加带近端项的raw一致性求解。75次训练更新，预留410次调用（包括训练前向），编号5414–5823。原完整计划预测加失败轮及本轮为15987，仍在16000人工累计上限内；严格运行守卫12000继续生效。后续扩展必须重新审核并明确预算取舍，不能直接照搬全部多种子矩阵。
+
+已在首批10帧完成、无错误日志时确认服务器进程正常启动；这只是数据准备/反演阶段回执，不代表训练完成。证据见 `../hybrid_002/STARTUP_VERIFIED.json`、`DATA_CONTRACTS.json`、`CUDA_CONTRACTS.json`、`REGISTRATION.json` 和 `AUTONOMOUS_CONTINUATION.json`。定时任务“测温混合算法自动推进”（id `automation`）每15分钟自动接续，正常运行保持安静，完成、失败或重要结果才通知。长任务不持续轮询。
+
+下一次接续先读取真实退出状态并同步报告、核对哈希和调用账本，再评估完整分母、温度逐元素不变、正负/空白模板误差与响应增益。两个验证母场景只支持工程诊断，不能宣布科学验收；同一训练网络去掉DC不能当作独立训练消融。结果及预算支持时自主登记下一小阶段，否则保留负结果并给出明确停止或预算取舍证据。重计算仍只在服务器，所有本地文件留在E/D。
+
+# Historical continuation: hybrid research review before implementation (2026-10-17)
+
+当前用户要求调查前沿算法，并结合团队模块.md思考“传统方法＋神经网络”的创新方向。本轮已完成文献、当前传统结果、模块库及历史神经网络消融的只读研究；新方案见LITERATURE_MATRIX.md末节及repair_001/neural_hybrid_review_20261017/RESEARCH_PROPOSAL.json。候选为连续谱敏感度引导的可观测域有符号模板残差学习，首个原型固定连续谱，并用包含网络建议先验的raw一致性子问题约束输出。它尚未实现或训练，不能把方案当科学结果；旧1080格传统选型与最终payload保持原登记。最新用户允许研究神经混合路线，旧“无CNN”仅描述旧冻结方法，不能阻止本次设计讨论。
+
+重要既有结果：module_ablation_001已在2026-10-11完成五结构×三种子=15训练、12000更新。45验证检查点全未过模板L2，43未过背景误报，温度门槛全过；同参数单尺度排名最高，未采用ASPP/ECA。module_review_20261011/READOUT.txt是早于这批训练的提案。不要重新把已完成实验写成未执行，也不要无新假设重跑同一模块堆叠。两完整C1母场景的温度/模板权衡另见TWO_COMPLETE_MOTHERS_DIAGNOSTIC，不能混用旧神经网络与新传统任务的指标。
+
+服务器rylan@100.82.231.102已于2026-10-17 01:15新加坡重新验证连通，hostname rylan-GTi15，项目目录存在；RTX5070总12227MiB、使用227MiB、0%利用率、无列出的GPU计算进程；可用内存59773MiB、文件系统空闲84972281856B。均为该时刻快照，实际启动前重查并保留其他项目。证据server_migration_001/SERVER_READINESS_20261017_0115.json。早01:03 SSH超时原记录保留，不继续把服务器写成不可达。本轮0新逆、0训练、0远端科学作业。
+
+最新执行规则：所有本地数据/代码/缓存/日志/tmp存E/D；神经训练、大批扫描及长期计算仅服务器。当前closeout源码仍有Windows绝对路径/存储白名单，尚未形成Linux可执行登记；不得直接把本地冻结计划作为服务器运行资格。应做版本化路径映射、环境与源身份登记、同问题等价检查，保持数学目标、所有已算结果/no-rerun身份和完整分母。不得在本机重启重度任务。长作业正确启动后仅设一次苏醒，不持续监控。
+
+母0006首对36格复核现已全部完成：完整性通过，24数值认证/12未认证均保留。原生逐数组/26评分一致、独立CPU固定两点核验完成、账本不变；root完成回执MOTHER0006_FIRST_PAIR_COMPLETION_VERIFICATION.json，证据提交05f10038cb69f4f8bff6537b71f3bc1a2548933f已推送。旧只读进程和智能体已完成，不再等待或重复审阅。剩余54格曾在新服务器规则前发起本地launcher，后观察到首票前已退出、原因未知；没有执行新逆，也没有被本root杀停的证据。原日志与MOTHER0006_REMAINDER_EXIT_BEFORE_INVERSE_OBSERVATION保留。
+
+累计5309新逆/5849账本行（540 reused），SHA56912d4d815356d7290acd025b9b2cb9c6ec219e9d741646ee218aad30638527。全1080矩阵222有限、210认证、12未认证、858未执行；仅母0000/0005完整。人类cap16000、冻结guard12000与development3400继续适用，开发668；新混合实验的传统标签/基线反演也必须计入累计额度，先做明确资源登记。四根E/D新输出4GiB与各盘底线继续适用。原最终payload仍闭，未选择新模型，整个课题未完成。
+
+后续先读取本节与RESEARCH_PROPOSAL，再核对最新用户指令。原授权传统工作可继续准备服务器迁移；神经混合方案需要先以最小实现及短时CPU算子检查形成可复核实验登记。不要把模型库模块名称当原创点，不把局部Jacobian残差化当精确可辨识性保证，不从旧测试或最终payload选择新网络。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: mother0006 first-pair readonly audits pending; wake2026-10-16 20:00 Singapore
+
+继续完成单帧七通道谱温反演课题。全部修复、小验证快速迭代，后续执行智能体全部gpt-6.1-sol/max。旧Astra审阅/失败保留，新2026-10-14计划替代永久停止/封存规则；小片、合同和工作稿不代表整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0006_FIRST_PAIR_WAKE_OBSERVATION.json、MOTHER0006_FIRST_PAIR_NUMERICAL_STATUS_REVIEW.json、MOTHER0006_FIRST_PAIR_READONLY_INFLIGHT.json。再读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml和root_cause_team_001报告。用户最新AGENTS替代旧AGENTS：新文件/cache/tmp全E/D；长计算确认真实启动后只设一次苏醒、不持续监控；不假设、不隐藏困惑、说明取舍；最小必要代码/改动、不增一次性辅助抽象、不吞错、校验限外部边界，保留科学登记与必要证据核验。无CNN。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001；旧public_repository_001输入/权重/报告哈希只读。C仅已有执行程序。人类累计新完整逆cap16000包含已有5309；本冻结阶段更严格12000及semantic development3400。四根E/D新输出总4GiB、E底线2GiB；D项目256MiB/D底线128MiB独立。既有唯一科学证据不删不降精度；未来完整存储证明仍待完成。
+
+母0006 blank/positive_weak科学36格已于2026-10-16T08:35:02.092564Z完成。11:00:29Z NT检查原launcher60656/child55360均退出、global/local锁清、stderr0。终态shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json SHA907d8dffc3a5c5d30d65729c8a6ab4fe2a2e2b442bbffc70d05a86afdf013192。36/36有限，但仅24数值认证、12有限未认证；不能写36/36数值通过。全第一阶段222有限、210认证、12未认证、858未执行，共1080；两完整母0000/0005各90，母0006当前仅2条件，非三完整母。总账5849行，其中5309计费新逆、540历史reused；ledger SHA56912d4d815356d7290acd025b9b2cb9c6ec219e9d741646ee218aad30638527，semantic development668/3400。
+
+root读取全部36保存日志及状态，确认12未认证全为continuum_multiplier=10（3模板倍率×2raw×双初值）。其48阶段均达到各自maxiter280/200/160/160，optimizer.success=false、真实投影梯度均高于各阶段gtol，内层及更紧参考均通过，无超时/错误。都返回stage4 completed_tightened_endpoint，实际pg∞2.1146e-7..1.6394e-6，未达第四阶段1e-7；后两次输出变化小不能取代合格端点链。24认证中17在stage3/1e-6结束，7实际执行stage4/1e-7后通过。本片实际127stage/91platform，不能照搬108/72或全部1e-6。ROOT metadata SHAae5c06119f5b2fd146c803e8380787d9105c2fd9e5b8f673f6d5f8c027b341bb。此为0forward/inner/完整逆的记录审计，尚不等于新原生/独立CPU完成。保留所有九组每组120完整分母，不因这12失败删后续格或重跑同raw。
+
+本轮尚未启动母0006剩余54反演。当前两个只读任务真实命令/父子关系于2026-10-16T11:05:19Z核验，之前CPU活动快照证明仍在计算；无phase锁不能当作允许另一GPU：
+1) native纯forward/重评分审计：launcher51852，child48792，父壳56920；2026-10-16 19:02:02新加坡启动。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json --device cuda。exec53951，预期analysis/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/NATIVE_ANALYSIS.json或FAILURE_*.json；logs mother0006_first_pair_native_analysis.stdout/stderr.txt。先前CPU117.953125秒，stderr0，尚无终态。原工具支持有限未认证端点，核验原numflag一致即可，不强制全36通过数值。
+2) CPU下一片原source/依赖/账本/192MiB预算检查：launcher59512，child61284，父壳55596；19:03:14新加坡启动，真实命令python -B -（本root调用中的stdin）。exec43059，预期MOTHER0006_REMAINDER_PLAN_REVIEW.json；logs mother0006_remainder_plan.stdout/stderr.txt。之前CPU87.390625秒、stderr0、未返终态。0GPU/完整逆，不能重复启动相同规划。
+
+另已继续授权既有sol61_numeric_finish做CPU独立36链审阅，输出到repair_001/c1_mother0006_first_pair_analysis_001。两个预定固定物理点沿原角点规则：blank joint_c0.1_s10/v3、positive_weak joint_c10_s0.1/smooth_demod。后者预期保留未认证结论，不可放宽gtol。CPU仅固定最终点真实梯度及tol1e-13冷热条件线性解，0GPU/outer/完整逆/truth。当前尚无FINAL_REVIEW_RECEIPT交付，下一次先查它及现有智能体状态/真实CPU进程，完成则收取并停改，不重复CPU审阅或宣称已通过。允许新审阅文件必要适配，不改42冻结依赖。
+
+醒来先核对上述真实NT进程/命令/父子、global/local锁、原生终态/FAILURE、规划结果与stderr，以及独立CPU回执。任一root只读进程仍运行，只设一次较晚苏醒并结束，不持续监控、不观察超时重启、不编辑42冻结源、不启动第二GPU或重复同raw逆。用v3_tangent_probe_002/startup_observer.py process()，不用WMI/CIM。已退出可各取现有exec session一次退出码；工具ID失效不代表任务失败，以NT及落盘结果为准。若只读复核失败，保留日志解决审阅问题，绝不重跑36逆。
+
+原生全36canonical/latent字节、26项65536域评分及ledger不变通过，CPU审阅完整且保留24/12状态、两root进程退出后，写MOTHER0006_FIRST_PAIR_COMPLETION_VERIFICATION.json：应标“完整性审阅通过、24认证/12未认证”，不是全部科学合格。然后预算规划all_passed并核对账本5309，才root显式启动母0006剩余negative_weak/positive_normal/negative_normal三raw，54新/0复用，每格180秒/核心最多9720秒+开销。预计5309→5363、semantic668→722、全矩阵222→最多276有限；认证数应实测，若全新合格最多264，不能写276全认证。该规划目前仅执行中，192MiB reserve未有终态，不能声称通过。下一科学作业真实NT/两锁/首native票据确认后仅安排一次苏醒。
+
+论文/claims更新222有限/210认证/12未认证及127stage/91platform，仍工作稿。已完成母0000/0005两母对照和图保持原统计范围，C1色温7.06–13.00K/模板17.66–27.39e，v3为16.78K/17.14e；不能将新增母0006两条件混称第三完整母或替代原图。原生54回执1617bb3ea76f24c74b9a003a85744fbcef7da7b5918d82053883f0bc8aa3e672及独立CPU回执c1f381fd7894a82a316f65e9550ffe239b0aabaf00b94065b82b466fb0891b90保留；本次36审阅独立留档。
+
+继续原有限九组各120格全1080后按科学规则保留2进其余24母确认选1，不按成本/有利局部指标提前淘汰。无可靠收益允许选冻结v3研究基线；原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: mother0006 first pair; wake2026-10-16 19:00 Singapore
+
+继续完成单帧七通道谱温反演课题。全部修复、小验证快速迭代，后续执行智能体全部gpt-6.1-sol/max。旧Astra审阅及失败保留，2026-10-14新计划替代旧永久停止/封存规则；合同、小片、工作图均不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0005_REMAINDER_COMPLETION_VERIFICATION.json、MOTHER0006_FIRST_PAIR_PLAN_REVIEW.json、MOTHER0006_FIRST_PAIR_PROCESS.json、MOTHER0006_FIRST_PAIR_STARTUP_VERIFICATION.json及MOTHER0006_FIRST_PAIR_STARTUP_CONTINUED_VERIFICATION.json。再读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml和root_cause_team_001报告。最新用户规则替代旧AGENTS：文件/cache/tmp都E/D；长计算正确启动后只设一次苏醒，不持续监控；不假设、不隐藏困惑、说明取舍；只改必要处，不增推测功能/一次性辅助抽象，不吞错，校验限外部边界；保留科学登记与证据核验。无CNN。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001，旧public_repository_001输入/权重/报告按哈希只读。C仅已有执行程序。人类累计新完整逆上限16000，包含已有5273；当前冻结阶段仍更严格12000 guard和semantic development3400。四根E/D新输出4GiB、E底线2GiB；D项目256MiB/D底线128MiB独立。母0006规划160MiB前瞻reserve通过，四根588734382B、E自由11230625792B；启动E自由11209859072B。均是快照，每格实时reserve继续，未来全部正式科学存储证明尚待完成。
+
+当前唯一GPU反演于2026-10-16T07:09:02.3220864Z（2026-10-16 15:09新加坡）启动，launcher60656、实际Python55360。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0006_blank_noise0 --raw v5_development_selection_mother_0006_positive_weak_noise0。07:09:29Z初次NT观察真实命令/父子/global-local锁正确、stderr0，但仍在首票前namespace重建，startup_verified=false原回执保留。2026-10-16T07:09:56.985918+00:00补充核验全部通过，owner 2e36856a994a4cd797102658ffd2262b，首个blank/c.1s.1/v3票据cuda:0/float64、42登记源码及raw/登记身份正确。初检不是科学失败，没有重启。此处全部为启动快照。源与54原生审计证据提交844b3b540d2a3c791d2664b60ee0256f1b5f3d72已推送且远端SHA一致，之后交接提交见Git。
+
+本片只含原登记母0006（temperature multipeak、template blob）的blank与positive_weak，共36全新/0复用、native256，每格180秒，最多6480秒反演核心加控制器/持久化开销。片前5273新调用/5813账本行（540reused）；启动5274，片后最多5309。semantic development632→最多668/3400。全第一阶段1080=12母×5条件×九组×双初值；片前186有限认证/894未执行，片后最多222/1080，不是完成第三母或科学选型。观察器旧字段one_raw_denominator=36实际为两raw分片总数，不是单raw36格。
+
+醒来首先核对NT真实PIDs/命令/父子、E global/local PHASE_ACTIVE.json、本两raw在shards/*/RUN_*.json或STOP_*.json的终态、SUMMARY_CURRENT.json、case_states/*/STATE_*.json及mother0006_first_pair_006.stdout.txt/stderr.txt。FIRST_STAGE_RESULT只在全1080终态出现，单片没有它正常。进程仍运行则只设一个更晚苏醒并结束；不持续监控、不因观察超时重启、不编辑42冻结依赖、不启动第二GPU。用v3_tangent_probe_002/startup_observer.py的process()读NT，不用曾挂起WMI/CIM。同物理方法/raw所有成功、未认证、失败和中断均必须复用；评分错误仅score-only且0新逆。普通数值失败保留候选120格完整分母，资源中断是未执行而非科学淘汰。
+
+上轮两项只读核验已经完成，33788/33580和两launcher在07:03:54Z均退出，exec63646/59782各返回0，两个stderr0，两锁清。54格原生canonical/latent逐数组字节及26项65536像素评分全部一致，0逆/outer/inner，native分析SHA 28e76e1021cf03204a00dd593987b7d37c7ef8f45f9f63d0af49bfb5768b7e08，内部计时35.684399秒，不含前置注册/输入核验；不能把上轮数分钟总耗时当成35秒，也未唯一定位前置开销。该JSON的time字段不是操作系统进程退出时间；进程退出已在07:03:54Z观察确认。审计前后账本SHA776190d9a9fdabde61bf94c20489d15569cc6eeb98db116bb75fcd3121f4c058字节相同。完成回执SHA 1617bb3ea76f24c74b9a003a85744fbcef7da7b5918d82053883f0bc8aa3e672。原科学54格终态03:56:01Z及SHA90b4b8fdf961004d3b0be2c458ccfe08642270a27f550a5619a9f871a5d44379保留；9份本轮已完成报告与Git索引逐字节一致，STAGED_REMAINDER_NATIVE_EVIDENCE_BYTE_REVIEW有回执。CRLF原stdout保持原字节，Git单次cr-at-eol检查通过，未改全局配置或科学日志。
+
+独立Sol61 CPU54链/162stage/108platform/27对共同anchor通过；只有两个预定最终点独立物理复算，紧内解tol1e-13冷热最大模板变化3.9023e-9 e、actual normal relative≤3.4225e-13，1741已读冻结对象SHA不变。CPU回执c1_mother0005_remainder_analysis_001/FINAL_REVIEW_RECEIPT SHA c1f381fd7894a82a316f65e9550ffe239b0aabaf00b94065b82b466fb0891b90。实际gtol1e-6，未执行1e-7；早stage潜参没存只能日志逻辑。原生双初值postblur最大RMS差.0015051K/.0013418e，latent温度另量。54新核心2152.040527秒，首票至终态6256.742392秒。root汇总一处状态断言误用FINITE_CERTIFIED已纠正为原记录FINITE_NUMERICALLY_CERTIFIED，失败注记保留、0科学调用，不改原结果。
+
+母0000/0005各完整90格，共2独立母、10raw、180格，另外3母各2旧缓存使当前总186/1080，13raw/5观察到的父场景。TWO_COMPLETE_MOTHERS_DIAGNOSTIC SHA c4c9f628ec9230ff5716b22db876cdfccc505a7135f566bf019bc6d13cfe6e37：按SSE/完整655360像素合并，C1色温7.06–13.00K/模板17.66–27.39e，v3为16.78K/17.14e，强B1lambda100为20.55K/11.78e；正常正负模板比1.017–1.589。只开发描述，全部九组及两个初值保留。TWO_MOTHER_TRADEOFF_001.png已视检，PDF仅结构检查；中文论文/claims已补54原生及CPU证据，仍工作稿。
+
+本片终态按全部36格核验参数/推理/评分链、原生纯forward字节/65536域重评分、真实梯度/三端点两平台/双初值/成本及实际调用总账；保留所有失败及未执行。然后继续母0006原登记剩余三条件的显式小片，完成全部12母×5条件开发。
+
+继续原有限九组各120格全1080后按科学规则保留2进其余24母确认选1，不按成本/有利局部指标提前淘汰。无可靠收益允许选冻结v3研究基线；原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: read-only post-shard checks pending; wake2026-10-16 15:00 Singapore
+
+继续完成单帧七通道谱温反演课题。全部修复、小验证快速迭代，后续执行智能体全部gpt-6.1-sol/max。旧Astra审阅及失败保留；2026-10-14新计划替代旧永久停止/封存规则，合同/小片/工作图不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0005_REMAINDER_WAKE_OBSERVATION.json、READ_ONLY_CPU_PHASE_PROCESS_OBSERVATION.json、READ_ONLY_POST_SHARD_JOBS_INFLIGHT.json，然后读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml及root_cause_team_001报告。最新用户规则替代旧AGENTS：文件/cache/tmp全E/D，长计算正确启动后一次苏醒即结束监控；不假设、不隐藏困惑、说明取舍；只改必要处，不增推测功能/一次性辅助抽象，不吞错，校验限外部边界；保留科学登记和证据核验。无CNN。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001，旧public_repository_001输入/权重/报告按哈希只读。C仅已有执行程序，无新科研数据。人类累计新完整逆上限16000（包含已5273），当前冻结阶段更严格12000和semantic development3400。4根E/D新输出4GiB、E底线2GiB；D项目256MiB/D底线128MiB独立。未来完整存储矩阵仍需证明，不能删或降精度唯一科学证据。
+
+本次苏醒已发现原54格科学反演完整结束：2026-10-16T03:56:01.135963Z，54/54有限且controller数值认证、54新/0复用；06:00:49Z两原进程56992/56112与两锁退出、stderr0。终态shards/569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc/RUN_a51ab38052644471b5d6b26501cd8f2a.json，SHA90b4b8fdf961004d3b0be2c458ccfe08642270a27f550a5619a9f871a5d44379。累计5273新/5813总行（540reused），semantic development632/3400。全第一阶段186/1080、894未执行、13raw/5观察到的父场景；母0000和0005各完整90格，其余3母只有2格缓存。所有9组保留，尚无科学选型。
+
+重要：本轮尚未启动母0006反演。当前只是两项只读前置核验尚未返回终态，已通过真实NT命令及CPU活动确认启动，不能把缺少phase锁当成可开第二GPU的信号：
+1) 原生纯forward/外部重评分审计：launcher55748，实际Python33788，父壳22272；真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc/RUN_a51ab38052644471b5d6b26501cd8f2a.json --device cuda。exec session63646；预期终态analysis/569f.../NATIVE_ANALYSIS.json，stdout/stderr为mother0005_remainder_native_analysis.*.txt。
+2) 下一片CPU metadata来源/预算核验：launcher23148，实际Python33580，父壳36004，真实命令python -B -（本轮工具调用中的原始stdin），exec session59782；预期MOTHER0006_FIRST_PAIR_PLAN_REVIEW.json，stdout/stderr为mother0006_first_pair_plan.*.txt。它只调用原verify_registration/collect_rows及AST/index与160MiB空间检查，0逆/0GPU；不要启动第二份相同规划。
+06:11:13Z NT确认上述两组父子命令；此前CPU快照33788已耗423.265625 CPU秒/1171.8MiB，33580已耗299.265625秒/60.7MiB，均有CPU活动。06:09:45Z尚无phase锁/原生终态；stdout当时为空，尚不能归因具体耗时环节。未编辑42冻结源码、未观察超时重启。
+
+醒来首先核对上述真实PIDs/命令/父子、global/local锁、原生NATIVE_ANALYSIS或FAILURE_*.json、规划结果与两组stdout/stderr。仍运行则只设一次更晚苏醒并结束；不持续监控、不按观察超时重启、不启动另一GPU或同raw完整逆。若真实进程已退出，可用已有exec sessions各收一次退出状态；工具session若不可用以真实NT进程/落盘终态为准，不能因工具ID失效推断结果。两个任务新完整逆均0。若失败/无终态，保留日志与原因，允许解决只读审阅问题，但绝不重跑已做的54个反演。原生审计全54数组/26项65536全域评分及ledger字节应匹配才写MOTHER0005_REMAINDER_COMPLETION_VERIFICATION.json；规划须all_passed且账本仍5273再开母0006片。
+
+独立Sol61 CPU已经完成并停改：全54链/42源/661依赖/162stage/108platform/65536域/27对共同anchor通过；实际终gtol均1e-6、pg∞5.7644e-7..9.999969279e-7，未执行1e-7。仅两个预先指定最终点物理复算：negative_weak c.1s10/v3和negative_normal c10s.1/smooth；tol1e-13冷热内解最大模板Δu_RMS3.9023e-9e、actual normal relative≤3.4225e-13，1741已读冻结对象SHA不变，0GPU/outer/完整逆/truth读取。c1_mother0005_remainder_analysis_001/FINAL_REVIEW_RECEIPT SHAc1f381fd7894a82a316f65e9550ffe239b0aabaf00b94065b82b466fb0891b90。早stage潜参未存只能日志逻辑，不能称全54独立物理重演。54新逆核心2152.040527秒，首票→终态6256.742392秒，外部开销未由profiler唯一归因。
+
+两个完整母场景的TWO_COMPLETE_MOTHERS_DIAGNOSTIC.json已生成，SHA c4c9f628ec9230ff5716b22db876cdfccc505a7135f566bf019bc6d13cfe6e37，0新逆/forward/重开标签，指标来自现有评分。10raw按SSE/完整655360像素合并：C1色温7.06–13.00K、模板17.66–27.39e；v3为16.78K/17.14e，强B1lambda100为20.55K/11.78e，旧B4为16.56K/17.50e；正常正负模板比1.017–1.589。只描述2个独立母，不据此选择方法/初值。新工作图figures/TWO_MOTHER_TRADEOFF_001.png实际看图通过（图例不裁切，v3/B4因实际数值接近有部分标记重叠，双初值用同心标记）；PNG SHA a3b829173c7a15145ca9b057a0fb145d436ffcc87dfd50fa63691eaf3b6f6e32。PDF只header/EOF，非PDF渲染QA。绘图源码research_closeout/render_two_mother_tradeoff.py是独立新图源，不在42冻结科学依赖里，未改科学算法；图及报告放REPORTS内计全局预算。论文/claims更新186格及两母开发快照，七组最终主图尚未完成。
+
+后续计划是原登记母0006（实际温度multipeak、模板blob）的blank/positive_weak两raw×九组×双初值=36全新/0复用；本轮只做CPU规划未发反演。规划预期累计5273→最多5309，semantic632→668，开发186→最多222/1080，每格180秒/最多6480秒反演加开销；未新增网格/方法。两项只读核验结束且通过后，显式root单GPU启动该片、核验真实命令/父子/owner/首个native票据后只设一次苏醒。保留全部失败/未执行，原FIRST_STAGE_RESULT仅整个1080终态；同物理方法/raw任何已有成功/未认证/失败/中断均复用，评分错误只score-only且0新逆。
+
+继续原有限九组各120格全1080后按科学规则保留2进其余24母确认选1，不按成本/有利局部指标提前淘汰。无可靠收益允许选冻结v3研究基线；原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: mother0005 remaining three conditions; wake2026-10-16 14:00 Singapore
+
+继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；后续执行智能体全部gpt-6.1-sol/max，旧Astra审阅和失败保留。2026-10-14新计划替代旧永久停止/封存规则，合同、小片与工作稿均不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0005_FIRST_PAIR_COMPLETION_VERIFICATION.json、MOTHER0005_REMAINDER_PLAN_REVIEW.json、MOTHER0005_REMAINDER_PROCESS.json和MOTHER0005_REMAINDER_STARTUP_VERIFICATION.json。再读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml和root_cause_team_001报告。最新用户AGENTS替代旧AGENTS：数据/日志/cache/tmp都E/D；正确启动长计算后只设一次苏醒，不持续监控；不假设、不隐藏困惑、主动说明取舍；只改必要处，不增推测性功能/一次性辅助抽象，不吞错误，校验限系统边界；保留科学登记与证据核验。规则文件UTF-8、1126B、SHA2e484260833357a5674cbe3323bd9a19cbd3e45ee83363e354fc5fdfcebe4724。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001，旧public_repository_001输入/权重/报告哈希只读。C仅已有执行程序，无新数据文件。无CNN。人类累计新完整逆上限16000（包含已有5219，不是另加），本冻结阶段仍更严格12000与semantic development3400。四根E/D新输出总4GiB、E自由底线2GiB；D项目256MiB/D底线128MiB独立。192MiB前瞻reserve通过，四根525524621B、E自由11524296704B为预检快照；每格继续实时reserve。未来全部科学的4GiB存储证明仍未完成。
+
+当前唯一GPU作业2026-10-16T02:11:24.4937803Z（10:11新加坡）启动，launcher56992、实际Python56112。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0005_negative_weak_noise0 --raw v5_development_selection_mother_0005_positive_normal_noise0 --raw v5_development_selection_mother_0005_negative_normal_noise0。02:12:06.827278Z NT核验两真实命令/父子、E global/local锁pid56112及owner ec493730d99044b58abf093fa1372ede、首个负弱ticket为cuda:0/float64、42源码和登记/raw身份正确，stderr0。启动调用计数5220。源与已完成36格证据提交d21f73f2d41580d478f4f34d52e8c3f313ce4651已推送且远端SHA一致；之后交接提交看最新Git。以上仅启动快照。
+
+本片只补原登记母0005的剩余三种条件，54新/0复用、native256、每格180秒、最多9720秒反演核心加控制器/持久化开销；不是新网格/方法。片前累计5219新调用、5759账本行（540reused），启动5220，片后最多5273。semantic development578→最多632/3400。完整第一阶段1080=12母×5raw×9倍率×双初值；片前132有限认证/948未执行，片后最多186/1080，会补齐第二个母场景90格，而不是完成12母选型。旧观察器one_raw_denominator=54是本三raw总格数，不是单raw54格。
+
+醒来先核对NT真实PID/命令/父子、global/local PHASE_ACTIVE.json、shards/*/RUN_*.json或STOP_*.json中本三个raw终态、SUMMARY_CURRENT.json、case_states/*/STATE_*.json、mother0005_remainder_005.stdout.txt/stderr.txt。FIRST_STAGE_RESULT仅整个1080终态，单片没有它正常。真实进程仍运行则只设一个更晚苏醒并结束，不持续监控、不按观察超时重启、不编辑42冻结依赖、不启动第二GPU。用v3_tangent_probe_002/startup_observer.py的process()读NT，不用曾挂起WMI/CIM。同物理方法/raw的成功、未认证、失败和中断一律复用，评分故障只score-only且0新逆；普通数值失败保留候选全部120格，资源中断是未完成而非科学淘汰。
+
+刚完成母0005空白/正弱：2026-10-15T23:02:17.496030Z返回36/36有限认证（34新+2旧c1s1精确复用）；02:00:56Z原进程37944/40128及两锁退出、stderr0，累计5219。终态SHA24be5d4f5dab3ace4fadd8917fdb1c9ec198219affd7a4dc464115464a88cc2d；root原生36端点canonical/latent逐数组字节、26项全65536评分全匹配，0逆/optimizer/inner，NATIVE_ANALYSIS SHAba43c33bfae3f42f92376dcd5b7b2c8c602636b8b9506133784959d5560883f2，函数内部21.785秒（不含前置登记核验）。root核验末段曾确认锁已清，审计随后0退出，无重启。MOTHER0005_FIRST_PAIR_COMPLETION_VERIFICATION SHAef8fa39cd2ebd3f5fe452e5c89a72780772f69fdfab2706d9e4231a429adee76。
+
+独立Sol61 CPU36链/108stage/72platform通过，34新与2旧分别绑定原source/context/float64参数/score，旧格来源38源登记，不倒填当前42。仅两个预定最终点作物理复算，紧内解tol1e-13冷热最大模板Δu_RMS6.4894e-9e、actual normal relative≤1.0119e-13；1378已读冻结对象SHA不变。c1_mother0005_first_pair_analysis_001/FINAL_REVIEW_RECEIPT SHA4a084f4b75a841c5d19c7c2a25fd29e0b9391e23c1af553b8bd674d187d2ed59，智能体已停改。实际最终均1e-6，三stage1e-4/1e-5/1e-6与两平台，未执行1e-7；早stage潜参没存，只日志逻辑，不能称独立重演。postblur双初值最大RMS .0015997K/.0016054e，latent温度差另量。34新逆核心1234.654949秒，首新票→终态3196.259783秒；2旧core38.762272秒仅历史不重计。
+
+本轮640份归档报告与Git索引逐字节一致，STAGED_MOTHER0005_FIRST_PAIR_EVIDENCE_BYTE_REVIEW有回执；42登记科学源码未改。母0005空白下C1色温6.60–11.78K/模板16.04–24.21e，原v3为16.88K/15.00e；正弱C1为6.66–11.86K/16.28–24.96e，v3为16.56K/16.25e，数值合格与模板取舍分开。母0000完整90格的描述保留：C1色温7.41–13.95K/模板18.92–29.64e，v3为16.80K/18.32e，正常正负模板比1.031–1.620。仍只有1个完整母，当前132格来自10raw/5父场景，其余母仅局部缓存，九组全部保留；不能由两条件或一母选择最终方法。paper/manuscript_zh.md和claims已更新132格，仍工作稿。
+
+本片终态按全54格核对params/推理/score链、原生纯forward字节与全65536评分、真实梯度/三个端点两平台/双初值/成本，保留所有失败及未执行；随后比较两个完整母仍仅描述。继续原登记顺序小片至所有1080格，每候选120格，再按原科学规则选2进其余24母确认选1。不增网格、不按成本/有利单raw人为淘汰。无可靠收益可选冻结v3研究基线，原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: mother0005 first pair; wake2026-10-16 10:00 Singapore
+
+继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；所有后续执行智能体gpt-6.1-sol/max，旧Astra审阅和旧失败保留。2026-10-14新计划替代旧永久停止/封存规则。合同、分片和工作稿均不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md最新首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、NEGATIVE_PAIR_COMPLETION_VERIFICATION.json、MOTHER0000_COMPLETE_DIAGNOSTIC.json、MOTHER0005_FIRST_PAIR_PLAN_REVIEW.json、MOTHER0005_FIRST_PAIR_PROCESS.json和MOTHER0005_FIRST_PAIR_STARTUP_VERIFICATION.json。再读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml及root_cause_team_001报告。最新直接用户AGENTS替代旧AGENTS：所有新文件E/D；长计算正确启动后只设一次苏醒，不持续监控；不假设、不隐藏困惑、主动说明取舍；只改当前必要处，不增推测性功能或一次性辅助抽象，不吞错误，只在系统外部边界验证。保留必要的科学登记和证据核验。
+
+工作区E:/CodexWork/thermometry/closeout_001，分支research/closeout-001；旧public_repository_001输入/权重/报告哈希只读。数据/缓存/日志/tmp全部E/D，C只有已有执行程序。无CNN。人类已批准累计16000新完整逆（包含已有5185，不是另加16000），本冻结阶段仍用更严格12000 guard和semantic development3400。四根E/D全部输出4GiB，E自由底线2GiB，D项目256MiB/D底线128MiB分别约束。新160MiB前瞻reserve通过，四根485581618B、E自由11571441664B只是预检快照，每格仍实时reserve。
+
+当前唯一GPU作业：2026-10-15T22:08:42.7339977Z（2026-10-16 06:08新加坡）启动，launcher37944，实际Python40128。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0005_blank_noise0 --raw v5_development_selection_mother_0005_positive_weak_noise0。22:09:09.444282Z NT核验两真实命令/父子、global/local锁pid40128及owner fe03f67b601f4300b7d9f111701714f7、首个blank ticket cuda:0/float64与42源码/登记/raw身份正确，stderr0。启动时累计5186。源与已完成36格证据提交727e6442b262abe41dfb987aa2c37bbd755bce72已推送并核对远端SHA一致；之后交接提交看Git。不要把启动快照说成实时进度。
+
+本片是下一原登记母场景0005（实际template smooth_random）的前两条件blank/positive_weak，36格=34新+2原c1s1端点复用；不是新方法或新网格。native256、每新格180秒，最多6120秒反演核心加控制器/持久化开销。开始前5185新调用/5725账本行（540reused），启动5186、完成最多5219。semantic development544→最多578/3400。完整1080=12母×5条件×9组×双初值，片前98有限认证/982未执行，片后最多132/1080。2个复用格已包含在98，不应再加36得到134。原观察器one_raw_denominator=36是旧字段名，实际为本两raw分片总格数，不能说单raw36格。
+
+醒来核对NT真实PIDs/命令/父子、E global/local PHASE_ACTIVE.json、本两raw在c1_selection_001/shards/*/RUN_*.json或STOP_*.json的终态、SUMMARY_CURRENT.json、case_states/*/STATE_*.json、mother0005_first_pair_004.stdout.txt/stderr.txt。FIRST_STAGE_RESULT仅整个1080终态，单片结束没有它正常。仍运行则只设一次更晚苏醒并结束，不持续监控、不按观察超时重启、不改42冻结依赖、不启动第二GPU。用v3_tangent_probe_002/startup_observer.py process()，不用曾挂起的WMI/CIM。同物理方法/raw的成功、未认证、失败、中断全部复用；评分故障只能score-only/0新逆。普通数值失败不删候选后续120分母，资源中断是未完成执行而非科学淘汰。
+
+刚完成负弱/负正常：2026-10-15T19:00:21.149744Z返回36/36有限认证，36新/0复用，22:00:46Z两旧进程26736/42880与两锁均已退出、stderr0，累计5185。终态SHA420330b67d5d6e904d18df390e255cde98b631abb201eca78637180def2c8b0d。原生36端点canonical/latent逐数组字节和26项全65536像素评分全匹配，0逆/optimizer/inner；NATIVE_ANALYSIS SHA3e1139d2ca3c3bd644a267573dd40cff376ed2c11c69c5b6474035a1aa7b8af9，函数内部计时18.256s，不含前置登记核验。独立Sol61 CPU36链/108stage/72platform通过，仅两个预先指定最终端点做独立物理复算，更紧冷热条件解最大模板Δu_RMS4.6531e-9e、实际normal relative≤2.0501e-13，1399受保护已读文件SHA不变。c1_negative_pair_analysis_001/FINAL_REVIEW_RECEIPT SHAe7e8be0763e20ec8a040ac659fd23d69037067747792e46b93ddefafc3ddc44b，智能体已停改。真实终gtol1e-6，三stage1e-4/1e-5/1e-6和两平台，未执行1e-7；早stage参数未存只日志逻辑。postblur双初值最大RMS .0017367K/.0013532e，latent温度差另量。
+
+36新逆核心1784.030434s，首票→终态4295.991117s，不能把不同raw耗时比较当受控提速实验。672份本轮报告与Git索引逐字节一致，STAGED_NEGATIVE_PAIR_EVIDENCE_BYTE_REVIEW有回执。新源码只有本轮CPU审阅的两raw/36格必要适配，42登记科学源码未改。最新用户规则文件严格UTF-8、1126B、SHA2e484260833357a5674cbe3323bd9a19cbd3e45ee83363e354fc5fdfcebe4724；代理最初凭显示误判CP936已纠正且未改文件编码。
+
+母0000已完整90格（五条件×九倍率×双初值），但仅1独立母。MOTHER0000_COMPLETE_DIAGNOSTIC按SSE/全像素合并：C1色温7.41–13.95K/模板18.92–29.64e，原v3为16.80K/18.32e，强B1lambda100为18.43K/12.07e；正常正负模板相对v3 RMSE比1.031–1.620。所有9组仍保留，不据此选型。当前全开发覆盖98格、9raw、5父场景（其余4母只局部缓存），论文/claims已更新，仍工作稿。
+
+本片终态按完整36格核验params/推理/score回执、纯forward原生字节/全65536评分、真实梯度/三个端点两平台、双初值/成本；保留所有失败和未执行。继续原登记顺序的小片至所有1080格，每候选120格，然后按原科学规则选2进其余24母确认再选1。不增网格、不按成本或好看单raw人为淘汰。无可靠收益允许选冻结v3研究基线；原v3生产60/60数值失败仍是研究基线，不能称已部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: two negative raws; wake2026-10-16 06:00 Singapore
+
+继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；后续执行智能体全部gpt-6.1-sol/max，旧Astra审阅和旧失败保留历史。2026-10-14新计划已替代旧永久停止/封存规则，合同、分片及工作稿均不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md最新首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、PWEAK_SHARD_COMPLETION_VERIFICATION.json、NEGATIVE_PAIR_PLAN_REVIEW.json、NEGATIVE_PAIR_PROCESS.json及NEGATIVE_PAIR_STARTUP_VERIFICATION.json。然后读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml、root_cause_team_001根因报告。用户最新AGENTS明确替代所有旧AGENTS：全部数据E/D，长计算确认启动后只设一次苏醒，不持续监控；不假设、不隐藏困惑、主动说明取舍；只写当前最小代码，只改必要处，不增推测性功能/一次性辅助抽象，不吞错误，只在外部边界验证。保留科学登记和必要证据核验。
+
+工作区E:/CodexWork/thermometry/closeout_001，分支research/closeout-001。旧public_repository_001输入/权重/报告按哈希只读。新文件/日志/临时/缓存全E/D，C仅已有执行程序。无CNN。人类已批准累计16000新完整逆，包含已有5149，不是额外16000；当前冻结阶段仍用更严格12000和semantic development3400。存储四根E/D合计4GiB、E自由底线2GiB，D项目256MiB及D底线128MiB独立。最新前瞻160MiB reserve通过，四根约443.31MB为快照，每格继续reserve。
+
+当前唯一GPU作业：2026-10-15T17:48:28.0515531Z（2026-10-16 01:48新加坡）启动，launcher26736、实际Python42880。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0000_negative_weak_noise0 --raw v5_development_selection_mother_0000_negative_normal_noise0。17:48:53.995711Z通过NT核验两真实命令、父子关系、global/local锁pid42880和owner758a92045aff4717b509840c2ccc13ad，首个负弱ticket为cuda:0/float64、42源码、登记/raw身份正确，stderr0。源/已完成18格证据提交80f9a60d4034ac81b0cef486782586d1f488124a已推送且远端SHA一致，之后启动交接提交看Git。启动观察是快照，不能当实时进度。
+
+本片只含同一母场景负弱/负正常两份原登记raw，共36新格/0复用，不是新网格或新方法。每格180秒，最多6480秒反演核心加控制器/持久化开销；开始前5149新调用（5689总行含540复用），启动5150，完成最多5185。semantic development508→最多544/3400。完整第一阶段1080=12母×5条件×9组×双初值，开始前62有限认证/1018未执行，完成最多98/1080；这会补齐一个母场景全部90格，但不是完成12母或科学选型。旧观察器字段one_raw_denominator=36实际为本两raw分片总格数，raw_ids和launch/plan明确两raw；不据此说单raw有36格。
+
+醒来先核对真实NT PID/命令/父子、global/local PHASE_ACTIVE.json、c1_selection_001/shards/*/RUN_*.json或STOP_*.json中上述两个raw的终态、SUMMARY_CURRENT.json、case_states/*/STATE_*.json及negative_pair_shard_003.stdout.txt/stderr.txt。FIRST_STAGE_RESULT.json仅整个1080矩阵终态，单片完成没有它正常。若仍运行，只设一个更晚苏醒并结束；不轮询、不因观察超时重启、不编辑42冻结依赖、不启动第二GPU。使用v3_tangent_probe_002/startup_observer.py的process()，不用本机曾挂起的WMI/CIM。相同物理方法/raw成功、未认证、失败、中断一律复用；仅评分故障可score-only且0新逆。普通数值失败保留候选全部120格，资源中断是未完成执行而非科学淘汰。
+
+刚完成正弱分片：2026-10-15T16:25:37.711986Z终态18/18有限认证、18新无复用，17:30:38Z两原进程27240/57640与两锁均已退出，stderr0。终态SHA6c1f01e127be6a57d2113d2d3ea828fe89393c7aa8b9e54ade24872554a057cb。root原生18端点canonical/latent逐数组字节和26项全65536像素评分全部匹配，0逆/优化/内层、26.055秒，NATIVE_ANALYSIS SHAb939a5e494db211bd41fbd91f6f21f9d6fecab99577813c91935bfdf7c3cffdf。独立Sol61 CPU复核18链/54阶段/36平台和两个固定极端端点通过，更紧冷热条件内解Δu_RMS≤6.233e-9e，1056受保护文件SHA不变；c1_positive_weak_analysis_001/FINAL_REVIEW_RECEIPT SHA9e1c7ab89e063154a45134a79244b413ff468ce20be4a52558031a9b22b0c0b4，智能体已停改。真实终gtol1e-6，三阶段1e-4/1e-5/1e-6与两输出平台，未执行1e-7；早期潜参未存，只日志/逻辑核验。两初值postblur色温/模板RMS最大.001591K/.001214e；latent温度差是另一量。
+
+正弱九组色温RMSE7.88–13.84K、模板18.46–29.93e，同raw原v3为16.92K/17.65e；数值合格与科学取舍分开，不能选型。18新逆核心1511.070657秒、首票→终态3603.910737秒，不将不同raw耗时比较当控制速度试验。一次root元数据检查把collect_rows的62已执行行误认为1080全计划行而断言失败，0科学调用；已改为核验summary完整1080，失败日志和ROOT_METADATA_REVIEW_RETRY_NOTE保留，最终两次审计/下一片计划通过。353份本轮归档报告与Git索引逐字节一致，STAGED_PWEAK_EVIDENCE_BYTE_REVIEW有回执。论文/claims现更新62不同格、7raw、5父场景，仍工作稿。
+
+终态后按全36格审核params/推理/评分回执、原生纯forward重建、65536全域、实际梯度、三个端点/两个平台、双初值和成本；保留全部失败/未执行。继续显式小片，直到原有限九组各120格全1080，再按原规则保留2进入其余24母确认选1。不可因成本/好看单raw指标人为淘汰，不新增网格。无可靠收益可选冻结v3研究基线，原v3生产60/60数值失败仍为研究基线。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
+# Current continuation: one positive-weak raw; wake2026-10-16 01:30 Singapore
+
+Read this section, repair_001/REPAIR_STATUS.json, EXECUTION_POLICY.json, INVERSE_BUDGET_EXTENSION_16000.json, c1_selection_001/SELECTION_REGISTRATION.json, PWEAK_SHARD_PLAN_REVIEW.json, PWEAK_SHARD_PROCESS.json and PWEAK_SHARD_STARTUP_VERIFICATION.json first. Then read USER_EXECUTION_REQUEST.txt, research_closeout/AGENTS.md, execution_spec.yaml, reports/closeout_001/STUDY_PROTOCOL.yaml and root_cause_team_001 reports. Workspace E:/CodexWork/thermometry/closeout_001, branch research/closeout-001; legacy public_repository_001 raw/weights/results read-only by hash. All new data/log/cache/tmp E/D. All future execution agentsgpt-6.1-sol/max; oldAstra reviews retained. No CNN. Human has authorized cumulative16000 new inverse calls, storage4GiB unchanged. This frozen phase keeps stricter12000 guard anddevelopment3400. E floor2GiB; D project256MiB/Dfloor128MiB independently.
+
+## Only active GPU job at the verified startup snapshot
+
+Started2026-10-15T15:25:02.6774736Z (23:25 Singapore), launcher27240, actualPython57640. Exact command: `python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0000_positive_weak_noise0`. At2026-10-15T15:25:50.151568+00:00 NT verified both real commands/parent-child, matching global/local locks owner80517ac66915446187f5bfcf3efc74bb, first new ticketnativecuda:0/float64 and42registeredsource hashes, stderr0. Source/evidence commit90775719cb53e06ab3e7f3fc0b058e04524cb7c7 successfully pushed and remoteSHA exactly matched. Firstpush transientTLS failed, normal retry succeeded; no transport/security setting changed. These are startup snapshots, not live progress claims.
+
+This is18new/0reuse cells onone registered weakraw, no new grid/method. Before5131charged (5671ledgerrows incl540reused), startup5132, maximum5149after this shard. Fullstage1080=12mothers×5raw×9pairs×2initializers, before44finite/certified and1036unexecuted, maximum62finite after this shard. Numerical engine max180s each/3240s total plus controller/persistence overhead. Currentsemanticdevelopment490/3400, maximum508. The global16000 approval is cumulative, not16000additional; immutable oldspec/regs retain12000. Future science needs explicit new cap/phase adapter. No candidate pruning for cost, no auto-all, no auto-top2 or24confirmation.
+
+Wake first inspect true NT PIDs/commands/locks plus c1_selection_001/shards/*/RUN_*.json orSTOP_*.json filtered to this raw/shard, SUMMARY_CURRENT.json, case_states/*/STATE_*.json andpositive_weak_shard_002.stdout/stderr.txt. FIRST_STAGE_RESULT isonly entire1080 terminal, not required for a complete single shard. If real process still running, schedule only one later wake and end; no polling loop, observed-time restart, edits to42frozen dependencies or second GPU. Use v3_tangent_probe_002/startup_observer.py process(), not WMI/CIM. Same physicalmethod/raw finite-certified, uncertified, failure and interrupted attempts always reuse; score-only can retry score without new inverse. Ordinary numerical failure retains each candidate's full120cells; resource stop remains incomplete, never scientific exclusion.
+
+## Completed since previous wake
+
+Blankshard ended14:45:18Z,18/18 finite/certified (2prior+16new), bothprocesses/locks absent at15:00:50Z. Root native18endpoint canonical/latent hashes and26full65536pixel scoring fields match exactly,0inverse/optimizer/inner, wall26.757s. NATIVE_ANALYSIS SHA84a2235ee29101fa48b683564a229d93bedd7d587d68c36fef48f8fb59f4a8f5; BLANK_SHARD_COMPLETION_VERIFICATION authoritative. IndependentSol61 CPU18chains/54stages/36platforms+two fixed extreme endpoints passed actual1e-6 (not1e-7), tightercold/warm maxu change4.808e-9e;1033protected objects unchanged. c1_blank_analysis_001/FINAL_REVIEW_RECEIPT SHA78f391588ad637598a53c14d6295cd327d6c066a15e9145535cea211538996f8. Postblurinitializers maxRMS.001828K/.001745e; latenttemperature differences inCPUreport are a different quantity. BlanktemplateRMSE19.55–29.52e, frozenv3same-raw18.26e; numericalqualification is not scientific superiority or false-positive control.
+
+Runtimeanalysis: total52.51min=core21.99+outside30.52;16newcore1319.467s, firstticket→terminal3115.416s. Nonoverlapping receipt-created→sidecar windows20.09min; budgetscan plausible, no profiler uniquely attributesalloutside cost. Do not call20min a pureI/O measurement or compare differentraws as a controlled speedbenchmark. Preserve42sources and continue explicit smallshards. ThreeglobalCPUtree scans0.909/1.951/3.150s, not historicalprofiler. Both CPUfollowups completed/stopped.
+
+User-authorized unused-file cleanup removed only6completed tinyCPUfixture directories,476files/4464998B; per-filehash/shape/fault summaries+originalCONTRACTS+sources retained inselection_runtime_analysis_001. ROOT_FIXTURE_CLEANUP_AFTER proves all4123 other protected objects unchanged. FixtureIDs/times/hashes are not byte-reconstructible; oldfixture_root strings are historical absentpaths, no registration directlyreferences deletedfile bytes. No realscientific input/parameter/weight/fallback deleted; no cleanup-speed gain measured. Original9.4655GiB privatecleanup and360policy-block unchanged, do not retry360 viaalternate path.
+
+Figure1 SYSTEM_TARGETS_001.png andFigure2 SOURCE_MECHANISM_002.png visually checked; figure1 hasactual7syntheticbands/raw/σ0,2,4targets, no secondtemplateH, bands-before-color. PDFs structuralonly. Manuscript/claims updated44unique cells, stillChinese workdraft;7groups/fullscience/final not done.
+
+## Remaining required study
+
+Continue explicit scheduling to all1080 cells before top2/24mother confirmation underoriginal finite9grid. No new scientific selection from currenttwo raw slices. Fullmatrix previouslyexisting28unique reuses preserve identity. No reliablebenefit permits frozenv3 researchbaseline; originalv3production60/60 numericalfail remains, no claim deployedqualified. C1explicitnewphysicalobjective smooths±.25K aroundoriginal661×7nodes; originallookup/nodes unchanged, incrementalrawbound.0401176e/color.00224925K, absoluteLUTnot fixed, anchorTprior-.6249%. v001latentmissing; notpureprecisionupgrade. Attachedexternalcheckscript/yaml absent, localcontracts self-authored.
+
+Budget afteroriginalphase planning: firststage+2candidateconfirmation ends6647; mandatorynewprimary1820UQ+v3independent896MC branch13030 orprovisional14757withmissingv3states; main=v3exactdedup10615. Full1820forboth optional. Correctedmatrixscope review flags original146indep effects plus45cal/12dynamic matching (extra716 vs24nominalonly), conditional15473worst but no storage-proofyet. Resolve missingv3fullstate/no-rerun conflict, no renamedblindrefits. 4GiBfuturestatistic-only sinks/raw/fallback/representativeimagebytecontracts stillrequired before formalnewscience; existinguniqueevidence cannotbe deleted/lowerprecision to fit.
+
+Corrected12mothers6cal/6eval eachsixactualgeometries/temperaturestrengthmatched/disjointseeds; main12base+896independentfullMC+768fittedmeanconditionalbootstrap+144lowprobes=1820, v3atleast896independentMC. Bootstrapisconditional scale, independentMCevaluatescoverage; lowprobe/unstable/uncertifiedrefit notcrediblecovariance. Newmethod200indepnullcal+200eval, thresholds method/domainbound, neverlegacy60e oroldv3 threshold. Matchedindependent,3resolution/3photon,structure/strength/calibration/dynamic complete matrices/failuredenominators required. C1exposure wrapperknown_exposure scalesderivedslopes. Truecalibrationmissing, simulateddistributionassumed.
+
+Freeze allsource/deps/method/params/optics/thresholds/UQ/baselines/statplan andverifyFINAL_METHOD_FREEZE.json before64main+36signed mothers(512+180frames) payloadgenerate/open; stillclosed. Userallowsv3final; finalfailurestillpaper, no final-driven tuning/reselection/checkpoint/thresholdswitch. Finishoriginal-literaturematrix,7figuregroups/visualQA, fullChinese paper/data-method-limitations/claims/raw+calibrationinterface/cleanrepropackage. NewGitHubfinalrelease preserve oldreleases andsuccessfuluploadreceipts, noassetredownload. No realgastemperature/AlOconcentration/10kHzhardware/guaranteedacceptance claims. Currentcontracts/shards/figures are not wholecloseout.
+
+## Historical snapshots, superseded by the section above
+
+# Current23:00 Singapore wake: blank shard completed; next weak shard prepared
+
+At2026-10-15T15:00:50Z both owned processes28812/42132 and both locks were absent. Blank terminal14:45:18Z reports18/18 finite/certified,2reused+16new; charged5131 (5671ledgerrows incl540reused), fullmatrix44/1080,1036unexecuted. Root native reconstruction/main26-score audit passed18/18,0inverse/optimizer/inner, wall26.757s; SHA84a2235ee29101fa48b683564a229d93bedd7d587d68c36fef48f8fb59f4a8f5. Independent CPU18chains/54stages/36platforms and two fixed extreme endpoints passed actual1e-6; tighter cold/warm template change<=4.808e-9e,1033 protected objects unchanged. No1e-7 or scientific selection claim. New core1319.467s; firstnewticket-to-terminal3115.416s. See BLANK_SHARD_COMPLETION_VERIFICATION.json and c1_blank_analysis_001/FINAL_REVIEW_RECEIPT.json.
+
+Runtime cost study selection_runtime_analysis_001 found52.51min launch-to-summary=21.99min core+30.52min outside, including20.09min nonoverlapping receipt-to-sidecar windows. Budget tree walks are a plausible cost; no profiler uniquely attributes all overhead. Keep42 numerical/controller sources frozen and continue the planned small shards. Six completed tiny CPU fixture directories were removed under prior explicit cleanup authorization:476 files/4,464,998B. File hashes/fault summaries/contracts retained inCPU_FIXTURE_CLEANUP_MANIFEST.json, all4123 other protected objects unchanged. ROOT_FIXTURE_CLEANUP_AFTER.json andCPU夹具清理简报.md are authoritative. This does not prove a speed gain.
+
+Figure1 SYSTEM_TARGETS_001.png now shows the actual seven synthetic bands/common raw and sigma0/2/4 optical targets, with PNG visualQA. Figure2 remains visually checked. PDFs onlystructuralchecks; seven figure groups and full Chinese paper remain unfinished.
+
+Next explicit root-owned shard is v5_development_selection_mother_0000_positive_weak_noise0 only:18new+0reused, native256/180seach/3240s plus controller overhead, charged5131 to max5149, wholematrix44 to atmost62 of1080. It is already in the same immutable registration f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74, not a new method/grid. PWEAK_SHARD_PLAN_REVIEW.json checked all42source AST/index/bytes,661references/no prior same-method/raw attempts and96MiB reserve. It has not been launched in this preparation snapshot; the next startup section will supersede this text.
+
+Human cumulative16000 approval/storage4GiB/Efloor2GiB/D256MiB/Dfloor128MiB unchanged. This controller uses stricter12000 plus semanticdevelopment3400; currentdevelopment490, nextmax508. Same method/raw failed/interrupted/uncertified results reuse; score-only never reinfers. Final payload closed. Next full scientific/UQ/null/matched/final/paper work described below remains required.
+
+## Prior startup snapshots
+
+# Closeout 001 current continuation: verified blank-shard startup
+
+Latest direct human approval raises the **cumulative** new complete-inverse cap from12000 to16000; it does not add16000 on top. See repair_001/INVERSE_BUDGET_EXTENSION_16000.json. Original study/spec/registrations remain byte-unchanged. This first-stage controller deliberately keeps the stricter12000 guard; it fits that guard. Future formal science needs a new explicit cap/phase adapter, not a silent edit to old registered sources. Storage remains4GiB across the four E/D data/report roots, E floor2GiB; D project256MiB and D floor128MiB independently.
+
+Workspace E:/CodexWork/thermometry/closeout_001, branch research/closeout-001. Start with this section, repair_001/REPAIR_STATUS.json, EXECUTION_POLICY.json and c1_selection_001/SELECTION_REGISTRATION.json, ROOT_REGISTRATION_REVIEW.json, ROOT_QUALIFICATION_REVIEW.json, BLANK_SHARD_PROCESS.json, BLANK_SHARD_STARTUP_VERIFICATION.json, BLANK_SHARD_STARTUP_CONTINUED_VERIFICATION.json and FIRST_TICKET_CONTEXT_REVIEW.json. Then read USER_EXECUTION_REQUEST.txt, research_closeout/AGENTS.md, execution_spec.yaml, STUDY_PROTOCOL.yaml and root-cause reports. Legacy public_repository_001 inputs/weights/results are read-only hash references; all new files/temp/cache E/D. No CNN training. All future execution agents gpt-6.1-sol/max; older Astra reviews retain their meaning.
+
+## Current only GPU job: one blank raw; wake23:00 Singapore
+
+Root launched at2026-10-15T13:52:47.9713869Z, launcher28812, actualPython42132. Real command: `python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0000_blank_noise0`. NT startup verified at2026-10-15T13:55:12.526943+00:00; E-global/E-local locks match ownerca8d1d3fca204214aaf9f5c4f12d9b5d, nativecuda:0/float64 and42 registered sources checked in the first ticket context, stderr0. Source/registration commita524fe3b2d349e65a2d5970f9030c94ee468c408 was pushed and remoteSHA exactly verified before this job. These are startup snapshots, not continuous current counts.
+
+This explicit shard has18 cells=2 oldc1s1 reuses+16 new complete inverses maximum, native256,180s each/2880s inverse work plus overhead. Before run charged5115; at startup5116; maximum after this shard5131. Ledger5655 rows before run includes540 reused and is not the charged count. Full first-stage matrix remains12 mothers x5conditions x9candidates x2initializers=1080 cells,28 prior reuses+1052 new maximum. No automatic all-run, next shard, top-two choice or24-mother confirmation. Ordinary numerical failure retains each candidate's full120-cell denominator; resource stops are incomplete execution, not scientific rejection. Routes/initializers are not independent scenes.
+
+At wake first read real NT PID/commands/parent-child and locks plus c1_selection_001/shards/*/RUN_*.json orSTOP_*.json; also SUMMARY_CURRENT.json, case_states/*/STATE_*.json and inference/cells/* receipts and stdout/stderr blank_shard_001.*.txt. FIRST_STAGE_RESULT.json is the terminal only for the entire1080-cell stage; absence after this one shard is expected. If process still running, schedule one later wake and end: no monitoring loop, observed-time restart, source edits or second GPU. Use the existing v3_tangent_probe_002/startup_observer.py process() NT reader, not WMI/CIM. For the current shard verify all18 attempted/reused outcomes, parameters/readback and numerical stages/platforms/full65536pixel scores, costs and full unexecuted matrix denominator. Same method/raw success, finite uncertified, failed or interrupted attempts always reuse. Scoring failure permits score-only, never a new inverse or renamed registration rerun.
+
+## Just completed evidence
+
+Original nine-pair prescreen ended12:17:11Z,18/18 finite/certified,2 old+16 new, Q9. Root native18 endpoint/latent reconstruction and full-domain rescoring all byte/matrix matched,0inverse/optimizer/inner; analysisSHA043042a8cedff6182c73b9794425a79e571404215d7c8191b1099282b49b30dd. Independent Sol61 CPU review checked54stages/36platforms and364 immutable objects; tighter cold/warm linear changes<=8.458e-9e for two fixed extreme-ratio endpoints. Actual stagesgtol1e-4/1e-5/1e-6, no1e-7. Earlystage parameters were not saved. This remains one raw/one parent, not18 independent cases or a scientific selection. Different regularizers trade temperature/template error; all nine continue the original12-mother stage without a new grid.
+
+New first-stage controller has45/45 CPU contracts and real180raw/v3-state provenance audit,342 protected prior objects unchanged. RegistrationSHAf218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74;42 source AST/worktree/Git-index exact,661 read dependencies checked. Separate new namespace qualification4/4 saved endpoints passed native read-only forward reconstruction and lossless persistence,0 inverse/optimizer/inner/truth. Original saved canonical and latent are compared exactly; unsavedv001 latent is not directly compared. Parameterfloat64 first then readback/forward hashes before scoring; per-frame successbound1385504B/initialpeak7873568B. Whole-phase2GiB success plan is conditional on actual fallback/storage; runtime reserves fail closed rather than deleting science or pretending all1052 fallbacks fit. Prior E/D evidence/old failures unchanged.
+
+Budget review SELECTION_STORAGE_AND_BUDGET_001.json reconciles semanticdevelopment474 existing +1052firststage+480two-candidate confirmation=2006/3400, global6647 after both. New-primary mandatoryUQ1820 plusv3 independent896MC branch totals13030 or provisionally14757 with missing initializer states; v3-primary identical-route reuse totals10615. Full1820 forboth is optional. REMAINING_CORRECTED_MATRIX_SCOPE_REVIEW.json flags that matching24 nominal scenes alone may leave original146 independent effects and45calibration/12dynamic cases uncorrected; full matched-effect reruns would add716 calls (conditional15473 worst v3-init branch) but require fresh source/seed/call/storage registration. This is planning, not already executed science or proven4GiB fit. Resolve old missingv3-state materialization against the no-rerun rule before choosing that branch; old canonical outputs are not complete state. Do not select/prune candidates for budget.
+
+Main figure group2 SOURCE_MECHANISM_002.png is generated from immutable36-mother source comparison and6-mother finite decomposition, visually reviewed; v1 annotation-overlap draft is preserved, v2 fixes only layout. Pairedparent10000 bootstrap is a development descriptor. Four-error signed spatial cross terms are not independent variances. PDF header/EOF only, no PDF render QA. Nine-pair supplementary PNG also passed visualQA. Chinese paper/manuscript_zh.md andclaims_to_evidence.md include these, still work drafts; seven main groups are not complete. Primary literature matrix now distinguishes original2017FRAME/2018FRAME/2024passive/2026thermometry and authors'LSMR, with access levels; temperature/emissivityfulltext remains unavailable, only abstract read.
+
+After shard review continue explicit small scheduling batches toward all1080 cells, then scientific top-two/24-mother confirmation under original rule; no new grid or truth-driven pruning. Primary may be frozenv3 research baseline if no reliable benefit. Corrected independent/null/UQ studies remain: new balanced12-mother6cal/6eval allsix actual geometries, primary12+896MC+768conditionalbootstrap+144probes=1820, v3 independent896MC; bootstrap is only conditional scale. New-method200nullcal+200nulleval with method/domain thresholds, matched independent/3resolution/3photon/structure/strength/calibration/dynamic matrices and all failures. C1 exposure must scale newbuffer slopes via known_exposure. Real calibration absent, simulated distributions assumed.
+
+Final source/dependencies/methods/params/optics/thresholds/UQ/baselines/statistics must all freeze and FINAL_METHOD_FREEZE.json verify before64main+36signed payload generation/open. Payloads remain unopened. Human explicitly permitsv3 final evaluation; final failure still goes in paper. Never use final outputs to tune/reselect/checkpoints. Complete seven figure groups/visualQA, Chinese manuscript/data-method-limitations/claims/raw+calibration interface/clean reproduction package. Final GitHub release preserves old releases and upload receipts only, no re-download. No realgas/AlOconcentration/10kHzhardware/journalguarantee claims. A successful shard/contract/probe/working draft is not full closeout.
+
+## Historical continuation snapshots
+
+The following text is retained historical context. The latest section above supersedes earlier active-job and12000-budget instructions; original scientific results retain their original meaning.
+
+# Closeout 001 continuation
+
+The full user request is USER_EXECUTION_REQUEST.txt. Read it with research_closeout/AGENTS.md, execution_spec.yaml and STUDY_PROTOCOL.yaml. Latest instructions replace the older whole-project stop/permanent-seal rule. Preserve every old result and its historical meaning. Completion requires numerical scientific evidence, independent and sealed final evaluation, seven figure groups, the Chinese paper and reproducibility delivery. A module failure or a completed foundation is not completion of the project.
+
+Workspace E:/CodexWork/thermometry/closeout_001; branch research/closeout-001; base6f6c4f19e08e83d1ac0cd49e0c85c1c67dc56b51. Original inputs/weights/reports remain under E:/CodexWork/thermometry/public_repository_001 by hash reference. New files/logs/temp/cache stay on E/D. New output budget4GiB, free floor2GiB. No CNN training or proactive subagent delegation.
+
+## Active bounded nine-pair C1 prescreen: wake21:00 Singapore
+
+Source/evidence commit978a29fc53654057dda61a9c3c92f3f36bbc776c is pushed and remoteSHA exactly verified. Root registered only the original nine multiplier pairs(.1/1/10)^2 x two initializers on mother0000 positive_normal_noise0:18 complete cells,2 c1s1 exact reuses,16 new maximum. RegistrationSHA a03f326859fd46de4b1cb1b47d6683d9b8e271d35faa7eef9a2093ab1dbf1032;40 sources AST/worktree/Git-index byte verified,42 read references checked,29/29 CPU contracts. Same C1 objective/anchor/numerical strategy, native256 and180s per new inverse; maximum2880s inverse work plus overhead. There is no automatic12-selection/24-confirmation entry or added grid.
+
+New default-E cache separately qualified4/4 saved native endpoints at2026-10-15T11:55:27Z,0 inverse/optimizer/inner/truth, old6 canonical sets byte-identical. New derived arrays and latent pass self-persistence verification, not comparison against unsaved old latent. QualificationSHA aef4e25dafb6ba1e53e0f54aa3447dbf121f04493dc2dcdb1374aed4451245b7; ROOT_QUALIFICATION_REVIEW checks14 file refs and unchanged inverse ledger. E owner reserve release works; four-root E/D accounting and original storage whitelist remain. A root-only generic audit initially resolved a legacy-relative reference against the wrong root, stopped without changing any science, then resolved the actual immutable path; its receipt is retained.
+
+Root explicitly started the prescreen at2026-10-15T11:58:20.4970532Z (19:58:20 Singapore), launcher49240, actualPython53992: `python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_development prescreen --device cuda`. At11:58:42Z NT metadata verified both real commands/parent-child and matching E-global/E-local locks, owner e77bf98233c640e78cd258de479e9490. stderr0; no terminal at startup. First c0.1s0.1/v3 ticket exists, actual context nativecuda:0/float64 and all40 source hashes matched. The observer initially read identity/runtime as top-level null; FIRST_TICKET_CONTEXT_REVIEW reads the actual nested context, preserving the original startup receipt. Ledger before run5639rows=5099charged+540reused; startup charged5100, final maximum5115. These are snapshots, not subsequent live counts.
+
+Native automationv6-a was updated for one wake2026-10-15 21:00 Asia/Singapore and TOML-readback verified in c1_development_001/PRESCREEN_WAKE_RECEIPT.json. End the turn without monitoring. On wake first inspect NT real processes/commands/locks and `PRESCREEN_RESULT.json`, `STOP_*.json`, `RETRY_*.json` or missing durable-terminal errors in c1_development_001. Logs are prescreen_001.stdout.txt/stderr.txt. If running, set one later wake and end; no duplicate GPU, observed-time restart, edits to40 dependencies or reruns under renamed registration. Same-method/raw successes, finite uncertified, failures and interrupted ledger entries must all be reused. Score-only can retry scoring; it must not optimize/count again.
+
+After terminal verify all18 cells, exact parameters/canonical hashes/score receipts, native actual gradients/three qualified endpoints/two output platforms, two initializers,65536 pixels and costs. Qualification Q uses both initializers' numerical evidence, never favorable truth scores. Then implement/register the original finite12-mother x5conditions x2initializers stage and two-to-one24-mother confirmation without broadening the grid. Preserve failures/unexecuted denominators. c1s1's small-panel color/template tradeoff does not select or end the project.
+
+The Sol61 budget audit is complete,46 protected sources unchanged,0 new inverse. From5099, development adds6+118Q+240F, F<=min(2,Q). If a new primary wins, minimum future calls6389+118Q+240F+I_missing retain primary1820 UQ andv3 independent896MC; Q9/F2/smooth_demod totals13030,1030 over cap. Full1820 for both is an optional conservative extension13954. If primary andv3 are the identical scientific choice, reuse their exact UQ/final identity; total10615 atQ9/F2. Do not silently raise12000, exclude qualified candidates to save calls or selectv3 for cost. Finish current16 within cap, then reconcile actualQ/F/initializer and all phase caps before large science. See BUDGET_RECONCILIATION_001.json/.md plus BUDGET_ROOT_SCOPE_REVIEW.json: actual C1 payload1,057,824B is two grid fields plus1153 coefficients/3beta, not three full256 fields. Even the actual compressed-cache plan requires a prospective4GiB retention matrix; predeclared UQ-stat-only draws cannot support later unsaved spatial-image claims.
+
+The revised supplementary development figure C1_DEVELOPMENT_TRADEOFF_002.png is visually checked; original label-overlap draft preserved. PDF header/EOF only, not full PDF render QA. Paper/claims remain working drafts; seven main figure groups, formal corrected science, final freeze, sealed evaluation and complete Chinese delivery remain unfinished. All three Sol61 followups have finished. The next section is the completed small-panel snapshot, not a second active job.
+
+## Completed C1 small-panel audit and prescreen preparation
+
+At the19:15 Singapore wake, launcher58276/child23104 and both old locks were absent, stderr0. D PANEL_RESULT ended2026-10-15T10:41:13.191323Z:12/12 finite/certified,4 reused+8new,0 scoring failures/omissions. E exact terminal archiveSHA fba4067e12463b33f636aa75864bc77f49ae33d03b5b8d1000c3b7d2edddf88f. Global ledger5639rows=5099 charged+540 reused,6901 left under12000. Raw count6 from5 actual parent mothers; it is not12 independent scenes.
+
+Root native GPU forward-only analysis reconstructed all12 canonical/latent hash sets and rescored12x65536 pixels, all matching,0 inverse/optimizer/inner. See quick_v003/NATIVE_PANEL_ANALYSIS.json. Both initializers differ at most.00152K color/.00109e template RMS. Full6raw C1 fixedc1s1 gives9.859K/21.968e vs frozenv3 17.391K/16.621e and strongB1lambda100 26.072K/11.973e. Normal3raw template ratio~1.339 exceeds1.05. It is a numerical success with a scientific tradeoff, not selection/acceptance.
+
+Independent Sol61 CPU review completed:8new cells'24stages/16platforms,214 frozen refs unchanged; two final blank/weak endpoints using the recorded GPU shared anchor/coordinate scale passed actual gradients at1e-6 and tighter cold/warm conditional solves (maxu change9.568e-9e). Actual stages1e-4/1e-5/1e-6;1e-7 unexecuted. Core new-inverse time165.7777s,firstnewticket-to-terminal431.1793s. Earlier-stage parameters are not saved. See quick_v003_analysis/FINAL_REVIEW_RECEIPT.json SHA1ab0c2d55c043ce3c14a6c959f036580d3407c89cf64124e43ffef21e4a52586. A first CPU bitwise-anchor comparison stopped before endpoint evaluation; float64 CPU/GPU reduction differences were recorded, then original GPU anchor values were used without changing the physical objective.
+
+After the root forward audit ended, verified terminal zero-reserve maintenance released exactly8 inference placeholders,51,904,512B. All221 other D task files, original outputs, release errors and terminal are byte-unchanged. Dfree340602880B at cleanup end. See cache_reservation_cleanup_001/ROOT_INFERENCE_CLEANUP.json. No actual fallback or prediction was deleted. E/D caps/floors remain4GiB global,2GiB E floor,256MiB D project and128MiB D floor.
+
+Sol61 quick_controller is preparing only research_closeout.c1_development prescreen: original9 multiplier pairs0.1/1/10 each x2initializers on same mother0000 positive_normal raw,18complete cells,2c1s1 exact reuses+16new at most. Same C1 physical/numerical goal and180s limit, raw/calibration-only inference, score-only external truth. New E compact storage uses four-root accounting; it needs separately registered0-inverse native forward qualification before16new. No formal register/GPU/start has yet occurred in this preparation snapshot. Do not auto-advance to12+24 or expand the grid. Agentnumeric finished; statistics is reconciling exact remaining budgets; quick_controller is CPU-only. Root owns all GPU/selection/seal/publication.
+
+Budget audit must preserve main andv3 independent full896MC, main1820 full deployment-UQ plan,400 independent nulls per method/domain,24 matched independent mothers, all scientific matrices and final692raw x4 required methods. Do not silently enlarge the12000 cap, add an unnecessary fifth final baseline, drop failures or artificially eliminate numerically qualified candidates. The numberQ of genuinely qualified grid candidates controls required development calls. Finish the16-call prescreen within current cap, then reconcile the actual branch before scaling. Full1820 deployment/bootstrap/probe forv3 is a prospective extension, not automatically a user-requiredMC count. Original/old source/raw evidence and sealed payload remain unchanged. The following active-job text is historical.
+
+## Historical C1 startup: eight new calls; wake19:15 Singapore
+
+Source/evidence commit ad2f062920d93d07e411195c9bbf8c37176f7c96 was pushed and exact remoteSHA verified. At2026-10-15T10:33:20.9609504Z root explicitly launched the registered eight-new-inverse panel: launcher58276, actualPython23104, `python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_small_panel run --device cuda`. At10:34:29Z NT queries verified both real commands/parent-child, matching E-global/D-local locks with ownerc789a8519c7e49e38a7623a582ef9508, stderr0 and no terminal. The first new blank/v3 cell STARTED exists on nativecuda:0/float64, proving the four saved compact caches passed recheck before a new inverse ticket. Charged count at that snapshot5092 (before panel5091, maximum after all8 is5099), not a live count. See quick_v003/PANEL_PROCESS.json, PANEL_STARTUP_VERIFICATION.json and SOURCE_PUSH_RECEIPT.json.
+
+One native heartbeatv6-a wake for2026-10-15 19:15 Asia/Singapore is scheduled and TOML-readback verified in PANEL_WAKE_RECEIPT.json. End this turn without monitoring. On wake verify actualPIDs/commands/locks and terminal; if still running schedule one later wake and end, without a second GPU, timeout restart or edits to the38 frozen sources. Use the existing Win32/NT process() observer instead of WMI/CIM.
+
+Terminal and local lock live under D:/CodexWork/thermometry/closeout_001/reports/repair_001/quick_v003/. Inspect PANEL_RESULT.json, RUN_STOP_*, SCORING_RETRY_* and stdout/stderr or missing durable-receipt failures. Logs onE quick_v003/panel_001.stdout.txt and panel_001.stderr.txt. Complete12-cell denominator is4 reused+8 new on6 development raws x2 initializers, same native256/c1s1,180s per new inverse/1440s plus overhead. No automatic18-cell panel, new grid, threshold transfer or scientific selection. Retain every finite uncertified/failed/interrupted state; score-only retry when appropriate, no duplicate inverse.
+
+The independent zero-reserve maintenance completed4 qualification files before this launch and preserves all58 other D task files. Frozen store release still rejects nested namespaces; the8 current inference reserves remain charged and must stay until a full terminal and process exit. Only then may cache_reservation_cleanup prepare/release verify namespace/owner/seals/key/context/hash/zero contents and remove each useless placeholder. Keep real fallback and every result/failure record. Whole-panel96MiB additional-space check includes all retained reserves. All agents stopped; no registered sources are being edited. The following section records completed preparation, not an additional launch instruction.
+
+## Completed native v2 and compact qualification preparation
+
+The2026-10-15 18:00 Singapore wake found both v2 processes and locks absent. RESULT ended09:41:40Z:2/2 new coupled-v2 routes converged at true residual9.9015e-11/9.9723e-11,544/689 steps,86.296/108.000s. The reused old controls take5.854/6.359s, so time ratios14.74/16.98 prevent outer integration. Root review ROOT_NATIVE_REVIEW.json verifies all registered/system identities. No direct step difference is available because old step arrays were not saved. The static1024 small field-solve dispatches per application suggest a cost mechanism, without a native profiler attribution. New coupled_preconditioner_v3.py replaces field solves with elementwise triangular substitution on identical factors;25/25 CPU checks pass, native speed unqualified. It is not in the current C1 panel dependencies.
+
+The separately started forward-only C1 compact qualification ended10:08:48Z,4/4 passed on the nativeGPU. All6 saved original canonical arrays per endpoint are byte-identical, and new derived arrays/latent pass their own persistence/readback hashes. No inverse, optimizer, inner solver or truth read. E archive quick_v003/NATIVE_COMPACT_QUALIFICATION.json is exact D bytes, SHA81fbb0a0ed019e097905b91fea7511234f72946abfab17a42ac0befdcb47ab18. ROOT_QUALIFICATION_REVIEW.json verifies38 source/AST/Git-index identities and70 file references. Launcher53408/child3184 ended and both locks cleared. Global charged inverse calls remain5091;5631 ledger rows include540 reused.
+
+All four native cache results additionally expose a bookkeeping error: explicit_store.release_reservation accepts task/cells/key while c1_small_panel writes task/{qualification,inference}/cells/key. Prediction integrity and finite results pass, but zero reserve files remain charged. Preserve all original sealed bodies and RESERVATION_RELEASE_FAILURE receipts. A separate root-only owner/seal/key/context/hash/zero-file cleanup helper passed30/30 metadata CPU checks. Root then released only the4 verified qualification zero placeholders,25,952,256bytes; all58 other D task files remain byte-identical and the original release failures remain sealed. See cache_reservation_cleanup_001/ROOT_QUALIFICATION_CLEANUP.json. Do not edit any of the17/38 frozen sources or delete actual fallback/parameters/results. The forthcoming eight inference cells use the unchanged registration and can retain charged reserves until terminal, followed by the same verified maintenance.
+
+Next explicitly launch runtime_entry --module research_closeout.c1_small_panel run --device cuda, one GPU process, after preflight source/store/qualification gates and whole-panel space reservation including eight possible retained reserves. The12-cell denominator is4 reused+8 new, same6 old development raws x2 initializers, native256/c1s1/180s each, maximum1440s inversions plus overhead. No ninth inverse, rerun, grid expansion, old18-panel, detector-threshold transfer or final-payload access. Terminal lives onD quick_v003/PANEL_RESULT.json; RUN_STOP_*, SCORING_RETRY_* and missing durable-terminal failure paths must also be audited. The controller rechecks all4 qualified compact caches before issuing new tickets. Only scoring failures may receive score-only retries. After verifying actual startup once with Win32/NT commands and matching parent/owner locks, schedule one later wake and end. At this preparation snapshot the eight new inversions have not started.
+
+## Historical v2 startup snapshot: wake18:00 Singapore
+
+Source/registration/evidence commit e9219076f886eea419123154ba4f08a993abb6ef was pushed and exact remoteSHA verified. At2026-10-15T09:38:22.1043199Z root launched one hidden job: launcher57448, actual child11532, command `python -u -B -m research_closeout.runtime_entry --module research_closeout.v3_tangent_probe_v2 run --device cuda`. At09:38:44Z Win32/NT query verified actual commands, parent-child and owner locks, RUN_STARTED present, stderr0, no terminal. See v3_tangent_probe_002/PROCESS.json and STARTUP_VERIFICATION.json. Empty scientific stdout until terminal is normal; runtime-entry metadata prints first.
+
+Native automationv6-a was updated for one wake2026-10-15 18:00 Asia/Singapore and config-readback verified in WAKE_RECEIPT.json. On wake inspect actual process/commands, locks and RESULT.json or LAUNCH_FAILURE_*.json. If still running, schedule one later wake and end; do not monitor repeatedly, restart based on observation time, edit the17 frozen dependencies, or launch a secondGPU. startup_observer.py reads owned process metadata without WMI; original Python platform queries can hang on this machine. Current probe has2 new coupled-v2 linear routes and2 reused old controls, no complete inverse/truth; total new route wall budget240s plus setup. Global new charged complete-inverse count stays5091; ledger contains5631 rows including540 reused.
+
+After terminal analysis, C1 small panel has already been explicitly registered onD,38 sources and registrationf9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d. New default E cache31/31 and full D persistence20/20 CPU checks passed. First separately qualify4 existing v002 native endpoints with forward-only byte reconstruction, then explicitly run only8 new inversions if all four pass. Complete12-cell denominator includes4 reused cells. No panel or qualification was started in this turn. User-authorized unused E cleanup restored~11.4GiB free, with9.4655GiB reclaimed; private cleanup manifest/brief remain outsideGit at E:/CodexWork/storage_cleanup_20261015. Automatic approval review rejected deleting360RecycleBin; retain it and do not route around that rejection.
+
+## Native v3 tangent v1 completed; chunked repair and D-backed small panel in preparation
+
+At the2026-10-15 16:45 Singapore wake, RESULT.json was terminal: ended08:25:57.098802Z,4/4 planned/returned/attempted cells,2/4 converged and2/4 BUILD_FAILED. Only the two old block-diagonal routes actually enteredPCG:838/930 iterations, true relative residual7.8350e-11/8.0502e-11,5.8536/6.3594s. Both coupled routes requested33.14GiB on an8GiBGPU during construction, before any low-mode JVP. The captured error does not identify a unique eig/Cholesky kernel. Total probe wall60.9282s; zero complete inverses and no truth. Root verified oldlauncher49008/child43884 absent at08:48:03Z, both locks absent and stderr0. See v3_tangent_probe_001/NATIVE_PROBE_ANALYSIS.json; all11 original source hashes, registration fingerprint and four system identities checked. Preserve this failed native result.
+
+The old step arrays were intentionally not exported. Direct step and linear-output differences are unavailable; do not repeat old controls to recover them. The new explicitv2 helper chunks eigvalsh/cholesky_ex/cholesky_solve at no more than64 matrices, keeping the mathematical Fourier symbol and6x6 coupling unchanged. Its forthcoming v2 probe must reuse the two old successful controls and attempt only two new coupled routes on the exact same frozen systems, with the same damping1e-3/rtol1e-10/max2000/120s each. Any residual/spectral-lower-bound comparison is a conditional analytic bound, not a directly measured solution difference. Helper9/9 and controller31/31 CPU checks passed; the17-source tangent v2 registration is frozen SHAf4265cbedce6cf1d768e331601edfda4bc30b76ce49790cacedc032e2cdedcc5. Source/index byte equivalence was verified before launch.
+
+Storage restored after the user explicitly authorized deleting unused E data and keeping a brief. E recycle-bin cleanup and Oracle npm-cache cleanup released9.4655GiB in their recorded before/after deltas; E free11.4183GiB at completion. Brief and receipts: E:/CodexWork/storage_cleanup_20261015/清理简报.md and CLEANUP_STATUS.json. A proposed0.485GiB360 garbage-backup deletion was blocked by automatic approval review with only “blocked by policy”; it was not executed or retried by another route. Scientific projects, original inputs/weights/evidence and installed environments were preserved. E2GiB, D128MiB, fixed D-project256MiB and global4GiB gates remain unchanged.
+
+All three Sol61 Max agents completed source preparation and stopped: explicit D storage plus versioned compact-cache schema, chunked native tangent v2, and c1_small_panel. The next C1 panel is explicit quick_v003:6raw x2 initializers, reuse the4 v002 cells, only8 new complete inversions at fixed native256/c1s1/180s each. A separate pure-forward qualification of all4 saved v002 endpoints must first prove native byte equality of the new compact cache, without optimization or complete inverse calls. The panel controller passed24/24 fake CPU checks. New compact default-E persistence passed31/31 CPU checks; complete D persistence subsequently passed20/20 CPU checks, with an exact-byte report archived underexplicit_store_001/. Native GPU byte qualification remains unperformed. The38-source C1 panel was separately registered onD, SHAf9b94df9e49e0755d3f0befb00dc0675a81df3d48f4f2ea9955e3a203b2aac9d; an exact-byte copy is archived in quick_v003/. It still requires a separate4-endpoint native forward-only qualification before the8 new inversions. No GPU work or panel starts automatically. Global actual new complete inverse count remains5091. The original v001/v002 caches and all science evidence remain unchanged.
+
+The explicit runtime_entry uses the inspected Python3.12.14 platform OSError fallback for unavailable WMI metadata; native IsWow64Process2 agrees onAMD64. Installed Python/torch files are unchanged.5 metadata checks, helper/controller CPU execution and cache CPU execution completed through this entry; include it in all new source registrations and launch commands. Do not retry the old unstarted WMI-import CPU processes.
+
+The paper is a Chinese working draft, not delivery. The completed native probe is now reported as two converged old controls and two construction failures; no production improvement is established. Independent corrected studies,9-combination scientific development/confirmation, thresholds/intervals, full freeze, sealed final evaluation, seven figures and clean reproduction remain outstanding.
+
+## v002 completed:4/4 numerical certification; native v3 tangent registered
+
+The15:55 Singapore wake found launcher59720/child56000 absent, global/local locks absent and stderr0. QUICK_RESULT.json ended2026-10-15T07:32:14.849540Z,141.96s total,128.46s inverse internal,4/4 finite and4/4 numerically certified. All four stop at executed stage3 gtol1e-6 under the preregistered three-qualified-endpoint/two-platform rule; stage4 gtol1e-7 was not executed. Root re-scored all4x65536 pixels, verified sources/caches and paired initializers without new inversions. Global actual new complete inverse count5091. Evidence commit e4e8090. Do not rerun these4 frozen results.
+
+Read quick_v002/NATIVE_C1_ANALYSIS.json and quick_v002_analysis/FINAL_REVIEW_RECEIPT.json. Sol61 Max independently reconstructed all4 final endpoints on CPU, with tighter cold/warm linear solves and actual gradients passing1e-6. Earlier stage parameters were not saved, so their12 stage/8 comparison records are hash/log checks. C1 lowers the T-anchor regularizer0.6249%; fixed new prior with original interpolation raises gradients2.72e-5..3.66e-5 at saved C1 parameters. Both interpolation and anchor changes belong to the explicit new physical objective. Old v001 endpoint parameters remain unavailable. Two development raws do not constitute scientific selection.
+
+The native fixed-tangent controller research_closeout.v3_tangent_probe is registered SHA9e8268a543404f876ee1ad8ca412a0eba1d7407d4009a98246d4784789e74f35 after28 CPU controller+15 helper checks. This uses original PL calibration and same2 raw cachedv3 states, four linear cells: old diagonal/coupled at mu1e-3, rtol1e-10/max2000,120s per route/480s total plus setup. No full inverse, truth or step-array export. Reports limited1MiB, E free floor2GiB. Root will launch only after source/index commit and push verification, then verify actual process once and schedule one wake. See repair_001/v3_tangent_probe_001. No active GPU job at this preparation snapshot.
+
+E remains tight; LOSSLESS_TEXT_COMPRESSION_002.json records104 completed text files losslessly compressed with unchanged hashes and no deletion. New compact parameter storage is under CPU implementation review for future registrations, not a conversion of old evidence. No new large matrix until a concrete storage budget passes the floor.
+
+The Chinese working manuscript and claims table now exist under paper/. It contains completed source mechanisms, numerical and traditional controls, with independent corrected and final results explicitly pending. LITERATURE_MATRIX.md now includes detailed primary full-text comparisons for2026 FRAME, spectral VP and MAP intervals. Temperature/emissivity full text remains unavailable. This draft is not final paper delivery; seven figure groups, final freeze/evaluation and clean reproduction remain required.
+
+## Completed v001 smoke and frozen v002 preparation
+
+At the 2026-10-15 15:00 Singapore wake, launcher57732 and child56128 had exited, locks were absent and stderr empty. QUICK_RESULT.json ended2026-10-15T06:45:51.885921Z: all6/6 finite,0/6 numerically certified,6 new complete inverse calls, about540.53s. Preserve all six controls; terminal/receipts and full-pixel scores were independently hash-verified. Evidence commit2a3be4e. See quick_v001/NATIVE_SMOKE_ANALYSIS.json, QUICK_COMPLETION_VERIFICATION.json and quick_v001_analysis/NUMERICAL_SCIENTIFIC_REVIEW.json. Do not rerun v001 or auto-start its full panel. Global actual new inverse count at v002 start was5087; after its four calls it is5091.
+
+The four joint endpoints changed by at most3.8408e-5K/1.0623e-4e at the last tightening, but projected gradients remained3.3461e-5..5.9550e-5 versus1e-7. Both v3 refinements exhausted180s with continuing output changes. Cusp involvement at original v001 endpoints is a hypothesis because their latent parameters were not saved; CPU fixtures establish the mechanism only. The viewed diagnostic figure NATIVE_SMOKE_DIAGNOSTIC_002.png has additive visual QA. No method was selected by these two raws.
+
+New smooth_calibration.py uses explicit objective/calibration versions: joint-profile-v003-shared-anchor-c1-calibration / continuum-c1-local-hermite-v003. Original calibration buffers/knots and color lookup remain identical; only fixed +-0.25K local Hermite knot connections change interpolation. Fourteen CPU contracts pass. Relative to frozen calibration, the analytic flat-field raw incremental bound is0.0401176e over admissible amplitudes and dense common-color change0.00224925K. Absolute LUT error is not fixed. Full-interval PCHIP exceeded0.17e and remains rejected. This is an explicitly different physical objective, not silent v3 precision repair.
+
+Registration of research_closeout.calibration_quick with calibration_v003/CALIBRATION_CONTRACTS.json completed; the controller has22 CPU checks. v002 executes only the same two old raw inputs with two joint initializers, four new inversions,180s each/720s total. No v3-refined rerun, panel, thresholds or final payload. Save original float64 z_grid/xi/beta before canonical outputs and external scoring, so actual endpoint-knot diagnostics are possible. New NPZ cap24MiB includes both parameter and canonical caches; reserve disk before each call while retaining2GiB free. Root launches one hidden GPU phase only after frozen source commit and remote verification. Verify actual PID/commands/startup once, schedule one later native heartbeat, then end.
+
+New coupled_preconditioner.py has15 small CPU contracts, retaining the v3 objective/bounds/regularizers. It is not integrated or native-qualified; a separately registered fixed-damping exact projected tangent probe is the next v3 diagnostic after v002, not a concurrent GPU job. New smooth_calibration_exposure.py has8 CPU contracts: future C1 photon-budget studies must scale the extra derivative buffer through this wrapper. Old deployment.known_exposure alone does not do so; v002 ratio1 is unaffected.
+
+RETROSPECTIVE_INTERVAL_DIAGNOSTIC.json reuses existing896 MC draws without new inversions. Per-output oracle scales remove the shared-unit mistake in a diagnostic split, but previously seen labels and the old geometry-role confounding prevent independent or deployment coverage claims. The new balanced registered scientific plan remains unexecuted.
+
+## Latest steering: repair every identified fault, small validation, GPT-6.1 Sol Max
+
+The user subsequently requested all faults be repaired and a smaller validation set for fast iteration, then specified GPT-6.1 Sol with max reasoning for subsequent execution. New follow-up agents use that exact model/effort; old Astra review history is preserved. Read repair_001/EXECUTION_POLICY.json and the additive repair receipts.
+
+Implementation repairs are in progress: one initializer-independent physical profile objective, staged tighter-output checks and returned tight endpoint, analytic-gradient float64 refinement of the unchanged v3 objective, calibrated independent relay, twelve-output-statistic interval scales, explicit frame dictionary decisions, actual geometry tracking, and balanced future calibration/evaluation strata. Historical science replay uses the explicit legacy relay and legacy interval/linearization API. One old independent expected mean and raw were regenerated byte-identically; no historical results were relabeled in place.
+
+The small panel retains native256, fixed c1s1, six unchanged development raws. Initial smoke executes only its first two raws and three routes (six new complete inversions, at most1080s inverse time plus overhead). Full six-raw panel is a separate explicit tier; it must never start automatically. It is a debugging/regression set, not a final selection or generalization claim. See research_closeout/quick_validation.py and repair_001/quick_v001. Before launch all new CPU contracts and source/input hashes must pass registration; no sealed payload is read. Same registered method/raw cache is always reused, including finite uncertified and failed attempts. Root alone launches the GPU phase.
+
+Completed original science evidence was archived in Git5627a8e with24 file byte hashes verified against the index, original28 registered source files verified against90bb213. Original stdout CRLF is preserved with a path-specific -text rule. Additive archive receipt: repair_001/SCIENCE_ARCHIVE_RECEIPT.json. NTFS lossless text compression restored free space above2GiB; hashes before/after agree. Do not delete old data.
+
+The repaired full uncertainty metadata plan repair_001/REPAIRED_SCIENTIFIC_PROTOCOL.json is not executing:12 new mothers, six actual template types in both calibration and evaluation roles, disjoint seeds,896 independent full MC draws plus768 conditional fitted-mean bootstrap refits and144 low-probe directional diagnostics (1820 total). A conditional bootstrap alone is not independent coverage, and low-probe or unstable local covariance remains diagnostic. New method thresholds require independent null calibration/evaluation. Review smoke first and register fresh scientific source/method before executing this larger plan.
+
+## Latest steering: user-requested Astra Max root-cause review, 2026-10-15
+
+The user explicitly requested an Astra Max agent team to identify failure causes. Three gpt-6-astra/max reviewers completed numerical, physical and protocol audits; root independently reproduced key algebra and result counts. Read `root_cause_team_001/ROOT_CAUSE_REPORT.zh-CN.md`, the three component reviews, and `ROOT_DIAGNOSTIC_RECEIPT.json` before further freeze work. This specific delegation was authorized; it does not require ongoing delegation on future wakes.
+
+SCIENCE_RESULT.json is terminal at2026-10-15T03:24:36Z:815 frames/2821 case-method rows and896 MC draws returned finite. Launcher54080 and Python59200 are no longer live, PHASE_ACTIVE.json is absent, stderr empty. Do not restart the completed science job. Numerical qualification remains failed; no final payload opened. At review E free space was about2.08GB, below2GiB; no new heavy computation may start until the registered floor is met. Do not delete old data to make room without authorization.
+
+Root causes verified without new complete inversions or source edits:
+- All18 joint base runs stopped on scaled PGTOL;17 color and15 template outputs moved beyond0.2K/0.17e under tighter outer continuation. Endpoint tighter-inner differences<=7.50e-10e. This is outer numerical rejection on one raw, not a completed12+24-mother scientific comparison.
+- The two initializers change physical continuum regularization by about2.8%/1.8%. The same saved state has objectives differing3.36799. Fix/validate shared physical objective semantics before interpreting initializer differences; preserve old selection history.
+- Independent nominal relay uses a native-grid sampled sigma0.35 Gaussian, while core calibration uses its continuous analytic OTF. Carrier responses differ7.6–48.7%;700/905 ratio factor0.92932255 alone creates-146.0815K for a flat3100K scene. Nominal24 v3 errors199.23K/334.35e and independent blank5/5 false detections therefore require explicit mismatch interpretation. Preserve the batch as registered relay/calibration-mismatch stress; matched-nominal independent accuracy is not yet established. First validate constant-field/carrier forward contracts; do not immediately rerun the matrix.
+- Both-float64 v3 routes differing only in CG settings have output-difference lower bounds exceeding a budget in60/60; tightened-reference lastCG still58/60 capped. Twelve local linearizations all fail step stability; the empirical interval model uses the wrong shared brightness scale for color versus electron template. Actual uncertainty calibration/evaluation template geometries are blob/multipeak; report this and all widths/coverage.
+
+Next do the bounded contract/interpretation repairs specified in the review, preserving all old raw/results and full denominators. New diagnostic numerical configuration must be registered; do not silently reopen the nine-candidate search or change a selected method on sealed data. Complete the remaining scientific and paper delivery under the latest user instruction; the root-cause report itself is not project completion.
+
+## Finished evidence
+
+Old Stage A PID31104 ended2026-10-14T16:11:50Z. Its unchanged A_DECISION.json reports720 inputs,4320 linear rows and720 v3 rows; all numerical/source gates passed; continuum route supported. Old B_eligible=false remains historical. New closeout continues under the latest instruction. A_REUSED_COMPARISON.json reuses all5040 old rows by hashes.
+
+On36 development mothers with normal noisy templates, C_v5 plus old estimated-beta linear solver gives63.76e negative/64.63e positive template RMSE. Identical raw with C_v3 gives17.64e/17.62e; complete original v3 gives17.22e/17.19e. This supports the continuum-source mechanism; source replacement does not improve original v3 or establish an information ceiling.
+
+The first foundation attempt failed before new source outputs because the immutable PCG API rejects maxiter1000 and a pilot searched for _noise rather than actual _noise0. Preserve FOUNDATION_RESULT.json, logs and failures. Residual-reference propagation now uses unchanged PCG calls of at most200 iterations inside a1000-iteration correction budget. Three continuation checks passed, including native256 output reference difference9.46e-10e. Pilot reference uses unique metadata.
+
+Continuation Python PID53456 started2026-10-14T18:39:59Z and finished18:48:16Z. FOUNDATION_CONTINUED_RESULT.json is terminal. All540 source/background combinations on90 exact raw inputs from6 oracle mothers completed and were numerically certified. SOURCE_STUDY_SUMMARY.json: maximum actual numerical contribution1.00317e-4e, maximum corrected four-term closure2.79919e-12e. These are numerical/accounting quantities, not camera accuracy. Original K/W/lambda remained fixed. The36-mother source extension already exists in old Stage A and is reused.
+
+CONTINUUM_REPRESENTATION.json covers60 noisy inputs/12 development mothers. Single global grid is native256; coarse32/64/128 failed0.2K/0.17e representation budgets. Do not repeat those frozen checks. Original11 numerical contracts passed, including finite-mode shared QR, actual physical profile gradient, single H and shared-raw covariance. The attachment was prose only; local YAML/checks are locally authored, not the unattached external scripts.
+
+Both original joint cost-pilot initializers had accurate inner solves but reached outer30-iteration limits. Neither is production-qualified; finite errors remain. The single numerical recovery preserves the same physical objective/regularizers/bounds, uses fixed channel diagonal scaling and longer L-BFGS-B, and requires tighter outer color/template comparison. Base120s/total180s per frame. No second architecture or new hyperparameter grid.
+
+independent_renderer.py and uncertainty.py are implemented. Nine fixtures passed for dense integration, all-component photon scaling, temporal band integration, raw noise, shared-raw covariance,64-refit interface and independent null units. These are not formal accuracy/coverage. Finite normalized Airy convolution and within-band template/background spectra are declared assumed validation models, not infinite-Airy/periodic equivalence or measured molecular spectra.
+
+Nine development contracts passed: unchanged objective, exact gradient scaling, a whole recovered-inverse/tighter-outer fixture, historical B1 outputs for0.1/10/100/1000, failed-case denominators. DEVELOPMENT_CONTRACTS_INITIAL.json preserves the initial arbitrary0.01K LUT-roundtrip test failure at0.01099K. Final test uses the already registered0.2K numerical budget. Scientific thresholds were unchanged.
+
+## Completed development and current science job
+
+Development launcher39024 / actual Python53056 finished2026-10-14T20:02:09Z. DEVELOPMENT_RESULT.json is terminal. Do not run it again. All9 combinations produced18 finite prescreen outputs; only1 individual initializer was numerically certified, and no combination passed both initializers. All9 were excluded under the preregistered rule; the other matrix cells are explicitly unexecuted after numerical exclusion. No2-to1 confirmation was justified. Preserve the failed candidates and their parameter caches.
+
+selected_method.json chooses frozen v3_physics as a research baseline; deployment_qualified=false. Production comparisons returned60/60, passed0/60. Same-budget float64 differences: median0.2515e/0.2864K, maximum1.3437e/1.6918K. Tighter-linear float64: median0.6473e/1.0660K, maximum2.3167e/3.9111K. The original v3 algorithm/config/outputs remain unchanged. These are finite-estimator sensitivity comparisons, not a nonlinear-optimum proof. Continue independent and final evaluation even with this failed deployment qualification.
+
+Traditional finite selection chose lambda100, consistent with the earlier v4.1 preselection. On24 confirmation mothers/120 noisy inputs, B1_lambda100 gives13.3648e template and20.8501K color RMSE; original v3 gives17.3585e/16.4358K. Preserve this tradeoff. Historical lambda0.1 stays separately named. Development reused old same-raw v3/B4/historical B1. Before science there are980 new complete inverse calls. DEVELOPMENT_SCIENTIFIC_SUMMARY.json records these facts with original result hashes.
+
+The completed root-owned command was python -u -B -m research_closeout.science --device cuda. Its terminal evidence is SCIENCE_RESULT.json and science_001.stdout.txt/stderr; source/plan handshake remains SCIENCE_REGISTRATION.json and SCIENTIFIC_PLAN.json. The2026-10-15 review above supersedes the earlier wait instruction for this specific completed job. Future long jobs still require startup verification, one later native heartbeat, and ending the turn without continuous monitoring or a second GPU process.
+
+The preseal plan has448 new mothers,1792 unique field streams and1891 unique raw streams (including896 MC draws and180 future signed streams), checked against old v5 metadata, original v4 train256/validation64/final64 descriptor rules, and all old inventory noise streams. Planning reads metadata only. Final main metadata preserves512 original inputs/64 mothers, four original amplitude ranges and two noise replicas. The36 signed mothers retain their6x6 geometries and now declare blank/positive-negative45/positive-negative180, one noise replica each,180 inputs. Negative means are unavailable, never clipped into validity.
+
+The science job runs200 independent null calibration plus200 null evaluation mothers, each on v3/B4/B1_lambda100/historicalB1_lambda0.1. It freezes method-specific dictionary thresholds after calibration and leaves evaluation labels out. It runs24 independent-renderer mothers with6 separated effects plus2 fixed combined cases(146 frames),110 structure/strength cases,90 photon-budget cases,45 calibration cases and12 temporal exposure-integrated frames. Three Gaussian output targets are evaluated without extra inversions; smooth continuum bands before color. For independent/boundary studies compare v3/B4/strongB1; selected method and v3 are the same route and are reused.
+
+Full-inverse uncertainty uses12 fresh mothers:6 interval calibration,6 disjoint evaluation, all64 original draws;2 representatives extend the same prefix to128 for32/64/128 stability. Total896 noise refits plus12 base and384 whole-inverse directional refits =1292 calls. Repeated raw is generated by the independently specified synthetic measurement model; truth is external to inference. Twelve statistics are the5 registered pixel points plus central ROI mean, for color and template. Operational interval widths are calibrated per statistic using only first64 draws of6 calibration mothers and fitted raw-mean noise scaling; evaluate the other6 without tuning. There is no distribution-free95% or simultaneous-image guarantee. Local finite-difference step disagreements are retained as uncertified linearization, not hidden by the MC result. Keep all failure denominators and finite widths. Simulated calibration is an assumed distribution.
+
+Known photon ratios scale continuum/Sscale/Bscale together inside the calibrated forward while ADC/read units stay fixed; canonical template/continuum outputs are divided back to reference20us. deployment.py accepts raw and known calibration only. It reports research_baseline_only, numerical_valid=false, calibration_assumed_not_verified and uncertainty-not-computed until attached.13 science contracts passed, including real seed disjointness, complete call caps, exposure units, raw replay and held-out interval-label rejection. The initial derivative fixture used a mean direction with zero sensitivity and an undefined relative comparison; SCIENCE_CONTRACTS_INITIAL.json is retained. The corrected nonzero-sensitivity fixture matches analytic variance to8.4e-12 relative error. No scientific threshold changed.
+
+Global complete-inverse cap12000 was set before formal execution. Log actual new inversions including initializers, and reuse frozen same-method/same-raw results. Fixed full-domain errors/failures remain. Numerical validity, low signal, detection, calibration and saturation are separate states.
+
+## Remaining delivery
+
+After SCIENCE_RESULT.json is terminal, finish finalize.py and the final-evaluation consumer in this package. Do not repeat completed development, raw noise replicas or same-method/same-raw inversions. Existing code/plan/fields are predeclared; final results cannot drive tuning. Implement and test the final-handshake and reporting code before FINAL_METHOD_FREEZE.json.
+
+Execute3 output resolutions(sigma0/2/4; smooth continuum bands then color),3 relative photon budgets(.25/1/2; C/template/background scale together; ADC/read units fixed), structure/strength/calibration/dynamic studies,24 independent-renderer mothers,200 independent null calibration and200 null evaluation mothers. Complete12 representative full-inverse MC64 cases and32/64/128 stability on2 cases. Compare whole-inverse local propagation; retain shared-raw covariance. Independent interval calibration/evaluation mothers must be disjoint; fitted conditional bootstrap alone is not coverage evidence. Report pixel/ROI widths, coverage and failures; no simultaneous full-image claim. Simulated calibration distributions are assumed because real calibration is absent.
+
+LITERATURE_MATRIX.md now records primary-source comparisons and access levels for2024 passive FRAME,2026 aluminum thermometry, variable projection, spectral applications, temperature/emissivity inversion, coded statistical bounds and JCGM correlations. The2024 publisher's method/calibration text was read;2026 author abstract is verified. Full-text formula/accuracy comparisons still need the explicitly marked follow-up reads. Generic CMOS plus spatial encoding is established prior art, not project novelty. Use the anti-defensive-writing skill already read for the Chinese paper; retain methodological limits in the relevant section.
+
+Freeze source, selected method/parameters, target optics, all reporting baselines, detector thresholds and statistical plan in FINAL_METHOD_FREEZE.json and verify before opening/generating64 main and36 signed final mothers. Latest user explicitly authorizes frozen v3 to trigger final. No final-driven tuning, threshold/checkpoint changes or reselection. Final failures still enter the paper. Final payloads remain unopened.
+
+Deliver paired-mother statistics and all failure denominators, seven figure groups/visual QA, Chinese manuscript, data/method/limitations, claims-to-evidence, raw+calibration inference and clean reproduction package. Do not claim real gas temperature, AlO concentration,10kHz hardware or journal acceptance. Push branch and add a new final GitHub release; preserve older releases; retain successful upload receipts without downloading assets again. Do not label development or numerical audit as full closeout.
