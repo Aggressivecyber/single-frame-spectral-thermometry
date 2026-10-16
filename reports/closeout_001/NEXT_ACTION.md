@@ -1,3 +1,11 @@
+# Current continuation: six trainings complete, joint evaluation running (2026-10-17)
+
+六通道联合试验joint_imaging_001已在登记服务器启动，1056幅raw完整生成，六次网络训练、1800次更新已完成；当前在做独立阈值标定/留出评价，科学门槛尚未验收。源码提交1eca402c89c3e1ca270f19b89da6b468dc309ed0，12个执行文件与Git及登记哈希逐字节一致；CPU/GPU检查均通过。启动回执 `../joint_imaging_001/STARTUP_VERIFIED.json`。
+
+已设置本聊天一次后续苏醒（automation），约5分钟后检查真实退出状态。不要持续轮询。完成后同步全部数据/权重/结果，核对哈希、数据划分、选择和阈值冻结时间、各随机种子与数值收敛，再生成图像并写中文结论；没有作业待跟进时删除定时。目标仍active，尚未有候选验收或创新性成立结论。
+
+以下为此前登记及历史记录。
+
 # Current continuation: joint temperature and characteristic-emission pilot (2026-10-17)
 
 用户补充完整目标：若干波长测温，其余特征波长用于CH*、C2*、AlO发光探测；滤光通道图像为中间结果，先进传统算法与神经网络融合为研究方向。六通道小试验已登记于 `../../research_joint_imaging/protocol.json`，说明见该目录README。当前已通过短时CPU数值检查，正在准备服务器执行，尚无新训练结果。
