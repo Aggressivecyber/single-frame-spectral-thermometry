@@ -5,3 +5,6 @@
 *.png binary
 reports/closeout_001/science_001.stdout.txt -text
 reports/closeout_001/repair_001/** -text
+# Preserve executed source hashes, including original line endings and final blank lines.
+research_filter_decode/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
+reports/filter_decode_*/** -text whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof

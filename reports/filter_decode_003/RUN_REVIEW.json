@@ -1,0 +1,89 @@
+{
+  "time": "2026-10-16T20:07:51.330790+00:00",
+  "status": "IMAGE_ONLY_SIMULATION_BASELINE_ESTABLISHED_WITH_EXPLICIT_OPERATING_LIMITS",
+  "goal_stage": "Three-filter total-image baseline and bounded noise/bandwidth tests completed",
+  "user_scope": "Filters define wavelength; reconstruct complete channel images from one common overlapped sensor frame.",
+  "channels_nm": [
+    431.5,
+    486,
+    516.5
+  ],
+  "provisional_fwhm_nm": [
+    10,
+    10,
+    10
+  ],
+  "optional_OH_nm": 310,
+  "selected_development_baseline": "filter_decode_003",
+  "selection_scope": "Balanced 4000-electron channels, matched assumed optics/calibration; not all brightness ratios or measured hardware.",
+  "primary_mean_relative_L2": [
+    0.018446316027179006,
+    0.018208082304338423,
+    0.018486791654174915
+  ],
+  "primary_p95_relative_L2": [
+    0.01909391250442216,
+    0.018945941613905663,
+    0.01924622753802011
+  ],
+  "primary_p95_absolute_mean_bias_fraction": [
+    0.0005958889009748862,
+    0.0005243465352249354,
+    0.0005921335816727397
+  ],
+  "primary_p95_centered_relative_L2": [
+    0.05323440565888342,
+    0.05009365808854311,
+    0.05733468432944818
+  ],
+  "weak_20to1_mean_relative_L2": [
+    0.3053167633205769,
+    0.3011483409812702,
+    0.30624528864048617
+  ],
+  "weak_condition_accepted": false,
+  "optical_difference_mean_before": 0.14328605814942694,
+  "optical_difference_mean_after": 0.0975049570650202,
+  "optical_difference_relative_reduction": 0.3195084132795639,
+  "bandwidth_screen_passed": true,
+  "failed_wide_candidate_preserved": "filter_decode_002; channel516.5 centered relative L2 p95=0.1106217354486325 > 0.10",
+  "counts": {
+    "independent_development_mothers": 8,
+    "noise_observations_per_geometry": 768,
+    "noise_observations_total": 2304,
+    "server_complete_decodes": 2736,
+    "local_CPU_contract_and_replay_decodes": 24,
+    "legacy_inverse_calls_unchanged": 6933,
+    "training_updates": 0
+  },
+  "delivery": {
+    "all_raw_observations_reopened": 2304,
+    "remote_hashed_files_verified": 359,
+    "max_CPU_replay_saved_absolute_difference_e": 1.7280399333685637e-11,
+    "all_figures_hash_verified": 7,
+    "visually_inspected_figures": [
+      "decoded_balanced.png",
+      "decoded_AlO_weak.png",
+      "bandwidth_tradeoff.png"
+    ],
+    "visual_result": "readable axes/labels/colorbars; no observed clipping or overlap; optical loss, decoding error and weak-channel degradation shown separately"
+  },
+  "evidence_boundary": {
+    "synthetic_engineering_only": true,
+    "actual_filter_transmission_known": false,
+    "actual_camera_model_known": false,
+    "independent_measured_multiband_truth": false,
+    "hardware_validated": false,
+    "measured_frame_rate": false,
+    "within_passband_species_purity_claimed": false
+  },
+  "next_action": {
+    "task": "At fixed optical target bandwidth, compare Fourier demodulation with raw-noise-aware independent-channel image reconstruction.",
+    "controls": "Reuse saved raw frames for the development comparison; freeze separate new mother scenes for subsequent validation; report image error, centered detail error and intensity bias jointly.",
+    "hardware_input": "User was asked for camera/filter specifications; none received at this report time. Continue using explicitly hypothetical parameters until supplied.",
+    "launched": false
+  },
+  "active_jobs": 0,
+  "automation_id": null,
+  "all_legacy_scientific_sources_preserved": true
+}

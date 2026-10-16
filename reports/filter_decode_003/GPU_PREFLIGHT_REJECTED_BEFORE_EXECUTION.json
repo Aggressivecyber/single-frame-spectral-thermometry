@@ -1,0 +1,34 @@
+{
+  "time": "2026-10-16T19:53:59.794236+00:00",
+  "scientific_calls": 0,
+  "reason": "Unrelated hpge project owns GPU PID38896; do not alter its job. Use 2 server CPU threads for this short image-only follow-up.",
+  "previous_registration": {
+    "time": "2026-10-16T19:51:57.678831+00:00",
+    "registered_before_server_execution": true,
+    "source_sha256": {
+      "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+      "research_filter_decode/operator.py": "4784ebb879fa68179f8189659eb9cdcdcc4ef0a1e2e368df98558f0cddd125aa",
+      "research_filter_decode/run.py": "ca3420e1545e6c5b694091c2cda929320e1f9ad49a4e9345214719470cf63d6d",
+      "research_filter_decode/supervise.py": "742038a12dc4b327810803671e18563c154cbb10b3baeece6e81e57204e23414",
+      "research_filter_decode/protocol.json": "a32296286052a1b25de4b96e92088bd91ce3f11fb84277ec2eddbb6a968dc0f5",
+      "research_filter_decode/AGENTS.md": "b16215d42b4aa7f71ebc00c0baccb2ae1d5794dba52524f0567ca4f70998ee51"
+    },
+    "expected_complete_decodes": 912,
+    "expected_noisy_observations": 768,
+    "training_updates": 0,
+    "comparison": {
+      "baseline": "filter_decode_001",
+      "failed_wide_geometry": "filter_decode_002",
+      "reason": "The wide design failed the centered-image error screen at the high-frequency third carrier. Use near-equal carrier radii and an intermediate spatial bandwidth.",
+      "geometry_derivation": "Three conjugate pairs on an approximate hexagon: minimum center distance 74/256 = 0.2890625, exceeding twice the 0.14 decode radius.",
+      "selection": "one fixed follow-up geometry derived after the development result, not an independent blind test",
+      "same_preoptics_images": true,
+      "same_electron_mean_levels_and_noise_seed_rule": true,
+      "same_raw_frames": false,
+      "additional_predeclared_screen": "At least 30 percent lower mean pre-to-post-optics relative L2 difference than filter_decode_001, while retaining the original balanced-4000 engineering screen.",
+      "real_optical_implementation": "unknown; hypothetical until measured",
+      "artifact_reservation_basis": "The two completed runs used less than 92 MB each; reserve 128 MiB and preserve both earlier results."
+    },
+    "original_run_sources_modified": false
+  }
+}

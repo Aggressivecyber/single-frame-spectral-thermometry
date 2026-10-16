@@ -1,0 +1,187 @@
+{
+  "run_id": "filter_decode_002",
+  "scope": "Recover total filter-channel images from one spatially overlapped common-FOV frame",
+  "evidence_level": "synthetic engineering simulation, hypothetical calibrated optics and camera",
+  "channels": [
+    {
+      "label": "CH-region",
+      "center_nm": 431.5,
+      "provisional_fwhm_nm": 10,
+      "purpose": "total transmitted image, not isolated CH concentration"
+    },
+    {
+      "label": "AlO-region",
+      "center_nm": 486.0,
+      "provisional_fwhm_nm": 10,
+      "purpose": "total transmitted image, not isolated AlO concentration"
+    },
+    {
+      "label": "C2-region",
+      "center_nm": 516.5,
+      "provisional_fwhm_nm": 10,
+      "purpose": "total transmitted image, not isolated C2 concentration"
+    }
+  ],
+  "optional_extension": {
+    "label": "OH-region",
+    "center_nm": 310,
+    "provisional_fwhm_nm": 10,
+    "requires": "verified UV optics, filter transmission and sensor response"
+  },
+  "source_evidence": [
+    {
+      "doi": "10.3389/ffuel.2023.1296502",
+      "url": "https://eprints.whiterose.ac.uk/208382/1/ffuel-01-1296502.pdf",
+      "supports": "Experimental 310, 431.5 and 516.5 nm filters, each 10 nm FWHM; ICCD setup does not validate our CMOS speed or throughput"
+    },
+    {
+      "doi": "10.1021/acs.jpca.9b10697",
+      "url": "https://www.uhmreactiondynamics.org/publication_papers/p455.pdf",
+      "local_source": "../channel_selection_20261011/sources/lucas_2020.pdf",
+      "pdf_page": 13,
+      "supports": "Observed AlO band near 486 nm; tabulated 484.2/486.6 nm features; 513 nm region contains overlapping AlO/C2 emission",
+      "local_sha256": "0b12121a21605aa1d7a3cbd4def4906c79e3d3fb656ba9ed213795539e1e8008"
+    }
+  ],
+  "unknown_hardware": [
+    "filter transmission curves",
+    "actual FWHM and incidence-angle shift",
+    "optical PSF and carrier calibration",
+    "sensor QE/read noise/full well/ADC",
+    "exposure",
+    "physical pixel size and field of view",
+    "actual per-channel photon flux"
+  ],
+  "model": {
+    "shape": [
+      256,
+      256
+    ],
+    "carrier_bins_xy": [
+      [
+        32,
+        96
+      ],
+      [
+        96,
+        32
+      ],
+      [
+        96,
+        -96
+      ]
+    ],
+    "channel_gain": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "modulation_depth": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "phase_rad": [
+      0.13,
+      -0.27,
+      0.41
+    ],
+    "object_cutoff_cpp": 0.16,
+    "decode_cutoff_cpp": 0.17,
+    "relay_psf_sigma_px": 0.35,
+    "boundary": "periodic finite grid for the primary matched model",
+    "target": "post-object-optics band image before the spatial carrier, in expected electrons at unit gain",
+    "sensor_model": "independent Poisson counts, Gaussian read noise, then ADC with black offset and saturation",
+    "read_noise_e": 3.0,
+    "full_well_e": 60000.0,
+    "adc_bits": 12,
+    "black_level_DN": 128
+  },
+  "design": {
+    "mothers": 8,
+    "image_seed": 731027,
+    "noise_seed": 880137,
+    "noise_repeats": 8,
+    "bright_channel_mean_e": [
+      250,
+      1000,
+      4000
+    ],
+    "brightness_profiles": {
+      "balanced": [
+        1,
+        1,
+        1
+      ],
+      "CH_weak": [
+        0.05,
+        1,
+        1
+      ],
+      "AlO_weak": [
+        1,
+        0.05,
+        1
+      ],
+      "C2_weak": [
+        1,
+        1,
+        0.05
+      ]
+    },
+    "independent_maps": "Each channel has its own synthetic morphology and random seed. No shared spectral/chemical/temperature parameterization.",
+    "training": "none",
+    "primary_operating_point": "balanced channels, each mean 4000 electrons before modulation",
+    "stress_cases": [
+      "one channel is 20 times dimmer",
+      "lower count levels",
+      "no object bandwidth limit",
+      "decoder phase calibration +2 degrees in each channel",
+      "decoder channel gain +5 percent in each channel"
+    ],
+    "saved_observations": "All primary noisy raw frames as lossless uint16 ADC values; all unit-radiance and target maps; selected reconstructions; complete per-frame metrics and seeds"
+  },
+  "predeclared_success": {
+    "purpose": "engineering screen for this bounded simulated baseline, not hardware acceptance",
+    "noiseless_max_relative_L2": 1e-10,
+    "single_active_channel_max_leakage_L2_ratio": 1e-10,
+    "adjoint_relative_error": 1e-10,
+    "primary_per_channel_95percentile_relative_L2": 0.05,
+    "primary_per_channel_95percentile_absolute_mean_bias_fraction": 0.02,
+    "primary_per_channel_95percentile_centered_relative_L2": 0.1,
+    "primary_saturated_samples": 0,
+    "metric_definitions": {
+      "relative_L2": "norm(decoded-target)/norm(target), all 65536 pixels, each channel separately",
+      "mean_bias_fraction": "mean(decoded-target)/mean(target)",
+      "centered_relative_L2": "norm((decoded-mean(decoded))-(target-mean(target)))/norm(target-mean(target))",
+      "contrast_gain": "inner_product(centered decoded, centered target)/squared_norm(centered target)",
+      "leakage_L2_ratio": "norm(inactive decoded channel)/norm(active target channel), noiseless single-active-channel input",
+      "optical_detail_loss_relative_L2": "norm(post-object-optics image-pre-optics image)/norm(pre-optics image), reported separately"
+    }
+  },
+  "resources": {
+    "server": "rylan@100.82.231.102",
+    "server_directory": "/home/rylan/projects/thermometry-neural-20261011/filter_decode_002",
+    "cpu_threads": 2,
+    "maximum_wall_seconds": 600,
+    "maximum_new_artifact_bytes": 201326592,
+    "maximum_gpu_memory_MiB": 1000,
+    "expected_noisy_observations": 768,
+    "expected_primary_decodes": 864,
+    "expected_single_channel_decodes": 24,
+    "expected_stress_decodes": 24,
+    "expected_total_complete_decodes": 912
+  },
+  "comparison": {
+    "baseline": "filter_decode_001",
+    "reason": "Use available bandwidth of three independent channels; the earlier geometry was inherited from seven-band work.",
+    "geometry_derivation": "The seven centers, including DC and three conjugate pairs, have minimum toroidal separation sqrt(2)/4 = 0.3535533905932738 cycles/pixel; 2*decode_cutoff = 0.34.",
+    "selection": "one fixed geometry derived before this run; no search over validation results",
+    "same_preoptics_images": true,
+    "same_electron_mean_levels_and_noise_seed_rule": true,
+    "same_raw_frames": false,
+    "note": "Changing the optical bandwidth changes the photon mean images, so these are new physical observations.",
+    "additional_predeclared_screen": "At least 30 percent lower mean pre-to-post-optics relative L2 difference, while retaining the existing balanced-4000 engineering screen.",
+    "real_optical_implementation": "unknown; hypothetical until measured"
+  }
+}

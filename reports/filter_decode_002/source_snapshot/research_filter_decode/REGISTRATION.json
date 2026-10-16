@@ -1,0 +1,28 @@
+{
+  "time": "2026-10-16T19:48:27.358860+00:00",
+  "registered_before_server_execution": true,
+  "source_sha256": {
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "research_filter_decode/operator.py": "4784ebb879fa68179f8189659eb9cdcdcc4ef0a1e2e368df98558f0cddd125aa",
+    "research_filter_decode/run.py": "ca3420e1545e6c5b694091c2cda929320e1f9ad49a4e9345214719470cf63d6d",
+    "research_filter_decode/supervise.py": "742038a12dc4b327810803671e18563c154cbb10b3baeece6e81e57204e23414",
+    "research_filter_decode/protocol.json": "2098d8b156c6578295775420327132c3e4ad2d778e2835769a2b03918eb75940",
+    "research_filter_decode/AGENTS.md": "b16215d42b4aa7f71ebc00c0baccb2ae1d5794dba52524f0567ca4f70998ee51"
+  },
+  "expected_complete_decodes": 912,
+  "expected_noisy_observations": 768,
+  "training_updates": 0,
+  "comparison": {
+    "baseline": "filter_decode_001",
+    "reason": "Use available bandwidth of three independent channels; the earlier geometry was inherited from seven-band work.",
+    "geometry_derivation": "The seven centers, including DC and three conjugate pairs, have minimum toroidal separation sqrt(2)/4 = 0.3535533905932738 cycles/pixel; 2*decode_cutoff = 0.34.",
+    "selection": "one fixed geometry derived before this run; no search over validation results",
+    "same_preoptics_images": true,
+    "same_electron_mean_levels_and_noise_seed_rule": true,
+    "same_raw_frames": false,
+    "note": "Changing the optical bandwidth changes the photon mean images, so these are new physical observations.",
+    "additional_predeclared_screen": "At least 30 percent lower mean pre-to-post-optics relative L2 difference, while retaining the existing balanced-4000 engineering screen.",
+    "real_optical_implementation": "unknown; hypothetical until measured"
+  },
+  "original_run_sources_modified": false
+}

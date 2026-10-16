@@ -1,0 +1,18 @@
+{
+  "time": "2026-10-16T19:58:16.376719+00:00",
+  "frozen_run_sources_retained": true,
+  "clarifications": [
+    {
+      "field": "protocol.design.independent_maps",
+      "original_wording": "Each channel has its own synthetic morphology and random seed.",
+      "precise_implementation": "One PRNG is initialized per mother; channels use successive disjoint draws from that stream. The three morphology maps are generated independently of any spectral/chemical parameter model, but generators are not separately seeded per channel.",
+      "changes_to_executed_data_or_code": false
+    },
+    {
+      "field": "DELIVERY_VERIFICATION.replay metric names",
+      "reason": "Runs001/002 saved CUDA results; run003 saved CPU results. Rename CPU_GPU_difference to CPU_replay_saved_difference and record saved_result_device.",
+      "new_decodes_performed_for_rename": 0
+    }
+  ],
+  "plotting_note": "Initial local review import failed because matplotlib was not installed; no replay occurred on that failed attempt. Verification subsequently completed locally, and plotting used existing server matplotlib. The 3D-import warning is irrelevant to the generated 2D plots."
+}
