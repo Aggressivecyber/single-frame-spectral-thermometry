@@ -16,8 +16,8 @@ from .model import prepare, ConditionalProblem, ResidualNet, infer
 ROOT = Path(__file__).resolve().parents[1]
 CODE = ROOT/'research_hybrid'
 SPEC = json.loads((CODE/'protocol.json').read_text())
-OUT = ROOT/'outputs/hybrid_001'
-REPORT = ROOT/'reports/hybrid_001'
+OUT = ROOT/'outputs'/SPEC['run_id']
+REPORT = ROOT/'reports'/SPEC['run_id']
 
 
 def load_physics(device):
@@ -58,6 +58,9 @@ def main():
     for name, digest in registration['source_sha256'].items():
         if runtime.sha256(ROOT/name) != digest:
             raise ValueError('Source/calibration hash mismatch: '+name)
+    for name in ('CUDA_CONTRACTS.json', 'DATA_CONTRACTS.json'):
+        if not json.loads((REPORT/name).read_text())['all_passed']:
+            raise ArithmeticError('Required server preflight failed: '+name)
 
     def status(stage, **details):
         value = {'time': runtime.now(), 'stage': stage, 'pid': os.getpid(),
@@ -70,7 +73,7 @@ def main():
         if calls >= SPEC['budgets']['reservation_calls']:
             raise RuntimeError('Registered pilot call reservation exhausted')
         calls += 1
-        append(REPORT/'inverse_calls.jsonl', {'time': runtime.now(), 'phase': 'hybrid_residual_001',
+        append(REPORT/'inverse_calls.jsonl', {'time': runtime.now(), 'phase': SPEC['run_id'],
                'method': method, 'case_id': case, 'reused': False,
                'pilot_call_number': calls,
                'new_call_number': SPEC['budgets']['prior_charged_calls']+calls})
@@ -93,7 +96,7 @@ def main():
     for index in range(SPEC['train_mothers']+SPEC['validation_mothers']):
         split = 'train' if index < SPEC['train_mothers'] else 'validation'
         seed = SPEC['seed_base']+index*1009
-        desc = {'mother_id': f'hybrid001_{split}_{index:03d}', 'split': split,
+        desc = {'mother_id': f'{SPEC["run_id"]}_{split}_{index:03d}', 'split': split,
                 'temperature_seed': seed+1, 'amplitude_seed': seed+29,
                 'background_seed': seed+71, 'template_seed': seed+53,
                 'temperature_geometry': geometries[index % len(geometries)],
@@ -108,7 +111,10 @@ def main():
                     if variant:
                         state[:, 1] += np.log(.75)
                     state[:, 4] = peak*shape/p.Sscale
-                    expected = p(state, beta)[0]
+                    radiance = p.radiance(state, beta)
+                    if not bool(torch.isfinite(radiance).all() and (radiance >= 0).all()):
+                        raise ArithmeticError('Negative or nonfinite total per-band photon expectation: '+case)
+                    expected = p.op(radiance)[0]
                     if not bool(torch.isfinite(expected).all() and (expected >= 0).all()):
                         raise ArithmeticError('Invalid physical photon mean: '+case)
                     noise_seed = seed+100000+condition*101+variant
@@ -225,8 +231,8 @@ def main():
                         'numerical_info': problem.last_solve}, OUT/(case+'_evaluation.pt'))
     summary = []
     for method in outputs:
-        for group, peaks in [('all', [0., 30., -30., 180., -180.]),
-                             ('null', [0.]), ('weak', [30., -30.]), ('normal', [180., -180.])]:
+        for group, peaks in [('all', SPEC['signed_peaks_e']),
+                             ('null', [0.]), ('weak', [30., -30.]), ('larger_signed', [60., -60.])]:
             subset = [r for r in metrics if r['method'] == method and r['peak_e'] in peaks]
             pixels = sum(r['pixels'] for r in subset)
             truth_norm = sum(r['truth_squared_sum'] for r in subset)
@@ -243,7 +249,7 @@ def main():
     if calls != SPEC['budgets']['reservation_calls']:
         raise ArithmeticError('Actual call count differs from the registered completed pilot')
     runtime.write_json(REPORT/'COMPLETION.json', {'status': 'COMPLETED_ENGINEERING_PILOT',
-                       'time': runtime.now(), 'calls': calls, 'optimizer_updates': 100,
+                       'time': runtime.now(), 'calls': calls, 'optimizer_updates': SPEC['training']['updates'],
                        'raw_frames': len(rows), 'validation_mothers': 2,
                        'temperature_unchanged': True, 'final_test_opened': False,
                        'checkpoint_sha256': runtime.sha256(OUT/'last_checkpoint.pt'),

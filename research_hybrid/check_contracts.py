@@ -8,11 +8,10 @@ from physics import SpectralPhysics
 from .observable_basis import RealFourierBasis
 from .linear_profile import LinearProfile
 from .model import ConditionalProblem, Proximal, ResidualNet, tangent_features
-from .run_pilot import load_physics
+from .run_pilot import load_physics, REPORT
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE = ROOT/'research_hybrid'
-REPORT = ROOT/'reports/hybrid_001'
 
 
 def main():

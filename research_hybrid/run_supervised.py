@@ -8,8 +8,8 @@ import time
 import json
 
 root = Path(__file__).resolve().parents[1]
-report = root/'reports/hybrid_001'
 protocol = json.loads((root/'research_hybrid/protocol.json').read_text())
+report = root/'reports'/protocol['run_id']
 env = dict(os.environ)
 env.update(THERMOMETRY_RUNTIME=str(root/'_runtime'), CUDA_CACHE_PATH=str(root/'_runtime/cuda'),
            CUBLAS_WORKSPACE_CONFIG=':4096:8', PYTHONDONTWRITEBYTECODE='1',

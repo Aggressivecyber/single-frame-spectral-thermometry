@@ -1,0 +1,62 @@
+{
+  "schema": "hybrid-engineering-contracts-001",
+  "device": "cpu",
+  "training_updates": 0,
+  "experimental_raw_inverse_calls": 0,
+  "seconds": 2.447328899987042,
+  "passband_dimension": 1153,
+  "parseval_relative": 2.0013413376764118e-16,
+  "basis_roundtrip_relative": 1.6901513096037105e-16,
+  "outside_passband_max_FFT": 8.202191559908473e-14,
+  "forward_adjoint_relative": 4.074420714152308e-16,
+  "continuum_JVP_finite_difference_relative": 1.4560869046219843e-09,
+  "continuum_JVP_adjoint_relative": 1.1362816304929144e-16,
+  "regularized_tangent": {
+    "iterations": 18,
+    "relative_residual": 9.33272223106905e-08
+  },
+  "tangent_residual_norm_ratio": 0.9966160512720817,
+  "small_QR_profile_relative": 1.3108918350950921e-14,
+  "small_QR_prox_relative": 1.0457938430196728e-11,
+  "implicit_gradient_directional_relative": 3.010961471283522e-11,
+  "native_profile": {
+    "solver": "column-scaled augmented LSMR",
+    "istop": 2,
+    "iterations": 12,
+    "norm_residual": 0.35650861992314925,
+    "norm_normal_residual": 8.839732818045916e-13,
+    "condition_estimate": 6.140948434313988,
+    "actual_scaled_normal_relative": 1.3643086926783069e-11,
+    "tolerance": 1e-11,
+    "maxiter": 1200,
+    "numerical_certified": true,
+    "wall_s": 0.12037790002068505,
+    "regularization": {
+      "postblur_prior_is_new_estimator": true,
+      "template_multiplier": 1.0,
+      "template_reference_sensitivity": 0.00015981171044381388,
+      "gradient_reference_laplacian": 0.10853323353385491,
+      "template_penalty": "multiplier*sensitivity*(1e-6+0.01*lap/lap_median)",
+      "beta_penalty": "1e-6 times whitened beta column squared norm",
+      "columns_scaled": true,
+      "raw_objective_count": 1,
+      "template_object_blur_count": 0
+    }
+  },
+  "native_prox": {
+    "iterations": 0,
+    "relative_residual": 1.3296111899812684e-11
+  },
+  "matched_step_max_change_e": 0.0,
+  "zero_initialized_head": true,
+  "network_parameters": 1457,
+  "calibration_sha256": "d61b925cb8853414f592cd644d0390647fb22a228dbca3083e339e0755160b38",
+  "thresholds": {
+    "algebra_relative": 1e-10,
+    "finite_difference_relative": 1e-06,
+    "QR_relative": 1e-06,
+    "implicit_gradient_relative": 1e-05,
+    "matched_step_e": 0.001
+  },
+  "all_passed": true
+}

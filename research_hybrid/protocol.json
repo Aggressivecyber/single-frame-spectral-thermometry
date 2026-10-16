@@ -1,5 +1,5 @@
 {
-  "schema": "hybrid-residual-engineering-001",
+  "schema": "hybrid-residual-engineering-002",
   "branch": "research/hybrid-residual-001",
   "base_commit": "05f10038cb69f4f8bff6537b71f3bc1a2548933f",
   "scope": "engineering pilot; no scientific acceptance or checkpoint/architecture selection",
@@ -11,8 +11,8 @@
     0.0,
     30.0,
     -30.0,
-    180.0,
-    -180.0
+    60.0,
+    -60.0
   ],
   "noise_replicates": 1,
   "raw_frames": 100,
@@ -28,7 +28,7 @@
     "seed": 617,
     "optimizer": "Adam",
     "learning_rate": 0.001,
-    "updates": 100,
+    "updates": 75,
     "paired_rows_per_update": 2,
     "loss": "mean supervised template MSE / 60^2 + 0.25 paired same-template MSE / 60^2",
     "gradient_norm_limit": 1.0,
@@ -44,26 +44,32 @@
   "detection": "NOT_CALIBRATED; do not apply prior 60e threshold or infer FPR from two mothers",
   "sealed_final_opened": false,
   "budgets": {
-    "prior_charged_calls": 5309,
-    "reservation_calls": 460,
-    "accounting": "100 v3 + 100 profiles + 200 training forwards + 20 matched controls + 20 proposals + 20 hybrids; internal CG forward/backward products are solver iterations, not extra complete inverses",
+    "prior_charged_calls": 5413,
+    "reservation_calls": 410,
+    "accounting": "100 v3 + 100 profiles + 150 training forwards + 20 matched controls + 20 proposals + 20 hybrids; internal CG operations are solver iterations",
     "registered_global_cap": 12000,
     "human_global_cap": 16000,
     "worst_case_prior_forecast": 15473,
-    "combined_forecast": 15933,
+    "combined_forecast": 15987,
     "local_output_limit_bytes": 536870912,
     "remote_new_output_limit_bytes": 1073741824,
     "remote_free_floor_bytes": 21474836480,
     "cpu_threads": 2,
     "GPU_memory_limit_MiB": 6000,
-    "maximum_wall_seconds": 14400
+    "maximum_wall_seconds": 14400,
+    "failed_previous_attempt_calls": 104
   },
   "engineering_success": [
     "operator, finite difference and implicit-gradient checks pass",
     "all generated raws finite, positive photon mean, unsaturated, sealed data untouched",
-    "all 100 raw baselines retained and all 100 training updates finite",
+    "all 100 raw baselines retained and all 75 training updates finite",
     "two-mother complete-denominator evaluation, temperature unchanged, signed/null errors reported",
     "actual inverse calls <= reservation and preserved hashes"
   ],
-  "next_science_gate": "before expansion run three seeds and separately trained capacity/data-matched ablations, method-specific null calibration and independent evaluation; no gate declared passed by this pilot"
+  "next_science_gate": "before expansion run three seeds and separately trained capacity/data-matched ablations, method-specific null calibration and independent evaluation; no gate declared passed by this pilot",
+  "run_id": "hybrid_002",
+  "previous_quarantined_run": "hybrid_001",
+  "physical_generator_fix": "Check total photons in every latent band as well as encoded raw. Fixed signed larger level is 60e for all mothers; no per-scene clipping or exclusions.",
+  "signed_level_interpretation": "30e weak and 60e larger signed perturbations; 60e is not the earlier 180e normal-signal acceptance cohort.",
+  "autonomous_continuation": "User explicitly requested continuing fully autonomously under the project rules. After this pilot review evidence and remaining budget before any registered expansion; verify long-job startup then schedule a wake."
 }
