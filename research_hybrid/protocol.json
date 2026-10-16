@@ -1,0 +1,69 @@
+{
+  "schema": "hybrid-residual-engineering-001",
+  "branch": "research/hybrid-residual-001",
+  "base_commit": "05f10038cb69f4f8bff6537b71f3bc1a2548933f",
+  "scope": "engineering pilot; no scientific acceptance or checkpoint/architecture selection",
+  "seed_base": 9200000,
+  "train_mothers": 8,
+  "validation_mothers": 2,
+  "continuum_variants": 2,
+  "signed_peaks_e": [
+    0.0,
+    30.0,
+    -30.0,
+    180.0,
+    -180.0
+  ],
+  "noise_replicates": 1,
+  "raw_frames": 100,
+  "split_unit": "mother, including every continuum variant and signed injection",
+  "continuum_variation": "same temperature/template/background; variant 1 amplitude multiplied by 0.75 before the forward model",
+  "noise": "independent correct photon mean per observation; Poisson + read noise + 12-bit ADC",
+  "baseline": "frozen pure-physics v3 state, promoted calibration fixed C0, then conditional postblur profile lambda1",
+  "new_method": "DSConv signed observable correction plus implicit quadratic raw-data proximal solve",
+  "mu_relative_to_template_sensitivity": 0.05,
+  "tangent_ridge": 1.0,
+  "tangent_feature": "regularized local continuum fit, not exact orthogonal projection",
+  "training": {
+    "seed": 617,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "updates": 100,
+    "paired_rows_per_update": 2,
+    "loss": "mean supervised template MSE / 60^2 + 0.25 paired same-template MSE / 60^2",
+    "gradient_norm_limit": 1.0,
+    "checkpoint": "last update only; no selection"
+  },
+  "evaluation": [
+    "frozen v3",
+    "fixed-continuum profile",
+    "matched extra physical solve with zero network",
+    "neural proposal before DC (same trained network, not independent ablation)",
+    "full hybrid"
+  ],
+  "detection": "NOT_CALIBRATED; do not apply prior 60e threshold or infer FPR from two mothers",
+  "sealed_final_opened": false,
+  "budgets": {
+    "prior_charged_calls": 5309,
+    "reservation_calls": 460,
+    "accounting": "100 v3 + 100 profiles + 200 training forwards + 20 matched controls + 20 proposals + 20 hybrids; internal CG forward/backward products are solver iterations, not extra complete inverses",
+    "registered_global_cap": 12000,
+    "human_global_cap": 16000,
+    "worst_case_prior_forecast": 15473,
+    "combined_forecast": 15933,
+    "local_output_limit_bytes": 536870912,
+    "remote_new_output_limit_bytes": 1073741824,
+    "remote_free_floor_bytes": 21474836480,
+    "cpu_threads": 2,
+    "GPU_memory_limit_MiB": 6000,
+    "maximum_wall_seconds": 14400
+  },
+  "engineering_success": [
+    "operator, finite difference and implicit-gradient checks pass",
+    "all generated raws finite, positive photon mean, unsaturated, sealed data untouched",
+    "all 100 raw baselines retained and all 100 training updates finite",
+    "two-mother complete-denominator evaluation, temperature unchanged, signed/null errors reported",
+    "actual inverse calls <= reservation and preserved hashes"
+  ],
+  "next_science_gate": "before expansion run three seeds and separately trained capacity/data-matched ablations, method-specific null calibration and independent evaluation; no gate declared passed by this pilot"
+}
