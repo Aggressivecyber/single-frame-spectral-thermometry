@@ -1,0 +1,214 @@
+{
+  "time": "2026-10-16T21:28:17.682875+00:00",
+  "all_executed_source_hashes_verified": true,
+  "datasets": [
+    {
+      "split": "train",
+      "mothers": 24,
+      "observations": 576,
+      "raw_min_DN": 156,
+      "raw_max_DN": 1769,
+      "sha256_verified": true,
+      "finite_arrays": true,
+      "no_cross_split_mothers_or_noise_seeds": true
+    },
+    {
+      "split": "validation",
+      "mothers": 6,
+      "observations": 144,
+      "raw_min_DN": 155,
+      "raw_max_DN": 1676,
+      "sha256_verified": true,
+      "finite_arrays": true,
+      "no_cross_split_mothers_or_noise_seeds": true
+    },
+    {
+      "split": "calibration",
+      "mothers": 6,
+      "observations": 144,
+      "raw_min_DN": 157,
+      "raw_max_DN": 1629,
+      "sha256_verified": true,
+      "finite_arrays": true,
+      "no_cross_split_mothers_or_noise_seeds": true
+    },
+    {
+      "split": "heldout",
+      "mothers": 8,
+      "observations": 192,
+      "raw_min_DN": 157,
+      "raw_max_DN": 1539,
+      "sha256_verified": true,
+      "finite_arrays": true,
+      "no_cross_split_mothers_or_noise_seeds": true
+    }
+  ],
+  "training_runs": 6,
+  "optimizer_updates": 1800,
+  "mothers_total": 44,
+  "all_noise_seeds_unique": 1056,
+  "original_complete_reconstruction_observations": 11800,
+  "frozen_threshold_files": 10,
+  "selection_time": "2026-10-16T21:16:02.145600+00:00",
+  "threshold_freeze_time": "2026-10-16T21:16:42.444405+00:00",
+  "first_heldout_evaluation_initialization": "2026-10-16T21:16:42.542538+00:00",
+  "heldout_created_before_training_but_evaluation_loaded_after_freeze": true,
+  "full_array_metric_checks": [
+    {
+      "method": "cnn_dc_701",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "cnn_dc_702",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "cnn_dc_703",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "cnn_post_701",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "cnn_post_702",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "cnn_post_703",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "dc_only",
+      "frames": 192,
+      "max_band_L2_difference": 5.960464477539063e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "fft",
+      "frames": 192,
+      "max_band_L2_difference": 5.960464477539063e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "tv",
+      "frames": 192,
+      "max_band_L2_difference": 2.9802322387695312e-08,
+      "max_temperature_RMSE_difference_K": 7.62939453125e-06,
+      "max_emission_RMSE_difference_e": 7.62939453125e-06,
+      "all_arrays_finite": true
+    },
+    {
+      "method": "wls",
+      "frames": 192,
+      "max_band_L2_difference": 5.960464477539063e-08,
+      "max_temperature_RMSE_difference_K": 1.52587890625e-05,
+      "max_emission_RMSE_difference_e": 1.52587890625e-05,
+      "all_arrays_finite": true
+    }
+  ],
+  "native_replays": [
+    {
+      "method": "cnn_dc_701",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "cnn_dc_702",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "cnn_dc_703",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "cnn_post_701",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "cnn_post_702",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "cnn_post_703",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "dc_only",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "fft",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "tv",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    },
+    {
+      "method": "wls",
+      "frames": 24,
+      "same_batch_size_as_original": 12,
+      "max_absolute_difference_e": 0.0,
+      "relative_L2_difference": 0.0
+    }
+  ],
+  "review_reconstruction_observations": 432,
+  "new_training_updates": 0,
+  "new_noise_draws": 0,
+  "passed": true
+}

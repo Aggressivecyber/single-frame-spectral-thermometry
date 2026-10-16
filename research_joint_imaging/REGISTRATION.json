@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-16T21:13:55.177880+00:00",
+  "time": "2026-10-16T21:28:02.421576+00:00",
   "run_id": "joint_imaging_001",
   "base_commit": "481eae02d5f658a604812fe72ebca04b69c500f4",
   "source_sha256": {
@@ -11,7 +11,8 @@
     "research_joint_imaging/data.py": "39d8245f5d571dfc9a803d5e16bffc55b643b9356edb58cc9767de2815253e4f",
     "research_joint_imaging/physical_controls.py": "35bc2204b3a3df5c94639228b9572c7b784e79cf293bfc59372b068b65b1f449",
     "research_joint_imaging/protocol.json": "030871de3b2810820888de164af0c47fa3b9409061ac95fd5bdcc2cc91829e43",
-    "research_joint_imaging/run.py": "3cd1f479ee756933026cb4033a100fc4c06b6926dddc4d55efb4cf9ba631f1d1",
+    "research_joint_imaging/review.py": "7bcdcbb19af698832b6d015d89aef51df970a21b9300627b91e295a9f18eb7ce",
+    "research_joint_imaging/run.py": "c8266448a098e9f00ca09100fec58a08c51dae26f65d3b831089dcbe22c36644",
     "research_joint_imaging/supervise.py": "641992358f5d9abed925b194e9432d38d007c28bc037ac93d07a20e39409ba1f",
     "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
     "research_filter_decode/operator.py": "4784ebb879fa68179f8189659eb9cdcdcc4ef0a1e2e368df98558f0cddd125aa"
@@ -59,5 +60,8 @@
   "legacy_sealed_tests_accessed": false,
   "source_evidence": "research_joint_imaging/README.md",
   "local_contract_passes": 3,
-  "local_complete_decode_observations": 12
+  "local_complete_decode_observations": 12,
+  "revision": "post-run-report-serialization-repair",
+  "executed_original_registration": "reports/joint_imaging_001/REGISTRATION.json",
+  "change": "Cast three final aggregate ratios to native float before comparisons so JSON booleans are native; all model, data and optimizer code unchanged"
 }

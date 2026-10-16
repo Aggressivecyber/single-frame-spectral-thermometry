@@ -1,0 +1,45 @@
+{
+  "time": "2026-10-16T21:28:02.434689+00:00",
+  "run_id": "joint_imaging_001_review_001",
+  "source_run": "joint_imaging_001",
+  "server_directory": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_001_review_001",
+  "review_source_sha256": "7bcdcbb19af698832b6d015d89aef51df970a21b9300627b91e295a9f18eb7ce",
+  "imports_from": "original frozen server run",
+  "original_source_sha256": {
+    "research_joint_imaging/AGENTS.md": "2bed9e2124a4a6d5d2a3d87ef6c1692db7331be04ba4e98df7d793f6ceaa67bc",
+    "research_joint_imaging/README.md": "dee60cd59272c3b8647a2bb05d6e869bfed896156ad9ab58255a052960e8347f",
+    "research_joint_imaging/check_contracts.py": "08f08b4c909fe09a82b902891b2771de9efaca9ca04e667caa03a07a217e004f",
+    "research_joint_imaging/check_cuda.py": "e8decabec768ef714806d6e833b752cbdbbc3ca8d9eb8f65524b9126adf23487",
+    "research_joint_imaging/core.py": "6db1eec36651f3b94396cbf43b5b40e8d0f4dfd7558589d663764600b8af26d6",
+    "research_joint_imaging/data.py": "39d8245f5d571dfc9a803d5e16bffc55b643b9356edb58cc9767de2815253e4f",
+    "research_joint_imaging/physical_controls.py": "35bc2204b3a3df5c94639228b9572c7b784e79cf293bfc59372b068b65b1f449",
+    "research_joint_imaging/protocol.json": "030871de3b2810820888de164af0c47fa3b9409061ac95fd5bdcc2cc91829e43",
+    "research_joint_imaging/run.py": "3cd1f479ee756933026cb4033a100fc4c06b6926dddc4d55efb4cf9ba631f1d1",
+    "research_joint_imaging/supervise.py": "641992358f5d9abed925b194e9432d38d007c28bc037ac93d07a20e39409ba1f",
+    "runtime.py": "8e764bdfee266d3bb6c33a21d9eb95a76aa53e0e520ad74c5c9a7bc20181c25f",
+    "research_filter_decode/operator.py": "4784ebb879fa68179f8189659eb9cdcdcc4ef0a1e2e368df98558f0cddd125aa"
+  },
+  "inputs": {
+    "cnn_dc_701_METRICS.json": "80ff2e296def573d9e0d8b6ea1da86871f7b1dd34f3f871d8fa68bdb5026d94e",
+    "cnn_dc_702_METRICS.json": "df969047b1d835e7e665e9c3401e73fc9831689059d25a5314d4b24557955284",
+    "cnn_dc_703_METRICS.json": "b3da22fe07bc1d48e72a25293fd1c15d57c1dae646f49c15f783b6ce3605012c",
+    "cnn_post_701_METRICS.json": "994eebbbad8d91bc543b91ab30c432c426b8d75cdcf75be215cf1aa159a7e9b1",
+    "cnn_post_702_METRICS.json": "b58601cdba4a60c1c6a0394a218ae367378885005d24d0d128d7767f503a5ea3",
+    "cnn_post_703_METRICS.json": "ec960c236e13e2659e24a5f9dd4ab3fc98fa7e856fb1dd8e9eec82a6a4e0e0cd",
+    "dc_only_METRICS.json": "f89c837a0eedc4c4eafac359ceaad4dac4575761c43323d29db3c3c35f4043bb",
+    "fft_METRICS.json": "f1d61e5b26c1f446158bae9d47e0114dad59dacdce7ad1ff04f91f1c2d473f07",
+    "tv_METRICS.json": "a5c897f0f9b507e6e8533e9037ef14bdbb1fbb4a0e0ea10514e2c77794482384",
+    "wls_METRICS.json": "af309209cf22ad0557dde027235e714b6482be7d51e9c1aee9674b4b16515593"
+  },
+  "operations": [
+    "repair native JSON types",
+    "all dataset and prediction-array checks",
+    "24 saved frames per each of 10 methods replayed on server GPU",
+    "three diagnostic plots"
+  ],
+  "new_training_updates": 0,
+  "new_noise_draws": 0,
+  "maximum_wall_seconds": 300,
+  "maximum_GPU_memory_MiB": 3000,
+  "maximum_new_artifact_bytes": 104857600
+}

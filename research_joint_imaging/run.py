@@ -243,9 +243,9 @@ for seed in protocol["learning"]["seeds"]:
     name = f"cnn_dc_{seed}"
     result = summaries[name]["4000/all_weak"]
     t_ratio = result["temperature_RMSE_K"]/base["temperature_RMSE_K"]
-    image_ratio = max(np.asarray(result["band_relative_L2_mean"])/np.asarray(base["band_relative_L2_mean"]))
-    centered_ratio = max(np.asarray(result["band_centered_relative_L2_mean"])/np.asarray(base["band_centered_relative_L2_mean"]))
-    emission_ratio = max(np.asarray(result["emission_RMSE_e_pooled"])/np.asarray(base["emission_RMSE_e_pooled"]))
+    image_ratio = float(max(np.asarray(result["band_relative_L2_mean"])/np.asarray(base["band_relative_L2_mean"])))
+    centered_ratio = float(max(np.asarray(result["band_centered_relative_L2_mean"])/np.asarray(base["band_centered_relative_L2_mean"])))
+    emission_ratio = float(max(np.asarray(result["emission_RMSE_e_pooled"])/np.asarray(base["emission_RMSE_e_pooled"])))
     fpr = max(value for level in protocol["design"]["counts_800nm_mean_e"] for value in summaries[name][f"{level}/blank"]["detected_fraction_mean"])
     slopes = result["paired_injection_slope_mean"]
     checks = {"temperature_under_50K": result["temperature_RMSE_K"] <= 50, "each_band_under_5percent": max(result["band_relative_L2_mean"]) <= .05, "weak_emission_improved_15percent_each": emission_ratio <= .85, "temperature_not_worse_5percent": t_ratio <= 1.05, "each_band_not_worse_5percent": image_ratio <= 1.05, "each_centered_band_not_worse_5percent": centered_ratio <= 1.05, "mean_intensity_bias_under_2percent": max(abs(v) for v in result["band_mean_bias_fraction_mean"]) <= .02, "blank_FPR_under_2percent_each_level": fpr <= .02, "injection_slopes_0_9_to_1_1": min(slopes) >= .90 and max(slopes) <= 1.10, "traditional_numerics": selected["method"] != "tv" or numerical_change <= .001, "no_invalid_thermal_pixels": result["nonpositive_thermal_pixels"] == 0 and result["temperature_bound_pixels"] == 0}
