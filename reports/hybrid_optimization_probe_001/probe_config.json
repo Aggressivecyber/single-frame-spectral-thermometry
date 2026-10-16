@@ -1,0 +1,28 @@
+{
+  "phase": "hybrid_optimization_probe_001",
+  "frozen_source_root": "/home/rylan/projects/thermometry-neural-20261011/hybrid_residual_002",
+  "training_pair": [
+    "hybrid_002_train_000_level1_continuum0",
+    "hybrid_002_train_000_level1_continuum1"
+  ],
+  "seed": 617,
+  "learning_rate": 0.001,
+  "updates_per_arm": 75,
+  "arms": [
+    "serial_DSConv",
+    "residual_DSConv"
+  ],
+  "same_capacity_parameters": 1457,
+  "only_architecture_change": "identity skip around each existing depthwise/pointwise block; all weights and initialization identical",
+  "prior_calls": 5823,
+  "reserved_calls": 304,
+  "success_gate": "residual arm centered training MSE reduces at least20 percent on both cached training frames; finite numerically certified output",
+  "no_validation_or_final_access": true,
+  "checkpoint": "last update only",
+  "scope": "optimization learnability diagnostic, not generalization or scientific acceptance",
+  "maximum_wall_seconds": 600,
+  "GPU_memory_limit_MiB": 6000,
+  "cpu_threads": 2,
+  "new_output_limit_bytes": 33554432,
+  "existing_baselines_reused": true
+}

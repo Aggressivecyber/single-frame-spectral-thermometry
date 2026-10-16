@@ -1,0 +1,22 @@
+{
+  "phase": "hybrid_cached_003",
+  "frozen_source_root": "/home/rylan/projects/thermometry-neural-20261011/hybrid_residual_002",
+  "seed": 617,
+  "updates": 75,
+  "mu_relative_to_sensitivity": 1.0,
+  "prior_calls": 6279,
+  "reserved_calls": 210,
+  "call_accounting": "150 training forwards+20 matched physical controls+20 hybrid evaluations+20 same-network proposals",
+  "architecture": "same1457parameters with existing DSConv blocks given identity skips",
+  "training": "same8mothers,samepaired schedule/loss as original hybrid002;freshseed617initialization;75updates,lastcheckpoint only",
+  "validation": "same2development-validation mothers,20frames;notindependentfinaltest",
+  "data_and_v3_profiles_reused_without_new_baseline_calls": true,
+  "hypothesis": "skip connections and calibrated-unit proximity prevent spatial optimization stall seen in the serial/small-mu pilot",
+  "engineering_screen": "report weak RMSE against frozenv3,matchedextra solve;gain per sign/mother;null errors;bitwise temperature;no detector/statistical acceptance from2mothers",
+  "required_B_plan_total_after_this_run": 15937,
+  "remaining_required_plan_headroom": 63,
+  "human_total_cap": 16000,
+  "max_new_output_bytes": 100663296,
+  "wall_limit_seconds": 600,
+  "all_final_payloads_closed": true
+}

@@ -1,0 +1,80 @@
+{
+  "time": "2026-10-16T18:01:46.708222+00:00",
+  "stage": "COMPLETED_OPTIMIZATION_DIAGNOSTIC",
+  "calls": 304,
+  "arms": 2,
+  "updates_per_arm": 75,
+  "identical_initial_weight_sha256": "fc097f5188661f8e5f0fd71746290cab81a135600306480a45529e2689c26423",
+  "parameters_each": 1457,
+  "rows": [
+    {
+      "arm": "serial_DSConv",
+      "case_id": "hybrid_002_train_000_level1_continuum0",
+      "pixels": 65536,
+      "baseline_RMSE_e": 16.93684787867835,
+      "trained_RMSE_e": 16.880813691549978,
+      "baseline_centered_MSE_e2": 284.86585382961647,
+      "trained_centered_MSE_e2": 284.9033327803807,
+      "centered_MSE_reduction_fraction": -0.00013156701745886679,
+      "proposal_correction_mean_e": -3.1889278254930105,
+      "proposal_correction_spatial_std_e": 0.001965864412472245,
+      "numerical_solve": {
+        "iterations": 22,
+        "relative_residual": 3.6175202704926013e-09
+      }
+    },
+    {
+      "arm": "serial_DSConv",
+      "case_id": "hybrid_002_train_000_level1_continuum1",
+      "pixels": 65536,
+      "baseline_RMSE_e": 16.062867561460408,
+      "trained_RMSE_e": 15.95210135771615,
+      "baseline_centered_MSE_e2": 254.30328547196365,
+      "trained_centered_MSE_e2": 254.39400205497378,
+      "centered_MSE_reduction_fraction": -0.00035672595751878866,
+      "proposal_correction_mean_e": -3.189324069324357,
+      "proposal_correction_spatial_std_e": 0.001907312259508187,
+      "numerical_solve": {
+        "iterations": 22,
+        "relative_residual": 2.9801620078189173e-09
+      }
+    },
+    {
+      "arm": "residual_DSConv",
+      "case_id": "hybrid_002_train_000_level1_continuum0",
+      "pixels": 65536,
+      "baseline_RMSE_e": 16.93684787867835,
+      "trained_RMSE_e": 16.818824130163893,
+      "baseline_centered_MSE_e2": 284.86585382961647,
+      "trained_centered_MSE_e2": 282.86260053208775,
+      "centered_MSE_reduction_fraction": 0.007032268945532882,
+      "proposal_correction_mean_e": -3.081800114061764,
+      "proposal_correction_spatial_std_e": 2.1346351735328324,
+      "numerical_solve": {
+        "iterations": 22,
+        "relative_residual": 6.848671341316591e-09
+      }
+    },
+    {
+      "arm": "residual_DSConv",
+      "case_id": "hybrid_002_train_000_level1_continuum1",
+      "pixels": 65536,
+      "baseline_RMSE_e": 16.062867561460408,
+      "trained_RMSE_e": 15.879700397693824,
+      "baseline_centered_MSE_e2": 254.30328547196365,
+      "trained_centered_MSE_e2": 252.15982548159087,
+      "centered_MSE_reduction_fraction": 0.008428754612409772,
+      "proposal_correction_mean_e": -3.7389741622807264,
+      "proposal_correction_spatial_std_e": 2.0403266838424146,
+      "numerical_solve": {
+        "iterations": 22,
+        "relative_residual": 5.387838777988814e-09
+      }
+    }
+  ],
+  "residual_arm_training_centered_error_gate_passed": false,
+  "validation_or_final_used": false,
+  "scientific_acceptance": false,
+  "wall_s": 11.644345730000168,
+  "peak_GPU_MiB": 222.328125
+}

@@ -1,0 +1,34 @@
+{
+  "time": "2026-10-16T18:02:22.907787+00:00",
+  "engineering_run": "completed_verified",
+  "scientific_status": "NO_EVIDENCE_OF_USEFUL_SPATIAL_CORRECTION",
+  "data": "2 validation mothers,20 frames,1310720 total pixels;weak8 frames524288 pixels",
+  "weak_RMSE_e": {
+    "v3": 15.573162220629285,
+    "fixed_profile": 15.982354819931091,
+    "matched_control": 15.982354819931091,
+    "same_network_proposal_no_DC": 15.999693389653412,
+    "hybrid": 15.96557627329574
+  },
+  "hybrid_weak_RMSE_change_vs_v3_fraction": 0.025198097027888,
+  "hybrid_weak_RMSE_change_vs_matched_control_fraction": -0.0010498169277550762,
+  "all_RMSE_e": {
+    "v3": 15.331795168531661,
+    "fixed_profile": 15.752987384660338,
+    "matched_control": 15.752987384660338,
+    "same_network_proposal_no_DC": 15.764177461697075,
+    "hybrid": 15.730834803765275
+  },
+  "mean_neural_proposal_correction_e": -1.758068223965529,
+  "max_neural_proposal_spatial_std_e": 0.00026856597733591886,
+  "temperature_bitwise_unchanged": true,
+  "hashes_of_all100_cached_inputs_and_labels_verified": true,
+  "checkpoint_download_verified": true,
+  "proposal_diagnostic": "network outputs nearly constant shift; DC converts this into mainly mean-bias correction; no evidence yet of learned spatial leakage rejection",
+  "same_network_noDC_is_not_independently_trained_ablation": true,
+  "do_not_expand_for_scientific_acceptance": true,
+  "next_action": "registered same-capacity serial-vs-skip optimization diagnostic on one existing training pair",
+  "new_data_generated_for_diagnostic": false,
+  "autonomous_timer_deleted_on_confirmed_completion": true,
+  "timer_rule": "create only while a verified job is running; otherwise act in the current turn"
+}

@@ -1,4 +1,14 @@
-# Current continuation: autonomous hybrid pilot running on server (2026-10-17)
+# Current continuation: bounded hybrid experiments completed; no active job (2026-10-17)
+
+用户最新明确：只有真实作业运行时才设置定时，否则直接推进或给出建议。旧定时任务 `automation` 已删除，本轮及补充试验均已结束，不等待定时苏醒。
+
+已完成首轮、同参数跳连优化诊断、近端权重诊断及完整缓存数据重训。工程链路通过，当前候选不采用：2个验证母场景、20帧中，弱模板8帧/524288像素的RMSE由v3的15.57316降至14.44720电子（降低7.23%），但弱/较强有符号响应增益分别0.85286/0.83366，存在约15%/17%的幅值低估。色温RMSE仍23.95587K，20帧温度逐元素未变。检测阈值和不确定度尚未校准，封存测试未打开。完整回执 `../hybrid_cached_003/RUN_REVIEW.json`。
+
+学习停滞具有分层证据：原串联DSConv主要学到全图偏置；同参数跳连恢复空间变化但单训练对中心化MSE仅降0.7–0.8%；近端权重由0.05改为1倍模板敏感度后，同训练对降46–47%，随后全训练/验证小试验出现上述误差—幅值权衡。所有训练对诊断均未读取验证/最终标签，完整小试验仍只具有开发诊断意义。
+
+下一步建议优先给同连续谱的正/负模板注入对加入显式响应幅值损失，并同时核对空白模板；不据较低像素RMSE宣布成功。新完整训练尚未启动。累计6489次已全部并账；完整必要B方案（主方法UQ1820、v3独立MC896）剩9448次，预测总量15937，余量63。可选双方法完整UQ扩展不在该必要方案中。此前15473/15987最坏预测重复减去了已完成C1调用，已由 `../hybrid_optimization_probe_001/BUDGET_RECONCILIATION.json` 纠正，不得继续用于预算决策。任何扩展必须先落实调用预算，原完整科学工作不静默删减。
+
+# Historical continuation: hybrid server startup before completion (2026-10-17)
 
 用户已要求新建分支开始推进，并随后明确要求按规范持续全自动推进。当前分支 `research/hybrid-residual-001`，有效源码提交 `938a7cff7929c59868f118081f28372a9134b24b`。实现位于 `research_hybrid`，首个有效试验为 `hybrid_002`，服务器目录 `/home/rylan/projects/thermometry-neural-20261011/hybrid_residual_002`。原C1选择未恢复，原科学结果及封存测试未变动。
 
