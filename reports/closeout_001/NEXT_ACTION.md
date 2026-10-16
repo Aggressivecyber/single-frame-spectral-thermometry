@@ -1,3 +1,40 @@
+# Current continuation: read-only post-shard checks pending; wake2026-10-16 15:00 Singapore
+
+继续完成单帧七通道谱温反演课题。全部修复、小验证快速迭代，后续执行智能体全部gpt-6.1-sol/max。旧Astra审阅及失败保留；2026-10-14新计划替代旧永久停止/封存规则，合同/小片/工作图不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0005_REMAINDER_WAKE_OBSERVATION.json、READ_ONLY_CPU_PHASE_PROCESS_OBSERVATION.json、READ_ONLY_POST_SHARD_JOBS_INFLIGHT.json，然后读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml及root_cause_team_001报告。最新用户规则替代旧AGENTS：文件/cache/tmp全E/D，长计算正确启动后一次苏醒即结束监控；不假设、不隐藏困惑、说明取舍；只改必要处，不增推测功能/一次性辅助抽象，不吞错，校验限外部边界；保留科学登记和证据核验。无CNN。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001，旧public_repository_001输入/权重/报告按哈希只读。C仅已有执行程序，无新科研数据。人类累计新完整逆上限16000（包含已5273），当前冻结阶段更严格12000和semantic development3400。4根E/D新输出4GiB、E底线2GiB；D项目256MiB/D底线128MiB独立。未来完整存储矩阵仍需证明，不能删或降精度唯一科学证据。
+
+本次苏醒已发现原54格科学反演完整结束：2026-10-16T03:56:01.135963Z，54/54有限且controller数值认证、54新/0复用；06:00:49Z两原进程56992/56112与两锁退出、stderr0。终态shards/569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc/RUN_a51ab38052644471b5d6b26501cd8f2a.json，SHA90b4b8fdf961004d3b0be2c458ccfe08642270a27f550a5619a9f871a5d44379。累计5273新/5813总行（540reused），semantic development632/3400。全第一阶段186/1080、894未执行、13raw/5观察到的父场景；母0000和0005各完整90格，其余3母只有2格缓存。所有9组保留，尚无科学选型。
+
+重要：本轮尚未启动母0006反演。当前只是两项只读前置核验尚未返回终态，已通过真实NT命令及CPU活动确认启动，不能把缺少phase锁当成可开第二GPU的信号：
+1) 原生纯forward/外部重评分审计：launcher55748，实际Python33788，父壳22272；真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc/RUN_a51ab38052644471b5d6b26501cd8f2a.json --device cuda。exec session63646；预期终态analysis/569f.../NATIVE_ANALYSIS.json，stdout/stderr为mother0005_remainder_native_analysis.*.txt。
+2) 下一片CPU metadata来源/预算核验：launcher23148，实际Python33580，父壳36004，真实命令python -B -（本轮工具调用中的原始stdin），exec session59782；预期MOTHER0006_FIRST_PAIR_PLAN_REVIEW.json，stdout/stderr为mother0006_first_pair_plan.*.txt。它只调用原verify_registration/collect_rows及AST/index与160MiB空间检查，0逆/0GPU；不要启动第二份相同规划。
+06:11:13Z NT确认上述两组父子命令；此前CPU快照33788已耗423.265625 CPU秒/1171.8MiB，33580已耗299.265625秒/60.7MiB，均有CPU活动。06:09:45Z尚无phase锁/原生终态；stdout当时为空，尚不能归因具体耗时环节。未编辑42冻结源码、未观察超时重启。
+
+醒来首先核对上述真实PIDs/命令/父子、global/local锁、原生NATIVE_ANALYSIS或FAILURE_*.json、规划结果与两组stdout/stderr。仍运行则只设一次更晚苏醒并结束；不持续监控、不按观察超时重启、不启动另一GPU或同raw完整逆。若真实进程已退出，可用已有exec sessions各收一次退出状态；工具session若不可用以真实NT进程/落盘终态为准，不能因工具ID失效推断结果。两个任务新完整逆均0。若失败/无终态，保留日志与原因，允许解决只读审阅问题，但绝不重跑已做的54个反演。原生审计全54数组/26项65536全域评分及ledger字节应匹配才写MOTHER0005_REMAINDER_COMPLETION_VERIFICATION.json；规划须all_passed且账本仍5273再开母0006片。
+
+独立Sol61 CPU已经完成并停改：全54链/42源/661依赖/162stage/108platform/65536域/27对共同anchor通过；实际终gtol均1e-6、pg∞5.7644e-7..9.999969279e-7，未执行1e-7。仅两个预先指定最终点物理复算：negative_weak c.1s10/v3和negative_normal c10s.1/smooth；tol1e-13冷热内解最大模板Δu_RMS3.9023e-9e、actual normal relative≤3.4225e-13，1741已读冻结对象SHA不变，0GPU/outer/完整逆/truth读取。c1_mother0005_remainder_analysis_001/FINAL_REVIEW_RECEIPT SHAc1f381fd7894a82a316f65e9550ffe239b0aabaf00b94065b82b466fb0891b90。早stage潜参未存只能日志逻辑，不能称全54独立物理重演。54新逆核心2152.040527秒，首票→终态6256.742392秒，外部开销未由profiler唯一归因。
+
+两个完整母场景的TWO_COMPLETE_MOTHERS_DIAGNOSTIC.json已生成，SHA c4c9f628ec9230ff5716b22db876cdfccc505a7135f566bf019bc6d13cfe6e37，0新逆/forward/重开标签，指标来自现有评分。10raw按SSE/完整655360像素合并：C1色温7.06–13.00K、模板17.66–27.39e；v3为16.78K/17.14e，强B1lambda100为20.55K/11.78e，旧B4为16.56K/17.50e；正常正负模板比1.017–1.589。只描述2个独立母，不据此选择方法/初值。新工作图figures/TWO_MOTHER_TRADEOFF_001.png实际看图通过（图例不裁切，v3/B4因实际数值接近有部分标记重叠，双初值用同心标记）；PNG SHA a3b829173c7a15145ca9b057a0fb145d436ffcc87dfd50fa63691eaf3b6f6e32。PDF只header/EOF，非PDF渲染QA。绘图源码research_closeout/render_two_mother_tradeoff.py是独立新图源，不在42冻结科学依赖里，未改科学算法；图及报告放REPORTS内计全局预算。论文/claims更新186格及两母开发快照，七组最终主图尚未完成。
+
+后续计划是原登记母0006（实际温度multipeak、模板blob）的blank/positive_weak两raw×九组×双初值=36全新/0复用；本轮只做CPU规划未发反演。规划预期累计5273→最多5309，semantic632→668，开发186→最多222/1080，每格180秒/最多6480秒反演加开销；未新增网格/方法。两项只读核验结束且通过后，显式root单GPU启动该片、核验真实命令/父子/owner/首个native票据后只设一次苏醒。保留全部失败/未执行，原FIRST_STAGE_RESULT仅整个1080终态；同物理方法/raw任何已有成功/未认证/失败/中断均复用，评分错误只score-only且0新逆。
+
+继续原有限九组各120格全1080后按科学规则保留2进其余24母确认选1，不按成本/有利局部指标提前淘汰。无可靠收益允许选冻结v3研究基线；原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
 # Current continuation: mother0005 remaining three conditions; wake2026-10-16 14:00 Singapore
 
 继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；后续执行智能体全部gpt-6.1-sol/max，旧Astra审阅和失败保留。2026-10-14新计划替代旧永久停止/封存规则，合同、小片与工作稿均不是整个课题完成。
