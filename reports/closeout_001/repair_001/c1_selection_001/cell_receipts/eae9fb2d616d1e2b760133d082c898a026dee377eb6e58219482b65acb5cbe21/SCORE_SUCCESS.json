@@ -1,0 +1,507 @@
+{
+  "time": "2026-10-15T22:41:13.854367+00:00",
+  "row": {
+    "case_id": "v5_development_selection_mother_0005_positive_weak_noise0",
+    "mother_id": "v5_development_selection_mother_0005",
+    "condition": "positive_weak",
+    "input_kind": "noise",
+    "quick_geometry": {
+      "temperature_geometry": "front",
+      "template_geometry": "smooth_random",
+      "temperature_geometry_source": "research_v6/input_inventory.json:geometry",
+      "template_geometry_source": "research_v6/input_inventory.json:template_geometry",
+      "temperature_geometry_fallback_declared": true
+    },
+    "raw_sha256": "4cb6291154058506735d8dbd08577ab34698d09c9eb16a38d24b3692f5b252f3",
+    "candidate_id": "joint_c0.1_s10",
+    "family": "joint_C1v3",
+    "method": "joint_profile_C1v3_c0.1_s10_numerics_v2__v3",
+    "initializer": "v3",
+    "physical_options": {
+      "grid": 256,
+      "continuum_multiplier": 0.1,
+      "template_multiplier": 10.0
+    },
+    "reuse_key": "8ba8e9db58112eba2927f50c9711fef04d7ca5d146aae42564396c56fb6892d6",
+    "execution_role": "NEW_INVERSE",
+    "execution_registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+    "inference_attempted": true,
+    "new_inverse_calls_this_run": 1,
+    "metrics": {
+      "domain_pixels": 65536,
+      "accepted_pixels": 65536,
+      "valid_fraction": 1.0,
+      "full_FOV_valid_fraction": 1.0,
+      "nonfinite_domain_pixels": 0,
+      "nonfinite_output_pixels": 0,
+      "temperature_out_of_bounds_pixels": 0,
+      "template_SSE": 20419045.492087252,
+      "template_truth_energy": 26136320.566876896,
+      "template_error_sum": 123753.05797713576,
+      "template_RMSE_e": 17.651342952346457,
+      "template_bias_e": 1.8883218075124475,
+      "template_relative_L2": 0.8838844515121685,
+      "temperature_SSE_K2": 5711149.79747528,
+      "temperature_error_sum_K": -44979.12683937679,
+      "temperature_RMSE_K": 9.335160955442326,
+      "temperature_bias_K": -0.6863270086574828,
+      "temperature_truth_role": "postblur continuum color temperature",
+      "conditional_template_RMSE_e": 17.651342952346457,
+      "conditional_temperature_RMSE_K": 9.335160955442326,
+      "support_fraction_of_absolute_peak": 0.2,
+      "signed_projection": 1.0939482634850233,
+      "signed_projection_numerator": 28591782.498022877,
+      "orthogonal_template_RMSE_e": 17.551350749754487,
+      "support_pixels": 62576,
+      "sign_correct_pixels": 54851,
+      "sign_recall": 0.876550115060087,
+      "positive_support_pixels": 62576,
+      "negative_support_pixels": 0,
+      "raw_pixels": 65536,
+      "raw_weighted_SSE": 62947.42964250093,
+      "raw_weighted_RMSE": 0.9800518103352911,
+      "raw_RMSE_e": 74.40904378317715,
+      "raw_residual_target": "same observed raw, fixed variance from observed raw",
+      "temperature_reference_color_RMSE_K": 9.335160955442326,
+      "temperature_reference_color_bias_K": -0.6863270086574828,
+      "temperature_reference_color_comparison_pixels": 65536,
+      "temperature_latent_truth_RMSE_K": 31.319991499415572,
+      "temperature_latent_truth_bias_K": 5.811054682232114,
+      "temperature_latent_truth_comparison_pixels": 65536,
+      "legacy_frame_detected": true,
+      "legacy_null_pixel_FP_count": null,
+      "legacy_frame_detection_score": 65.26808395587442,
+      "legacy_signed_recall": 0.019224622858603938,
+      "legacy_signed_recall_rule": "correct sign and threshold crossed and valid; denominator is fixed truth support",
+      "legacy_null_FOV_FPR_control_claimed": false,
+      "legacy_frame_threshold": 60.0,
+      "legacy_signed_detected_pixels": 1203,
+      "legacy_frame_detection_score_kind": "full_FOV_99th_percentile_absolute_template_e",
+      "legacy_threshold_e": 60.0,
+      "legacy_positive_recall": 0.019224622858603938,
+      "legacy_negative_detected_pixels": 0,
+      "legacy_signed_recall_unconditional": 0.019224622858603938,
+      "legacy_negative_recall": null,
+      "legacy_positive_detected_pixels": 1203,
+      "legacy_null_frame_FP": null,
+      "legacy_null_pixel_FP": null,
+      "legacy_z_threshold": null,
+      "frame_detection_v2": {
+        "schema": "frame-dictionary-decision-v2",
+        "dictionary_id": "gaussian-9centers-3scales-absolute-L2-v1",
+        "method": "joint_profile_C1v3_c0.1_s10_numerics_v2__v3",
+        "score": 2832.9195260808942,
+        "detected": null,
+        "threshold_crossed": null,
+        "threshold": null,
+        "status": "THRESHOLD_NOT_ATTACHED",
+        "inference_reads_truth": false,
+        "calibration_applicability": "UNVERIFIED",
+        "false_positive_rate_guaranteed": false
+      },
+      "matched_dictionary_frame_score": 2832.9195260808942,
+      "predicted_measurement_nonnegative": true,
+      "raw_saturated_pixels": 0,
+      "raw_lower_clipped_pixels": 0,
+      "structure": {
+        "prediction": {
+          "absolute_peak_e": 96.30183668618741,
+          "signed_integral_e_px": 1354893.5573911027,
+          "absolute_integral_e_px": 1535938.5743971756,
+          "absolute_mass_RMS_radius_px": 104.30821733558919,
+          "absolute_mass_centroid_xy_px": [
+            126.27210962416345,
+            126.95531673574305
+          ]
+        },
+        "target": {
+          "absolute_peak_e": 39.36579895019531,
+          "signed_integral_e_px": 1231140.4994139671,
+          "absolute_integral_e_px": 1231140.4994139671,
+          "absolute_mass_RMS_radius_px": 104.83870526117383,
+          "absolute_mass_centroid_xy_px": [
+            125.24092759467528,
+            126.93272477062303
+          ]
+        },
+        "width_definition": "absolute-mass radial RMS; noise outside structure contributes and is retained"
+      }
+    },
+    "finite_output": true,
+    "new_inverse_calls_panel_total": 1,
+    "production_numerical_certified": true,
+    "score_status": "SCORED",
+    "external_call_count_recorded": true,
+    "inference_callback_started": true,
+    "inference_numerical_certified": true,
+    "compact_result": {
+      "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+      "cache_key": "9a73c23149ebf0fd2a39d0c868c16af8323591b2185f36d5e6975b2d3cb61bbe",
+      "context_fingerprint": "f665770479d1bb2685c5c697452d0335d74868b4b644296679d521ef1e5ad6da",
+      "time": "2026-10-15T22:41:08.620023+00:00",
+      "status": "LOSSLESS_READY",
+      "run_new_inverse": false,
+      "score_allowed": true,
+      "lossless_representation_verified": true,
+      "numerical_certification": true,
+      "original_fallback_available": false,
+      "fallback_retained": false,
+      "representation_scope": "same registered runtime/device; each future load must independently pass all byte hashes",
+      "write_read_same_physics_instance": true,
+      "verification": {
+        "per_array_byte_identical": {
+          "continuum_postblur_bands": true,
+          "low_signal": true,
+          "predicted_raw_DN": true,
+          "predicted_raw_e": true,
+          "standardized_residual": true,
+          "temperature_color_K": true,
+          "template_postblur_e_ref": true,
+          "valid": true,
+          "continuum_latent": true
+        },
+        "all_byte_identical": true,
+        "reconstructed_canonical_arrays": {
+          "temperature_color_K": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 524288,
+            "sha256": "0e57999a1b1e9266e9827d891e4b9cec90fafafad15cab3adce9daa37aaa3b47"
+          },
+          "template_postblur_e_ref": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 524288,
+            "sha256": "7ccf3eb3e40a430f966ecea380b7eb739bd47703474357b2b75edc50ec2c2944"
+          },
+          "continuum_postblur_bands": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              7,
+              256,
+              256
+            ],
+            "nbytes": 3670016,
+            "sha256": "69db9e1d330e4ab77358a73467dfb0dfbe050e6b36f196732091f36b08f4841f"
+          },
+          "predicted_raw_e": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 524288,
+            "sha256": "e1ba39dff51d5c6224612c973ac94ef196cdbf7338ead139f587a6cef8378cd7"
+          },
+          "predicted_raw_DN": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 524288,
+            "sha256": "5b2014c2013dc91197a9ac049fb3ba1d9b3e9323348bc80df501f34d4be18d93"
+          },
+          "standardized_residual": {
+            "dtype": "float64",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 524288,
+            "sha256": "a5351bc6d2409bb32787c1d26dfe7484be50446317964421000fe1eca0ea81de"
+          },
+          "valid": {
+            "dtype": "bool",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 65536,
+            "sha256": "31d7262f7251771e49405b08012016061a605f43c19621ef7f9f377748934a03"
+          },
+          "low_signal": {
+            "dtype": "bool",
+            "shape": [
+              1,
+              256,
+              256
+            ],
+            "nbytes": 65536,
+            "sha256": "3234acdc616eac3751704d6d1b2658bec87ab7d7d202b338b23cbdfcb3d5f6aa"
+          }
+        },
+        "reconstructed_continuum_latent": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            7,
+            256,
+            256
+          ],
+          "nbytes": 3670016,
+          "sha256": "be3e72162f88b1561620db785668cc3aa922edd6686127cd2fbe0950be22d6c2"
+        },
+        "forward_only": true,
+        "complete_inverse_calls": 0,
+        "optimizer_calls": 0,
+        "linear_solver_calls": 0
+      },
+      "parameter_receipt": {
+        "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9a73c23149ebf0fd2a39d0c868c16af8323591b2185f36d5e6975b2d3cb61bbe\\PARAMETERS.json",
+        "sha256": "afa42239cac1712ea199f75403b67c08032ca84ba74fdd9daca093a97bf6e196",
+        "bytes": 899
+      },
+      "complete_inverse_calls_by_cache": 0,
+      "native_GPU_qualification_claimed": false
+    },
+    "compact_report_root": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9a73c23149ebf0fd2a39d0c868c16af8323591b2185f36d5e6975b2d3cb61bbe",
+    "compact_data_root": "E:\\CodexWork\\thermometry\\closeout_001\\outputs\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9a73c23149ebf0fd2a39d0c868c16af8323591b2185f36d5e6975b2d3cb61bbe",
+    "status": "FINITE_NUMERICALLY_CERTIFIED",
+    "external_score": {
+      "metric_schema": "closeout-fixed-domain-explicit-status-v2",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "metrics": {
+        "domain_pixels": 65536,
+        "accepted_pixels": 65536,
+        "valid_fraction": 1.0,
+        "full_FOV_valid_fraction": 1.0,
+        "nonfinite_domain_pixels": 0,
+        "nonfinite_output_pixels": 0,
+        "temperature_out_of_bounds_pixels": 0,
+        "template_SSE": 20419045.492087252,
+        "template_truth_energy": 26136320.566876896,
+        "template_error_sum": 123753.05797713576,
+        "template_RMSE_e": 17.651342952346457,
+        "template_bias_e": 1.8883218075124475,
+        "template_relative_L2": 0.8838844515121685,
+        "temperature_SSE_K2": 5711149.79747528,
+        "temperature_error_sum_K": -44979.12683937679,
+        "temperature_RMSE_K": 9.335160955442326,
+        "temperature_bias_K": -0.6863270086574828,
+        "temperature_truth_role": "postblur continuum color temperature",
+        "conditional_template_RMSE_e": 17.651342952346457,
+        "conditional_temperature_RMSE_K": 9.335160955442326,
+        "support_fraction_of_absolute_peak": 0.2,
+        "signed_projection": 1.0939482634850233,
+        "signed_projection_numerator": 28591782.498022877,
+        "orthogonal_template_RMSE_e": 17.551350749754487,
+        "support_pixels": 62576,
+        "sign_correct_pixels": 54851,
+        "sign_recall": 0.876550115060087,
+        "positive_support_pixels": 62576,
+        "negative_support_pixels": 0,
+        "raw_pixels": 65536,
+        "raw_weighted_SSE": 62947.42964250093,
+        "raw_weighted_RMSE": 0.9800518103352911,
+        "raw_RMSE_e": 74.40904378317715,
+        "raw_residual_target": "same observed raw, fixed variance from observed raw",
+        "temperature_reference_color_RMSE_K": 9.335160955442326,
+        "temperature_reference_color_bias_K": -0.6863270086574828,
+        "temperature_reference_color_comparison_pixels": 65536,
+        "temperature_latent_truth_RMSE_K": 31.319991499415572,
+        "temperature_latent_truth_bias_K": 5.811054682232114,
+        "temperature_latent_truth_comparison_pixels": 65536,
+        "legacy_frame_detected": true,
+        "legacy_null_pixel_FP_count": null,
+        "legacy_frame_detection_score": 65.26808395587442,
+        "legacy_signed_recall": 0.019224622858603938,
+        "legacy_signed_recall_rule": "correct sign and threshold crossed and valid; denominator is fixed truth support",
+        "legacy_null_FOV_FPR_control_claimed": false,
+        "legacy_frame_threshold": 60.0,
+        "legacy_signed_detected_pixels": 1203,
+        "legacy_frame_detection_score_kind": "full_FOV_99th_percentile_absolute_template_e",
+        "legacy_threshold_e": 60.0,
+        "legacy_positive_recall": 0.019224622858603938,
+        "legacy_negative_detected_pixels": 0,
+        "legacy_signed_recall_unconditional": 0.019224622858603938,
+        "legacy_negative_recall": null,
+        "legacy_positive_detected_pixels": 1203,
+        "legacy_null_frame_FP": null,
+        "legacy_null_pixel_FP": null,
+        "legacy_z_threshold": null,
+        "frame_detection_v2": {
+          "schema": "frame-dictionary-decision-v2",
+          "dictionary_id": "gaussian-9centers-3scales-absolute-L2-v1",
+          "method": "joint_profile_C1v3_c0.1_s10_numerics_v2__v3",
+          "score": 2832.9195260808942,
+          "detected": null,
+          "threshold_crossed": null,
+          "threshold": null,
+          "status": "THRESHOLD_NOT_ATTACHED",
+          "inference_reads_truth": false,
+          "calibration_applicability": "UNVERIFIED",
+          "false_positive_rate_guaranteed": false
+        },
+        "matched_dictionary_frame_score": 2832.9195260808942,
+        "predicted_measurement_nonnegative": true,
+        "raw_saturated_pixels": 0,
+        "raw_lower_clipped_pixels": 0,
+        "structure": {
+          "prediction": {
+            "absolute_peak_e": 96.30183668618741,
+            "signed_integral_e_px": 1354893.5573911027,
+            "absolute_integral_e_px": 1535938.5743971756,
+            "absolute_mass_RMS_radius_px": 104.30821733558919,
+            "absolute_mass_centroid_xy_px": [
+              126.27210962416345,
+              126.95531673574305
+            ]
+          },
+          "target": {
+            "absolute_peak_e": 39.36579895019531,
+            "signed_integral_e_px": 1231140.4994139671,
+            "absolute_integral_e_px": 1231140.4994139671,
+            "absolute_mass_RMS_radius_px": 104.83870526117383,
+            "absolute_mass_centroid_xy_px": [
+              125.24092759467528,
+              126.93272477062303
+            ]
+          },
+          "width_definition": "absolute-mass radial RMS; noise outside structure contributes and is retained"
+        }
+      },
+      "production_numerical_certified": true,
+      "legacy_metric_status": "SUCCESS",
+      "finite_scoring_passed": true,
+      "finite_scoring_definition": "all finite, within temperature bounds and not abstained; no solver convergence assertion",
+      "finite_output": true,
+      "finite_output_definition": "all template, color-temperature and predicted-raw values finite; independent of scoring truth, bounds and abstention"
+    },
+    "compact_score_receipt": {
+      "schema": "joint-float64-forward-lossless-cache-v002-explicit-store",
+      "cache_key": "9a73c23149ebf0fd2a39d0c868c16af8323591b2185f36d5e6975b2d3cb61bbe",
+      "context_fingerprint": "f665770479d1bb2685c5c697452d0335d74868b4b644296679d521ef1e5ad6da",
+      "time": "2026-10-15T22:41:10.733889+00:00",
+      "status": "EXTERNAL_SCORE_SAVED",
+      "score_id": "panel_external_v001",
+      "score": {
+        "metric_schema": "closeout-fixed-domain-explicit-status-v2",
+        "status": "FINITE_NUMERICALLY_CERTIFIED",
+        "metrics": {
+          "domain_pixels": 65536,
+          "accepted_pixels": 65536,
+          "valid_fraction": 1.0,
+          "full_FOV_valid_fraction": 1.0,
+          "nonfinite_domain_pixels": 0,
+          "nonfinite_output_pixels": 0,
+          "temperature_out_of_bounds_pixels": 0,
+          "template_SSE": 20419045.492087252,
+          "template_truth_energy": 26136320.566876896,
+          "template_error_sum": 123753.05797713576,
+          "template_RMSE_e": 17.651342952346457,
+          "template_bias_e": 1.8883218075124475,
+          "template_relative_L2": 0.8838844515121685,
+          "temperature_SSE_K2": 5711149.79747528,
+          "temperature_error_sum_K": -44979.12683937679,
+          "temperature_RMSE_K": 9.335160955442326,
+          "temperature_bias_K": -0.6863270086574828,
+          "temperature_truth_role": "postblur continuum color temperature",
+          "conditional_template_RMSE_e": 17.651342952346457,
+          "conditional_temperature_RMSE_K": 9.335160955442326,
+          "support_fraction_of_absolute_peak": 0.2,
+          "signed_projection": 1.0939482634850233,
+          "signed_projection_numerator": 28591782.498022877,
+          "orthogonal_template_RMSE_e": 17.551350749754487,
+          "support_pixels": 62576,
+          "sign_correct_pixels": 54851,
+          "sign_recall": 0.876550115060087,
+          "positive_support_pixels": 62576,
+          "negative_support_pixels": 0,
+          "raw_pixels": 65536,
+          "raw_weighted_SSE": 62947.42964250093,
+          "raw_weighted_RMSE": 0.9800518103352911,
+          "raw_RMSE_e": 74.40904378317715,
+          "raw_residual_target": "same observed raw, fixed variance from observed raw",
+          "temperature_reference_color_RMSE_K": 9.335160955442326,
+          "temperature_reference_color_bias_K": -0.6863270086574828,
+          "temperature_reference_color_comparison_pixels": 65536,
+          "temperature_latent_truth_RMSE_K": 31.319991499415572,
+          "temperature_latent_truth_bias_K": 5.811054682232114,
+          "temperature_latent_truth_comparison_pixels": 65536,
+          "legacy_frame_detected": true,
+          "legacy_null_pixel_FP_count": null,
+          "legacy_frame_detection_score": 65.26808395587442,
+          "legacy_signed_recall": 0.019224622858603938,
+          "legacy_signed_recall_rule": "correct sign and threshold crossed and valid; denominator is fixed truth support",
+          "legacy_null_FOV_FPR_control_claimed": false,
+          "legacy_frame_threshold": 60.0,
+          "legacy_signed_detected_pixels": 1203,
+          "legacy_frame_detection_score_kind": "full_FOV_99th_percentile_absolute_template_e",
+          "legacy_threshold_e": 60.0,
+          "legacy_positive_recall": 0.019224622858603938,
+          "legacy_negative_detected_pixels": 0,
+          "legacy_signed_recall_unconditional": 0.019224622858603938,
+          "legacy_negative_recall": null,
+          "legacy_positive_detected_pixels": 1203,
+          "legacy_null_frame_FP": null,
+          "legacy_null_pixel_FP": null,
+          "legacy_z_threshold": null,
+          "frame_detection_v2": {
+            "schema": "frame-dictionary-decision-v2",
+            "dictionary_id": "gaussian-9centers-3scales-absolute-L2-v1",
+            "method": "joint_profile_C1v3_c0.1_s10_numerics_v2__v3",
+            "score": 2832.9195260808942,
+            "detected": null,
+            "threshold_crossed": null,
+            "threshold": null,
+            "status": "THRESHOLD_NOT_ATTACHED",
+            "inference_reads_truth": false,
+            "calibration_applicability": "UNVERIFIED",
+            "false_positive_rate_guaranteed": false
+          },
+          "matched_dictionary_frame_score": 2832.9195260808942,
+          "predicted_measurement_nonnegative": true,
+          "raw_saturated_pixels": 0,
+          "raw_lower_clipped_pixels": 0,
+          "structure": {
+            "prediction": {
+              "absolute_peak_e": 96.30183668618741,
+              "signed_integral_e_px": 1354893.5573911027,
+              "absolute_integral_e_px": 1535938.5743971756,
+              "absolute_mass_RMS_radius_px": 104.30821733558919,
+              "absolute_mass_centroid_xy_px": [
+                126.27210962416345,
+                126.95531673574305
+              ]
+            },
+            "target": {
+              "absolute_peak_e": 39.36579895019531,
+              "signed_integral_e_px": 1231140.4994139671,
+              "absolute_integral_e_px": 1231140.4994139671,
+              "absolute_mass_RMS_radius_px": 104.83870526117383,
+              "absolute_mass_centroid_xy_px": [
+                125.24092759467528,
+                126.93272477062303
+              ]
+            },
+            "width_definition": "absolute-mass radial RMS; noise outside structure contributes and is retained"
+          }
+        },
+        "production_numerical_certified": true,
+        "legacy_metric_status": "SUCCESS",
+        "finite_scoring_passed": true,
+        "finite_scoring_definition": "all finite, within temperature bounds and not abstained; no solver convergence assertion",
+        "finite_output": true,
+        "finite_output_definition": "all template, color-temperature and predicted-raw values finite; independent of scoring truth, bounds and abstention"
+      },
+      "inference_calls": 0,
+      "truth_loaded_by_cache": false
+    },
+    "truth_loaded_after_lossless_cache": true
+  },
+  "new_inverse_count_is_attempt_local": true
+}
