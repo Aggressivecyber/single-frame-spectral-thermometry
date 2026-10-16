@@ -1,0 +1,50 @@
+{
+  "schema": "explicit-selection-shard-startup-observation-v001",
+  "time": "2026-10-16T07:09:29.717404+00:00",
+  "method": "NtQueryInformationProcess; no WMI",
+  "startup_verified": false,
+  "checks": {
+    "launcher_available": true,
+    "child_available": true,
+    "commands_match": true,
+    "parent_child_matches": true,
+    "owner_locks_match": true,
+    "owner_registration_matches": true,
+    "stderr_empty": true,
+    "charged_within_shard_cap": true,
+    "first_new_ticket_present": false,
+    "native_float64": false,
+    "42_registered_sources": false,
+    "ticket_actual_registration": false
+  },
+  "launcher": {
+    "pid": 60656,
+    "available": true,
+    "actual_pid": 60656,
+    "parent_pid": 4420,
+    "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0006_blank_noise0 --raw v5_development_selection_mother_0006_positive_weak_noise0"
+  },
+  "actual_python": {
+    "pid": 55360,
+    "available": true,
+    "actual_pid": 55360,
+    "parent_pid": 60656,
+    "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0006_blank_noise0 --raw v5_development_selection_mother_0006_positive_weak_noise0"
+  },
+  "owner_locks": {
+    "pid": 55360,
+    "owner_token": "2e36856a994a4cd797102658ffd2262b",
+    "phase": "C1v3-first-stage-1080-v001-shard",
+    "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+    "time": "2026-10-16T07:09:12.491314+00:00"
+  },
+  "started_cells": [],
+  "global_charged_calls_at_observation": 5273,
+  "one_raw_denominator": 36,
+  "maximum_new_inverse_calls": 36,
+  "full_first_stage_denominator": 1080,
+  "raw_ids": [
+    "v5_development_selection_mother_0006_blank_noise0",
+    "v5_development_selection_mother_0006_positive_weak_noise0"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-16T06:17:55.612103+00:00",
+  "time": "2026-10-16T07:11:43.150129+00:00",
   "schema": "root-integrated-repair-status-v001",
   "scope": "implemented repairs and bounded diagnostic preparation",
   "future_execution_model": "gpt-6.1-sol",
@@ -65,14 +65,14 @@
   "old_independent_raw_exact_replay": true,
   "final_payloads_opened": false,
   "final_method_selected_by_quick": false,
-  "scientific_repair_acceptance": "186/1080 finite controller-certified; latest54 independent CPU review passed, fresh native audit pending; full scientific selection pending",
+  "scientific_repair_acceptance": "186/1080 finite and numerically certified; last54 native byte/scoring and independent CPU reviews passed; mother0006 first-pair36 started; full scientific selection pending",
   "whole_closeout_complete": false,
-  "quick_phase": "closed_science54_read_only_checks_pending_at_verified_process_snapshot",
-  "launcher_pid": 55748,
-  "actual_python_pid": 33788,
-  "startup_verified_utc": "2026-10-16T06:11:13.682501+00:00",
-  "next_wake_local": "2026-10-16T15:00:00+08:00",
-  "registered_source_commit": "d21f73f2d41580d478f4f34d52e8c3f313ce4651",
+  "quick_phase": "C1_first_stage_mother0006_first_pair_running_at_verified_startup",
+  "launcher_pid": 60656,
+  "actual_python_pid": 55360,
+  "startup_verified_utc": "2026-10-16T07:09:56.985918+00:00",
+  "next_wake_local": "2026-10-16T19:00:00+08:00",
+  "registered_source_commit": "844b3b540d2a3c791d2664b60ee0256f1b5f3d72",
   "registered_source_commit_remote_verified": true,
   "science_result_for_repaired_methods": "pending",
   "no_continuous_monitoring": true,
@@ -86,51 +86,40 @@
     "full_panel_auto_started": false
   },
   "current_job": {
-    "phase": "C1v3_post_shard_read_only_checks",
-    "status_scope": "True NT commands/parent-child and preceding CPU activity verified at snapshot; terminal results not yet collected",
-    "launcher_pid": 55748,
-    "actual_python_pid": 33788,
-    "NT_verified_utc": "2026-10-16T06:11:13.682501+00:00",
-    "native_audit": {
-      "launcher_pid": 55748,
-      "python_pid": 33788,
-      "launcher_parent_pid": 22272,
-      "exec_session_id": 63646,
-      "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\analysis\\569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc\\NATIVE_ANALYSIS.json",
-      "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0005_remainder_native_analysis.stdout.txt",
-      "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0005_remainder_native_analysis.stderr.txt",
-      "observed_start_local": "2026-10-16T14:02:02.3948716+08:00",
-      "prior_CPU_seconds_snapshot": 423.265625,
-      "prior_working_set_MiB_snapshot": 1171.8
-    },
-    "auxiliary_CPU_plan": {
-      "launcher_pid": 23148,
-      "python_pid": 33580,
-      "launcher_parent_pid": 36004,
-      "exec_session_id": 59782,
-      "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\MOTHER0006_FIRST_PAIR_PLAN_REVIEW.json",
-      "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_plan.stdout.txt",
-      "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_plan.stderr.txt",
-      "observed_start_local": "2026-10-16T14:05:30.9875474+08:00",
-      "prior_CPU_seconds_snapshot": 299.265625,
-      "prior_working_set_MiB_snapshot": 60.7
-    },
-    "planned_native_audit_cells": 54,
-    "new_complete_inverse_calls": 0,
-    "new_GPU_inverse_started": false,
-    "no_phase_locks_at_prior_observation": true,
-    "lock_absence_does_not_authorize_another_GPU_while_audit_lives": true,
-    "last_closed_charged": 5273,
-    "full_stage_controller_certified": 186,
-    "full_stage_planned": 1080,
-    "full_stage_unexecuted": 894,
-    "human_cumulative_cap": 16000,
-    "current_stricter_legacy_guard": 12000,
-    "semantic_development_used": 632,
+    "phase": "C1v3_selection_first_stage_mother0006_first_pair",
+    "status_scope": "verified startup snapshot, not live progress",
+    "launcher_pid": 60656,
+    "actual_python_pid": 55360,
+    "started_utc": "2026-10-16T07:09:02.3220864Z",
+    "NT_verified_utc": "2026-10-16T07:09:56.985918+00:00",
+    "owner_token": "2e36856a994a4cd797102658ffd2262b",
+    "raw_ids": [
+      "v5_development_selection_mother_0006_blank_noise0",
+      "v5_development_selection_mother_0006_positive_weak_noise0"
+    ],
+    "planned_cells": 36,
+    "reused_cells": 0,
+    "maximum_new_inverse_calls": 36,
+    "maximum_inverse_wall_s_excluding_overhead": 6480,
+    "charged_before_shard": 5273,
+    "charged_at_startup": 5274,
+    "charged_maximum_after": 5309,
+    "full_stage_before": 186,
+    "full_stage_maximum_after": 222,
+    "full_stage_denominator": 1080,
+    "semantic_development_before": 632,
+    "semantic_development_maximum_after": 668,
     "semantic_development_cap": 3400,
+    "human_cumulative_cap": 16000,
+    "current_stricter_guard": 12000,
     "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
-    "next_wake_local": "2026-10-16T15:00:00+08:00",
-    "no_restart_from_elapsed_time": true,
+    "source_commit": "844b3b540d2a3c791d2664b60ee0256f1b5f3d72",
+    "source_commit_remote_verified": true,
+    "next_wake_local": "2026-10-16T19:00:00+08:00",
+    "initial_observation_scope": "real NT process/locks verified; namespace forward precheck still preceding first ticket; initial startup_verified false retained",
+    "continued_startup_verified": true,
+    "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stdout.txt",
+    "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stderr.txt",
     "final_payloads_opened": false
   },
   "quick_v002": {
@@ -370,7 +359,7 @@
     "inference_removed_zero_placeholder_bytes": 51904512,
     "all_221_other_D_task_files_byte_unchanged": true
   },
-  "global_actual_new_inverse_count": 5273,
+  "global_actual_new_inverse_count": 5274,
   "global_remaining_inverse_calls": 10727,
   "quick_v003_result": {
     "complete": true,
@@ -394,7 +383,7 @@
     "zero_reserve_bytes_removed": 51904512,
     "all221_other_D_files_byte_unchanged": true
   },
-  "global_actual_new_inverse_count_scope": "Last closed54 scientific inverses; current native-audit and CPU-plan jobs contain0 complete inverses",
+  "global_actual_new_inverse_count_scope": "07:09:56Z startup snapshot; 5273 before current36-cell shard; not a live count",
   "global_remaining_inverse_calls_scope": "Human16000 cumulative cap minus5273 before any new mother0006 inverse",
   "budget_reconciliation": {
     "completed": true,
@@ -693,17 +682,64 @@
       "completed_cells": 54,
       "new_inverse_calls": 54,
       "terminal_sha256": "90b4b8fdf961004d3b0be2c458ccfe08642270a27f550a5619a9f871a5d44379"
+    },
+    {
+      "phase": "C1v3_post_shard_read_only_checks",
+      "status_scope": "True NT commands/parent-child and preceding CPU activity verified at snapshot; terminal results not yet collected",
+      "launcher_pid": 55748,
+      "actual_python_pid": 33788,
+      "NT_verified_utc": "2026-10-16T06:11:13.682501+00:00",
+      "native_audit": {
+        "launcher_pid": 55748,
+        "python_pid": 33788,
+        "launcher_parent_pid": 22272,
+        "exec_session_id": 63646,
+        "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\analysis\\569f8ea57f09595ba1bc9a8dd6143013664f3d0034715181dde2ab626d9450fc\\NATIVE_ANALYSIS.json",
+        "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0005_remainder_native_analysis.stdout.txt",
+        "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0005_remainder_native_analysis.stderr.txt",
+        "observed_start_local": "2026-10-16T14:02:02.3948716+08:00",
+        "prior_CPU_seconds_snapshot": 423.265625,
+        "prior_working_set_MiB_snapshot": 1171.8
+      },
+      "auxiliary_CPU_plan": {
+        "launcher_pid": 23148,
+        "python_pid": 33580,
+        "launcher_parent_pid": 36004,
+        "exec_session_id": 59782,
+        "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\MOTHER0006_FIRST_PAIR_PLAN_REVIEW.json",
+        "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_plan.stdout.txt",
+        "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_plan.stderr.txt",
+        "observed_start_local": "2026-10-16T14:05:30.9875474+08:00",
+        "prior_CPU_seconds_snapshot": 299.265625,
+        "prior_working_set_MiB_snapshot": 60.7
+      },
+      "planned_native_audit_cells": 54,
+      "new_complete_inverse_calls": 0,
+      "new_GPU_inverse_started": false,
+      "no_phase_locks_at_prior_observation": true,
+      "lock_absence_does_not_authorize_another_GPU_while_audit_lives": true,
+      "last_closed_charged": 5273,
+      "full_stage_controller_certified": 186,
+      "full_stage_planned": 1080,
+      "full_stage_unexecuted": 894,
+      "human_cumulative_cap": 16000,
+      "current_stricter_legacy_guard": 12000,
+      "semantic_development_used": 632,
+      "semantic_development_cap": 3400,
+      "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+      "next_wake_local": "2026-10-16T15:00:00+08:00",
+      "no_restart_from_elapsed_time": true,
+      "final_payloads_opened": false
     }
   ],
   "global_inverse_budget": {
     "human_authorized_cumulative": 16000,
     "charged_before_current_shard": 5273,
-    "charged_at_startup": 5273,
+    "charged_at_startup": 5274,
     "legacy_registered_guard_unchanged": 12000,
     "extension_receipt": "repair_001/INVERSE_BUDGET_EXTENSION_16000.json",
-    "current_shard_maximum_after": 5273,
-    "current_read_only_phase_new_inverse_cap": 0,
-    "counter_snapshot_scope": "last closed scientific shard; both pending read-only jobs contain0 new complete inverses"
+    "current_shard_maximum_after": 5309,
+    "counter_snapshot_scope": "current36-cell shard startup snapshot; no promise of current live count"
   },
   "prescreen_completed": {
     "cells": 18,
@@ -829,25 +865,16 @@
     "full_stage_unexecuted": 894,
     "terminal_sha256": "90b4b8fdf961004d3b0be2c458ccfe08642270a27f550a5619a9f871a5d44379",
     "independent_CPU_receipt_sha256": "c1f381fd7894a82a316f65e9550ffe239b0aabaf00b94065b82b466fb0891b90",
-    "fresh_native_audit_status": "pending_at_process_observation",
+    "fresh_native_audit_status": "passed54/54",
     "new_core_wall_s": 2152.040527,
     "first_new_ticket_to_terminal_s": 6256.742392,
     "actual_final_gtol": 1e-06,
     "stage4_1e_minus7_executed": false,
-    "scientific_method_selection": false
-  },
-  "next_inverse_batch_not_started": {
-    "mother": "v5_development_selection_mother_0006",
-    "conditions": [
-      "blank",
-      "positive_weak"
-    ],
-    "cells": 36,
-    "new_inverse_calls": 36,
-    "maximum_after_if_later_launched": 5309,
-    "semantic_development_maximum_after": 668,
-    "full_stage_maximum_after": 222,
-    "requires_fresh_native_audit_and_CPU_plan_passed": true
+    "scientific_method_selection": false,
+    "native_analysis_sha256": "28e76e1021cf03204a00dd593987b7d37c7ef8f45f9f63d0af49bfb5768b7e08",
+    "completion_receipt_sha256": "1617bb3ea76f24c74b9a003a85744fbcef7da7b5918d82053883f0bc8aa3e672",
+    "postblur_initializer_max_color_RMS_K": 0.0015050535895722035,
+    "postblur_initializer_max_template_RMS_e": 0.0013417995875424059
   },
   "two_complete_development_mothers_working_comparison": {
     "mothers": [
@@ -875,5 +902,18 @@
     "PDF_visual_render_QA_performed": false,
     "seven_final_figure_groups_completed": false
   },
-  "registered_source_commit_scope": "Last scientific-shard source; pending read-only jobs started from49494bb with the same42 frozen scientific source hashes"
+  "registered_source_commit_scope": "Current mother0006 first-pair startup uses this pushed commit; all42 registered scientific source hashes unchanged",
+  "previous_next_inverse_batch_plan": {
+    "mother": "v5_development_selection_mother_0006",
+    "conditions": [
+      "blank",
+      "positive_weak"
+    ],
+    "cells": 36,
+    "new_inverse_calls": 36,
+    "maximum_after_if_later_launched": 5309,
+    "semantic_development_maximum_after": 668,
+    "full_stage_maximum_after": 222,
+    "requires_fresh_native_audit_and_CPU_plan_passed": true
+  }
 }
