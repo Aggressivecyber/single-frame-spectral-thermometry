@@ -1,0 +1,55 @@
+{
+  "schema": "mother0006-readonly-checks-startup-observation-v001",
+  "time": "2026-10-16T11:05:19.011965+00:00",
+  "native_audit": {
+    "launcher": {
+      "pid": 51852,
+      "available": true,
+      "actual_pid": 51852,
+      "parent_pid": 56920,
+      "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json --device cuda"
+    },
+    "child": {
+      "pid": 48792,
+      "available": true,
+      "actual_pid": 48792,
+      "parent_pid": 51852,
+      "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json --device cuda"
+    },
+    "exec_session_id": 53951,
+    "started_local": "2026-10-16T19:02:02.0241487+08:00",
+    "prior_CPU_seconds": 117.953125,
+    "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\analysis\\daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b\\NATIVE_ANALYSIS.json"
+  },
+  "CPU_plan": {
+    "launcher": {
+      "pid": 59512,
+      "available": true,
+      "actual_pid": 59512,
+      "parent_pid": 55596,
+      "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -B -"
+    },
+    "child": {
+      "pid": 61284,
+      "available": true,
+      "actual_pid": 61284,
+      "parent_pid": 59512,
+      "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B -"
+    },
+    "exec_session_id": 43059,
+    "started_local": "2026-10-16T19:03:14.4485064+08:00",
+    "prior_CPU_seconds": 87.390625,
+    "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\MOTHER0006_REMAINDER_PLAN_REVIEW.json"
+  },
+  "no_phase_lock_at_prior11_04_snapshot": true,
+  "lock_absence_is_not_permission_for_second_GPU": true,
+  "new_inverse_calls": 0,
+  "next_scientific_inverse_started": false,
+  "both_stderr_empty": true,
+  "latest_completed_scientific_charged": 5309,
+  "full_stage_finite": 222,
+  "full_stage_certified": 210,
+  "full_stage_uncertified": 12,
+  "full_stage_unexecuted": 858,
+  "full_stage_planned": 1080
+}

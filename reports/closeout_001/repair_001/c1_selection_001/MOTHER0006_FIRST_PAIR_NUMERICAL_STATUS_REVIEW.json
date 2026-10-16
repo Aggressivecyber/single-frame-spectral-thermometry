@@ -1,0 +1,3594 @@
+{
+  "schema": "root-mother0006-first-pair-numerical-status-review-v001",
+  "time": "2026-10-16T11:04:13.861566+00:00",
+  "all_metadata_checks_passed": true,
+  "scope": "existing frozen logs and states only; no new numerical solve",
+  "terminal": {
+    "path": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\shards\\daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b\\RUN_74dc17f7e09248158e8350aa83a24129.json",
+    "sha256": "907d8dffc3a5c5d30d65729c8a6ab4fe2a2e2b442bbffc70d05a86afdf013192"
+  },
+  "checks": {
+    "all36_finite_scored": true,
+    "12_uncertified_all_c10": true,
+    "48_uncertified_stages_reach_maxiter": true,
+    "48_actual_gradients_exceed_requested": true,
+    "all_uncertified_inner_references_pass": true,
+    "no_uncertified_timeout_or_error": true,
+    "certified24_stage3_17_stage4_7": true
+  },
+  "finite": 36,
+  "certified": 24,
+  "uncertified": 12,
+  "planned": 36,
+  "stages": 127,
+  "comparisons": 91,
+  "rows": [
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9a633dc882cd71ac141fc5b5175b48eaa3d2027b4339b880125a3c31048f1ef5\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.679138498417615e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 111,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.659711048546569e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 47,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.63004406884238e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.679138498417615e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.10281914811889695,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.050670277602207485,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.01704581508620982,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.008506223819258094,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 17.442895048421587,
+        "temperature_RMSE_K": 9.892051130405425,
+        "raw_weighted_SSE": 63733.18726525707
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\14613d10a185f3cc9eee2519e5e77f23389b290d5b9e6a077a62fffce9769f03\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.460362093705044e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 77,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.90777677327037e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 50,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.083272502152795e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 60,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.33886312282084e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 53,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.460362093705044e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.2376209326128288,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.1443879542304936,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0253189607497703,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.016265628404951275,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0017034898317709842,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0011328335133291827,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 17.442881874377836,
+        "temperature_RMSE_K": 9.892121266827985,
+        "raw_weighted_SSE": 63733.18006045693
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\b7fcd70c378d9611ab50a7d48ee8507b3247ff9b9149713e36e17a90b897a622\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 6.528406188976987e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 111,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.485857406663854e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 50,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.695486561156486e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 69,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 6.528406188976987e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.1009286732196459,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.049734089035423465,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.013800173681273007,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.006894794119515801,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.885343832422688,
+        "temperature_RMSE_K": 9.831836196000545,
+        "raw_weighted_SSE": 63740.75981445026
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\845d3e50f96c9782b5e53873875be1a2c5d46dc5df556fbe04f4c66a74c71e0b\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.625000447182174e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 76,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.905969712065144e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 56,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.633256385337518e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 52,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.246247524823502e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 60,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.625000447182174e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.24776773346147046,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.14324840924074234,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.019348595416497593,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.012100212317315708,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.002801976623888622,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0016403122795828368,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.885352792859358,
+        "temperature_RMSE_K": 9.83188532002481,
+        "raw_weighted_SSE": 63740.754671220195
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\0f38e896b4f9b791e986c9d0a3575e87da424808a661db3c14c2cc09d3bcf1fa\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.771352142389333e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 112,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.468322225585467e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 44,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.582937991581275e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 57,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.771352142389333e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0828010721501497,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.03890395330988968,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.014783600226408433,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.0062532370934010395,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.196514746888948,
+        "temperature_RMSE_K": 9.410829733063203,
+        "raw_weighted_SSE": 63839.22756377079
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c0.1_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\b0a277d44bed824dfee549f619432eb4706dbae7904eb4f224bacf20a2e64bfb\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 6.548025539843128e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 71,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.659333975342577e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 51,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.67897357639913e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 56,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.677585115497322e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 6.548025539843128e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.2707000135041997,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.1321941285416676,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.023242390289571754,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.01233618405176888,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.002112419176704567,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0011825311743367227,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.196523756549842,
+        "temperature_RMSE_K": 9.410920022020303,
+        "raw_weighted_SSE": 63839.22378256598
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\ce03db50de307a28910f55ee5ebf3e804a7186c130a4210abb7474da7bf2419f\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.739004127595763e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 128,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.819492331861966e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.956050450592556e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 74,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.739004127595763e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.1799669668295836,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.06170775161948769,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.017755939306864293,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.008378296661735698,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.594331344897787,
+        "temperature_RMSE_K": 7.84287079905339,
+        "raw_weighted_SSE": 64157.003489277035
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\782bd0a7bdb43168147872bc8e192a060e164a43b1a1c90c54612852cd78aff5\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.523418231793812e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 107,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.555966745582566e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 67,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.475207656706175e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 79,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 6.21875670958616e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 35,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.523418231793812e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.20460238809813222,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.08359271788450097,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.01811301242869694,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.007416876325115823,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0005843048155949722,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0003376313420221086,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.594324474244333,
+        "temperature_RMSE_K": 7.842868228727793,
+        "raw_weighted_SSE": 64157.00573605432
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\0733886ec9d31d71492dbd3c7165e7112a3cd238d65479a1c85b3cccbf8ee1ea\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.135068145203149e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 134,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.395878315070604e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 55,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.839988180715409e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 83,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.135068145203149e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.1358987135095317,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.04651747696584922,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.02095507308631612,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.008730186656629155,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.321475032388289,
+        "temperature_RMSE_K": 7.823961917554666,
+        "raw_weighted_SSE": 64162.01818873216
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9381dee02c39242d5a63a930f7e02c8b2ae904d276bdf858eea304ba6b8c8dee\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.968756037257663e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 115,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.030446887337007e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 61,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.051643761637251e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 75,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.968756037257663e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.13184104710977101,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.05266239587042915,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.016718132029067686,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.007460189756148602,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.32144082461189,
+        "temperature_RMSE_K": 7.823858383470168,
+        "raw_weighted_SSE": 64162.01581047819
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\44d406d8f0937b3c28467648d136fb23bd5ee5691ec72b802ac4965a80aa5069\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.87395861073992e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 135,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.799239804739955e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 57,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.388302106254741e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 67,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.87395861073992e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.13666617941190704,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.04332904968254742,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.018015548011367673,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.007717077245528563,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 12.24302724360958,
+        "temperature_RMSE_K": 7.668816085332428,
+        "raw_weighted_SSE": 64218.26481272482
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c1_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\7c71122be20b068632d1e92d39c7cdd332f6611034ec14e40293c89299fcb3db\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.461534193315856e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 116,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.336437659572926e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 51,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.867539390029378e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 72,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.461534193315856e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.11927244120736073,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.04838084933003336,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.02540727625410192,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.00925124752450269,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 12.242990573448898,
+        "temperature_RMSE_K": 7.6685947724576105,
+        "raw_weighted_SSE": 64218.26148782113
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\fe37c31a5790db13ca94b659a528e618b83383e72199a81debe9b0858c7fb9d8\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 7.120747511635273e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0005658275953237535,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 7.850757780936135e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 6.264044458248463e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 7.120747511635273e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.3801315073976766,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.18266633157747228,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.03287202774456057,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.01055401837621688,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.00396966334429068,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0016920221807025832,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.02319751235905,
+        "temperature_RMSE_K": 13.947440403189349,
+        "raw_weighted_SSE": 64929.594034901296
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\c4249a2be56e941306adcd90f548c2b390c66c1b450c6a74ca805c51217b8121\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 5.815447821078124e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.00033159272140892426,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 4.068273153734481e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.940600412808635e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 5.815447821078124e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.2001147117600164,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.06810486061072114,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.01323765733704435,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.006745653992936577,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.002418138296017685,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0005112635871839224,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.02320705196207,
+        "temperature_RMSE_K": 13.947508836666286,
+        "raw_weighted_SSE": 64929.594815588775
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\b700be294ecccf95c07c5cc76f89eb3ab138866c4494a5ed2d290ac9f2abb372\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 8.978910317480882e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0005686659704053909,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 7.961462118544205e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 5.514877109646932e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 8.978910317480882e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.4026629137176661,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.1663131653050318,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.03287746294704744,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.013499117283581141,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.00531086553444135,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0015239629001170697,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 15.889545990912369,
+        "temperature_RMSE_K": 13.939215804549923,
+        "raw_weighted_SSE": 64926.86040202118
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\b65ec22ba11e13c036ea6a77265c11508e11af223527d4521e8da7801f92a403\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 3.744041521258623e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0007923139352783437,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.941762789670065e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 5.275867465570627e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 3.744041521258623e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.21851052017546357,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.06685459106279182,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.013088406052573378,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.006596134033280797,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.002287719342636637,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0006160700066373609,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 15.889584079811591,
+        "temperature_RMSE_K": 13.93934989896986,
+        "raw_weighted_SSE": 64926.86427295969
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\3680be034fe75a33f605163334226e07abb2b334422d0db77a1d59da2e8ece80\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 1.6333604548890435e-06,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.001304033941565308,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 8.719644947063898e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 3.743805450540094e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.6333604548890435e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.4728990365540321,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.13504803765952084,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.02820228529805931,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.013985257341804148,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.0051204161305934085,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0010876927234219104,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.730731421095896,
+        "temperature_RMSE_K": 13.863880061768494,
+        "raw_weighted_SSE": 64911.36713864254
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_blank_noise0",
+      "candidate_id": "joint_c10_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\cd156e91020eb7866a471a9e058c5018a18929df92f10563ad35fee39db3b022\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 6.343969687350182e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.00041424354770924765,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.781468308781342e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 2.0866690420007217e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 6.343969687350182e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.1873660687888466,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.06558655610681134,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.013962294317677931,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.00651700182763037,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.0026594407676510216,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0005851803260597039,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.730746732246923,
+        "temperature_RMSE_K": 13.863937249503744,
+        "raw_weighted_SSE": 64911.368654872946
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\7fce888abc77bcef8e7dd4105bf6de8fe401720b8f480fe7cd2cd8f80b0bad5d\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.271013811622652e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 113,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.893184514846553e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 56,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.722873114346385e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 68,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.271013811622652e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.10483280943255814,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.05813031059468796,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.010658734301205492,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.005789756615250738,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 17.07985739907207,
+        "temperature_RMSE_K": 9.418797144512592,
+        "raw_weighted_SSE": 63119.544486107014
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\3dec3757c6dcbec11a134289f00ce8d38e075b167250d960c145f31364a36160\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.962556291043256e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 77,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.858703487708453e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 61,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.950683846682296e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 58,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.528695616405457e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 65,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.962556291043256e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.3118386197112305,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.18834083681947286,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.022670838452897458,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.014732294258101375,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0025914367389219184,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0015426500325711379,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 17.079849483932147,
+        "temperature_RMSE_K": 9.418818543740462,
+        "raw_weighted_SSE": 63119.540964576045
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\1425e962b5e247a45f1ce9d14aac3f328d1e3b8dcb9b156ea1378deff4cf7264\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.53494619867945e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 107,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.978752562427417e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 61,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.39538755417857e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 66,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.53494619867945e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.12347350054984117,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.06818504013421002,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.009996208021768564,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.005318667618677596,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.52201075221854,
+        "temperature_RMSE_K": 9.361211670425883,
+        "raw_weighted_SSE": 63126.78812630869
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\204d6846e96ba3fca66f61618c494c612cb9981520a906297e66e64d3d76d9ca\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.638415138761957e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 82,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.143436244267832e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 59,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.79161935149375e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 55,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.76254205195437e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.638415138761957e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.24350725303683018,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.14333652880324324,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.019855462020034707,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.01211692197654934,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0024669611263215016,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0014238538125757835,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 16.52199933096751,
+        "temperature_RMSE_K": 9.361160245810167,
+        "raw_weighted_SSE": 63126.78996180482
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\ef00308c7593bcb2dfc9c18969efa8a5bd16eb108beb86ead6fe437ba47838ae\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.652965905435849e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 106,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.651764246536686e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 66,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.659711514980017e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 45,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.652965905435849e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.13970357171702827,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.06372763027130468,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.007007816542316411,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.0030890378033164067,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 12.852231526532094,
+        "temperature_RMSE_K": 8.961587716177462,
+        "raw_weighted_SSE": 63223.18318379602
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c0.1_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\f14fb9f2843f9eff32d78955aa8ac034515410a085d554e3dec2931b63f6d24c\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.497202858530727e-08,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 79,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.948400719839157e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 57,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.692499901348128e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 54,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.973259622597652e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 62,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.497202858530727e-08,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.24605833241567765,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.1305465634586233,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.01993074472164004,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.01059303371400068,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.0026227118405446875,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 3,
+          "passed": true,
+          "template_RMS_difference_e": 0.0013181117843637851,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 12.85218571091738,
+        "temperature_RMSE_K": 8.961531656262737,
+        "raw_weighted_SSE": 63223.17281995817
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\94573dbc5c67479010a6520589fe8d117814022ab3f3d4309e92660c13f09562\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.199907017252372e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 126,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.151705516075026e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.80248100290737e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 70,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.199907017252372e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.16575526201224863,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.08303304440689359,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.016779981574203472,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.008262711232474483,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.031771868598039,
+        "temperature_RMSE_K": 7.904284163746236,
+        "raw_weighted_SSE": 63522.0482125252
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\5f0067a68cc4fda5f3f33f7e5b3c94ea882aaa36eeef58636d00d61a77c1e1de\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.166841555772407e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 110,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.670303731468266e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 64,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.928242096890472e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 71,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.166841555772407e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.19807047472728875,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.1116107843141114,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.019673875318439397,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.010975100440273423,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.03171979233909,
+        "temperature_RMSE_K": 7.904348460471755,
+        "raw_weighted_SSE": 63522.047619872494
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\9dc4c346c96f6ee46fdf9b7dbfa9f21a917a0ad785be12a16bb00b35ff0bf537\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.368276323584723e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 124,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.92418421716934e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 63,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.963170519711184e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 76,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.368276323584723e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.17238087899331314,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.08722635457589588,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.01957209062376497,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.009697234330272043,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.765242444558403,
+        "temperature_RMSE_K": 7.887071329114599,
+        "raw_weighted_SSE": 63527.23354396499
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\e560d86a45393cf6571a432af2849bb7a2c16ee4c65056e4660a7b7b80755bc7\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 8.450667223769415e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 121,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.989791976794393e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 52,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.546356905865139e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 66,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 8.450667223769415e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.11431765289162532,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.06472768682546202,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.020220259094334544,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.010939832716584838,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.765197411787891,
+        "temperature_RMSE_K": 7.887092284909281,
+        "raw_weighted_SSE": 63527.237207344864
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\92e8c42100de07885ad4295fe5e7e283351771b3ccd2fac16fa7eaac66f4b4b2\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 7.260546865950346e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 129,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.944312622498728e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 60,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.96085782389855e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 73,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 7.260546865950346e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.1336682307132443,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.06421061024265559,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.016168847789814,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.007235660611665454,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 11.730333315274484,
+        "temperature_RMSE_K": 7.744255635849945,
+        "raw_weighted_SSE": 63584.50852948394
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c1_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_CERTIFIED",
+      "finite": true,
+      "certified": true,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\f6a69dd9478d898ec628ee1f2abaa7e92436bec0bb3f06c6087af58fdf83e8f6\\PREPARED.json",
+      "stage_count": 3,
+      "comparison_count": 2,
+      "returned_stage": 3,
+      "returned_role": "tightest_certified_endpoint",
+      "returned_pg_inf": 9.453423661653915e-07,
+      "last_requested_gtol": 1e-06,
+      "errors": [],
+      "failure_reasons": [],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 111,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.245382528888513e-05,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 62,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.225393426959272e-06,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 68,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "pg_inf": 9.453423661653915e-07,
+          "qualified": true,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.15974667333920087,
+          "consecutive_passed_comparisons": 1,
+          "from_stage": 1,
+          "passed": true,
+          "template_RMS_difference_e": 0.08666998773549252,
+          "to_stage": 2,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": true,
+          "color_RMS_difference_K": 0.01706368899858589,
+          "consecutive_passed_comparisons": 2,
+          "from_stage": 2,
+          "passed": true,
+          "template_RMS_difference_e": 0.009024165219893385,
+          "to_stage": 3,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 11.73027659180214,
+        "temperature_RMSE_K": 7.744296450535638,
+        "raw_weighted_SSE": 63584.50076377281
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s0.1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\516e5bea14e214b3f50b3f320216860a05d90a1943d3a09c3de11fae21c9b8a7\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 1.6393891009158779e-06,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.00046186258893499144,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 4.072330394322421e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 8.783007558577083e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.6393891009158779e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.4284215465744032,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.17635435373325722,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.035454406979234555,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.012147027986261487,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.005119933114476866,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0016283115018660978,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.7990068687699,
+        "temperature_RMSE_K": 13.549119033603567,
+        "raw_weighted_SSE": 64269.25959429265
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s0.1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\a897ca97979b103ad2ed4736cdfe1088b64dc5f5ca2316fbc2a0a5ac811e6e22\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 3.3418723432987463e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0003518016053476458,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.9951850930510773e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.9665105526200932e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 3.3418723432987463e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.23666606653404298,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.07112858474008181,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.011166863333076722,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.005740972159358958,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.0016775457828323863,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.000388921287440759,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.799022263771718,
+        "temperature_RMSE_K": 13.549321047486819,
+        "raw_weighted_SSE": 64269.262972016506
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s1",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\fd3c1fdbd607e2ea5119574fed34ca27500e54375878190b6a09bc574daad0b8\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 1.0352335735319684e-06,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0010510122886842055,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 3.537766127692521e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 6.767868484303108e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.0352335735319684e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.4606571180551016,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.17772029955091673,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.037914892454216476,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.012540053609180268,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.005479036049909766,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0016457080268123484,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.66755254526104,
+        "temperature_RMSE_K": 13.543581384171041,
+        "raw_weighted_SSE": 64266.55607832727
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s1",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\fc32704f8f0788685050fde82573c3830ab3eeb5f569863ed3c45dd3a5edb099\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 2.1146206563571468e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.00038743481567848903,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 2.0013566796706073e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 2.016829228068673e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 2.1146206563571468e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.24955300384373735,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.0731495262853119,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.011833008572793426,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.00631009194924145,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.0017211224971121033,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.00037054336972549407,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 14.667568408051972,
+        "temperature_RMSE_K": 13.543796414707238,
+        "raw_weighted_SSE": 64266.5595225142
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s10",
+      "initializer": "v3",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\6e8432b7feba6a0a0e4d68d79c000bebf79898f96d42583c74af507cc70f0590\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 7.872313183554525e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.0008859623985593146,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 4.6797953309862805e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 7.3560819444651315e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 7.872313183554525e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.43587713162121455,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.17531710351275606,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.038268920129754434,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.011094083972481619,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.004550534883609012,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.0016849435042183307,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.522526777437182,
+        "temperature_RMSE_K": 13.490857354233793,
+        "raw_weighted_SSE": 64250.99011308041
+      }
+    },
+    {
+      "case_id": "v5_development_selection_mother_0006_positive_weak_noise0",
+      "candidate_id": "joint_c10_s10",
+      "initializer": "smooth_demod",
+      "status": "FINITE_NUMERICALLY_UNCERTIFIED",
+      "finite": true,
+      "certified": false,
+      "source_parameter_receipt": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\inference\\cells\\a2c337a9a5bf5ec0395d1026ce54c6efe8861e31f1fff631ff0cf9f8eadca31a\\PREPARED.json",
+      "stage_count": 4,
+      "comparison_count": 3,
+      "returned_stage": 4,
+      "returned_role": "completed_tightened_endpoint",
+      "returned_pg_inf": 3.037968951957737e-07,
+      "last_requested_gtol": 1e-07,
+      "errors": [],
+      "failure_reasons": [
+        "two_consecutive_qualified_output_plateaus_not_observed"
+      ],
+      "stage_outcomes": [
+        {
+          "stage": 1,
+          "complete": true,
+          "gtol": 0.0001,
+          "maxiter": 280,
+          "iterations": 280,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 0.00036300279793977097,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 2,
+          "complete": true,
+          "gtol": 1e-05,
+          "maxiter": 200,
+          "iterations": 200,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 2.0272890708383784e-05,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 3,
+          "complete": true,
+          "gtol": 1e-06,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 1.560937306521737e-06,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        },
+        {
+          "stage": 4,
+          "complete": true,
+          "gtol": 1e-07,
+          "maxiter": 160,
+          "iterations": 160,
+          "success": false,
+          "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+          "pg_inf": 3.037968951957737e-07,
+          "qualified": false,
+          "inner_passed": true,
+          "reference_inner_passed": true
+        }
+      ],
+      "comparison_outcomes": [
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.2444167379658759,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 1,
+          "passed": false,
+          "template_RMS_difference_e": 0.06536845030993972,
+          "to_stage": 2,
+          "within_output_budgets": false
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.01096563804888894,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 2,
+          "passed": false,
+          "template_RMS_difference_e": 0.005480063497313548,
+          "to_stage": 3,
+          "within_output_budgets": true
+        },
+        {
+          "both_endpoints_qualified": false,
+          "color_RMS_difference_K": 0.0016862863552298767,
+          "consecutive_passed_comparisons": 0,
+          "from_stage": 3,
+          "passed": false,
+          "template_RMS_difference_e": 0.000372437159820913,
+          "to_stage": 4,
+          "within_output_budgets": true
+        }
+      ],
+      "metrics": {
+        "domain_pixels": 65536,
+        "template_RMSE_e": 13.522539730100897,
+        "temperature_RMSE_K": 13.491039636739222,
+        "raw_weighted_SSE": 64250.9926734734
+      }
+    }
+  ],
+  "global_finite": 222,
+  "global_certified": 210,
+  "global_uncertified": 12,
+  "global_not_executed": 858,
+  "global_planned": 1080,
+  "new_inverse_calls_by_review": 0,
+  "outer_optimizer_calls_by_review": 0,
+  "conditional_inner_calls_by_review": 0,
+  "scientific_candidate_selection": false,
+  "candidate_full120_denominators_retained": true
+}

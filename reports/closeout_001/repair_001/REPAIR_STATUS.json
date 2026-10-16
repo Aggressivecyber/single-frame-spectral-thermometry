@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-16T07:11:43.150129+00:00",
+  "time": "2026-10-16T11:08:16.133637+00:00",
   "schema": "root-integrated-repair-status-v001",
   "scope": "implemented repairs and bounded diagnostic preparation",
   "future_execution_model": "gpt-6.1-sol",
@@ -65,13 +65,13 @@
   "old_independent_raw_exact_replay": true,
   "final_payloads_opened": false,
   "final_method_selected_by_quick": false,
-  "scientific_repair_acceptance": "186/1080 finite and numerically certified; last54 native byte/scoring and independent CPU reviews passed; mother0006 first-pair36 started; full scientific selection pending",
+  "scientific_repair_acceptance": "222/1080 finite,210 certified,12 uncertified; high-c10 stage iteration limits identified. Fresh native and independent CPU reviews pending. No selection.",
   "whole_closeout_complete": false,
-  "quick_phase": "C1_first_stage_mother0006_first_pair_running_at_verified_startup",
-  "launcher_pid": 60656,
-  "actual_python_pid": 55360,
-  "startup_verified_utc": "2026-10-16T07:09:56.985918+00:00",
-  "next_wake_local": "2026-10-16T19:00:00+08:00",
+  "quick_phase": "closed_mother0006_first_pair36_readonly_checks_pending",
+  "launcher_pid": 51852,
+  "actual_python_pid": 48792,
+  "startup_verified_utc": "2026-10-16T11:05:19.011965+00:00",
+  "next_wake_local": "2026-10-16T20:00:00+08:00",
   "registered_source_commit": "844b3b540d2a3c791d2664b60ee0256f1b5f3d72",
   "registered_source_commit_remote_verified": true,
   "science_result_for_repaired_methods": "pending",
@@ -86,40 +86,66 @@
     "full_panel_auto_started": false
   },
   "current_job": {
-    "phase": "C1v3_selection_first_stage_mother0006_first_pair",
-    "status_scope": "verified startup snapshot, not live progress",
-    "launcher_pid": 60656,
-    "actual_python_pid": 55360,
-    "started_utc": "2026-10-16T07:09:02.3220864Z",
-    "NT_verified_utc": "2026-10-16T07:09:56.985918+00:00",
-    "owner_token": "2e36856a994a4cd797102658ffd2262b",
-    "raw_ids": [
-      "v5_development_selection_mother_0006_blank_noise0",
-      "v5_development_selection_mother_0006_positive_weak_noise0"
-    ],
-    "planned_cells": 36,
-    "reused_cells": 0,
-    "maximum_new_inverse_calls": 36,
-    "maximum_inverse_wall_s_excluding_overhead": 6480,
-    "charged_before_shard": 5273,
-    "charged_at_startup": 5274,
-    "charged_maximum_after": 5309,
-    "full_stage_before": 186,
-    "full_stage_maximum_after": 222,
+    "phase": "C1v3_mother0006_first_pair_read_only_checks",
+    "status_scope": "NT verified11:05Z and preceding CPU activity; native/CPU-plan/independent review terminal results pending",
+    "native_audit": {
+      "launcher": {
+        "pid": 51852,
+        "available": true,
+        "actual_pid": 51852,
+        "parent_pid": 56920,
+        "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json --device cuda"
+      },
+      "child": {
+        "pid": 48792,
+        "available": true,
+        "actual_pid": 48792,
+        "parent_pid": 51852,
+        "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -u -B -m research_closeout.runtime_entry --module research_closeout.analyze_selection_shard --shard-receipt reports/closeout_001/repair_001/c1_selection_001/shards/daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b/RUN_74dc17f7e09248158e8350aa83a24129.json --device cuda"
+      },
+      "exec_session_id": 53951,
+      "started_local": "2026-10-16T19:02:02.0241487+08:00",
+      "prior_CPU_seconds": 117.953125,
+      "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\analysis\\daa7792b3b866a230506f3cd15faf0dc917c84bc78f8e1a69f1bfaf64ed6752b\\NATIVE_ANALYSIS.json"
+    },
+    "auxiliary_CPU_plan": {
+      "launcher": {
+        "pid": 59512,
+        "available": true,
+        "actual_pid": 59512,
+        "parent_pid": 55596,
+        "command_line": "\"E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe\" -B -"
+      },
+      "child": {
+        "pid": 61284,
+        "available": true,
+        "actual_pid": 61284,
+        "parent_pid": 59512,
+        "command_line": "\"C:\\Users\\10629\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B -"
+      },
+      "exec_session_id": 43059,
+      "started_local": "2026-10-16T19:03:14.4485064+08:00",
+      "prior_CPU_seconds": 87.390625,
+      "expected_result": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\MOTHER0006_REMAINDER_PLAN_REVIEW.json"
+    },
+    "active_independent_CPU_reviewer": "sol61_numeric_finish",
+    "new_complete_inverse_calls": 0,
+    "next_scientific_inverse_started": false,
+    "last_closed_charged": 5309,
+    "last_closed_ledger_rows": 5849,
+    "full_stage_finite": 222,
+    "full_stage_certified": 210,
+    "full_stage_uncertified": 12,
+    "full_stage_unexecuted": 858,
     "full_stage_denominator": 1080,
-    "semantic_development_before": 632,
-    "semantic_development_maximum_after": 668,
-    "semantic_development_cap": 3400,
     "human_cumulative_cap": 16000,
     "current_stricter_guard": 12000,
+    "semantic_development_used": 668,
+    "semantic_development_cap": 3400,
+    "next_wake_local": "2026-10-16T20:00:00+08:00",
+    "no_restart_from_elapsed_time": true,
+    "lock_absence_does_not_authorize_another_GPU": true,
     "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
-    "source_commit": "844b3b540d2a3c791d2664b60ee0256f1b5f3d72",
-    "source_commit_remote_verified": true,
-    "next_wake_local": "2026-10-16T19:00:00+08:00",
-    "initial_observation_scope": "real NT process/locks verified; namespace forward precheck still preceding first ticket; initial startup_verified false retained",
-    "continued_startup_verified": true,
-    "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stdout.txt",
-    "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stderr.txt",
     "final_payloads_opened": false
   },
   "quick_v002": {
@@ -359,7 +385,7 @@
     "inference_removed_zero_placeholder_bytes": 51904512,
     "all_221_other_D_task_files_byte_unchanged": true
   },
-  "global_actual_new_inverse_count": 5274,
+  "global_actual_new_inverse_count": 5309,
   "global_remaining_inverse_calls": 10727,
   "quick_v003_result": {
     "complete": true,
@@ -383,7 +409,7 @@
     "zero_reserve_bytes_removed": 51904512,
     "all221_other_D_files_byte_unchanged": true
   },
-  "global_actual_new_inverse_count_scope": "07:09:56Z startup snapshot; 5273 before current36-cell shard; not a live count",
+  "global_actual_new_inverse_count_scope": "Last closed36-cell shard; current read-only checks charge0",
   "global_remaining_inverse_calls_scope": "Human16000 cumulative cap minus5273 before any new mother0006 inverse",
   "budget_reconciliation": {
     "completed": true,
@@ -730,16 +756,53 @@
       "next_wake_local": "2026-10-16T15:00:00+08:00",
       "no_restart_from_elapsed_time": true,
       "final_payloads_opened": false
+    },
+    {
+      "phase": "C1v3_selection_first_stage_mother0006_first_pair",
+      "status_scope": "verified startup snapshot, not live progress",
+      "launcher_pid": 60656,
+      "actual_python_pid": 55360,
+      "started_utc": "2026-10-16T07:09:02.3220864Z",
+      "NT_verified_utc": "2026-10-16T07:09:56.985918+00:00",
+      "owner_token": "2e36856a994a4cd797102658ffd2262b",
+      "raw_ids": [
+        "v5_development_selection_mother_0006_blank_noise0",
+        "v5_development_selection_mother_0006_positive_weak_noise0"
+      ],
+      "planned_cells": 36,
+      "reused_cells": 0,
+      "maximum_new_inverse_calls": 36,
+      "maximum_inverse_wall_s_excluding_overhead": 6480,
+      "charged_before_shard": 5273,
+      "charged_at_startup": 5274,
+      "charged_maximum_after": 5309,
+      "full_stage_before": 186,
+      "full_stage_maximum_after": 222,
+      "full_stage_denominator": 1080,
+      "semantic_development_before": 632,
+      "semantic_development_maximum_after": 668,
+      "semantic_development_cap": 3400,
+      "human_cumulative_cap": 16000,
+      "current_stricter_guard": 12000,
+      "registration_sha256": "f218cad4346e8f5fff2a6f176c87b728a5e4fe3fa47598597b606caacb1abf74",
+      "source_commit": "844b3b540d2a3c791d2664b60ee0256f1b5f3d72",
+      "source_commit_remote_verified": true,
+      "next_wake_local": "2026-10-16T19:00:00+08:00",
+      "initial_observation_scope": "real NT process/locks verified; namespace forward precheck still preceding first ticket; initial startup_verified false retained",
+      "continued_startup_verified": true,
+      "stdout": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stdout.txt",
+      "stderr": "E:\\CodexWork\\thermometry\\closeout_001\\reports\\closeout_001\\repair_001\\c1_selection_001\\mother0006_first_pair_006.stderr.txt",
+      "final_payloads_opened": false
     }
   ],
   "global_inverse_budget": {
     "human_authorized_cumulative": 16000,
-    "charged_before_current_shard": 5273,
-    "charged_at_startup": 5274,
+    "charged_before_current_readonly": 5309,
+    "charged_at_readonly_startup": 5309,
     "legacy_registered_guard_unchanged": 12000,
     "extension_receipt": "repair_001/INVERSE_BUDGET_EXTENSION_16000.json",
-    "current_shard_maximum_after": 5309,
-    "counter_snapshot_scope": "current36-cell shard startup snapshot; no promise of current live count"
+    "current_read_only_phase_new_inverse_cap": 0,
+    "counter_snapshot_scope": "Last closed scientific shard; all current read-only checks0 new complete inverses"
   },
   "prescreen_completed": {
     "cells": 18,
@@ -902,7 +965,7 @@
     "PDF_visual_render_QA_performed": false,
     "seven_final_figure_groups_completed": false
   },
-  "registered_source_commit_scope": "Current mother0006 first-pair startup uses this pushed commit; all42 registered scientific source hashes unchanged",
+  "registered_source_commit_scope": "Last scientific-shard source844b3b5; current read-only checks started froma134857 with the same42 registered scientific hashes",
   "previous_next_inverse_batch_plan": {
     "mother": "v5_development_selection_mother_0006",
     "conditions": [
@@ -915,5 +978,44 @@
     "semantic_development_maximum_after": 668,
     "full_stage_maximum_after": 222,
     "requires_fresh_native_audit_and_CPU_plan_passed": true
+  },
+  "last_completed_mother0006_first_pair": {
+    "terminal_utc": "2026-10-16T08:35:02.092564+00:00",
+    "terminal_sha256": "907d8dffc3a5c5d30d65729c8a6ab4fe2a2e2b442bbffc70d05a86afdf013192",
+    "finite": 36,
+    "certified": 24,
+    "uncertified": 12,
+    "new_inverse_calls": 36,
+    "reused": 0,
+    "full_stage_finite": 222,
+    "full_stage_certified": 210,
+    "full_stage_unexecuted": 858,
+    "root_metadata_review_sha256": "ae5c06119f5b2fd146c803e8380787d9105c2fd9e5b8f673f6d5f8c027b341bb",
+    "stage_records": 127,
+    "output_comparisons": 91,
+    "certified_stage3_gtol1e_minus6": 17,
+    "certified_stage4_gtol1e_minus7": 7,
+    "uncertified_all_c10": true,
+    "uncertified_all48_stages_iteration_limited": true,
+    "uncertified_inner_and_reference_passed": true,
+    "fresh_native_audit_status": "pending",
+    "independent_CPU_review_status": "in_progress",
+    "scientific_method_selection": false
+  },
+  "next_inverse_batch_not_started": {
+    "mother": "v5_development_selection_mother_0006",
+    "conditions": [
+      "negative_weak",
+      "positive_normal",
+      "negative_normal"
+    ],
+    "planned_cells": 54,
+    "new_inverse_calls": 54,
+    "maximum_after_if_later_launched": 5363,
+    "semantic_development_maximum_after": 722,
+    "full_stage_maximum_finite_after": 276,
+    "full_stage_maximum_certified_after_if_all_new_pass": 264,
+    "CPU_plan_terminal_pending": true,
+    "requires_current_audit_and_plan_integrity_passed_not_all_cases_numerically_certified": true
   }
 }
