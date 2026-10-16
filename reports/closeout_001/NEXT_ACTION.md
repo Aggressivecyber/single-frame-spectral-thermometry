@@ -1,3 +1,37 @@
+# Current continuation: mother0005 remaining three conditions; wake2026-10-16 14:00 Singapore
+
+继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；后续执行智能体全部gpt-6.1-sol/max，旧Astra审阅和失败保留。2026-10-14新计划替代旧永久停止/封存规则，合同、小片与工作稿均不是整个课题完成。
+
+先读reports/closeout_001/NEXT_ACTION.md首节、repair_001/REPAIR_STATUS.json、EXECUTION_POLICY.json、LATEST_USER_EXECUTION_RULES_20261016.txt、INVERSE_BUDGET_EXTENSION_16000.json、c1_selection_001/SELECTION_REGISTRATION.json、MOTHER0005_FIRST_PAIR_COMPLETION_VERIFICATION.json、MOTHER0005_REMAINDER_PLAN_REVIEW.json、MOTHER0005_REMAINDER_PROCESS.json和MOTHER0005_REMAINDER_STARTUP_VERIFICATION.json。再读USER_EXECUTION_REQUEST.txt、research_closeout/execution_spec.yaml、reports/closeout_001/STUDY_PROTOCOL.yaml和root_cause_team_001报告。最新用户AGENTS替代旧AGENTS：数据/日志/cache/tmp都E/D；正确启动长计算后只设一次苏醒，不持续监控；不假设、不隐藏困惑、主动说明取舍；只改必要处，不增推测性功能/一次性辅助抽象，不吞错误，校验限系统边界；保留科学登记与证据核验。规则文件UTF-8、1126B、SHA2e484260833357a5674cbe3323bd9a19cbd3e45ee83363e354fc5fdfcebe4724。
+
+工作区E:/CodexWork/thermometry/closeout_001，research/closeout-001，旧public_repository_001输入/权重/报告哈希只读。C仅已有执行程序，无新数据文件。无CNN。人类累计新完整逆上限16000（包含已有5219，不是另加），本冻结阶段仍更严格12000与semantic development3400。四根E/D新输出总4GiB、E自由底线2GiB；D项目256MiB/D底线128MiB独立。192MiB前瞻reserve通过，四根525524621B、E自由11524296704B为预检快照；每格继续实时reserve。未来全部科学的4GiB存储证明仍未完成。
+
+当前唯一GPU作业2026-10-16T02:11:24.4937803Z（10:11新加坡）启动，launcher56992、实际Python56112。真实命令python -u -B -m research_closeout.runtime_entry --module research_closeout.c1_selection run-shard --device cuda --raw v5_development_selection_mother_0005_negative_weak_noise0 --raw v5_development_selection_mother_0005_positive_normal_noise0 --raw v5_development_selection_mother_0005_negative_normal_noise0。02:12:06.827278Z NT核验两真实命令/父子、E global/local锁pid56112及owner ec493730d99044b58abf093fa1372ede、首个负弱ticket为cuda:0/float64、42源码和登记/raw身份正确，stderr0。启动调用计数5220。源与已完成36格证据提交d21f73f2d41580d478f4f34d52e8c3f313ce4651已推送且远端SHA一致；之后交接提交看最新Git。以上仅启动快照。
+
+本片只补原登记母0005的剩余三种条件，54新/0复用、native256、每格180秒、最多9720秒反演核心加控制器/持久化开销；不是新网格/方法。片前累计5219新调用、5759账本行（540reused），启动5220，片后最多5273。semantic development578→最多632/3400。完整第一阶段1080=12母×5raw×9倍率×双初值；片前132有限认证/948未执行，片后最多186/1080，会补齐第二个母场景90格，而不是完成12母选型。旧观察器one_raw_denominator=54是本三raw总格数，不是单raw54格。
+
+醒来先核对NT真实PID/命令/父子、global/local PHASE_ACTIVE.json、shards/*/RUN_*.json或STOP_*.json中本三个raw终态、SUMMARY_CURRENT.json、case_states/*/STATE_*.json、mother0005_remainder_005.stdout.txt/stderr.txt。FIRST_STAGE_RESULT仅整个1080终态，单片没有它正常。真实进程仍运行则只设一个更晚苏醒并结束，不持续监控、不按观察超时重启、不编辑42冻结依赖、不启动第二GPU。用v3_tangent_probe_002/startup_observer.py的process()读NT，不用曾挂起WMI/CIM。同物理方法/raw的成功、未认证、失败和中断一律复用，评分故障只score-only且0新逆；普通数值失败保留候选全部120格，资源中断是未完成而非科学淘汰。
+
+刚完成母0005空白/正弱：2026-10-15T23:02:17.496030Z返回36/36有限认证（34新+2旧c1s1精确复用）；02:00:56Z原进程37944/40128及两锁退出、stderr0，累计5219。终态SHA24be5d4f5dab3ace4fadd8917fdb1c9ec198219affd7a4dc464115464a88cc2d；root原生36端点canonical/latent逐数组字节、26项全65536评分全匹配，0逆/optimizer/inner，NATIVE_ANALYSIS SHAba43c33bfae3f42f92376dcd5b7b2c8c602636b8b9506133784959d5560883f2，函数内部21.785秒（不含前置登记核验）。root核验末段曾确认锁已清，审计随后0退出，无重启。MOTHER0005_FIRST_PAIR_COMPLETION_VERIFICATION SHAef8fa39cd2ebd3f5fe452e5c89a72780772f69fdfab2706d9e4231a429adee76。
+
+独立Sol61 CPU36链/108stage/72platform通过，34新与2旧分别绑定原source/context/float64参数/score，旧格来源38源登记，不倒填当前42。仅两个预定最终点作物理复算，紧内解tol1e-13冷热最大模板Δu_RMS6.4894e-9e、actual normal relative≤1.0119e-13；1378已读冻结对象SHA不变。c1_mother0005_first_pair_analysis_001/FINAL_REVIEW_RECEIPT SHA4a084f4b75a841c5d19c7c2a25fd29e0b9391e23c1af553b8bd674d187d2ed59，智能体已停改。实际最终均1e-6，三stage1e-4/1e-5/1e-6与两平台，未执行1e-7；早stage潜参没存，只日志逻辑，不能称独立重演。postblur双初值最大RMS .0015997K/.0016054e，latent温度差另量。34新逆核心1234.654949秒，首新票→终态3196.259783秒；2旧core38.762272秒仅历史不重计。
+
+本轮640份归档报告与Git索引逐字节一致，STAGED_MOTHER0005_FIRST_PAIR_EVIDENCE_BYTE_REVIEW有回执；42登记科学源码未改。母0005空白下C1色温6.60–11.78K/模板16.04–24.21e，原v3为16.88K/15.00e；正弱C1为6.66–11.86K/16.28–24.96e，v3为16.56K/16.25e，数值合格与模板取舍分开。母0000完整90格的描述保留：C1色温7.41–13.95K/模板18.92–29.64e，v3为16.80K/18.32e，正常正负模板比1.031–1.620。仍只有1个完整母，当前132格来自10raw/5父场景，其余母仅局部缓存，九组全部保留；不能由两条件或一母选择最终方法。paper/manuscript_zh.md和claims已更新132格，仍工作稿。
+
+本片终态按全54格核对params/推理/score链、原生纯forward字节与全65536评分、真实梯度/三个端点两平台/双初值/成本，保留所有失败及未执行；随后比较两个完整母仍仅描述。继续原登记顺序小片至所有1080格，每候选120格，再按原科学规则选2进其余24母确认选1。不增网格、不按成本/有利单raw人为淘汰。无可靠收益可选冻结v3研究基线，原v3生产60/60数值失败仍为研究基线，不能称部署合格。
+
+后续完整科学仍需执行：预算报告第一阶段加两候选确认结束6647；若新主胜出，主1820 UQ+v3独立896MC等分支13030，补缺失v3初值的条件14757；主=v3精确去重10615。双方法都1820是可选扩展非硬需。完整匹配原146独立因素及45标定/12动态较仅24nominal增加716、条件最坏15473，现16000可容纳但存储未证明。未来科学需显式新cap/phase登记；解决旧canonical不是完整v3state的缺失初值/no-rerun身份，不盲目改名重逆。4GiB前瞻统计-only/raw/fallback/代表图字节合同仍待实现，不删或降精度已有唯一科学证据。
+
+更正UQ12新母6cal/6eval各覆盖六种实际几何、温度/强度匹配、母/噪声/MC/bootstrap种子互斥；主12基准+896独立完整MC+768 fitted-mean条件bootstrap+144低probe=1820，v3至少896独立MC。bootstrap仅条件尺度，独立MC评价覆盖；低probe/不稳定/未认证refit不给可信协方差。12维色温/电子模板尺度分别绑定。新方法200独立null校准+200评价、method/domain阈值，不能套旧v3或60e。匹配独立/3分辨率/3光子/结构/强度/标定/动态矩阵及失败分母完整。旧sampled Gaussian科学批仅登记失配压力，不倒填matched；C1曝光用smooth_calibration_exposure.known_exposure缩放新增斜率。真实标定缺失，模拟分布只是假定。
+
+保留原science815raw/2821行/896MC与28原源码归档5627a8e。C1是显式新物理目标：原661×7节点/lookup不变，±.25K Hermite；新增raw界.0401176e/色温.00224925K，绝对LUT误差尚在，T-anchor先验低.6249%，不是纯精度升级。v001 latent缺失，折点非唯一因果证明；外部check脚本/yaml未附，本地规范/检查自行实现。v3耦合v1 OOM、v2残差过却更慢、v3逐元素仅CPU均保留，优先科学分片，不并行另一GPU诊断。
+
+用户授权无用E数据删除留简报：旧回收/npm缓存释放9.4655GiB私有简报不上传原路径；360备份删除被自动审核拒绝，不换路绕过。此前6完成CPU fixture476文件/4464998B已清理，哈希/故障简报/原合同保留、4123其他对象不变，历史fixture_root不存在预期，不补造字节或声称提速。真实原始数据/权重/参数/fallback未删。D已完成全零reserve清理有owner/seal/hash链，不清实际fallback或在用reserve。本轮无额外删除。
+
+图1 SYSTEM_TARGETS_001和图2 SOURCE_MECHANISM_002 PNG已视检；PDF仅结构检查，七组尚未完成。中文paper/manuscript_zh.md、claims_to_evidence.md仅工作稿。完成原始文献查新矩阵（现FRAME/光谱VP/MAP原文已读，温度发射率全文仍仅摘要）、七组主图/视觉QA、完整中文论文/数据方法局限/claims/raw+标定接口/干净复现包。最终全部源码依赖/方法/参数/光学目标/检测阈值/区间校准/基线/统计计划冻结并核验FINAL_METHOD_FREEZE.json后才生成/打开64main+36signed母场景（512+180帧）；payload仍闭。用户允许v3进入最终，无逐步许可；最终失败仍写论文，不据最终结果调参/换checkpoint/阈值/重选。GitHub最终发布保留旧发布与成功上传回执，不重新下载。无真实气体温度/AlO浓度/10kHz硬件/保证录用主张。
+
+## Historical snapshots, superseded by the section above
+
 # Current continuation: mother0005 first pair; wake2026-10-16 10:00 Singapore
 
 继续完成单帧七通道谱温反演课题。用户要求全部修复、小验证快速迭代；所有后续执行智能体gpt-6.1-sol/max，旧Astra审阅和旧失败保留。2026-10-14新计划替代旧永久停止/封存规则。合同、分片和工作稿均不是整个课题完成。
