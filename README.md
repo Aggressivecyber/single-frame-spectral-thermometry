@@ -1,10 +1,28 @@
 # Single-frame spectral thermometry
 
+## 当前研究：六通道测温与特征发光联合成像
+
+2026-10-17完成首轮六通道合成对照：从同一视场、同一传感器区域上的一幅重叠编码图像恢复六幅滤光通道图像。700、800、905 nm用于连续谱有效色温拟合，431.5、486、516.5 nm用于CH*、AlO、C₂*相关波段的超额发光读出。
+
+共44个独立合成母场景、1056幅原始观测及6次网络训练。预登记主条件下，噪声加权TV的色温RMSE为 **54.59 K**，混合网络三个种子为 **81.79–85.59 K**，且存在弱发光幅值低估与跨通道误报。**本轮混合原型未通过继续线；TV保留为后续研究参考。** 所选TV也未达到50 K及所有通道5%相对L2的绝对筛查线。
+
+- [当前方案与文献依据](research_joint_imaging/README.md) · [冻结配置](research_joint_imaging/protocol.json) · [源码登记](research_joint_imaging/REGISTRATION.json)
+- [完整中文结果](reports/joint_imaging_001/RESULTS_zh.md) · [方法对比图](reports/joint_imaging_001/review_001/method_comparison.png) · [联合读出图](reports/joint_imaging_001/review_001/joint_products.png)
+- [重放与指标核验](reports/joint_imaging_001/review_001/VERIFICATION.json) · [完成审计](reports/joint_imaging_001/COMPLETION_AUDIT.json)
+
+本分支包含当前源码、原始执行源码快照、配置、统计报告、图像和六个网络检查点（`reports/joint_imaging_001/cnn_{post,dc}_{701,702,703}.pt`）。大体积原始ADC、数据集及预测数组保留在项目E盘目录和计算服务器，其SHA256与大小记录在[输入清单](reports/joint_imaging_001/review_001/INPUT_MANIFEST.json)。后续方向为以收敛TV解为起点的受约束神经修正，尚未启动新训练。
+
+结果对应理想滤片、已知空间算子与相机噪声模型下的合成工程试验；物理读出为有效色温与特征波段发光。实际滤片响应、物种交叉响应、曝光性能及硬件测温仍需标定与实测。
+
+## 早期七通道推理原型
+
+以下`infer.py`入口和默认权重对应早期七通道版本；当前六通道实验入口与配置位于`research_joint_imaging/`。
+
 七通道单帧测温原型：物理参数展开 + 共享 CNN。公开代码和当前已选权重，支持 CPU/CUDA 推理。
 
 A small physics-unfolded neural reconstruction prototype for seven spatially overlapping spectral channels in one common-field sensor image. The published model has **5,797 trainable parameters** and **six shared stages**. Each stage applies a matrix-free damped Gauss–Newton update before and after a bounded CNN correction.
 
-**最新测试：**同一份权重完成 768 次推理。由 72 帧真实火焰图像形态构建的测试中，正常信号空间相对 L2 为 **27.6%–67.1%**，弱信号为 **51.8%–227.2%**。六组正常信号都未达到 25% 空间误差目标。真实部分是图像形态，编码测量与温度仍是模拟设定，当前不报告实测测温精度。
+**该版本扩展测试：**同一份权重完成 768 次推理。由 72 帧真实火焰图像形态构建的测试中，正常信号空间相对 L2 为 **27.6%–67.1%**，弱信号为 **51.8%–227.2%**。六组正常信号都未达到 25% 空间误差目标。真实部分是图像形态，编码测量与温度仍是模拟设定，当前不报告实测测温精度。
 
 完整结果：[中文报告](reports/expanded_evaluation_001/RESULTS_zh.md) / [English report](reports/expanded_evaluation_001/RESULTS.md)。Only this selected model was evaluated; weights stayed fixed and there were no contribution controls. Two of 20 synthetic stress families passed all internal screens.
 
