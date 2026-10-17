@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_001/research_joint_imaging_v2/pipeline.py", line 212, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_001/research_joint_imaging_v2/pipeline.py", line 196, in main
+    probe(protocol,op,rad,output,device)
+  File "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_001/research_joint_imaging_v2/pipeline.py", line 85, in probe
+    if native_fd_error>=.03:raise RuntimeError("Native float32 proximal finite difference failed")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Native float32 proximal finite difference failed

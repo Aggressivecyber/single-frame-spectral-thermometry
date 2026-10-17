@@ -1,0 +1,303 @@
+{
+  "run_id": "joint_imaging_v2_dev_001",
+  "evidence_level": "small synthetic pilot with hypothetical calibrated optics and sensor",
+  "user_objective": "one common-FOV frame -> filter-channel images -> continuum color temperature plus CH/C2/AlO-region emission maps; advanced traditional inverse reconstruction combined with neural priors",
+  "channel_centers_nm": [
+    431.5,
+    486.0,
+    516.5,
+    700.0,
+    800.0,
+    905.0
+  ],
+  "channel_widths_nm": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "channel_roles": [
+    "CH-region",
+    "AlO-region",
+    "C2-region",
+    "continuum_candidate",
+    "continuum_candidate",
+    "continuum_candidate"
+  ],
+  "filter_model": "unit top-hat transmission, flat known photon QE; nine-node band integration; provisional centers and widths, no hardware choice",
+  "model": {
+    "shape": [
+      128,
+      128
+    ],
+    "carrier_bins_xy": [
+      [
+        10,
+        49
+      ],
+      [
+        20,
+        -30
+      ],
+      [
+        30,
+        20
+      ],
+      [
+        39,
+        -59
+      ],
+      [
+        49,
+        -10
+      ],
+      [
+        59,
+        39
+      ]
+    ],
+    "channel_gain": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "modulation_depth": [
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85
+    ],
+    "phase_rad": [
+      0.13,
+      -0.27,
+      0.41,
+      -0.19,
+      0.31,
+      -0.37
+    ],
+    "object_cutoff_cpp": 0.12,
+    "decode_cutoff_cpp": 0.13,
+    "relay_psf_sigma_px": 0.35,
+    "read_noise_e": 3.0,
+    "full_well_e": 60000.0,
+    "adc_bits": 12,
+    "black_level_DN": 128,
+    "boundary": "periodic finite-grid pilot; common object PSF across bands"
+  },
+  "design": {
+    "mother_seeds": {
+      "train": [
+        51001,
+        51064
+      ],
+      "validation": [
+        61001,
+        61016
+      ],
+      "calibration": [
+        71001,
+        71008
+      ],
+      "heldout": [
+        81001,
+        81016
+      ]
+    },
+    "counts_800nm_mean_e": [
+      1000,
+      4000
+    ],
+    "conditions": {
+      "blank": [
+        0,
+        0,
+        0
+      ],
+      "CH_weak": [
+        0.05,
+        0,
+        0
+      ],
+      "AlO_weak": [
+        0,
+        0.05,
+        0
+      ],
+      "C2_weak": [
+        0,
+        0,
+        0.05
+      ],
+      "all_weak": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "all_strong": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    "noise_repeats": 2,
+    "noise_seed": 4920241,
+    "latent_temperature_range_K": [
+      2400,
+      3600
+    ],
+    "feature_synthesis": "independent nonnegative spatial emission added to the three visible passbands; diagonal band injections are an engineering control, not measured molecular spectra",
+    "truth": "total post-object-PSF passband images; effective color temperature fitted to the three noiseless thermal images; injected post-PSF emission also retained",
+    "temperature_reference": "fit band-integrated photon Planck radiance with one nonnegative gray amplitude per pixel; range 1800-4500 K; no gas-temperature claim",
+    "feature_readout": "decoded visible images minus extrapolated fitted continuum, in electrons; compare both to noiseless readout and to actual injected post-PSF emission",
+    "detection": "excess divided by raw-derived upstream per-band noise scale; per-method and per-channel 99th-percentile threshold from all blank calibration frames; held-out false-positive fraction reported separately by light level, and sensitivity on injected pixels above 20 percent of the active map mean",
+    "primary_point": "mean 800 nm continuum 4000 electrons, all_weak condition",
+    "heldout_use": "evaluate once after validation choices and calibration thresholds are frozen; no adaptive tuning on these mothers"
+  },
+  "traditional": {
+    "objective": "fixed estimated shot/read/quantization-variance weighted raw least squares plus spatial isotropic TV of each band, constrained to the common optical frequency support",
+    "weight_source": "re-encoded FFT initialization; no ground-truth variance",
+    "solver": "ADMM with matrix-free preconditioned CG; constant-weight Fourier diagonal-plus-rank-one normal operator as preconditioner",
+    "tv_lambda_candidates": [
+      0.0003,
+      0.001,
+      0.003
+    ],
+    "rho": 0.02,
+    "maximum_iterations": 400,
+    "pcg_iterations": 10,
+    "pcg_tolerance": 1e-05,
+    "relative_iteration_change_target": 0.0001,
+    "selection": "lowest validation mean per-band relative L2 among FFT, converged weighted least squares and TV; also retain a network-off control with the same three physical proximal stages",
+    "numerical_audit": "repeat selected TV on two validation observations at double iteration count; report output change and stationarity, do not label an unconverged reference converged"
+  },
+  "learning": {
+    "methods": [
+      "ordinary_post",
+      "grouped_post",
+      "full",
+      "no_pair"
+    ],
+    "seed": 811,
+    "updates_per_method": 6000,
+    "phases": [
+      1500,
+      1500,
+      3000
+    ],
+    "learning_rate": 0.0002,
+    "joint_learning_rate": 5e-05,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "effective_batch_frames": 4,
+    "validation_every": 200,
+    "stages": 3,
+    "grouped_width": 24
+  },
+  "predeclared_success": {
+    "purpose": "development screen for continuation, not hardware or scientific generalization acceptance",
+    "noiseless_channel_relative_L2_max": 1e-10,
+    "adjoint_relative_error_max": 1e-10,
+    "constant_weight_normal_preconditioner_relative_error_max": 1e-09,
+    "uniform_temperature_error_K_max": 0.01,
+    "primary_effective_temperature_RMSE_K_max": 50,
+    "primary_per_channel_relative_L2_mean_max": 0.05,
+    "hybrid_weak_emission_RMSE_reduction_vs_selected_traditional_min": 0.15,
+    "hybrid_temperature_RMSE_ratio_vs_selected_traditional_max": 1.05,
+    "hybrid_band_relative_L2_ratio_vs_selected_traditional_max": 1.05,
+    "hybrid_centered_band_relative_L2_ratio_vs_selected_traditional_max": 1.05,
+    "primary_absolute_mean_intensity_bias_max": 0.02,
+    "heldout_blank_false_positive_fraction_max": 0.02,
+    "weak_emission_slope_range": [
+      0.9,
+      1.1
+    ],
+    "seed_rule": "each of the three hybrid seeds must pass every primary criterion; no best-seed selection",
+    "metric_definitions": {
+      "band_relative_L2": "per-frame full-image L2 error divided by full-image truth norm, then mean across frames",
+      "temperature_RMSE": "pooled over every held-out pixel and frame in the declared stratum",
+      "emission_RMSE": "per channel, pooled over every pixel and frame in the declared stratum against actual post-PSF injection",
+      "paired_injection_slope": "inner product of weak-minus-blank output with injected truth divided by squared truth norm, averaged over paired frames",
+      "blank_FPR": "fraction of all blank pixels exceeding a threshold frozen using separate calibration mothers; report each channel and count level"
+    },
+    "reported_separately": [
+      "optical detail loss",
+      "color-temperature vs latent-temperature difference",
+      "noiseless continuum-extrapolation bias",
+      "all seeds",
+      "invalid/saturated pixels",
+      "strong-feature results",
+      "lower-photon cases",
+      "numerical convergence",
+      "training and inference wall time"
+    ]
+  },
+  "physical_stress_controls": [
+    "two-temperature exposure mixture vs single-temperature fit",
+    "non-gray emissivity slope",
+    "hypothetical AlO-region emission also entering the C2-region at 25 percent"
+  ],
+  "unknowns": [
+    "fuel composition",
+    "actual emitting phase and line-of-sight temperature distribution",
+    "measured filter transmission and incidence-angle response",
+    "camera QE and IR cut",
+    "actual photon counts at the requested exposure",
+    "real spectral cross-sensitivities",
+    "measured PSF/carrier calibration"
+  ],
+  "resources": {
+    "server": "rylan@100.82.231.102",
+    "server_directory": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_001",
+    "cpu_threads": 2,
+    "maximum_wall_seconds": 43200,
+    "maximum_gpu_memory_MiB": 9500,
+    "maximum_new_artifact_bytes": 15032385536,
+    "long_job_rule": "verify correct progress and set one wake, no continuous monitoring",
+    "local_download": "source, reports, plots and weights only; large caches stay on server"
+  },
+  "base_commit": "9719bdc19c2b800b7685084709b5c6c403a9b3bb",
+  "solver": {
+    "objective": "fixed estimated shot/read/quantization-variance weighted raw least squares plus spatial isotropic TV of each band, constrained to the common optical frequency support",
+    "weight_source": "re-encoded FFT initialization; no ground-truth variance",
+    "solver": "ADMM with matrix-free preconditioned CG; constant-weight Fourier diagonal-plus-rank-one normal operator as preconditioner",
+    "tv_lambda_candidates": [
+      0.0003,
+      0.001,
+      0.003
+    ],
+    "rho": 0.02,
+    "maximum_iterations": 4000,
+    "pcg_iterations": 10,
+    "pcg_tolerance": 1e-05,
+    "relative_iteration_change_target": 0.0001,
+    "selection": "lowest validation mean per-band relative L2 among FFT, converged weighted least squares and TV; also retain a network-off control with the same three physical proximal stages",
+    "numerical_audit": "repeat selected TV on two validation observations at double iteration count; report output change and stationarity, do not label an unconverged reference converged",
+    "strength": 0.003,
+    "prox_admm_iterations": 12,
+    "prox_pcg_iterations": 8,
+    "mu_multiplier": 1.0,
+    "primal_absolute_tolerance": 1e-06,
+    "primal_relative_tolerance": 0.001,
+    "stationarity_rms_tolerance": 1e-06
+  },
+  "development_scope": "64/16/8/16 new mothers, one seed; implementation and controlled development before the proposed 256/32/32/64 formal study",
+  "training_loss_scales": "fixed 3000 K band-integrated photon spectrum divided by its three-NIR mean for channel/mean losses; 50 K temperature, 0.02 log ratio, 0.05 shared raw normalization emission/pair",
+  "software_gates": {
+    "anchor_identity_relative_max": 0.0001,
+    "prox_directional_derivative_relative_max": 0.002,
+    "readout_directional_derivative_relative_max": 0.002,
+    "doubled_prox_relative_max": 0.001,
+    "parameter_budget_max": 1000000,
+    "fixed_batch_probe_updates": 128,
+    "fixed_batch_loss_ratio_max": 0.95
+  },
+  "traditional_reference": "same lambda 0.003 and objective; shared convergence-certified anchor up to4000 iterations, original400-iteration output retained and reported separately",
+  "detail_metric": "centered error / sqrt(centered truth energy+1e-4 total truth energy), declared radiance floor for newly included flat fields"
+}

@@ -1,0 +1,88 @@
+{
+  "time": "2026-10-17T04:58:35.432081+00:00",
+  "native_float32_max_gated_relative_error": 0.015450672305799816,
+  "float32_vs_identical_lifted_operator_float64_AD_max_relative": 4.943084414075417e-06,
+  "lifted_float64_FD_max_relative": 3.914544568556424e-08,
+  "rows": [
+    {
+      "proposal_point": 0.0,
+      "dtypes": {
+        "torch.float32": {
+          "autograd": 0.20653896033763885,
+          "finite_differences": [
+            {
+              "epsilon": 0.002,
+              "finite_difference": 0.2687905517528913,
+              "relative_error": 0.23159888251013577,
+              "gate": false
+            },
+            {
+              "epsilon": 0.05,
+              "finite_difference": 0.2033477945430814,
+              "relative_error": 0.015450672305799816,
+              "gate": true
+            },
+            {
+              "epsilon": 0.1,
+              "finite_difference": 0.20604062335279316,
+              "relative_error": 0.002412798941328253,
+              "gate": true
+            }
+          ]
+        },
+        "torch.float64": {
+          "autograd": 0.20653888223381017,
+          "finite_differences": [
+            {
+              "epsilon": 0.0001,
+              "finite_difference": 0.20653887414875358,
+              "relative_error": 3.914544568556424e-08,
+              "gate": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "proposal_point": 0.3,
+      "dtypes": {
+        "torch.float32": {
+          "autograd": 0.20689517259597778,
+          "finite_differences": [
+            {
+              "epsilon": 0.002,
+              "finite_difference": 0.02758518614768028,
+              "relative_error": 0.8666707115416933,
+              "gate": false
+            },
+            {
+              "epsilon": 0.05,
+              "finite_difference": 0.20515613693259666,
+              "relative_error": 0.008405395068241124,
+              "gate": true
+            },
+            {
+              "epsilon": 0.1,
+              "finite_difference": 0.20844418634195266,
+              "relative_error": 0.007431311820967384,
+              "gate": true
+            }
+          ]
+        },
+        "torch.float64": {
+          "autograd": 0.20689414990073005,
+          "finite_differences": [
+            {
+              "epsilon": 0.0001,
+              "finite_difference": 0.20689415372716397,
+              "relative_error": 1.849464497080013e-08,
+              "gate": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "passed": true,
+  "small_float32_step": "0.002 retained diagnostically; roundoff cancellation established in fd_diagnostic_001"
+}

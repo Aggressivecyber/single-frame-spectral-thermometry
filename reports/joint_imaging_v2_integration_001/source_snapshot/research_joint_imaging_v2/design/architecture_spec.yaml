@@ -1,0 +1,84 @@
+schema: proposed-tv-anchored-role-separated-radiometric-unfolding-v1
+status: design_not_trained
+base_commit: 9719bdc19c2b800b7685084709b5c6c403a9b3bb
+source_branch: research/hybrid-residual-001
+new_directory: research_joint_imaging_v2
+channels_nm: [431.5, 486, 516.5, 700, 800, 905]
+native_shape: [128, 128]
+output: six_post_object_psf_band_images
+readout: unchanged_band_integrated_graybody_fit_and_visible_excess
+anchor:
+  method: converged_noise_weighted_per_band_spatial_TV
+  lambda_initial: 0.003
+  preserve_operator_and_raw_weights: true
+  cache: [images, admm_gradient_variable, admm_scaled_dual, weight, shared_scale, noise_features]
+  equality_claim: exact_for_exact_prox_and_converged_anchor_numeric_tolerance_in_implementation
+model:
+  stages: 3
+  shared_stage_weights: true
+  prior_networks: [thermal_joint, visible_shared_independent_calls]
+  backbone: lightweight_NAF_style_UNet
+  widths: [24, 48, 96]
+  encoder_blocks: [2, 2]
+  bottleneck_blocks: 4
+  decoder_blocks: [2, 2]
+  output_heads: zero_initialized
+  learned_parameter_budget: 1000000
+  raw_batch_norm: false
+  all_six_channel_low_rank: false
+  proposal_reference: fixed_TV_anchor_not_unbounded_accumulation
+  thermal_coordinates: [mean_log_intensity, log_I700_over_I800, log_I905_over_I800]
+  thermal_coordinate_degrees_of_freedom: 3
+  thermal_correction_sigma_multiplier_initial: 2
+  visible_correction_sigma_multiplier_initial: 3
+  visible_direct_cross_band_feature_mixing: false
+  visible_conditioning: [wavelength, carrier_sensitivity, log_noise_scale, stage]
+  physical_cross_channel_coupling: true
+prox:
+  objective: original_WTV_plus_positive_quadratic_distance_to_neural_proposal
+  keep_TV_term: true
+  enforce_original_objective_below_TV_optimum: false
+  admm_steps_initial: [8, 12]
+  cg_steps_initial: [6, 10]
+  steps_are_budget_not_convergence_guarantee: true
+  use_existing_diagonal_plus_rank_one_preconditioner: true
+  support_projection: original_operator_support
+  extra_object_blur: false
+  forward_mode: differentiable_fixed_iterations_with_checkpointing
+  zero_proposal_gradient_must_remain_live: true
+loss:
+  target_band_images: true_noiseless_postblur
+  target_temperature: same_readout_on_noiseless_thermal_bands
+  target_excess: same_readout_on_noiseless_six_bands
+  actual_injection_error: separately_reported_including_mixture_model_bias
+  terms: [channel_error, temperature_and_log_ratio, clean_excess_readout, paired_six_band_injection_response, mean_bias]
+  no_GAN_or_perceptual_loss: true
+  runtime_truth_or_pair_access: false
+training:
+  fresh_network_not_failed_checkpoint: true
+  optimizer: AdamW
+  learning_rate_initial: 0.0002
+  weight_decay: 0.0001
+  gradient_clip: 1
+  effective_batch_frames: 4
+  thermal_warmup_updates: 1500
+  visible_warmup_updates: 1500
+  joint_updates: 3000
+  joint_learning_rate: 0.00005
+  initial_seeds: 1
+  formal_seeds_after_positive_pilot: 3
+  proposed_mothers:
+    training: 256
+    validation: 32
+    threshold_calibration: 32
+    new_heldout: 64
+  conditions: [blank, CH_weak, AlO_weak, C2_weak, all_weak, all_strong]
+  photon_levels_e_800: [1000, 4000]
+  noise_repeats: 2
+validation:
+  old_heldout_status: exposed_diagnostic_only
+  noise_repeats_grouped_by_mother: true
+  compare: [WTV, TV_dense_six_channel_post_CNN, TV_grouped_post_CNN, full_grouped_TV_prox]
+  extra_ablation: full_model_without_paired_injection_loss
+  primary_target: improvement_on_all_three_visible_weak_readouts_without_thermal_or_detail_regression
+  no_performance_guarantee: true
