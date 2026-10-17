@@ -1,0 +1,89 @@
+{
+  "checked_on_local_date": "2026-10-18",
+  "purpose": "Primary-source mechanism review for the current six-band TV-RRU study; no citation-count or PSNR ranking",
+  "sources": [
+    {
+      "id": "modl",
+      "title": "MoDL: Model Based Deep Learning Architecture for Inverse Problems",
+      "authors": "Hemant Kumar Aggarwal; Merry P. Mani; Mathews Jacob",
+      "version": "arXiv:1712.02862v4, 2019-06-05; first submitted 2017-12-07",
+      "url": "https://arxiv.org/abs/1712.02862v4",
+      "reviewed": "author abstract and version metadata",
+      "verified_mechanism": "Shared learned CNN prior across unrolled iterations and numerical conjugate-gradient data-consistency blocks",
+      "project_implication": "Shared neural priors plus a physical solver are established mechanisms; this source does not validate six-band radiometry"
+    },
+    {
+      "id": "nafnet",
+      "title": "Simple Baselines for Image Restoration",
+      "authors": "Liangyu Chen; Xiaojie Chu; Xiangyu Zhang; Jian Sun",
+      "version": "arXiv:2204.04676v4, 2022-08-01; ECCV 2022",
+      "url": "https://arxiv.org/abs/2204.04676v4",
+      "reviewed": "author abstract and version metadata; project NAFBlock implementation separately inspected",
+      "verified_mechanism": "Simplified restoration architecture replaces or removes standard nonlinear activations, including multiplicative operations",
+      "project_implication": "A useful backbone; multiplication still makes the network nonlinear, and restoration PSNR does not establish thermometry accuracy"
+    },
+    {
+      "id": "dauhst",
+      "title": "Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging",
+      "authors": "Yuanhao Cai et al.",
+      "version": "arXiv:2205.10102v3, 2022-10-17; NeurIPS 2022",
+      "url": "https://arxiv.org/html/2205.10102v3",
+      "reviewed": "abstract and method section 2.2, including equations 9 and the CASSI diagonal measurement-space normal",
+      "verified_mechanism": "Measurement/mask-conditioned iteration parameters; data step uses diagonal Phi Phi-transpose in the stated CASSI model",
+      "project_implication": "Conditioning is relevant; its diagonal CASSI update is not a replacement for the present weighted six-carrier operator"
+    },
+    {
+      "id": "lrdun",
+      "title": "LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging",
+      "authors": "He Huang; Yujun Guo; Wei He",
+      "version": "arXiv:2511.18513v2, 2026-04-23",
+      "url": "https://arxiv.org/html/2511.18513v2",
+      "reviewed": "abstract and low-rank imaging/alternating-optimization method equations",
+      "verified_mechanism": "Low-rank spatial coefficients and spectral bases with physical rank much smaller than spectral channel count",
+      "project_implication": "Independent visible injections do not justify a hard low-rank constraint across all six outputs; thermal coordinate changes retain three degrees of freedom"
+    },
+    {
+      "id": "passive_frame_2024",
+      "title": "A light-efficient and versatile multiplexing method for snapshot spectral imaging",
+      "authors": "David Andersson; Yupan Bao; Vassily Kornienko; Dean Popovic; Elias Kristensson",
+      "version": "Scientific Reports 14, 16116, 2024-07-12",
+      "doi": "10.1038/s41598-024-66386-2",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11245627/",
+      "reviewed": "full primary article: FRAME, setup, calibration and quantitative temperature mapping sections",
+      "verified_mechanism": "Passive spectral separation, channel-specific spatial carriers and Fourier lock-in recovery; temperature mapping and blackbody/flat-field calibration",
+      "project_implication": "Spatial encoding plus single-camera temperature mapping is prior art; spatial bandwidth and dynamic range are shared resources"
+    },
+    {
+      "id": "frame_pyrometry_2026",
+      "title": "Multispectral coded light for high-speed temperature imaging of aluminum combustion",
+      "authors": "David Andersson; Zhiyong Wu; Edouard Berrocal; Zhongshan Li; Elias Kristensson",
+      "version": "Optics Express 34(7), 13393-13404, 2026-04-06",
+      "doi": "10.1364/OE.578636",
+      "url": "https://portal.research.lu.se/en/publications/multispectral-coded-light-for-high-speed-temperature-imaging-of-a/",
+      "reviewed": "author institution abstract and publication record; publisher full text unavailable through browser tool in this pass",
+      "verified_mechanism": "Passive FRAME with one high-speed monochrome camera; author abstract reports native acquisition at 50 kHz and temperature maps from 2000 to 4000 K",
+      "project_implication": "Direct thermometry prior art. Capture rate is not reconstruction throughput; no detailed accuracy comparison is inferred from the abstract"
+    },
+    {
+      "id": "sgde",
+      "title": "SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging",
+      "authors": "Yuqiao He et al.",
+      "version": "CVPR 2026, 34084-34094",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_SGDE_Self-supervised_Geometry_Degradation_Estimation_Framework_for_Coded_Aperture_Compressive_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/He_SGDE_Self-supervised_Geometry_Degradation_Estimation_Framework_for_Coded_Aperture_Compressive_CVPR_2026_paper.pdf",
+      "reviewed": "official abstract and paper introduction/contribution paragraphs",
+      "verified_mechanism": "Explicit affine mask-misalignment model, joint self-supervised estimation and multi-kernel initialization",
+      "project_implication": "Motivates testing physical calibration mismatch; this CASSI mechanism does not establish identifiable blind calibration for six spatial carriers"
+    },
+    {
+      "id": "proximal_algorithms",
+      "title": "Proximal Algorithms",
+      "authors": "Neal Parikh; Stephen Boyd",
+      "version": "Foundations and Trends in Optimization 1(3), 123-231, 2014",
+      "url": "https://stanford.edu/~boyd/papers/pdf/prox_algs.pdf",
+      "reviewed": "author publication page and section 2.3 (PDF page 13): firm nonexpansiveness",
+      "verified_mechanism": "Convex proximal maps are firmly nonexpansive; minimizers are proximal fixed points",
+      "project_implication": "Weighted-norm extension and correction-retention diagnostic in this report are mathematical deductions under fixed-frame convex assumptions, not a claim about the whole learned network"
+    }
+  ]
+}

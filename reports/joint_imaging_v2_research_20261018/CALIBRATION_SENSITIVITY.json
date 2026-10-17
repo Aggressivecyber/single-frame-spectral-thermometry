@@ -1,0 +1,1272 @@
+{
+  "scope": "analytic readout sensitivity only; uniform noiseless graybody, no network or device data",
+  "source_sha256": {
+    "reports/joint_imaging_v2_recovery_002/source_snapshot/research_joint_imaging_v2/protocol.json": "5ec21ddff3f2f691f0d225c883306d28eebfdab11cfdc71b685dd32b6f6b0c27",
+    "research_joint_imaging/core.py": "6db1eec36651f3b94396cbf43b5b40e8d0f4dfd7558589d663764600b8af26d6",
+    "reports/joint_imaging_v2_research_20261018/calibration_sensitivity.py": "48030f69f85865d05b2f17f6bdb2e9febe0d5caf3b1d868ff65c0016b55ce2a8"
+  },
+  "precision": "CPU float64; unchanged Radiometry.fit (10 iterations)",
+  "gain_error_location": "recovered band intensities entering Radiometry, not a re-encoded raw sensor perturbation",
+  "finite_difference_log_steps": [
+    0.0001,
+    1e-05
+  ],
+  "maximum_row_relative_jacobian_error": 2.376495339693484e-08,
+  "maximum_excess_decomposition_error_e": 0.0,
+  "points": [
+    {
+      "temperature_K": 2400.0,
+      "mean_800nm_e": 1000.0,
+      "baseline_band_e": [
+        19.662904059506786,
+        57.981910999004796,
+        94.14284676328849,
+        584.6747158399804,
+        1000.0,
+        1457.737030666097
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          904.9218686568413,
+          753.3352924535159,
+          -1658.2571611103538
+        ],
+        [
+          52.46204080514164,
+          47.731589552592105,
+          -80.53072629822677
+        ],
+        [
+          120.69266101775065,
+          112.44019130241897,
+          -175.1509413211644
+        ],
+        [
+          170.1385981966303,
+          161.0654563754742,
+          -237.06120780881545
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 9.077993144115226,
+          "visible_excess_bias_e": [
+            -0.5312987330418331,
+            -1.2186602795637995,
+            -1.7155283490505724
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.5312987330418331,
+            1.2186602795637995,
+            1.7155283490505724
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 7.496799596363417,
+          "visible_excess_bias_e": [
+            -0.4796050455034937,
+            -1.1272475591889517,
+            -1.6130836559756716
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.4796050455034937,
+            1.1272475591889517,
+            1.6130836559756716
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -16.446249338558573,
+          "visible_excess_bias_e": [
+            0.7883600751809858,
+            1.7241318372999288,
+            2.3397135519579706
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -0.7883600751809858,
+            -1.7241318372999288,
+            -2.3397135519579706
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 25.92899961123021,
+          "visible_excess_bias_e": [
+            -1.3763379378278273,
+            -3.035576451006449,
+            -4.161332634688904
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            1.3763379378278273,
+            3.035576451006449,
+            4.161332634688904
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            -0.19662904059504172,
+            -0.5798191099899483,
+            -0.9414284676327895
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.19662904059504172,
+            0.5798191099899483,
+            0.9414284676327895
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            2.4868995751603507e-14,
+            9.947598300641403e-14,
+            9.947598300641403e-14
+          ],
+          "visible_image_change_e": [
+            0.19662904059506658,
+            0.5798191099900478,
+            0.941428467632889
+          ],
+          "extrapolated_continuum_change_e": [
+            0.19662904059504172,
+            0.5798191099899483,
+            0.9414284676327895
+          ]
+        }
+      ]
+    },
+    {
+      "temperature_K": 2400.0,
+      "mean_800nm_e": 4000.0,
+      "baseline_band_e": [
+        78.65161623802715,
+        231.92764399601919,
+        376.57138705315396,
+        2338.6988633599217,
+        4000.0,
+        5830.948122664388
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          904.9218686568413,
+          753.3352924535159,
+          -1658.2571611103538
+        ],
+        [
+          209.84816322056656,
+          190.92635821036842,
+          -322.12290519290707
+        ],
+        [
+          482.7706440710026,
+          449.76076520967587,
+          -700.6037652846576
+        ],
+        [
+          680.5543927865212,
+          644.2618255018969,
+          -948.2448312352618
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 9.077993144115226,
+          "visible_excess_bias_e": [
+            -2.1251949321673322,
+            -4.874641118255198,
+            -6.8621133962022896
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            2.1251949321673322,
+            4.874641118255198,
+            6.8621133962022896
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 7.496799596363417,
+          "visible_excess_bias_e": [
+            -1.9184201820139748,
+            -4.508990236755807,
+            -6.452334623902686
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            1.9184201820139748,
+            4.508990236755807,
+            6.452334623902686
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -16.446249338558573,
+          "visible_excess_bias_e": [
+            3.1534403007239433,
+            6.896527349199715,
+            9.358854207831882
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -3.1534403007239433,
+            -6.896527349199715,
+            -9.358854207831882
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 25.92899961123021,
+          "visible_excess_bias_e": [
+            -5.505351751311309,
+            -12.142305804025796,
+            -16.645330538755616
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            5.505351751311309,
+            12.142305804025796,
+            16.645330538755616
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            -0.7865161623801669,
+            -2.3192764399597934,
+            -3.765713870531158
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.7865161623801669,
+            2.3192764399597934,
+            3.765713870531158
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            9.947598300641403e-14,
+            3.979039320256561e-13,
+            3.979039320256561e-13
+          ],
+          "visible_image_change_e": [
+            0.7865161623802663,
+            2.3192764399601913,
+            3.765713870531556
+          ],
+          "extrapolated_continuum_change_e": [
+            0.7865161623801669,
+            2.3192764399597934,
+            3.765713870531158
+          ]
+        }
+      ]
+    },
+    {
+      "temperature_K": 3000.0,
+      "mean_800nm_e": 1000.0,
+      "baseline_band_e": [
+        70.51263774267747,
+        152.32872290246112,
+        213.83779533362593,
+        723.4584658987472,
+        1000.0,
+        1227.2334368589075
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          1690.2419355161908,
+          599.3459024388875,
+          -2289.5878379550873
+        ],
+        [
+          222.54655987686576,
+          97.86887414715656,
+          -249.90279628134599
+        ],
+        [
+          373.94718154842184,
+          173.5486537073459,
+          -395.1671123533085
+        ],
+        [
+          454.83575423673074,
+          218.7663691393134,
+          -459.7643280424206
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 16.980050022485557,
+          "visible_excess_bias_e": [
+            -2.2580574502920143,
+            -3.780693099932563,
+            -4.590767442526555
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            2.2580574502920143,
+            3.780693099932563,
+            4.590767442526555
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 5.960503264472209,
+          "visible_excess_bias_e": [
+            -0.9794142260045078,
+            -1.7351319220433368,
+            -2.186357370271935
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.9794142260045078,
+            1.7351319220433368,
+            2.186357370271935
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -22.690806451760636,
+          "visible_excess_bias_e": [
+            2.453070503966728,
+            3.8980489264253606,
+            4.545904828979587
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -2.453070503966728,
+            -3.8980489264253606,
+            -4.545904828979587
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 40.347878070962,
+          "visible_excess_bias_e": [
+            -4.88503172281915,
+            -7.884863565474205,
+            -9.338615054467795
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            4.88503172281915,
+            7.884863565474205,
+            9.338615054467795
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": 0.0,
+          "visible_excess_bias_e": [
+            -0.7051263774267653,
+            -1.5232872290245894,
+            -2.1383779533362315
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            0.7051263774267653,
+            1.5232872290245894,
+            2.1383779533362315
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": 0.0,
+          "visible_excess_bias_e": [
+            1.4210854715202004e-14,
+            2.842170943040401e-14,
+            2.842170943040401e-14
+          ],
+          "visible_image_change_e": [
+            0.7051263774267795,
+            1.5232872290246178,
+            2.13837795333626
+          ],
+          "extrapolated_continuum_change_e": [
+            0.7051263774267653,
+            1.5232872290245894,
+            2.1383779533362315
+          ]
+        }
+      ]
+    },
+    {
+      "temperature_K": 3000.0,
+      "mean_800nm_e": 4000.0,
+      "baseline_band_e": [
+        282.0505509707099,
+        609.3148916098445,
+        855.3511813345037,
+        2893.833863594989,
+        4000.0,
+        4908.93374743563
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          1690.2419355161908,
+          599.3459024388875,
+          -2289.5878379550873
+        ],
+        [
+          890.186239507463,
+          391.47549658862624,
+          -999.6111851253839
+        ],
+        [
+          1495.7887261936874,
+          694.1946148293836,
+          -1580.668449413234
+        ],
+        [
+          1819.343016946923,
+          875.0654765572536,
+          -1839.0573121696823
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 16.980050022485557,
+          "visible_excess_bias_e": [
+            -9.032229801168057,
+            -15.122772399730252,
+            -18.36306977010622
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            9.032229801168057,
+            15.122772399730252,
+            18.36306977010622
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 5.960503264472209,
+          "visible_excess_bias_e": [
+            -3.917656904018031,
+            -6.940527688173347,
+            -8.74542948108774
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            3.917656904018031,
+            6.940527688173347,
+            8.74542948108774
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -22.690806451760636,
+          "visible_excess_bias_e": [
+            9.812282015866913,
+            15.592195705701442,
+            18.18361931591835
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -9.812282015866913,
+            -15.592195705701442,
+            -18.18361931591835
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 40.347878070962,
+          "visible_excess_bias_e": [
+            -19.5401268912766,
+            -31.53945426189682,
+            -37.35446021787118
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            19.5401268912766,
+            31.53945426189682,
+            37.35446021787118
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": 0.0,
+          "visible_excess_bias_e": [
+            -2.8205055097070613,
+            -6.093148916098357,
+            -8.553511813344926
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            2.8205055097070613,
+            6.093148916098357,
+            8.553511813344926
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": 0.0,
+          "visible_excess_bias_e": [
+            5.684341886080802e-14,
+            1.1368683772161603e-13,
+            1.1368683772161603e-13
+          ],
+          "visible_image_change_e": [
+            2.820505509707118,
+            6.093148916098471,
+            8.55351181334504
+          ],
+          "extrapolated_continuum_change_e": [
+            2.8205055097070613,
+            6.093148916098357,
+            8.553511813344926
+          ]
+        }
+      ]
+    },
+    {
+      "temperature_K": 3600.0,
+      "mean_800nm_e": 1000.0,
+      "baseline_band_e": [
+        164.74725103544068,
+        289.2434437538548,
+        368.52857744810944,
+        832.7441551970876,
+        1000.0,
+        1096.0344167850983
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          2713.338135129395,
+          332.57299151353897,
+          -3045.9111266429313
+        ],
+        [
+          572.9389778655863,
+          122.29988420775342,
+          -530.4916110378985
+        ],
+        [
+          779.9431100473093,
+          187.02429934085373,
+          -677.7239656343077
+        ],
+        [
+          859.2550280447081,
+          221.80676295907188,
+          -712.5332135556695
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 27.305886946064675,
+          "visible_excess_bias_e": [
+            -5.8209399804938755,
+            -7.892342815258246,
+            -8.67851094386208
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            5.8209399804938755,
+            7.892342815258246,
+            8.67851094386208
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 3.304902729521018,
+          "visible_excess_bias_e": [
+            -1.2218067866086528,
+            -1.8682304042525288,
+            -2.215666562126387
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            1.2218067866086528,
+            1.8682304042525288,
+            2.215666562126387
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -30.157302275575148,
+          "visible_excess_bias_e": [
+            5.215187959915994,
+            6.692942406980251,
+            7.0520284789241146
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -5.215187959915994,
+            -6.692942406980251,
+            -7.0520284789241146
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 58.5494726054485,
+          "visible_excess_bias_e": [
+            -11.406663478932899,
+            -14.939224865597396,
+            -16.04333030763928
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            11.406663478932899,
+            14.939224865597396,
+            16.04333030763928
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            -1.6474725103542767,
+            -2.8924344375385544,
+            -3.6852857744811445
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            1.6474725103542767,
+            2.8924344375385544,
+            3.6852857744811445
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            1.4210854715202004e-13,
+            0.0,
+            -5.684341886080802e-14
+          ],
+          "visible_image_change_e": [
+            1.6474725103544188,
+            2.8924344375385544,
+            3.6852857744810876
+          ],
+          "extrapolated_continuum_change_e": [
+            1.6474725103542767,
+            2.8924344375385544,
+            3.6852857744811445
+          ]
+        }
+      ]
+    },
+    {
+      "temperature_K": 3600.0,
+      "mean_800nm_e": 4000.0,
+      "baseline_band_e": [
+        658.9890041417627,
+        1156.9737750154193,
+        1474.1143097924378,
+        3330.9766207883504,
+        4000.0,
+        4384.137667140393
+      ],
+      "jacobian_columns": [
+        "log_I700",
+        "log_I800",
+        "log_I905"
+      ],
+      "jacobian_rows": [
+        "T_K",
+        "C431.5_e",
+        "C486_e",
+        "C516.5_e"
+      ],
+      "jacobian": [
+        [
+          2713.338135129395,
+          332.57299151353897,
+          -3045.9111266429313
+        ],
+        [
+          2291.755911462345,
+          489.1995368310137,
+          -2121.966444151594
+        ],
+        [
+          3119.7724401892374,
+          748.0971973634149,
+          -2710.8958625372306
+        ],
+        [
+          3437.0201121788323,
+          887.2270518362875,
+          -2850.132854222678
+        ]
+      ],
+      "gain_responses": [
+        {
+          "case": "700 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            0
+          ],
+          "temperature_bias_K": 27.305886946064675,
+          "visible_excess_bias_e": [
+            -23.283759921975502,
+            -31.569371261032984,
+            -34.71404377544832
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            23.283759921975502,
+            31.569371261032984,
+            34.71404377544832
+          ]
+        },
+        {
+          "case": "800 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            0
+          ],
+          "temperature_bias_K": 3.304902729521018,
+          "visible_excess_bias_e": [
+            -4.887227146434611,
+            -7.472921617010115,
+            -8.862666248505548
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            4.887227146434611,
+            7.472921617010115,
+            8.862666248505548
+          ]
+        },
+        {
+          "case": "905 +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.01
+          ],
+          "temperature_bias_K": -30.157302275575148,
+          "visible_excess_bias_e": [
+            20.860751839663976,
+            26.771769627921003,
+            28.208113915696458
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            -20.860751839663976,
+            -26.771769627921003,
+            -28.208113915696458
+          ]
+        },
+        {
+          "case": "700 +1%, 905 -1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0,
+            -0.01
+          ],
+          "temperature_bias_K": 58.5494726054485,
+          "visible_excess_bias_e": [
+            -45.626653915731595,
+            -59.75689946238958,
+            -64.17332123055712
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            45.626653915731595,
+            59.75689946238958,
+            64.17332123055712
+          ]
+        },
+        {
+          "case": "NIR all +1%",
+          "fractional_gain_error_six_channels": [
+            0,
+            0,
+            0,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            -6.589890041417107,
+            -11.569737750154218,
+            -14.741143097924578
+          ],
+          "visible_image_change_e": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "extrapolated_continuum_change_e": [
+            6.589890041417107,
+            11.569737750154218,
+            14.741143097924578
+          ]
+        },
+        {
+          "case": "All six +1%",
+          "fractional_gain_error_six_channels": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "temperature_bias_K": -4.547473508864641e-13,
+          "visible_excess_bias_e": [
+            5.684341886080801e-13,
+            0.0,
+            -2.2737367544323206e-13
+          ],
+          "visible_image_change_e": [
+            6.589890041417675,
+            11.569737750154218,
+            14.74114309792435
+          ],
+          "extrapolated_continuum_change_e": [
+            6.589890041417107,
+            11.569737750154218,
+            14.741143097924578
+          ]
+        }
+      ]
+    }
+  ]
+}

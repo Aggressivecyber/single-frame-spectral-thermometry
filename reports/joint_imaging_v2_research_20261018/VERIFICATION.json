@@ -1,0 +1,67 @@
+{
+  "review_scope": "idle-time literature research and CPU readout-only calculation",
+  "base_commit": "bb46a40d2c96bc19449e4db26a9f8b9b70529ef9",
+  "python_for_calculation": "E:\\GAN\\runtime_envs\\local_cuda_retry_20261007073613_UTC\\venv\\Scripts\\python.exe",
+  "python_version": "3.12.14",
+  "torch_version": "2.12.0+cu130",
+  "calculation_device": "cpu",
+  "calculation_dtype": "float64",
+  "local_analytic_run_exit_code": 0,
+  "plot_run_exit_code": 0,
+  "plot_library": "matplotlib 3.10.7 in E:/CodexWork/thermometry/closeout_001/_runtime/research_plot_lib",
+  "setup_failures_preserved": [
+    {
+      "operation": "initial combined calculation/plot import in existing Torch environment",
+      "error": "ModuleNotFoundError: No module named 'matplotlib'",
+      "resolution": "separated calculation from plotting"
+    },
+    {
+      "operation": "plot import in bundled document Python",
+      "error": "ModuleNotFoundError: No module named 'matplotlib'",
+      "resolution": "installed isolated binary plotting dependencies on E; existing training environment unchanged"
+    },
+    {
+      "operation": "initial byte-equality verification of root and active frozen protocols",
+      "error": "AssertionError: research_joint_imaging_v2/protocol.json",
+      "resolution": "checked exact differences; only run_id, resources, recovery differ. Calculation now reads active frozen recovery protocol"
+    }
+  ],
+  "source_count": 8,
+  "source_access_boundary": "FRAME 2026 reviewed from author institution abstract, not publisher full text",
+  "analytic_points": 6,
+  "gain_cases_per_point": 6,
+  "finite_difference_log_steps": [
+    0.0001,
+    1e-05
+  ],
+  "maximum_row_relative_jacobian_error": 2.376495339693484e-08,
+  "maximum_excess_decomposition_error_e": 0.0,
+  "reopened_json_and_local_report_links_pass": true,
+  "audited_python_sources_equal_frozen_recovery_snapshot": true,
+  "protocol_differences_at_top_level": [
+    "recovery",
+    "resources",
+    "run_id"
+  ],
+  "all_other_protocol_keys_equal": true,
+  "plot_visual_review": "Viewed final PNG: labels, signs, color scale and no-emission readout scope legible; no clipping found",
+  "training_or_dataset_changes": false,
+  "checkpoint_performance_evaluated": false,
+  "new_server_jobs_launched": false,
+  "automation_changes": false,
+  "files_sha256": {
+    "CALIBRATION_SENSITIVITY.json": "afc7284e073b59680e0a4e6f2f693734f8e1c6a800fa8b983471643106cfc58e",
+    "calibration_sensitivity.png": "f220b7b997acd19b14df0294b7d1662797e6b0319fb0bc8801fcc600a1663a93",
+    "calibration_sensitivity.py": "48030f69f85865d05b2f17f6bdb2e9febe0d5caf3b1d868ff65c0016b55ce2a8",
+    "plot_sensitivity.py": "aad9ec4914cb626e7c3ddf8ebaca9fcd41ef68db9902c06fb7f2a1be677cd962",
+    "RESEARCH_PLAN_zh.md": "a3043ea242529f5067d5c545d0fb012670daf58c806bf8d0c076730205f92a86",
+    "SOURCES.json": "66aedc3a23a2fee93b9c6dca2a8a1cac5b1bdf7c8788e17fb85ff8d88c01aec5"
+  },
+  "audited_source_sha256": {
+    "research_joint_imaging/core.py": "6db1eec36651f3b94396cbf43b5b40e8d0f4dfd7558589d663764600b8af26d6",
+    "research_joint_imaging_v2/model.py": "0d1eea99ba8b35f2d4fe7e9e79f3f60110e465b30df0f3d6ad14ff9124d975b8",
+    "research_joint_imaging_v2/solver.py": "4db45375683c2ab830dd1a0b3df1b7962b5db661c2fab3145bdf52b9a19a1954",
+    "research_joint_imaging_v2/losses.py": "1eef3b3c445ade4b518a51531390d8f6b42544b63ddd4d29486bf4a5c4cce22e",
+    "research_joint_imaging_v2/evaluate.py": "d1376204ebb982a297b69b2c6a1314e971dc613dc0df54c497d5bf155b42d781"
+  }
+}
