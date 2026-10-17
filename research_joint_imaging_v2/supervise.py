@@ -12,10 +12,13 @@ parser.add_argument("--output",type=Path,required=True)
 parser.add_argument("--maximum-wall-seconds",type=int,required=True)
 parser.add_argument("--software-only",action="store_true")
 parser.add_argument("--protocol",type=Path,default=Path(__file__).with_name("protocol.json"))
+parser.add_argument("--resume-from",type=Path)
 args=parser.parse_args()
 root=Path(__file__).resolve().parents[1]
 out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
-command=[sys.executable,"-B","-m","research_joint_imaging_v2.pipeline","--protocol",str(args.protocol.resolve()),"--output",str(out)]
+entry="research_joint_imaging_v2.recover" if args.resume_from else "research_joint_imaging_v2.pipeline"
+command=[sys.executable,"-B","-m",entry,"--protocol",str(args.protocol.resolve()),"--output",str(out)]
+if args.resume_from:command.extend(["--resume-from",str(args.resume_from.resolve())])
 if args.software_only:command.append("--software-only")
 start=time.monotonic()
 with (out/"stdout.txt").open("x") as stdout,(out/"stderr.txt").open("x") as stderr:

@@ -131,16 +131,33 @@ def probe(protocol,op,rad,output,device):
     torch.cuda.empty_cache()
 
 
-def train_method(protocol,op,rad,train,val,output,device,method):
+def train_method(protocol,op,rad,train,val,output,device,method,recovery_output=None):
     torch.manual_seed(protocol["learning"]["seed"])
     rng=np.random.default_rng(protocol["learning"]["seed"])
     model=TVRRU(protocol["solver"],method).to(device)
     optimizer=torch.optim.AdamW(model.parameters(),lr=protocol["learning"]["learning_rate"],weight_decay=protocol["learning"]["weight_decay"])
     best=float("inf"); best_step=None; start=time.monotonic()
-    journal=(output/(method+"_training.jsonl")).open("x",encoding="utf-8")
     a,b,c=protocol["learning"]["phases"]
     validation_rows=[]
-    for step in range(1,a+b+c+1):
+    first_step=1;best_checkpoint=None
+    prefix=[]
+    if recovery_output is not None:
+        latest=recovery_output/(method+"_latest.pt")
+        saved=torch.load(latest,map_location=device,weights_only=False)
+        model.load_state_dict(saved["model"]);optimizer.load_state_dict(saved["optimizer"])
+        rng.bit_generator.state=saved["numpy_rng"]
+        torch.set_rng_state(saved["torch_rng"].cpu())
+        torch.cuda.set_rng_state_all([state.cpu() for state in saved["cuda_rng"]])
+        first_step=saved["step"]+1;best=saved["best_score"];best_step=saved["best_step"]
+        validation_rows=saved["validation_rows"];best_checkpoint=saved["best_checkpoint"]
+        prefix=(recovery_output/(method+"_training.jsonl")).read_text().splitlines()[:saved["step"]]
+        torch.save(best_checkpoint,output/(method+"_best.pt"))
+        runtime.write_json(output/(method+"_validation.json"),{"rows":validation_rows,"best_step":best_step,"best_score":best})
+        runtime.write_json(output/(method+"_RESUMED.json"),{"time":runtime.now(),"source":str(recovery_output),"checkpoint_step":saved["step"],"optimizer_and_RNG_restored":True,"source_latest_sha256":runtime.sha256(latest),"subsequent_GPU_training_bitwise_deterministic":False})
+    journal=(output/(method+"_training.jsonl")).open("x",encoding="utf-8")
+    for line in prefix:journal.write(line+"\n")
+    journal.flush()
+    for step in range(first_step,a+b+c+1):
         phase="thermal" if step<=a else "visible" if step<=a+b else "joint"
         for p in model.prior.thermal.parameters(): p.requires_grad_(phase!="visible")
         for p in model.prior.visible.parameters(): p.requires_grad_(phase!="thermal")
@@ -171,8 +188,13 @@ def train_method(protocol,op,rad,train,val,output,device,method):
                 raise RuntimeError("Invalid thermal validation pixels")
             if result["selection_score"]<best:
                 best=result["selection_score"];best_step=step
-                torch.save({"model":model.state_dict(),"step":step,"method":method,"seed":protocol["learning"]["seed"],"validation":result},output/(method+"_best.pt"))
+                best_checkpoint={"model":{key:value.detach().cpu().clone() for key,value in model.state_dict().items()},"step":step,"method":method,"seed":protocol["learning"]["seed"],"validation":result}
+                torch.save(best_checkpoint,output/(method+"_best.pt"))
             runtime.write_json(output/(method+"_validation.json"),{"rows":validation_rows,"best_step":best_step,"best_score":best})
+            latest_path=output/(method+"_latest.pt")
+            temporary=latest_path.with_suffix(".pt.tmp")
+            torch.save({"model":model.state_dict(),"optimizer":optimizer.state_dict(),"step":step,"method":method,"numpy_rng":rng.bit_generator.state,"torch_rng":torch.get_rng_state(),"cuda_rng":torch.cuda.get_rng_state_all(),"best_score":best,"best_step":best_step,"best_checkpoint":best_checkpoint,"validation_rows":validation_rows},temporary)
+            temporary.replace(latest_path)
             print({"stage":"validation","method":method,"step":step,"score":result["selection_score"],"best_step":best_step},flush=True)
     torch.save({"model":model.state_dict(),"step":a+b+c,"method":method,"seed":protocol["learning"]["seed"]},output/(method+"_last.pt"))
     journal.close()

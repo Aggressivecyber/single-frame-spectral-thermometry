@@ -6,6 +6,8 @@
 
 已完成原生CPU/GPU梯度与固定点检查、四组方法的短程端到端集成，以及128步固定小批量拟合（损失6.33降至2.99）。这些是软件验收。[集成证据](reports/joint_imaging_v2_integration_001/EXIT.json)与[float32步长诊断](reports/joint_imaging_v2_fd_diagnostic_001/RESULTS.json)保留；首个开发批次按64/16/8/16个新母场景、2496幅raw、四组各6000次更新在登记服务器执行，未见场景结果待评价。
 
+服务器重启后已[恢复剩余对照](reports/joint_imaging_v2_recovery_002/RECOVERY_REVIEW_zh.md)：全部2496幅raw/TV缓存及完成6000步的普通后处理组直接复用。旧分组组停在4182步，缺失优化器状态，原记录保留，仅该未完成组按冻结种子重新训练。新增每200步原子保存完整训练状态；原生GPU同一中途检查点恢复测试通过。剩余三组和新留出评价仍在执行，不代表新方法已超过TV。
+
 ## 前一轮六通道测温与特征发光联合成像
 
 2026-10-17完成首轮六通道合成对照：从同一视场、同一传感器区域上的一幅重叠编码图像恢复六幅滤光通道图像。700、800、905 nm用于连续谱有效色温拟合，431.5、486、516.5 nm用于CH*、AlO、C₂*相关波段的超额发光读出。
@@ -16,7 +18,7 @@
 - [完整中文结果](reports/joint_imaging_001/RESULTS_zh.md) · [方法对比图](reports/joint_imaging_001/review_001/method_comparison.png) · [联合读出图](reports/joint_imaging_001/review_001/joint_products.png)
 - [重放与指标核验](reports/joint_imaging_001/review_001/VERIFICATION.json) · [完成审计](reports/joint_imaging_001/COMPLETION_AUDIT.json)
 
-本分支包含当前源码、原始执行源码快照、配置、统计报告、图像和六个网络检查点（`reports/joint_imaging_001/cnn_{post,dc}_{701,702,703}.pt`）。大体积原始ADC、数据集及预测数组保留在项目E盘目录和计算服务器，其SHA256与大小记录在[输入清单](reports/joint_imaging_001/review_001/INPUT_MANIFEST.json)。后续方向为以收敛TV解为起点的受约束神经修正，尚未启动新训练。
+本分支包含当前源码、原始执行源码快照、配置、统计报告、图像和六个网络检查点（`reports/joint_imaging_001/cnn_{post,dc}_{701,702,703}.pt`）。大体积原始ADC、数据集及预测数组保留在项目E盘目录和计算服务器，其SHA256与大小记录在[输入清单](reports/joint_imaging_001/review_001/INPUT_MANIFEST.json)。后续TV锚定神经修正的开发状态见本页顶部。
 
 结果对应理想滤片、已知空间算子与相机噪声模型下的合成工程试验；物理读出为有效色温与特征波段发光。实际滤片响应、物种交叉响应、曝光性能及硬件测温仍需标定与实测。
 

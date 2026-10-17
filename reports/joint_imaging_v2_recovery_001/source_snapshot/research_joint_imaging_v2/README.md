@@ -1,0 +1,61 @@
+# TV-RRU 六通道联合成像开发
+
+采用用户提供的9719bdc架构规格，实现三阶段、阶段间共享权重的TV锚定分组辐射保真展开网络。输入是一张原始ADC图，主输出是六幅同一光学支持内的滤光通道图；统一Radiometry再读取有效色温和波段超额发光。
+
+## 实现与固定点
+
+`solver.py`在原六载频算子、相同raw噪声权重和TV强度0.003上保存TV图像及ADMM的d/u状态。神经候选始终为固定锚点加带宽内修正；每阶段求解原WTV目标加到候选的正对角二次近端项。采用12轮可微ADMM、每轮8次PCG，物理步骤和先验分别做activation checkpointing。
+
+有限PCG使用95%的图像热启动，使零修正点的Krylov方向保持活跃；对收敛后的浮点余量使用相对于初始内积的eps²算术下限。它是显式固定迭代反传，含TV梯度收缩，未换成平滑TV或隐式梯度。零修正固定点按数值容差测量。
+
+原400轮配置有部分ADMM原始残差未达到门槛。新共同参考最多4000轮，要求原始残差RMS≤1e-6+0.001×梯度RMS、stationarity RMS≤1e-6，以及相对迭代变化<1e-4；每批均须通过。固定400轮输出另存`reference_400`并同场景报告。TV目标和正则强度保持一致，改善数值求解同时应用于传统参考和所有神经方法。
+
+## 两类先验
+
+- 热组联合处理700/800/905 nm，用共同对数亮度及两个对数比例保留三个自由度，围绕TV基准以`I0*expm1(delta_log)`生成强度修正。坐标噪声采用原始噪声与亮度的对角一阶传播；它是上游近似尺度。
+- 可见组分别处理431.5/486/516.5 nm，共享权重，各自输入本路图像、TV/FFT差、复侧带残差、噪声、梯度及波长/灵敏度/阶段条件。中间特征不直接拼接其他可见图。联合物理求解仍保留真实的通道耦合。
+- 两套NAF式三尺度U形网络宽度24/48/96、编码块2/2、瓶颈4、解码块2/2，输出头零初始化，周期边界。分组模型823300参数。热坐标修正上限2倍近似噪声，可见修正上限3倍；训练记录tanh饱和比例。非正热输入或输出明确停止并保留失败日志。
+
+NAF机制依据[作者实现](https://github.com/megvii-research/NAFNet/blob/main/basicsr/models/archs/NAFNet_arch.py)及[原论文](https://arxiv.org/abs/2204.04676)，许可证保留在NAFNET_LICENSE.txt。物理优化与共享先验展开参考[MoDL](https://arxiv.org/abs/1712.02862)；这些机制的组合收益由本项目对照检验。
+
+## 损失与开发对照
+
+六路图像和均值误差使用预声明3000 K积分光子谱的固定强度比例作量纲；另监督同一Radiometry的50 K量纲色温误差、0.02量纲对数比例、相对无噪读出的发光误差，以及同母场景blank/注入对的六通道增量与读出增量。实际注入总误差单列，以区分图像恢复误差和灰体外推偏差。每对使用各自独立Poisson/读出噪声，部署输入仍是一幅raw。
+
+首个开发批次使用64/16/8/16个新的训练/验证/阈值标定/留出母场景，共2496幅raw。温度、幅度与三个发光形态采用五个独立随机流；可见形态包括多热点、环、条纹、细丝、前沿和平坦场。每幅raw只生成一份匹配TV缓存，全部派生帧保持同一划分。旧192幅留出图不进入本批选择或评价。
+
+四个神经方法均从零头新建、种子811、相同输入对顺序和6000次更新：普通全六路多尺度后处理、分组后处理、完整含TV近端展开、完整展开去配对损失。普通对照也使用两套NAF骨干，分别输出热/可见三路，但每套都看全部六路；826326参数，便于执行相同热/可见参数冻结日程。普通与分组的差异包括输入分组、坐标和特征，不能单独归因为某一个构件。
+
+1500步热组训练、1500步冻结热先验参数训练可见、3000步联合微调；AdamW初始2e-4、联合5e-5、weight decay1e-4、梯度裁剪1、有效4帧。每200步固定验证，按全部通道/读出损失选型，保留最好和末次。该批是单种子开发；256/32/32/64及另外两个种子待开发收益后开展。
+
+## 执行入口与验收
+
+```bash
+# 秒级CPU接口检查；工作目录是仓库根目录。
+python -B -m research_joint_imaging_v2.check_contracts --device cpu --quick --output outputs/tv_rru_cpu.json
+# 原生GPU软件门：新诊断母场景、float32梯度检查、128步固定小批量拟合。
+python -B -m research_joint_imaging_v2.supervise --software-only --output outputs/tv_rru_software --maximum-wall-seconds 1800
+# 完整开发批次，只在登记服务器执行。
+python -B -m research_joint_imaging_v2.supervise --output outputs/tv_rru_development_new --maximum-wall-seconds 43200
+# Reboot recovery uses a new output directory and the preserved study's cache/checkpoints.
+python -B -m research_joint_imaging_v2.supervise --resume-from /path/to/interrupted/output --output outputs/tv_rru_recovery_new --maximum-wall-seconds 39000
+```
+
+Recovery reuses completed methods and verifies every frozen raw/TV cache hash. Legacy
+checkpoints without AdamW/RNG state require a targeted replay of the interrupted
+method: each recorded loss must agree within `1e-7 + 1e-6*abs(original_loss)`, and
+the saved checkpoint's model tensors must agree bit for bit before continuation.
+No completed method or raw/TV cache is regenerated. Training now atomically saves
+model, optimizer, NumPy/Torch/CUDA RNG, best model and validation state every 200
+updates, so subsequent interruptions resume from the last complete checkpoint.
+Replay work is recorded separately from the 6000 unique updates per method.
+
+源码与配置必须匹配REGISTRATION.json，目录不得复用。先验证零头误差、活跃梯度、有限差分、分组隔离和加倍近端迭代变化，再验证128步固定小批量损失至少下降5%；诊断权重不传给正式方法。
+
+float32的0.002差分步长在原生缓存上出现舍入相消；同系数提升至float64后，自动梯度与小步长差分吻合，float32自动梯度也与该参照吻合。原失败保存在`reports/joint_imaging_v2_dev_001/`，完整步长诊断在`reports/joint_imaging_v2_fd_diagnostic_001/`。后续在零点与0.3活跃点同时检查float32的0.05/0.1两种步长（每项误差均须小于3%）、与同系数float64自动梯度的差异（小于1e-4），以及float64的1e-4差分误差（小于0.002）。
+
+`infer.py`提供独立的单raw部署路径：`--raw frame_DN.npy --checkpoint selected.pt --output outputs/tv_rru_inference_new`。该路径只读ADC、冻结标定和网络权重，输出六图、有效色温与有符号超额发光，并记录包含TV初始化的耗时。
+
+报告六路图像、均值、去均值细节、色温、相对clean readout和actual injection的两种发光误差、独立空白及其他波段注入时的误报、完整3×3单波段响应矩阵和按母场景成组bootstrap。新增平坦形态的细节分母使用“中心化真值能量+1e-4总能量”的共同量纲下限。预登记弱发光改善15%、色温/细节不退化5%、均值偏差2%、空白误报2%、对角响应0.90–1.10及非对角绝对值0.05等开发门槛，50 K/通道5%绝对门槛同时保留。
+
+缓存后的额外网络耗时单列；在线总成本须包括TV初始化。服务器保留大体积raw、标签与ADMM缓存，本地E盘接收源码、报告、图片和权重。本批采用理想滤片、周期离散编码与已知相机噪声模型，输出是合成有效色温和波段发光，实际滤片、交叉响应及超快曝光性能需实测标定。

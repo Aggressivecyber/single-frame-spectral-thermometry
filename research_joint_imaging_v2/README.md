@@ -37,7 +37,19 @@ python -B -m research_joint_imaging_v2.check_contracts --device cpu --quick --ou
 python -B -m research_joint_imaging_v2.supervise --software-only --output outputs/tv_rru_software --maximum-wall-seconds 1800
 # 完整开发批次，只在登记服务器执行。
 python -B -m research_joint_imaging_v2.supervise --output outputs/tv_rru_development_new --maximum-wall-seconds 43200
+# Reboot recovery uses a new output directory and the preserved study's cache/checkpoints.
+python -B -m research_joint_imaging_v2.supervise --resume-from /path/to/interrupted/output --output outputs/tv_rru_recovery_new --maximum-wall-seconds 39000
 ```
+
+Recovery reuses completed methods and verifies every frozen raw/TV cache hash.
+The native GPU replay test failed exact reproducibility, so legacy checkpoints
+without AdamW/RNG state cannot reconstruct the lost optimizer. Only the unfinished
+method restarts with the frozen seed and schedule; its old attempt stays preserved.
+No completed method or raw/TV cache is regenerated. Training now atomically saves
+model, optimizer, NumPy/Torch/CUDA RNG, best model and validation state every 200
+updates, so subsequent interruptions resume from the last complete checkpoint.
+Restoring complete state does not make later GPU arithmetic bitwise deterministic.
+Interrupted-attempt compute is separate from the 6000 updates per delivered model.
 
 源码与配置必须匹配REGISTRATION.json，目录不得复用。先验证零头误差、活跃梯度、有限差分、分组隔离和加倍近端迭代变化，再验证128步固定小批量损失至少下降5%；诊断权重不传给正式方法。
 

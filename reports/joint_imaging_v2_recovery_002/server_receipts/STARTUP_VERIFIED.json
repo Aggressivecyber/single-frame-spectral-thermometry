@@ -1,0 +1,71 @@
+{
+  "observed_utc": "2026-10-17T16:32:45.444106+00:00",
+  "server_root": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002",
+  "output": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/reports/joint_imaging_v2_recovery_002",
+  "supervisor_pid": 9818,
+  "child_pid": 9828,
+  "actual_command": "/usr/bin/python3 -B -m research_joint_imaging_v2.recover --protocol /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/research_joint_imaging_v2/protocol.json --output /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/reports/joint_imaging_v2_recovery_002 --resume-from /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002 ",
+  "process_identity_matches": true,
+  "EXIT_present": false,
+  "COMPLETION_present": false,
+  "cache": {
+    "time": "2026-10-17T16:31:37.637185+00:00",
+    "mothers": 104,
+    "raw_observations": 2496,
+    "all_cache_hashes_match": true,
+    "cache_target": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002/cache",
+    "duplicated_cache_bytes": 0
+  },
+  "progress": {
+    "time": "2026-10-17T16:32:40.627848+00:00",
+    "method": "grouped_post",
+    "step": 220,
+    "phase": "thermal",
+    "loss": 0.39879927039146423,
+    "gradient_norm_before_clip": 11.096192359924316,
+    "terms": {
+      "channel": 0.003134220838546753,
+      "temperature": 0.2751934826374054,
+      "log_ratio": 0.1204700767993927,
+      "clean_readout": 0.05367448925971985,
+      "pair": 0.05672154948115349,
+      "paired_readout": 0.10164886713027954,
+      "mean": 2.983994363603415e-06
+    },
+    "wall_seconds": 57.0027358320001,
+    "last_stage_prior_statistics": {
+      "thermal_tanh_over_0_98_fraction": 0.0,
+      "visible_tanh_over_0_98_fraction": 0.0,
+      "normalized_delta_RMS": [
+        0.0,
+        0.0,
+        0.0,
+        0.0058142682537436485,
+        0.006217173300683498,
+        0.015973113477230072
+      ]
+    }
+  },
+  "ordinary_control_reused": {
+    "method": "ordinary_post",
+    "updates": 6000,
+    "best_step": 6000,
+    "best_validation_score": 0.16590972431004047,
+    "wall_seconds": 1103.4046188400025,
+    "parameters": 826326,
+    "best_checkpoint_sha256": "f25f6431caf3f3b8ffc7cb9b412fa1c130623d992fd705c5b50aa1d212724d98",
+    "last_checkpoint_sha256": "43d18a2ae4ea3ae5018d4becf391c6d2a6d6e2676420f94ac17a12cf2504c509"
+  },
+  "grouped_restart": {
+    "time": "2026-10-17T16:31:43.124962+00:00",
+    "source": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002",
+    "original_logged_updates": 4182,
+    "reason": "Legacy checkpoint lacks optimizer/RNG state; native GPU replay is not bitwise reproducible. Restart only this unfinished method with the frozen seed and schedule.",
+    "optimizer_updates_reused": 0,
+    "original_artifacts_preserved": true
+  },
+  "stderr_empty": true,
+  "stderr_tail": "",
+  "GPU": "NVIDIA GeForce RTX 5070, 3748 MiB, 91 %",
+  "stdout_tail": "{'stage': 'completed_method_reused', 'method': 'ordinary_post', 'updates': 6000}\n{'stage': 'validation', 'method': 'grouped_post', 'step': 200, 'score': 1.0900497175753117, 'best_step': 200}\n"
+}
