@@ -1,0 +1,107 @@
+{
+  "observed_utc": "2026-10-17T18:52:24.673973+00:00",
+  "server_root": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002",
+  "checks_read_only": true,
+  "processes": {
+    "9818": {
+      "exists": true,
+      "command": "/usr/bin/python3 -B -m research_joint_imaging_v2.supervise --protocol /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/research_joint_imaging_v2/protocol.json --output /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/reports/joint_imaging_v2_recovery_002 --resume-from /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002 --maximum-wall-seconds 39000 ",
+      "cwd": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002"
+    },
+    "9828": {
+      "exists": true,
+      "command": "/usr/bin/python3 -B -m research_joint_imaging_v2.recover --protocol /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/research_joint_imaging_v2/protocol.json --output /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/reports/joint_imaging_v2_recovery_002 --resume-from /home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002 ",
+      "cwd": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002"
+    }
+  },
+  "PROCESS.json": {
+    "time": "2026-10-17T16:31:29.681334+00:00",
+    "supervisor_pid": 9818,
+    "child_pid": 9828,
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "research_joint_imaging_v2.recover",
+      "--protocol",
+      "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/research_joint_imaging_v2/protocol.json",
+      "--output",
+      "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002/reports/joint_imaging_v2_recovery_002",
+      "--resume-from",
+      "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_dev_002/reports/joint_imaging_v2_dev_002"
+    ],
+    "source_root": "/home/rylan/projects/thermometry-neural-20261011/joint_imaging_v2_recovery_002"
+  },
+  "EXIT.json": null,
+  "COMPLETION.json": null,
+  "TRAINING_PROGRESS.json": {
+    "time": "2026-10-17T18:52:13.967449+00:00",
+    "method": "no_pair",
+    "step": 1380,
+    "phase": "thermal",
+    "loss": 0.5840471982955933,
+    "gradient_norm_before_clip": 3.13899564743042,
+    "terms": {
+      "channel": 0.008846960961818695,
+      "temperature": 0.2931525707244873,
+      "log_ratio": 0.2820165157318115,
+      "clean_readout": 0.11549331992864609,
+      "pair": 0.13810458779335022,
+      "paired_readout": 0.22226914763450623,
+      "mean": 6.228148413356394e-05
+    },
+    "wall_seconds": 1067.515609563001,
+    "last_stage_prior_statistics": {
+      "thermal_tanh_over_0_98_fraction": 0.2633209228515625,
+      "visible_tanh_over_0_98_fraction": 0.0,
+      "normalized_delta_RMS": [
+        0.0,
+        0.0,
+        0.0,
+        0.09330100566148758,
+        0.07096122950315475,
+        0.03879263624548912
+      ]
+    }
+  },
+  "ordinary_post_TRAINING_COMPLETION.json": {
+    "method": "ordinary_post",
+    "updates": 6000,
+    "best_step": 6000,
+    "best_validation_score": 0.16590972431004047,
+    "wall_seconds": 1103.4046188400025,
+    "parameters": 826326,
+    "best_checkpoint_sha256": "f25f6431caf3f3b8ffc7cb9b412fa1c130623d992fd705c5b50aa1d212724d98",
+    "last_checkpoint_sha256": "43d18a2ae4ea3ae5018d4becf391c6d2a6d6e2676420f94ac17a12cf2504c509"
+  },
+  "grouped_post_TRAINING_COMPLETION.json": {
+    "method": "grouped_post",
+    "updates": 6000,
+    "best_step": 5800,
+    "best_validation_score": 0.22755652200430632,
+    "wall_seconds": 1953.193484712,
+    "parameters": 823300,
+    "best_checkpoint_sha256": "f82d69eb9e435e0404cbabe327679ac331117e7fa9cd49fdcf6ccd58f2d76901",
+    "last_checkpoint_sha256": "199274eeeaf24ebab8575911437c1f5ed78edc7ad624176dc47c4f255070648b"
+  },
+  "full_TRAINING_COMPLETION.json": {
+    "method": "full",
+    "updates": 6000,
+    "best_step": 5800,
+    "best_validation_score": 0.5383312720805407,
+    "wall_seconds": 5409.533687647001,
+    "parameters": 823300,
+    "best_checkpoint_sha256": "6ce2c7b225b96b731805d7c16b8ffca2fcf065a2dc92e969b26d38947684645e",
+    "last_checkpoint_sha256": "650eaedeb3d13a8edfa7b31c054e35abf871d802c721b015e28de4044351eddb"
+  },
+  "no_pair_TRAINING_COMPLETION.json": null,
+  "stderr_bytes": 0,
+  "stderr_tail": "",
+  "stdout_tail": "{'stage': 'validation', 'method': 'no_pair', 'step': 1000, 'score': 0.7630071025341749, 'best_step': 1000}\n{'stage': 'validation', 'method': 'no_pair', 'step': 1200, 'score': 0.7456714026629925, 'best_step': 1200}\n",
+  "gpu": "NVIDIA GeForce RTX 5070, 3982, 80",
+  "next_followup_local": "2026-10-18 03:38:00 Asia/Singapore",
+  "automation_id": "tv-rru",
+  "automation_update_confirmed": true,
+  "continuous_polling": false,
+  "remote_mutations": false
+}

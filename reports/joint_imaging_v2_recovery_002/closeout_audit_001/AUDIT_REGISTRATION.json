@@ -1,0 +1,27 @@
+{
+  "purpose": "post-completion frozen-output audit, native replay and descriptive mother statistics",
+  "source_run": "joint_imaging_v2_recovery_002",
+  "methods": [
+    "tv",
+    "tv_400",
+    "ordinary_post",
+    "grouped_post",
+    "full",
+    "no_pair"
+  ],
+  "replay_frames_per_method": 384,
+  "calibration_replay": "same 8 mothers and blank frames; thresholds are compared, never replaced",
+  "source_sha256": "caa3e351bb615d5c302b779fdd6d84e5821e0ed6c245e7a9a6f774e049a9cb30",
+  "native_replay_relative_L2_max": 0.001,
+  "replay_tolerance_origin": "existing declared raw-to-cached output agreement tolerance",
+  "maximum_wall_seconds": 1800,
+  "maximum_GPU_MiB": 9500,
+  "maximum_new_output_bytes": 2147483648,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 73191,
+  "resampling_unit": "mother with repeats and paired methods/conditions",
+  "training_updates": 0,
+  "truth_threshold_checkpoint_changes": false,
+  "new_scientific_acceptance_gates": false,
+  "diagnostics": "H_excess = H_visible - H_continuum; algorithm/mixing cross term; per-level/per-condition CIs; non-target FPR contrasts; NIR log ratios"
+}
